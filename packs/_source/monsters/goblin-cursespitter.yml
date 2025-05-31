@@ -1,0 +1,46 @@
+_id: 3082436b9ded663d
+_key: '!actors!3082436b9ded663d'
+name: Goblin Cursespitter
+type: horde
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Cursespitter
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Cursespitter
+  keywords:
+  - Humanoid
+  - Goblin
+  level: 1
+  type: Horde
+  role: Hexer
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 1
+    reason: 0
+    intuition: 2
+    presence: 0
+  stamina:
+    max: 10
+    value: 10
+  combat:
+    size: 1S
+    stability: 0
+    speed: 5
+    movementTypes:
+    - walk
+    freeStrikeDamage: 1
+items: []

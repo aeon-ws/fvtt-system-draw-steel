@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 88dcbeb563606041
+_key: '!actors!88dcbeb563606041'
+name: Goblin Monarch
+type: leader
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Goblin Monarch
   displayName: 50
   displayBars: 50
   bar1:
@@ -13,34 +13,34 @@ prototypeToken:
     attribute: null
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 3
+  height: 3
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Goblin Monarch
   keywords:
-  - Giant
-  - Ogre
-  level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  - Humanoid
+  - Goblin
+  level: 1
+  type: Leader
+  role: null
+  encounterValue: 12
   characteristics:
-    might: 0
-    agility: 2
+    might: 2
+    agility: 1
     reason: -4
-    intuition: 1
+    intuition: 0
     presence: -3
   stamina:
-    max: 4
-    value: 4
+    max: 60
+    value: 60
   combat:
-    size: 1S
-    stability: 1
+    size: '3'
+    stability: 2
     speed: 7
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 4
 items: []

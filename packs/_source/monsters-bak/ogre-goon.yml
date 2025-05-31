@@ -1,7 +1,7 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
+_id: wl2ZbpHcwOR5orPr
+_key: "!actors!wl2ZbpHcwOR5orPr"
 name: Ogre Goon
-type: elite
+type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
   name: Ogre Goon
@@ -10,37 +10,36 @@ prototypeToken:
   bar1:
     attribute: stamina
   bar2:
-    attribute: null
+    attribute:
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 2
+  height: 2
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
   name: Ogre Goon
   keywords:
-  - Giant
-  - Ogre
+    - Giant
+    - Ogre
   level: 2
   type: Elite
   role: Brute
   encounterValue: 16
   characteristics:
-    might: 0
-    agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    might: 2
+    agility: 0
+    reason: -1
+    intuition: 0
+    presence: -1
   stamina:
-    max: 4
-    value: 4
+    max: 100
   combat:
-    size: 1S
-    stability: 1
-    speed: 7
+    size: "2"
+    speed: 5
     movementTypes:
-    - walk
-    freeStrikeDamage: 2
+      - walk
+    stability: 4
+    freeStrikeDamage: 5
 items: []

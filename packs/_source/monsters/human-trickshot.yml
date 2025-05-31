@@ -1,0 +1,49 @@
+_id: aab79858b50f78ed
+_key: '!actors!aab79858b50f78ed'
+name: Human Trickshot
+type: platoon
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Human Trickshot
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Human Trickshot
+  keywords:
+  - Humanoid
+  - Human
+  level: 1
+  type: Platoon
+  role: Artillery
+  encounterValue: 6
+  characteristics:
+    might: 0
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: 1
+  stamina:
+    max: 20
+    value: 20
+  combat:
+    size: 1M
+    stability: 0
+    speed: 5
+    movementTypes:
+    - walk
+    freeStrikeDamage: 4
+  immunity:
+    Corruption: 1
+    Psychic: 1
+items: []

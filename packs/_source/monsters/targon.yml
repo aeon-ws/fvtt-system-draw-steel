@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
+_id: 6d7b3fcd41e5d4de
+_key: '!actors!6d7b3fcd41e5d4de'
+name: Targon
 type: elite
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Targon
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Targon
   keywords:
-  - Giant
-  - Ogre
+  - Humanoid
+  - Rival
+  - Human
   level: 2
   type: Elite
-  role: Brute
+  role: Artillery
   encounterValue: 16
   characteristics:
-    might: 0
-    agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    might: 2
+    agility: 0
+    reason: 1
+    intuition: 0
+    presence: 0
   stamina:
-    max: 4
-    value: 4
+    max: 60
+    value: 60
   combat:
-    size: 1S
-    stability: 1
-    speed: 7
+    size: 1M
+    stability: 2
+    speed: 5
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 5
 items: []

@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
+_id: 70677734400bf090
+_key: '!actors!70677734400bf090'
+name: Gorek
 type: elite
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Gorek
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Gorek
   keywords:
-  - Giant
-  - Ogre
+  - Humanoid
+  - Dwarf
+  - Rival
   level: 2
   type: Elite
   role: Brute
   encounterValue: 16
   characteristics:
-    might: 0
-    agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    might: 1
+    agility: 0
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
-    max: 4
-    value: 4
+    max: 80
+    value: 80
   combat:
     size: 1S
     stability: 1
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 5
 items: []

@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 4a9f8890bd007f7f
+_key: '!actors!4a9f8890bd007f7f'
+name: Flow Of The River
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Flow Of The River
   displayName: 50
   displayBars: 50
   bar1:
@@ -13,34 +13,36 @@ prototypeToken:
     attribute: null
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 2
+  height: 2
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Flow Of The River
   keywords:
-  - Giant
-  - Ogre
+  - Water Wolf
+  - Elemental
   level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  type: Minion
+  role: Harrier
+  encounterValue: 4
   characteristics:
-    might: 0
+    might: 1
     agility: 2
-    reason: -4
+    reason: -2
     intuition: 1
-    presence: -3
+    presence: -2
   stamina:
-    max: 4
-    value: 4
+    max: 60
+    value: 60
   combat:
-    size: 1S
+    size: '2'
     stability: 1
-    speed: 7
+    speed: 8
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 4
+  immunity:
+    fire: 2
 items: []

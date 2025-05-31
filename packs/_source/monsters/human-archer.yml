@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 710c3366ddc2d5b6
+_key: '!actors!710c3366ddc2d5b6'
+name: Human Archer
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Human Archer
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Human Archer
   keywords:
-  - Giant
-  - Ogre
-  level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  - Humanoid
+  - Human
+  level: 1
+  type: Minion
+  role: Artillery
+  encounterValue: 3
   characteristics:
     might: 0
     agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    reason: 0
+    intuition: 0
+    presence: 0
   stamina:
-    max: 4
-    value: 4
+    max: 3
+    value: 3
   combat:
-    size: 1S
-    stability: 1
-    speed: 7
+    size: 1M
+    stability: 0
+    speed: 5
     movementTypes:
     - walk
     freeStrikeDamage: 2
+  immunity:
+    Corruption: 1
+    Psychic: 1
 items: []

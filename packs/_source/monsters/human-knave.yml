@@ -1,0 +1,49 @@
+_id: c32ecb8c1397a9e7
+_key: '!actors!c32ecb8c1397a9e7'
+name: Human Knave
+type: platoon
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Human Knave
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Human Knave
+  keywords:
+  - Humanoid
+  - Human
+  level: 2
+  type: Platoon
+  role: Defender
+  encounterValue: 8
+  characteristics:
+    might: 2
+    agility: 0
+    reason: 1
+    intuition: 0
+    presence: 0
+  stamina:
+    max: 50
+    value: 50
+  combat:
+    size: 1M
+    stability: 0
+    speed: 5
+    movementTypes:
+    - walk
+    freeStrikeDamage: 4
+  immunity:
+    Corruption: 2
+    Psychic: 2
+items: []

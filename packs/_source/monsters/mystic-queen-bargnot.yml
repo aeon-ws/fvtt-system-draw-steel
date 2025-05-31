@@ -1,0 +1,47 @@
+_id: ba5b6225c9b8e036
+_key: '!actors!ba5b6225c9b8e036'
+name: Mystic Queen Bargnot
+type: leader
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Mystic Queen Bargnot
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Mystic Queen Bargnot
+  keywords:
+  - Mystic Goblin
+  - Humanoid
+  - Goblin
+  level: 3
+  type: Leader
+  role: null
+  encounterValue: 20
+  characteristics:
+    might: 2
+    agility: 1
+    reason: 0
+    intuition: 1
+    presence: 0
+  stamina:
+    max: 25
+    value: 25
+  combat:
+    size: 1L
+    stability: 2
+    speed: 6
+    movementTypes:
+    - walk
+    freeStrikeDamage: 5
+items: []

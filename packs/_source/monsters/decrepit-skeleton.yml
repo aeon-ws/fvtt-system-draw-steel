@@ -1,0 +1,48 @@
+_id: 671dcb7f35e7cdca
+_key: '!actors!671dcb7f35e7cdca'
+name: Decrepit Skeleton
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Decrepit Skeleton
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Decrepit Skeleton
+  keywords:
+  - Undead
+  level: 1
+  type: Minion
+  role: Artillery
+  encounterValue: 3
+  characteristics:
+    might: 3
+    agility: 2
+    reason: 2
+    intuition: 0
+    presence: 2
+  stamina:
+    max: 80
+    value: 80
+  combat:
+    size: 1M
+    stability: 2
+    speed: 5
+    movementTypes:
+    - walk
+    freeStrikeDamage: 4
+  immunity:
+    Corruption: 2
+    Psychic: 2
+items: []

@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 89e1d50a2399f79f
+_key: '!actors!89e1d50a2399f79f'
+name: Creeping Sludge
+type: horde
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Creeping Sludge
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Creeping Sludge
   keywords:
-  - Giant
-  - Ogre
+  - Ooze
   level: 2
-  type: Elite
+  type: Horde
   role: Brute
-  encounterValue: 16
+  encounterValue: 4
   characteristics:
-    might: 0
-    agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    might: 2
+    agility: -2
+    reason: -3
+    intuition: 0
+    presence: -2
   stamina:
-    max: 4
-    value: 4
+    max: 25
+    value: 25
   combat:
-    size: 1S
-    stability: 1
-    speed: 7
+    size: 1L
+    stability: 2
+    speed: 5
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 3
+  immunity:
+    corruption: 2
 items: []

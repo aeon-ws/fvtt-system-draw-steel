@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: a23ecfed4787c0e5
+_key: '!actors!a23ecfed4787c0e5'
+name: Gelatinous Ball
+type: horde
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Gelatinous Ball
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,30 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Gelatinous Ball
   keywords:
-  - Giant
-  - Ogre
-  level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  - Ooze
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
   characteristics:
     might: 0
     agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    reason: -3
+    intuition: 0
+    presence: -2
   stamina:
-    max: 4
-    value: 4
+    max: 7
+    value: 7
   combat:
-    size: 1S
-    stability: 1
-    speed: 7
+    size: 1M
+    stability: 0
+    speed: 5
     movementTypes:
     - walk
     freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    acid: 1
 items: []

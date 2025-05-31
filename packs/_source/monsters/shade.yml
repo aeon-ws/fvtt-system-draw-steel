@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 063060261e58dc40
+_key: '!actors!063060261e58dc40'
+name: Shade
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Shade
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,30 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Shade
   keywords:
-  - Giant
-  - Ogre
-  level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  - Undead
+  level: 1
+  type: Minion
+  role: Ambusher
+  encounterValue: 3
   characteristics:
-    might: 0
+    might: -2
     agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    reason: 0
+    intuition: 0
+    presence: 3
   stamina:
-    max: 4
-    value: 4
+    max: 80
+    value: 80
   combat:
-    size: 1S
+    size: 1M
     stability: 1
-    speed: 7
+    speed: 6
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 3
+    poison: 3
 items: []

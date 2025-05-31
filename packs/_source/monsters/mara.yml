@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
+_id: 9de2557623b5f882
+_key: '!actors!9de2557623b5f882'
+name: Mara
 type: elite
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Mara
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Mara
   keywords:
-  - Giant
-  - Ogre
+  - Humanoid
+  - Rival
+  - Human
   level: 2
   type: Elite
-  role: Brute
+  role: Controller
   encounterValue: 16
   characteristics:
     might: 0
-    agility: 2
-    reason: -4
+    agility: 0
+    reason: 2
     intuition: 1
-    presence: -3
+    presence: 0
   stamina:
-    max: 4
-    value: 4
+    max: 60
+    value: 60
   combat:
-    size: 1S
+    size: 1M
     stability: 1
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 5
 items: []

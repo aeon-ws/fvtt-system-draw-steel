@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: d8de601582d1a50c
+_key: '!actors!d8de601582d1a50c'
+name: Spindlegoth
+type: horde
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Spindlegoth
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,23 +19,23 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Spindlegoth
   keywords:
-  - Giant
-  - Ogre
-  level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  - Ruinborn
+  - Beast
+  level: 1
+  type: Horde
+  role: Ambusher
+  encounterValue: 3
   characteristics:
-    might: 0
+    might: -1
     agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    reason: 0
+    intuition: 0
+    presence: -2
   stamina:
-    max: 4
-    value: 4
+    max: 15
+    value: 15
   combat:
     size: 1S
     stability: 1

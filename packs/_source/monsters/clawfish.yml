@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 4880b126f370c79b
+_key: '!actors!4880b126f370c79b'
+name: Clawfish
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Clawfish
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Clawfish
   keywords:
-  - Giant
-  - Ogre
-  level: 2
-  type: Elite
+  - Angulotl
+  - Animal
+  level: 1
+  type: Minion
   role: Brute
-  encounterValue: 16
+  encounterValue: 3
   characteristics:
     might: 0
     agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    reason: -3
+    intuition: -2
+    presence: 1
   stamina:
-    max: 4
-    value: 4
+    max: 5
+    value: 5
   combat:
     size: 1S
-    stability: 1
-    speed: 7
+    stability: 0
+    speed: 5
     movementTypes:
     - walk
     freeStrikeDamage: 2
+  immunity:
+    lightning: 3
+    poison: 2
 items: []

@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
-type: elite
+_id: 8735b222a661191e
+_key: '!actors!8735b222a661191e'
+name: Goblin Deathtongue
+type: horde
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Goblin Deathtongue
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Goblin Deathtongue
   keywords:
-  - Giant
-  - Ogre
+  - Mystic Goblin
+  - Humanoid
+  - Goblin
   level: 2
-  type: Elite
-  role: Brute
-  encounterValue: 16
+  type: Horde
+  role: Hexer
+  encounterValue: 4
   characteristics:
-    might: 0
+    might: -1
     agility: 2
-    reason: -4
-    intuition: 1
-    presence: -3
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
-    max: 4
-    value: 4
+    max: 15
+    value: 15
   combat:
     size: 1S
-    stability: 1
-    speed: 7
+    stability: 0
+    speed: 6
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 2
 items: []

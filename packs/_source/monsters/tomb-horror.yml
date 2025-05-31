@@ -1,10 +1,10 @@
-_id: bae4590d7bfbd5dc
-_key: '!actors!bae4590d7bfbd5dc'
-name: Ogre Goon
+_id: ea14c8aa0b46f25b
+_key: '!actors!ea14c8aa0b46f25b'
+name: Tomb Horror
 type: elite
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Ogre Goon
+  name: Tomb Horror
   displayName: 50
   displayBars: 50
   bar1:
@@ -13,34 +13,39 @@ prototypeToken:
     attribute: null
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 2
+  height: 2
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Ogre Goon
+  name: Tomb Horror
   keywords:
-  - Giant
-  - Ogre
+  - Ruinborn
+  - Undead
+  - Plant
   level: 2
   type: Elite
   role: Brute
   encounterValue: 16
   characteristics:
-    might: 0
-    agility: 2
-    reason: -4
-    intuition: 1
+    might: 2
+    agility: -2
+    reason: -3
+    intuition: 2
     presence: -3
   stamina:
-    max: 4
-    value: 4
+    max: 100
+    value: 100
   combat:
-    size: 1S
-    stability: 1
-    speed: 7
+    size: '2'
+    stability: 0
+    speed: 5
     movementTypes:
     - walk
-    freeStrikeDamage: 2
+    freeStrikeDamage: 5
+  immunity:
+    corruption: 2
+  weakness:
+    fire: 3
 items: []
