@@ -1,0 +1,46 @@
+_id: a4bfc1d647fa382b
+_key: "!items!a4bfc1d647fa382b"
+name: Bone Spur
+type: ability
+img: icons/svg/book.svg
+system:
+  level: 1
+  description: ""
+  keywords: ["Area", "Weapon"]
+  type: maneuver
+  maliceCost: 2
+  distance:
+    burst: 1
+  target:
+    displayValue: "Each enemy in the burst"
+  powerRoll:
+    bonus: 2
+    tier1:
+      damage: 1
+      potencyEffect:
+        characteristic: might
+        value: 0
+        effects:
+          text: "bleeding (save ends)"
+          duration: saveEnds
+          bleeding: true
+    tier2:
+      damage: 2
+      potencyEffect:
+        characteristic: might
+        value: 1
+        effects:
+          text: "bleeding (save ends)"
+          duration: saveEnds
+          bleeding: true
+    tier3:
+      damage: 3
+      potencyEffect:
+        characteristic: might
+        value: 2
+        effects:
+          text: "bleeding (save ends)"
+          duration: saveEnds
+          bleeding: true
+  postPowerRollEffect:
+    text: "Each target has a bane on their next strike."
