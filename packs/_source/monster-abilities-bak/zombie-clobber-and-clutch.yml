@@ -1,0 +1,26 @@
+_id: 7a9e8bfc4de81395
+_key: "!items!7a9e8bfc4de81395"
+name: Clobber and Clutch
+type: ability
+img: icons/svg/book.svg
+system:
+  level: 1
+  keywords: ["Melee", "Strike", "Weapon"]
+  type: mainAction
+  distance:
+    melee: 1
+  target:
+    displayValue: "One creature or object"
+  powerRoll:
+    bonus: 2
+    tier1:
+      damage: 4
+    tier2:
+      damage: 6
+    tier3:
+      damage: 7
+      effect:
+        text: "grabbed"
+        grabbed: true
+  postPowerRollEffect:
+    text: A target who starts their turn grabbed by the zombie takes 2 corruption damage. If a creature takes 5 or more corruption damage this way, they become insatiably hungry for flesh. The target must complete the Find a Cure project to end this effect.
