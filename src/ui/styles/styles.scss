@@ -1,0 +1,171 @@
+$enemy-sheet-left-right-padding: 0.4rem;
+
+.enemy-sheet {
+  background: #f7f4ed;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px #0003;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 550px;
+
+  .header {
+    background: #c2dbf7;
+    color: #222;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: $enemy-sheet-left-right-padding;
+    padding-right: $enemy-sheet-left-right-padding;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    letter-spacing: 0.5px;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    .right {
+      text-align: right;
+      text-transform: unset;
+    }
+  }
+
+  .subheader-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: $enemy-sheet-left-right-padding;
+    padding-right: $enemy-sheet-left-right-padding;
+    padding-top: 0rem;
+    color: #444;
+    font-weight: 500;
+
+    .left {
+      flex: 1;
+    }
+
+    .right {
+      flex: 1;
+      text-align: right;
+    }
+  }
+
+  .divider {
+    border-bottom: 1px solid #222;
+    opacity: 0.4;
+    padding-top: 0.3em;
+    margin-bottom: 0.1em;
+    width: 100%;
+  }
+
+  .columns {
+    display: flex;
+    gap: 0.5em;
+    // flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 0.1rem;
+
+    .column {
+      flex: 1 1 0;
+      min-width: 220px;
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left-column {
+      display: flex;
+      align-items: flex-start;
+
+      .field-row {
+        padding-left: $enemy-sheet-left-right-padding;
+      }
+    }
+
+    .right-column {
+      display: flex;
+      align-items: flex-end;
+
+      .field-row {
+        text-align: right;
+        padding-right: $enemy-sheet-left-right-padding;
+      }
+    }
+  }
+
+  .field-row {
+    display: flex;
+    align-items: baseline;
+
+    .label {
+      font-weight: 700;
+      //white-space: pre;
+    }
+
+    .value {
+      margin-left: 0.2em;
+      font-weight: 500;
+      //white-space: pre;
+    }
+  }
+
+  .field-row.overflow {
+    overflow-x: visible;
+    white-space: pre;
+    word-break: keep-all;
+  }
+
+  .characteristics-row {
+    display: flex;
+    justify-content: space-between;
+    padding-left: $enemy-sheet-left-right-padding;
+    padding-right: $enemy-sheet-left-right-padding;
+
+    .characteristic {
+      font-weight: 700;
+      display: flex;
+      align-items: baseline;
+      white-space: nowrap;
+
+      .value {
+        font-weight: 700;
+        margin-left: 0.2em;
+      }
+    }
+  }
+}
+
+.ads-add-captain-to-squad, .ads-add-minion-to-squad {
+  color: #AAAAAA;
+  cursor: pointer;
+  transition: filter 0.15s;
+  box-shadow: 0 0 10px var(--color-shadow-dark);
+  background-color: var(--control-bg-color);
+  border: 1px solid var(--control-border-color);
+  width: var(--control-size);
+  height: var(--control-size);
+  justify-content: center;
+}
+
+.ads-add-captain-to-squad:hover, .ads-add-minion-to-squad:hover {
+  color: #FFFFFF;
+  background-color: var(--control-active-bg-color);
+  border-color: var(--control-hover-border-color);
+  --control-icon-color: var(--control-active-icon-color);
+  --control-hover-icon-color: var(--control-active-icon-color);
+}
+
+.react-root,
+.minion-controls,
+.ads-add-captain-to-squad,
+.ads-add-minion-to-squad {
+  z-index: 70;
+  pointer-events: auto !important;
+  position: relative;
+}

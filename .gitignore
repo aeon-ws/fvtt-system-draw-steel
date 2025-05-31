@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Vite output
+dist/
+dist-ssr/
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# TypeScript cache
+*.tsbuildinfo
+
+# VSCode settings (optional)
+.vscode/
+
+# IDEs and OS
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+
+# Testing snapshots
+__snapshots__/
+
+# Optional: lock files (if you prefer to ignore them for some reason)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

@@ -1,0 +1,44 @@
+_id: 92fae4c19e23ba44
+_key: "!items!92fae4c19e23ba44"
+name: Bury the Point
+type: ability
+img: icons/svg/book.svg
+system:
+  level: 1
+  description: |
+    The goblin tries to pin its foe's limb to the ground with a savage thrust of its spear.
+  keywords: ["Weapon", "Melee"]
+  type: mainAction
+  distance:
+    melee: 1
+  target:
+    displayValue: "One creature"
+  powerRoll:
+    bonus: 2
+    tier1:
+      damage: 5
+      potencyEffect:
+        characteristic: might
+        value: 0
+        effects:
+          text: "bleeding (save ends)"
+          duration: saveEnds
+          bleeding: true
+    tier2:
+      damage: 6
+      potencyEffect:
+        characteristic: might
+        value: 1
+        effects:
+          text: "bleeding (save ends)"
+          duration: saveEnds
+          bleeding: true
+    tier3:
+      damage: 7
+      potencyEffect:
+        characteristic: might
+        value: 2
+        effects:
+          text: "bleeding (save ends)"
+          duration: saveEnds
+          bleeding: true

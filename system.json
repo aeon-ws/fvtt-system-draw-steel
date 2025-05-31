@@ -1,0 +1,85 @@
+{
+  "id": "aeon-draw-steel",
+  "title": "Aeon Draw Steel",
+  "version": "0.1.0",
+  "description": "Unofficial Foundry VTT system for Draw Steel (Powered by Draw Steel).",
+  "authors": [
+    {
+      "name": "Morten Nystrup Rasmussen"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "relationships": {},
+  "esmodules": ["dist/main.js"],
+  "styles": ["dist/styles.css"],
+  "packs": [
+    {
+      "name": "monsters",
+      "label": "Aeon Draw Steel: Monsters",
+      "system": "aeon-draw-steel",
+      "path": "packs/monsters",
+      "type": "Actor",
+      "private": false
+    },
+    {
+      "name": "heroAbilities",
+      "label": "Aeon Draw Steel: Hero Abilities",
+      "system": "aeon-draw-steel",
+      "path": "packs/hero-abilities",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "mosterAbilities",
+      "label": "Aeon Draw Steel: Monster Abilities",
+      "system": "aeon-draw-steel",
+      "path": "packs/monster-abilities",
+      "type": "Item",
+      "private": false
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Aeon Draw Steel",
+      "color": "#cd2c1e",
+      "sorting": "m",
+      "packs": ["monsters", "heroAbilities", "monsterAbilities"]
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://yourhost.com/",
+  "manifest": "https://yourhost.com/system.json",
+  "readme": "https://yourhost.com/README.md",
+  "bugs": "https://yourhost.com/issues",
+  "license": "LICENSE",
+  "documentTypes": {
+    "Actor": {
+      "enemy": {},
+      "hero": {},
+      "minion": {},
+      "object": {}
+    },
+    "Item": {
+      "heroAbility": {},
+      "monsterAbility": {},
+      "kit": {},
+      "ancestry": {},
+      "culture": {}
+    }
+  },
+  "primaryTokenAttribute": "stamina",
+  "secondaryTokenAttribute": "heroicResource",
+  "grid": {
+    "distance": 1,
+    "units": "sq"
+  }
+}

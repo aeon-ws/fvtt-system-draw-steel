@@ -1,0 +1,109 @@
+{
+  "ADS": {
+    "characteristics": {
+      "might": {
+        "name": "Might",
+        "shortName": "M",
+        "description": ""
+      },
+      "agility": {
+        "name": "Agility",
+        "shortName": "A",
+        "description": ""
+      },
+      "reason": {
+        "name": "Reason",
+        "shortName": "R",
+        "description": ""
+      },
+      "intuition": {
+        "name": "Intuition",
+        "shortName": "I",
+        "description": ""
+      },
+      "presence": {
+        "name": "Presence",
+        "shortName": "P",
+        "description": ""
+      }
+    },
+    "size": {
+      "name": "Size",
+      "description": ""
+    },
+    "encounterValue": {
+      "name": "Encounter Value",
+      "shortName": "EV",
+      "description": ""
+    },
+    "level": {
+      "name": "Level",
+      "description": ""
+    },
+    "stamina": {
+      "name": "Stamina",
+      "max": "Max",
+      "value": "Current",
+      "description": ""
+    },
+    "combat": {
+      "speed": {
+        "name": "Speed",
+        "shortName": "Spd",
+        "description": ""
+      },
+      "disengage": {
+        "name": "Disengage",
+        "description": ""
+      },
+      "stability": {
+        "name": "Stability",
+        "description": ""
+      },
+      "meleeDistanceBonus": {
+        "name": "Melee Distance Bonus",
+        "shortName": "Melee Dist.",
+        "description": ""
+      },
+      "rangedDistanceBonus": {
+        "name": "Ranged Distance Bonus",
+        "shortName": "Ranged Dist.",
+        "description": ""
+      },
+      "freeStrike": {
+        "name": "Free Strike",
+        "description": ""
+      },
+      "withCaptain": {
+        "name": "With Captain",
+        "description": ""
+      }
+    },
+    "movementTypes": {
+      "burrow": "burrow",
+      "climb": "climb",
+      "fly": "fly",
+      "swim": "swim",
+      "walk": "walk"
+    },
+    "EFFECT": {
+      "StatusBleeding": "Bleeding",
+      "StatusDead": "Dead",
+      "StatusDazed": "Dazed",
+      "StatusGrabbed": "Grabbed",
+      "StatusFrightened": "Frightened",
+      "StatusInvisible": "Invisible",
+      "StatusJudged": "Judged",
+      "StatusMarked": "Marked",
+      "StatusProne": "Prone",
+      "StatusRestrained": "Restrained",
+      "StatusSlowed": "Slowed",
+      "StatusSurprised": "Surprised",
+      "StatusSustaining": "Sustaining",
+      "StatusTaunted": "Taunted",
+      "StatusUnconscious": "Unconscious",
+      "StatusWeakened": "Weakened",
+      "StatusWinded": "Winded"
+    }
+  }
+}

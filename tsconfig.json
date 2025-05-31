@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "types": ["fvtt-types"],
+    "target": "esnext",
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "lib": ["DOM", "ES2020"],
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": "./src",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "paths": {
+      "@data/*": ["data/items/*", "data/models/*", "data/tokens/*"],
+      "@utils/*": ["utils/*"],
+      "@ui/*": ["ui/*", "ui/components/*", "ui/sheets/*", "ui/styles/*", "ui/token-hud/*"],
+    }
+  },
+  "include": ["src/**/*", "types"]
+}

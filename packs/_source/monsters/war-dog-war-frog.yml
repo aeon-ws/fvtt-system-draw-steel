@@ -1,0 +1,51 @@
+_id: t8hp81R04sxisW3w
+_key: "!actors!t8hp81R04sxisW3w"
+name: War Dog War Frog
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: War Dog War Frog
+  displayName": 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute:
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: War Dog War Frog
+  keywords:
+    - Humanoid
+    - War Dog
+  level: 4
+  type: Minion
+  role: Ambusher
+  encounterValue: 12
+  immunity:
+    poison: 6
+  characteristics:
+    might: -1
+    agility: 3
+    reason: 0
+    intuition: 2
+    presence: 0
+  stamina:
+    max: 8
+    perMinion: 8
+    value: 8
+  combat:
+    size: 1S
+    speed: 5
+    movementTypes:
+      - swim
+      - climb
+    stability: 0
+    freeStrikeDamage: 3
+  derivedCaptainBonuses:
+    speed: 2

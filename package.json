@@ -1,0 +1,41 @@
+{
+  "name": "aeon-draw-steel",
+  "version": "1.0.0",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://aeon-aps@dev.azure.com/aeon-aps/Aeon/_git/draw-steel-foundry"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "eslint": "^9.26.0",
+    "fvtt-types": "github:League-of-Foundry-Developers/foundry-vtt-types#main",
+    "prettier": "^3.5.3",
+    "sass": "^1.88.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "paths": {
+    "#common/*": [
+      "node_modules/fvtt-types/src/foundry/common/*"
+    ]
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "classnames": "^2.5.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "uuid": "^11.1.0"
+  }
+}

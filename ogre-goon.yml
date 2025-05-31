@@ -1,0 +1,72 @@
+_id: wl2ZbpHcwOR5orPr
+_key: "!actors!wl2ZbpHcwOR5orPr"
+name: Ogre Goon
+type: enemy
+img:
+folder: null
+sort: 0
+ownership:
+  default: 0
+  VLRJNJTQoM97qzQp: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: "13.342"
+  systemId: aeon-draw-steel
+  systemVersion: 0.1.0
+  createdTime: 1747831046480
+  modifiedTime: 1747831046480
+  lastModifiedBy: VLRJNJTQoM97qzQp
+flags: {}
+prototypeToken:
+system:
+  name: Ogre Goon
+  keywords:
+    - Giant
+    - Ogre
+  level: 2
+  type: Elite
+  role: Brute
+  encounterValue: 16
+  immunity:
+    acid: 0
+    cold: 0
+    corruption: 0
+    damage: 0
+    fire: 0
+    holy: 0
+    lightning: 0
+    poison: 0
+    psychic: 0
+    sonic: 0
+  weakness:
+    acid: 0
+    cold: 0
+    corruption: 0
+    damage: 0
+    fire: 0
+    holy: 0
+    lightning: 0
+    poison: 0
+    psychic: 0
+    sonic: 0
+  characteristics:
+    might: 2
+    agility: 0
+    reason: -1
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 100
+  combat:
+    size: "2"
+    speed: 5
+    movementTypes:
+      - walk
+    stability: 4
+    freeStrikeDamage: 5
+  derivedCaptainBonuses: {}
+  appliedCaptainEffects: {}
+items: []
+effects: []
