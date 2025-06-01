@@ -435,33 +435,52 @@ def parse_characteristics(lines: List[str]) -> dict:
 
 
 def parse_with_captain(lines: list) -> dict:
-    for line in lines:
-        m = re.match(r"With Captain\s*[:\-]?\s*(.*)", line, re.IGNORECASE)
+    """
+    Returns a dict with the derived captain bonus or effect from the 'With Captain' line.
+    Handles all known variants, including 'temporary stamina'.
+    """
+    captain_bonus_map = {
+        "speed": "speed",
+        "ranged distance": "rangedDistanceBonus",
+        "melee distance": "meleeDistanceBonus",
+        "strike damage": "strikeDamage",
+        "strike edge": "strikeEdge",
+        "edge on strikes": "edgeOnStrikes",
+    }
+    stat_end_idx = next(
+        (
+            i
+            for i, line in enumerate(lines)
+            if all(
+                f in line.lower()
+                for f in ["might", "agility", "reason", "intuition", "presence"]
+            )
+        ),
+        len(lines),
+    )
+    for line in lines[: stat_end_idx + 1]:
+        m = re.search(r"with captain\s*(.+)", line, re.IGNORECASE)
         if m:
-            effect = m.group(1).strip()
-            # Fuzzy extraction of the bonus/effect type and value
-            # (e.g., "speed +2", "strike damage +1", etc.)
-            # Map possible effects to keys
-            # Example logic—expand as needed:
-            captain_bonuses = {}
-            effect = effect.lower()
-            if "speed" in effect:
-                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
-                captain_bonuses["speed"] = v
-            elif "melee" in effect and "distance" in effect:
-                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
-                captain_bonuses["meleeDistanceBonus"] = v
-            elif "ranged" in effect and "distance" in effect:
-                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
-                captain_bonuses["rangedDistanceBonus"] = v
-            elif "strike damage" in effect:
-                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
-                captain_bonuses["strikeDamage"] = v
-            elif "strike edge" in effect:
-                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
-                captain_bonuses["strikeEdge"] = v
-            # You may need to add more patterns
-            return captain_bonuses
+            rest = m.group(1).strip().lower()
+            # Check for "temporary stamina" in any order
+            temp_stam = re.search(
+                r"(\d+)\s+temporary stamina|temporary stamina\s+(\d+)",
+                rest,
+                re.IGNORECASE,
+            )
+            if temp_stam:
+                value = int(temp_stam.group(1) or temp_stam.group(2))
+                return {"appliedCaptainEffects": {"temporaryStamina": value}}
+            # Try all other bonus types
+            for key, field_name in captain_bonus_map.items():
+                if key in rest:
+                    mval = re.search(r"([+\-]?\d+)", rest)
+                    if mval:
+                        return {
+                            "derivedCaptainBonuses": {field_name: int(mval.group(1))}
+                        }
+                    else:
+                        return {"derivedCaptainBonuses": {field_name: True}}
     return None
 
 
@@ -533,7 +552,14 @@ def parse_weakness_immunity(lines: list) -> (dict, dict):
 
 
 def parse_stats_from_block(block: MonsterBlock) -> dict:
-    stats = {}
+    # Copy header fields
+    stats = {
+        "name": block.header.name,
+        "level": block.header.level,
+        "type": block.header.type,
+        "role": block.header.role,
+        "header_text": block.header.header_text,
+    }
     stats["keywords"], stats["encounterValue"] = parse_monster_row2(block.lines)
     stats["stamina"] = parse_stamina(block.lines)
     stats["speed"], stats["movementTypes"] = parse_speed_and_movement(block.lines)
@@ -544,7 +570,9 @@ def parse_stats_from_block(block: MonsterBlock) -> dict:
     # Optional fields:
     stats["weakness"], stats["immunity"] = parse_weakness_immunity(block.lines)
     if block.header.type.lower() == "minion":
-        stats["derivedCaptainBonuses"] = parse_with_captain(block.lines)
+        captain_result = parse_with_captain(block.lines)
+        if captain_result:
+            stats.update(captain_result)
     # ... other optionals here
     return stats
 
@@ -606,8 +634,6 @@ if __name__ == "__main__":
             block
         )  # Example of parsing stats
 
-        if block.header.name == "Zombie":
-            print(f"Zombie: {parsed_block}")
-        if block.header.name == "Memorial Ivy":
-            print(f"Memorial Ivy: {parsed_block}")
+        if block.header.name == "Mystic Queen Bargnot":
+            print((f"{parsed_block}").replace("'", '"').replace("None", "null"))
         # print(f"Parsed stats for {block.header.name}: {parsed_block}")
