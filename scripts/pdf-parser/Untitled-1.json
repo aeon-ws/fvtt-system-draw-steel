@@ -1,0 +1,41 @@
+[
+  {
+    "keywords": ["Undead"],
+    "encounterValue": 3,
+    "stamina": 20,
+    "speed": 5,
+    "movementTypes": ["walk"],
+    "size": "1M",
+    "stability": 1,
+    "freeStrikeDamage": 2,
+    "characteristics": {
+      "might": 2,
+      "agility": 1,
+      "reason": -5,
+      "intuition": -2,
+      "presence": 1
+    },
+    "weakness": "None",
+    "immunity": { "corruption": 1, "poison": 1 }
+  },
+  {
+    "keywords": ["Plant", "Ruinborn", "Undead"],
+    "encounterValue": 4,
+    "stamina": 4,
+    "speed": 3,
+    "movementTypes": ["climb"],
+    "size": "1S",
+    "stability": 0,
+    "freeStrikeDamage": 3,
+    "characteristics": {
+      "might": 0,
+      "agility": 2,
+      "reason": -3,
+      "intuition": 1,
+      "presence": -3
+    },
+    "weakness": { "fire": 3 },
+    "immunity": { "poison": 2 },
+    "derivedCaptainBonuses": {}
+  }
+]

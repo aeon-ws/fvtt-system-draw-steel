@@ -465,41 +465,70 @@ def parse_with_captain(lines: list) -> dict:
     return None
 
 
+def find_last_stat_index(lines: list) -> int:
+    for i, line in enumerate(lines):
+        # Look for a line containing all 5 characteristic names (order doesn’t matter)
+        fields = ["might", "agility", "reason", "intuition", "presence"]
+        found = all(f in line.lower() for f in fields)
+        if found:
+            return i
+    return len(lines)  # fallback: parse all
+
+
+def normalize_weakness_immunity_type(s: str) -> str:
+    # Replace all O/o/0 with 0, then map to canonical name
+    cleaned = s.strip().lower().replace("o", "0").replace("O", "0")
+    # Known types, mapping zero-variants to canonical
+    mapping = {
+        "acid": "acid",
+        "cold": "cold",
+        "c0rrupti0n": "corruption",
+        "corruption": "corruption",
+        "damage": "damage",
+        "fire": "fire",
+        "h0ly": "holy",
+        "holy": "holy",
+        "lightning": "lightning",
+        "p0is0n": "poison",
+        "poison": "poison",
+        "psychic": "psychic",
+        "s0nic": "sonic",
+        "sonic": "sonic",
+    }
+    return mapping.get(cleaned, cleaned)
+
+
 def parse_weakness_immunity(lines: list) -> (dict, dict):
+    stat_end_idx = find_last_stat_index(lines)
+    lines = lines[: stat_end_idx + 1]  # Only parse the metadata/stat section
     weakness, immunity = {}, {}
     for line in lines:
-        # OCR fix
         line = line.replace("O", "0").replace("o", "0")
-        # Handle lines with both fields
-        for part in re.split(r"[\/|]", line):
-            part = part.strip()
-            m_imm = re.match(r"Immunity\s*(.*)", part, re.IGNORECASE)
-            m_weak = re.match(r"Weakness\s*(.*)", part, re.IGNORECASE)
-            for match, target in [(m_imm, immunity), (m_weak, weakness)]:
-                if match:
-                    entries = [
-                        x.strip() for x in match.group(1).split(",") if x.strip()
-                    ]
-                    for e in entries:
-                        # Accept either "type value" or "value type" (be defensive)
-                        tokens = e.split()
-                        if len(tokens) == 2:
-                            if tokens[0].lower() in WEAKNESS_IMMUNITY_TYPES:
-                                k, v = tokens
-                            elif tokens[1].lower() in WEAKNESS_IMMUNITY_TYPES:
-                                v, k = tokens
-                            else:
-                                if k not in WEAKNESS_IMMUNITY_TYPES:
-                                    print(
-                                        f"Unknown Weakness/Immunity type: {k!r} in line: {e!r}"
-                                    )
-                                continue  # skip unknown
-                            k = k.lower()
-                            if k in WEAKNESS_IMMUNITY_TYPES:
-                                try:
-                                    target[k] = int(v)
-                                except Exception:
-                                    continue
+        for field in re.finditer(
+            r"(Immunity|Weakness)\s+([^/|]+)", line, re.IGNORECASE
+        ):
+            label = field.group(1).lower()
+            entries = field.group(2)
+            for e in entries.split(","):
+                e = e.strip()
+                tokens = e.split()
+                if len(tokens) == 2:
+                    k, v = tokens
+                else:
+                    continue
+                k_norm = normalize_weakness_immunity_type(k)
+                if k_norm in WEAKNESS_IMMUNITY_TYPES:
+                    try:
+                        if label == "immunity":
+                            immunity[k_norm] = int(v)
+                        else:
+                            weakness[k_norm] = int(v)
+                    except Exception:
+                        continue
+                else:
+                    print(
+                        f"Unknown Weakness/Immunity type: {k!r} normalized as {k_norm!r} in entry: {e!r}"
+                    )
     return (weakness or None, immunity or None)
 
 
@@ -576,4 +605,9 @@ if __name__ == "__main__":
         parsed_block: dict[str, Any] = parse_stats_from_block(
             block
         )  # Example of parsing stats
+
+        if block.header.name == "Zombie":
+            print(f"Zombie: {parsed_block}")
+        if block.header.name == "Memorial Ivy":
+            print(f"Memorial Ivy: {parsed_block}")
         # print(f"Parsed stats for {block.header.name}: {parsed_block}")
