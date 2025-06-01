@@ -42,6 +42,19 @@ NOISE_HEADERS = {
     "ENCOUNTER D4",
     # Add others as needed (case-insensitive)
 }
+
+WEAKNESS_IMMUNITY_TYPES = {
+    "acid",
+    "cold",
+    "corruption",
+    "damage",
+    "fire",
+    "holy",
+    "lightning",
+    "poison",
+    "psychic",
+    "sonic",
+}
 TYPE_WHITELIST = ["minion", "horde", "platoon", "elite", "leader", "solo"]
 ROLE_WHITELIST = [
     "ambusher",
@@ -115,6 +128,7 @@ KEYWORD_WHITELIST = set(
         "Medusa",
         "Minotaur",
         "Ogre",
+        "Orc",
         "Olothec",
         "Radenwight",
         "Shambling Mound",
@@ -195,6 +209,8 @@ def parse_row2_keywords_ev(lines: list) -> (list, int):
                 # Handle "Human Rival" as special case
                 elif tc.lower() == "human rival":
                     normalized.extend(["Human", "Rival"])
+                elif tc.lower() == "angutotl":
+                    normalized.append("Angulotl")
                 else:
                     print(f"UNKNOWN KEYWORD: {tc}")
             return normalized, encounter_value
@@ -418,6 +434,75 @@ def parse_characteristics(lines: List[str]) -> dict:
     return {}
 
 
+def parse_with_captain(lines: list) -> dict:
+    for line in lines:
+        m = re.match(r"With Captain\s*[:\-]?\s*(.*)", line, re.IGNORECASE)
+        if m:
+            effect = m.group(1).strip()
+            # Fuzzy extraction of the bonus/effect type and value
+            # (e.g., "speed +2", "strike damage +1", etc.)
+            # Map possible effects to keys
+            # Example logic—expand as needed:
+            captain_bonuses = {}
+            effect = effect.lower()
+            if "speed" in effect:
+                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
+                captain_bonuses["speed"] = v
+            elif "melee" in effect and "distance" in effect:
+                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
+                captain_bonuses["meleeDistanceBonus"] = v
+            elif "ranged" in effect and "distance" in effect:
+                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
+                captain_bonuses["rangedDistanceBonus"] = v
+            elif "strike damage" in effect:
+                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
+                captain_bonuses["strikeDamage"] = v
+            elif "strike edge" in effect:
+                v = int(re.search(r"([+\-]?\d+)", effect).group(1))
+                captain_bonuses["strikeEdge"] = v
+            # You may need to add more patterns
+            return captain_bonuses
+    return None
+
+
+def parse_weakness_immunity(lines: list) -> (dict, dict):
+    weakness, immunity = {}, {}
+    for line in lines:
+        # OCR fix
+        line = line.replace("O", "0").replace("o", "0")
+        # Handle lines with both fields
+        for part in re.split(r"[\/|]", line):
+            part = part.strip()
+            m_imm = re.match(r"Immunity\s*(.*)", part, re.IGNORECASE)
+            m_weak = re.match(r"Weakness\s*(.*)", part, re.IGNORECASE)
+            for match, target in [(m_imm, immunity), (m_weak, weakness)]:
+                if match:
+                    entries = [
+                        x.strip() for x in match.group(1).split(",") if x.strip()
+                    ]
+                    for e in entries:
+                        # Accept either "type value" or "value type" (be defensive)
+                        tokens = e.split()
+                        if len(tokens) == 2:
+                            if tokens[0].lower() in WEAKNESS_IMMUNITY_TYPES:
+                                k, v = tokens
+                            elif tokens[1].lower() in WEAKNESS_IMMUNITY_TYPES:
+                                v, k = tokens
+                            else:
+                                if k not in WEAKNESS_IMMUNITY_TYPES:
+                                    print(
+                                        f"Unknown Weakness/Immunity type: {k!r} in line: {e!r}"
+                                    )
+                                continue  # skip unknown
+                            k = k.lower()
+                            if k in WEAKNESS_IMMUNITY_TYPES:
+                                try:
+                                    target[k] = int(v)
+                                except Exception:
+                                    continue
+    return (weakness or None, immunity or None)
+
+
 def parse_stats_from_block(block: MonsterBlock) -> dict:
     stats = {}
     stats["keywords"], stats["encounterValue"] = parse_monster_row2(block.lines)
@@ -426,7 +511,12 @@ def parse_stats_from_block(block: MonsterBlock) -> dict:
     stats["size"], stats["stability"] = parse_size_and_stability(block.lines)
     stats["freeStrikeDamage"] = parse_free_strike(block.lines)
     stats["characteristics"] = parse_characteristics(block.lines)
-    # TODO: Optionals (with captain, weakness, immunity, etc.)
+
+    # Optional fields:
+    stats["weakness"], stats["immunity"] = parse_weakness_immunity(block.lines)
+    if block.header.type.lower() == "minion":
+        stats["derivedCaptainBonuses"] = parse_with_captain(block.lines)
+    # ... other optionals here
     return stats
 
 
@@ -482,8 +572,8 @@ if __name__ == "__main__":
     # Now you can process each monster block independently:
     print(f"Found {len(blocks)} monster blocks:")
     for block in blocks:
-        print(block.header.name, "block has", len(block.lines), "lines")
+        # print(block.header.name, "block has", len(block.lines), "lines")
         parsed_block: dict[str, Any] = parse_stats_from_block(
             block
         )  # Example of parsing stats
-        print(f"Parsed stats for {block.header.name}: {parsed_block}")
+        # print(f"Parsed stats for {block.header.name}: {parsed_block}")
