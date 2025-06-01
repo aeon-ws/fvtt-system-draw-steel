@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: doz7UYyKLu8H8fRP
+_key: '!actors!doz7UYyKLu8H8fRP'
+name: Goblin Deathtongue
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Goblin Deathtongue
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Goblin Deathtongue
   keywords:
   - Goblin
   - Humanoid
   - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 2
+  type: Horde
+  role: Hexer
+  encounterValue: 4
   characteristics:
-    might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    might: -1
+    agility: 2
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 15
+    value: 15
   combat:
-    size: 1L
-    speed: 7
+    size: 1S
+    speed: 6
     movementTypes:
     - climb
-    stability: 2
-    freeStrikeDamage: 5
+    stability: 0
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 2
 items: []

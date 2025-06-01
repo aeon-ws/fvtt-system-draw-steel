@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: Z32SfXWFTQWsD8m7
+_key: '!actors!Z32SfXWFTQWsD8m7'
+name: Glass Spider
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Glass Spider
   displayName: 50
   displayBars: 50
   bar1:
@@ -13,35 +13,35 @@ prototypeToken:
     attribute: null
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 3
+  height: 3
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Glass Spider
   keywords:
-  - Goblin
-  - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  - Construct
+  level: 1
+  type: Elite
+  role: Skirmisher
+  encounterValue: 12
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    agility: 1
+    reason: -4
+    intuition: 0
+    presence: -3
   stamina:
-    max: 120
-    value: 120
+    max: 60
+    value: 60
   combat:
-    size: 1L
+    size: '3'
     speed: 7
     movementTypes:
     - climb
     stability: 2
-    freeStrikeDamage: 5
+    freeStrikeDamage: 4
+  weakness:
+    sonic: 5
 items: []

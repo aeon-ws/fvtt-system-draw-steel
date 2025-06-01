@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: GKvJ0NOJeOUGfnFk
+_key: '!actors!GKvJ0NOJeOUGfnFk'
+name: Goblin Battleborn
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Goblin Battleborn
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,27 +19,27 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Goblin Battleborn
   keywords:
   - Goblin
   - Humanoid
   - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 2
+  type: Horde
+  role: Brute
+  encounterValue: 4
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
+    agility: 1
+    reason: 0
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 25
+    value: 25
   combat:
     size: 1L
-    speed: 7
+    speed: 6
     movementTypes:
     - climb
     stability: 2

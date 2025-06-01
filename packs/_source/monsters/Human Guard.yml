@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: tzCJDbsTKm35APyz
+_key: '!actors!tzCJDbsTKm35APyz'
+name: Human Guard
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Human Guard
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,34 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Human Guard
   keywords:
-  - Goblin
+  - Human
   - Humanoid
   level: 1
-  type: Horde
-  role: Harrier
+  type: Minion
+  role: Brute
   encounterValue: 3
   characteristics:
-    might: -2
-    agility: 2
+    might: 2
+    agility: 0
     reason: 0
     intuition: 0
-    presence: -1
+    presence: 0
   stamina:
-    max: 15
-    value: 15
+    max: 5
+    perMinion: 5
+    value: 5
   combat:
-    size: 1S
-    speed: 6
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
+    - walk
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    psychic: 1
+  derivedCaptainBonuses:
+    speed: 2
 items: []

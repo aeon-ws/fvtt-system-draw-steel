@@ -1,5 +1,5 @@
-_id: hESMayjzeuYbLAdQ
-_key: "!actors!hESMayjzeuYbLAdQ"
+_id: xtCIN3PCqUCssBnz
+_key: '!actors!xtCIN3PCqUCssBnz'
 name: Werewolf
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -21,12 +21,12 @@ prototypeToken:
 system:
   name: Werewolf
   keywords:
-    - Accursed
-    - Humanoid
-    - Werebeast
+  - Accursed
+  - Humanoid
+  - Werebeast
   level: 1
   type: Solo
-  role: ""
+  role: ''
   encounterValue: 36
   characteristics:
     might: 3
@@ -41,7 +41,7 @@ system:
     size: 1M
     speed: 7
     movementTypes:
-      - walk
+    - walk
     stability: 0
     freeStrikeDamage: 5
 items: []

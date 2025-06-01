@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: oipK0WZhjNBD1qV4
+_key: '!actors!oipK0WZhjNBD1qV4'
+name: Gorek
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Gorek
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Gorek
   keywords:
-  - Goblin
   - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  - Dwarf
+  - Rival
+  level: 2
+  type: Elite
+  role: Brute
+  encounterValue: 16
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    agility: 1
+    reason: 0
+    intuition: 0
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 100
+    value: 100
   combat:
-    size: 1L
-    speed: 7
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
+    - walk
     stability: 2
     freeStrikeDamage: 5
 items: []

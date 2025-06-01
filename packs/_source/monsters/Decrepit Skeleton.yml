@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: 72GoT4c0uB4ffXdy
+_key: '!actors!72GoT4c0uB4ffXdy'
+name: Decrepit Skeleton
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Decrepit Skeleton
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,33 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Decrepit Skeleton
   keywords:
-  - Goblin
-  - Humanoid
+  - Undead
   level: 1
-  type: Horde
-  role: Harrier
+  type: Minion
+  role: Artillery
   encounterValue: 3
   characteristics:
-    might: -2
+    might: 0
     agility: 2
-    reason: 0
+    reason: -2
     intuition: 0
-    presence: -1
+    presence: -2
   stamina:
-    max: 15
-    value: 15
+    max: 3
+    perMinion: 3
+    value: 3
   combat:
-    size: 1S
-    speed: 6
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
+    - walk
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    poison: 1
+  derivedCaptainBonuses:
+    edgeOnStrikes: 2
 items: []

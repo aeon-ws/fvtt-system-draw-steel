@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: 6JXgMW37WXLtUJ5T
+_key: '!actors!6JXgMW37WXLtUJ5T'
+name: Boddorff Buckfeather
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Boddorff Buckfeather
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Boddorff Buckfeather
   keywords:
-  - Goblin
   - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  - Polder
+  - Rival
+  level: 2
+  type: Elite
+  role: Support
+  encounterValue: 16
   characteristics:
-    might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    might: 1
+    agility: 0
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 80
+    value: 80
   combat:
-    size: 1L
-    speed: 7
+    size: 1S
+    speed: 5
     movementTypes:
-    - climb
-    stability: 2
+    - walk
+    stability: 1
     freeStrikeDamage: 5
 items: []

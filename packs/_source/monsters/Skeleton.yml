@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
+_id: NwAvSM7ika7Hz5nI
+_key: '!actors!NwAvSM7ika7Hz5nI'
+name: Skeleton
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Skeleton
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,30 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Skeleton
   keywords:
-  - Goblin
-  - Humanoid
+  - Undead
   level: 1
   type: Horde
-  role: Harrier
+  role: Artillery
   encounterValue: 3
   characteristics:
-    might: -2
+    might: 0
     agility: 2
-    reason: 0
+    reason: 1
     intuition: 0
     presence: -1
   stamina:
-    max: 15
-    value: 15
+    max: 10
+    value: 10
   combat:
-    size: 1S
-    speed: 6
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
+    - walk
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    poison: 1
 items: []

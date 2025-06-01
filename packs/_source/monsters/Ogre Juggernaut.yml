@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: 6I9rxJjRDvl7xUCJ
+_key: '!actors!6I9rxJjRDvl7xUCJ'
+name: Ogre Juggernaut
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Ogre Juggernaut
   displayName: 50
   displayBars: 50
   bar1:
@@ -13,35 +13,34 @@ prototypeToken:
     attribute: null
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 2
+  height: 2
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Ogre Juggernaut
   keywords:
-  - Goblin
-  - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  - Giant
+  - Ogre
+  level: 2
+  type: Elite
+  role: Harrier
+  encounterValue: 16
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    agility: 1
+    reason: -1
+    intuition: 0
+    presence: -1
   stamina:
-    max: 120
-    value: 120
+    max: 80
+    value: 80
   combat:
-    size: 1L
-    speed: 7
+    size: '2'
+    speed: 6
     movementTypes:
-    - climb
+    - walk
     stability: 2
     freeStrikeDamage: 5
 items: []

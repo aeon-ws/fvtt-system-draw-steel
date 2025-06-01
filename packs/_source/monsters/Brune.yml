@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: rGeZONhPhExODPeT
+_key: '!actors!rGeZONhPhExODPeT'
+name: Brune
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Brune
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Brune
   keywords:
-  - Goblin
+  - Human
   - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 1
+  type: Platoon
+  role: Brute
+  encounterValue: 6
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    agility: 1
+    reason: 0
+    intuition: 0
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 40
+    value: 40
   combat:
-    size: 1L
-    speed: 7
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
-    stability: 2
-    freeStrikeDamage: 5
+    - walk
+    stability: 0
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 1
+    psychic: 1
 items: []

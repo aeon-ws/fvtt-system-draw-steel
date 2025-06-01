@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: pqULyipK8Qjt6Ui5
+_key: '!actors!pqULyipK8Qjt6Ui5'
+name: Dwarf Warden
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Dwarf Warden
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Dwarf Warden
   keywords:
-  - Goblin
+  - Dwarf
   - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 2
+  type: Platoon
+  role: Brute
+  encounterValue: 8
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
+    agility: 0
+    reason: 0
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 59
+    value: 59
   combat:
-    size: 1L
-    speed: 7
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
-    stability: 2
+    - walk
+    stability: 3
     freeStrikeDamage: 5
 items: []

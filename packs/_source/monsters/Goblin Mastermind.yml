@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: 2frm52gBmZuETTy1
+_key: '!actors!2frm52gBmZuETTy1'
+name: Goblin Mastermind
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Goblin Mastermind
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Goblin Mastermind
   keywords:
   - Goblin
   - Humanoid
   - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 2
+  type: Horde
+  role: Support
+  encounterValue: 4
   characteristics:
-    might: 2
-    agility: 3
-    reason: 2
+    might: -1
+    agility: 2
+    reason: 1
     intuition: 1
     presence: 1
   stamina:
-    max: 120
-    value: 120
+    max: 20
+    value: 20
   combat:
-    size: 1L
-    speed: 7
+    size: 1M
+    speed: 6
     movementTypes:
     - climb
-    stability: 2
-    freeStrikeDamage: 5
+    stability: 1
+    freeStrikeDamage: 4
 items: []

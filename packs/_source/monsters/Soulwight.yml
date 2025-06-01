@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: 2mSZAyAq0Sdpnum0
+_key: '!actors!2mSZAyAq0Sdpnum0'
+name: Soulwight
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Soulwight
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,30 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Soulwight
   keywords:
-  - Goblin
-  - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  - Undead
+  level: 1
+  type: Horde
+  role: Hexer
+  encounterValue: 3
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
+    agility: 1
+    reason: 0
+    intuition: 0
     presence: 1
   stamina:
-    max: 120
-    value: 120
+    max: 10
+    value: 10
   combat:
-    size: 1L
-    speed: 7
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
-    stability: 2
-    freeStrikeDamage: 5
+    - walk
+    stability: 0
+    freeStrikeDamage: 1
+  immunity:
+    corruption: 1
+    poison: 1
 items: []

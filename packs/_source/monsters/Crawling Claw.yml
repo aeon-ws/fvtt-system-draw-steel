@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: otfqGcekBai10RU8
+_key: '!actors!otfqGcekBai10RU8'
+name: Crawling Claw
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Crawling Claw
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,33 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Crawling Claw
   keywords:
-  - Goblin
-  - Humanoid
+  - Undead
   level: 1
-  type: Horde
+  type: Minion
   role: Harrier
   encounterValue: 3
   characteristics:
-    might: -2
+    might: 0
     agility: 2
-    reason: 0
-    intuition: 0
+    reason: -5
+    intuition: -1
     presence: -1
   stamina:
-    max: 15
-    value: 15
+    max: 4
+    perMinion: 4
+    value: 4
   combat:
-    size: 1S
+    size: 1T
     speed: 6
     movementTypes:
     - climb
     stability: 0
     freeStrikeDamage: 1
+  immunity:
+    corruption: 1
+    poison: 1
+  derivedCaptainBonuses:
+    speed: 2
 items: []

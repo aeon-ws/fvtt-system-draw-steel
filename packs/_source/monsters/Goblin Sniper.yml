@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: GJ8IYy6OdxHQDYs0
+_key: '!actors!GJ8IYy6OdxHQDYs0'
+name: Goblin Sniper
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Goblin Sniper
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,13 +19,13 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Goblin Sniper
   keywords:
   - Goblin
   - Humanoid
   level: 1
-  type: Horde
-  role: Harrier
+  type: Minion
+  role: Artillery
   encounterValue: 3
   characteristics:
     might: -2
@@ -34,13 +34,16 @@ system:
     intuition: 0
     presence: -1
   stamina:
-    max: 15
-    value: 15
+    max: 3
+    perMinion: 3
+    value: 3
   combat:
     size: 1S
-    speed: 6
+    speed: 5
     movementTypes:
     - climb
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 2
+  derivedCaptainBonuses:
+    rangedDistanceBonus: 5
 items: []

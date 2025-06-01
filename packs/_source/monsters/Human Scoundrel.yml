@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
+_id: CExn7L31ESrbrbKM
+_key: '!actors!CExn7L31ESrbrbKM'
+name: Human Scoundrel
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Human Scoundrel
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Human Scoundrel
   keywords:
-  - Goblin
+  - Human
   - Humanoid
   level: 1
-  type: Horde
-  role: Harrier
-  encounterValue: 3
+  type: Platoon
+  role: Ambusher
+  encounterValue: 6
   characteristics:
-    might: -2
+    might: 0
     agility: 2
     reason: 0
     intuition: 0
-    presence: -1
+    presence: 1
   stamina:
-    max: 15
-    value: 15
+    max: 30
+    value: 30
   combat:
-    size: 1S
-    speed: 6
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
+    - walk
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 1
+    psychic: 1
 items: []

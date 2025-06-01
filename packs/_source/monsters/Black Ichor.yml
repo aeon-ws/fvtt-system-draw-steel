@@ -1,10 +1,10 @@
-_id: U0lkWoBjsYi5DYYA
-_key: '!actors!U0lkWoBjsYi5DYYA'
-name: Goblin Spinecleaver
+_id: WsOnsPM8VIOvxIss
+_key: '!actors!WsOnsPM8VIOvxIss'
+name: Black Ichor
 type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Spinecleaver
+  name: Black Ichor
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,31 +19,33 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Spinecleaver
+  name: Black Ichor
   keywords:
-  - Goblin
-  - Humanoid
-  level: 1
+  - Ooze
+  level: 2
   type: Minion
-  role: Brute
-  encounterValue: 3
+  role: Defender
+  encounterValue: 4
   characteristics:
-    might: 2
-    agility: 0
-    reason: 0
+    might: 0
+    agility: 2
+    reason: -3
     intuition: 0
-    presence: -1
+    presence: -2
   stamina:
-    max: 5
-    perMinion: 5
-    value: 5
+    max: 7
+    perMinion: 7
+    value: 7
   combat:
-    size: 1S
+    size: 1M
     speed: 5
     movementTypes:
     - climb
     stability: 0
     freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    acid: 1
   derivedCaptainBonuses:
-    strikeDamage: 1
+    edgeOnStrikes: 2
 items: []

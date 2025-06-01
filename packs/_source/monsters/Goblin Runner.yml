@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: KD5H2WpMpEuXPzis
+_key: '!actors!KD5H2WpMpEuXPzis'
+name: Goblin Runner
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Goblin Runner
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,12 +19,12 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Goblin Runner
   keywords:
   - Goblin
   - Humanoid
   level: 1
-  type: Horde
+  type: Minion
   role: Harrier
   encounterValue: 3
   characteristics:
@@ -34,8 +34,9 @@ system:
     intuition: 0
     presence: -1
   stamina:
-    max: 15
-    value: 15
+    max: 4
+    perMinion: 4
+    value: 4
   combat:
     size: 1S
     speed: 6
@@ -43,4 +44,6 @@ system:
     - climb
     stability: 0
     freeStrikeDamage: 1
+  derivedCaptainBonuses:
+    edgeOnStrikes: 1
 items: []

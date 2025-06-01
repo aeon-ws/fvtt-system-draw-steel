@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: o4JJplUFvq1fbCQK
+_key: '!actors!o4JJplUFvq1fbCQK'
+name: Zombie
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Zombie
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,30 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Zombie
   keywords:
-  - Goblin
-  - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  - Undead
+  level: 1
+  type: Horde
+  role: Brute
+  encounterValue: 3
   characteristics:
     might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
+    agility: 1
+    reason: -5
+    intuition: -2
     presence: 1
   stamina:
-    max: 120
-    value: 120
+    max: 20
+    value: 20
   combat:
-    size: 1L
-    speed: 7
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
-    stability: 2
-    freeStrikeDamage: 5
+    - walk
+    stability: 1
+    freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    poison: 1
 items: []

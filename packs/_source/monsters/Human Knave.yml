@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
+_id: GqT3lpgcN2L4WGoL
+_key: '!actors!GqT3lpgcN2L4WGoL'
+name: Human Knave
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Human Knave
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Human Knave
   keywords:
-  - Goblin
+  - Human
   - Humanoid
-  level: 1
-  type: Horde
-  role: Harrier
-  encounterValue: 3
+  level: 2
+  type: Platoon
+  role: Defender
+  encounterValue: 8
   characteristics:
-    might: -2
-    agility: 2
-    reason: 0
+    might: 2
+    agility: 0
+    reason: 1
     intuition: 0
-    presence: -1
+    presence: 0
   stamina:
-    max: 15
-    value: 15
+    max: 50
+    value: 50
   combat:
-    size: 1S
-    speed: 6
+    size: 1M
+    speed: 5
     movementTypes:
-    - climb
+    - walk
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 2
+    psychic: 2
 items: []

@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: Xk6RSxLLtoz1mExw
+_key: '!actors!Xk6RSxLLtoz1mExw'
+name: Goblin Shadowknife
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Goblin Shadowknife
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Goblin Shadowknife
   keywords:
   - Goblin
   - Humanoid
   - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 2
+  type: Horde
+  role: Ambusher
+  encounterValue: 4
   characteristics:
-    might: 2
-    agility: 3
-    reason: 2
+    might: 0
+    agility: 2
+    reason: 1
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 20
+    value: 20
   combat:
-    size: 1L
+    size: 1M
     speed: 7
     movementTypes:
     - climb
-    stability: 2
-    freeStrikeDamage: 5
+    stability: 1
+    freeStrikeDamage: 3
+  immunity:
+    corruption: 2
 items: []

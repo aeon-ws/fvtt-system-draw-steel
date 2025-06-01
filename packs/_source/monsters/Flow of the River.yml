@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: Ls2Rm0Cdq43IX1nr
+_key: '!actors!Ls2Rm0Cdq43IX1nr'
+name: Flow of the River
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Flow of the River
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,33 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Flow of the River
   keywords:
-  - Goblin
-  - Humanoid
-  level: 1
-  type: Horde
+  - Elemental
+  - Water Wolf
+  level: 2
+  type: Minion
   role: Harrier
-  encounterValue: 3
+  encounterValue: 4
   characteristics:
-    might: -2
+    might: 0
     agility: 2
-    reason: 0
+    reason: -2
     intuition: 0
-    presence: -1
+    presence: -2
   stamina:
-    max: 15
-    value: 15
+    max: 4
+    perMinion: 4
+    value: 4
   combat:
-    size: 1S
+    size: 1M
     speed: 6
     movementTypes:
-    - climb
+    - swim
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 2
+  immunity:
+    fire: 2
+  derivedCaptainBonuses:
+    speed: 2
 items: []

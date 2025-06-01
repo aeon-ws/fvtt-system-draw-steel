@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: 8KaYzLQ6KkU0uVYK
+_key: '!actors!8KaYzLQ6KkU0uVYK'
+name: Dwarf Trapper
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Dwarf Trapper
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Dwarf Trapper
   keywords:
-  - Goblin
+  - Dwarf
   - Humanoid
-  - Mystic Goblin
-  level: 3
-  type: Leader
-  role: ''
-  encounterValue: 20
+  level: 1
+  type: Platoon
+  role: Harrier
+  encounterValue: 6
   characteristics:
-    might: 2
-    agility: 3
-    reason: 2
+    might: 0
+    agility: 2
+    reason: 0
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 120
-    value: 120
+    max: 36
+    value: 36
   combat:
-    size: 1L
+    size: 1M
     speed: 7
     movementTypes:
-    - climb
+    - walk
     stability: 2
-    freeStrikeDamage: 5
+    freeStrikeDamage: 3
 items: []

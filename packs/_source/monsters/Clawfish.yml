@@ -1,10 +1,10 @@
-_id: Q1AD5FSujyMla6Ny
-_key: '!actors!Q1AD5FSujyMla6Ny'
-name: Goblin Warrior
-type: enemy
+_id: DnM71KYAE74VIMq4
+_key: '!actors!DnM71KYAE74VIMq4'
+name: Clawfish
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Warrior
+  name: Clawfish
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,35 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Warrior
+  name: Clawfish
   keywords:
-  - Goblin
-  - Humanoid
+  - Angulotl
+  - Animal
   level: 1
-  type: Horde
-  role: Harrier
+  type: Minion
+  role: Brute
   encounterValue: 3
   characteristics:
-    might: -2
+    might: 0
     agility: 2
-    reason: 0
-    intuition: 0
-    presence: -1
+    reason: -3
+    intuition: -2
+    presence: 1
   stamina:
-    max: 15
-    value: 15
+    max: 5
+    perMinion: 5
+    value: 5
   combat:
     size: 1S
-    speed: 6
+    speed: 5
     movementTypes:
+    - swim
     - climb
     stability: 0
-    freeStrikeDamage: 1
+    freeStrikeDamage: 2
+  immunity:
+    lightning: 3
+    poison: 2
+  derivedCaptainBonuses:
+    edgeOnStrikes: 2
 items: []

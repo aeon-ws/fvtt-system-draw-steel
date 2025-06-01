@@ -730,13 +730,13 @@ if __name__ == "__main__":
         # print(block.header.name, "block has", len(block.lines), "lines")
         stats_as_dict = parse_stats_from_block(block)
         stats_as_yaml_dict = build_yaml_block(stats_as_dict)
-
-        if block.header.name in [
-            "Mystic Queen Bargnot",
-            "Goblin Warrior",
-            "Werewolf",
-            "Goblin Spinecleaver",
-        ]:
-            all_monster_stats.append(stats_as_yaml_dict)
+        all_monster_stats.append(stats_as_yaml_dict)
+        # if block.header.name in [
+        #     "Mystic Queen Bargnot",
+        #     "Goblin Warrior",
+        #     "Werewolf",
+        #     "Goblin Spinecleaver",
+        # ]:
+        #     all_monster_stats.append(stats_as_yaml_dict)
 
     export_yaml(all_monster_stats, "monsters.yaml")

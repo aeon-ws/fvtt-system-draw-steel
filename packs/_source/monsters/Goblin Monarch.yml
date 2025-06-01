@@ -1,10 +1,10 @@
-_id: NTqcBbKiWYGALksf
-_key: '!actors!NTqcBbKiWYGALksf'
-name: Mystic Queen Bargnot
+_id: 70LZ2DgIROGoay0l
+_key: '!actors!70LZ2DgIROGoay0l'
+name: Goblin Monarch
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Mystic Queen Bargnot
+  name: Goblin Monarch
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Mystic Queen Bargnot
+  name: Goblin Monarch
   keywords:
   - Goblin
   - Humanoid
-  - Mystic Goblin
-  level: 3
+  level: 1
   type: Leader
   role: ''
-  encounterValue: 20
+  encounterValue: 12
   characteristics:
-    might: 2
-    agility: 3
-    reason: 2
-    intuition: 1
-    presence: 1
+    might: 3
+    agility: 2
+    reason: -4
+    intuition: 0
+    presence: -3
   stamina:
-    max: 120
-    value: 120
+    max: 86
+    value: 86
   combat:
-    size: 1L
-    speed: 7
+    size: 1S
+    speed: 6
     movementTypes:
     - climb
-    stability: 2
-    freeStrikeDamage: 5
+    stability: 1
+    freeStrikeDamage: 4
 items: []
