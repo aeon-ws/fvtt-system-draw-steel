@@ -1,10 +1,10 @@
-_id: 3082436b9ded663d
-_key: '!actors!3082436b9ded663d'
-name: Goblin Cursespitter
-type: horde
+_id: sARu09jAYHGRATls
+_key: "!actors!sARu09jAYHGRATls"
+name: Goblin Spinecleaver
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Goblin Cursespitter
+  name: Goblin Spinecleaver
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,28 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Goblin Cursespitter
+  name: Goblin Spinecleaver
   keywords:
-  - Humanoid
-  - Goblin
+    - Goblin
+    - Humanoid
   level: 1
-  type: Horde
-  role: Hexer
+  type: Minion
+  role: Brute
   encounterValue: 3
   characteristics:
-    might: -2
-    agility: 1
+    might: 2
+    agility: 0
     reason: 0
-    intuition: 2
-    presence: 0
+    intuition: 0
+    presence: -1
   stamina:
-    max: 10
-    value: 10
+    max: 5
+    perMinion: 5
+    value: 5
   combat:
     size: 1S
-    stability: 0
     speed: 5
     movementTypes:
-    - walk
-    freeStrikeDamage: 1
+      - climb
+    stability: 0
+    freeStrikeDamage: 2
+  derivedCaptainBonuses:
+    strikeDamage: 1
 items: []

@@ -1,24 +1,44 @@
 {
+  "_id": "2Q87T0u2Byb0WaMs",
+  "_key": "!actors!2Q87T0u2Byb0WaMs",
   "name": "Mystic Queen Bargnot",
-  "level": 3,
-  "type": "Leader",
-  "role": null,
-  "header_text": "(Mystic QUEEN BARGNOT LEVEL 3 LEADER -",
-  "keywords": ["Goblin", "Humanoid", "Mystic Goblin"],
-  "encounterValue": 20,
-  "stamina": 120,
-  "speed": 7,
-  "movementTypes": ["climb"],
-  "size": "1L",
-  "stability": 2,
-  "freeStrikeDamage": 5,
-  "characteristics": {
-    "might": 2,
-    "agility": 3,
-    "reason": 2,
-    "intuition": 1,
-    "presence": 1
+  "type": "enemy",
+  "img": "icons/svg/mystery-man.svg",
+  "prototypeToken": {
+    "name": "Mystic Queen Bargnot",
+    "displayName": 50,
+    "displayBars": 50,
+    "bar1": { "attribute": "stamina" },
+    "bar2": { "attribute": null },
+    "disposition": -1,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "lockRotation": true,
+    "texture": { "img": "icons/svg/mystery-man.svg" }
   },
-  "weakness": null,
-  "immunity": null
+  "system": {
+    "name": "Mystic Queen Bargnot",
+    "keywords": ["Goblin", "Humanoid", "Mystic Goblin"],
+    "level": 3,
+    "type": "Leader",
+    "role": "",
+    "encounterValue": 20,
+    "characteristics": {
+      "might": 2,
+      "agility": 3,
+      "reason": 2,
+      "intuition": 1,
+      "presence": 1
+    },
+    "stamina": { "max": 120, "value": 120 },
+    "combat": {
+      "size": "1L",
+      "speed": 7,
+      "movementTypes": ["climb"],
+      "stability": 2,
+      "freeStrikeDamage": 5
+    }
+  },
+  "items": []
 }

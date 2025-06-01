@@ -1,0 +1,522 @@
+_id: XLyN71MPqbbuubOM
+_key: "!actors!XLyN71MPqbbuubOM"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: "15"
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: eGwawYjDBhZjXAxV
+_key: "!actors!eGwawYjDBhZjXAxV"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: sk5uglw8sycSqCyD
+_key: "!actors!sk5uglw8sycSqCyD"
+name: Goblin Spinecleaver
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Spinecleaver
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Spinecleaver
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Minion
+  role: Brute
+  encounterValue: 3
+  characteristics:
+    might: 2
+    agility: 0
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 5
+    perMinion: 5
+    value: 5
+  combat:
+    size: 1S
+    speed: 5
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 2
+  derivedCaptainBonuses:
+    strikeDamage: 1
+items: []
+---
+_id: 2r1cwbRBDhjmdg2Y
+_key: "!actors!2r1cwbRBDhjmdg2Y"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: LohFIAuspHVk7gZh
+_key: "!actors!LohFIAuspHVk7gZh"
+name: Werewolf
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Werewolf
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Werewolf
+  keywords:
+    - Accursed
+    - Humanoid
+    - Werebeast
+  level: 1
+  type: Solo
+  role: ""
+  encounterValue: 36
+  characteristics:
+    might: 3
+    agility: 2
+    reason: -1
+    intuition: 1
+    presence: 1
+  stamina:
+    max: 200
+    value: 200
+  combat:
+    size: 1M
+    speed: 7
+    movementTypes:
+      - walk
+    stability: 0
+    freeStrikeDamage: 5
+items: []
+---
+_id: bgHmopgAvem0ooT9
+_key: "!actors!bgHmopgAvem0ooT9"
+name: Werewolf
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Werewolf
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Werewolf
+  keywords:
+    - Accursed
+    - Humanoid
+    - Werebeast
+  level: 1
+  type: Solo
+  role: ""
+  encounterValue: 36
+  characteristics:
+    might: 3
+    agility: 2
+    reason: -1
+    intuition: 1
+    presence: 1
+  stamina:
+    max: 200
+    value: 200
+  combat:
+    size: 1M
+    speed: 7
+    movementTypes:
+      - walk
+    stability: 0
+    freeStrikeDamage: 5
+items: []
+---
+_id: Js1uDuDMxPNwqhdm
+_key: "!actors!Js1uDuDMxPNwqhdm"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: WePFsdz7QM8hEpdw
+_key: "!actors!WePFsdz7QM8hEpdw"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: "15"
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: webJ9LJ3qvzGxi8v
+_key: "!actors!webJ9LJ3qvzGxi8v"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: FwVHtjaIVZZfOJu5
+_key: "!actors!FwVHtjaIVZZfOJu5"
+name: Goblin Warrior
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Warrior
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Warrior
+  keywords:
+    - Goblin
+    - Humanoid
+  level: 1
+  type: Horde
+  role: Harrier
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
+items: []
+---
+_id: 7TxoRefGf39zh1oN
+_key: "!actors!7TxoRefGf39zh1oN"
+name: Mystic Queen Bargnot
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Mystic Queen Bargnot
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Mystic Queen Bargnot
+  keywords:
+    - Goblin
+    - Humanoid
+    - Mystic Goblin
+  level: 3
+  type: Leader
+  role: ""
+  encounterValue: 20
+  characteristics:
+    might: 2
+    agility: 3
+    reason: 2
+    intuition: 1
+    presence: 1
+  stamina:
+    max: 120
+    value: 120
+  combat:
+    size: 1L
+    speed: 7
+    movementTypes:
+      - climb
+    stability: 2
+    freeStrikeDamage: 5
+items: []

@@ -1,7 +1,11 @@
+import random
 import re
+import string
 import unicodedata
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Pattern, Tuple
+
+import yaml
 
 # --- Type Definitions ---
 
@@ -170,6 +174,11 @@ NAME_FIXUPS = {
 }
 
 MINOR_WORDS = {"of", "the", "in", "on", "for", "and", "or", "to", "a"}
+
+
+def generate_id():
+    # 16 char random hex
+    return "".join(random.choices(string.ascii_letters + string.digits, k=16))
 
 
 def is_noise_header(line: str) -> bool:
@@ -614,6 +623,95 @@ def blockify_monsters(
     return blocks
 
 
+def build_yaml_block(stats: dict) -> dict:
+    # Prepare fields
+    is_minion = stats["type"].lower() == "minion"
+    block_id = generate_id()
+    width = 1
+    try:
+        # Handle sizes like "1S", "2", "3" (token width/height)
+        if (
+            str(stats.get("size", "")).startswith("1")
+            or str(stats.get("size", "")).isdigit()
+        ):
+            width = int(str(stats["size"])[0])
+    except Exception:
+        width = 1
+
+    yaml_dict = {
+        "_id": block_id,
+        "_key": f"!actors!{block_id}",
+        "name": stats["name"],
+        "type": "minion" if is_minion else "enemy",
+        "img": "icons/svg/mystery-man.svg",
+        "prototypeToken": {
+            "name": stats["name"],
+            "displayName": 50,
+            "displayBars": 50,
+            "bar1": {"attribute": "stamina"},
+            "bar2": {"attribute": None},
+            "disposition": -1,
+            "actorLink": False,
+            "width": width,
+            "height": width,
+            "lockRotation": True,
+            "texture": {"img": "icons/svg/mystery-man.svg"},
+        },
+        "system": {
+            "name": stats["name"],
+            "keywords": stats.get("keywords", []),
+            "level": stats["level"],
+            "type": stats["type"].title(),
+            "role": stats.get("role") or "",
+            "encounterValue": stats.get("encounterValue", 0),
+            "characteristics": stats.get("characteristics", {}),
+            "stamina": (
+                {
+                    "max": stats["stamina"],
+                    "perMinion": stats["stamina"],
+                    "value": stats["stamina"],
+                }
+                if is_minion
+                else {"max": stats["stamina"], "value": stats["stamina"]}
+            ),
+            "combat": {
+                "size": stats.get("size"),
+                "speed": stats.get("speed"),
+                "movementTypes": stats.get("movementTypes", []),
+                "stability": stats.get("stability"),
+                "freeStrikeDamage": stats.get("freeStrikeDamage"),
+            },
+        },
+        "items": [],
+    }
+    # Add optionals (immunity/weakness)
+    for field in (
+        "immunity",
+        "weakness",
+        "derivedCaptainBonuses",
+        "appliedCaptainEffects",
+    ):
+        if stats.get(field):
+            yaml_dict["system"][field] = stats[field]
+    return yaml_dict
+
+
+def export_yaml(monsters: list, out_file: str):
+    for monster in monsters:
+        with open(
+            f"c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters/{monster['name']}.yml",
+            "w",
+            encoding="utf-8",
+        ) as file:
+            yaml.safe_dump(
+                monster,
+                file,
+                sort_keys=False,
+                allow_unicode=True,
+                default_flow_style=False,
+            )
+
+
 # --- Example Usage ---
 
 if __name__ == "__main__":
@@ -626,14 +724,19 @@ if __name__ == "__main__":
     headers = extract_headers_from_lines(lines)
     blocks = blockify_monsters(lines, headers)
 
-    # Now you can process each monster block independently:
-    print(f"Found {len(blocks)} monster blocks:")
+    all_monster_stats = []
+
     for block in blocks:
         # print(block.header.name, "block has", len(block.lines), "lines")
-        parsed_block: dict[str, Any] = parse_stats_from_block(
-            block
-        )  # Example of parsing stats
+        stats_as_dict = parse_stats_from_block(block)
+        stats_as_yaml_dict = build_yaml_block(stats_as_dict)
 
-        if block.header.name == "Mystic Queen Bargnot":
-            print((f"{parsed_block}").replace("'", '"').replace("None", "null"))
-        # print(f"Parsed stats for {block.header.name}: {parsed_block}")
+        if block.header.name in [
+            "Mystic Queen Bargnot",
+            "Goblin Warrior",
+            "Werewolf",
+            "Goblin Spinecleaver",
+        ]:
+            all_monster_stats.append(stats_as_yaml_dict)
+
+    export_yaml(all_monster_stats, "monsters.yaml")

@@ -1,10 +1,10 @@
-_id: 6d7b3fcd41e5d4de
-_key: '!actors!6d7b3fcd41e5d4de'
-name: Targon
-type: elite
+_id: ruo7G2TyXO7grY0Z
+_key: '!actors!ruo7G2TyXO7grY0Z'
+name: Mystic Queen Bargnot
+type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Targon
+  name: Mystic Queen Bargnot
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Targon
+  name: Mystic Queen Bargnot
   keywords:
+  - Goblin
   - Humanoid
-  - Rival
-  - Human
-  level: 2
-  type: Elite
-  role: Artillery
-  encounterValue: 16
+  - Mystic Goblin
+  level: 3
+  type: Leader
+  role: ''
+  encounterValue: 20
   characteristics:
     might: 2
-    agility: 0
-    reason: 1
-    intuition: 0
-    presence: 0
+    agility: 3
+    reason: 2
+    intuition: 1
+    presence: 1
   stamina:
-    max: 60
-    value: 60
+    max: 120
+    value: 120
   combat:
-    size: 1M
-    stability: 2
-    speed: 5
+    size: 1L
+    speed: 7
     movementTypes:
-    - walk
+    - climb
+    stability: 2
     freeStrikeDamage: 5
 items: []

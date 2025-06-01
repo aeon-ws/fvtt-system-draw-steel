@@ -1,10 +1,10 @@
-_id: cc94744dbf2e2ede
-_key: '!actors!cc94744dbf2e2ede'
-name: Human Brawler
-type: platoon
+_id: Yo452NXwudxwKFyc
+_key: "!actors!Yo452NXwudxwKFyc"
+name: Goblin Warrior
+type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Human Brawler
+  name: Goblin Warrior
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,31 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Human Brawler
+  name: Goblin Warrior
   keywords:
-  - Humanoid
-  - Human
+    - Goblin
+    - Humanoid
   level: 1
-  type: Platoon
-  role: Brute
-  encounterValue: 6
+  type: Horde
+  role: Harrier
+  encounterValue: 3
   characteristics:
-    might: 2
-    agility: 1
+    might: -2
+    agility: 2
     reason: 0
     intuition: 0
-    presence: 0
+    presence: -1
   stamina:
-    max: 40
-    value: 40
+    max: 15
+    value: 15
   combat:
-    size: 1M
-    stability: 0
-    speed: 5
+    size: 1S
+    speed: 6
     movementTypes:
-    - walk
-    freeStrikeDamage: 4
-  immunity:
-    Corruption: 1
-    Psychic: 1
+      - climb
+    stability: 0
+    freeStrikeDamage: 1
 items: []
