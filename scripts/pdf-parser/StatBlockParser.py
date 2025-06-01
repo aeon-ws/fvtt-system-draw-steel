@@ -712,6 +712,19 @@ def export_yaml(monsters: list, out_file: str):
             )
 
 
+def deduplicate_monsters(monster_blocks):
+    seen = set()
+    unique = []
+    for m in monster_blocks:
+        key = (m["name"].lower(), m["level"])
+        if key not in seen:
+            seen.add(key)
+            unique.append(m)
+        else:
+            print(f"Duplicate found, dropping: {m['name']} (level {m['level']})")
+    return unique
+
+
 # --- Example Usage ---
 
 if __name__ == "__main__":
@@ -738,5 +751,7 @@ if __name__ == "__main__":
         #     "Goblin Spinecleaver",
         # ]:
         #     all_monster_stats.append(stats_as_yaml_dict)
+
+    deduplicate_monsters(all_monster_stats)
 
     export_yaml(all_monster_stats, "monsters.yaml")
