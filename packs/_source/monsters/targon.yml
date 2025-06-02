@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: JECz7PCsjtN0atCs
+_key: '!actors!JECz7PCsjtN0atCs'
+name: Targon
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Targon
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Targon
   keywords:
-  - Accursed
   - Humanoid
-  - Werebeast
-  level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  - Human
+  - Rival
+  level: 2
+  type: Elite
+  role: Artillery
+  encounterValue: 16
   characteristics:
-    might: 3
-    agility: 2
-    reason: -1
-    intuition: 1
-    presence: 1
+    might: 2
+    agility: 0
+    reason: 1
+    intuition: 0
+    presence: 0
   stamina:
-    max: 200
-    value: 200
+    max: 60
+    value: 60
   combat:
     size: 1M
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
-    stability: 0
+    stability: 2
     freeStrikeDamage: 5
 items: []

@@ -1,0 +1,47 @@
+_id: M8hyLAEyKEUxC4pr
+_key: '!actors!M8hyLAEyKEUxC4pr'
+name: Glass Spider
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Glass Spider
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 3
+  height: 3
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Glass Spider
+  keywords:
+  - Construct
+  level: 1
+  type: Elite
+  role: Skirmisher
+  encounterValue: 12
+  characteristics:
+    might: 2
+    agility: 1
+    reason: -4
+    intuition: 0
+    presence: -3
+  stamina:
+    max: 60
+    value: 60
+  combat:
+    size: '3'
+    speed: 7
+    movementTypes:
+    - climb
+    stability: 2
+    freeStrikeDamage: 4
+  weakness:
+    sonic: 5
+items: []

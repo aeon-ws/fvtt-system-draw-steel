@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
-type: enemy
+_id: dSV6IPI00ZeG87no
+_key: '!actors!dSV6IPI00ZeG87no'
+name: Mohler
+type: minion
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Mohler
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Mohler
   keywords:
-  - Accursed
-  - Humanoid
-  - Werebeast
+  - Animal
+  - Orc
   level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  type: Minion
+  role: Ambusher
+  encounterValue: 3
   characteristics:
-    might: 3
+    might: 0
     agility: 2
-    reason: -1
+    reason: -4
     intuition: 1
-    presence: 1
+    presence: -3
   stamina:
-    max: 200
-    value: 200
+    max: 4
+    perMinion: 4
+    value: 4
   combat:
-    size: 1M
+    size: 1S
     speed: 7
     movementTypes:
-    - walk
-    stability: 0
-    freeStrikeDamage: 5
+    - burrow
+    stability: 1
+    freeStrikeDamage: 2
+  derivedCaptainBonuses:
+    speed: 2
 items: []

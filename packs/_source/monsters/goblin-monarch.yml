@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: f0VSaumOO1IbmfjU
+_key: '!actors!f0VSaumOO1IbmfjU'
+name: Goblin Monarch
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Goblin Monarch
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Goblin Monarch
   keywords:
-  - Accursed
+  - Goblin
   - Humanoid
-  - Werebeast
   level: 1
-  type: Solo
+  type: Leader
   role: None
-  encounterValue: 36
+  encounterValue: 12
   characteristics:
     might: 3
     agility: 2
-    reason: -1
-    intuition: 1
-    presence: 1
+    reason: -4
+    intuition: 0
+    presence: -3
   stamina:
-    max: 200
-    value: 200
+    max: 86
+    value: 86
   combat:
-    size: 1M
-    speed: 7
+    size: 1S
+    speed: 6
     movementTypes:
-    - walk
-    stability: 0
-    freeStrikeDamage: 5
+    - climb
+    stability: 1
+    freeStrikeDamage: 4
 items: []

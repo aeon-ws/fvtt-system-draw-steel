@@ -1,0 +1,54 @@
+_id: FO0H7v70YSYKviMa
+_key: '!actors!FO0H7v70YSYKviMa'
+name: Memorial Ivy
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Memorial Ivy
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Memorial Ivy
+  keywords:
+  - Plant
+  - Ruinborn
+  - Undead
+  level: 2
+  type: Minion
+  role: Artillery
+  encounterValue: 4
+  characteristics:
+    might: 0
+    agility: 2
+    reason: -3
+    intuition: 1
+    presence: -3
+  stamina:
+    max: 4
+    perMinion: 4
+    value: 4
+  combat:
+    size: 1S
+    speed: 3
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 3
+  immunity:
+    poison: 2
+  weakness:
+    fire: 3
+  derivedCaptainBonuses:
+    edgeOnStrikes: 3
+items: []

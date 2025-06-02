@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: WuZfvT90XLGMBJzc
+_key: '!actors!WuZfvT90XLGMBJzc'
+name: Ghost
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Ghost
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Ghost
   keywords:
-  - Accursed
-  - Humanoid
-  - Werebeast
+  - Undead
   level: 1
-  type: Solo
+  type: Leader
   role: None
-  encounterValue: 36
+  encounterValue: 12
   characteristics:
-    might: 3
+    might: -2
     agility: 2
-    reason: -1
-    intuition: 1
-    presence: 1
+    reason: 0
+    intuition: 0
+    presence: 3
   stamina:
-    max: 200
-    value: 200
+    max: 80
+    value: 80
   combat:
     size: 1M
-    speed: 7
+    speed: 6
     movementTypes:
-    - walk
-    stability: 0
-    freeStrikeDamage: 5
+    - fly
+    - hover
+    stability: 1
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 3
+    poison: 3
 items: []

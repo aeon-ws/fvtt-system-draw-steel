@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: E6Vzqu2YbXDsfLM0
+_key: '!actors!E6Vzqu2YbXDsfLM0'
+name: Vurkor
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Vurkor
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Vurkor
   keywords:
-  - Accursed
   - Humanoid
-  - Werebeast
-  level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  - Orc
+  - Rival
+  level: 2
+  type: Elite
+  role: Controller
+  encounterValue: 16
   characteristics:
-    might: 3
-    agility: 2
-    reason: -1
+    might: 0
+    agility: 0
+    reason: 2
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 200
-    value: 200
+    max: 60
+    value: 60
   combat:
     size: 1M
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
-    stability: 0
+    stability: 2
     freeStrikeDamage: 5
 items: []

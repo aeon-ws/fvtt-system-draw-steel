@@ -1,0 +1,50 @@
+_id: bn1DyQ3NwtisUFUL
+_key: '!actors!bn1DyQ3NwtisUFUL'
+name: Wallmaster
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Wallmaster
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Wallmaster
+  keywords:
+  - Construct
+  - Ruinborn
+  level: 1
+  type: Elite
+  role: Defender
+  encounterValue: 12
+  characteristics:
+    might: 2
+    agility: -5
+    reason: -3
+    intuition: 2
+    presence: -3
+  stamina:
+    max: 80
+    value: 80
+  combat:
+    size: 1L
+    speed: 0
+    movementTypes:
+    - walk
+    stability: 3
+    freeStrikeDamage: 4
+  immunity:
+    holy: 1
+  weakness:
+    acid: 3
+items: []

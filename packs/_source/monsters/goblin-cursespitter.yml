@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: q9xJT65G8cDbwbRH
+_key: '!actors!q9xJT65G8cDbwbRH'
+name: Goblin Cursespitter
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Goblin Cursespitter
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Goblin Cursespitter
   keywords:
-  - Accursed
+  - Goblin
   - Humanoid
-  - Werebeast
   level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  type: Horde
+  role: Hexer
+  encounterValue: 3
   characteristics:
-    might: 3
-    agility: 2
-    reason: -1
-    intuition: 1
-    presence: 1
+    might: -2
+    agility: 1
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
-    max: 200
-    value: 200
+    max: 10
+    value: 10
   combat:
-    size: 1M
-    speed: 7
+    size: 1S
+    speed: 5
     movementTypes:
-    - walk
+    - climb
     stability: 0
-    freeStrikeDamage: 5
+    freeStrikeDamage: 1
 items: []

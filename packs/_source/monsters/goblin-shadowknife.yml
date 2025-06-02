@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: mXexXv8i28xMYwOs
+_key: '!actors!mXexXv8i28xMYwOs'
+name: Goblin Shadowknife
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Goblin Shadowknife
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Goblin Shadowknife
   keywords:
-  - Accursed
+  - Goblin
   - Humanoid
-  - Werebeast
-  level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  - Mystic Goblin
+  level: 2
+  type: Horde
+  role: Ambusher
+  encounterValue: 4
   characteristics:
-    might: 3
+    might: 0
     agility: 2
-    reason: -1
+    reason: 1
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 200
-    value: 200
+    max: 20
+    value: 20
   combat:
     size: 1M
     speed: 7
     movementTypes:
-    - walk
-    stability: 0
-    freeStrikeDamage: 5
+    - climb
+    stability: 1
+    freeStrikeDamage: 3
+  immunity:
+    corruption: 2
 items: []

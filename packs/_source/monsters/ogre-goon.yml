@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: E2NMYD4oa5NEXvla
+_key: '!actors!E2NMYD4oa5NEXvla'
+name: Ogre Goon
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Ogre Goon
   displayName: 50
   displayBars: 50
   bar1:
@@ -13,35 +13,34 @@ prototypeToken:
     attribute: null
   disposition: -1
   actorLink: false
-  width: 1
-  height: 1
+  width: 2
+  height: 2
   lockRotation: true
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Ogre Goon
   keywords:
-  - Accursed
-  - Humanoid
-  - Werebeast
-  level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  - Giant
+  - Ogre
+  level: 2
+  type: Elite
+  role: Brute
+  encounterValue: 16
   characteristics:
-    might: 3
-    agility: 2
+    might: 2
+    agility: 0
     reason: -1
-    intuition: 1
-    presence: 1
+    intuition: 0
+    presence: -1
   stamina:
-    max: 200
-    value: 200
+    max: 100
+    value: 100
   combat:
-    size: 1M
-    speed: 7
+    size: '2'
+    speed: 5
     movementTypes:
     - walk
-    stability: 0
+    stability: 4
     freeStrikeDamage: 5
 items: []

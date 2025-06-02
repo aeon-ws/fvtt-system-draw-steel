@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: xMnW8CAD0oMNsJp3
+_key: '!actors!xMnW8CAD0oMNsJp3'
+name: Human Trickshot
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Human Trickshot
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Human Trickshot
   keywords:
-  - Accursed
+  - Human
   - Humanoid
-  - Werebeast
   level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  type: Platoon
+  role: Artillery
+  encounterValue: 6
   characteristics:
-    might: 3
+    might: 0
     agility: 2
-    reason: -1
+    reason: 0
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 200
-    value: 200
+    max: 20
+    value: 20
   combat:
     size: 1M
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
     stability: 0
-    freeStrikeDamage: 5
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 1
+    psychic: 1
 items: []

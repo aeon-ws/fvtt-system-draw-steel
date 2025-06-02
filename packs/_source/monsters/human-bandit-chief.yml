@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: u2en0e7FmKU9J3nu
+_key: '!actors!u2en0e7FmKU9J3nu'
+name: Human Bandit Chief
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Human Bandit Chief
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,31 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Human Bandit Chief
   keywords:
-  - Accursed
+  - Human
   - Humanoid
-  - Werebeast
-  level: 1
-  type: Solo
+  level: 3
+  type: Leader
   role: None
-  encounterValue: 36
+  encounterValue: 20
   characteristics:
-    might: 3
-    agility: 2
-    reason: -1
-    intuition: 1
-    presence: 1
+    might: 2
+    agility: 3
+    reason: 2
+    intuition: 3
+    presence: 2
   stamina:
-    max: 200
-    value: 200
+    max: 120
+    value: 120
   combat:
     size: 1M
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
-    stability: 0
+    stability: 2
     freeStrikeDamage: 5
+  immunity:
+    corruption: 4
+    psychic: 4
 items: []

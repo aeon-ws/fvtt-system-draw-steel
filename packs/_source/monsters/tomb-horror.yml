@@ -1,0 +1,51 @@
+_id: HoP88QdNvzQGzL4o
+_key: '!actors!HoP88QdNvzQGzL4o'
+name: Tomb Horror
+type: enemy
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Tomb Horror
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 2
+  height: 2
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Tomb Horror
+  keywords:
+  - Plant
+  - Ruinborn
+  - Undead
+  level: 2
+  type: Elite
+  role: Brute
+  encounterValue: 16
+  characteristics:
+    might: 2
+    agility: -2
+    reason: -3
+    intuition: 2
+    presence: -3
+  stamina:
+    max: 100
+    value: 100
+  combat:
+    size: '2'
+    speed: 5
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 5
+  immunity:
+    corruption: 2
+  weakness:
+    fire: 3
+items: []

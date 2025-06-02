@@ -16,15 +16,15 @@ class MonsterHeader:
     level: int
     type: str
     role: Optional[str]
-    header_text: str
-    start_idx: int
-    end_idx: int
+    header_source_line: str
+    start_line_index: int
+    end_line_index: int
 
 
 @dataclass
 class MonsterBlock:
     header: MonsterHeader
-    lines: List[str]
+    source_lines: List[str]
     raw_text: str
 
 
@@ -170,6 +170,7 @@ NAME_FIXUPS = {
     "iImit Putty": "IMIT PUTTY",
     "Memoriat Ivy": "MEMORIAL IVY",
     "MVURKOR": "VURKOR",
+    "WorRG": "WORG",
     # Add more as found
 }
 
@@ -254,9 +255,9 @@ def normalize_header_fields(header: MonsterHeader) -> MonsterHeader:
         level=header.level,
         type=type_,
         role=role,
-        header_text=header.header_text,
-        start_idx=header.start_idx,
-        end_idx=header.end_idx,
+        header_source_line=header.header_source_line,
+        start_line_index=header.start_line_index,
+        end_line_index=header.end_line_index,
     )
 
 
@@ -342,47 +343,56 @@ def get_header_candidates(lines: List[str]) -> List[Tuple[int, str]]:
 # --- Header Parsing Core ---
 
 
-def parse_header_line(line: str) -> Optional[Dict[str, Any]]:
-    regex = get_header_regex()
-    m = regex.search(line)
-    if not m:
+def parse_header_line(source_line: str) -> Optional[Dict[str, Any]]:
+    header_regex = get_header_regex()
+    header_matches = header_regex.search(source_line)
+    if not header_matches:
         return None
-    gd = m.groupdict()
-    name = fix_ocr_name(gd.get("name", "").strip(" |:-"))
-    type_ = gd.get("type")
-    role = gd.get("role")
-    level = ocr_level_to_int(gd.get("level", ""))
+    header_group_matches = header_matches.groupdict()
+    name = fix_ocr_name(header_group_matches.get("name", "").strip(" |:-"))
+    type = header_group_matches.get("type")
+    role = header_group_matches.get("role")
+    level = ocr_level_to_int(header_group_matches.get("level", ""))
     # Filter per rules: if type is solo/leader, role must not be present
-    if type_ and type_.lower() in {"solo", "leader"}:
+    if type and type.lower() in {"solo", "leader"}:
         role = None
     # Role must be last or nearly last (not followed by extra tokens except punctuation)
     # (This is already enforced by regex $ anchor and trailing junk)
-    return dict(name=name, type=type_, role=role, level=level)
+    return dict(name=name, type=type, role=role, level=level)
 
 
 # --- Main Header Detection Function ---
 
 
-def extract_monster_headers_from_lines(lines: List[str]) -> List[MonsterHeader]:
-    headers: List[MonsterHeader] = []
-    candidates = get_header_candidates(lines)
-    for idx, line in candidates:
-        parsed = parse_header_line(line)
-        if parsed and parsed["name"] and parsed["type"] and parsed["level"] is not None:
-            header = MonsterHeader(
-                name=parsed["name"],
-                level=parsed["level"],
-                type=parsed["type"].capitalize(),
-                role=(parsed["role"].capitalize() if parsed["role"] else None),
-                header_text=line,
-                start_idx=idx,
-                end_idx=idx,  # may be adjusted for multi-line headers in future
+def get_monster_headers_from_source_lines(
+    source_lines: List[str],
+) -> List[MonsterHeader]:
+    monster_headers: List[MonsterHeader] = []
+    monster_header_candidates = get_header_candidates(source_lines)
+    for source_line_index, source_line in monster_header_candidates:
+        parsed_line = parse_header_line(source_line)
+        if (
+            parsed_line
+            and parsed_line["name"]
+            and parsed_line["type"]
+            and parsed_line["level"] is not None
+        ):
+            monster_header = MonsterHeader(
+                name=parsed_line["name"],
+                level=parsed_line["level"],
+                type=str(parsed_line["type"]).capitalize(),
+                role=str(
+                    (parsed_line["role"]).capitalize() if parsed_line["role"] else None
+                ),
+                header_source_line=source_line,
+                start_line_index=source_line_index,
+                end_line_index=source_line_index,  # may be adjusted for multi-line headers in future
             )
-            headers.append(header)
+            monster_headers.append(monster_header)
 
-    headers = [normalize_header_fields(h) for h in headers]
+    monster_headers = [normalize_header_fields(h) for h in monster_headers]
 
-    return headers
+    return monster_headers
 
 
 def parse_monster_row2(block_lines: List[str]) -> Tuple[List[str], int | None]:
@@ -400,57 +410,70 @@ def parse_stamina(lines: List[str]) -> int | None:
     return None
 
 
-def parse_speed_and_movement(lines: List[str]) -> tuple[int | None, List[str]]:
-    for line in lines:
-        m = re.search(r"\bSpeed\s+([0-9O]+)\s*(?:\(([^)]+)\))?", line, re.IGNORECASE)
-        if m:
-            value = m.group(1).replace("O", "0")
+def parse_speed_and_movement_types(
+    source_lines: List[str],
+) -> tuple[int | None, List[str]]:
+    for source_line in source_lines:
+        speed_and_movement_type_matches = re.search(
+            r"\bSpeed\s+([0-9O]+)\s*(?:\(([^)]+)\))?", source_line, re.IGNORECASE
+        )
+        if speed_and_movement_type_matches:
+            speed = speed_and_movement_type_matches.group(1).replace("O", "0")
             movement_types = (
-                [x.strip().lower() for x in m.group(2).split(",")]
-                if m.group(2)
+                [
+                    x.strip().lower()
+                    for x in speed_and_movement_type_matches.group(2).split(",")
+                ]
+                if speed_and_movement_type_matches.group(2)
                 else ["walk"]
             )
-            return int(value), movement_types
+            return int(speed), movement_types
     return None, []
 
 
-def parse_size_and_stability(lines: List[str]) -> tuple[str, int] | tuple[None, None]:
-    for line in lines:
-        m = re.search(
-            r"\bSize\s+(\w+)\s*/\s*Stability\s*([0-9O]+)", line, re.IGNORECASE
+def parse_size_and_stability(
+    source_lines: List[str],
+) -> tuple[str, int] | tuple[None, None]:
+    for source_line in source_lines:
+        size_and_stability_matches = re.search(
+            r"\bSize\s+(\w+)\s*/\s*Stability\s*([0-9O]+)", source_line, re.IGNORECASE
         )
-        if m:
-            size = m.group(1)
-            stability = int(m.group(2).replace("O", "0"))
+        if size_and_stability_matches:
+            size = size_and_stability_matches.group(1)
+            stability = int(size_and_stability_matches.group(2).replace("O", "0"))
             return size, stability
     return None, None
 
 
-def parse_free_strike(lines: List[str]) -> int | None:
-    for line in lines:
-        m = re.search(r"\bFree Strike\s*([0-9O]+)", line, re.IGNORECASE)
-        if m:
-            value = m.group(1).replace("O", "0")
-            return int(value)
+def parse_free_strike(source_lines: List[str]) -> int | None:
+    for source_line in source_lines:
+        free_strike_matches = re.search(
+            r"\bFree Strike\s*([0-9O]+)", source_line, re.IGNORECASE
+        )
+        if free_strike_matches:
+            free_strike = free_strike_matches.group(1).replace("O", "0")
+            return int(free_strike)
     return None
 
 
-def parse_characteristics(lines: List[str]) -> dict[str, int]:
-    for line in lines:
-        m = re.findall(
+def parse_characteristics(source_lines: List[str]) -> dict[str, int]:
+    for source_line in source_lines:
+        characteristic_matches = re.findall(
             r"(Might|Agility|Reason|Intuition|Presence)\s*([+\-]?[0-9O]+)",
-            line,
+            source_line,
             re.IGNORECASE,
         )
-        if m and len(m) == 5:
-            d: dict[str, int] = {}
-            for stat, val in m:
-                d[stat.lower()] = int(val.upper().replace("O", "0"))
-            return d
+        if characteristic_matches and len(characteristic_matches) == 5:
+            characteristics: dict[str, int] = {}
+            for name, value in characteristic_matches:
+                characteristics[str(name).lower()] = int(
+                    str(value).upper().replace("O", "0")
+                )
+            return characteristics
     return {}
 
 
-def parse_with_captain(lines: list[str]) -> dict[str, Any] | None:
+def parse_with_captain(source_lines: list[str]) -> dict[str, Any] | None:
     """
     Returns a dict with the derived captain bonus or effect from the 'With Captain' line.
     Handles all known variants, including 'temporary stamina'.
@@ -463,19 +486,25 @@ def parse_with_captain(lines: list[str]) -> dict[str, Any] | None:
         "strike edge": "strikeEdge",
         "edge on strikes": "edgeOnStrikes",
     }
-    stat_end_idx = next(
+    stat_and_metadata_section_end_index = next(
         (
-            i
-            for i, line in enumerate(lines)
+            line_index
+            for line_index, source_line in enumerate(source_lines)
             if all(
-                f in line.lower()
-                for f in ["might", "agility", "reason", "intuition", "presence"]
+                source_line_element in source_line.lower()
+                for source_line_element in [
+                    "might",
+                    "agility",
+                    "reason",
+                    "intuition",
+                    "presence",
+                ]
             )
         ),
-        len(lines),
+        len(source_lines),
     )
-    for line in lines[: stat_end_idx + 1]:
-        m = re.search(r"with captain\s*(.+)", line, re.IGNORECASE)
+    for source_line in source_lines[: stat_and_metadata_section_end_index + 1]:
+        m = re.search(r"with captain\s*(.+)", source_line, re.IGNORECASE)
         if m:
             rest = m.group(1).strip().lower()
             # Check for "temporary stamina" in any order
@@ -500,14 +529,17 @@ def parse_with_captain(lines: list[str]) -> dict[str, Any] | None:
     return None
 
 
-def find_last_stat_index(lines: list[str]) -> int:
-    for i, line in enumerate(lines):
+def find_last_stat_index(source_lines: list[str]) -> int:
+    for source_line_index, source_line in enumerate(source_lines):
         # Look for a line containing all 5 characteristic names (order doesn’t matter)
-        fields = ["might", "agility", "reason", "intuition", "presence"]
-        found = all(f in line.lower() for f in fields)
-        if found:
-            return i
-    return len(lines)  # fallback: parse all
+        characteristic_fields = ["might", "agility", "reason", "intuition", "presence"]
+        characteristics_line_found = all(
+            characteristic_field in source_line.lower()
+            for characteristic_field in characteristic_fields
+        )
+        if characteristics_line_found:
+            return source_line_index
+    return len(source_lines)  # fallback: parse all
 
 
 def normalize_weakness_immunity_type(s: str) -> str:
@@ -534,16 +566,18 @@ def normalize_weakness_immunity_type(s: str) -> str:
 
 
 def parse_weakness_immunity(
-    lines: list[str],
+    source_lines: list[str],
 ) -> tuple[dict[str, int] | None, dict[str, int] | None]:
-    stat_end_idx = find_last_stat_index(lines)
-    lines = lines[: stat_end_idx + 1]  # Only parse the metadata/stat section
+    stat_end_index = find_last_stat_index(source_lines)
+    source_lines = source_lines[
+        : stat_end_index + 1
+    ]  # Only parse the metadata/stat section
     weakness: dict[str, int] = {}
     immunity: dict[str, int] = {}
-    for line in lines:
-        line = line.replace("O", "0").replace("o", "0")
+    for source_line in source_lines:
+        source_line = source_line.replace("O", "0").replace("o", "0")
         for field in re.finditer(
-            r"(Immunity|Weakness)\s+([^/|]+)", line, re.IGNORECASE
+            r"(Immunity|Weakness)\s+([^/|]+)", source_line, re.IGNORECASE
         ):
             label = field.group(1).lower()
             entries = field.group(2)
@@ -574,94 +608,104 @@ def parse_weakness_immunity(
     return (weakness or None, immunity or None)
 
 
-def parse_monster_block_and_get_stats(block: MonsterBlock) -> dict[str, Any]:
+def get_monster_model_from_block(monster_block: MonsterBlock) -> dict[str, Any]:
     # Copy header fields
     stats: dict[str, Any] = {
-        "name": block.header.name,
-        "level": block.header.level,
-        "type": block.header.type,
-        "role": block.header.role,
-        "header_text": block.header.header_text,
+        "name": monster_block.header.name,
+        "level": monster_block.header.level,
+        "type": monster_block.header.type,
+        "role": monster_block.header.role,
+        "header_text": monster_block.header.header_source_line,
     }
-    stats["keywords"], stats["encounterValue"] = parse_monster_row2(block.lines)
-    stats["stamina"] = parse_stamina(block.lines)
-    stats["speed"], stats["movementTypes"] = parse_speed_and_movement(block.lines)
-    stats["size"], stats["stability"] = parse_size_and_stability(block.lines)
-    stats["freeStrikeDamage"] = parse_free_strike(block.lines)
-    stats["characteristics"] = parse_characteristics(block.lines)
+    stats["keywords"], stats["encounterValue"] = parse_monster_row2(
+        monster_block.source_lines
+    )
+    stats["stamina"] = parse_stamina(monster_block.source_lines)
+    stats["speed"], stats["movementTypes"] = parse_speed_and_movement_types(
+        monster_block.source_lines
+    )
+    stats["size"], stats["stability"] = parse_size_and_stability(
+        monster_block.source_lines
+    )
+    stats["freeStrikeDamage"] = parse_free_strike(monster_block.source_lines)
+    stats["characteristics"] = parse_characteristics(monster_block.source_lines)
 
     # Optional fields:
-    stats["weakness"], stats["immunity"] = parse_weakness_immunity(block.lines)
-    if block.header.type.lower() == "minion":
-        captain_result = parse_with_captain(block.lines)
+    stats["weakness"], stats["immunity"] = parse_weakness_immunity(
+        monster_block.source_lines
+    )
+    if monster_block.header.type.lower() == "minion":
+        captain_result = parse_with_captain(monster_block.source_lines)
         if captain_result:
             stats.update(captain_result)
     # ... other optionals here
     return stats
 
 
-def split_source_lines_into_monsters_blocks(
-    lines: List[str], headers: List[MonsterHeader]
+def group_source_lines_into_monsters_blocks(
+    source_lines: List[str], headers: List[MonsterHeader]
 ) -> List[MonsterBlock]:
     blocks: List[MonsterBlock] = []
-    header_indices = [h.start_idx for h in headers]
-    num_lines = len(lines)
+    header_indices = [h.start_line_index for h in headers]
+    num_lines = len(source_lines)
     header_line_set = set(header_indices)
     for i, header in enumerate(headers):
-        start = header.start_idx + 1
+        start = header.start_line_index + 1
         end = num_lines
         j = start
         while j < num_lines:
             # 1. Next detected monster header
-            if j in header_line_set and j != header.start_idx:
+            if j in header_line_set and j != header.start_line_index:
                 end = j
                 break
             # 2. New page (always stop at next left marker)
-            if PAGE_LEFT_MARKER.match(lines[j]):
+            if PAGE_LEFT_MARKER.match(source_lines[j]):
                 end = j
                 break
             # 3. Explicit noise header (e.g., ENCOUNTER D4)
-            if is_noise_header(lines[j]):
+            if is_noise_header(source_lines[j]):
                 end = j
                 break
             j += 1
 
         # Remove footers and all page/column markers from output
         block_lines = [
-            l
-            for l in lines[start:end]
-            if not FOOTER_RE.search(l) and not PAGE_MARKER.match(l)
+            source_line
+            for source_line in source_lines[start:end]
+            if not FOOTER_RE.search(source_line) and not PAGE_MARKER.match(source_line)
         ]
         raw_text = "".join(block_lines)
-        blocks.append(MonsterBlock(header=header, lines=block_lines, raw_text=raw_text))
+        blocks.append(
+            MonsterBlock(header=header, source_lines=block_lines, raw_text=raw_text)
+        )
     return blocks
 
 
-def get_export_stats_from_monster_stats(
-    monster_stats_as_dict: dict[str, Any],
+def get_monster_foundry_actor_model(
+    monster_model: dict[str, Any],
 ) -> dict[str, Any]:
     # Prepare fields
-    is_minion = monster_stats_as_dict["type"].lower() == "minion"
+    is_minion = monster_model["type"].lower() == "minion"
     block_id = generate_id()
     width = 1
     try:
         # Handle sizes like "1S", "2", "3" (token width/height)
         if (
-            str(monster_stats_as_dict.get("size", "")).startswith("1")
-            or str(monster_stats_as_dict.get("size", "")).isdigit()
+            str(monster_model.get("size", "")).startswith("1")
+            or str(monster_model.get("size", "")).isdigit()
         ):
-            width = int(str(monster_stats_as_dict["size"])[0])
+            width = int(str(monster_model["size"])[0])
     except Exception:
         width = 1
 
-    yaml_dict: dict[str, Any] = {
+    monster_foundry_actor_model: dict[str, Any] = {
         "_id": block_id,
         "_key": f"!actors!{block_id}",
-        "name": monster_stats_as_dict["name"],
+        "name": monster_model["name"],
         "type": "minion" if is_minion else "enemy",
         "img": "icons/svg/mystery-man.svg",
         "prototypeToken": {
-            "name": monster_stats_as_dict["name"],
+            "name": monster_model["name"],
             "displayName": 50,
             "displayBars": 50,
             "bar1": {"attribute": "stamina"},
@@ -674,31 +718,31 @@ def get_export_stats_from_monster_stats(
             "texture": {"img": "icons/svg/mystery-man.svg"},
         },
         "system": {
-            "name": monster_stats_as_dict["name"],
-            "keywords": monster_stats_as_dict.get("keywords", []),
-            "level": monster_stats_as_dict["level"],
-            "type": monster_stats_as_dict["type"].title(),
-            "role": monster_stats_as_dict.get("role") or "",
-            "encounterValue": monster_stats_as_dict.get("encounterValue", 0),
-            "characteristics": monster_stats_as_dict.get("characteristics", {}),
+            "name": monster_model["name"],
+            "keywords": monster_model.get("keywords", []),
+            "level": monster_model["level"],
+            "type": monster_model["type"].title(),
+            "role": monster_model.get("role") or "",
+            "encounterValue": monster_model.get("encounterValue", 0),
+            "characteristics": monster_model.get("characteristics", {}),
             "stamina": (
                 {
-                    "max": monster_stats_as_dict["stamina"],
-                    "perMinion": monster_stats_as_dict["stamina"],
-                    "value": monster_stats_as_dict["stamina"],
+                    "max": monster_model["stamina"],
+                    "perMinion": monster_model["stamina"],
+                    "value": monster_model["stamina"],
                 }
                 if is_minion
                 else {
-                    "max": monster_stats_as_dict["stamina"],
-                    "value": monster_stats_as_dict["stamina"],
+                    "max": monster_model["stamina"],
+                    "value": monster_model["stamina"],
                 }
             ),
             "combat": {
-                "size": monster_stats_as_dict.get("size"),
-                "speed": monster_stats_as_dict.get("speed"),
-                "movementTypes": monster_stats_as_dict.get("movementTypes", []),
-                "stability": monster_stats_as_dict.get("stability"),
-                "freeStrikeDamage": monster_stats_as_dict.get("freeStrikeDamage"),
+                "size": monster_model.get("size"),
+                "speed": monster_model.get("speed"),
+                "movementTypes": monster_model.get("movementTypes", []),
+                "stability": monster_model.get("stability"),
+                "freeStrikeDamage": monster_model.get("freeStrikeDamage"),
             },
         },
         "items": [],
@@ -710,20 +754,22 @@ def get_export_stats_from_monster_stats(
         "derivedCaptainBonuses",
         "appliedCaptainEffects",
     ):
-        if monster_stats_as_dict.get(field):
-            yaml_dict["system"][field] = monster_stats_as_dict[field]
-    return yaml_dict
+        if monster_model.get(field):
+            monster_foundry_actor_model["system"][field] = monster_model[field]
+    return monster_foundry_actor_model
 
 
-def export_yaml(monsters: list[dict[str, Any]]):
-    for monster in monsters:
-        with open(
-            f"c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters/{monster['name']}.yml",
-            "w",
-            encoding="utf-8",
-        ) as file:
+def export_yaml(monster_foundry_actor_models: list[dict[str, Any]]):
+    for monster_foundry_actor_model in monster_foundry_actor_models:
+        file_name = (
+            f"{str(monster_foundry_actor_model['name']).replace(' ', '-').lower()}.yml"
+        )
+        file_path = (
+            f"c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters/{file_name}"
+        )
+        with open(file_path, "w", encoding="utf-8") as file:
             yaml.safe_dump(
-                monster,
+                monster_foundry_actor_model,
                 file,
                 sort_keys=False,
                 allow_unicode=True,
@@ -731,17 +777,17 @@ def export_yaml(monsters: list[dict[str, Any]]):
             )
 
 
-def deduplicate_monsters(all_monster_stat_blocks_as_dicts: list[dict[str, Any]]):
+def deduplicate_monsters(monster_foundry_actor_models: list[dict[str, Any]]):
     seen_monster_names = set[str]()
-    unique_monster_stat_blocks_as_dicts: list[dict[str, Any]] = []
-    for monster_stat_block_as_dict in all_monster_stat_blocks_as_dicts:
-        monster_name = str(monster_stat_block_as_dict["name"]).lower()
+    unique_monster_models: list[dict[str, Any]] = []
+    for monster_model in monster_foundry_actor_models:
+        monster_name = str(monster_model["name"]).lower()
         if monster_name not in seen_monster_names:
             seen_monster_names.add(monster_name)
-            unique_monster_stat_blocks_as_dicts.append(monster_stat_block_as_dict)
+            unique_monster_models.append(monster_model)
         else:
             print(f"Duplicate found, dropping: [{monster_name}]")
-    return unique_monster_stat_blocks_as_dicts
+    return unique_monster_models
 
 
 # --- Example Usage ---
@@ -750,21 +796,20 @@ if __name__ == "__main__":
     with open(
         "c:/_/aeon/fvtt-system-draw-steel/scripts/pdf-parser/full_combined_ocr.txt",
         encoding="utf-8",
-    ) as f:
-        lines = f.readlines()
+    ) as source_file:
+        source_lines = source_file.readlines()
 
-    monster_headers = extract_monster_headers_from_lines(lines)
-    monster_blocks = split_source_lines_into_monsters_blocks(lines, monster_headers)
+    monster_headers = get_monster_headers_from_source_lines(source_lines)
+    monster_blocks = group_source_lines_into_monsters_blocks(
+        source_lines, monster_headers
+    )
 
-    all_monster_export_stats_as_dicts: list[dict[str, Any]] = []
+    monster_foundry_actor_models: list[dict[str, Any]] = []
 
     for monster_block in monster_blocks:
-        # print(block.header.name, "block has", len(block.lines), "lines")
-        monster_stats_as_dict = parse_monster_block_and_get_stats(monster_block)
-        monster_export_stats_as_dict = get_export_stats_from_monster_stats(
-            monster_stats_as_dict
-        )
-        all_monster_export_stats_as_dicts.append(monster_export_stats_as_dict)
+        monster_model = get_monster_model_from_block(monster_block)
+        monster_foundry_actor_model = get_monster_foundry_actor_model(monster_model)
+        monster_foundry_actor_models.append(monster_foundry_actor_model)
         # if block.header.name in [
         #     "Mystic Queen Bargnot",
         #     "Goblin Warrior",
@@ -773,6 +818,4 @@ if __name__ == "__main__":
         # ]:
         #     all_monster_stats.append(stats_as_yaml_dict)
 
-    deduplicate_monsters(all_monster_export_stats_as_dicts)
-
-    export_yaml(all_monster_export_stats_as_dicts)
+    export_yaml(deduplicate_monsters(monster_foundry_actor_models))

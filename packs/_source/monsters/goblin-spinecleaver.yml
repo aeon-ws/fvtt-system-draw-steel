@@ -1,0 +1,49 @@
+_id: b4c7RIxQT12o1Ovd
+_key: '!actors!b4c7RIxQT12o1Ovd'
+name: Goblin Spinecleaver
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Goblin Spinecleaver
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Goblin Spinecleaver
+  keywords:
+  - Goblin
+  - Humanoid
+  level: 1
+  type: Minion
+  role: Brute
+  encounterValue: 3
+  characteristics:
+    might: 2
+    agility: 0
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 5
+    perMinion: 5
+    value: 5
+  combat:
+    size: 1S
+    speed: 5
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 2
+  derivedCaptainBonuses:
+    strikeDamage: 1
+items: []

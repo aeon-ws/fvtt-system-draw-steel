@@ -1,0 +1,51 @@
+_id: Tz25qPMTjFcGF2Mr
+_key: '!actors!Tz25qPMTjFcGF2Mr'
+name: Rotting Zombie
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Rotting Zombie
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Rotting Zombie
+  keywords:
+  - Undead
+  level: 1
+  type: Minion
+  role: Brute
+  encounterValue: 3
+  characteristics:
+    might: 2
+    agility: -2
+    reason: -5
+    intuition: -2
+    presence: -3
+  stamina:
+    max: 5
+    perMinion: 5
+    value: 5
+  combat:
+    size: 1M
+    speed: 4
+    movementTypes:
+    - walk
+    stability: 0
+    freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    poison: 1
+  derivedCaptainBonuses:
+    strikeDamage: 1
+items: []

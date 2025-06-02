@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: 7qLH5dkomEGyj7XK
+_key: '!actors!7qLH5dkomEGyj7XK'
+name: Mystic Queen Bargnot
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Mystic Queen Bargnot
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,29 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Mystic Queen Bargnot
   keywords:
-  - Accursed
+  - Goblin
   - Humanoid
-  - Werebeast
-  level: 1
-  type: Solo
+  - Mystic Goblin
+  level: 3
+  type: Leader
   role: None
-  encounterValue: 36
+  encounterValue: 20
   characteristics:
-    might: 3
-    agility: 2
-    reason: -1
+    might: 2
+    agility: 3
+    reason: 2
     intuition: 1
     presence: 1
   stamina:
-    max: 200
-    value: 200
+    max: 120
+    value: 120
   combat:
-    size: 1M
+    size: 1L
     speed: 7
     movementTypes:
-    - walk
-    stability: 0
+    - climb
+    stability: 2
     freeStrikeDamage: 5
 items: []

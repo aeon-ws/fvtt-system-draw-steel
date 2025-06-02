@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: togE0wmJXLxar3nZ
+_key: '!actors!togE0wmJXLxar3nZ'
+name: Zombie
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Zombie
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,30 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Zombie
   keywords:
-  - Accursed
-  - Humanoid
-  - Werebeast
+  - Undead
   level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  type: Horde
+  role: Brute
+  encounterValue: 3
   characteristics:
-    might: 3
-    agility: 2
-    reason: -1
-    intuition: 1
+    might: 2
+    agility: 1
+    reason: -5
+    intuition: -2
     presence: 1
   stamina:
-    max: 200
-    value: 200
+    max: 20
+    value: 20
   combat:
     size: 1M
-    speed: 7
+    speed: 5
     movementTypes:
     - walk
-    stability: 0
-    freeStrikeDamage: 5
+    stability: 1
+    freeStrikeDamage: 2
+  immunity:
+    corruption: 1
+    poison: 1
 items: []

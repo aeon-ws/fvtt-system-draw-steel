@@ -1,0 +1,51 @@
+_id: UnbO30lwAKm0Ugze
+_key: '!actors!UnbO30lwAKm0Ugze'
+name: Flow of the River
+type: minion
+img: icons/svg/mystery-man.svg
+prototypeToken:
+  name: Flow of the River
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: icons/svg/mystery-man.svg
+system:
+  name: Flow of the River
+  keywords:
+  - Elemental
+  - Water Wolf
+  level: 2
+  type: Minion
+  role: Harrier
+  encounterValue: 4
+  characteristics:
+    might: 0
+    agility: 2
+    reason: -2
+    intuition: 0
+    presence: -2
+  stamina:
+    max: 4
+    perMinion: 4
+    value: 4
+  combat:
+    size: 1M
+    speed: 6
+    movementTypes:
+    - swim
+    stability: 0
+    freeStrikeDamage: 2
+  immunity:
+    fire: 2
+  derivedCaptainBonuses:
+    speed: 2
+items: []

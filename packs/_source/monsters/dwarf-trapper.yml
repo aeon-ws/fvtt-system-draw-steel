@@ -1,10 +1,10 @@
-_id: 6Z5ejTP7WZbYFUVD
-_key: '!actors!6Z5ejTP7WZbYFUVD'
-name: Werewolf
+_id: uDnua0N32BoqO6dT
+_key: '!actors!uDnua0N32BoqO6dT'
+name: Dwarf Trapper
 type: enemy
 img: icons/svg/mystery-man.svg
 prototypeToken:
-  name: Werewolf
+  name: Dwarf Trapper
   displayName: 50
   displayBars: 50
   bar1:
@@ -19,29 +19,28 @@ prototypeToken:
   texture:
     img: icons/svg/mystery-man.svg
 system:
-  name: Werewolf
+  name: Dwarf Trapper
   keywords:
-  - Accursed
+  - Dwarf
   - Humanoid
-  - Werebeast
   level: 1
-  type: Solo
-  role: None
-  encounterValue: 36
+  type: Platoon
+  role: Harrier
+  encounterValue: 6
   characteristics:
-    might: 3
+    might: 0
     agility: 2
-    reason: -1
+    reason: 0
     intuition: 1
-    presence: 1
+    presence: 0
   stamina:
-    max: 200
-    value: 200
+    max: 36
+    value: 36
   combat:
     size: 1M
     speed: 7
     movementTypes:
     - walk
-    stability: 0
-    freeStrikeDamage: 5
+    stability: 2
+    freeStrikeDamage: 3
 items: []
