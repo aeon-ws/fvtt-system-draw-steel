@@ -1,44 +1,9 @@
-{
-  "_id": "2Q87T0u2Byb0WaMs",
-  "_key": "!actors!2Q87T0u2Byb0WaMs",
-  "name": "Mystic Queen Bargnot",
-  "type": "enemy",
-  "img": "icons/svg/mystery-man.svg",
-  "prototypeToken": {
-    "name": "Mystic Queen Bargnot",
-    "displayName": 50,
-    "displayBars": 50,
-    "bar1": { "attribute": "stamina" },
-    "bar2": { "attribute": null },
-    "disposition": -1,
-    "actorLink": false,
-    "width": 1,
-    "height": 1,
-    "lockRotation": true,
-    "texture": { "img": "icons/svg/mystery-man.svg" }
-  },
-  "system": {
-    "name": "Mystic Queen Bargnot",
-    "keywords": ["Goblin", "Humanoid", "Mystic Goblin"],
-    "level": 3,
-    "type": "Leader",
-    "role": "",
-    "encounterValue": 20,
-    "characteristics": {
-      "might": 2,
-      "agility": 3,
-      "reason": 2,
-      "intuition": 1,
-      "presence": 1
-    },
-    "stamina": { "max": 120, "value": 120 },
-    "combat": {
-      "size": "1L",
-      "speed": 7,
-      "movementTypes": ["climb"],
-      "stability": 2,
-      "freeStrikeDamage": 5
-    }
-  },
-  "items": []
-}
+[
+  [
+    "Goblin, Humanoid EV3  Stamina 15  Speed 6 (climb) Size 15 / Stability 0 Free Strike 1  Might-2 Agility+2 Reason+0  Intuition+O Presence -1 Spear Charge (Action) © 2d10 + 2 Signature"
+  ],
+  [
+    "Keywords Charge, Melee, Strike, Weapon  Distance Melee 1 Target One creature or object  + <11 3damage  * 12-16 4damage  3% 17+ Sdamage  Bury the Point (Action) © 2d10 + 2 4 2 Malice",
+    "Keywords Melee, Strike, Weapon Distance Melee 1 Target One creature  + <11 5 damage; M<0 bleeding (save ends) * 12-16 6 damage; M<1 bleeding (save ends) % 17+ 7 damage; M<2 bleeding (save ends)  Crafty The warrior doesn’t provoke opportunity attacks by moving.  "
+  ]
+]

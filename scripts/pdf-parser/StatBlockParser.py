@@ -47,6 +47,39 @@ NOISE_HEADERS = {
     # Add others as needed (case-insensitive)
 }
 
+# Ability types as per your rules.
+ABILITY_TYPE_MAP = {
+    "action": "mainAction",
+    "main action": "mainAction",
+    "free action": "freeMainAction",
+    "maneuver": "maneuver",
+    "free maneuver": "freeManeuver",
+    "triggered action": "triggeredAction",
+    "free triggered action": "freeTriggeredAction",
+    "villain action 1": "villainAction",
+    "villain action 2": "villainAction",
+    "villain action 3": "villainAction",
+}
+
+# Matches "Maneuver", "Action", "Triggered Action", "Villain Action", with or without "Free"
+ABILITY_TYPE_PATTERN = r"[(](?P<type>(Free )?(Action|Main Action|Maneuver|Triggered Action|Villain Action ?[123]?))[)]"
+
+# Matches "2d10 + 2", "2D10 +2", etc. (OCR can garble spaces, so allow optional space)
+POWER_ROLL_PATTERN = r"2[Dd]10\s*\+\s*(?P<bonus>[-+]?\d+)"
+
+# Matches various dividers: anything that's not a letter/number, up to 2 chars, possibly multiple times
+DIVIDER = r"[^A-Za-z0-9]{0,2}"
+
+# Matches malice cost, e.g., "2 Malice" or "Signature"
+MALICE_PATTERN = r"(?:(?P<malice>1?\d)\s*Malice|Signature)"
+
+ABILITY_NAME_PATTERN = r"(?P<name>.+)"  # Greedy match for ability name
+# Compile everything into one robust pattern
+ABILITY_HEADER_REGEX = re.compile(
+    rf"""^{ABILITY_NAME_PATTERN}\s*{ABILITY_TYPE_PATTERN}(?:{DIVIDER}\s*{POWER_ROLL_PATTERN})?(?:.*{MALICE_PATTERN})?$""",
+    re.IGNORECASE | re.VERBOSE,
+)
+
 WEAKNESS_IMMUNITY_TYPES = {
     "acid",
     "cold",
@@ -175,6 +208,19 @@ NAME_FIXUPS = {
 }
 
 MINOR_WORDS = {"of", "the", "in", "on", "for", "and", "or", "to", "a"}
+
+ABILITY_HEADER_PATTERNS = [
+    # Main/Free Action
+    r"\b(.+?)\s*\((?:Free\s*)?(?:Main\s*)?Action\).*",
+    r"\b(.+?)\s*\((?:Free\s*)?Action\).*",
+    # Maneuver
+    r"\b(.+?)\s*\((?:Free\s*)?Maneuver\).*",
+    # Triggered Action
+    r"\b(.+?)\s*\((?:Free\s*)?Triggered Action\).*",
+    # Villain Action
+    r"\b(.+?)\s*\(Villain Action\s*\d+\).*",
+    # Others as needed
+]
 
 
 def generate_id():
@@ -608,6 +654,19 @@ def parse_weakness_immunity(
     return (weakness or None, immunity or None)
 
 
+def find_characteristics_line(lines):
+    for i, line in enumerate(lines):
+        if re.search(r"Might\s*[-+0-9O]+", line, re.IGNORECASE) and re.search(
+            r"Agility\s*[-+0-9O]+", line, re.IGNORECASE
+        ):
+            return i
+    # Extra diagnostic:
+    print("[ERROR] Primary characteristics line not found in block. Lines were:")
+    for idx, l in enumerate(lines):
+        print(f"{idx:02}: {l.strip()}")
+    raise ValueError("Primary characteristics line not found in block!")
+
+
 def get_monster_model_from_block(monster_block: MonsterBlock) -> dict[str, Any]:
     # Copy header fields
     stats: dict[str, Any] = {
@@ -629,6 +688,23 @@ def get_monster_model_from_block(monster_block: MonsterBlock) -> dict[str, Any]:
     )
     stats["freeStrikeDamage"] = parse_free_strike(monster_block.source_lines)
     stats["characteristics"] = parse_characteristics(monster_block.source_lines)
+
+    # Find characteristic line
+    characteristics_line_index = find_characteristics_line(monster_block.source_lines)
+    first_ability_source_lines = monster_block.source_lines[
+        characteristics_line_index + 1 :
+    ]
+    ability_blocks = split_ability_blocks(first_ability_source_lines)
+    # print(f"--- Found {len(ability_blocks)} ability blocks.")
+    for ability_block in ability_blocks:
+        if not ability_block:
+            print(
+                f"[WARN] [{monster_block.header.name}]: Empty ability block found, skipping."
+            )
+            continue
+        parsed_ability_block = parse_ability_block(
+            ability_block, monster_block.header.name
+        )
 
     # Optional fields:
     stats["weakness"], stats["immunity"] = parse_weakness_immunity(
@@ -679,6 +755,182 @@ def group_source_lines_into_monsters_blocks(
             MonsterBlock(header=header, source_lines=block_lines, raw_text=raw_text)
         )
     return blocks
+
+
+def join_broken_headers(lines: List[str]) -> List[str]:
+    """Joins lines where an ability header is broken across two lines."""
+    joined = []
+    buffer = ""
+    for line in lines:
+        test = buffer + " " + line if buffer else line
+        if any(re.search(pat, test, re.IGNORECASE) for pat in ABILITY_HEADER_PATTERNS):
+            joined.append(test.strip())
+            buffer = ""
+        elif any(
+            re.search(pat, line, re.IGNORECASE) for pat in ABILITY_HEADER_PATTERNS
+        ):
+            joined.append(line.strip())
+            buffer = ""
+        else:
+            if buffer:
+                buffer += " " + line.strip()
+            else:
+                buffer = line.strip()
+    if buffer:
+        joined.append(buffer)
+    return joined
+
+
+def find_ability_headers(source_lines: List[str]) -> List[Tuple[int, str]]:
+    """Return (idx, header_line) for every ability header."""
+    headers = []
+    for idx, line in enumerate(source_lines):
+        if any(re.search(pat, line, re.IGNORECASE) for pat in ABILITY_HEADER_PATTERNS):
+            headers.append((idx, line))
+    return headers
+
+
+def split_ability_blocks(lines: list[str]) -> list[list[str]]:
+    # print("--- split_ability_blocks ---")
+    # print("Source Lines (initial):")
+    # print(source_lines)
+    # source_lines = join_broken_headers(source_lines)
+    # print("Source Lines (after join_broken_headers):")
+    # print(source_lines)
+    # headers = find_ability_headers(source_lines)
+    # print("headers (after find_ability_headers):")
+    # print(headers)
+
+    """Splits the text into ability blocks based on header detection—never merges separate headers."""
+    blocks = []
+    current_block = []
+
+    # Preprocess: flatten lines and strip
+    flat_lines = [l.strip() for l in lines if l.strip()]
+
+    for line in flat_lines:
+        # Search for ability header pattern anywhere in the line
+        header_found = False
+        for pat in ABILITY_HEADER_PATTERNS:
+            m = re.search(pat, line, re.IGNORECASE)
+            if m:
+                header_found = True
+                # If current_block has content, flush it (it belongs to previous ability)
+                if current_block:
+                    blocks.append(current_block)
+                # If the header is not at the very start, split line
+                if m.start() > 0:
+                    before = line[: m.start()].strip()
+                    after = line[m.start() :].strip()
+                    # Usually, anything before is junk or previous block content—ignore or flag
+                    # (If you want to print for review: print(f"Orphan pre-header content: '{before}'"))
+                    current_block = [after]
+                else:
+                    current_block = [line]
+                break
+        if not header_found:
+            # Not a header, so add to current block
+            if current_block:
+                current_block.append(line)
+            else:
+                # Junk before first header—flag for review
+                print(f"[DEBUG] Ignoring orphaned non-header line: '{line}'")
+    # Flush last block
+    if current_block:
+        blocks.append(current_block)
+    return blocks
+
+
+def parse_ability_block(block_lines: List[str], monster_name: str) -> Dict[str, Any]:
+    """Parse an ability block. Print warnings/diagnostics on ambiguity."""
+    # Parse header for name, type, malice, power roll, etc.
+    header_line = block_lines[0]
+    match = None
+    for pat in ABILITY_HEADER_PATTERNS:
+        m = re.search(pat, header_line, re.IGNORECASE)
+        if m:
+            match = m
+            break
+    if not match:
+        print(f"[FLAG] Unmatched ability header: {header_line}")
+        return {}
+
+    parsed_header = parse_ability_header(header_line, monster_name)
+    ability: dict[str, Any] = {"header_raw": header_line, "header": parsed_header}
+
+    return ability
+
+
+def parse_ability_header(
+    header_line: str, monster_name: str
+) -> Optional[Dict[str, Any]]:
+    """Parse ability header, returning name, type, maliceCost, powerRoll bonus. Warn on partial match."""
+    # Normalize common OCR quirks first:
+    normalized = (
+        header_line.replace(
+            "©", ""
+        )  # Remove OCR diamonds/copyrights (can add more if you see them)
+        .replace("◆", "")
+        .replace("■", "")
+        .replace("•", "")
+        .replace("–", "")
+        .replace("|", "")
+        .replace("—", "")
+        .replace("  ", " ")  # Squash double spaces
+        .strip()
+    )
+
+    # Remove any spurious leading divider or number before the name.
+    normalized = re.sub(r"^[^A-Za-z]+", "", normalized)
+
+    match = ABILITY_HEADER_REGEX.match(normalized)
+    if not match:
+        print(
+            f"[WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: '{normalized}'"
+        )
+        print(ABILITY_HEADER_REGEX.pattern)
+        return None
+
+    groups = match.groupdict()
+
+    # Determine ability type
+    type_raw = groups.get("type") or ""
+    type_key = type_raw.strip().lower()
+    type_key = type_key.replace("  ", " ")
+    ability_type = ABILITY_TYPE_MAP.get(type_key, "unknown")
+
+    # Villain actions sometimes come as "Villain Action 1", etc.
+    if "villain action" in type_key:
+        ability_type = "villainAction"
+
+    # Malice cost: "Signature" is 0, otherwise integer.
+    if groups.get("malice") is not None:
+        malice_cost = int(groups["malice"])
+    elif "signature" in normalized.lower():
+        malice_cost = 0
+    else:
+        malice_cost = None  # None means not specified
+
+    # Power roll bonus
+    power_roll_bonus = None
+    if groups.get("bonus"):
+        try:
+            power_roll_bonus = int(groups["bonus"])
+        except Exception:
+            print(
+                f"[WARN] Could not parse power roll bonus: '{groups['bonus']}' in header '{header_line}'"
+            )
+            power_roll_bonus = None
+
+    ability_header: dict[str, Any] = {
+        "name": groups.get("name", "").strip(),
+        "type": ability_type,
+        "maliceCost": malice_cost,
+        "powerRollBonus": power_roll_bonus,
+        "header_raw": header_line.strip(),
+    }
+    # print(ability_header)
+    return ability_header
 
 
 def get_monster_foundry_actor_model(
@@ -785,8 +1037,8 @@ def deduplicate_monsters(monster_foundry_actor_models: list[dict[str, Any]]):
         if monster_name not in seen_monster_names:
             seen_monster_names.add(monster_name)
             unique_monster_models.append(monster_model)
-        else:
-            print(f"Duplicate found, dropping: [{monster_name}]")
+        # else:
+        #     print(f"Duplicate found, dropping: [{monster_name}]")
     return unique_monster_models
 
 
@@ -805,17 +1057,15 @@ if __name__ == "__main__":
     )
 
     monster_foundry_actor_models: list[dict[str, Any]] = []
-
     for monster_block in monster_blocks:
-        monster_model = get_monster_model_from_block(monster_block)
-        monster_foundry_actor_model = get_monster_foundry_actor_model(monster_model)
-        monster_foundry_actor_models.append(monster_foundry_actor_model)
-        # if block.header.name in [
+        # if monster_block.header.name in [
         #     "Mystic Queen Bargnot",
         #     "Goblin Warrior",
         #     "Werewolf",
         #     "Goblin Spinecleaver",
         # ]:
-        #     all_monster_stats.append(stats_as_yaml_dict)
+        monster_model = get_monster_model_from_block(monster_block)
+        monster_foundry_actor_model = get_monster_foundry_actor_model(monster_model)
+        monster_foundry_actor_models.append(monster_foundry_actor_model)
 
     export_yaml(deduplicate_monsters(monster_foundry_actor_models))
