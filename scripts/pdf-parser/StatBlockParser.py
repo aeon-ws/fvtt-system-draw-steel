@@ -62,22 +62,21 @@ ABILITY_TYPE_MAP = {
 }
 
 # Matches "Maneuver", "Action", "Triggered Action", "Villain Action", with or without "Free"
-ABILITY_TYPE_PATTERN = r"[(](?P<type>(Free )?(Action|Main Action|Maneuver|Triggered Action|Villain Action ?[123]?))[)]"
+ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action ?[123]?|(?:Main )?Action))[)]\s*"
 
 # Matches "2d10 + 2", "2D10 +2", etc. (OCR can garble spaces, so allow optional space)
-POWER_ROLL_PATTERN = r"2[Dd]10\s*\+\s*(?P<bonus>[-+]?\d+)"
+OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*\+\s*(?P<bonus>[-+]?\d)\s*)?"
 
 # Matches various dividers: anything that's not a letter/number, up to 2 chars, possibly multiple times
 DIVIDER = r"[^A-Za-z0-9]{0,2}"
 
 # Matches malice cost, e.g., "2 Malice" or "Signature"
-MALICE_PATTERN = r"(?:(?P<malice>1?\d)\s*Malice|Signature)"
+OPTIONAL_COST_PATTERN = r"(?:(?:\s?.?\s?(?P<malice>1?\d)\s*Malice|Signature)\s*)?"
 
-ABILITY_NAME_PATTERN = r"(?P<name>.+)"  # Greedy match for ability name
-# Compile everything into one robust pattern
+ABILITY_NAME_PATTERN = r"(?P<name>[A-Za-z][A-Za-z!? ]+[A-Za-z!?])\s*"
+
 ABILITY_HEADER_REGEX = re.compile(
-    rf"""^{ABILITY_NAME_PATTERN}\s*{ABILITY_TYPE_PATTERN}(?:{DIVIDER}\s*{POWER_ROLL_PATTERN})?(?:.*{MALICE_PATTERN})?$""",
-    re.IGNORECASE | re.VERBOSE,
+    rf"^{ABILITY_NAME_PATTERN}{ABILITY_TYPE_PATTERN}{OPTIONAL_POWER_ROLL_PATTERN}{OPTIONAL_COST_PATTERN}$"
 )
 
 WEAKNESS_IMMUNITY_TYPES = {
@@ -865,31 +864,19 @@ def parse_ability_header(
     header_line: str, monster_name: str
 ) -> Optional[Dict[str, Any]]:
     """Parse ability header, returning name, type, maliceCost, powerRoll bonus. Warn on partial match."""
-    # Normalize common OCR quirks first:
     normalized = (
-        header_line.replace(
-            "©", ""
-        )  # Remove OCR diamonds/copyrights (can add more if you see them)
-        .replace("◆", "")
-        .replace("■", "")
-        .replace("•", "")
-        .replace("–", "")
-        .replace("|", "")
-        .replace("—", "")
-        .replace("  ", " ")  # Squash double spaces
-        .strip()
+        re.sub("[^A-Za-z0-9!() +-]", "", header_line).replace("  ", " ").strip()
     )
-
-    # Remove any spurious leading divider or number before the name.
-    normalized = re.sub(r"^[^A-Za-z]+", "", normalized)
 
     match = ABILITY_HEADER_REGEX.match(normalized)
     if not match:
         print(
-            f"[WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: '{normalized}'"
+            f"[WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: {repr(normalized)}"
         )
-        print(ABILITY_HEADER_REGEX.pattern)
+        print("Unicode: ", " ".join(str(ord(c)) for c in normalized))
         return None
+    else:
+        print(f"Header matched: {repr(normalized)}")
 
     groups = match.groupdict()
 
@@ -1059,10 +1046,10 @@ if __name__ == "__main__":
     monster_foundry_actor_models: list[dict[str, Any]] = []
     for monster_block in monster_blocks:
         # if monster_block.header.name in [
-        #     "Mystic Queen Bargnot",
-        #     "Goblin Warrior",
+        #     # "Mystic Queen Bargnot",
+        #     # "Goblin Warrior",
         #     "Werewolf",
-        #     "Goblin Spinecleaver",
+        #     # "Goblin Spinecleaver",
         # ]:
         monster_model = get_monster_model_from_block(monster_block)
         monster_foundry_actor_model = get_monster_foundry_actor_model(monster_model)
