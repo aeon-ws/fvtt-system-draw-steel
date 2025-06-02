@@ -186,9 +186,9 @@ def is_noise_header(line: str) -> bool:
 
 
 def normalize_keywords(keywords: List[str]) -> List[str]:
-    fixed = []
+    fixed: list[str] = []
     for k in keywords:
-        k = fixup_name(k)
+        k = sanitize_name(k)
         if k.lower() == "human rival":
             fixed.extend(["Human", "Rival"])
         else:
@@ -196,7 +196,7 @@ def normalize_keywords(keywords: List[str]) -> List[str]:
     return fixed
 
 
-def parse_row2_keywords_ev(lines: list) -> (list, int):
+def parse_row2_keywords_ev(lines: list[str]) -> tuple[list[str], int | None]:
     """
     Extracts keywords (from before 'EV') and encounter value ('EV <number>').
     Handles glued 'EV' to keyword (e.g., 'Undead EV 3'), missing comma, etc.
@@ -210,9 +210,9 @@ def parse_row2_keywords_ev(lines: list) -> (list, int):
             # Split keywords by comma or just by space if only one
             candidates = [k.strip() for k in re.split(r"[,/]", left) if k.strip()]
             # Normalize and filter against whitelist
-            normalized = []
+            normalized: list[str] = []
             for c in candidates:
-                tc = title_case(fixup_name(c))
+                tc = title_case(sanitize_name(c))
                 if tc in KEYWORD_WHITELIST:
                     normalized.append(tc)
                 # Handle "Human Rival" as special case
@@ -227,26 +227,26 @@ def parse_row2_keywords_ev(lines: list) -> (list, int):
     return [], None
 
 
-def title_case(s: str) -> str:
-    words = s.split()
-    result = []
+def title_case(any_case_value: str) -> str:
+    words = any_case_value.split()
+    result: list[str] = []
     for i, word in enumerate(words):
-        lw = word.lower()
-        if i == 0 or lw not in MINOR_WORDS:
+        word_as_lower_case = word.lower()
+        if i == 0 or word_as_lower_case not in MINOR_WORDS:
             result.append(word.capitalize())
         else:
-            result.append(lw)
+            result.append(word_as_lower_case)
     return " ".join(result)
 
 
-def fixup_name(name: str) -> str:
-    name = re.sub(r"^[^A-Za-z0-9]+", "", name)  # Strip leading non-alphanum
-    name = name.strip()
-    return NAME_FIXUPS.get(name, name)
+def sanitize_name(raw_name: str) -> str:
+    raw_name = re.sub(r"^[^A-Za-z0-9]+", "", raw_name)  # Strip leading non-alphanum
+    raw_name = raw_name.strip()
+    return NAME_FIXUPS.get(raw_name, raw_name)
 
 
 def normalize_header_fields(header: MonsterHeader) -> MonsterHeader:
-    name = title_case(fixup_name(header.name))
+    name = title_case(sanitize_name(header.name))
     type_ = title_case(header.type)
     role = title_case(header.role) if header.role else None
     return MonsterHeader(
@@ -260,12 +260,16 @@ def normalize_header_fields(header: MonsterHeader) -> MonsterHeader:
     )
 
 
-def normalize_text(s: str) -> str:
+def normalize_string(raw_value: str) -> str:
     # Unicode normalize, replace curly quotes, collapse whitespace
-    s = unicodedata.normalize("NFKC", s)
-    s = re.sub(r"[‘’“”´`]", "'", s)  # curly/smart quotes to ascii
-    s = re.sub(r"\s+", " ", s)
-    return s.strip()
+    normalized_value = unicodedata.normalize("NFKC", raw_value)
+    apostrophe_normalized_value = re.sub(
+        r"[‘’“”´`]", "'", normalized_value
+    )  # curly/smart quotes to ascii
+    blankspace_and_apostrophe_normalized_value = re.sub(
+        r"\s+", " ", apostrophe_normalized_value
+    )
+    return blankspace_and_apostrophe_normalized_value.strip()
 
 
 def ocr_level_to_int(lvl_str: str) -> Optional[int]:
@@ -280,7 +284,7 @@ def ocr_level_to_int(lvl_str: str) -> Optional[int]:
 # --- Header Regex Builder ---
 
 
-def get_header_regex() -> Pattern:
+def get_header_regex() -> Pattern[str]:
     type_join = "|".join(TYPE_WHITELIST)
     role_join = "|".join(ROLE_WHITELIST)
     level_variants = r"(LEVEL|LEVE1|LEVEI|LEVET|LEVELT|LEvEL|LeveL|Levet|Leve1|LeveI)"
@@ -318,17 +322,20 @@ def fix_ocr_name(name: str) -> str:
 
 
 def get_header_candidates(lines: List[str]) -> List[Tuple[int, str]]:
-    candidates = []
-    for idx, line in enumerate(lines):
-        norm = normalize_text(line)
+    candidates: List[Tuple[int, str]] = []
+    for line_index, line in enumerate(lines):
+        normalized_line = normalize_string(line)
         # Must contain an OCR'd LEVEL, a known type, and a number close to LEVEL (avoid prose)
         if (
-            re.search(r"L[EV1I]{2,4}", norm, re.IGNORECASE)
-            and re.search(r"\d", norm)
-            and any(t in norm.upper() for t in [t.upper() for t in TYPE_WHITELIST])
-            and not re.search(r"malice", norm, re.IGNORECASE)
+            re.search(r"L[EV1I]{2,4}", normalized_line, re.IGNORECASE)
+            and re.search(r"\d", normalized_line)
+            and any(
+                t in normalized_line.upper()
+                for t in [t.upper() for t in TYPE_WHITELIST]
+            )
+            and not re.search(r"malice", normalized_line, re.IGNORECASE)
         ):
-            candidates.append((idx, norm))
+            candidates.append((line_index, normalized_line))
     return candidates
 
 
@@ -356,7 +363,7 @@ def parse_header_line(line: str) -> Optional[Dict[str, Any]]:
 # --- Main Header Detection Function ---
 
 
-def extract_headers_from_lines(lines: List[str]) -> List[MonsterHeader]:
+def extract_monster_headers_from_lines(lines: List[str]) -> List[MonsterHeader]:
     headers: List[MonsterHeader] = []
     candidates = get_header_candidates(lines)
     for idx, line in candidates:
@@ -378,22 +385,22 @@ def extract_headers_from_lines(lines: List[str]) -> List[MonsterHeader]:
     return headers
 
 
-def parse_monster_row2(block_lines: List[str]) -> Tuple[List[str], Optional[int]]:
+def parse_monster_row2(block_lines: List[str]) -> Tuple[List[str], int | None]:
     keywords, encounter_value = parse_row2_keywords_ev(block_lines)
     keywords = normalize_keywords(keywords)
     return keywords, encounter_value
 
 
-def parse_stamina(lines: List[str]) -> int:
+def parse_stamina(lines: List[str]) -> int | None:
     for line in lines:
         m = re.search(r"\bStamina\s+([0-9O]+)", line, re.IGNORECASE)
         if m:
             value = m.group(1).replace("O", "0")
             return int(value)
-    return None  # Or raise, or log
+    return None
 
 
-def parse_speed_and_movement(lines: List[str]) -> tuple[int, List[str]]:
+def parse_speed_and_movement(lines: List[str]) -> tuple[int | None, List[str]]:
     for line in lines:
         m = re.search(r"\bSpeed\s+([0-9O]+)\s*(?:\(([^)]+)\))?", line, re.IGNORECASE)
         if m:
@@ -407,7 +414,7 @@ def parse_speed_and_movement(lines: List[str]) -> tuple[int, List[str]]:
     return None, []
 
 
-def parse_size_and_stability(lines: List[str]) -> tuple[str, int]:
+def parse_size_and_stability(lines: List[str]) -> tuple[str, int] | tuple[None, None]:
     for line in lines:
         m = re.search(
             r"\bSize\s+(\w+)\s*/\s*Stability\s*([0-9O]+)", line, re.IGNORECASE
@@ -419,7 +426,7 @@ def parse_size_and_stability(lines: List[str]) -> tuple[str, int]:
     return None, None
 
 
-def parse_free_strike(lines: List[str]) -> int:
+def parse_free_strike(lines: List[str]) -> int | None:
     for line in lines:
         m = re.search(r"\bFree Strike\s*([0-9O]+)", line, re.IGNORECASE)
         if m:
@@ -428,7 +435,7 @@ def parse_free_strike(lines: List[str]) -> int:
     return None
 
 
-def parse_characteristics(lines: List[str]) -> dict:
+def parse_characteristics(lines: List[str]) -> dict[str, int]:
     for line in lines:
         m = re.findall(
             r"(Might|Agility|Reason|Intuition|Presence)\s*([+\-]?[0-9O]+)",
@@ -436,14 +443,14 @@ def parse_characteristics(lines: List[str]) -> dict:
             re.IGNORECASE,
         )
         if m and len(m) == 5:
-            d = {}
+            d: dict[str, int] = {}
             for stat, val in m:
                 d[stat.lower()] = int(val.upper().replace("O", "0"))
             return d
     return {}
 
 
-def parse_with_captain(lines: list) -> dict:
+def parse_with_captain(lines: list[str]) -> dict[str, Any] | None:
     """
     Returns a dict with the derived captain bonus or effect from the 'With Captain' line.
     Handles all known variants, including 'temporary stamina'.
@@ -493,7 +500,7 @@ def parse_with_captain(lines: list) -> dict:
     return None
 
 
-def find_last_stat_index(lines: list) -> int:
+def find_last_stat_index(lines: list[str]) -> int:
     for i, line in enumerate(lines):
         # Look for a line containing all 5 characteristic names (order doesn’t matter)
         fields = ["might", "agility", "reason", "intuition", "presence"]
@@ -526,10 +533,13 @@ def normalize_weakness_immunity_type(s: str) -> str:
     return mapping.get(cleaned, cleaned)
 
 
-def parse_weakness_immunity(lines: list) -> (dict, dict):
+def parse_weakness_immunity(
+    lines: list[str],
+) -> tuple[dict[str, int] | None, dict[str, int] | None]:
     stat_end_idx = find_last_stat_index(lines)
     lines = lines[: stat_end_idx + 1]  # Only parse the metadata/stat section
-    weakness, immunity = {}, {}
+    weakness: dict[str, int] = {}
+    immunity: dict[str, int] = {}
     for line in lines:
         line = line.replace("O", "0").replace("o", "0")
         for field in re.finditer(
@@ -537,32 +547,36 @@ def parse_weakness_immunity(lines: list) -> (dict, dict):
         ):
             label = field.group(1).lower()
             entries = field.group(2)
-            for e in entries.split(","):
-                e = e.strip()
-                tokens = e.split()
+            for entry in entries.split(","):
+                entry = entry.strip()
+                tokens = entry.split()
                 if len(tokens) == 2:
-                    k, v = tokens
+                    damage_type, immunity_or_weakness_value = tokens
                 else:
                     continue
-                k_norm = normalize_weakness_immunity_type(k)
-                if k_norm in WEAKNESS_IMMUNITY_TYPES:
+                normalized_damage_type = normalize_weakness_immunity_type(damage_type)
+                if normalized_damage_type in WEAKNESS_IMMUNITY_TYPES:
                     try:
                         if label == "immunity":
-                            immunity[k_norm] = int(v)
+                            immunity[normalized_damage_type] = int(
+                                immunity_or_weakness_value
+                            )
                         else:
-                            weakness[k_norm] = int(v)
+                            weakness[normalized_damage_type] = int(
+                                immunity_or_weakness_value
+                            )
                     except Exception:
                         continue
                 else:
                     print(
-                        f"Unknown Weakness/Immunity type: {k!r} normalized as {k_norm!r} in entry: {e!r}"
+                        f"Unknown Weakness/Immunity type: {damage_type!r} normalized as {normalized_damage_type!r} in entry: {entry!r}"
                     )
     return (weakness or None, immunity or None)
 
 
-def parse_stats_from_block(block: MonsterBlock) -> dict:
+def parse_monster_block_and_get_stats(block: MonsterBlock) -> dict[str, Any]:
     # Copy header fields
-    stats = {
+    stats: dict[str, Any] = {
         "name": block.header.name,
         "level": block.header.level,
         "type": block.header.type,
@@ -586,10 +600,10 @@ def parse_stats_from_block(block: MonsterBlock) -> dict:
     return stats
 
 
-def blockify_monsters(
+def split_source_lines_into_monsters_blocks(
     lines: List[str], headers: List[MonsterHeader]
 ) -> List[MonsterBlock]:
-    blocks = []
+    blocks: List[MonsterBlock] = []
     header_indices = [h.start_idx for h in headers]
     num_lines = len(lines)
     header_line_set = set(header_indices)
@@ -623,29 +637,31 @@ def blockify_monsters(
     return blocks
 
 
-def build_yaml_block(stats: dict) -> dict:
+def get_export_stats_from_monster_stats(
+    monster_stats_as_dict: dict[str, Any],
+) -> dict[str, Any]:
     # Prepare fields
-    is_minion = stats["type"].lower() == "minion"
+    is_minion = monster_stats_as_dict["type"].lower() == "minion"
     block_id = generate_id()
     width = 1
     try:
         # Handle sizes like "1S", "2", "3" (token width/height)
         if (
-            str(stats.get("size", "")).startswith("1")
-            or str(stats.get("size", "")).isdigit()
+            str(monster_stats_as_dict.get("size", "")).startswith("1")
+            or str(monster_stats_as_dict.get("size", "")).isdigit()
         ):
-            width = int(str(stats["size"])[0])
+            width = int(str(monster_stats_as_dict["size"])[0])
     except Exception:
         width = 1
 
-    yaml_dict = {
+    yaml_dict: dict[str, Any] = {
         "_id": block_id,
         "_key": f"!actors!{block_id}",
-        "name": stats["name"],
+        "name": monster_stats_as_dict["name"],
         "type": "minion" if is_minion else "enemy",
         "img": "icons/svg/mystery-man.svg",
         "prototypeToken": {
-            "name": stats["name"],
+            "name": monster_stats_as_dict["name"],
             "displayName": 50,
             "displayBars": 50,
             "bar1": {"attribute": "stamina"},
@@ -658,28 +674,31 @@ def build_yaml_block(stats: dict) -> dict:
             "texture": {"img": "icons/svg/mystery-man.svg"},
         },
         "system": {
-            "name": stats["name"],
-            "keywords": stats.get("keywords", []),
-            "level": stats["level"],
-            "type": stats["type"].title(),
-            "role": stats.get("role") or "",
-            "encounterValue": stats.get("encounterValue", 0),
-            "characteristics": stats.get("characteristics", {}),
+            "name": monster_stats_as_dict["name"],
+            "keywords": monster_stats_as_dict.get("keywords", []),
+            "level": monster_stats_as_dict["level"],
+            "type": monster_stats_as_dict["type"].title(),
+            "role": monster_stats_as_dict.get("role") or "",
+            "encounterValue": monster_stats_as_dict.get("encounterValue", 0),
+            "characteristics": monster_stats_as_dict.get("characteristics", {}),
             "stamina": (
                 {
-                    "max": stats["stamina"],
-                    "perMinion": stats["stamina"],
-                    "value": stats["stamina"],
+                    "max": monster_stats_as_dict["stamina"],
+                    "perMinion": monster_stats_as_dict["stamina"],
+                    "value": monster_stats_as_dict["stamina"],
                 }
                 if is_minion
-                else {"max": stats["stamina"], "value": stats["stamina"]}
+                else {
+                    "max": monster_stats_as_dict["stamina"],
+                    "value": monster_stats_as_dict["stamina"],
+                }
             ),
             "combat": {
-                "size": stats.get("size"),
-                "speed": stats.get("speed"),
-                "movementTypes": stats.get("movementTypes", []),
-                "stability": stats.get("stability"),
-                "freeStrikeDamage": stats.get("freeStrikeDamage"),
+                "size": monster_stats_as_dict.get("size"),
+                "speed": monster_stats_as_dict.get("speed"),
+                "movementTypes": monster_stats_as_dict.get("movementTypes", []),
+                "stability": monster_stats_as_dict.get("stability"),
+                "freeStrikeDamage": monster_stats_as_dict.get("freeStrikeDamage"),
             },
         },
         "items": [],
@@ -691,12 +710,12 @@ def build_yaml_block(stats: dict) -> dict:
         "derivedCaptainBonuses",
         "appliedCaptainEffects",
     ):
-        if stats.get(field):
-            yaml_dict["system"][field] = stats[field]
+        if monster_stats_as_dict.get(field):
+            yaml_dict["system"][field] = monster_stats_as_dict[field]
     return yaml_dict
 
 
-def export_yaml(monsters: list, out_file: str):
+def export_yaml(monsters: list[dict[str, Any]]):
     for monster in monsters:
         with open(
             f"c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters/{monster['name']}.yml",
@@ -712,17 +731,17 @@ def export_yaml(monsters: list, out_file: str):
             )
 
 
-def deduplicate_monsters(monster_blocks):
-    seen = set()
-    unique = []
-    for m in monster_blocks:
-        key = (m["name"].lower(), m["level"])
-        if key not in seen:
-            seen.add(key)
-            unique.append(m)
+def deduplicate_monsters(all_monster_stat_blocks_as_dicts: list[dict[str, Any]]):
+    seen_monster_names = set[str]()
+    unique_monster_stat_blocks_as_dicts: list[dict[str, Any]] = []
+    for monster_stat_block_as_dict in all_monster_stat_blocks_as_dicts:
+        monster_name = str(monster_stat_block_as_dict["name"]).lower()
+        if monster_name not in seen_monster_names:
+            seen_monster_names.add(monster_name)
+            unique_monster_stat_blocks_as_dicts.append(monster_stat_block_as_dict)
         else:
-            print(f"Duplicate found, dropping: {m['name']} (level {m['level']})")
-    return unique
+            print(f"Duplicate found, dropping: [{monster_name}]")
+    return unique_monster_stat_blocks_as_dicts
 
 
 # --- Example Usage ---
@@ -734,16 +753,18 @@ if __name__ == "__main__":
     ) as f:
         lines = f.readlines()
 
-    headers = extract_headers_from_lines(lines)
-    blocks = blockify_monsters(lines, headers)
+    monster_headers = extract_monster_headers_from_lines(lines)
+    monster_blocks = split_source_lines_into_monsters_blocks(lines, monster_headers)
 
-    all_monster_stats = []
+    all_monster_export_stats_as_dicts: list[dict[str, Any]] = []
 
-    for block in blocks:
+    for monster_block in monster_blocks:
         # print(block.header.name, "block has", len(block.lines), "lines")
-        stats_as_dict = parse_stats_from_block(block)
-        stats_as_yaml_dict = build_yaml_block(stats_as_dict)
-        all_monster_stats.append(stats_as_yaml_dict)
+        monster_stats_as_dict = parse_monster_block_and_get_stats(monster_block)
+        monster_export_stats_as_dict = get_export_stats_from_monster_stats(
+            monster_stats_as_dict
+        )
+        all_monster_export_stats_as_dicts.append(monster_export_stats_as_dict)
         # if block.header.name in [
         #     "Mystic Queen Bargnot",
         #     "Goblin Warrior",
@@ -752,6 +773,6 @@ if __name__ == "__main__":
         # ]:
         #     all_monster_stats.append(stats_as_yaml_dict)
 
-    deduplicate_monsters(all_monster_stats)
+    deduplicate_monsters(all_monster_export_stats_as_dicts)
 
-    export_yaml(all_monster_stats, "monsters.yaml")
+    export_yaml(all_monster_export_stats_as_dicts)
