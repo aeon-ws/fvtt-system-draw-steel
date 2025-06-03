@@ -1,5 +1,5 @@
-_id: 5u2vPFSSqKxcKfAw
-_key: '!actors!5u2vPFSSqKxcKfAw'
+_id: qrhwKI5QbeO7Sgco
+_key: '!actors!qrhwKI5QbeO7Sgco'
 name: Goblin Assassin
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,9 +29,9 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: 2
-    reason: 0
-    intuition: 0
+    agility: -2
+    reason: -2
+    intuition: -2
     presence: -2
   stamina:
     max: 15

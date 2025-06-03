@@ -1,5 +1,5 @@
-_id: iOQuc1WJt2n4rurc
-_key: '!actors!iOQuc1WJt2n4rurc'
+_id: 57T4AaPW3uhyqhZA
+_key: '!actors!57T4AaPW3uhyqhZA'
 name: Skeleton
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 2
-    reason: 1
+    agility: 0
+    reason: 0
     intuition: 0
-    presence: -1
+    presence: 0
   stamina:
     max: 10
     value: 10

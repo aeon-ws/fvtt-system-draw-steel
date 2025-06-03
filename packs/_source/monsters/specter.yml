@@ -1,5 +1,5 @@
-_id: zjo8UMMuCf2sZEuB
-_key: '!actors!zjo8UMMuCf2sZEuB'
+_id: 8Mgm4zkML5I3ompE
+_key: '!actors!8Mgm4zkML5I3ompE'
 name: Specter
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -5
-    agility: 1
-    reason: 0
-    intuition: 0
-    presence: 2
+    agility: -5
+    reason: -5
+    intuition: -5
+    presence: -5
   stamina:
     max: 10
     value: 10

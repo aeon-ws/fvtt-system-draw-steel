@@ -1,5 +1,5 @@
-_id: CCSAskJXNBlggqLg
-_key: '!actors!CCSAskJXNBlggqLg'
+_id: CbbX6JQko0975Rty
+_key: '!actors!CbbX6JQko0975Rty'
 name: Tomb Horror
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 16
   characteristics:
     might: 2
-    agility: -2
-    reason: -3
+    agility: 2
+    reason: 2
     intuition: 2
-    presence: -3
+    presence: 2
   stamina:
     max: 100
     value: 100

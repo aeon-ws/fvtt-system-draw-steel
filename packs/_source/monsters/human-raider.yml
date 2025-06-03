@@ -1,5 +1,5 @@
-_id: Nx5kZ4lwqPwI6bCs
-_key: '!actors!Nx5kZ4lwqPwI6bCs'
+_id: 6HRwKwZ6FCtbzkih
+_key: '!actors!6HRwKwZ6FCtbzkih'
 name: Human Raider
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,7 +29,7 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 2
+    agility: 0
     reason: 0
     intuition: 0
     presence: 0

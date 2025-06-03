@@ -1,5 +1,5 @@
-_id: HFBTym01sJ1fqJpo
-_key: '!actors!HFBTym01sJ1fqJpo'
+_id: ztx7P3hWAi2ghZ5s
+_key: '!actors!ztx7P3hWAi2ghZ5s'
 name: Flow of the River
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 4
   characteristics:
     might: 0
-    agility: 2
-    reason: -2
+    agility: 0
+    reason: 0
     intuition: 0
-    presence: -2
+    presence: 0
   stamina:
     max: 4
     perMinion: 4

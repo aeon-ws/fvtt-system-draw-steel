@@ -1,5 +1,5 @@
-_id: J9W0tIcIflM9I4Bw
-_key: '!actors!J9W0tIcIflM9I4Bw'
+_id: 8wiW3OPV4UfXjTV7
+_key: '!actors!8wiW3OPV4UfXjTV7'
 name: Dwarf Warden
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 8
   characteristics:
     might: 2
-    agility: 0
-    reason: 0
-    intuition: 1
-    presence: 0
+    agility: 2
+    reason: 2
+    intuition: 2
+    presence: 2
   stamina:
     max: 59
     value: 59

@@ -1,5 +1,5 @@
-_id: gbux8Ls6sCfawuCl
-_key: '!actors!gbux8Ls6sCfawuCl'
+_id: fzhJxkp69lwI5WXd
+_key: '!actors!fzhJxkp69lwI5WXd'
 name: Gorek
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 16
   characteristics:
     might: 2
-    agility: 1
-    reason: 0
-    intuition: 0
-    presence: 0
+    agility: 2
+    reason: 2
+    intuition: 2
+    presence: 2
   stamina:
     max: 100
     value: 100

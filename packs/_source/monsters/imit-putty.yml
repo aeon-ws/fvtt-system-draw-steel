@@ -1,5 +1,5 @@
-_id: FV0MXy0YqjmD6zhe
-_key: '!actors!FV0MXy0YqjmD6zhe'
+_id: iBYGLc3pVizNfLBn
+_key: '!actors!iBYGLc3pVizNfLBn'
 name: Imit Putty
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,9 +28,9 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: 2
-    reason: -1
-    intuition: -1
+    agility: -2
+    reason: -2
+    intuition: -2
     presence: -2
   stamina:
     max: 15

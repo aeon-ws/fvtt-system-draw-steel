@@ -1,5 +1,5 @@
-_id: HRP3g2MiQR2bXVOp
-_key: '!actors!HRP3g2MiQR2bXVOp'
+_id: YANRCG3hVEWh27oZ
+_key: '!actors!YANRCG3hVEWh27oZ'
 name: Mara
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -31,8 +31,8 @@ system:
   characteristics:
     might: 0
     agility: 0
-    reason: 2
-    intuition: 1
+    reason: 0
+    intuition: 0
     presence: 0
   stamina:
     max: 60

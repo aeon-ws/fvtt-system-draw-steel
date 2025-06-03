@@ -1,9 +1,100 @@
-[
-  [
-    "Goblin, Humanoid EV3  Stamina 15  Speed 6 (climb) Size 15 / Stability 0 Free Strike 1  Might-2 Agility+2 Reason+0  Intuition+O Presence -1 Spear Charge (Action) © 2d10 + 2 Signature"
-  ],
-  [
-    "Keywords Charge, Melee, Strike, Weapon  Distance Melee 1 Target One creature or object  + <11 3damage  * 12-16 4damage  3% 17+ Sdamage  Bury the Point (Action) © 2d10 + 2 4 2 Malice",
-    "Keywords Melee, Strike, Weapon Distance Melee 1 Target One creature  + <11 5 damage; M<0 bleeding (save ends) * 12-16 6 damage; M<1 bleeding (save ends) % 17+ 7 damage; M<2 bleeding (save ends)  Crafty The warrior doesn’t provoke opportunity attacks by moving.  "
+{
+  "name": "Goblin Assassin",
+  "level": 1,
+  "type": "Horde",
+  "role": "Ambusher",
+  "header_text": "GOBLIN ASSASSIN LEVEL 1 HORDE AMBUSHER",
+  "keywords": ["Goblin", "Humanoid"],
+  "encounterValue": 3,
+  "stamina": 15,
+  "speed": 6,
+  "movementTypes": ["climb"],
+  "size": "1S",
+  "stability": 0,
+  "freeStrikeDamage": 2,
+  "characteristics": {
+    "might": -2,
+    "agility": -2,
+    "reason": -2,
+    "intuition": -2,
+    "presence": -2
+  },
+  "weakness": null,
+  "immunity": null,
+  "derivedCaptainBonuses": null,
+  "appliedCaptainEffects": null,
+  "items": [
+    {
+      "name": "Sword Stab",
+      "type": "mainAction",
+      "maliceCost": 0,
+      "powerRoll": {
+        "bonus": 2,
+        "tier1": {
+          "damage": 4,
+          "effect": { "text": null },
+          "potencyEffect": null
+        },
+        "tier2": {
+          "damage": 6,
+          "effect": { "text": null },
+          "potencyEffect": null
+        },
+        "tier3": {
+          "damage": 7,
+          "effect": { "text": null },
+          "potencyEffect": null
+        }
+      },
+      "keywords": ["Melee", "Strike", "Weapon"],
+      "distance": "Distance Melee 1 Target One creature or object",
+      "target": null,
+      "trigger": null,
+      "prePowerRollEffect": null,
+      "postPowerRollEffect": null,
+      "header_raw": "Sword Stab (Action) © 2d10 + 2 © Signature"
+    },
+    {
+      "name": "Shadow Chains",
+      "type": "mainAction",
+      "maliceCost": 3,
+      "powerRoll": {
+        "bonus": 2,
+        "tier1": {
+          "damage": 2,
+          "effect": { "text": null },
+          "potencyEffect": {
+            "targetCharacteristic": "agility",
+            "value": 0,
+            "effects": { "text": "restrained (save ends)" }
+          }
+        },
+        "tier2": {
+          "damage": 4,
+          "effect": { "text": null },
+          "potencyEffect": {
+            "targetCharacteristic": "agility",
+            "value": 1,
+            "effects": { "text": "restrained (save ends)" }
+          }
+        },
+        "tier3": {
+          "damage": 5,
+          "effect": { "text": null },
+          "potencyEffect": {
+            "targetCharacteristic": "agility",
+            "value": 2,
+            "effects": { "text": "restrained (save ends)" }
+          }
+        }
+      },
+      "keywords": ["Magic", "Ranged"],
+      "distance": "Distance Ranged 10 Target Three creatures",
+      "target": null,
+      "trigger": null,
+      "prePowerRollEffect": null,
+      "postPowerRollEffect": null,
+      "header_raw": "Shadow Chains (Action) © 2d10 + 2 © 3 Malice"
+    }
   ]
-]
+}

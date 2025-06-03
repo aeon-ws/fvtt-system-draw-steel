@@ -1,5 +1,5 @@
-_id: ngTPec5yADC2jlGZ
-_key: '!actors!ngTPec5yADC2jlGZ'
+_id: jqrZRmoVm7ipp0JX
+_key: '!actors!jqrZRmoVm7ipp0JX'
 name: Human Scoundrel
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 6
   characteristics:
     might: 0
-    agility: 2
+    agility: 0
     reason: 0
     intuition: 0
-    presence: 1
+    presence: 0
   stamina:
     max: 30
     value: 30

@@ -1,5 +1,5 @@
-_id: p49AKvDeNu7iyH8z
-_key: '!actors!p49AKvDeNu7iyH8z'
+_id: tkthj4fKoLcJrEP8
+_key: '!actors!tkthj4fKoLcJrEP8'
 name: Goblin Sniper
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: 2
-    reason: 0
-    intuition: 0
-    presence: -1
+    agility: -2
+    reason: -2
+    intuition: -2
+    presence: -2
   stamina:
     max: 3
     perMinion: 3

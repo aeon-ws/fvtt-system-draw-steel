@@ -1,5 +1,5 @@
-_id: 6ph7ZCMJbQe8rqKo
-_key: '!actors!6ph7ZCMJbQe8rqKo'
+_id: IGQvN3CLOTbCRKDJ
+_key: '!actors!IGQvN3CLOTbCRKDJ'
 name: Goblin Warrior
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: 2
-    reason: 0
-    intuition: 0
-    presence: -1
+    agility: -2
+    reason: -2
+    intuition: -2
+    presence: -2
   stamina:
     max: 15
     value: 15

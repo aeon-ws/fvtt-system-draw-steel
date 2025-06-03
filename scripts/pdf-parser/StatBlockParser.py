@@ -3,11 +3,156 @@ import re
 import string
 import unicodedata
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, Pattern, Tuple
+from typing import Any, Dict, List, Literal, Optional, Pattern, Tuple, TypedDict, Union
 
 import yaml
 
 # --- Type Definitions ---
+
+
+# --- Shared types ---
+class WeaknessData(TypedDict, total=False):
+    acid: int
+    cold: int
+    corruption: int
+    damage: int
+    fire: int
+    holy: int
+    lightning: int
+    poison: int
+    psychic: int
+    sonic: int
+
+
+class ImmunityData(TypedDict, total=False):
+    acid: int
+    cold: int
+    corruption: int
+    damage: int
+    fire: int
+    holy: int
+    lightning: int
+    poison: int
+    psychic: int
+    sonic: int
+
+
+class Characteristics(TypedDict):
+    might: int
+    agility: int
+    reason: int
+    intuition: int
+    presence: int
+
+
+class StaminaData(TypedDict, total=False):
+    max: int
+    perMinion: Optional[int]
+    value: Optional[int]
+
+
+# --- Ability effect and power roll types ---
+class EffectData(TypedDict, total=False):
+    text: str
+    targets: str
+    duration: Optional[Literal["endOfTargetTurn", "saveEnds", "endOfEncounter"]]
+    slowed: bool
+    weakened: bool
+    frightened: bool
+    bleeding: bool
+    grabbed: bool
+    taunted: bool
+    restrained: bool
+    weakness: Optional[Dict[str, int]]
+
+
+class PotencyEffectData(TypedDict, total=False):
+    targetCharacteristic: Literal["might", "agility", "reason", "intuition", "presence"]
+    value: int
+    effects: EffectData
+
+
+class PowerRollTier(TypedDict, total=False):
+    damage: Optional[int]
+    effect: Optional[EffectData]
+    potencyEffect: Optional[PotencyEffectData]
+
+
+class PowerRoll(TypedDict, total=False):
+    bonus: Optional[int]
+    tier1: Optional[PowerRollTier]
+    tier2: Optional[PowerRollTier]
+    tier3: Optional[PowerRollTier]
+
+
+class AbilityTargetData(TypedDict, total=False):
+    filter: Optional[str]
+    text: str
+    count: Union[int, Literal["all"]]
+
+
+class AbilityModel(TypedDict, total=False):
+    name: str
+    type: Literal[
+        "mainAction",
+        "triggeredAction",
+        "freeTriggeredAction",
+        "freeMainAction",
+        "maneuver",
+        "freeManeuver",
+        "villainAction",
+    ]
+    maliceCost: Optional[int]
+    powerRoll: Optional[PowerRoll]
+    keywords: List[str]
+    distance: Optional[str]
+    target: Optional[AbilityTargetData]
+    trigger: Optional[str]
+    prePowerRollEffect: Optional[EffectData]
+    postPowerRollEffect: Optional[EffectData]
+    header_raw: str
+
+
+class CharacteristicsData(TypedDict):
+    might: int
+    agility: int
+    reason: int
+    intuition: int
+    presence: int
+
+
+class AppliedCaptainEffects(TypedDict, total=False):
+    temporaryStamina: Optional[int]
+
+
+class DerivedCaptainBonuses(TypedDict, total=False):
+    speed: Optional[int]
+    meleeDistanceBonus: Optional[int]
+    rangedDistanceBonus: Optional[int]
+    strikeDamage: Optional[int]
+    strikeEdge: Optional[int]
+
+
+class MonsterModel(TypedDict, total=False):
+    name: str
+    level: int
+    type: str
+    role: Optional[str]
+    header_text: str
+    keywords: List[str]
+    encounterValue: int
+    stamina: int
+    speed: int
+    movementTypes: List[str]
+    size: str
+    stability: int
+    freeStrikeDamage: int
+    characteristics: CharacteristicsData
+    weakness: Optional[Dict[str, int]]
+    immunity: Optional[Dict[str, int]]
+    derivedCaptainBonuses: Optional[DerivedCaptainBonuses]
+    appliedCaptainEffects: Optional[AppliedCaptainEffects]
+    items: List[AbilityModel]  # List of abilities/traits
 
 
 @dataclass
@@ -70,16 +215,7 @@ OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*\+\s*(?P<bonus>[-+]?\d)\s*)?"
 # Matches various dividers: anything that's not a letter/number, up to 2 chars, possibly multiple times
 DIVIDER = r"[^A-Za-z0-9]{0,2}"
 
-# Matches malice cost, e.g., "2 Malice" or "Signature"
-OPTIONAL_COST_PATTERN = r"(?:(?:\s?.?\s?(?P<malice>1?\d)\s*Malice|Signature)\s*)?"
-
-ABILITY_NAME_PATTERN = r"(?P<name>[A-Za-z][A-Za-z!? ]+[A-Za-z!?])\s*"
-
-ABILITY_HEADER_REGEX = re.compile(
-    rf"^{ABILITY_NAME_PATTERN}{ABILITY_TYPE_PATTERN}{OPTIONAL_POWER_ROLL_PATTERN}{OPTIONAL_COST_PATTERN}$"
-)
-
-WEAKNESS_IMMUNITY_TYPES = {
+DAMAGE_TYPES = {
     "acid",
     "cold",
     "corruption",
@@ -91,8 +227,34 @@ WEAKNESS_IMMUNITY_TYPES = {
     "psychic",
     "sonic",
 }
-TYPE_WHITELIST = ["minion", "horde", "platoon", "elite", "leader", "solo"]
-ROLE_WHITELIST = [
+DAMAGE_TYPE_PATTERN = "|".join([rf"{r}" for r in DAMAGE_TYPES])
+
+# Matches malice cost, e.g., "2 Malice" or "Signature"
+OPTIONAL_COST_PATTERN = r"(?:(?:\s?.?\s?(?P<malice>1?\d)\s*Malice|Signature)\s*)?"
+
+ABILITY_NAME_PATTERN = r"(?P<name>[A-Za-z][A-Za-z!? ]+[A-Za-z!?])\s*"
+
+ABILITY_HEADER_REGEX = re.compile(
+    rf"^{ABILITY_NAME_PATTERN}{ABILITY_TYPE_PATTERN}{OPTIONAL_POWER_ROLL_PATTERN}{OPTIONAL_COST_PATTERN}$"
+)
+# + 11 2 corruption damage A<0 restrained (save ends)
+
+EFFECT_DURATION_PATTERN = r"(?:save ends|end of target turn|end of targets turn|end of target.?s turn|end of (?:the )?encounter|EoE|EoT|end of \w+ next turn|start of \w+ next turn)"
+POWER_ROLL_EFFECT_KEYWORDS = rf"(?:prone|slowed|weakened|frightened|bleeding|grabbed|taunted|restrained|speed|shift\s?[1-9]?|move|push\s?[1-9]?|pull\s?[1-9]?|slide\s?[1-9]?|fly|hover|teleport\s?[1-9]?|stand up|recovery|immunity|weakness|temporary stamina|{EFFECT_DURATION_PATTERN})"
+POWER_ROLL_RANGE_PATTERN = r"[^1l!]*(11|12.16|17[4]?[+]?).?\s*"
+POWER_ROLL_DAMAGE_TYPE_PATTERN = rf"(?P<damageType>{DAMAGE_TYPE_PATTERN})?"
+DAMAGE_PATTERN = rf"(?:[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_TYPE_PATTERN}[^0-9]?\s*damage;?\s*)?"
+
+POWER_ROLL_EFFECT_PATTERN = rf"(?:[^A-Za-z]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*)?"
+POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"(?:[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])<(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?))?"
+
+POWER_ROLL_LINE_PATTERN = re.compile(
+    rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
+    re.IGNORECASE,
+)
+
+MONSTER_TYPE_WHITELIST = ["minion", "horde", "platoon", "elite", "leader", "solo"]
+MONSTER_ROLE_WHITELIST = [
     "ambusher",
     "artillery",
     "brute",
@@ -104,8 +266,10 @@ ROLE_WHITELIST = [
     "support",
     "skirmisher",
 ]
+MONSTER_TYPE_PATTERN = "|".join([rf"\b{t}\b" for t in MONSTER_TYPE_WHITELIST])
+MONSTER_ROLE_PATTERN = "|".join([rf"\b{r}\b" for r in MONSTER_ROLE_WHITELIST])
 
-KEYWORD_WHITELIST = set(
+MONSTER_KEYWORD_WHITELIST = set(
     [
         "Abyssal",
         "Accursed",
@@ -186,12 +350,9 @@ KEYWORD_WHITELIST = set(
 )
 
 # Regex for common OCR errors in "level"
-LEVEL_PATTERN = (
+MONSTER_LEVEL_PATTERN = (
     r"L[e3][vvu][e1il|1lt]+"  # Removed (?i) – will use re.IGNORECASE on compile
 )
-
-TYPE_PATTERN = "|".join([rf"\b{t}\b" for t in TYPE_WHITELIST])
-ROLE_PATTERN = "|".join([rf"\b{r}\b" for r in ROLE_WHITELIST])
 
 # Known OCR fixup map
 NAME_FIXUPS = {
@@ -242,7 +403,7 @@ def normalize_keywords(keywords: List[str]) -> List[str]:
     return fixed
 
 
-def parse_row2_keywords_ev(lines: list[str]) -> tuple[list[str], int | None]:
+def parse_keywords_and_ev(lines: list[str]) -> tuple[list[str], int]:
     """
     Extracts keywords (from before 'EV') and encounter value ('EV <number>').
     Handles glued 'EV' to keyword (e.g., 'Undead EV 3'), missing comma, etc.
@@ -259,7 +420,7 @@ def parse_row2_keywords_ev(lines: list[str]) -> tuple[list[str], int | None]:
             normalized: list[str] = []
             for c in candidates:
                 tc = title_case(sanitize_name(c))
-                if tc in KEYWORD_WHITELIST:
+                if tc in MONSTER_KEYWORD_WHITELIST:
                     normalized.append(tc)
                 # Handle "Human Rival" as special case
                 elif tc.lower() == "human rival":
@@ -270,7 +431,10 @@ def parse_row2_keywords_ev(lines: list[str]) -> tuple[list[str], int | None]:
                     print(f"UNKNOWN KEYWORD: {tc}")
             return normalized, encounter_value
     # Fallback: if not found
-    return [], None
+    raise ValueError(
+        "Encounter Value (EV) not found in the provided lines. "
+        "Ensure the first 6 lines contain 'EV <number>'"
+    )
 
 
 def title_case(any_case_value: str) -> str:
@@ -331,8 +495,8 @@ def ocr_level_to_int(lvl_str: str) -> Optional[int]:
 
 
 def get_header_regex() -> Pattern[str]:
-    type_join = "|".join(TYPE_WHITELIST)
-    role_join = "|".join(ROLE_WHITELIST)
+    type_join = "|".join(MONSTER_TYPE_WHITELIST)
+    role_join = "|".join(MONSTER_ROLE_WHITELIST)
     level_variants = r"(LEVEL|LEVE1|LEVEI|LEVET|LEVELT|LEvEL|LeveL|Levet|Leve1|LeveI)"
     # Accept nearly anything for name, until we hit LEVEL variant (non-greedy)
     header_pattern = (
@@ -377,7 +541,7 @@ def get_header_candidates(lines: List[str]) -> List[Tuple[int, str]]:
             and re.search(r"\d", normalized_line)
             and any(
                 t in normalized_line.upper()
-                for t in [t.upper() for t in TYPE_WHITELIST]
+                for t in [t.upper() for t in MONSTER_TYPE_WHITELIST]
             )
             and not re.search(r"malice", normalized_line, re.IGNORECASE)
         ):
@@ -440,24 +604,24 @@ def get_monster_headers_from_source_lines(
     return monster_headers
 
 
-def parse_monster_row2(block_lines: List[str]) -> Tuple[List[str], int | None]:
-    keywords, encounter_value = parse_row2_keywords_ev(block_lines)
+def parse_keywords_and_ev_row(block_lines: List[str]) -> Tuple[List[str], int]:
+    keywords, encounter_value = parse_keywords_and_ev(block_lines)
     keywords = normalize_keywords(keywords)
     return keywords, encounter_value
 
 
-def parse_stamina(lines: List[str]) -> int | None:
+def parse_stamina(lines: List[str]) -> int:
     for line in lines:
         m = re.search(r"\bStamina\s+([0-9O]+)", line, re.IGNORECASE)
         if m:
             value = m.group(1).replace("O", "0")
             return int(value)
-    return None
+    raise ValueError("Stamina not found in the provided lines.")
 
 
 def parse_speed_and_movement_types(
     source_lines: List[str],
-) -> tuple[int | None, List[str]]:
+) -> tuple[int, List[str]]:
     for source_line in source_lines:
         speed_and_movement_type_matches = re.search(
             r"\bSpeed\s+([0-9O]+)\s*(?:\(([^)]+)\))?", source_line, re.IGNORECASE
@@ -473,12 +637,14 @@ def parse_speed_and_movement_types(
                 else ["walk"]
             )
             return int(speed), movement_types
-    return None, []
+    raise ValueError(
+        f"Speed and/or movement types not found in the provided lines: {source_lines}"
+    )
 
 
 def parse_size_and_stability(
     source_lines: List[str],
-) -> tuple[str, int] | tuple[None, None]:
+) -> tuple[str, int]:
     for source_line in source_lines:
         size_and_stability_matches = re.search(
             r"\bSize\s+(\w+)\s*/\s*Stability\s*([0-9O]+)", source_line, re.IGNORECASE
@@ -487,10 +653,12 @@ def parse_size_and_stability(
             size = size_and_stability_matches.group(1)
             stability = int(size_and_stability_matches.group(2).replace("O", "0"))
             return size, stability
-    return None, None
+    raise ValueError(
+        f"Size and/or stability not found in the provided lines: {source_lines}"
+    )
 
 
-def parse_free_strike(source_lines: List[str]) -> int | None:
+def parse_free_strike(source_lines: List[str]) -> int:
     for source_line in source_lines:
         free_strike_matches = re.search(
             r"\bFree Strike\s*([0-9O]+)", source_line, re.IGNORECASE
@@ -498,10 +666,20 @@ def parse_free_strike(source_lines: List[str]) -> int | None:
         if free_strike_matches:
             free_strike = free_strike_matches.group(1).replace("O", "0")
             return int(free_strike)
-    return None
+    raise ValueError(f"Free Strike not found in the provided lines: {source_lines}")
 
 
-def parse_characteristics(source_lines: List[str]) -> dict[str, int]:
+def get_characteristic_value(characteristics: list[tuple[str, str]], name: str) -> int:
+    for name, value in characteristics:
+        if name.lower() == name.lower():
+            return int(str(value).upper().replace("O", "0"))
+
+    raise ValueError(
+        f"Characteristic '{name}' not found in the provided characteristics dict: {characteristics}"
+    )
+
+
+def parse_characteristics(source_lines: List[str]) -> CharacteristicsData:
     for source_line in source_lines:
         characteristic_matches = re.findall(
             r"(Might|Agility|Reason|Intuition|Presence)\s*([+\-]?[0-9O]+)",
@@ -509,16 +687,30 @@ def parse_characteristics(source_lines: List[str]) -> dict[str, int]:
             re.IGNORECASE,
         )
         if characteristic_matches and len(characteristic_matches) == 5:
-            characteristics: dict[str, int] = {}
-            for name, value in characteristic_matches:
-                characteristics[str(name).lower()] = int(
-                    str(value).upper().replace("O", "0")
-                )
-            return characteristics
-    return {}
+            return CharacteristicsData(
+                {
+                    "might": get_characteristic_value(characteristic_matches, "might"),
+                    "agility": get_characteristic_value(
+                        characteristic_matches, "agility"
+                    ),
+                    "reason": get_characteristic_value(
+                        characteristic_matches, "reason"
+                    ),
+                    "intuition": get_characteristic_value(
+                        characteristic_matches, "intuition"
+                    ),
+                    "presence": get_characteristic_value(
+                        characteristic_matches, "presence"
+                    ),
+                }
+            )
+
+    raise ValueError(f"Characteristics not found in the provided lines: {source_lines}")
 
 
-def parse_with_captain(source_lines: list[str]) -> dict[str, Any] | None:
+def parse_with_captain(
+    source_lines: list[str],
+) -> tuple[AppliedCaptainEffects | None, DerivedCaptainBonuses | None]:
     """
     Returns a dict with the derived captain bonus or effect from the 'With Captain' line.
     Handles all known variants, including 'temporary stamina'.
@@ -560,18 +752,20 @@ def parse_with_captain(source_lines: list[str]) -> dict[str, Any] | None:
             )
             if temp_stam:
                 value = int(temp_stam.group(1) or temp_stam.group(2))
-                return {"appliedCaptainEffects": {"temporaryStamina": value}}
+                return (
+                    AppliedCaptainEffects({"temporaryStamina": value}),
+                    None,
+                )
             # Try all other bonus types
             for key, field_name in captain_bonus_map.items():
                 if key in rest:
                     mval = re.search(r"([+\-]?\d+)", rest)
                     if mval:
-                        return {
-                            "derivedCaptainBonuses": {field_name: int(mval.group(1))}
-                        }
-                    else:
-                        return {"derivedCaptainBonuses": {field_name: True}}
-    return None
+                        derivedCaptainBonuses: DerivedCaptainBonuses = {}
+                        derivedCaptainBonuses[field_name] = int(mval.group(1))
+                        return (None, derivedCaptainBonuses)
+
+    raise ValueError(f"Captain bonuses not found in the provided lines: {source_lines}")
 
 
 def find_last_stat_index(source_lines: list[str]) -> int:
@@ -634,7 +828,7 @@ def parse_weakness_immunity(
                 else:
                     continue
                 normalized_damage_type = normalize_weakness_immunity_type(damage_type)
-                if normalized_damage_type in WEAKNESS_IMMUNITY_TYPES:
+                if normalized_damage_type in DAMAGE_TYPES:
                     try:
                         if label == "immunity":
                             immunity[normalized_damage_type] = int(
@@ -666,27 +860,49 @@ def find_characteristics_line(lines):
     raise ValueError("Primary characteristics line not found in block!")
 
 
-def get_monster_model_from_block(monster_block: MonsterBlock) -> dict[str, Any]:
-    # Copy header fields
-    stats: dict[str, Any] = {
+def get_monster_model_from_block(monster_block: MonsterBlock) -> MonsterModel:
+    monster_model: MonsterModel = {
         "name": monster_block.header.name,
         "level": monster_block.header.level,
         "type": monster_block.header.type,
         "role": monster_block.header.role,
         "header_text": monster_block.header.header_source_line,
+        "keywords": [],  # Fill from parse_monster_row2
+        "encounterValue": 0,
+        "stamina": 0,
+        "speed": 0,
+        "movementTypes": [],
+        "size": "",
+        "stability": 0,
+        "freeStrikeDamage": parse_free_strike(monster_block.source_lines),
+        "characteristics": parse_characteristics(monster_block.source_lines),
+        "weakness": None,
+        "immunity": None,
+        "derivedCaptainBonuses": None,
+        "appliedCaptainEffects": None,
+        "items": [],
     }
-    stats["keywords"], stats["encounterValue"] = parse_monster_row2(
+
+    monster_model["keywords"], monster_model["encounterValue"] = (
+        parse_keywords_and_ev_row(monster_block.source_lines)
+    )
+    monster_model["stamina"] = parse_stamina(monster_block.source_lines)
+    monster_model["speed"], monster_model["movementTypes"] = (
+        parse_speed_and_movement_types(monster_block.source_lines)
+    )
+    monster_model["size"], monster_model["stability"] = parse_size_and_stability(
         monster_block.source_lines
     )
-    stats["stamina"] = parse_stamina(monster_block.source_lines)
-    stats["speed"], stats["movementTypes"] = parse_speed_and_movement_types(
+
+    # Optional fields:
+    monster_model["weakness"], monster_model["immunity"] = parse_weakness_immunity(
         monster_block.source_lines
     )
-    stats["size"], stats["stability"] = parse_size_and_stability(
-        monster_block.source_lines
-    )
-    stats["freeStrikeDamage"] = parse_free_strike(monster_block.source_lines)
-    stats["characteristics"] = parse_characteristics(monster_block.source_lines)
+    if monster_block.header.type.lower() == "minion":
+        captain_result = parse_with_captain(monster_block.source_lines)
+        if captain_result:
+            monster_model["appliedCaptainEffects"] = captain_result[0]
+            monster_model["derivedCaptainBonuses"] = captain_result[1]
 
     # Find characteristic line
     characteristics_line_index = find_characteristics_line(monster_block.source_lines)
@@ -701,20 +917,11 @@ def get_monster_model_from_block(monster_block: MonsterBlock) -> dict[str, Any]:
                 f"[WARN] [{monster_block.header.name}]: Empty ability block found, skipping."
             )
             continue
-        parsed_ability_block = parse_ability_block(
-            ability_block, monster_block.header.name
-        )
+        parsed_ability = parse_ability_block(ability_block, monster_block.header.name)
+        monster_model["items"].append(parsed_ability)
 
-    # Optional fields:
-    stats["weakness"], stats["immunity"] = parse_weakness_immunity(
-        monster_block.source_lines
-    )
-    if monster_block.header.type.lower() == "minion":
-        captain_result = parse_with_captain(monster_block.source_lines)
-        if captain_result:
-            stats.update(captain_result)
-    # ... other optionals here
-    return stats
+    print(monster_model)
+    return monster_model
 
 
 def group_source_lines_into_monsters_blocks(
@@ -790,16 +997,6 @@ def find_ability_headers(source_lines: List[str]) -> List[Tuple[int, str]]:
 
 
 def split_ability_blocks(lines: list[str]) -> list[list[str]]:
-    # print("--- split_ability_blocks ---")
-    # print("Source Lines (initial):")
-    # print(source_lines)
-    # source_lines = join_broken_headers(source_lines)
-    # print("Source Lines (after join_broken_headers):")
-    # print(source_lines)
-    # headers = find_ability_headers(source_lines)
-    # print("headers (after find_ability_headers):")
-    # print(headers)
-
     """Splits the text into ability blocks based on header detection—never merges separate headers."""
     blocks = []
     current_block = []
@@ -840,24 +1037,186 @@ def split_ability_blocks(lines: list[str]) -> list[list[str]]:
     return blocks
 
 
-def parse_ability_block(block_lines: List[str], monster_name: str) -> Dict[str, Any]:
-    """Parse an ability block. Print warnings/diagnostics on ambiguity."""
-    # Parse header for name, type, malice, power roll, etc.
-    header_line = block_lines[0]
-    match = None
-    for pat in ABILITY_HEADER_PATTERNS:
-        m = re.search(pat, header_line, re.IGNORECASE)
-        if m:
-            match = m
-            break
+def parse_effect_data(effect_source_line: str) -> EffectData:
+    # text: str
+    # targets: str
+    # duration: Optional[Literal["endOfTargetTurn", "saveEnds", "endOfEncounter"]]
+    # slowed: bool
+    # weakened: bool
+    # frightened: bool
+    # bleeding: bool
+    # grabbed: bool
+    # taunted: bool
+    # restrained: bool
+    # weakness: Optional[Dict[str, int]]
+    return EffectData()
+
+
+def parse_distance_and_target_row(source_line: str) -> Optional[Tuple[str, str]]:
+    return None
+
+
+def parse_power_roll_block(
+    header: dict[str, Any], ability_lines: List[str]
+) -> PowerRoll | None:
+    powerRollBonus: int | None = header["powerRollBonus"]
+    if powerRollBonus is None:
+        return None
+
+    power_roll_lines: List[str] = []
+
+    for line in ability_lines:
+        line = line.strip()
+        if re.match(r"^[^1l!]{0,9}([1l!]{2}|[1l!]2.16|[1l!]7).", line):
+            power_roll_lines.append(line)
+
+    if not power_roll_lines:
+        print(
+            f"[WARN] [{header['name']}]: No power roll lines found in ability block: {ability_lines}"
+        )
+        return None
+    if len(power_roll_lines) < 3:
+        print(
+            f"[WARN] [{header['name']}]: Less than 3 power roll lines found: {power_roll_lines}"
+            f"\n   Normalized as: {repr(ability_lines)}"
+        )
+        return None
+
+    monster_name = header["name"]
+
+    return PowerRoll(
+        bonus=powerRollBonus,
+        tier1=parse_power_roll_line(power_roll_lines.pop(0), monster_name),
+        tier2=parse_power_roll_line(power_roll_lines.pop(0), monster_name),
+        tier3=parse_power_roll_line(power_roll_lines.pop(0), monster_name),
+    )
+
+
+def parse_power_roll_line(
+    power_roll_line: str, monster_name: str
+) -> PowerRollTier | None:
+    normalized = (
+        re.sub("[^A-Za-z0-9!() <+-]", " ", power_roll_line)
+        .replace("  ", " ")
+        .replace("  ", " ")
+        .replace("Zdamage", "7 damage")
+        .replace("S5Sdamage", "5 damage")
+        .replace("Sdamage", "5 damage")
+        .replace("Scorruption", "5 corruption")
+        .replace("iIdamage", "1 damage")
+        .replace("Ms2", "M<2")
+        .strip()
+    )
+
+    match = POWER_ROLL_LINE_PATTERN.match(normalized)
+    print(f"[{monster_name}]:")
     if not match:
-        print(f"[FLAG] Unmatched ability header: {header_line}")
-        return {}
+        print(
+            f"  [WARN] Could not parse power roll row: '{power_roll_line}'\n  Normalized as: {repr(normalized)}"
+        )
+        return None
 
-    parsed_header = parse_ability_header(header_line, monster_name)
-    ability: dict[str, Any] = {"header_raw": header_line, "header": parsed_header}
+    print(f"  Power roll row matched: {repr(normalized)}")
+    groups = match.groupdict()
+    print(f"  Power roll groups: {groups}")
 
-    return ability
+    return PowerRollTier(
+        damage=int(groups["damage"]),
+        effect=EffectData(text=groups["effectText"]),
+        potencyEffect=parse_potency_effect(
+            groups["potencyTargetCharacteristic"],
+            groups["potencyValue"],
+            groups["potencyEffectText"],
+        ),
+    )
+
+
+def parse_potency_effect(
+    target_characteristic: Optional[str],
+    value: Optional[str],
+    effect_text: Optional[str],
+) -> PotencyEffectData | None:
+    if target_characteristic is None or value is None or effect_text is None:
+        return None
+    try:
+        value_as_int = int(value)
+    except ValueError:
+        print(f"  [WARN] Invalid potency value: {value}")
+        return None
+    return PotencyEffectData(
+        targetCharacteristic=map_initial_to_characteristic_name(target_characteristic),
+        value=value_as_int,
+        effects=EffectData(text=effect_text),
+    )
+
+
+def map_initial_to_characteristic_name(
+    initial: str,
+) -> Literal["might", "agility", "reason", "intuition", "presence"]:
+    initial = initial.strip().lower()
+    if initial == "m":
+        return "might"
+    elif initial == "a":
+        return "agility"
+    elif initial == "r":
+        return "reason"
+    elif initial == "i":
+        return "intuition"
+    elif initial == "p":
+        return "presence"
+    raise ValueError(f"Unknown characteristic initial: {initial}")
+
+
+def safe_get(list: list[Any], index: int, default: Any):
+    try:
+        return list[index]
+    except Exception:
+        return default
+
+
+def parse_ability_block(ability_lines: List[str], monster_name: str) -> AbilityModel:
+    header_line = ability_lines[0].strip()
+    header = parse_ability_header(header_line, monster_name)
+    if not header:
+        return AbilityModel(
+            header_raw=header_line, name="UNKNOWN", type="mainAction", keywords=[]
+        )
+    # "header_raw"
+
+    # keywords = parse_ability_keywords(ability_lines)
+    # powerRoll = parse_power_roll(ability_lines)
+
+    model: AbilityModel = {
+        "name": header["name"],
+        "type": header["type"],
+        "maliceCost": header["maliceCost"],
+        "powerRoll": parse_power_roll_block(header, ability_lines),
+        "keywords": [],
+        "distance": None,
+        "target": None,
+        "trigger": None,
+        "prePowerRollEffect": None,
+        "postPowerRollEffect": None,
+        "header_raw": header_line,
+    }
+
+    for i, line in enumerate(ability_lines[1:]):
+        line = line.strip()
+        if line.startswith("Keywords"):
+            keywords = [
+                w.strip()
+                for w in line[len("Keywords") :].replace(",", " ").split()
+                if w
+            ]
+            model["keywords"] = keywords
+        elif line.startswith("Distance"):
+            model["distance"] = line
+        elif line.startswith("Target"):
+            model["target"] = {"filter": None, "text": line, "count": 1}
+        elif line.startswith("Trigger"):
+            model["trigger"] = line[len("Trigger") :].strip()
+
+    return model
 
 
 def parse_ability_header(
@@ -918,6 +1277,70 @@ def parse_ability_header(
     }
     # print(ability_header)
     return ability_header
+
+
+def parse_ability_effect_and_power_roll(
+    lines: List[str],
+) -> Dict[str, Optional[str | List[str]]]:
+    """
+    Parses effect and power roll sections from an ability block.
+
+    Returns dict with:
+        - prePowerRollEffect: str | None
+        - powerRollLines: List[str] | None
+        - postPowerRollEffect: str | None
+    """
+    # Skip header line if present
+    i = 1 if len(lines) > 1 else 0
+    n = len(lines)
+    pre_effect = None
+    post_effect = None
+    power_roll_lines: List[str] = []
+
+    while i < n:
+        s = lines[i].strip()
+        if not s:
+            i += 1
+            continue
+        # Detect "Effect"
+        if s.lower().startswith("effect"):
+            effect_text = s[len("effect") :].strip(": .-")
+            if not power_roll_lines:
+                pre_effect = effect_text
+            else:
+                post_effect = effect_text
+            i += 1
+            continue
+        # Detect power roll lines
+        if re.match(r"^[^1l!]{0,6}([1l!]{2}|[1l!]2.16|[1l!]7).", s):
+            print(f"Power roll line found s: {s}")
+            while i < n:
+                s2 = lines[i].strip()
+                if not s2:
+                    i += 1
+                    continue
+                if re.match(r"^[^1l!]{0,9}([1l!]{2}|[1l!]2.16|[1l!]7).", s2):
+                    print(f"Power roll line found s2: {s2}")
+                    power_roll_lines.append(s2)
+                    i += 1
+                else:
+                    print(f"Power roll lines NOT matched: {s} | {s2}")
+                    break
+            continue
+        i += 1
+
+    # If no power roll lines found, treat any Effect as postPowerRollEffect
+    result: Dict[str, Optional[str | List[str]]] = {}
+    if power_roll_lines:
+        result["prePowerRollEffect"] = pre_effect
+        result["powerRollLines"] = power_roll_lines
+        result["postPowerRollEffect"] = post_effect
+    else:
+        result["prePowerRollEffect"] = None
+        result["powerRollLines"] = None
+        result["postPowerRollEffect"] = pre_effect or post_effect
+
+    return result
 
 
 def get_monster_foundry_actor_model(

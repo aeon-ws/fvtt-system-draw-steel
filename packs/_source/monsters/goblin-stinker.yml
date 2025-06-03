@@ -1,5 +1,5 @@
-_id: saUvU9bwq7xgwdok
-_key: '!actors!saUvU9bwq7xgwdok'
+_id: 4Oo2OIeCxuz7Vaf4
+_key: '!actors!4Oo2OIeCxuz7Vaf4'
 name: Goblin Stinker
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: 1
-    reason: 0
-    intuition: 0
-    presence: 2
+    agility: -2
+    reason: -2
+    intuition: -2
+    presence: -2
   stamina:
     max: 10
     value: 10

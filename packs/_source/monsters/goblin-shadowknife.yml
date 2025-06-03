@@ -1,5 +1,5 @@
-_id: FxiO0tu8MZAW1NMc
-_key: '!actors!FxiO0tu8MZAW1NMc'
+_id: Z7IZkCz745elAoU2
+_key: '!actors!Z7IZkCz745elAoU2'
 name: Goblin Shadowknife
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,9 +30,9 @@ system:
   encounterValue: 4
   characteristics:
     might: 0
-    agility: 2
-    reason: 1
-    intuition: 1
+    agility: 0
+    reason: 0
+    intuition: 0
     presence: 0
   stamina:
     max: 20

@@ -1,5 +1,5 @@
-_id: Xy3zkNmnaZTenxgk
-_key: '!actors!Xy3zkNmnaZTenxgk'
+_id: 9hzllGK6PS5D9Yyk
+_key: '!actors!9hzllGK6PS5D9Yyk'
 name: Wallmaster
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 12
   characteristics:
     might: 2
-    agility: -5
-    reason: -3
+    agility: 2
+    reason: 2
     intuition: 2
-    presence: -3
+    presence: 2
   stamina:
     max: 80
     value: 80

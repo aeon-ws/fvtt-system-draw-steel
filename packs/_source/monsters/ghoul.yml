@@ -1,5 +1,5 @@
-_id: DcTwK1ffuK1iNOax
-_key: '!actors!DcTwK1ffuK1iNOax'
+_id: ULpRVVFoEwhAeLtd
+_key: '!actors!ULpRVVFoEwhAeLtd'
 name: Ghoul
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 2
-    reason: -2
+    agility: 0
+    reason: 0
     intuition: 0
-    presence: -1
+    presence: 0
   stamina:
     max: 15
     value: 15

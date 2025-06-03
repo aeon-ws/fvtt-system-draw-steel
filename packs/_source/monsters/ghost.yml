@@ -1,5 +1,5 @@
-_id: 0RT52nUiETl6bHvf
-_key: '!actors!0RT52nUiETl6bHvf'
+_id: X126BAcydpUZGzyZ
+_key: '!actors!X126BAcydpUZGzyZ'
 name: Ghost
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 12
   characteristics:
     might: -2
-    agility: 2
-    reason: 0
-    intuition: 0
-    presence: 3
+    agility: -2
+    reason: -2
+    intuition: -2
+    presence: -2
   stamina:
     max: 80
     value: 80

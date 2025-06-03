@@ -1,5 +1,5 @@
-_id: Se7orLk1rgCD0HvM
-_key: '!actors!Se7orLk1rgCD0HvM'
+_id: TkfVV9L9rcLP9MKN
+_key: '!actors!TkfVV9L9rcLP9MKN'
 name: Goblin Battleborn
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 4
   characteristics:
     might: 2
-    agility: 1
-    reason: 0
-    intuition: 1
-    presence: 0
+    agility: 2
+    reason: 2
+    intuition: 2
+    presence: 2
   stamina:
     max: 25
     value: 25

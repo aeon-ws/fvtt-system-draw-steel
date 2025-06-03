@@ -1,5 +1,5 @@
-_id: 9S2Ept3OojgwJduR
-_key: '!actors!9S2Ept3OojgwJduR'
+_id: n5jNfELvRc3lhe7H
+_key: '!actors!n5jNfELvRc3lhe7H'
 name: Human Archer
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,7 +29,7 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 2
+    agility: 0
     reason: 0
     intuition: 0
     presence: 0

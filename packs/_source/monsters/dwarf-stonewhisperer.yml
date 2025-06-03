@@ -1,5 +1,5 @@
-_id: NKgHwbrBW3GBLr4x
-_key: '!actors!NKgHwbrBW3GBLr4x'
+_id: Wjm0E17marPu1Cdc
+_key: '!actors!Wjm0E17marPu1Cdc'
 name: Dwarf Stonewhisperer
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 10
   characteristics:
     might: 1
-    agility: 0
-    reason: 2
-    intuition: 2
-    presence: 0
+    agility: 1
+    reason: 1
+    intuition: 1
+    presence: 1
   stamina:
     max: 52
     value: 52

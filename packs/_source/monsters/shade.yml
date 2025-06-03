@@ -1,5 +1,5 @@
-_id: gaLuqS5rDsaIj7zu
-_key: '!actors!gaLuqS5rDsaIj7zu'
+_id: Mzk5LuyYxJGXTaKO
+_key: '!actors!Mzk5LuyYxJGXTaKO'
 name: Shade
 type: minion
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -5
-    agility: 1
-    reason: 0
-    intuition: 0
-    presence: 2
+    agility: -5
+    reason: -5
+    intuition: -5
+    presence: -5
   stamina:
     max: 4
     perMinion: 4

@@ -1,5 +1,5 @@
-_id: Z6s1rw0gg7I8dJgY
-_key: '!actors!Z6s1rw0gg7I8dJgY'
+_id: uVHbj9OYF6NSLvKW
+_key: '!actors!uVHbj9OYF6NSLvKW'
 name: Goblin Spinecleaver
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 2
-    agility: 0
-    reason: 0
-    intuition: 0
-    presence: -1
+    agility: 2
+    reason: 2
+    intuition: 2
+    presence: 2
   stamina:
     max: 5
     perMinion: 5

@@ -1,5 +1,5 @@
-_id: 5Gjn1fDpuLtsNE8E
-_key: '!actors!5Gjn1fDpuLtsNE8E'
+_id: DMoWOLoQMGakKcAf
+_key: '!actors!DMoWOLoQMGakKcAf'
 name: Laesi
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,8 +30,8 @@ system:
   encounterValue: 16
   characteristics:
     might: 0
-    agility: 2
-    reason: 1
+    agility: 0
+    reason: 0
     intuition: 0
     presence: 0
   stamina:

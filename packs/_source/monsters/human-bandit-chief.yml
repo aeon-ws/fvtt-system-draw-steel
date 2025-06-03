@@ -1,5 +1,5 @@
-_id: n1XtXxVr70cBSyDp
-_key: '!actors!n1XtXxVr70cBSyDp'
+_id: u1VpyBknQvr6e6j4
+_key: '!actors!u1VpyBknQvr6e6j4'
 name: Human Bandit Chief
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,9 +29,9 @@ system:
   encounterValue: 20
   characteristics:
     might: 2
-    agility: 3
+    agility: 2
     reason: 2
-    intuition: 3
+    intuition: 2
     presence: 2
   stamina:
     max: 120

@@ -1,5 +1,5 @@
-_id: Mg0Wx7VNeZMYh4yl
-_key: '!actors!Mg0Wx7VNeZMYh4yl'
+_id: WYI5p0gEWxVBC011
+_key: '!actors!WYI5p0gEWxVBC011'
 name: Creeping Sludge
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 4
   characteristics:
     might: 2
-    agility: -2
-    reason: -3
-    intuition: 0
-    presence: -2
+    agility: 2
+    reason: 2
+    intuition: 2
+    presence: 2
   stamina:
     max: 25
     value: 25

@@ -1,5 +1,5 @@
-_id: IX7zMEzxVCoecxMh
-_key: '!actors!IX7zMEzxVCoecxMh'
+_id: KbVwOaIdoPbsIyMG
+_key: '!actors!KbVwOaIdoPbsIyMG'
 name: Goblin Monarch
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 12
   characteristics:
     might: 3
-    agility: 2
-    reason: -4
-    intuition: 0
-    presence: -3
+    agility: 3
+    reason: 3
+    intuition: 3
+    presence: 3
   stamina:
     max: 86
     value: 86

@@ -1,5 +1,5 @@
-_id: Rf3EM4NRPosSGkzv
-_key: '!actors!Rf3EM4NRPosSGkzv'
+_id: wU5qHDbSkSMswqA3
+_key: '!actors!wU5qHDbSkSMswqA3'
 name: Soulwight
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 2
-    agility: 1
-    reason: 0
-    intuition: 0
-    presence: 1
+    agility: 2
+    reason: 2
+    intuition: 2
+    presence: 2
   stamina:
     max: 10
     value: 10

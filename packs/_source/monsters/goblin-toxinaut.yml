@@ -1,5 +1,5 @@
-_id: 2VwB3Z4CulECvGOE
-_key: '!actors!2VwB3Z4CulECvGOE'
+_id: 5ObOfGbjvFxriX18
+_key: '!actors!5ObOfGbjvFxriX18'
 name: Goblin Toxinaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 4
   characteristics:
     might: -1
-    agility: 1
-    reason: 0
-    intuition: 1
-    presence: 2
+    agility: -1
+    reason: -1
+    intuition: -1
+    presence: -1
   stamina:
     max: 15
     value: 15

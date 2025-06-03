@@ -1,5 +1,5 @@
-_id: zG4r82a2NwiYAzV3
-_key: '!actors!zG4r82a2NwiYAzV3'
+_id: vo7q5DNkgQnPeOPW
+_key: '!actors!vo7q5DNkgQnPeOPW'
 name: Boddorff Buckfeather
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 16
   characteristics:
     might: 1
-    agility: 0
-    reason: 0
-    intuition: 2
-    presence: 0
+    agility: 1
+    reason: 1
+    intuition: 1
+    presence: 1
   stamina:
     max: 80
     value: 80

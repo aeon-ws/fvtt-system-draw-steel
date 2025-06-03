@@ -1,5 +1,5 @@
-_id: iqzzfDadInsWSSWg
-_key: '!actors!iqzzfDadInsWSSWg'
+_id: qvqAV25OgH0NHHo2
+_key: '!actors!qvqAV25OgH0NHHo2'
 name: Goblin Runner
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: 2
-    reason: 0
-    intuition: 0
-    presence: -1
+    agility: -2
+    reason: -2
+    intuition: -2
+    presence: -2
   stamina:
     max: 4
     perMinion: 4
