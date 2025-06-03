@@ -1,0 +1,31 @@
+from typing import List, Literal, NotRequired, Optional, TypedDict
+
+from ads.model import Distance, Effect, PowerRoll, Target
+
+
+class Ability(TypedDict):
+    name: str
+    type: Literal[
+        "mainAction",
+        "triggeredAction",
+        "freeTriggeredAction",
+        "freeMainAction",
+        "maneuver",
+        "freeManeuver",
+        "villainAction",
+    ]
+    maliceCost: NotRequired[Optional[int]]
+    powerRoll: NotRequired[Optional[PowerRoll]]
+    keywords: List[str]
+    distance: NotRequired[Optional[Distance]]
+    target: NotRequired[Optional[Target]]
+    trigger: NotRequired[Optional[str]]
+    prePowerRollEffect: NotRequired[Optional[Effect]]
+    postPowerRollEffect: NotRequired[Optional[Effect]]
+    header_raw: str
+
+
+class Trait(TypedDict, total=False):
+    name: str
+    text: str
+    header_raw: str
