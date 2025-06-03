@@ -240,18 +240,49 @@ ABILITY_HEADER_REGEX = re.compile(
 # + 11 2 corruption damage A<0 restrained (save ends)
 
 EFFECT_DURATION_PATTERN = r"(?:save ends|end of target turn|end of targets turn|end of target.?s turn|end of (?:the )?encounter|EoE|EoT|end of \w+ next turn|start of \w+ next turn)"
-POWER_ROLL_EFFECT_KEYWORDS = rf"(?:prone|slowed|weakened|frightened|bleeding|grabbed|taunted|restrained|speed|shift\s?[1-9]?|move|push\s?[1-9]?|pull\s?[1-9]?|slide\s?[1-9]?|fly|hover|teleport\s?[1-9]?|stand up|recovery|immunity|weakness|temporary stamina|{EFFECT_DURATION_PATTERN})"
+POWER_ROLL_EFFECT_KEYWORDS = rf"(?:prone(?:(?:and )?can[' ]?t stand)?|slowed|weakened|frightened|bleeding|grabbed|taunted|restrained|speed|shift\s?[1-9]?|move|push\s?[1-9]?|pull\s?[1-9]?|slide\s?[1-9]?|fly|hover|teleport\s?[1-9]?|stand up|recovery|immunity|weakness|temporary stamina|{EFFECT_DURATION_PATTERN})"
 POWER_ROLL_RANGE_PATTERN = r"[^1l!]*(11|12.16|17[4]?[+]?).?\s*"
 POWER_ROLL_DAMAGE_TYPE_PATTERN = rf"(?P<damageType>{DAMAGE_TYPE_PATTERN})?"
-DAMAGE_PATTERN = rf"(?:[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_TYPE_PATTERN}[^0-9]?\s*damage;?\s*)?"
+# DAMAGE_PATTERN = rf"(?:[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_TYPE_PATTERN}[^0-9]?\s*damage;?\s*)?"
+DAMAGE_PATTERN = rf"[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_TYPE_PATTERN}[^0-9]?\s*damage;?\s*"
 
-POWER_ROLL_EFFECT_PATTERN = rf"(?:[^A-Za-z]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*)?"
-POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"(?:[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])<(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?))?"
+# POWER_ROLL_EFFECT_PATTERN = rf"(?:[^A-Za-z]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*)?"
+POWER_ROLL_EFFECT_PATTERN = rf"[^A-Za-z]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*"
+# POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"(?:[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])<(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?))?"
+POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])<(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?)"
 
 POWER_ROLL_LINE_PATTERN = re.compile(
     rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
     re.IGNORECASE,
 )
+POWER_ROLL_LINE_PATTERN_BY_TYPE = {
+    "damage": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}.*$", re.IGNORECASE
+    ),
+    "effect": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}.*$", re.IGNORECASE
+    ),
+    "potencyEffect": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
+        re.IGNORECASE,
+    ),
+    "damageAndEffect": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}.*$",
+        re.IGNORECASE,
+    ),
+    "damageAndPotencyEffect": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
+        re.IGNORECASE,
+    ),
+    "effectAndPotencyEffect": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
+        re.IGNORECASE,
+    ),
+    "all": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
+        re.IGNORECASE,
+    ),
+}
 
 MONSTER_TYPE_WHITELIST = ["minion", "horde", "platoon", "elite", "leader", "solo"]
 MONSTER_ROLE_WHITELIST = [
@@ -920,7 +951,7 @@ def get_monster_model_from_block(monster_block: MonsterBlock) -> MonsterModel:
         parsed_ability = parse_ability_block(ability_block, monster_block.header.name)
         monster_model["items"].append(parsed_ability)
 
-    print(monster_model)
+    # print(monster_model)
     return monster_model
 
 
@@ -1072,29 +1103,25 @@ def parse_power_roll_block(
 
     if not power_roll_lines:
         print(
-            f"[WARN] [{header['name']}]: No power roll lines found in ability block: {ability_lines}"
+            f"  [WARN] [{header['name']}]: No power roll lines found in ability block: {ability_lines}"
         )
         return None
     if len(power_roll_lines) < 3:
         print(
-            f"[WARN] [{header['name']}]: Less than 3 power roll lines found: {power_roll_lines}"
-            f"\n   Normalized as: {repr(ability_lines)}"
+            f"  [WARN] [{header['name']}]: Less than 3 power roll lines found: {power_roll_lines}"
+            f"\n   Normalized as: {ability_lines}"
         )
         return None
 
-    monster_name = header["name"]
-
     return PowerRoll(
         bonus=powerRollBonus,
-        tier1=parse_power_roll_line(power_roll_lines.pop(0), monster_name),
-        tier2=parse_power_roll_line(power_roll_lines.pop(0), monster_name),
-        tier3=parse_power_roll_line(power_roll_lines.pop(0), monster_name),
+        tier1=parse_power_roll_line(power_roll_lines.pop(0)),
+        tier2=parse_power_roll_line(power_roll_lines.pop(0)),
+        tier3=parse_power_roll_line(power_roll_lines.pop(0)),
     )
 
 
-def parse_power_roll_line(
-    power_roll_line: str, monster_name: str
-) -> PowerRollTier | None:
+def parse_power_roll_line(power_roll_line: str) -> PowerRollTier | None:
     normalized = (
         re.sub("[^A-Za-z0-9!() <+-]", " ", power_roll_line)
         .replace("  ", " ")
@@ -1104,30 +1131,75 @@ def parse_power_roll_line(
         .replace("Sdamage", "5 damage")
         .replace("Scorruption", "5 corruption")
         .replace("iIdamage", "1 damage")
-        .replace("Ms2", "M<2")
+        .replace("Ms2", "M<2 ")
+        .replace("<O", "<0 ")
         .strip()
     )
 
-    match = POWER_ROLL_LINE_PATTERN.match(normalized)
-    print(f"[{monster_name}]:")
+    print(f"  - [{normalized}]")
+    hasDamage = False
+    hasEffect = False
+    hasPotencyEffect = False
+    match = POWER_ROLL_LINE_PATTERN_BY_TYPE["all"].match(normalized)
+    if match:
+        print("      Matched by 'all' pattern")
+        hasDamage = True
+        hasEffect = True
+        hasPotencyEffect = True
     if not match:
-        print(
-            f"  [WARN] Could not parse power roll row: '{power_roll_line}'\n  Normalized as: {repr(normalized)}"
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["damageAndPotencyEffect"].match(
+            normalized
         )
+        if match:
+            print("      Matched by 'damageAndPotencyEffect' pattern")
+            hasDamage = True
+            hasPotencyEffect = True
+    if not match:
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["damageAndEffect"].match(normalized)
+        if match:
+            print("      Matched by 'damageAndEffect' pattern")
+            hasDamage = True
+            hasEffect = True
+    if not match:
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["damage"].match(normalized)
+        if match:
+            print("      Matched by 'damage' pattern")
+            hasDamage = True
+    if not match:
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["effectAndPotencyEffect"].match(
+            normalized
+        )
+        if match:
+            print("      Matched by 'effectAndPotencyEffect' pattern")
+            hasEffect = True
+            hasPotencyEffect = True
+    if not match:
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["potencyEffect"].match(normalized)
+        if match:
+            print("      Matched by 'potencyEffect' pattern")
+            hasPotencyEffect = True
+    if not match:
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["effect"].match(normalized)
+        if match:
+            print("      Matched by 'effect' pattern")
+            hasEffect = True
+    if not match:
+        print("      [WARN] Could not match line.")
         return None
 
-    print(f"  Power roll row matched: {repr(normalized)}")
     groups = match.groupdict()
-    print(f"  Power roll groups: {groups}")
+    print(f"      Captured: {groups}")
 
     return PowerRollTier(
-        damage=int(groups["damage"]),
-        effect=EffectData(text=groups["effectText"]),
+        damage=int(groups["damage"]) if hasDamage else None,
+        effect=EffectData(text=groups["effectText"].strip()) if hasEffect else None,
         potencyEffect=parse_potency_effect(
             groups["potencyTargetCharacteristic"],
             groups["potencyValue"],
             groups["potencyEffectText"],
-        ),
+        )
+        if hasPotencyEffect
+        else None,
     )
 
 
@@ -1146,7 +1218,7 @@ def parse_potency_effect(
     return PotencyEffectData(
         targetCharacteristic=map_initial_to_characteristic_name(target_characteristic),
         value=value_as_int,
-        effects=EffectData(text=effect_text),
+        effects=EffectData(text=(effect_text.strip() if effect_text else "")),
     )
 
 
@@ -1235,7 +1307,7 @@ def parse_ability_header(
         print("Unicode: ", " ".join(str(ord(c)) for c in normalized))
         return None
     else:
-        print(f"Header matched: {repr(normalized)}")
+        print(f"[{normalized}]")
 
     groups = match.groupdict()
 
@@ -1253,9 +1325,9 @@ def parse_ability_header(
     if groups.get("malice") is not None:
         malice_cost = int(groups["malice"])
     elif "signature" in normalized.lower():
-        malice_cost = 0
+        malice_cost = None
     else:
-        malice_cost = None  # None means not specified
+        malice_cost = None
 
     # Power roll bonus
     power_roll_bonus = None
