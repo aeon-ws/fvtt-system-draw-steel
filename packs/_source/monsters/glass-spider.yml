@@ -1,5 +1,5 @@
-_id: iwm0JesacpPkTx06
-_key: '!actors!iwm0JesacpPkTx06'
+_id: vX1JbVTN5W8oPJKJ
+_key: '!actors!vX1JbVTN5W8oPJKJ'
 name: Glass Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,119 @@ system:
     freeStrikeDamage: 4
   weakness:
     sonic: 5
-items: []
+items:
+- _id: 34YDqF0q9uk3hjoM
+  _key: '!items!34YDqF0q9uk3hjoM'
+  name: Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+      tier2:
+        damage: 11
+      tier3:
+        damage: 14
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: bleeding (save ends)
+- _id: I6Hw6VRWRqKK5mzi
+  _key: '!items!I6Hw6VRWRqKK5mzi'
+  name: Slashing Leg
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+- _id: CZBaWV9a2lJXFnd9
+  _key: '!items!CZBaWV9a2lJXFnd9'
+  name: Trample
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - —
+    type: mainAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+- _id: 0f23C1k49oa4OCPU
+  _key: '!items!0f23C1k49oa4OCPU'
+  name: Web
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Weapon
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        effect:
+          text: 0restrained (save ends)
+      tier2:
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: restrained (save ends)
+      tier3:
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: restrained (save ends)
+    postPowerRollEffect:
+      text: The affected area is considered difficult terrain for the rest of the
+        encounter.
+- _id: Tgn0C5GpHUxBQYGe
+  _key: '!items!Tgn0C5GpHUxBQYGe'
+  name: Skitter
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: The spider takes damage.

@@ -1,5 +1,5 @@
-_id: rkRWrSWKlQL6eStx
-_key: '!actors!rkRWrSWKlQL6eStx'
+_id: 7GvpB1E3llsfG6mZ
+_key: '!actors!7GvpB1E3llsfG6mZ'
 name: Ghoul
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,4 +45,47 @@ system:
   immunity:
     corruption: 1
     poison: 1
-items: []
+items:
+- _id: o7o1zklnoYCaCaw8
+  _key: '!items!o7o1zklnoYCaCaw8'
+  name: Razor Claws
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)
+- _id: QIIP9hcgVR3VURy2
+  _key: '!items!QIIP9hcgVR3VURy2'
+  name: Leap
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self

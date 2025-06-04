@@ -1,5 +1,5 @@
-_id: Nyh9kI9qc9LdDewz
-_key: '!actors!Nyh9kI9qc9LdDewz'
+_id: XFtsJinPmxbpvULt
+_key: '!actors!XFtsJinPmxbpvULt'
 name: Dwarf Warden
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,84 @@ system:
     - walk
     stability: 3
     freeStrikeDamage: 5
-items: []
+items:
+- _id: 6G6mslbO62hYdSyR
+  _key: '!items!6G6mslbO62hYdSyR'
+  name: Concussive Maul
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: push 1
+      tier2:
+        damage: 10
+        effect:
+          text: push 3
+      tier3:
+        damage: 13
+        effect:
+          text: push 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: restrained (save ends)
+- _id: 7wNoDckY3xmSVLtG
+  _key: '!items!7wNoDckY3xmSVLtG'
+  name: Concussive Shockwave
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - Area
+    - Melee
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 1
+    target:
+      text: All enemies in the cube
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 5
+        effect:
+          text: push 2
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 0
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 8
+        effect:
+          text: push 4
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 11
+        effect:
+          text: push 6
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: dazed (save ends)

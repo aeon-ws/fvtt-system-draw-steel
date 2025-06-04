@@ -1,5 +1,5 @@
-_id: 6JrF45fS6N8LuFS1
-_key: '!actors!6JrF45fS6N8LuFS1'
+_id: vRVllZIfw8AunAXL
+_key: '!actors!vRVllZIfw8AunAXL'
 name: Dame Cornelia
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,4 +45,102 @@ system:
   immunity:
     corruption: 2
     psychic: 2
-items: []
+items:
+- _id: Rx1LVdHb0v2DEdDz
+  _key: '!items!Rx1LVdHb0v2DEdDz'
+  name: Zweihander Swing
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: mainAction
+    distance:
+      burst: 1
+    target:
+      text: All enemies in the burst
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 3
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 6
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: might
+          value: 3
+          effect:
+            text: slowed (save ends)
+- _id: ZeJpJbdymj1r9pW9
+  _key: '!items!ZeJpJbdymj1r9pW9'
+  name: You!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      ranged: 10
+    target:
+      text: One enemy
+- _id: jGYGSs9CDMVMCWoe
+  _key: '!items!jGYGSs9CDMVMCWoe'
+  name: Parry!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: A creature targets the blackguard or an ally adjacent to
+- _id: 3eaDpj2yvoviQFQC
+  _key: '!items!3eaDpj2yvoviQFQC'
+  name: Back! (Villain Action 2)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    distance:
+      burst: 5
+    target:
+      text: All enemies in the burst
+- _id: hRypczQs5KhISiPp
+  _key: '!items!hRypczQs5KhISiPp'
+  name: Can Throw My Blade and So Should You! (Villain Action 3)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    - Weapon
+    type: villainAction
+    distance:
+      cube:
+        size: 3
+        within: 5
+    target:
+      text: Each enemy in the cube

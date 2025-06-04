@@ -1,5 +1,5 @@
-_id: 8rIuNg4H7I13BPrc
-_key: '!actors!8rIuNg4H7I13BPrc'
+_id: yS5QFAZnilFcsnAa
+_key: '!actors!yS5QFAZnilFcsnAa'
 name: Memorial Ivy
 type: minion
 img: icons/svg/mystery-man.svg
@@ -51,4 +51,33 @@ system:
     fire: 3
   derivedCaptainBonuses:
     edgeOnStrikes: 3
-items: []
+items:
+- _id: SGoT8bn1H6ya88ly
+  _key: '!items!SGoT8bn1H6ya88ly'
+  name: Grasping Ivy
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 8
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+        effect:
+          text: pull 2
+      tier2:
+        damage: 4
+        effect:
+          text: pull 4
+      tier3:
+        damage: 5
+        effect:
+          text: pull 5

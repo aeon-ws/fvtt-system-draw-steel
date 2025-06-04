@@ -1,5 +1,5 @@
-_id: t7o2ZGP0wQOa4slA
-_key: '!actors!t7o2ZGP0wQOa4slA'
+_id: 0TgpDOkw1wNtYlfY
+_key: '!actors!0TgpDOkw1wNtYlfY'
 name: Human Scoundrel
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,36 @@ system:
   immunity:
     corruption: 1
     psychic: 1
-items: []
+items:
+- _id: gmag2VpfSvcf6C4d
+  _key: '!items!gmag2VpfSvcf6C4d'
+  name: Rapier Dagger
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+- _id: WKxcjKuXmhs92Zci
+  _key: '!items!WKxcjKuXmhs92Zci'
+  name: Dagger Storm
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords: []
+    type: mainAction

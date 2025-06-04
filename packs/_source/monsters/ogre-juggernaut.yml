@@ -1,5 +1,5 @@
-_id: cNwioYgIB28RuBdi
-_key: '!actors!cNwioYgIB28RuBdi'
+_id: cpLYSHBytvZSnttk
+_key: '!actors!cpLYSHBytvZSnttk'
 name: Ogre Juggernaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,125 @@ system:
     - walk
     stability: 2
     freeStrikeDamage: 5
-items: []
+items:
+- _id: 8lM8yoRzPyodjHkt
+  _key: '!items!8lM8yoRzPyodjHkt'
+  name: Pitchfork Catapult
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 2
+    target:
+      text: 2 creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+      tier2:
+        damage: 10
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: vertical push 2
+      tier3:
+        damage: 13
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: vertical slide 3
+- _id: dOp6YGfhFs5Pb35C
+  _key: '!items!dOp6YGfhFs5Pb35C'
+  name: Earth Breaking Jump
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: mainAction
+    distance:
+      burst: 3
+    target:
+      text: All creatures in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+        effect:
+          text: push 2
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: prone
+      tier3:
+        damage: 9
+        effect:
+          text: push 4
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: prone
+- _id: txWvH1sasofRCRGL
+  _key: '!items!txWvH1sasofRCRGL'
+  name: Horrible Bellow
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - Area
+    type: maneuver
+    distance:
+      burst: 3
+    target:
+      text: All enemies in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 0
+          effect:
+            text: frightened (save ends)
+      tier2:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: frightened (save ends)
+      tier3:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: frightened (save ends)
+- _id: fN9aZWHlSoBGzZpU
+  _key: '!items!fN9aZWHlSoBGzZpU'
+  name: Hrraaaaaagh!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - —
+    type: freeTriggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: The juggernaut takes damage.

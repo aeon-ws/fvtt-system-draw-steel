@@ -1,5 +1,5 @@
-_id: YiHR3SlTstR4mZyj
-_key: '!actors!YiHR3SlTstR4mZyj'
+_id: dKu3bCBPkO5A19UK
+_key: '!actors!dKu3bCBPkO5A19UK'
 name: Ogre Goon
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,103 @@ system:
     - walk
     stability: 4
     freeStrikeDamage: 5
-items: []
+items:
+- _id: 17VKerOoKB28BGj2
+  _key: '!items!17VKerOoKB28BGj2'
+  name: Club Swing
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 2
+    target:
+      text: 2 creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: push 2
+      tier2:
+        damage: 11
+        effect:
+          text: push 4
+      tier3:
+        damage: 14
+        effect:
+          text: push 6 prone
+- _id: 9bIAYa02GfvkRBVN
+  _key: '!items!9bIAYa02GfvkRBVN'
+  name: Grabby Hand
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+      tier2:
+        damage: 11
+        effect:
+          text: grabbed
+      tier3:
+        damage: 14
+        effect:
+          text: grabbed
+- _id: Cin1Sq2sHReW3NJ0
+  _key: '!items!Cin1Sq2sHReW3NJ0'
+  name: People Bowling
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: maneuver
+    distance:
+      line:
+        width: 6
+        length: 1
+        within: 1
+    target:
+      text: All creatures and objects
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 5
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+        effect:
+          text: prone
+- _id: 9a0L9veEOJJKwNZX
+  _key: '!items!9a0L9veEOJJKwNZX'
+  name: Swat The Fly
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: 1 adjacent creature or object
+    trigger: The target moves or shifts away from the goon.

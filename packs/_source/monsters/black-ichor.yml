@@ -1,5 +1,5 @@
-_id: 4hmrOebrcHMHrFT6
-_key: '!actors!4hmrOebrcHMHrFT6'
+_id: 5H3Kx2uJymcRyLIZ
+_key: '!actors!5H3Kx2uJymcRyLIZ'
 name: Black Ichor
 type: minion
 img: icons/svg/mystery-man.svg
@@ -48,4 +48,27 @@ system:
     acid: 1
   derivedCaptainBonuses:
     edgeOnStrikes: 2
-items: []
+items:
+- _id: 6NzpO3sPVU8l5zdw
+  _key: '!items!6NzpO3sPVU8l5zdw'
+  name: Burning Spray
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5

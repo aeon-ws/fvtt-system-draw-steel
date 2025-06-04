@@ -1,5 +1,5 @@
-_id: MUu35jB1gZCfliP8
-_key: '!actors!MUu35jB1gZCfliP8'
+_id: iKfwiQD2FjaVHbNy
+_key: '!actors!iKfwiQD2FjaVHbNy'
 name: Human Brawler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,46 @@ system:
   immunity:
     corruption: 1
     psychic: 1
-items: []
+items:
+- _id: MzOigD2H4q5XtSDQ
+  _key: '!items!MzOigD2H4q5XtSDQ'
+  name: Haymaker
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: grabbed, target has a bane on escaping the grab
+- _id: Eh0jZiY95gpnd6hD
+  _key: '!items!Eh0jZiY95gpnd6hD'
+  name: Throw
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: One creature grabbed by the brawler

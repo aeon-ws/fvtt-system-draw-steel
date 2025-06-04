@@ -1,5 +1,5 @@
-_id: IlDT4QU02dGHsiQj
-_key: '!actors!IlDT4QU02dGHsiQj'
+_id: pnuA51LuzPyzWo3Q
+_key: '!actors!pnuA51LuzPyzWo3Q'
 name: Tomb Horror
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -48,4 +48,84 @@ system:
     corruption: 2
   weakness:
     fire: 3
-items: []
+items:
+- _id: YILPooZasLhAAkU5
+  _key: '!items!YILPooZasLhAAkU5'
+  name: Ruinous Grasp
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 5
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: pull 2
+      tier2:
+        damage: 11
+        effect:
+          text: pull 4
+      tier3:
+        effect:
+          text: JA corruption damage pull 6
+- _id: uzdG0HBc0B87Y1hh
+  _key: '!items!uzdG0HBc0B87Y1hh'
+  name: Hundred Horrors
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - Area
+    - Weapon
+    type: mainAction
+    distance:
+      burst: 3
+    target:
+      text: Each enemy and object on the ground
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: restrained (save ends)
+      tier2:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: restrained (save ends)
+      tier3:
+        damage: 10
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: restrained (save ends)
+- _id: RSFj36qvDSHhoYOL
+  _key: '!items!RSFj36qvDSHhoYOL'
+  name: Latch Hook
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      ranged: 5
+    target:
+      text: 1 creature or object
+    trigger: The target deals damage to the tomb horror or a casket or

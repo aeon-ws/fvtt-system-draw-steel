@@ -1,6 +1,7 @@
 import re
 from typing import Any, Dict, List, Literal, Optional, Tuple
 
+from ads.api.foundry import generate_id
 from ads.api.string_format import title_case
 from ads.model import (
     Ability,
@@ -27,9 +28,6 @@ ABILITY_TYPE_MAP = {
     "villain action 3": "villainAction",
 }
 
-ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action ?[123]?|(?:Main )?Action))[)]\s*"
-
-
 ABILITY_HEADER_PATTERNS = [
     # Main/Free Action
     r"\b(.+?)\s*\((?:Free\s*)?(?:Main\s*)?Action\).*",
@@ -42,8 +40,6 @@ ABILITY_HEADER_PATTERNS = [
     r"\b(.+?)\s*\(Villain Action\s*\d+\).*",
     # Others as needed
 ]
-
-OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*\+\s*(?P<bonus>[-+]?\d)\s*)?"
 
 DAMAGE_TYPES = {
     "acid",
@@ -60,17 +56,20 @@ DAMAGE_TYPES = {
 
 DAMAGE_TYPE_PATTERN = "|".join([rf"{r}" for r in DAMAGE_TYPES])
 
-# Matches malice cost, e.g., "2 Malice" or "Signature"
-OPTIONAL_COST_PATTERN = r"(?:(?:\s?.?\s?(?P<malice>1?\d)\s*Malice|Signature)\s*)?"
-
-ABILITY_NAME_PATTERN = r"(?P<name>[A-Za-z][A-Za-z!? ]+[A-Za-z!?])\s*"
+ABILITY_NAME_PATTERN = r"(?P<name>[A-Za-z][A-Za-z!? ]+[A-Za-z!?])"
+ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action ?[123]?|(?:Main )?Action))[)]"
+OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*[+]\s*(?P<bonus>[-+]?[1-5])\s*)?"
+OPTIONAL_COST_PATTERN = r"(?:(?P<maliceCost>[0-9]{0,2})\s?Malice|Signature)?"
 
 ABILITY_HEADER_REGEX = re.compile(
-    rf"^{ABILITY_NAME_PATTERN}{ABILITY_TYPE_PATTERN}{OPTIONAL_POWER_ROLL_PATTERN}{OPTIONAL_COST_PATTERN}$"
+    rf"^{ABILITY_NAME_PATTERN}\s?{ABILITY_TYPE_PATTERN}\s?{OPTIONAL_POWER_ROLL_PATTERN}\s?{OPTIONAL_COST_PATTERN}\s?"
 )
 # + 11 2 corruption damage A<0 restrained (save ends)
 
 EFFECT_DURATION_PATTERN = r"(?:save ends|end of target turn|end of targets turn|end of target.?s turn|end of (?:the )?encounter|EoE|EoT|end of \w+ next turn|start of \w+ next turn)"
+POWER_ROLL_NUMERICAL_EFFECT_KEYWORD_PATTERN = (
+    r"shift|move|push|pull|slide|fly|teleport|immunity|weakness"
+)
 POWER_ROLL_EFFECT_KEYWORDS = rf"(?:prone(?:(?:and )?can[' ]?t stand)?|slowed|weakened|frightened|bleeding|grabbed|taunted|restrained|speed|shift\s?[1-9]?|move|push\s?[1-9]?|pull\s?[1-9]?|slide\s?[1-9]?|fly|hover|teleport\s?[1-9]?|stand up|recovery|immunity|weakness|temporary stamina|{EFFECT_DURATION_PATTERN})"
 POWER_ROLL_RANGE_PATTERN = r"[^1l!]*(11|12.16|17[4]?[+]?).?\s*"
 POWER_ROLL_DAMAGE_TYPE_PATTERN = rf"(?P<damageType>{DAMAGE_TYPE_PATTERN})?"
@@ -207,7 +206,7 @@ def split_ability_blocks(lines: list[str]) -> list[list[str]]:
                 current_block.append(line)
             else:
                 # Junk before first header—flag for review
-                print(f"[DEBUG] Ignoring orphaned non-header line: '{line}'")
+                print(f"*** [DEBUG] Ignoring orphaned non-header line: '{line}'")
     # Flush last block
     if current_block:
         blocks.append(current_block)
@@ -252,15 +251,13 @@ def parse_power_roll_block(
 
     if not power_roll_lines:
         print(
-            f"  [WARN] [{header['name']}]: No power roll lines found in ability block: {ability_lines}"
+            f"  *** [WARN] [{header['name']}]: No power roll lines found in ability block: {ability_lines}"
         )
         return None
-    if len(power_roll_lines) < 3:
-        print(
-            f"  [WARN] [{header['name']}]: Less than 3 power roll lines found: {power_roll_lines}"
-            f"\n   Normalized as: {ability_lines}"
+    if len(power_roll_lines) != 3:
+        raise ValueError(
+            f"  *** [ERROR] [{header['name']}]: Expected precisely 3 power roll lines, but found {len(power_roll_lines)}: {power_roll_lines}"
         )
-        return None
 
     return PowerRoll(
         bonus=powerRollBonus,
@@ -271,64 +268,77 @@ def parse_power_roll_block(
 
 
 def parse_power_roll_line(power_roll_line: str) -> PowerRollTier:
+    normalized = re.sub("[^A-Za-z0-9() <+-]", " ", power_roll_line)
     normalized = (
-        re.sub("[^A-Za-z0-9!() <+-]", " ", power_roll_line)
-        .replace("  ", " ")
-        .replace("  ", " ")
-        .replace("Zdamage", "7 damage")
-        .replace("S5Sdamage", "5 damage")
-        .replace("Sdamage", "5 damage")
-        .replace("iIdamage", "1 damage")
-        .replace("Ms2", "M<2 ")
-        .replace("As<", "A<")
-        .replace("<O", "<0 ")
-        .replace("2 9 3 Malice", "2 3 Malice")
-        .replace("Verticalsiide", "Vertical slide")
-        .replace("PsZ", "P<3")
-        .replace("Scoruption", "5 corruption")
-        .replace("Scorruption", "5 corruption")
-        .replace("Ssorruption", "5 corruption")
-        .replace("S corruption", "5 corruption")
-        .replace("S sorruption", "5 corruption")
-        .replace("damase", "damage")
+        normalized.replace("damase", "damage")
         .replace("a aken", "and weakened")
-        .replace("174+", "17+")
-        .replace("8617+ ", "17+ ")
-        .replace("617+", "17+")
         .replace("corruptiond e", "corruption damage;")
-        .replace("3E 17+", "17+")
-        .replace("JQdamage", "10 damage")
-        .replace("Jidamage", "10 damage")
-        .replace("Gacid", "6 acid")
-        .replace("Gcold", "6 cold")
-        .replace("Gcorruption", "6 corruption")
-        .replace("Gdamage", "6 damage")
-        .replace("Gfire", "6 fire")
-        .replace("Gholy", "6 holy")
-        .replace("Glightning", "6 lightning")
-        .replace("Gpoison", "6 poison")
-        .replace("Gpsychic", "6 psychic")
-        .replace("Gsonic", "6 sonic")
-        .replace("Sacid", "5 acid")
-        .replace("Scold", "5 cold")
-        .replace("Sfire", "5 fire")
-        .replace("Ssonic", "5 sonic")
-        .replace("Spsychic", "5 psychic")
-        .replace("Sholy", "5 holy")
-        .replace("Spoison", "5 poison")
-        .replace("Slightning", "5 lightning")
-        .replace("Sdamage", "5 damage")
-        .replace("JLacid", "11 acid")
-        .replace("JLcold", "11 cold")
-        .replace("JLcorruption", "11 corruption")
-        .replace("JLdamage", "11 damage")
-        .replace("JLfire", "11 fire")
-        .replace("JLholy", "11 holy")
-        .replace("JLlightning", "11 lightning")
-        .replace("JLpoison", "11 poison")
-        .replace("JLpsychic", "11 psychic")
-        .replace("JLsonic", "11 sonic")
         .replace("erabbed", "grabbed")
+        .replace("Verticalsiide", "Vertical slide")
+        .replace("coruption", "corruption")
+        .replace("sorruption", "corruption")
+        .replace("S5S", "5 ")
+    )
+    normalized = re.sub(
+        rf"Z(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "7 ", normalized
+    )
+    normalized = re.sub(
+        rf"G(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "6 ", normalized
+    )
+    normalized = re.sub(
+        rf"S(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "5 ", normalized
+    )
+    normalized = re.sub(
+        rf"(Ji|JQ)(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "10 ", normalized
+    )
+    normalized = re.sub(
+        rf"(JL|JL)(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "11 ", normalized
+    )
+    normalized = re.sub(
+        rf"[Ii](?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "1 ", normalized
+    )
+    normalized = re.sub(
+        rf"[Oo](?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "0 ", normalized
+    )
+    normalized = re.sub(
+        rf"([1-5]?[0-9])((?:{DAMAGE_TYPE_PATTERN})?\s?damage)", r"\1 \2 ", normalized
+    )
+    normalized = re.sub(r"([MARIPmarip]).?(<).?([0-5])", r"\1\2\3", normalized)
+    normalized = re.sub(r"([MARIPmarip])[^<]([0-5])", r"\1<\2", normalized)
+    normalized = re.sub(r"[1l](<(?:[0-5]|[Oo]))", r"I\1", normalized)
+    normalized = re.sub(r"([MARIPmarip]<)[Oo]", "0", normalized)
+    normalized = re.sub(r"<.11", r"<11", normalized)
+    normalized = re.sub(r"^[^1<]{0,9}(?=<11|17+|12-16)", "", normalized)
+    normalized = re.sub(r"^[+]\s+(?=11)", "<", normalized)
+    normalized = re.sub(
+        rf"({POWER_ROLL_NUMERICAL_EFFECT_KEYWORD_PATTERN})\s?[Ii]", r"\1 1", normalized
+    )
+    normalized = re.sub(
+        rf"({POWER_ROLL_NUMERICAL_EFFECT_KEYWORD_PATTERN})\s?[Ss]", r"\1 5", normalized
+    )
+    normalized = re.sub(
+        rf"({POWER_ROLL_NUMERICAL_EFFECT_KEYWORD_PATTERN})\s?G", r"\1 6", normalized
+    )
+    normalized = re.sub(
+        rf"({POWER_ROLL_NUMERICAL_EFFECT_KEYWORD_PATTERN})([1-9])", r"\1 \2", normalized
+    )
+    normalized = re.sub(r"nulls", r"pull 5", normalized)
+    normalized = re.sub(r"[ ]{2,}", " ", normalized)
+    normalized = re.sub(
+        r"(3 corruption damage) 0 (weakened [(]save ends[)])", r"\1 I<0 \2", normalized
+    )
+    normalized = re.sub(r"<11 0prone", r"<11 I<0 prone", normalized)
+    normalized = re.sub(r"(prone.*) As (bleeding)", r"\1 A<2 \2", normalized)
+    normalized = re.sub("bleedi$", "bleeding (save ends)", normalized)
+    normalized = normalized.replace("can t", "can't")
+    normalized = (
+        normalized.replace(
+            "PsZlevitated forthe rest of the encounter", "P<3 levitated (EoE)"
+        )
+        .replace(
+            "12 damage M<2 grabbed target has a bane on",
+            "12 damage M<2 grabbed, target has a bane on escaping the grab",
+        )
         .strip()
     )
 
@@ -411,7 +421,7 @@ def parse_potency_effect(
     try:
         value_as_int = int(value)
     except ValueError:
-        print(f"  [WARN] Invalid potency value: {value}")
+        print(f"  *** [WARN] Invalid potency value: {value}")
         return None
     return PotencyEffect(
         targetCharacteristic=map_initial_to_characteristic_name(target_characteristic),
@@ -557,8 +567,6 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
             header_raw=header_line, name="UNKNOWN", type="mainAction", keywords=[]
         )
 
-    # keywords = parse_ability_keywords(ability_lines)
-
     model: Ability = {
         "name": header["name"],
         "type": header["type"],
@@ -613,17 +621,21 @@ def parse_ability_header(
 ) -> Optional[Dict[str, Any]]:
     """Parse ability header, returning name, type, maliceCost, powerRoll bonus. Warn on partial match."""
     normalized = (
-        re.sub("[^A-Za-z0-9!() +-]", "", header_line).replace("  ", " ").strip()
+        re.sub("[^A-Za-z0-9!() +-]", "", header_line)
+        .replace("2 9 3 Malice", "2 3 Malice")
+        .replace("2 0 5 Malice", "2 5 Malice")
+        .replace("  ", " ")
+        .strip()
     )
 
     match = ABILITY_HEADER_REGEX.match(normalized)
     if not match:
         print(
-            f"[WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: {repr(normalized)}"
+            f"*** [WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: {repr(normalized)}"
         )
         return None
-    else:
-        print(f"[{normalized}]")
+    # else:
+    # print(f"[{normalized}]")
 
     groups = match.groupdict()
 
@@ -633,13 +645,18 @@ def parse_ability_header(
     type_key = type_key.replace("  ", " ")
     ability_type = ABILITY_TYPE_MAP.get(type_key, "unknown")
 
-    # Villain actions sometimes come as "Villain Action 1", etc.
+    # Villain actions always come in threes and have an integer suffix in the range 1 - 3 that prescribes
+    # the order in which the individual actions must be used.  The suffix isn't part of the type key nor
+    # the unique name; however, it needs to be stored in the model and exported for later use in Foundry
+    # both for display purposes as well as to preserve aforementioned sequence information.
+    villain_action_ordinal: Optional[int] = None
     if "villain action" in type_key:
         ability_type = "villainAction"
+        villain_action_ordinal = 1
 
     # Malice cost: "Signature" is 0, otherwise integer.
-    if groups.get("malice") is not None:
-        malice_cost = int(groups["malice"])
+    if groups.get("maliceCost") is not None:
+        malice_cost = int(groups["maliceCost"])
     elif "signature" in normalized.lower():
         malice_cost = None
     else:
@@ -652,7 +669,7 @@ def parse_ability_header(
             power_roll_bonus = int(groups["bonus"])
         except Exception:
             print(
-                f"[WARN] Could not parse power roll bonus: '{groups['bonus']}' in header '{header_line}'"
+                f"*** [WARN] Could not parse power roll bonus: '{groups['bonus']}' in header '{header_line}'"
             )
             power_roll_bonus = None
 
@@ -663,9 +680,47 @@ def parse_ability_header(
         if ability_type == "villainAction"
         else name,
         "type": ability_type,
+        "villainActionOrdinal": villain_action_ordinal,
         "maliceCost": malice_cost,
         "powerRollBonus": power_roll_bonus,
         "header_raw": header_line.strip(),
     }
     # print(ability_header)
     return ability_header
+
+
+def get_dict_without_none_values(input_dict: dict[str, Any]) -> dict[str, Any]:
+    cleaned: dict[str, Any] = {}
+    for key, value in input_dict.items():
+        if isinstance(value, dict):
+            nested = get_dict_without_none_values(value)
+            if nested:
+                cleaned[key] = nested
+        elif value is not None:
+            cleaned[key] = value
+    return cleaned
+
+
+def get_foundry_item_model(ability: Ability) -> dict[str, Any]:
+    item_id = generate_id()
+
+    item_model: dict[str, Any] = {
+        "_id": item_id,
+        "_key": f"!items!{item_id}",
+        "name": ability["name"],
+        "type": "monsterAbility",
+        "img": "icons/svg/book.svg",
+        "system": {
+            "maliceCost": ability.get("maliceCost", None),
+            "keywords": ability["keywords"],
+            "type": ability["type"],
+            "distance": ability.get("distance", None),
+            "target": ability.get("target", None),
+            "powerRoll": ability.get("powerRoll", None),
+            "trigger": ability.get("trigger", None),
+            "prePowerRollEffect": ability.get("prePowerRollEffect", None),
+            "postPowerRollEffect": ability.get("postPowerRollEffect", None),
+        },
+    }
+
+    return get_dict_without_none_values(item_model)

@@ -1,5 +1,5 @@
-_id: 7FUnrNX42Y2mCcGg
-_key: '!actors!7FUnrNX42Y2mCcGg'
+_id: tKXN1gCM6vdkhro7
+_key: '!actors!tKXN1gCM6vdkhro7'
 name: Mara
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,80 @@ system:
     - walk
     stability: 1
     freeStrikeDamage: 5
-items: []
+items:
+- _id: mgMFXs8sP9c5nVYT
+  _key: '!items!mgMFXs8sP9c5nVYT'
+  name: The Writhing Green
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Green
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: slide 1
+      tier2:
+        damage: 10
+        effect:
+          text: slide 2
+      tier3:
+        damage: 13
+        effect:
+          text: slide 3
+- _id: HGEkcYjfwzWI9SWK
+  _key: '!items!HGEkcYjfwzWI9SWK'
+  name: The Earth Devours
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Green
+    - Magic
+    type: mainAction
+    distance:
+      cube:
+        size: 3
+        within: 10
+    target:
+      text: All enemies in the cube
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 5
+        effect:
+          text: restrained (EoT)
+      tier3:
+        damage: 8
+        effect:
+          text: restrained (save ends)
+- _id: SU8mI1sJzM2CgCty
+  _key: '!items!SU8mI1sJzM2CgCty'
+  name: Jaws of the Void
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Void
+    type: triggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: Mara takes damage.

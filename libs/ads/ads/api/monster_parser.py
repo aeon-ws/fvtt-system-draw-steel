@@ -1,6 +1,4 @@
-import random
 import re
-import string
 import unicodedata
 from typing import Any, Dict, List, Optional, Pattern, Tuple
 
@@ -8,9 +6,11 @@ import yaml
 
 from ads.api.ability_and_trait_parser import (
     DAMAGE_TYPES,
+    get_foundry_item_model,
     parse_ability_block,
     split_ability_blocks,
 )
+from ads.api.foundry import generate_id
 from ads.api.string_format import sanitize_name, title_case
 from ads.model import (
     AppliedCaptainEffects,
@@ -36,6 +36,7 @@ FOOTER_RE = re.compile("|".join(FOOTER_PATTERNS), re.IGNORECASE)
 # Add encounter/narrative delimiters here:
 NOISE_HEADERS = {
     "ENCOUNTER D4",
+    "MALICE FEATURES",
     # Add others as needed (case-insensitive)
 }
 
@@ -144,13 +145,9 @@ MONSTER_LEVEL_PATTERN = (
 )
 
 
-def generate_id():
-    # 16 char random hex
-    return "".join(random.choices(string.ascii_letters + string.digits, k=16))
-
-
 def is_noise_header(line: str) -> bool:
-    return line.strip().upper() in (h.upper() for h in NOISE_HEADERS)
+    normalized_line = line.strip().upper()
+    return any(h.upper() in normalized_line for h in NOISE_HEADERS)
 
 
 def normalize_keywords(keywords: List[str]) -> List[str]:
@@ -412,52 +409,44 @@ def parse_free_strike(source_lines: List[str]) -> int:
     raise ValueError(f"Free Strike not found in the provided lines: {source_lines}")
 
 
-def parse_characteristics(
-    source_lines: List[str], raise_if_not_found: bool = True
-) -> Characteristics | None:
-    for source_line in source_lines:
-        normalized = (
-            re.sub(
-                "(?: [0Oo]+|[0Oo]+ |[0Oo]+$)",
-                " 0 ",
-                re.sub("[^A-Za-z0-9 +-]", "", source_line),
-            )
-            .replace("od ", " 0")
-            .replace("+", " ")
-            .replace("  ", " ")
-            .replace("  ", " ")
-            .strip()
+def parse_characteristics(source_line: str) -> Characteristics | None:
+    normalized = (
+        re.sub(
+            "(?: [0Oo]+|[0Oo]+ |[0Oo]+$)",
+            " 0 ",
+            re.sub("[^A-Za-z0-9 +-]", "", source_line),
         )
+        .replace("od ", " 0")
+        .replace("+", " ")
+        .replace("  ", " ")
+        .replace("  ", " ")
+        .strip()
+    )
 
-        pattern = re.compile(
-            # Might-2 Agility+2 Reas0n+0 Intuiti0n+0 Presence -2
-            r"Might\s*(?P<might>-?[0-9])\s*Agility\s*(?P<agility>-?[0-9])\s*Reason\s*(?P<reason>-?[0-9])\s*Intuition\s*(?P<intuition>-?[0-9])\s*Presence\s*(?P<presence>-?[0-9])",
-            re.IGNORECASE,
-        )
+    pattern = re.compile(
+        # Might-2 Agility+2 Reas0n+0 Intuiti0n+0 Presence -2
+        r"Might\s*(?P<might>-?[0-9])\s*Agility\s*(?P<agility>-?[0-9])\s*Reason\s*(?P<reason>-?[0-9])\s*Intuition\s*(?P<intuition>-?[0-9])\s*Presence\s*(?P<presence>-?[0-9])",
+        re.IGNORECASE,
+    )
 
-        match = pattern.match(normalized)
-        if match:
-            characteristics = match.groupdict()
-            return Characteristics(
-                {
-                    "might": int(characteristics["might"].replace("O", "0")),
-                    "agility": int(characteristics["agility"].replace("O", "0")),
-                    "reason": int(characteristics["reason"].replace("O", "0")),
-                    "intuition": int(characteristics["intuition"].replace("O", "0")),
-                    "presence": int(characteristics["presence"].replace("O", "0")),
-                }
-            )
-
-    if raise_if_not_found:
-        raise ValueError(
-            f"Characteristics not found in the provided lines: {source_lines}"
+    match = pattern.match(normalized)
+    if match:
+        characteristics = match.groupdict()
+        return Characteristics(
+            {
+                "might": int(characteristics["might"].replace("O", "0")),
+                "agility": int(characteristics["agility"].replace("O", "0")),
+                "reason": int(characteristics["reason"].replace("O", "0")),
+                "intuition": int(characteristics["intuition"].replace("O", "0")),
+                "presence": int(characteristics["presence"].replace("O", "0")),
+            }
         )
 
     return None
 
 
 def parse_with_captain(
-    source_lines: list[str],
+    source_lines: list[str], stat_and_metadata_section_end_index: int
 ) -> tuple[AppliedCaptainEffects | None, DerivedCaptainBonuses | None]:
     """
     Returns a dict with the derived captain bonus or effect from the 'With Captain' line.
@@ -471,14 +460,7 @@ def parse_with_captain(
         "strike edge": "strikeEdge",
         "edge on strikes": "edgeOnStrikes",
     }
-    stat_and_metadata_section_end_index = next(
-        (
-            line_index
-            for line_index, source_line in enumerate(source_lines)
-            if parse_characteristics([source_line], raise_if_not_found=False)
-        ),
-        len(source_lines),
-    )
+
     for source_line in source_lines[: stat_and_metadata_section_end_index + 1]:
         m = re.search(r"with captain\s*(.+)", source_line, re.IGNORECASE)
         if m:
@@ -507,17 +489,19 @@ def parse_with_captain(
     raise ValueError(f"Captain bonuses not found in the provided lines: {source_lines}")
 
 
-def find_last_stat_index(source_lines: list[str]) -> int:
+def get_characteristics_and_line_index(
+    source_lines: list[str],
+) -> tuple[Characteristics, int]:
     for source_line_index, source_line in enumerate(source_lines):
-        # Look for a line containing all 5 characteristic names (order doesn’t matter)
-        characteristic_fields = ["might", "agility", "reason", "intuition", "presence"]
-        characteristics_line_found = all(
-            characteristic_field in source_line.lower()
-            for characteristic_field in characteristic_fields
-        )
-        if characteristics_line_found:
-            return source_line_index
-    return len(source_lines)  # fallback: parse all
+        characteristics = parse_characteristics(source_line)
+        if characteristics:
+            # Found a line with characteristics, so return its index.
+            return (characteristics, source_line_index)
+
+    print("[ERROR] Primary characteristics line not found in block. Lines were:")
+    for index, source_line in enumerate(source_lines):
+        print(f"{index:02}: {source_line.strip()}")
+    raise ValueError("Primary characteristics line not found in block!")
 
 
 def normalize_weakness_immunity_type(s: str) -> str:
@@ -543,13 +527,10 @@ def normalize_weakness_immunity_type(s: str) -> str:
     return mapping.get(cleaned, cleaned)
 
 
-def parse_weakness_immunity(
-    source_lines: list[str],
+def parse_immunity_and_weakness(
+    source_lines: list[str], characteristics_line_index: int
 ) -> tuple[ImmunityOrWeakness | None, ImmunityOrWeakness | None]:
-    stat_end_index = find_last_stat_index(source_lines)
-    source_lines = source_lines[
-        : stat_end_index + 1
-    ]  # Only parse the metadata/stat section
+    source_lines = source_lines[: characteristics_line_index + 1]
     weakness: ImmunityOrWeakness = {}
     immunity: ImmunityOrWeakness = {}
     for source_line in source_lines:
@@ -586,22 +567,12 @@ def parse_weakness_immunity(
     return (weakness or None, immunity or None)
 
 
-def find_characteristics_line(source_lines: list[str]):
-    for i, line in enumerate(source_lines):
-        if re.search(r"Might\s*[-+0-9O]+", line, re.IGNORECASE) and re.search(
-            r"Agility\s*[-+0-9O]+", line, re.IGNORECASE
-        ):
-            return i
-    # Extra diagnostic:
-    print("[ERROR] Primary characteristics line not found in block. Lines were:")
-    for idx, l in enumerate(source_lines):
-        print(f"{idx:02}: {l.strip()}")
-    raise ValueError("Primary characteristics line not found in block!")
-
-
 def get_monster_model_from_block(monster_block: MonsterBlock) -> Monster:
     source_lines = monster_block["source_lines"]
     monster_header = monster_block["header"]
+    characteristics, characteristics_line_index = get_characteristics_and_line_index(
+        source_lines
+    )
 
     monster_model: Monster = {
         "name": monster_header["name"],
@@ -617,7 +588,7 @@ def get_monster_model_from_block(monster_block: MonsterBlock) -> Monster:
         "size": "",
         "stability": 0,
         "freeStrikeDamage": parse_free_strike(source_lines),
-        "characteristics": parse_characteristics(source_lines),
+        "characteristics": characteristics,
         "weakness": None,
         "immunity": None,
         "derivedCaptainBonuses": None,
@@ -638,16 +609,15 @@ def get_monster_model_from_block(monster_block: MonsterBlock) -> Monster:
     )
 
     # Optional fields:
-    monster_model["weakness"], monster_model["immunity"] = parse_weakness_immunity(
-        source_lines
+    monster_model["weakness"], monster_model["immunity"] = parse_immunity_and_weakness(
+        source_lines, characteristics_line_index
     )
     if monster_header["type"].lower() == "minion":
-        captain_result = parse_with_captain(source_lines)
+        captain_result = parse_with_captain(source_lines, characteristics_line_index)
         if captain_result:
             monster_model["appliedCaptainEffects"] = captain_result[0]
             monster_model["derivedCaptainBonuses"] = captain_result[1]
 
-    characteristics_line_index = find_characteristics_line(source_lines)
     first_ability_source_lines = source_lines[characteristics_line_index + 1 :]
     ability_blocks = split_ability_blocks(first_ability_source_lines)
     for ability_block in ability_blocks:
@@ -706,7 +676,7 @@ def get_monster_foundry_actor_model(
 ) -> dict[str, Any]:
     # Prepare fields
     is_minion = monster_model["type"].lower() == "minion"
-    block_id = generate_id()
+    actor_id = generate_id()
     width = 1
     try:
         # Handle sizes like "1S", "2", "3" (token width/height)
@@ -719,8 +689,8 @@ def get_monster_foundry_actor_model(
         width = 1
 
     monster_foundry_actor_model: dict[str, Any] = {
-        "_id": block_id,
-        "_key": f"!actors!{block_id}",
+        "_id": actor_id,
+        "_key": f"!actors!{actor_id}",
         "name": monster_model["name"],
         "type": "minion" if is_minion else "enemy",
         "img": "icons/svg/mystery-man.svg",
@@ -767,6 +737,10 @@ def get_monster_foundry_actor_model(
         },
         "items": [],
     }
+
+    for ability in monster_model.get("abilities", []):
+        monster_foundry_actor_model["items"].append(get_foundry_item_model(ability))
+
     # Add optionals (immunity/weakness)
     for field_name in (
         "immunity",
@@ -777,6 +751,7 @@ def get_monster_foundry_actor_model(
         field_value = monster_model.get(field_name, None)
         if field_value:
             monster_foundry_actor_model["system"][field_name] = field_value
+
     return monster_foundry_actor_model
 
 

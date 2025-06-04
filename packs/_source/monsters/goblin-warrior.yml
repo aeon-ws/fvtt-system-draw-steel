@@ -1,5 +1,5 @@
-_id: 9DEUGTZnr0XRGsJE
-_key: '!actors!9DEUGTZnr0XRGsJE'
+_id: 3HetaodkiptKlsh5
+_key: '!actors!3HetaodkiptKlsh5'
 name: Goblin Warrior
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,66 @@ system:
     - climb
     stability: 0
     freeStrikeDamage: 1
-items: []
+items:
+- _id: MDSQExrUb9gOb5NV
+  _key: '!items!MDSQExrUb9gOb5NV'
+  name: Spear Charge
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+- _id: My42m4csOOZPIIBB
+  _key: '!items!My42m4csOOZPIIBB'
+  name: Bury the Point
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 6
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)

@@ -1,5 +1,5 @@
-_id: QbfW5F6gESzZXo5w
-_key: '!actors!QbfW5F6gESzZXo5w'
+_id: IKLcCNSFwVUf3ts3
+_key: '!actors!IKLcCNSFwVUf3ts3'
 name: Sudden Downpour
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,4 +45,53 @@ system:
     freeStrikeDamage: 2
   immunity:
     fire: 2
-items: []
+items:
+- _id: BqGRzf2okbrTouQy
+  _key: '!items!BqGRzf2okbrTouQy'
+  name: Leap Upon
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 0
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 6
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 7
+        effect:
+          text: prone
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: bleeding (save ends)
+- _id: AwclmEnMfbNxvbhf
+  _key: '!items!AwclmEnMfbNxvbhf'
+  name: See Through
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords: []
+    type: maneuver

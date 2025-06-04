@@ -1,5 +1,5 @@
-_id: DZ7UfUYVQh4KYEPu
-_key: '!actors!DZ7UfUYVQh4KYEPu'
+_id: KQp8DoDItMNAtOJW
+_key: '!actors!KQp8DoDItMNAtOJW'
 name: War Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,102 @@ system:
     - climb
     stability: 2
     freeStrikeDamage: 4
-items: []
+items:
+- _id: GR9My7FW1AqGig9Q
+  _key: '!items!GR9My7FW1AqGig9Q'
+  name: Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+      tier2:
+        damage: 11
+      tier3:
+        damage: 14
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: weakened (save ends)
+- _id: muuJrDsLfeUbP1YY
+  _key: '!items!muuJrDsLfeUbP1YY'
+  name: Leg Blade
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+- _id: 9VfTIuhnJ8fLbKKt
+  _key: '!items!9VfTIuhnJ8fLbKKt'
+  name: Trample
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - —
+    type: mainAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+- _id: zTyBKkpNQfElYNEI
+  _key: '!items!zTyBKkpNQfElYNEI'
+  name: Web
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Weapon
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 1
+    postPowerRollEffect:
+      text: The affected area is considered difficult terrain for the rest of the
+        encounter.
+- _id: lLvAxSnAYIzpPpW4
+  _key: '!items!lLvAxSnAYIzpPpW4'
+  name: Skitter
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: The spider or an ally riding the spider take damage.

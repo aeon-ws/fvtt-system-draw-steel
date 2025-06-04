@@ -1,5 +1,5 @@
-_id: 9tmQbhsfJEOCPTWq
-_key: '!actors!9tmQbhsfJEOCPTWq'
+_id: RDBHHfeDxPSSSoXI
+_key: '!actors!RDBHHfeDxPSSSoXI'
 name: Goblin Monarch
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,83 @@ system:
     - climb
     stability: 1
     freeStrikeDamage: 4
-items: []
+items:
+- _id: tElIa2B3Ju0BAx7e
+  _key: '!items!tElIa2B3Ju0BAx7e'
+  name: Handaxe
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+      ranged: 5
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 7
+      tier2:
+        damage: 10
+      tier3:
+        damage: 13
+- _id: ZmhbnO7DMczgdPCV
+  _key: '!items!ZmhbnO7DMczgdPCV'
+  name: Get in Here!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      ranged: 20
+    target:
+      text: Special
+- _id: sFOCOmt51JEiGrTe
+  _key: '!items!sFOCOmt51JEiGrTe'
+  name: Meat Shield
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: One ally
+    trigger: A creature targets the monarch with a strike.
+- _id: ktZWO7wxEoSFdyMi
+  _key: '!items!ktZWO7wxEoSFdyMi'
+  name: What Are You Waiting For (Villain Action 1)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: villainAction
+    distance:
+      ranged: 10
+    target:
+      text: One enemy or object
+- _id: K9GsnK32L6FLwp0A
+  _key: '!items!K9GsnK32L6FLwp0A'
+  name: Kill! (Villain Action 3)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: villainAction
+    distance:
+      special: true
+    target:
+      text: Special

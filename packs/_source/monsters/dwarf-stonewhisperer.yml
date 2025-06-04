@@ -1,5 +1,5 @@
-_id: Cwqpjuuuqpm7ghoY
-_key: '!actors!Cwqpjuuuqpm7ghoY'
+_id: 35JJVKkJcQLri0P6
+_key: '!actors!35JJVKkJcQLri0P6'
 name: Dwarf Stonewhisperer
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,96 @@ system:
     - burrow
     stability: 2
     freeStrikeDamage: 5
-items: []
+items:
+- _id: YzCfitybcqF4ZJzu
+  _key: '!items!YzCfitybcqF4ZJzu'
+  name: Tile Slide
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    type: mainAction
+    distance:
+      cube:
+        size: 2
+        within: 1
+    target:
+      text: All creatures and objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 5
+        effect:
+          text: slide 1
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 8
+        effect:
+          text: slide 3
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 11
+        effect:
+          text: slide 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: restrained (save ends)
+- _id: gVzbm9S5wr7PrUnh
+  _key: '!items!gVzbm9S5wr7PrUnh'
+  name: Stone Wave
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 10
+    target:
+      text: All enemies in the cube
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+        effect:
+          text: push 2
+        potencyEffect:
+          targetCharacteristic: reason
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 6
+        effect:
+          text: push 3
+        potencyEffect:
+          targetCharacteristic: reason
+          value: 2
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 9
+        effect:
+          text: push 3
+        potencyEffect:
+          targetCharacteristic: reason
+          value: 3
+          effect:
+            text: slowed (save ends)

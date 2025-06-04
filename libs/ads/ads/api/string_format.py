@@ -1,6 +1,7 @@
 import re
 
 NAME_FIXUPS = {
+    "_BUGBEAR COMMANDER": "BUGBEAR COMMANDER",
     "MOoHLER": "MOHLER",
     "Lacsi": "LAESI",
     "BopporrF BUCKFEATHER": "BODDORFF BUCKFEATHER",
@@ -29,5 +30,5 @@ def title_case(any_case_value: str) -> str:
 
 
 def sanitize_name(raw_name: str) -> str:
-    sanitized_name = re.sub(r"^[^A-Za-z0-9]+", "", raw_name).strip()
+    sanitized_name = re.sub(r"^[^A-Za-z][^A-Za-z']+[^A-Za-z!?]", "", raw_name).strip()
     return NAME_FIXUPS.get(sanitized_name, sanitized_name)

@@ -1,5 +1,5 @@
-_id: dhiEnQCf73ZHhYCI
-_key: '!actors!dhiEnQCf73ZHhYCI'
+_id: mYcTB5nqDDFJrOm3
+_key: '!actors!mYcTB5nqDDFJrOm3'
 name: Skeleton
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,4 +45,67 @@ system:
   immunity:
     corruption: 1
     poison: 1
-items: []
+items:
+- _id: UB2HG2jN2QlRLNKH
+  _key: '!items!UB2HG2jN2QlRLNKH'
+  name: Bone Shards
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+      ranged: 10
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+      tier3:
+        damage: 7
+- _id: tRT0VqQMO9fmfbvY
+  _key: '!items!tRT0VqQMO9fmfbvY'
+  name: Bone Spur
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - Area
+    - Weapon
+    type: maneuver
+    distance:
+      burst: 1
+    target:
+      text: Each enemy in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 1
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 2
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 3
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)

@@ -1,5 +1,5 @@
-_id: JJZdXjyhQV6BDRfr
-_key: '!actors!JJZdXjyhQV6BDRfr'
+_id: XObxCnF3NyMeNQur
+_key: '!actors!XObxCnF3NyMeNQur'
 name: Goblin Assassin
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,65 @@ system:
     - climb
     stability: 0
     freeStrikeDamage: 2
-items: []
+items:
+- _id: CkfCdwPGuCatLzr0
+  _key: '!items!CkfCdwPGuCatLzr0'
+  name: Sword Stab
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+      tier3:
+        damage: 7
+- _id: y2uMwZ34JBb6qt3Q
+  _key: '!items!y2uMwZ34JBb6qt3Q'
+  name: Shadow Chains
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: Three creatures
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 0
+          effect:
+            text: restrained (save ends)
+      tier2:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: restrained (save ends)
+      tier3:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: restrained (save ends)

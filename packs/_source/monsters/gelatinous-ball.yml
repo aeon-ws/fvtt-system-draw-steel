@@ -1,5 +1,5 @@
-_id: rc6TToiSWHBayI2C
-_key: '!actors!rc6TToiSWHBayI2C'
+_id: f7aOmIXdWngeo9WO
+_key: '!actors!f7aOmIXdWngeo9WO'
 name: Gelatinous Ball
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,34 @@ system:
     freeStrikeDamage: 1
   immunity:
     acid: 2
-items: []
+items:
+- _id: NZUDjoTiaxTpzlRX
+  _key: '!items!NZUDjoTiaxTpzlRX'
+  name: Bowl
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+        effect:
+          text: slide 1
+      tier2:
+        damage: 4
+        effect:
+          text: slide 2
+      tier3:
+        damage: 5
+        effect:
+          text: slide 3

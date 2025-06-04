@@ -1,5 +1,5 @@
-_id: QLBsOhnZLbnbM4Iu
-_key: '!actors!QLBsOhnZLbnbM4Iu'
+_id: NuY0OXO8lEZryOLF
+_key: '!actors!NuY0OXO8lEZryOLF'
 name: Decrepit Skeleton
 type: minion
 img: icons/svg/mystery-man.svg
@@ -48,4 +48,27 @@ system:
     poison: 1
   derivedCaptainBonuses:
     edgeOnStrikes: 2
-items: []
+items:
+- _id: MlF7tWswreRbsana
+  _key: '!items!MlF7tWswreRbsana'
+  name: Bone Bow
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5

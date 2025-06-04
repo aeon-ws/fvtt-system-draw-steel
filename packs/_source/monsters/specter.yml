@@ -1,5 +1,5 @@
-_id: qbpOQLsRqAI9fhdH
-_key: '!actors!qbpOQLsRqAI9fhdH'
+_id: cOOQba9cjCNcE5B2
+_key: '!actors!cOOQba9cjCNcE5B2'
 name: Specter
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,56 @@ system:
   immunity:
     corruption: 1
     poison: 1
-items: []
+items:
+- _id: QjHyide4LfM1Q2rF
+  _key: '!items!QjHyide4LfM1Q2rF'
+  name: Decaying Touch
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Melee
+    - Strike
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 0
+          effect:
+            text: weakened (save ends)
+      tier2:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 1
+          effect:
+            text: weakened (save ends)
+      tier3:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 2
+          effect:
+            text: weakened (save ends)
+- _id: vf1FyrkY6Wseb76b
+  _key: '!items!vf1FyrkY6Wseb76b'
+  name: Hidden Movement
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self

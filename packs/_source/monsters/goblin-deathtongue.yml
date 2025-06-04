@@ -1,5 +1,5 @@
-_id: pmElse4t7ZBwNaIT
-_key: '!actors!pmElse4t7ZBwNaIT'
+_id: ThudIUPaTA3Gzqkv
+_key: '!actors!ThudIUPaTA3Gzqkv'
 name: Goblin Deathtongue
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,75 @@ system:
     freeStrikeDamage: 4
   immunity:
     corruption: 2
-items: []
+items:
+- _id: tT89Y5mxxKDK9yvg
+  _key: '!items!tT89Y5mxxKDK9yvg'
+  name: Gaze of Surlach
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 15
+    target:
+      text: One creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+        effect:
+          text: weakened (save ends)
+      tier2:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: weakened (save ends)
+      tier3:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: slowed and weakened
+- _id: 0pIvGjsNqfYc3Rok
+  _key: '!items!0pIvGjsNqfYc3Rok'
+  name: Dizzying Hex
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      ranged: 10
+    target:
+      text: One creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 0
+          effect:
+            text: prone
+      tier2:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: prone can
+      tier3:
+        effect:
+          text: prone
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: and can

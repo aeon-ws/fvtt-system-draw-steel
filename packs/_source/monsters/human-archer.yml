@@ -1,5 +1,5 @@
-_id: PRhfZwWHw2QeK6Zq
-_key: '!actors!PRhfZwWHw2QeK6Zq'
+_id: ka3lkIuLzGgXcQqM
+_key: '!actors!ka3lkIuLzGgXcQqM'
 name: Human Archer
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,4 +49,27 @@ system:
     psychic: 1
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
-items: []
+items:
+- _id: yc3I8gq1KZLdKSau
+  _key: '!items!yc3I8gq1KZLdKSau'
+  name: Crossbow
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5

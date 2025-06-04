@@ -1,5 +1,5 @@
-_id: dVWeQZJTaxMTJmqk
-_key: '!actors!dVWeQZJTaxMTJmqk'
+_id: YS9xqQsY7Muy4ARY
+_key: '!actors!YS9xqQsY7Muy4ARY'
 name: Goblin Battleborn
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,69 @@ system:
     - climb
     stability: 2
     freeStrikeDamage: 5
-items: []
+items:
+- _id: NPRM45noA03dQ4H8
+  _key: '!items!NPRM45noA03dQ4H8'
+  name: Spear Charge
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 5
+      tier2:
+        damage: 6
+      tier3:
+        damage: 8
+        effect:
+          text: prone the battleborn continues charging
+- _id: rV1D00mXFtJtuYFD
+  _key: '!items!rV1D00mXFtJtuYFD'
+  name: Battle Flurry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: mainAction
+    distance:
+      burst: 1
+    target:
+      text: Each creature and object in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)

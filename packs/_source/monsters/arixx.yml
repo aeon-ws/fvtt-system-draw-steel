@@ -1,5 +1,5 @@
-_id: E2vcPzPsMS68Tdlx
-_key: '!actors!E2vcPzPsMS68Tdlx'
+_id: PmhbW0nDM2QW7W6G
+_key: '!actors!PmhbW0nDM2QW7W6G'
 name: Arixx
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,226 @@ system:
     - burrow
     stability: 2
     freeStrikeDamage: 5
-items: []
+items:
+- _id: JHkYSqTPJAx45VhN
+  _key: '!items!JHkYSqTPJAx45VhN'
+  name: Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 2
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 9
+      tier2:
+        damage: 13
+        effect:
+          text: grabbed
+      tier3:
+        damage: 6
+        effect:
+          text: grabbed
+- _id: Y8gDFNA6o3lWyPTD
+  _key: '!items!Y8gDFNA6o3lWyPTD'
+  name: Claw Swing
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 2
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: grabbed
+      tier2:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: grabbed
+      tier3:
+        damage: 10
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 3
+          effect:
+            text: grabbed
+- _id: 3q2RYWoFQi02n4gh
+  _key: '!items!3q2RYWoFQi02n4gh'
+  name: Spitfire
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+      tier3:
+        damage: 7
+        effect:
+          text: prone
+- _id: R75Ecya1qTVuOri0
+  _key: '!items!R75Ecya1qTVuOri0'
+  name: Dirt Devil
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Melee
+    type: mainAction
+    distance:
+      burst: 3
+    target:
+      text: Each enemy in the burst
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+        effect:
+          text: push 2
+      tier3:
+        damage: 7
+        effect:
+          text: push 4
+- _id: 28t91JhsNfj2zWjS
+  _key: '!items!28t91JhsNfj2zWjS'
+  name: Dust Cloud
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    type: maneuver
+    distance:
+      burst: 1
+    target:
+      text: Special
+- _id: 1dOrbkV9RnAkwEmX
+  _key: '!items!1dOrbkV9RnAkwEmX'
+  name: Skitter
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: The arixx takes damage.
+- _id: O2Cxp78fXVXLdB2H
+  _key: '!items!O2Cxp78fXVXLdB2H'
+  name: Acid Spew (Villain Action 1)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Weapon
+    type: villainAction
+    distance:
+      line:
+        width: 0
+        length: 2
+        within: 1
+    target:
+      text: Each creature and object
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 5
+      tier2:
+        damage: 8
+      tier3:
+        damage: 11
+- _id: EcwNNUFu7S2t00ws
+  _key: '!items!EcwNNUFu7S2t00ws'
+  name: Sinkhole (Villain Action 2)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: villainAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+- _id: 2Mi80UMB1k8tO5fz
+  _key: '!items!2Mi80UMB1k8tO5fz'
+  name: Acid and Claws (Villain Action 3)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: villainAction
+    distance:
+      burst: 2
+    target:
+      text: Each creature in the burst
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: weakened (save ends)
+      tier2:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: weakened (save ends)
+      tier3:
+        damage: 11
+        potencyEffect:
+          targetCharacteristic: might
+          value: 3
+          effect:
+            text: weakened (save ends)

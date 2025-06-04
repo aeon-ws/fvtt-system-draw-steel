@@ -1,5 +1,5 @@
-_id: QJ8x9PEiqG1haqC4
-_key: '!actors!QJ8x9PEiqG1haqC4'
+_id: yXbD2T7oROLoStYy
+_key: '!actors!yXbD2T7oROLoStYy'
 name: Human Trickshot
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,28 @@ system:
   immunity:
     corruption: 1
     psychic: 1
-items: []
+items:
+- _id: IrPeXWLWBtGyKwAE
+  _key: '!items!IrPeXWLWBtGyKwAE'
+  name: Trick Crossbow
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+      ranged: 15
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12

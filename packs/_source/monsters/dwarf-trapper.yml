@@ -1,5 +1,5 @@
-_id: yhFD5rIybR4GSnME
-_key: '!actors!yhFD5rIybR4GSnME'
+_id: 3nZdYcoZN0xKnjn2
+_key: '!actors!3nZdYcoZN0xKnjn2'
 name: Dwarf Trapper
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,53 @@ system:
     - walk
     stability: 2
     freeStrikeDamage: 3
-items: []
+items:
+- _id: EOCKo0fXWOLA1kV7
+  _key: '!items!EOCKo0fXWOLA1kV7'
+  name: Concussive Bolts
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+      ranged: 10
+    target:
+      text: 1 creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 5
+        effect:
+          text: push 2
+      tier2:
+        damage: 7
+        effect:
+          text: push 4
+      tier3:
+        damage: 9
+        effect:
+          text: push 6
+- _id: bab3MzZcVxfUXVGZ
+  _key: '!items!bab3MzZcVxfUXVGZ'
+  name: Steam Powered Snare
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Ranged
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 5
+    target:
+      text: All enemies in the cube

@@ -1,5 +1,5 @@
-_id: RiZGMnGH3wovB730
-_key: '!actors!RiZGMnGH3wovB730'
+_id: QXxEOt1270G67idI
+_key: '!actors!QXxEOt1270G67idI'
 name: Brune
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,46 @@ system:
   immunity:
     corruption: 1
     psychic: 1
-items: []
+items:
+- _id: J7thkloXI2ZNd9eY
+  _key: '!items!J7thkloXI2ZNd9eY'
+  name: Butcher Knife
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: grabbed, target has a bane on escaping the grab
+- _id: KuXqVwRNPZGdrXFX
+  _key: '!items!KuXqVwRNPZGdrXFX'
+  name: Throw
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: One creature grabbed by Brune

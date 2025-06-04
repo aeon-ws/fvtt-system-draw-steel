@@ -1,5 +1,5 @@
-_id: mYa5h4O6Usl5IRK9
-_key: '!actors!mYa5h4O6Usl5IRK9'
+_id: 0ZrwqPkX9tBnrQt7
+_key: '!actors!0ZrwqPkX9tBnrQt7'
 name: Human Raider
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,4 +49,28 @@ system:
     psychic: 1
   derivedCaptainBonuses:
     edgeOnStrikes: 1
-items: []
+items:
+- _id: AomgODNTZELFQIOK
+  _key: '!items!AomgODNTZELFQIOK'
+  name: Handaxes
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 1
+      tier2:
+        damage: 2
+      tier3:
+        damage: 3

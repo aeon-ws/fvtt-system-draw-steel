@@ -1,5 +1,5 @@
-_id: JakuLMTUwmY8Fi3Z
-_key: '!actors!JakuLMTUwmY8Fi3Z'
+_id: E2YYDwL0YsIU87az
+_key: '!actors!E2YYDwL0YsIU87az'
 name: Creeping Sludge
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,4 +45,46 @@ system:
   immunity:
     corruption: 2
     acid: 2
-items: []
+items:
+- _id: qr9YrMzanAysU7m2
+  _key: '!items!qr9YrMzanAysU7m2'
+  name: Corrode
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 2
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 4
+        effect:
+          text: vertical pull 1
+      tier3:
+        damage: 5
+        effect:
+          text: vertical pull 2
+- _id: ixKpJM1MpJ0diL5x
+  _key: '!items!ixKpJM1MpJ0diL5x'
+  name: Oozen Grasp
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - Area
+    - Melee
+    type: maneuver
+    distance:
+      burst: 2
+    target:
+      text: Each enemy and object in the burst

@@ -1,5 +1,5 @@
-_id: FQm3uMRW8nAKdKfN
-_key: '!actors!FQm3uMRW8nAKdKfN'
+_id: vIoJZstcidQPAlM9
+_key: '!actors!vIoJZstcidQPAlM9'
 name: Gorek
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,72 @@ system:
     - walk
     stability: 2
     freeStrikeDamage: 5
-items: []
+items:
+- _id: D5mVjfXxmA54kTHK
+  _key: '!items!D5mVjfXxmA54kTHK'
+  name: Brutal Impact
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: push 1
+      tier2:
+        damage: 11
+        effect:
+          text: push 2
+      tier3:
+        damage: 14
+        effect:
+          text: push 3
+- _id: imejHItTbOUWT6V1
+  _key: '!items!imejHItTbOUWT6V1'
+  name: Lets Tussle
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature the fury’s size or smaller
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: grabbed
+      tier2:
+        damage: 13
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: grabbed
+      tier3:
+        damage: 16
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: grabbed

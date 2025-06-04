@@ -1,5 +1,5 @@
-_id: iAoxyDR6bazLXwoO
-_key: '!actors!iAoxyDR6bazLXwoO'
+_id: iRgWEVMLMhmXDWng
+_key: '!actors!iRgWEVMLMhmXDWng'
 name: Clawfish
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,4 +50,29 @@ system:
     poison: 2
   derivedCaptainBonuses:
     edgeOnStrikes: 2
-items: []
+items:
+- _id: gTD9Qp56gMKIbrzN
+  _key: '!items!gTD9Qp56gMKIbrzN'
+  name: Hookclaw
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+        effect:
+          text: grabbed

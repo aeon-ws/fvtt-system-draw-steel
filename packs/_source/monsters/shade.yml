@@ -1,5 +1,5 @@
-_id: 9LsfQ80csIz33JoQ
-_key: '!actors!9LsfQ80csIz33JoQ'
+_id: St5o3x34EAuxAfOk
+_key: '!actors!St5o3x34EAuxAfOk'
 name: Shade
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,4 +49,29 @@ system:
     poison: 1
   derivedCaptainBonuses:
     speed: 2
-items: []
+items:
+- _id: 59ZDatnIvPdwepuQ
+  _key: '!items!59ZDatnIvPdwepuQ'
+  name: Life Drain
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+        effect:
+          text: the target move 5 up to their

@@ -1,5 +1,5 @@
-_id: ZdIWmyGZ4ZAyScD1
-_key: '!actors!ZdIWmyGZ4ZAyScD1'
+_id: r7aIkYbBriJJRj0R
+_key: '!actors!r7aIkYbBriJJRj0R'
 name: Bugbear Channeler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,4 +45,138 @@ system:
     - walk
     stability: 0
     freeStrikeDamage: 5
-items: []
+items:
+- _id: iLI1P9oVNC4dTrXw
+  _key: '!items!iLI1P9oVNC4dTrXw'
+  name: Shadow Drag
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 8
+    target:
+      text: 2 creatures or objects on the ground
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: pull 2
+      tier2:
+        damage: 10
+        effect:
+          text: pull 3
+      tier3:
+        damage: 13
+        effect:
+          text: pull 4
+- _id: rAf8uCv8G7WM1oeh
+  _key: '!items!rAf8uCv8G7WM1oeh'
+  name: Blistering Element
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    type: mainAction
+    distance:
+      burst: 3
+    target:
+      text: All enemies in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 3
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)
+- _id: ZY67xuK68pk48cVr
+  _key: '!items!ZY67xuK68pk48cVr'
+  name: Twist Shape
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      ranged: 5
+    target:
+      text: 1 creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 0
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 1
+          effect:
+            text: shapechanged (save ends)
+      tier3:
+        damage: 11
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 2
+          effect:
+            text: shapechanged
+- _id: 5UEU2Ycft6pQlpNK
+  _key: '!items!5UEU2Ycft6pQlpNK'
+  name: Throw
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: 1 size 1 creature or object
+    trigger: The target is force moved into a square adjacent to the
+- _id: KtGPnywioecmUQmR
+  _key: '!items!KtGPnywioecmUQmR'
+  name: Shadow Veil
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - Magic
+    - Ranged
+    type: triggeredAction
+    distance:
+      ranged: 5
+    target:
+      text: 1 ally
+    trigger: The target takes damage.

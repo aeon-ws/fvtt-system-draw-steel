@@ -1,5 +1,5 @@
-_id: lnC3fAxEQOcDBAC2
-_key: '!actors!lnC3fAxEQOcDBAC2'
+_id: 17gML9uo3724dxMe
+_key: '!actors!17gML9uo3724dxMe'
 name: Rotting Zombie
 type: minion
 img: icons/svg/mystery-man.svg
@@ -48,4 +48,32 @@ system:
     poison: 1
   derivedCaptainBonuses:
     strikeDamage: 1
-items: []
+items:
+- _id: soxBGklsxm4Etf6e
+  _key: '!items!soxBGklsxm4Etf6e'
+  name: Rotting Fist
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: prone if size 1 slowed (save ends)

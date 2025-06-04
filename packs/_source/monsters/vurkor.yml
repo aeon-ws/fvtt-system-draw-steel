@@ -1,5 +1,5 @@
-_id: QsKHlEoTZ5IOffeM
-_key: '!actors!QsKHlEoTZ5IOffeM'
+_id: CKNJctgRuybsIXwb
+_key: '!actors!CKNJctgRuybsIXwb'
 name: Vurkor
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,80 @@ system:
     - walk
     stability: 2
     freeStrikeDamage: 5
-items: []
+items:
+- _id: Yhar8J70YQZERsst
+  _key: '!items!Yhar8J70YQZERsst'
+  name: The Writhing Green
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Green
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: slide 1
+      tier2:
+        damage: 10
+        effect:
+          text: slide 2
+      tier3:
+        damage: 13
+        effect:
+          text: slide 3
+- _id: u1Pzz5nzCQH1INKq
+  _key: '!items!u1Pzz5nzCQH1INKq'
+  name: The Earth Devours
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Green
+    - Magic
+    type: mainAction
+    distance:
+      cube:
+        size: 3
+        within: 10
+    target:
+      text: All enemies in the cube
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 5
+        effect:
+          text: restrained (EoT)
+      tier3:
+        damage: 8
+        effect:
+          text: restrained (save ends)
+- _id: M2aa598wASLo97YD
+  _key: '!items!M2aa598wASLo97YD'
+  name: Jaws of the Void
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Void
+    type: triggeredAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+    trigger: Vurkor takes damage.

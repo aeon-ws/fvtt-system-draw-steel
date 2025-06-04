@@ -1,5 +1,5 @@
-_id: xCsBak6gwHxMkKff
-_key: '!actors!xCsBak6gwHxMkKff'
+_id: E9ZShIhcMuzN0bCu
+_key: '!actors!E9ZShIhcMuzN0bCu'
 name: Goblin Spinecleaver
 type: minion
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,33 @@ system:
     freeStrikeDamage: 2
   derivedCaptainBonuses:
     strikeDamage: 1
-items: []
+items:
+- _id: stEwnGZq3fewwD7X
+  _key: '!items!stEwnGZq3fewwD7X'
+  name: Axe
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+        effect:
+          text: push 1
+      tier2:
+        damage: 4
+        effect:
+          text: push 3
+      tier3:
+        damage: 55
+        effect:
+          text: push 4

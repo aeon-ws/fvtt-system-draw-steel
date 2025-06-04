@@ -1,5 +1,5 @@
-_id: f3ACU9L0454QLrVr
-_key: '!actors!f3ACU9L0454QLrVr'
+_id: rKcRpvw1iqTELRk5
+_key: '!actors!rKcRpvw1iqTELRk5'
 name: Ghost
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,141 @@ system:
   immunity:
     corruption: 3
     poison: 3
-items: []
+items:
+- _id: U4Vr7GIVdsRYbWxc
+  _key: '!items!U4Vr7GIVdsRYbWxc'
+  name: Heat Death
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 5
+    target:
+      text: Two creatures
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 10
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 2
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 13
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 3
+          effect:
+            text: slowed save ends
+- _id: NSICL4Xlle8UzguX
+  _key: '!items!NSICL4Xlle8UzguX'
+  name: Haunt
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Ranged
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self or one incorporeal ally
+- _id: jnCYfS0q9CFAB8qC
+  _key: '!items!jnCYfS0q9CFAB8qC'
+  name: Shriek
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - Magic
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: The triggering creature
+    trigger: A creature within distance targets the ghost with a strike.
+- _id: HP3XtjDzN1fUPr1Y
+  _key: '!items!HP3XtjDzN1fUPr1Y'
+  name: Paranormal Activity (Villain Action 1)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    distance:
+      burst: 5
+    target:
+      text: Each size 1S or larger object in the burst
+- _id: j8ch1TDCcz99KG7L
+  _key: '!items!j8ch1TDCcz99KG7L'
+  name: Spirited Away (Villain Action 2)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    distance:
+      burst: 5
+    target:
+      text: Each enemy in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 1
+          effect:
+            text: levitated (EoT)
+      tier2:
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 2
+          effect:
+            text: levitated (EoT)
+      tier3:
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 3
+          effect:
+            text: levitated (EoE)
+- _id: 5P1AOcgW9fbKmOVV
+  _key: '!items!5P1AOcgW9fbKmOVV'
+  name: Awful Wail (Villain Action 3)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    distance:
+      burst: 5
+    target:
+      text: Each enemy in the burst
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 3
+      tier2:
+        damage: 5
+      tier3:
+        damage: 8

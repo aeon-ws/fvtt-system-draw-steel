@@ -1,5 +1,5 @@
-_id: g8y8k8u08hg0ly5b
-_key: '!actors!g8y8k8u08hg0ly5b'
+_id: L7zfgLByzTtpXmiw
+_key: '!actors!L7zfgLByzTtpXmiw'
 name: Goblin Toxinaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,35 @@ system:
     freeStrikeDamage: 4
   immunity:
     poison: 3
-items: []
+items:
+- _id: QtphSB7OH80M4o88
+  _key: '!items!QtphSB7OH80M4o88'
+  name: Toxic Winds
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      cube:
+        size: 4
+        within: 10
+    target:
+      text: Special
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+        effect:
+          text: slide 1
+      tier2:
+        damage: 3
+        effect:
+          text: slide 2
+      tier3:
+        damage: 5
+        effect:
+          text: slide 3

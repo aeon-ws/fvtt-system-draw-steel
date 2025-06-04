@@ -1,5 +1,5 @@
-_id: LmBjHcsKiQvSbL1W
-_key: '!actors!LmBjHcsKiQvSbL1W'
+_id: 9FjP4srkEx8ZsQmX
+_key: '!actors!9FjP4srkEx8ZsQmX'
 name: Mohler
 type: minion
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,27 @@ system:
     freeStrikeDamage: 2
   derivedCaptainBonuses:
     speed: 2
-items: []
+items:
+- _id: AcUa4tSFDLi6NoUO
+  _key: '!items!AcUa4tSFDLi6NoUO'
+  name: Earth Bump
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5

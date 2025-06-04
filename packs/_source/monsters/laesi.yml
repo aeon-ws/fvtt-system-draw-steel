@@ -1,5 +1,5 @@
-_id: z5soZ8rY7Q10tTlW
-_key: '!actors!z5soZ8rY7Q10tTlW'
+_id: K6XOcykrPQ6UP1yA
+_key: '!actors!K6XOcykrPQ6UP1yA'
 name: Laesi
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,73 @@ system:
     - walk
     stability: 3
     freeStrikeDamage: 5
-items: []
+items:
+- _id: IM8Qx54YE7M7P5vf
+  _key: '!items!IM8Qx54YE7M7P5vf'
+  name: Nimble Step
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        effect:
+          text: shift 2
+      tier2:
+        damage: 10
+        effect:
+          text: shift 3
+      tier3:
+        damage: 13
+        effect:
+          text: shift 4
+- _id: E0tOP2Zs1dMyEawz
+  _key: '!items!E0tOP2Zs1dMyEawz'
+  name: Numb
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - Melee
+    - Psionic
+    - Strike
+    - Weapon
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: reason
+          value: 0
+          effect:
+            text: slowed (EoT)
+      tier2:
+        damage: 10
+        potencyEffect:
+          targetCharacteristic: reason
+          value: 1
+          effect:
+            text: slowed (EoT)
+      tier3:
+        damage: 13
+        potencyEffect:
+          targetCharacteristic: reason
+          value: 2
+          effect:
+            text: slowed and dazed (EoT)

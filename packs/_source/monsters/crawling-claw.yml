@@ -1,5 +1,5 @@
-_id: Z9BXbvxyYYaYa88T
-_key: '!actors!Z9BXbvxyYYaYa88T'
+_id: 5EHqNWObIOfg29Mr
+_key: '!actors!5EHqNWObIOfg29Mr'
 name: Crawling Claw
 type: minion
 img: icons/svg/mystery-man.svg
@@ -48,4 +48,27 @@ system:
     poison: 1
   derivedCaptainBonuses:
     speed: 2
-items: []
+items:
+- _id: ft8IpoMumCx96qaf
+  _key: '!items!ft8IpoMumCx96qaf'
+  name: Fingernails
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 1
+      tier2:
+        damage: 2
+      tier3:
+        damage: 37

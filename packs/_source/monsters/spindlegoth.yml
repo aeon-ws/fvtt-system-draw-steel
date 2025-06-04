@@ -1,5 +1,5 @@
-_id: mL5DiU6MaTnUDyui
-_key: '!actors!mL5DiU6MaTnUDyui'
+_id: J6CF0KQ3dEaL5XnB
+_key: '!actors!J6CF0KQ3dEaL5XnB'
 name: Spindlegoth
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,78 @@ system:
     - climb
     stability: 1
     freeStrikeDamage: 2
-items: []
+items:
+- _id: HWUOhhdxPwhN5rNu
+  _key: '!items!HWUOhhdxPwhN5rNu'
+  name: Choking Thread
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Strike
+    - Ranged
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 5
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: restrained (save ends)
+      tier3:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: restrained (save ends)
+- _id: Uuukuww3DLlECuy8
+  _key: '!items!Uuukuww3DLlECuy8'
+  name: Thread Whip
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Weapon
+    type: maneuver
+    distance:
+      burst: 1
+    target:
+      text: Each enemy in the burst
+    powerRoll:
+      bonus: 2
+      tier1:
+        effect:
+          text: Vertical slide 1
+      tier2:
+        effect:
+          text: Vertical slide 2
+      tier3:
+        effect:
+          text: Vertical slide 3
+- _id: VllCs9lPayLDQswz
+  _key: '!items!VllCs9lPayLDQswz'
+  name: Tightwire
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self

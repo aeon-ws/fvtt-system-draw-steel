@@ -1,5 +1,5 @@
-_id: scHJz8uHnFUKjcaw
-_key: '!actors!scHJz8uHnFUKjcaw'
+_id: AURvU8g9DgEPmkdk
+_key: '!actors!AURvU8g9DgEPmkdk'
 name: Goblin Cursespitter
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,79 @@ system:
     - climb
     stability: 0
     freeStrikeDamage: 1
-items: []
+items:
+- _id: KT3NiIC9ZvV6ad0c
+  _key: '!items!KT3NiIC9ZvV6ad0c'
+  name: Eye of Surlach
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 15
+    target:
+      text: One creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 0
+          effect:
+            text: weakened (save ends)
+      tier2:
+        damage: 4
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: weakened (save ends)
+      tier3:
+        damage: 5
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: weakened (save ends)
+- _id: ZtufPtbsNR9PPW5g
+  _key: '!items!ZtufPtbsNR9PPW5g'
+  name: Dizzying Hex
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      ranged: 10
+    target:
+      text: One creature
+    powerRoll:
+      bonus: 2
+      tier1:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 0
+          effect:
+            text: prone
+      tier2:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: prone can
+      tier3:
+        effect:
+          text: prone
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: and can

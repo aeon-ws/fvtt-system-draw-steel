@@ -1,5 +1,5 @@
-_id: 6MnINnTvxSVjFUFJ
-_key: '!actors!6MnINnTvxSVjFUFJ'
+_id: ZjdmOk7PEDtJE5Wv
+_key: '!actors!ZjdmOk7PEDtJE5Wv'
 name: Worg
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,43 @@ system:
     - walk
     stability: 1
     freeStrikeDamage: 1
-items: []
+items:
+- _id: bLnABivRvNeMizjV
+  _key: '!items!bLnABivRvNeMizjV'
+  name: Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+- _id: tWyzaTMeG0JvejSe
+  _key: '!items!tWyzaTMeG0JvejSe'
+  name: Sprint
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 1
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self

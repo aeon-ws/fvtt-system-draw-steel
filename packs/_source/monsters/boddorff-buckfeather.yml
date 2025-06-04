@@ -1,5 +1,5 @@
-_id: uwuGiB2OnRSSaHRq
-_key: '!actors!uwuGiB2OnRSSaHRq'
+_id: AIvPoqpzowNuYpkU
+_key: '!actors!AIvPoqpzowNuYpkU'
 name: Boddorff Buckfeather
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,44 @@ system:
     - walk
     stability: 1
     freeStrikeDamage: 5
-items: []
+items:
+- _id: HamvDC8VueUZu3ZO
+  _key: '!items!HamvDC8VueUZu3ZO'
+  name: Thunder of Heavens
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Melee
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      melee: 1
+      ranged: 10
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+      tier2:
+        damage: 10
+      tier3:
+        damage: 13
+- _id: dYLjZXBxjdguxaU6
+  _key: '!items!dYLjZXBxjdguxaU6'
+  name: Imbue with Might
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - Magic
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self and up to 5 allies

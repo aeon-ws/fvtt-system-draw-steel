@@ -1,5 +1,5 @@
-_id: lsmeAXJihiELHGXW
-_key: '!actors!lsmeAXJihiELHGXW'
+_id: 59d5slxUeQ7x7u93
+_key: '!actors!59d5slxUeQ7x7u93'
 name: Wallmaster
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,4 +47,91 @@ system:
     holy: 1
   weakness:
     acid: 3
-items: []
+items:
+- _id: Ckm8bmw2dONRjjld
+  _key: '!items!Ckm8bmw2dONRjjld'
+  name: Wall Slam
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: prone
+      tier3:
+        damage: 12
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: prone can
+- _id: aEsKELj1pg0DJAa9
+  _key: '!items!aEsKELj1pg0DJAa9'
+  name: Dead End
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Weapon
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        effect:
+          text: Push2
+      tier2:
+        effect:
+          text: Push4
+      tier3:
+        effect:
+          text: Push5
+- _id: py37lkfit5CRIZpI
+  _key: '!items!py37lkfit5CRIZpI'
+  name: The Wall Sees All
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - Magic
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+- _id: Kr8B1EHFPc8KH7kh
+  _key: '!items!Kr8B1EHFPc8KH7kh'
+  name: Wall Redirect
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: 1 ally
+    trigger: A creature damages the wall with a strike.

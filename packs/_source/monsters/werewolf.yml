@@ -1,5 +1,5 @@
-_id: ko4Us55KPYuDO0iv
-_key: '!actors!ko4Us55KPYuDO0iv'
+_id: uCwbNC2wycywchPV
+_key: '!actors!uCwbNC2wycywchPV'
 name: Werewolf
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,165 @@ system:
     - walk
     stability: 0
     freeStrikeDamage: 5
-items: []
+items:
+- _id: v4m8fBECKXiz0Kqy
+  _key: '!items!v4m8fBECKXiz0Kqy'
+  name: Accursed Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 9
+      tier2:
+        damage: 13
+      tier3:
+        damage: 16
+- _id: NlHjNz0lqCQD7WbH
+  _key: '!items!NlHjNz0lqCQD7WbH'
+  name: Ripping Claws
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: Two creatures or objects
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 11
+      tier3:
+        damage: 14
+- _id: vmDx9Yp9NVRyCWVC
+  _key: '!items!vmDx9Yp9NVRyCWVC'
+  name: Berserker Slash
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 3
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: mainAction
+    distance:
+      burst: 1
+    target:
+      text: All enemies and objects in the burst
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 4
+        effect:
+          text: push 2
+      tier2:
+        damage: 6
+        effect:
+          text: rage push 3
+      tier3:
+        damage: 7
+        effect:
+          text: rage slide 3
+- _id: mbYYfUqmXdixGoKj
+  _key: '!items!mbYYfUqmXdixGoKj'
+  name: Wall Leap
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: maneuver
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+- _id: QZfr98CrIz8fF90Z
+  _key: '!items!QZfr98CrIz8fF90Z'
+  name: Facepalm and Head Slam
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 2
+    keywords:
+    - —
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature
+    trigger: The target targets the werewolf with a melee ability after
+- _id: 91voMnM4VCnNJHWG
+  _key: '!items!91voMnM4VCnNJHWG'
+  name: Howl (Villain Action 1)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    type: villainAction
+    distance:
+      burst: 5
+    target:
+      text: All enemies in the burst
+- _id: jVzgBu8ifTwBOC82
+  _key: '!items!jVzgBu8ifTwBOC82'
+  name: Full Wolf (Villain Action 2)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: villainAction
+    distance:
+      self: true
+    target:
+      self: true
+      text: Self
+- _id: keQ3mykfQfjE7hG4
+  _key: '!items!keQ3mykfQfjE7hG4'
+  name: Rampage (Villain Action 3)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: villainAction
+    distance:
+      burst: 2
+    target:
+      text: All creatures in the burst
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 5
+      tier2:
+        damage: 8
+      tier3:
+        damage: 11

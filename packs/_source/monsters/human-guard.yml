@@ -1,5 +1,5 @@
-_id: cbVcVh1wB1zDJoKN
-_key: '!actors!cbVcVh1wB1zDJoKN'
+_id: ikF60GGu4V6cnKzW
+_key: '!actors!ikF60GGu4V6cnKzW'
 name: Human Guard
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,4 +49,27 @@ system:
     psychic: 1
   derivedCaptainBonuses:
     speed: 2
-items: []
+items:
+- _id: vdIJogvobIru441L
+  _key: '!items!vdIJogvobIru441L'
+  name: Halberd
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 2
+    target:
+      text: One creature or object per minion
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5

@@ -1,5 +1,5 @@
-_id: ZqyiLK38AxOCd8Wf
-_key: '!actors!ZqyiLK38AxOCd8Wf'
+_id: rPIXActPM3cpzSo2
+_key: '!actors!rPIXActPM3cpzSo2'
 name: Imit Putty
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,4 +44,46 @@ system:
     freeStrikeDamage: 2
   immunity:
     acid: 2
-items: []
+items:
+- _id: l0FGeuZBSe9AugCn
+  _key: '!items!l0FGeuZBSe9AugCn'
+  name: Sputter
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: One creature or object
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+        effect:
+          text: shift 1
+      tier3:
+        damage: 7
+        effect:
+          text: shift 2
+- _id: AofipHXknKgirvuR
+  _key: '!items!AofipHXknKgirvuR'
+  name: Uncanny Impression
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    maliceCost: 5
+    keywords:
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      ranged: 10
+    target:
+      text: One creature

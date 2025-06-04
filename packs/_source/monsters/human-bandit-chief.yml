@@ -1,5 +1,5 @@
-_id: LpK1tFY8k0abIkZm
-_key: '!actors!LpK1tFY8k0abIkZm'
+_id: DwqnY40xU6BweHCe
+_key: '!actors!DwqnY40xU6BweHCe'
 name: Human Bandit Chief
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,4 +46,114 @@ system:
   immunity:
     corruption: 4
     psychic: 4
-items: []
+items:
+- _id: aJHEyRptjgMLYBJz
+  _key: '!items!aJHEyRptjgMLYBJz'
+  name: Whip Magic Longsword
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Magic
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 3
+    target:
+      text: Two enemies or objects
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 8
+        effect:
+          text: pull 1
+      tier2:
+        damage: 12
+        effect:
+          text: pull 2
+      tier3:
+        damage: 15
+        effect:
+          text: pull 3
+- _id: 6tczaKkbJP8qojbE
+  _key: '!items!6tczaKkbJP8qojbE'
+  name: Kneel Peasant!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Melee
+    - Weapon
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: One enemy or object
+    powerRoll:
+      bonus: 3
+      tier1:
+        effect:
+          text: Push1
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: prone
+      tier2:
+        effect:
+          text: Push 2
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: prone
+      tier3:
+        effect:
+          text: Push 4
+        potencyEffect:
+          targetCharacteristic: might
+          value: 3
+          effect:
+            text: prone
+- _id: a7WfEsC4W54li2Am
+  _key: '!items!a7WfEsC4W54li2Am'
+  name: Bloodstones
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    type: triggeredAction
+    distance:
+      burst: 0
+    target:
+      text: All artillery allies in the burst
+    trigger: The bandit chief makes a power roll.
+- _id: ELWs2jiE4qqEnc8K
+  _key: '!items!ELWs2jiE4qqEnc8K'
+  name: Form Up! (Villain Action 2)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    type: villainAction
+    distance:
+      burst: 0
+    target:
+      text: All allies in the burst
+- _id: ltYPNoDvV0PBu5BQ
+  _key: '!items!ltYPNoDvV0PBu5BQ'
+  name: Lead From the Front (Villain Action 3)
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - —
+    type: villainAction
+    distance:
+      self: true
+    target:
+      text: Special

@@ -1,5 +1,5 @@
-_id: fVUFM2GO7OBwMkas
-_key: '!actors!fVUFM2GO7OBwMkas'
+_id: EyU2mOEkAFwNFM7A
+_key: '!actors!EyU2mOEkAFwNFM7A'
 name: Goblin Stinker
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -43,4 +43,52 @@ system:
     - climb
     stability: 0
     freeStrikeDamage: 1
-items: []
+items:
+- _id: zB7Kk1YvNmLo3VNk
+  _key: '!items!zB7Kk1YvNmLo3VNk'
+  name: Toxic Winds
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      cube:
+        size: 3
+        within: 15
+    target:
+      text: Each enemy in the cube
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 1
+        effect:
+          text: slide 1
+      tier2:
+        damage: 2
+        effect:
+          text: slide 2
+      tier3:
+        damage: 3
+        effect:
+          text: slide 3
+- _id: FjAqNytX7Av1NFVz
+  _key: '!items!FjAqNytX7Av1NFVz'
+  name: Swamp Gas
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 10
+    target:
+      text: Special
