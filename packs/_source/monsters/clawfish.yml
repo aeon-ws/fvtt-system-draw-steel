@@ -1,5 +1,5 @@
-_id: Ya4JIAubJ0yTAhnc
-_key: '!actors!Ya4JIAubJ0yTAhnc'
+_id: iAoxyDR6bazLXwoO
+_key: '!actors!iAoxyDR6bazLXwoO'
 name: Clawfish
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 0
-    reason: 0
-    intuition: 0
-    presence: 0
+    agility: 2
+    reason: -3
+    intuition: -2
+    presence: 1
   stamina:
     max: 5
     perMinion: 5

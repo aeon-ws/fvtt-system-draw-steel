@@ -1,5 +1,5 @@
-_id: IdTNxxFNTjuCEMnV
-_key: '!actors!IdTNxxFNTjuCEMnV'
+_id: QbfW5F6gESzZXo5w
+_key: '!actors!QbfW5F6gESzZXo5w'
 name: Sudden Downpour
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: -2
+    reason: -3
+    intuition: 0
+    presence: -2
   stamina:
     max: 15
     value: 15

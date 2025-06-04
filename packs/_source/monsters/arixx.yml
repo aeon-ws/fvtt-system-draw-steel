@@ -1,5 +1,5 @@
-_id: 2TObb0FIPOZkxLMY
-_key: '!actors!2TObb0FIPOZkxLMY'
+_id: E2vcPzPsMS68Tdlx
+_key: '!actors!E2vcPzPsMS68Tdlx'
 name: Arixx
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 36
   characteristics:
     might: 3
-    agility: 3
-    reason: 3
-    intuition: 3
-    presence: 3
+    agility: 1
+    reason: -3
+    intuition: 1
+    presence: -4
   stamina:
     max: 200
     value: 200

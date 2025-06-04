@@ -2,7 +2,7 @@ from typing import Annotated
 
 from typer import Option, Typer
 
-pdf = Typer(no_args_is_help=True, name="ads")
+pdf = Typer(no_args_is_help=True, pretty_exceptions_show_locals=False, name="ads")
 
 
 @pdf.command(no_args_is_help=False, name="export")

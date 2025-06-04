@@ -6,12 +6,12 @@ from typing import Any, Dict, List, Optional, Pattern, Tuple
 
 import yaml
 
-
 from ads.api.ability_and_trait_parser import (
     DAMAGE_TYPES,
     parse_ability_block,
     split_ability_blocks,
 )
+from ads.api.string_format import sanitize_name, title_case
 from ads.model import (
     AppliedCaptainEffects,
     Characteristics,
@@ -143,21 +143,6 @@ MONSTER_LEVEL_PATTERN = (
     r"L[e3][vvu][e1il|1lt]+"  # Removed (?i) – will use re.IGNORECASE on compile
 )
 
-# Known OCR fixup map
-NAME_FIXUPS = {
-    "_BUGBEAR COMMANDER": "BUGBEAR COMMANDER",
-    "MOoHLER": "MOHLER",
-    "Lacsi": "LAESI",
-    "BopporrF BUCKFEATHER": "BODDORFF BUCKFEATHER",
-    "iImit Putty": "IMIT PUTTY",
-    "Memoriat Ivy": "MEMORIAL IVY",
-    "MVURKOR": "VURKOR",
-    "WorRG": "WORG",
-    # Add more as found
-}
-
-MINOR_WORDS = {"of", "the", "in", "on", "for", "and", "or", "to", "a"}
-
 
 def generate_id():
     # 16 char random hex
@@ -211,23 +196,6 @@ def parse_keywords_and_ev(lines: list[str]) -> tuple[list[str], int]:
         "Encounter Value (EV) not found in the provided lines. "
         "Ensure the first 6 lines contain 'EV <number>'"
     )
-
-
-def title_case(any_case_value: str) -> str:
-    words = any_case_value.split()
-    result: list[str] = []
-    for i, word in enumerate(words):
-        word_as_lower_case = word.lower()
-        if i == 0 or word_as_lower_case not in MINOR_WORDS:
-            result.append(word.capitalize())
-        else:
-            result.append(word_as_lower_case)
-    return " ".join(result)
-
-
-def sanitize_name(raw_name: str) -> str:
-    sanitized_name = re.sub(r"^[^A-Za-z0-9]+", "", raw_name).strip()
-    return NAME_FIXUPS.get(sanitized_name, sanitized_name)
 
 
 def normalize_header_fields(header: MonsterHeader) -> MonsterHeader:
@@ -444,43 +412,48 @@ def parse_free_strike(source_lines: List[str]) -> int:
     raise ValueError(f"Free Strike not found in the provided lines: {source_lines}")
 
 
-def get_characteristic_value(characteristics: list[tuple[str, str]], name: str) -> int:
-    for name, value in characteristics:
-        if name.lower() == name.lower():
-            return int(str(value).upper().replace("O", "0"))
-
-    raise ValueError(
-        f"Characteristic '{name}' not found in the provided characteristics dict: {characteristics}"
-    )
-
-
-def parse_characteristics(source_lines: List[str]) -> Characteristics:
+def parse_characteristics(
+    source_lines: List[str], raise_if_not_found: bool = True
+) -> Characteristics | None:
     for source_line in source_lines:
-        characteristic_matches = re.findall(
-            r"(Might|Agility|Reason|Intuition|Presence)\s*([+\-]?[0-9O]+)",
-            source_line,
+        normalized = (
+            re.sub(
+                "(?: [0Oo]+|[0Oo]+ |[0Oo]+$)",
+                " 0 ",
+                re.sub("[^A-Za-z0-9 +-]", "", source_line),
+            )
+            .replace("od ", " 0")
+            .replace("+", " ")
+            .replace("  ", " ")
+            .replace("  ", " ")
+            .strip()
+        )
+
+        pattern = re.compile(
+            # Might-2 Agility+2 Reas0n+0 Intuiti0n+0 Presence -2
+            r"Might\s*(?P<might>-?[0-9])\s*Agility\s*(?P<agility>-?[0-9])\s*Reason\s*(?P<reason>-?[0-9])\s*Intuition\s*(?P<intuition>-?[0-9])\s*Presence\s*(?P<presence>-?[0-9])",
             re.IGNORECASE,
         )
-        if characteristic_matches and len(characteristic_matches) == 5:
+
+        match = pattern.match(normalized)
+        if match:
+            characteristics = match.groupdict()
             return Characteristics(
                 {
-                    "might": get_characteristic_value(characteristic_matches, "might"),
-                    "agility": get_characteristic_value(
-                        characteristic_matches, "agility"
-                    ),
-                    "reason": get_characteristic_value(
-                        characteristic_matches, "reason"
-                    ),
-                    "intuition": get_characteristic_value(
-                        characteristic_matches, "intuition"
-                    ),
-                    "presence": get_characteristic_value(
-                        characteristic_matches, "presence"
-                    ),
+                    "might": int(characteristics["might"].replace("O", "0")),
+                    "agility": int(characteristics["agility"].replace("O", "0")),
+                    "reason": int(characteristics["reason"].replace("O", "0")),
+                    "intuition": int(characteristics["intuition"].replace("O", "0")),
+                    "presence": int(characteristics["presence"].replace("O", "0")),
                 }
             )
 
-    raise ValueError(f"Characteristics not found in the provided lines: {source_lines}")
+    if raise_if_not_found:
+        raise ValueError(
+            f"Characteristics not found in the provided lines: {source_lines}"
+        )
+
+    return None
 
 
 def parse_with_captain(
@@ -502,16 +475,7 @@ def parse_with_captain(
         (
             line_index
             for line_index, source_line in enumerate(source_lines)
-            if all(
-                source_line_element in source_line.lower()
-                for source_line_element in [
-                    "might",
-                    "agility",
-                    "reason",
-                    "intuition",
-                    "presence",
-                ]
-            )
+            if parse_characteristics([source_line], raise_if_not_found=False)
         ),
         len(source_lines),
     )
@@ -849,9 +813,10 @@ def deduplicate_monsters(monster_foundry_actor_models: list[dict[str, Any]]):
 
 # --- Example Usage ---
 
+
 def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
     with open(
-        "c:/_/aeon/fvtt-system-draw-steel/scripts/pdf-parser/full_combined_ocr.txt",
+        ocr_file_path,
         encoding="utf-8",
     ) as source_file:
         source_lines = source_file.readlines()

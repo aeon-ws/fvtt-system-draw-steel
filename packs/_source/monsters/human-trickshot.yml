@@ -1,5 +1,5 @@
-_id: 6VJ6Jx7SeS81C1kO
-_key: '!actors!6VJ6Jx7SeS81C1kO'
+_id: QJ8x9PEiqG1haqC4
+_key: '!actors!QJ8x9PEiqG1haqC4'
 name: Human Trickshot
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,9 +29,9 @@ system:
   encounterValue: 6
   characteristics:
     might: 0
-    agility: 0
+    agility: 2
     reason: 0
-    intuition: 0
+    intuition: 1
     presence: 0
   stamina:
     max: 20

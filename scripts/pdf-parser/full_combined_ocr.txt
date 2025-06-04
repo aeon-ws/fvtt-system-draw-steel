@@ -1661,7 +1661,7 @@ and is then destroyed.
 
 %* 12-16 9 damage; A<1 prone
 
-% 17+ 12damage; As<2 prone can’t stand (FoT)
+% 17+ 12damage; A<2 prone can't stand (FoT)
 
 3+ Malice The wallmaster chooses an additional wall segment and
 target for every 3 malice spent.
@@ -1672,10 +1672,9 @@ Distance Melee 1 (Special) Target 1 creature or object
 Effect The wallmaster chooses one wall segment within 10
 squares. The segment pushes a target within distance, and
 shifts into each square they leave behind.
-+ <s11° Push2
-* 12-16 Push4
-
-3 17+ Push5
++ <11 Push 2
+* 12-16 Push 4
+* 17+ Push 5
 
 The Wall Sees All (Maneuver) @ 5 Malice
 Keywords Magic

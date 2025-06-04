@@ -1,100 +1,106 @@
 {
-  "name": "Goblin Assassin",
+  "name": "Spindlegoth",
   "level": 1,
   "type": "Horde",
   "role": "Ambusher",
-  "header_text": "GOBLIN ASSASSIN LEVEL 1 HORDE AMBUSHER",
-  "keywords": ["Goblin", "Humanoid"],
+  "header_text": "SPINDLEGOTH LEVEL 1 HORDE AMBUSHER",
+  "keywords": ["Beast", "Ruinborn"],
   "encounterValue": 3,
   "stamina": 15,
-  "speed": 6,
+  "speed": 7,
   "movementTypes": ["climb"],
-  "size": "1S",
-  "stability": 0,
+  "size": "15",
+  "stability": 1,
   "freeStrikeDamage": 2,
   "characteristics": {
-    "might": -2,
-    "agility": -2,
-    "reason": -2,
-    "intuition": -2,
+    "might": -1,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
     "presence": -2
   },
   "weakness": null,
   "immunity": null,
   "derivedCaptainBonuses": null,
   "appliedCaptainEffects": null,
-  "items": [
+  "abilities": [
     {
-      "name": "Sword Stab",
+      "name": "Choking Thread",
       "type": "mainAction",
-      "maliceCost": 0,
+      "maliceCost": null,
       "powerRoll": {
         "bonus": 2,
-        "tier1": {
-          "damage": 4,
-          "effect": { "text": null },
-          "potencyEffect": null
-        },
+        "tier1": { "damage": 4, "effect": null, "potencyEffect": null },
         "tier2": {
           "damage": 6,
-          "effect": { "text": null },
-          "potencyEffect": null
+          "effect": null,
+          "potencyEffect": {
+            "targetCharacteristic": "might",
+            "value": 1,
+            "effect": { "text": "restrained (save ends)" }
+          }
         },
         "tier3": {
           "damage": 7,
-          "effect": { "text": null },
-          "potencyEffect": null
+          "effect": null,
+          "potencyEffect": {
+            "targetCharacteristic": "might",
+            "value": 2,
+            "effect": { "text": "restrained (save ends)" }
+          }
         }
       },
-      "keywords": ["Melee", "Strike", "Weapon"],
-      "distance": "Distance Melee 1 Target One creature or object",
-      "target": null,
+      "keywords": ["Strike", "Ranged", "Weapon"],
+      "distance": { "ranged": 5 },
+      "target": { "text": "One creature or object" },
       "trigger": null,
       "prePowerRollEffect": null,
       "postPowerRollEffect": null,
-      "header_raw": "Sword Stab (Action) © 2d10 + 2 © Signature"
+      "header_raw": "Choking Thread (Action) © 2d10 + 2 > Signature"
     },
     {
-      "name": "Shadow Chains",
-      "type": "mainAction",
+      "name": "Thread Whip",
+      "type": "maneuver",
       "maliceCost": 3,
       "powerRoll": {
         "bonus": 2,
         "tier1": {
-          "damage": 2,
-          "effect": { "text": null },
-          "potencyEffect": {
-            "targetCharacteristic": "agility",
-            "value": 0,
-            "effects": { "text": "restrained (save ends)" }
-          }
+          "damage": null,
+          "effect": { "text": "Vertical slide 1" },
+          "potencyEffect": null
         },
         "tier2": {
-          "damage": 4,
-          "effect": { "text": null },
-          "potencyEffect": {
-            "targetCharacteristic": "agility",
-            "value": 1,
-            "effects": { "text": "restrained (save ends)" }
-          }
+          "damage": null,
+          "effect": { "text": "Vertical slide 2" },
+          "potencyEffect": null
         },
         "tier3": {
-          "damage": 5,
-          "effect": { "text": null },
-          "potencyEffect": {
-            "targetCharacteristic": "agility",
-            "value": 2,
-            "effects": { "text": "restrained (save ends)" }
-          }
+          "damage": null,
+          "effect": { "text": "Yerticalslide3" },
+          "potencyEffect": null
         }
       },
-      "keywords": ["Magic", "Ranged"],
-      "distance": "Distance Ranged 10 Target Three creatures",
-      "target": null,
+      "keywords": ["Area", "Weapon"],
+      "distance": { "burst": 1 },
+      "target": { "text": "Each enemy in the burst" },
       "trigger": null,
       "prePowerRollEffect": null,
       "postPowerRollEffect": null,
-      "header_raw": "Shadow Chains (Action) © 2d10 + 2 © 3 Malice"
+      "header_raw": "Thread Whip (Maneuver) © 2d10 + 2 9 3 Malice"
+    },
+    {
+      "name": "Tightwire",
+      "type": "maneuver",
+      "maliceCost": 1,
+      "powerRoll": null,
+      "keywords": ["—"],
+      "distance": { "self": true },
+      "target": { "self": true, "text": "Self" },
+      "trigger": null,
+      "prePowerRollEffect": null,
+      "postPowerRollEffect": null,
+      "header_raw": "Tightwire (Maneuver) © 1 Malice"
     }
-  ]
+  ],
+  "traits": []
 }

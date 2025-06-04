@@ -1,5 +1,5 @@
-_id: y934NfYFUuteEMUC
-_key: '!actors!y934NfYFUuteEMUC'
+_id: pmElse4t7ZBwNaIT
+_key: '!actors!pmElse4t7ZBwNaIT'
 name: Goblin Deathtongue
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 4
   characteristics:
     might: -1
-    agility: -1
-    reason: -1
-    intuition: -1
-    presence: -1
+    agility: 2
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
     max: 15
     value: 15

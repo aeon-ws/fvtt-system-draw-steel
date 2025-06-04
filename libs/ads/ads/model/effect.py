@@ -1,6 +1,6 @@
 from typing import Literal, Optional, TypedDict
 
-from ads.model import ImmunityOrWeakness
+from ads.model.immunity_or_weakness import ImmunityOrWeakness
 
 
 class Effect(TypedDict, total=False):

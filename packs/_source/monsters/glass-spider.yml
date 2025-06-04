@@ -1,5 +1,5 @@
-_id: ke0Z8cbA2CwNoM5g
-_key: '!actors!ke0Z8cbA2CwNoM5g'
+_id: iwm0JesacpPkTx06
+_key: '!actors!iwm0JesacpPkTx06'
 name: Glass Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 12
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: 1
+    reason: -4
+    intuition: 0
+    presence: -3
   stamina:
     max: 60
     value: 60

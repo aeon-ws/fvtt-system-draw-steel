@@ -14,6 +14,7 @@ class Line(TypedDict):
 
 class Distance(TypedDict, total=False):
     self: Optional[bool]
+    special: Optional[bool]
     melee: Optional[int]
     ranged: Optional[int]
     burst: Optional[int]
@@ -22,6 +23,8 @@ class Distance(TypedDict, total=False):
 
 
 class Target(TypedDict, total=False):
+    self: Optional[bool]
+    special: Optional[bool]
     filter: Optional[str]
     text: str
     count: int | Literal["all"]

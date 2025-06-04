@@ -1,6 +1,6 @@
 from typing import NotRequired, Optional, TypedDict
 
-from ads.model import Effect, PotencyEffect
+from ads.model.effect import Effect, PotencyEffect
 
 
 class PowerRollTier(TypedDict):

@@ -1,5 +1,5 @@
-_id: xoFoGZLgIDaaLC3y
-_key: '!actors!xoFoGZLgIDaaLC3y'
+_id: 8rIuNg4H7I13BPrc
+_key: '!actors!8rIuNg4H7I13BPrc'
 name: Memorial Ivy
 type: minion
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 4
   characteristics:
     might: 0
-    agility: 0
-    reason: 0
-    intuition: 0
-    presence: 0
+    agility: 2
+    reason: -3
+    intuition: 1
+    presence: -3
   stamina:
     max: 4
     perMinion: 4

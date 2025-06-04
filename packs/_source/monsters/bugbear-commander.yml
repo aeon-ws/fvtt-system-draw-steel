@@ -1,5 +1,5 @@
-_id: QcsTOeCPaf9cnfIC
-_key: '!actors!QcsTOeCPaf9cnfIC'
+_id: EgGwp1MeqHwNng4e
+_key: '!actors!EgGwp1MeqHwNng4e'
 name: Bugbear Commander
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -31,10 +31,10 @@ system:
   encounterValue: 16
   characteristics:
     might: 2
-    agility: 2
+    agility: 1
     reason: 2
-    intuition: 2
-    presence: 2
+    intuition: 0
+    presence: 0
   stamina:
     max: 80
     value: 80

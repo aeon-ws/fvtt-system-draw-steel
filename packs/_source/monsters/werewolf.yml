@@ -1,5 +1,5 @@
-_id: W4Oe1BPNeAWmTWp8
-_key: '!actors!W4Oe1BPNeAWmTWp8'
+_id: ko4Us55KPYuDO0iv
+_key: '!actors!ko4Us55KPYuDO0iv'
 name: Werewolf
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 36
   characteristics:
     might: 3
-    agility: 3
-    reason: 3
-    intuition: 3
-    presence: 3
+    agility: 2
+    reason: -1
+    intuition: 1
+    presence: 1
   stamina:
     max: 200
     value: 200

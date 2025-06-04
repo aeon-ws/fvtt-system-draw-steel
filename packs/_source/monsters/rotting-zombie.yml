@@ -1,5 +1,5 @@
-_id: VJrEvmwMteJozHI3
-_key: '!actors!VJrEvmwMteJozHI3'
+_id: lnC3fAxEQOcDBAC2
+_key: '!actors!lnC3fAxEQOcDBAC2'
 name: Rotting Zombie
 type: minion
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: -2
+    reason: -5
+    intuition: -2
+    presence: -3
   stamina:
     max: 5
     perMinion: 5

@@ -1,5 +1,5 @@
-_id: zgrJLFnmYLs4eJ9S
-_key: '!actors!zgrJLFnmYLs4eJ9S'
+_id: rc6TToiSWHBayI2C
+_key: '!actors!rc6TToiSWHBayI2C'
 name: Gelatinous Ball
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 1
-    agility: 1
-    reason: 1
-    intuition: 1
-    presence: 1
+    agility: 2
+    reason: -3
+    intuition: 0
+    presence: -2
   stamina:
     max: 15
     value: 15

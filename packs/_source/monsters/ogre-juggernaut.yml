@@ -1,5 +1,5 @@
-_id: 8PFZOwZmF9vGuXqB
-_key: '!actors!8PFZOwZmF9vGuXqB'
+_id: cNwioYgIB28RuBdi
+_key: '!actors!cNwioYgIB28RuBdi'
 name: Ogre Juggernaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 16
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: 1
+    reason: -1
+    intuition: 0
+    presence: -1
   stamina:
     max: 80
     value: 80

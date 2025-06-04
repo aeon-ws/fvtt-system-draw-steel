@@ -1,5 +1,5 @@
-_id: VHGBILFPAIcDk7fz
-_key: '!actors!VHGBILFPAIcDk7fz'
+_id: yhFD5rIybR4GSnME
+_key: '!actors!yhFD5rIybR4GSnME'
 name: Dwarf Trapper
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,9 +29,9 @@ system:
   encounterValue: 6
   characteristics:
     might: 0
-    agility: 0
+    agility: 2
     reason: 0
-    intuition: 0
+    intuition: 1
     presence: 0
   stamina:
     max: 36

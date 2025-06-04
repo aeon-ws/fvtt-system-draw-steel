@@ -1,6 +1,7 @@
 import re
 from typing import Any, Dict, List, Literal, Optional, Tuple
 
+from ads.api.string_format import title_case
 from ads.model import (
     Ability,
     Cube,
@@ -75,7 +76,7 @@ POWER_ROLL_RANGE_PATTERN = r"[^1l!]*(11|12.16|17[4]?[+]?).?\s*"
 POWER_ROLL_DAMAGE_TYPE_PATTERN = rf"(?P<damageType>{DAMAGE_TYPE_PATTERN})?"
 DAMAGE_PATTERN = rf"[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_TYPE_PATTERN}[^0-9]?\s*damage;?\s*"
 POWER_ROLL_EFFECT_PATTERN = rf"[^A-Za-z]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*"
-POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])<(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?)"
+POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])\s?<\s?(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?)"
 
 POWER_ROLL_LINE_PATTERN = re.compile(
     rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
@@ -115,10 +116,10 @@ RANGED_DISTANCE_PATTERN = r"Ranged\s*(?P<rangedDistance>\d\d?)"
 DISTANCE_PATTERN_BY_TYPE = {
     "self": re.compile(r"^.*Self.*$", re.IGNORECASE),
     "meleeAndRanged": re.compile(
-        r"^.*{MELEE_DISTANCE_PATTERN}.*{RANGED_DISTANCE_PATTERN}.*$", re.IGNORECASE
+        rf"^.*{MELEE_DISTANCE_PATTERN}.*{RANGED_DISTANCE_PATTERN}.*$", re.IGNORECASE
     ),
-    "melee": re.compile(r"^.*{MELEE_DISTANCE_PATTERN}.*$", re.IGNORECASE),
-    "ranged": re.compile(r"^.*{RANGED_DISTANCE_PATTERN}.*$", re.IGNORECASE),
+    "melee": re.compile(rf"^.*{MELEE_DISTANCE_PATTERN}.*$", re.IGNORECASE),
+    "ranged": re.compile(rf"^.*{RANGED_DISTANCE_PATTERN}.*$", re.IGNORECASE),
     "burst": re.compile(r"^.*(?P<burstSize>\d\d?)\s*burst.*$", re.IGNORECASE),
     "cube": re.compile(
         r"^.*(?P<cubeSize>\d\d?)\s*cube\s*within\s*(?P<cubeWithin>\d\d?).*$",
@@ -131,7 +132,7 @@ DISTANCE_PATTERN_BY_TYPE = {
 }
 
 TARGET_PATTERN = re.compile(
-    r"(?P<self>self)?.*(?P<targetCount>(?:all|each|every|one|two|three|1|2|3))?.*(?P<targetType>all(?:y|ies)|enem(?:y|ies)|creature[s]?|hero(?:es|s)|monster[s]?|target[s]?|object[s]?)?.*$",
+    r"(?P<self>self)?.*(?P<targetCount>(?:all|each|every|one|two|three|1|2|3))?.*(?:(?P<targetType>all(?:y|ies)|enem(?:y|ies)|creature[s]?|hero(?:es|s)|monster[s]?|target[s]?|object[s]?)\s*(?:or)?\s*)*.*$",
     re.IGNORECASE,
 )
 
@@ -245,7 +246,7 @@ def parse_power_roll_block(
 
     for line in ability_lines:
         line = line.strip()
-        if re.match(r"^[^1l!]{0,9}([1l!]{2}|[1l!]2.16|[1l!]7).", line):
+        if re.match(r"^[^1]{0,9}(11|12.16|17).", line):
             # This line looks like a power roll line, so we will parse it.
             power_roll_lines.append(line)
 
@@ -277,20 +278,67 @@ def parse_power_roll_line(power_roll_line: str) -> PowerRollTier:
         .replace("Zdamage", "7 damage")
         .replace("S5Sdamage", "5 damage")
         .replace("Sdamage", "5 damage")
-        .replace("Scorruption", "5 corruption")
         .replace("iIdamage", "1 damage")
         .replace("Ms2", "M<2 ")
+        .replace("As<", "A<")
         .replace("<O", "<0 ")
+        .replace("2 9 3 Malice", "2 3 Malice")
+        .replace("Verticalsiide", "Vertical slide")
+        .replace("PsZ", "P<3")
+        .replace("Scoruption", "5 corruption")
+        .replace("Scorruption", "5 corruption")
+        .replace("Ssorruption", "5 corruption")
+        .replace("S corruption", "5 corruption")
+        .replace("S sorruption", "5 corruption")
+        .replace("damase", "damage")
+        .replace("a aken", "and weakened")
+        .replace("174+", "17+")
+        .replace("8617+ ", "17+ ")
+        .replace("617+", "17+")
+        .replace("corruptiond e", "corruption damage;")
+        .replace("3E 17+", "17+")
+        .replace("JQdamage", "10 damage")
+        .replace("Jidamage", "10 damage")
+        .replace("Gacid", "6 acid")
+        .replace("Gcold", "6 cold")
+        .replace("Gcorruption", "6 corruption")
+        .replace("Gdamage", "6 damage")
+        .replace("Gfire", "6 fire")
+        .replace("Gholy", "6 holy")
+        .replace("Glightning", "6 lightning")
+        .replace("Gpoison", "6 poison")
+        .replace("Gpsychic", "6 psychic")
+        .replace("Gsonic", "6 sonic")
+        .replace("Sacid", "5 acid")
+        .replace("Scold", "5 cold")
+        .replace("Sfire", "5 fire")
+        .replace("Ssonic", "5 sonic")
+        .replace("Spsychic", "5 psychic")
+        .replace("Sholy", "5 holy")
+        .replace("Spoison", "5 poison")
+        .replace("Slightning", "5 lightning")
+        .replace("Sdamage", "5 damage")
+        .replace("JLacid", "11 acid")
+        .replace("JLcold", "11 cold")
+        .replace("JLcorruption", "11 corruption")
+        .replace("JLdamage", "11 damage")
+        .replace("JLfire", "11 fire")
+        .replace("JLholy", "11 holy")
+        .replace("JLlightning", "11 lightning")
+        .replace("JLpoison", "11 poison")
+        .replace("JLpsychic", "11 psychic")
+        .replace("JLsonic", "11 sonic")
+        .replace("erabbed", "grabbed")
         .strip()
     )
 
-    print(f"  - [{normalized}]")
+    # print(f"  - [{normalized}]")
     hasDamage = False
     hasEffect = False
     hasPotencyEffect = False
     match = POWER_ROLL_LINE_PATTERN_BY_TYPE["all"].match(normalized)
     if match:
-        print("      Matched by 'all' pattern")
+        # print("      Matched by 'all' pattern")
         hasDamage = True
         hasEffect = True
         hasPotencyEffect = True
@@ -299,37 +347,37 @@ def parse_power_roll_line(power_roll_line: str) -> PowerRollTier:
             normalized
         )
         if match:
-            print("      Matched by 'damageAndPotencyEffect' pattern")
+            # print("      Matched by 'damageAndPotencyEffect' pattern")
             hasDamage = True
             hasPotencyEffect = True
     if not match:
         match = POWER_ROLL_LINE_PATTERN_BY_TYPE["damageAndEffect"].match(normalized)
         if match:
-            print("      Matched by 'damageAndEffect' pattern")
+            # print("      Matched by 'damageAndEffect' pattern")
             hasDamage = True
             hasEffect = True
     if not match:
         match = POWER_ROLL_LINE_PATTERN_BY_TYPE["damage"].match(normalized)
         if match:
-            print("      Matched by 'damage' pattern")
+            # print("      Matched by 'damage' pattern")
             hasDamage = True
     if not match:
         match = POWER_ROLL_LINE_PATTERN_BY_TYPE["effectAndPotencyEffect"].match(
             normalized
         )
         if match:
-            print("      Matched by 'effectAndPotencyEffect' pattern")
+            # print("      Matched by 'effectAndPotencyEffect' pattern")
             hasEffect = True
             hasPotencyEffect = True
     if not match:
         match = POWER_ROLL_LINE_PATTERN_BY_TYPE["potencyEffect"].match(normalized)
         if match:
-            print("      Matched by 'potencyEffect' pattern")
+            # print("      Matched by 'potencyEffect' pattern")
             hasPotencyEffect = True
     if not match:
         match = POWER_ROLL_LINE_PATTERN_BY_TYPE["effect"].match(normalized)
         if match:
-            print("      Matched by 'effect' pattern")
+            # print("      Matched by 'effect' pattern")
             hasEffect = True
     if not match:
         raise ValueError(
@@ -338,7 +386,7 @@ def parse_power_roll_line(power_roll_line: str) -> PowerRollTier:
         )
 
     groups = match.groupdict()
-    print(f"      Captured: {groups}")
+    # print(f"      Captured: {groups}")
 
     return PowerRollTier(
         damage=int(groups["damage"]) if hasDamage else None,
@@ -389,28 +437,22 @@ def map_initial_to_characteristic_name(
     raise ValueError(f"Unknown characteristic initial: {initial}")
 
 
-def safe_get(list: list[Any], index: int, default: Any):
-    try:
-        return list[index]
-    except Exception:
-        return default
-
-
 def parse_distance(distance_and_target_line: str) -> Distance:
     distance_source = distance_and_target_line[len("Distance ") :].strip()
     if not distance_source:
         raise ValueError(f"Invalid distance line: '{distance_and_target_line}'")
 
-    normalized = distance_source.replace("  ", " ").replace("  ", " ").strip()
+    normalized = distance_source.replace("  ", " ").replace("  ", " ")
 
+    # print(f"  - Distance: [{normalized}]")
     match = DISTANCE_PATTERN_BY_TYPE["self"].match(normalized)
     if match:
-        print("      Matched by 'self' pattern")
+        # print("      Matched by 'self' pattern")
         return Distance(self=True)
 
     match = DISTANCE_PATTERN_BY_TYPE["meleeAndRanged"].match(normalized)
     if match:
-        print("      Matched by 'meleeAndRanged' pattern")
+        # print("      Matched by 'meleeAndRanged' pattern")
         return Distance(
             melee=int(match.group("meleeDistance")),
             ranged=int(match.group("rangedDistance")),
@@ -418,22 +460,22 @@ def parse_distance(distance_and_target_line: str) -> Distance:
 
     match = DISTANCE_PATTERN_BY_TYPE["melee"].match(normalized)
     if match:
-        print("      Matched by 'melee' pattern")
+        # print("      Matched by 'melee' pattern")
         return Distance(melee=int(match.group("meleeDistance")))
 
     match = DISTANCE_PATTERN_BY_TYPE["ranged"].match(normalized)
     if match:
-        print("      Matched by 'ranged' pattern")
+        # print("      Matched by 'ranged' pattern")
         return Distance(ranged=int(match.group("rangedDistance")))
 
     match = DISTANCE_PATTERN_BY_TYPE["burst"].match(normalized)
     if match:
-        print("      Matched by 'burst' pattern")
+        # print("      Matched by 'burst' pattern")
         return Distance(burst=int(match.group("burstSize")))
 
     match = DISTANCE_PATTERN_BY_TYPE["cube"].match(normalized)
     if match:
-        print("      Matched by 'cube' pattern")
+        # print("      Matched by 'cube' pattern")
         return Distance(
             cube=Cube(
                 size=int(match.group("cubeSize")), within=int(match.group("cubeWithin"))
@@ -442,7 +484,7 @@ def parse_distance(distance_and_target_line: str) -> Distance:
 
     match = DISTANCE_PATTERN_BY_TYPE["line"].match(normalized)
     if match:
-        print("      Matched by 'line' pattern")
+        # print("      Matched by 'line' pattern")
         return Distance(
             line=Line(
                 width=int(match.group("lineWidth")),
@@ -451,24 +493,54 @@ def parse_distance(distance_and_target_line: str) -> Distance:
             )
         )
 
+    if "special" in normalized.lower():
+        return Distance(special=True)
+
     raise ValueError(
         f"Could not parse distance from line: '{distance_and_target_line}'\n"
         f"Normalized as: '{normalized}'"
     )
 
 
-def parse_target(distance_and_target_line: str) -> Target:
+def parse_target(distance_and_target_line: str) -> Target | None:
     if "Target" not in distance_and_target_line:
-        raise ValueError(
-            f"Invalid distance and target line: '{distance_and_target_line}'"
-        )
+        f"[WARN] Didn't find Target in same line as Distance, which is highly unusual (but not illegal, nor completely unheard of): '{distance_and_target_line}'"
+        return None
 
     target_source = distance_and_target_line.split("Target")[-1].strip()
     normalized = target_source.replace("  ", " ").replace("  ", " ").strip()
 
+    # print(f"  - Target: [{normalized}]")
     match = TARGET_PATTERN.match(normalized)
     if match:
-        print(f"      {match.groupdict()}")
+        target = Target()
+
+        if match.group("self") is not None:
+            target["self"] = True
+
+        target_count = match.group("targetCount")
+        if target_count is not None:
+            if target_count.lower() in ["all", "each", "every"]:
+                target["count"] = "all"
+            elif target_count.isdigit():
+                target["count"] = int(target_count)
+            elif target_count.lower() == "one":
+                target["count"] = 1
+            elif target_count.lower() == "two":
+                target["count"] = 2
+            elif target_count.lower() == "three":
+                target["count"] = 3
+            else:
+                print(
+                    f"[WARN] Could not convert target count '{target_count}' to integer in line: '{distance_and_target_line}'"
+                )
+
+        target["text"] = normalized
+        # print(f"      Matched by 'target' pattern: {target}")
+
+        return target
+
+    if "special" in normalized.lower():
         return Target()
 
     raise ValueError(
@@ -501,7 +573,7 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
         "header_raw": header_line,
     }
 
-    for _, ability_line in enumerate(ability_lines[1:]):
+    for index, ability_line in enumerate(ability_lines[1:]):
         ability_line = ability_line.strip()
         if ability_line.startswith("Keywords"):
             keywords = [
@@ -510,9 +582,25 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
                 if w
             ]
             model["keywords"] = keywords
-            print(f"  - Keywords: {keywords}")
+            # print(f"  - Keywords: {keywords}")
         elif ability_line.startswith("Distance"):
-            model["distance"] = parse_distance(ability_line)
+            # Compensation for a hard error in the source PDF: the post power roll effect is labeled
+            # "Distance" instead of "Effect".
+            if "The affected area is considered difficult terrain for" in ability_line:
+                model["postPowerRollEffect"] = Effect(
+                    text="The affected area is considered difficult terrain for the rest of the encounter."
+                )
+            # Compensation for a hard error in the source PDF: the post power roll effect is labeled
+            # "Distance" instead of "Trigger".
+            elif "The target uses a strike that targets the mastermind" in ability_line:
+                model["trigger"] = (
+                    f"{ability_line[len('Distance') :].strip()} {ability_lines[index + 1].strip()}"
+                )
+            else:
+                model["distance"] = parse_distance(ability_line)
+
+            model["target"] = parse_target(ability_line)
+        elif ability_line.startswith("Target"):
             model["target"] = parse_target(ability_line)
         elif ability_line.startswith("Trigger"):
             model["trigger"] = ability_line[len("Trigger") :].strip()
@@ -533,7 +621,6 @@ def parse_ability_header(
         print(
             f"[WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: {repr(normalized)}"
         )
-        print("Unicode: ", " ".join(str(ord(c)) for c in normalized))
         return None
     else:
         print(f"[{normalized}]")
@@ -569,8 +656,12 @@ def parse_ability_header(
             )
             power_roll_bonus = None
 
+    name = groups.get("name", "").strip()
+
     ability_header: dict[str, Any] = {
-        "name": groups.get("name", "").strip(),
+        "name": f"{name} ({title_case(type_key)})"
+        if ability_type == "villainAction"
+        else name,
         "type": ability_type,
         "maliceCost": malice_cost,
         "powerRollBonus": power_roll_bonus,

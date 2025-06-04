@@ -1,5 +1,5 @@
-_id: OBEzFpi0AtPyZ3uE
-_key: '!actors!OBEzFpi0AtPyZ3uE'
+_id: Z9BXbvxyYYaYa88T
+_key: '!actors!Z9BXbvxyYYaYa88T'
 name: Crawling Claw
 type: minion
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 0
-    reason: 0
-    intuition: 0
-    presence: 0
+    agility: 2
+    reason: -5
+    intuition: -1
+    presence: -1
   stamina:
     max: 4
     perMinion: 4

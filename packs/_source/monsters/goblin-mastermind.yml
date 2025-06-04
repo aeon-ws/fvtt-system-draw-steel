@@ -1,5 +1,5 @@
-_id: xG1CwwgCJSqm4UKp
-_key: '!actors!xG1CwwgCJSqm4UKp'
+_id: bQftMGHFwoofE23z
+_key: '!actors!bQftMGHFwoofE23z'
 name: Goblin Mastermind
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 4
   characteristics:
     might: -1
-    agility: -1
-    reason: -1
-    intuition: -1
-    presence: -1
+    agility: 2
+    reason: 1
+    intuition: 1
+    presence: 1
   stamina:
     max: 20
     value: 20

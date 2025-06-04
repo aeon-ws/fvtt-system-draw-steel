@@ -1,5 +1,5 @@
-_id: OwlwQwkvr10wivr7
-_key: '!actors!OwlwQwkvr10wivr7'
+_id: t7o2ZGP0wQOa4slA
+_key: '!actors!t7o2ZGP0wQOa4slA'
 name: Human Scoundrel
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 6
   characteristics:
     might: 0
-    agility: 0
+    agility: 2
     reason: 0
     intuition: 0
-    presence: 0
+    presence: 1
   stamina:
     max: 30
     value: 30

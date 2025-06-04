@@ -1,5 +1,5 @@
-_id: EybjWFnokQA8qs62
-_key: '!actors!EybjWFnokQA8qs62'
+_id: rARH6S1Rpm4Cb5gX
+_key: '!actors!rARH6S1Rpm4Cb5gX'
 name: Human Knave
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 8
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: 0
+    reason: 1
+    intuition: 0
+    presence: 0
   stamina:
     max: 50
     value: 50

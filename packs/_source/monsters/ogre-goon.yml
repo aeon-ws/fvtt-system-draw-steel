@@ -1,5 +1,5 @@
-_id: LjE8Uh3OoYNE1XGB
-_key: '!actors!LjE8Uh3OoYNE1XGB'
+_id: YiHR3SlTstR4mZyj
+_key: '!actors!YiHR3SlTstR4mZyj'
 name: Ogre Goon
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 16
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: 0
+    reason: -1
+    intuition: 0
+    presence: -1
   stamina:
     max: 100
     value: 100

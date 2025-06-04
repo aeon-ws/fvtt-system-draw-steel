@@ -1,5 +1,5 @@
-_id: f1i59GW4awprVfol
-_key: '!actors!f1i59GW4awprVfol'
+_id: QLBsOhnZLbnbM4Iu
+_key: '!actors!QLBsOhnZLbnbM4Iu'
 name: Decrepit Skeleton
 type: minion
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 0
-    reason: 0
+    agility: 2
+    reason: -2
     intuition: 0
-    presence: 0
+    presence: -2
   stamina:
     max: 3
     perMinion: 3

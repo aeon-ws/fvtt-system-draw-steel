@@ -1,5 +1,5 @@
-_id: vei2wnPZCWcjkIgl
-_key: '!actors!vei2wnPZCWcjkIgl'
+_id: scHJz8uHnFUKjcaw
+_key: '!actors!scHJz8uHnFUKjcaw'
 name: Goblin Cursespitter
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: -2
-    agility: -2
-    reason: -2
-    intuition: -2
-    presence: -2
+    agility: 1
+    reason: 0
+    intuition: 2
+    presence: 0
   stamina:
     max: 10
     value: 10

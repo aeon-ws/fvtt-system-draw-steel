@@ -1,13 +1,9 @@
 from typing import List, NotRequired, Optional, TypedDict
 
-from ads.model import (
-    Ability,
-    AppliedCaptainEffects,
-    Characteristics,
-    DerivedCaptainBonuses,
-    ImmunityOrWeakness,
-    Trait,
-)
+from ads.model.ability_and_trait import Ability, Trait
+from ads.model.characteristics import Characteristics
+from ads.model.immunity_or_weakness import ImmunityOrWeakness
+from ads.model.minion import AppliedCaptainEffects, DerivedCaptainBonuses
 
 
 class MonsterHeader(TypedDict):

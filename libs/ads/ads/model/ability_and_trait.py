@@ -1,6 +1,8 @@
 from typing import List, Literal, NotRequired, Optional, TypedDict
 
-from ads.model import Distance, Effect, PowerRoll, Target
+from ads.model.distance_and_target import Distance, Target
+from ads.model.effect import Effect
+from ads.model.power_roll import PowerRoll
 
 
 class Ability(TypedDict):

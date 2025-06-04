@@ -1,5 +1,5 @@
-_id: oNKn151z9vR5k8Mq
-_key: '!actors!oNKn151z9vR5k8Mq'
+_id: mE1w2VFzphbcaxiU
+_key: '!actors!mE1w2VFzphbcaxiU'
 name: Zombie
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 2
-    agility: 2
-    reason: 2
-    intuition: 2
-    presence: 2
+    agility: 1
+    reason: -5
+    intuition: -2
+    presence: 1
   stamina:
     max: 20
     value: 20

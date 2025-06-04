@@ -2,9 +2,9 @@ from typing import Annotated
 
 from typer import Option, Typer
 
-from ads.api.ocr_parser import export_monsters
+from ads.api.monster_parser import export_monsters
 
-ocr = Typer(no_args_is_help=True)
+ocr = Typer(no_args_is_help=True, pretty_exceptions_show_locals=False)
 
 
 @ocr.command(no_args_is_help=False, name="export")

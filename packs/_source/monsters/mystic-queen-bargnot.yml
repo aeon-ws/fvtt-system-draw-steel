@@ -1,5 +1,5 @@
-_id: GQPz8ZWaz80tOvnB
-_key: '!actors!GQPz8ZWaz80tOvnB'
+_id: py68k7CS8DFhlKbf
+_key: '!actors!py68k7CS8DFhlKbf'
 name: Mystic Queen Bargnot
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -30,10 +30,10 @@ system:
   encounterValue: 20
   characteristics:
     might: 2
-    agility: 2
+    agility: 3
     reason: 2
-    intuition: 2
-    presence: 2
+    intuition: 1
+    presence: 1
   stamina:
     max: 120
     value: 120

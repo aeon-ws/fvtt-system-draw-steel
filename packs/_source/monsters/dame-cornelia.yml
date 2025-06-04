@@ -1,5 +1,5 @@
-_id: gd6OyFZSnR4Rq4Jo
-_key: '!actors!gd6OyFZSnR4Rq4Jo'
+_id: 6JrF45fS6N8LuFS1
+_key: '!actors!6JrF45fS6N8LuFS1'
 name: Dame Cornelia
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -28,10 +28,10 @@ system:
   encounterValue: 12
   characteristics:
     might: 3
-    agility: 3
-    reason: 3
-    intuition: 3
-    presence: 3
+    agility: 2
+    reason: 2
+    intuition: 0
+    presence: 2
   stamina:
     max: 80
     value: 80

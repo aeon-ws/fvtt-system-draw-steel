@@ -1,5 +1,5 @@
-_id: NNGaaJXSmue1qA7T
-_key: '!actors!NNGaaJXSmue1qA7T'
+_id: LmBjHcsKiQvSbL1W
+_key: '!actors!LmBjHcsKiQvSbL1W'
 name: Mohler
 type: minion
 img: icons/svg/mystery-man.svg
@@ -29,10 +29,10 @@ system:
   encounterValue: 3
   characteristics:
     might: 0
-    agility: 0
-    reason: 0
-    intuition: 0
-    presence: 0
+    agility: 2
+    reason: -4
+    intuition: 1
+    presence: -3
   stamina:
     max: 4
     perMinion: 4

@@ -1,5 +1,5 @@
-_id: KVGFVOriC3l1mf3R
-_key: '!actors!KVGFVOriC3l1mf3R'
+_id: QsKHlEoTZ5IOffeM
+_key: '!actors!QsKHlEoTZ5IOffeM'
 name: Vurkor
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -31,8 +31,8 @@ system:
   characteristics:
     might: 0
     agility: 0
-    reason: 0
-    intuition: 0
+    reason: 2
+    intuition: 1
     presence: 0
   stamina:
     max: 60
