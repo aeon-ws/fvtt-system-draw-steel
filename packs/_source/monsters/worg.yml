@@ -1,5 +1,5 @@
-_id: ZjdmOk7PEDtJE5Wv
-_key: '!actors!ZjdmOk7PEDtJE5Wv'
+_id: AFo9msbrRuOdQ6VY
+_key: '!actors!AFo9msbrRuOdQ6VY'
 name: Worg
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 1
     freeStrikeDamage: 1
 items:
-- _id: bLnABivRvNeMizjV
-  _key: '!items!bLnABivRvNeMizjV'
+- _id: otD6JjdMT1QZPebt
+  _key: '!items!otD6JjdMT1QZPebt'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -60,6 +60,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -68,8 +73,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: tWyzaTMeG0JvejSe
-  _key: '!items!tWyzaTMeG0JvejSe'
+- _id: ePhD8Q3TiRZrhxAN
+  _key: '!items!ePhD8Q3TiRZrhxAN'
   name: Sprint
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,5 +86,10 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
+      self: true
+    prePowerRollEffect:
+      text: The worg moves up to their speed. Mounted Charger lf a worg used as a
+        mount charges, their rider gains an edge on melee strikes until the end of
+        their turn. Shared Crafty lf the worg’s rider has the Crafty trait, the worg
+        also has the Crafty trait.

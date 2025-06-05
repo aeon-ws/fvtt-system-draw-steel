@@ -10,6 +10,7 @@ class Effect(TypedDict, total=False):
     bleeding: bool
     grabbed: bool
     frightened: bool
+    noEffect: bool
     prone: bool
     restrained: bool
     slowed: bool

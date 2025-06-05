@@ -1,5 +1,5 @@
-_id: vX1JbVTN5W8oPJKJ
-_key: '!actors!vX1JbVTN5W8oPJKJ'
+_id: TfaHb3t9oBEsuOTx
+_key: '!actors!TfaHb3t9oBEsuOTx'
 name: Glass Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   weakness:
     sonic: 5
 items:
-- _id: 34YDqF0q9uk3hjoM
-  _key: '!items!34YDqF0q9uk3hjoM'
+- _id: lK8nbj6T2KtkDvO6
+  _key: '!items!lK8nbj6T2KtkDvO6'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -60,6 +60,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -73,8 +78,8 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: I6Hw6VRWRqKK5mzi
-  _key: '!items!I6Hw6VRWRqKK5mzi'
+- _id: HRQsMdRCsGdW0Prw
+  _key: '!items!HRQsMdRCsGdW0Prw'
   name: Slashing Leg
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,6 +93,11 @@ items:
       melee: 1
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -96,8 +106,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: CZBaWV9a2lJXFnd9
-  _key: '!items!CZBaWV9a2lJXFnd9'
+- _id: C7hiy1fkQsF6MHih
+  _key: '!items!C7hiy1fkQsF6MHih'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,10 +119,14 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
-- _id: 0f23C1k49oa4OCPU
-  _key: '!items!0f23C1k49oa4OCPU'
+      self: true
+    prePowerRollEffect:
+      text: The spider shifts up to their speed and makes a Slashing Leg strike against
+        each creature who comes within 1 of the spider during the move. The spider
+        makes one power roll against all targets.
+- _id: ABlJXgx3KxmK1UIE
+  _key: '!items!ABlJXgx3KxmK1UIE'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -145,8 +159,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: Tgn0C5GpHUxBQYGe
-  _key: '!items!Tgn0C5GpHUxBQYGe'
+- _id: oXpOZmbezDup0Nif
+  _key: '!items!oXpOZmbezDup0Nif'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -157,6 +171,9 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
+      self: true
     trigger: The spider takes damage.
+    prePowerRollEffect:
+      text: The spider halves the damage, and then shifts 2 squares after the triggering
+        effect resolves.

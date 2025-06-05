@@ -1,5 +1,5 @@
-_id: iKfwiQD2FjaVHbNy
-_key: '!actors!iKfwiQD2FjaVHbNy'
+_id: uHke1s8NCT7UIaqr
+_key: '!actors!uHke1s8NCT7UIaqr'
 name: Human Brawler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: MzOigD2H4q5XtSDQ
-  _key: '!items!MzOigD2H4q5XtSDQ'
+- _id: uEYrl6DT2albDaJX
+  _key: '!items!uEYrl6DT2albDaJX'
   name: Haymaker
   type: monsterAbility
   img: icons/svg/book.svg
@@ -62,6 +62,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -75,8 +80,10 @@ items:
           value: 2
           effect:
             text: grabbed, target has a bane on escaping the grab
-- _id: Eh0jZiY95gpnd6hD
-  _key: '!items!Eh0jZiY95gpnd6hD'
+    postPowerRollEffect:
+      text: brawler deals an additional 2 damage if the target is already grabbed.
+- _id: 8HkRUHxwNwMl6kZD
+  _key: '!items!8HkRUHxwNwMl6kZD'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -89,3 +96,12 @@ items:
       melee: 1
     target:
       text: One creature grabbed by the brawler
+      ally: true
+      self: true
+      enemy: true
+      count: 1
+    prePowerRollEffect:
+      text: Push 5. Shoot the Hostage The brawler takes half damage from strikes if
+        they have a creature or object grabbed. The grabbed creature or object takes
+        the other half of the damage. Supernatural Insight The brawler ignores concealment
+        if it’s granted by a supernatural effect, or the target is supernatural.

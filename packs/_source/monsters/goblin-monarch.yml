@@ -1,5 +1,5 @@
-_id: RDBHHfeDxPSSSoXI
-_key: '!actors!RDBHHfeDxPSSSoXI'
+_id: wGLyWQeDShBhWvBY
+_key: '!actors!wGLyWQeDShBhWvBY'
 name: Goblin Monarch
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: tElIa2B3Ju0BAx7e
-  _key: '!items!tElIa2B3Ju0BAx7e'
+- _id: vxCVcJphpBC4w53A
+  _key: '!items!vxCVcJphpBC4w53A'
   name: Handaxe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       ranged: 5
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 3
       tier1:
@@ -69,8 +74,10 @@ items:
         damage: 10
       tier3:
         damage: 13
-- _id: ZmhbnO7DMczgdPCV
-  _key: '!items!ZmhbnO7DMczgdPCV'
+    postPowerRollEffect:
+      text: An ally within 10 of the monarch can make a free strike.
+- _id: v6Hev5wYV4445jTA
+  _key: '!items!v6Hev5wYV4445jTA'
   name: Get in Here!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,8 +90,11 @@ items:
       ranged: 20
     target:
       text: Special
-- _id: sFOCOmt51JEiGrTe
-  _key: '!items!sFOCOmt51JEiGrTe'
+      special: true
+    prePowerRollEffect:
+      text: Two goblin runners appear in unoccupied spaces.
+- _id: mXNAuCPO0PHCh0Ku
+  _key: '!items!mXNAuCPO0PHCh0Ku'
   name: Meat Shield
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,9 +106,16 @@ items:
       melee: 1
     target:
       text: One ally
+      ally: true
+      count: 1
     trigger: A creature targets the monarch with a strike.
-- _id: ktZWO7wxEoSFdyMi
-  _key: '!items!ktZWO7wxEoSFdyMi'
+    prePowerRollEffect:
+      text: The ally becomes the target of the triggering strike instead. End Effect
+        At the end of their turn, the monarch can take 5 damage to end one save ends
+        effect affecting them. This damage can’t be reduced in any way. Crafty The
+        monarch doesn’t provoke opportunity attacks by moving.
+- _id: Vg4p17Qoh7KbjyIK
+  _key: '!items!Vg4p17Qoh7KbjyIK'
   name: What Are You Waiting For (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -110,8 +127,15 @@ items:
       ranged: 10
     target:
       text: One enemy or object
-- _id: K9GsnK32L6FLwp0A
-  _key: '!items!K9GsnK32L6FLwp0A'
+      enemy: true
+      object: true
+      count: 1
+    prePowerRollEffect:
+      text: Each target can move up to their speed or make a free strike. Focus Fire
+        (Villain Action 2} Each ally within 10 squares of the target can move up to
+        their speed toward the target.
+- _id: 4W3IlwIfyTJGxb2w
+  _key: '!items!4W3IlwIfyTJGxb2w'
   name: Kill! (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -123,3 +147,7 @@ items:
       special: true
     target:
       text: Special
+      special: true
+    prePowerRollEffect:
+      text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
+        them. r

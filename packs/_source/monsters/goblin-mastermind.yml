@@ -1,5 +1,5 @@
-_id: TQB5xxsko2wbvF9n
-_key: '!actors!TQB5xxsko2wbvF9n'
+_id: LZbnvSNbHqbgdf5u
+_key: '!actors!LZbnvSNbHqbgdf5u'
 name: Goblin Mastermind
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: bEvMbBWz1uwLWZOm
-  _key: '!items!bEvMbBWz1uwLWZOm'
+- _id: NWSLIy1iGGmdxmuR
+  _key: '!items!NWSLIy1iGGmdxmuR'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -60,6 +60,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -68,8 +73,10 @@ items:
         damage: 5
       tier3:
         damage: 7
-- _id: YcTJgcB3EwXLqjtG
-  _key: '!items!YcTJgcB3EwXLqjtG'
+    postPowerRollEffect:
+      text: One ally adjacent to the target can make a free strike against them.
+- _id: LpxQhhVFbeWEaP9y
+  _key: '!items!LpxQhhVFbeWEaP9y'
   name: Goad
   type: monsterAbility
   img: icons/svg/book.svg
@@ -82,3 +89,10 @@ items:
       ranged: 5
     trigger: The target uses a strike that targets the mastermind or Distance The
       target uses a strike that targets the mastermind or
+    prePowerRollEffect:
+      text: The mastermind retargets the strike to target themself or another ally.
+        The new target must be a valid option for the strike. Saw You Coming The mastermind
+        can’t be surprised. Cunning The mastermind doesn’t provoke opportunity attacks
+        from enemies by moving. Whenever the mastermind is adjacent to an enemy and
+        willingly moves to a space no longer adjacent to that enemy, the mastermind
+        can make an opportunity attack against them as a triggered action.

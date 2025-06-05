@@ -1009,8 +1009,7 @@ Howl (Villain Action 1)
 Keywords Area
 Distance 5 burst Target All enemies in the burst
 Effect Each target makes an Intuition test.
-% = <11 Target moves up to their speed away from the
-werewolf; frightened (save ends)
+% = <11 Target moves up to their speed away from the werewolf; frightened (save ends)
 * 12-16 Frightened (EoT)
 + 17 no effect
 Effect Enemies that have 1 or more rage gain 4 rage and howl

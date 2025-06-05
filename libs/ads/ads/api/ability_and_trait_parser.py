@@ -77,11 +77,10 @@ DAMAGE_PATTERN = rf"[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_T
 POWER_ROLL_EFFECT_PATTERN = rf"[^A-Za-z]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*"
 POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])\s?<\s?(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?)"
 
-POWER_ROLL_LINE_PATTERN = re.compile(
-    rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}{POWER_ROLL_EFFECT_PATTERN}{POWER_ROLL_POTENCY_EFFECT_PATTERN}.*$",
-    re.IGNORECASE,
-)
 POWER_ROLL_LINE_PATTERN_BY_TYPE = {
+    "noEffect": re.compile(
+        rf"^{POWER_ROLL_RANGE_PATTERN}(?P<effectText>No effect).*$", re.IGNORECASE
+    ),
     "damage": re.compile(
         rf"^{POWER_ROLL_RANGE_PATTERN}{DAMAGE_PATTERN}.*$", re.IGNORECASE
     ),
@@ -236,10 +235,10 @@ def parse_power_roll_block(
     header: dict[str, Any], ability_lines: List[str]
 ) -> PowerRoll | None:
     powerRollBonus: int | None = header["powerRollBonus"]
-    if powerRollBonus is None:
-        # If no power roll bonus is specified in the ability header, the ability doesn't involve a power
-        # roll, so power roll to parse.
-        return None
+    # if powerRollBonus is None:
+    #     # If no power roll bonus is specified in the ability header, the ability doesn't involve a power
+    #     # roll, so power roll to parse.
+    #     return None
 
     power_roll_lines: List[str] = []
 
@@ -250,9 +249,10 @@ def parse_power_roll_block(
             power_roll_lines.append(line)
 
     if not power_roll_lines:
-        print(
-            f"  *** [WARN] [{header['name']}]: No power roll lines found in ability block: {ability_lines}"
-        )
+        if powerRollBonus is not None:
+            print(
+                f"  *** [WARN] [{header['name']}]: Ability has a power roll bonus yet no power roll lines found in ability block: {ability_lines}"
+            )
         return None
     if len(power_roll_lines) != 3:
         raise ValueError(
@@ -260,7 +260,7 @@ def parse_power_roll_block(
         )
 
     return PowerRoll(
-        bonus=powerRollBonus,
+        bonus=powerRollBonus or None,
         tier1=parse_power_roll_line(power_roll_lines.pop(0)),
         tier2=parse_power_roll_line(power_roll_lines.pop(0)),
         tier3=parse_power_roll_line(power_roll_lines.pop(0)),
@@ -292,7 +292,7 @@ def parse_power_roll_line(power_roll_line: str) -> PowerRollTier:
         rf"(Ji|JQ)(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "10 ", normalized
     )
     normalized = re.sub(
-        rf"(JL|JL)(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "11 ", normalized
+        rf"JL(?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "11 ", normalized
     )
     normalized = re.sub(
         rf"[Ii](?=\s?(?:{DAMAGE_TYPE_PATTERN})?\s?damage)", "1 ", normalized
@@ -389,6 +389,13 @@ def parse_power_roll_line(power_roll_line: str) -> PowerRollTier:
         if match:
             # print("      Matched by 'effect' pattern")
             hasEffect = True
+    if not match:
+        match = POWER_ROLL_LINE_PATTERN_BY_TYPE["noEffect"].match(normalized)
+        if match:
+            # print("      Matched by 'noEffect' pattern")
+            hasEffect = True
+            hasDamage = False
+            hasPotencyEffect = False
     if not match:
         raise ValueError(
             f"Could not match power roll line: '{power_roll_line}'\n"
@@ -520,43 +527,49 @@ def parse_target(distance_and_target_line: str) -> Target | None:
     target_source = distance_and_target_line.split("Target")[-1].strip()
     normalized = target_source.replace("  ", " ").replace("  ", " ").strip()
 
-    # print(f"  - Target: [{normalized}]")
-    match = TARGET_PATTERN.match(normalized)
-    if match:
-        target = Target()
+    target = Target(text=normalized)
 
-        if match.group("self") is not None:
-            target["self"] = True
+    if re.search("special", normalized, re.IGNORECASE):
+        target["special"] = True
+    if re.search("self", normalized, re.IGNORECASE):
+        target["self"] = True
+    if re.search(r"ally|allies", normalized, re.IGNORECASE):
+        target["ally"] = True
+    if re.search(r"creature[s]?", normalized, re.IGNORECASE):
+        target["ally"] = True
+        target["self"] = True
+        target["enemy"] = True
+    if re.search(r"enemy|enemies", normalized, re.IGNORECASE):
+        target["enemy"] = True
+    if re.search(r"hero(?:es|s)?", normalized, re.IGNORECASE):
+        target["ally"] = True
+        target["self"] = True
+    if re.search(r"object[s]?", normalized, re.IGNORECASE):
+        target["object"] = True
 
-        target_count = match.group("targetCount")
-        if target_count is not None:
-            if target_count.lower() in ["all", "each", "every"]:
-                target["count"] = "all"
-            elif target_count.isdigit():
-                target["count"] = int(target_count)
-            elif target_count.lower() == "one":
-                target["count"] = 1
-            elif target_count.lower() == "two":
-                target["count"] = 2
-            elif target_count.lower() == "three":
-                target["count"] = 3
-            else:
-                print(
-                    f"[WARN] Could not convert target count '{target_count}' to integer in line: '{distance_and_target_line}'"
-                )
+    if re.search(r"(?:all|each|every)/s", normalized, re.IGNORECASE):
+        target["count"] = "all"
+    else:
+        match = re.search(
+            r"(?P<countInteger>[1|2|3|4|5])|(?P<countWord>one|two|three|four|five)",
+            normalized,
+            re.IGNORECASE,
+        )
+        match_groups = match.groupdict() if match else {}
 
-        target["text"] = normalized
-        # print(f"      Matched by 'target' pattern: {target}")
+        if match_groups.get("countInteger"):
+            target["count"] = int(match_groups["countInteger"])
+        elif match_groups.get("countWord"):
+            number_by_word = {
+                "one": 1,
+                "two": 2,
+                "three": 3,
+                "four": 4,
+                "five": 5,
+            }
+            target["count"] = number_by_word[match_groups["countWord"].lower()]
 
-        return target
-
-    if "special" in normalized.lower():
-        return Target()
-
-    raise ValueError(
-        f"Could not parse target from line: '{distance_and_target_line}'\n"
-        f"Normalized as: '{normalized}'"
-    )
+    return target
 
 
 def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
@@ -580,6 +593,11 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
         "postPowerRollEffect": None,
         "header_raw": header_line,
     }
+
+    pre_power_roll_effect_lines: List[str] = []
+    post_power_roll_effect_lines: List[str] = []
+    power_roll_line_encountered = False
+    final_effect_line_encountered = False
 
     for index, ability_line in enumerate(ability_lines[1:]):
         ability_line = ability_line.strip()
@@ -612,6 +630,52 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
             model["target"] = parse_target(ability_line)
         elif ability_line.startswith("Trigger"):
             model["trigger"] = ability_line[len("Trigger") :].strip()
+        elif re.match(r"^[^1]{0,9}(11|12.16|17).", ability_line):
+            power_roll_line_encountered = True
+            final_effect_line_encountered = True
+        elif ability_line.startswith("Effect"):
+            final_effect_line_encountered = False
+            effect_text = ability_line[len("Effect") :].strip()
+            if power_roll_line_encountered:
+                # We have already encountered a power roll line, so this is a post-power-roll effect.
+                post_power_roll_effect_lines.append(effect_text)
+            else:
+                # We haven't encountered a power roll line yet, so this is a pre-power-roll effect.
+                pre_power_roll_effect_lines.append(effect_text)
+        elif pre_power_roll_effect_lines:
+            # We have already encountered the pre-power-roll effect section and no other line signatures
+            # matched this subsequent line, so we append the line to the effect line list.
+            pre_power_roll_effect_lines.append(ability_line)
+        elif post_power_roll_effect_lines:
+            # We have already encountered the post-power-roll effect section and no other line signatures
+            # matched this subsequent line, so we append the line to the effect line list.
+            post_power_roll_effect_lines.append(ability_line)
+
+        if final_effect_line_encountered or index == len(ability_lines) - 2:
+            # If we have already registered the final line of the current effect, or if we are at the last
+            # line of the ability block as a whole, we commit the current effect to the model.
+            if pre_power_roll_effect_lines:
+                # We have pre-power-roll effect lines, so we join them into a single effect description.
+                model["prePowerRollEffect"] = Effect(
+                    text=" ".join(pre_power_roll_effect_lines)
+                    .replace("  ", " ")
+                    .strip()
+                )
+                pre_power_roll_effect_lines = []
+                print(
+                    f"  - [{header['name']}]: Pre-power-roll effect: {model['prePowerRollEffect']}"
+                )
+            elif post_power_roll_effect_lines:
+                # We have post-power-roll effect lines, so we join them into a single effect description.
+                model["postPowerRollEffect"] = Effect(
+                    text=" ".join(post_power_roll_effect_lines)
+                    .replace("  ", " ")
+                    .strip()
+                )
+                post_power_roll_effect_lines = []
+                print(
+                    f"  - [{header['name']}]: Post-power-roll effect: {model['postPowerRollEffect']}"
+                )
 
     return model
 

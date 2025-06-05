@@ -1,5 +1,5 @@
-_id: rPIXActPM3cpzSo2
-_key: '!actors!rPIXActPM3cpzSo2'
+_id: HjpsfR10K6X1TMNU
+_key: '!actors!HjpsfR10K6X1TMNU'
 name: Imit Putty
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: l0FGeuZBSe9AugCn
-  _key: '!items!l0FGeuZBSe9AugCn'
+- _id: 0ZRiC5scwRpkPyLV
+  _key: '!items!0ZRiC5scwRpkPyLV'
   name: Sputter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -60,6 +60,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -72,8 +77,8 @@ items:
         damage: 7
         effect:
           text: shift 2
-- _id: AofipHXknKgirvuR
-  _key: '!items!AofipHXknKgirvuR'
+- _id: p7kSzpvN16ZSLdEM
+  _key: '!items!p7kSzpvN16ZSLdEM'
   name: Uncanny Impression
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,3 +92,15 @@ items:
       ranged: 10
     target:
       text: One creature
+      ally: true
+      self: true
+      enemy: true
+      count: 1
+    prePowerRollEffect:
+      text: Until the end of the encounter, the imit putty changes its size to match
+        the target and replaces its signature action with one of the target’s signature
+        actions, using their bonuses for any power roll. Gelatinous The imit putty
+        can move through spaces as if it were size 1T. When it takes damage, it can
+        use a free triggered action to split into two imit putties, splitting their
+        current Stamina in half between them. The new creature has none of the benefits,
+        effects, or conditions that the original has.

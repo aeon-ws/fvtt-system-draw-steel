@@ -1,5 +1,5 @@
-_id: vIoJZstcidQPAlM9
-_key: '!actors!vIoJZstcidQPAlM9'
+_id: m2EHVhLgSgsg7ou2
+_key: '!actors!m2EHVhLgSgsg7ou2'
 name: Gorek
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: D5mVjfXxmA54kTHK
-  _key: '!items!D5mVjfXxmA54kTHK'
+- _id: E7ESXixOdkEDMAps
+  _key: '!items!E7ESXixOdkEDMAps'
   name: Brutal Impact
   type: monsterAbility
   img: icons/svg/book.svg
@@ -60,6 +60,11 @@ items:
       melee: 1
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -74,8 +79,8 @@ items:
         damage: 14
         effect:
           text: push 3
-- _id: imejHItTbOUWT6V1
-  _key: '!items!imejHItTbOUWT6V1'
+- _id: 2hiyVjKMTwC87cU0
+  _key: '!items!2hiyVjKMTwC87cU0'
   name: Lets Tussle
   type: monsterAbility
   img: icons/svg/book.svg
@@ -90,6 +95,10 @@ items:
       melee: 1
     target:
       text: One creature the fury’s size or smaller
+      ally: true
+      self: true
+      enemy: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -113,3 +122,10 @@ items:
           value: 2
           effect:
             text: grabbed
+    postPowerRollEffect:
+      text: Gorek has an edge on strikes against a grabbed creature. Overwhelm Once
+        per turn, when Gorek force moves a target or shifts into a square adjacent
+        to a creature or object, he can make a free strike against them. Great Fortitude
+        Gorek can’t be weakened. Rivalry Gorek selects one creature within line of
+        effect at the start of an encounter. Both Gorek and the creature can add a
+        1d3 to all power rolls made against each other.

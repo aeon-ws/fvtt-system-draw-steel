@@ -1,5 +1,5 @@
-_id: VaAdkIxtXiwKGTog
-_key: '!actors!VaAdkIxtXiwKGTog'
+_id: IpsG1wcGhtpT3L7t
+_key: '!actors!IpsG1wcGhtpT3L7t'
 name: Zombie
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: JgTNUKk0WkYFGk0G
-  _key: '!items!JgTNUKk0WkYFGk0G'
+- _id: 7zrEUcpMR7mWE0kw
+  _key: '!items!7zrEUcpMR7mWE0kw'
   name: Clobber and Clutch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -71,8 +76,13 @@ items:
         damage: 7
         effect:
           text: grabbed
-- _id: 5o3smdzt57GMycJ1
-  _key: '!items!5o3smdzt57GMycJ1'
+    postPowerRollEffect:
+      text: A target who starts their turn grabbed by the zombie takes 2 corruption
+        damage. If a creature takes 5 or more corruption damage this way, they become
+        insatiably hungry for flesh. The target must complete the Find a Cure project
+        to end this effect.
+- _id: AIY1U60f2sMJnLZd
+  _key: '!items!AIY1U60f2sMJnLZd'
   name: Zombie Dust
   type: monsterAbility
   img: icons/svg/book.svg
@@ -86,6 +96,7 @@ items:
       burst: 2
     target:
       text: Each enemy in the burst
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -104,3 +115,5 @@ items:
           value: 2
           effect:
             text: dazed (save ends)
+    prePowerRollEffect:
+      text: The zombie falls prone, expelling a wave of rot and dust.

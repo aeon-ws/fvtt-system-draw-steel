@@ -1,5 +1,5 @@
-_id: CKNJctgRuybsIXwb
-_key: '!actors!CKNJctgRuybsIXwb'
+_id: 8FvCqQ815NV5WbRB
+_key: '!actors!8FvCqQ815NV5WbRB'
 name: Vurkor
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: Yhar8J70YQZERsst
-  _key: '!items!Yhar8J70YQZERsst'
+- _id: IQMVJRWb98CRMiCD
+  _key: '!items!IQMVJRWb98CRMiCD'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       ranged: 10
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -75,8 +80,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: u1Pzz5nzCQH1INKq
-  _key: '!items!u1Pzz5nzCQH1INKq'
+- _id: d9LAOAM1FaYDur0y
+  _key: '!items!d9LAOAM1FaYDur0y'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,6 +98,7 @@ items:
         within: 10
     target:
       text: All enemies in the cube
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -105,8 +111,11 @@ items:
         damage: 8
         effect:
           text: restrained (save ends)
-- _id: M2aa598wASLo97YD
-  _key: '!items!M2aa598wASLo97YD'
+    postPowerRollEffect:
+      text: The affected area is difficult terrain for enemies. An enemy has acid
+        weakness 2 while occupying an affected square.
+- _id: ARscWVpnu7gYvLoj
+  _key: '!items!ARscWVpnu7gYvLoj'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -118,6 +127,12 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
+      self: true
     trigger: Vurkor takes damage.
+    prePowerRollEffect:
+      text: Vurkor teleports 2 squares. Each creature adjacent to his original space
+        takes 2 corruption damage. Glowing Recovery Vurkor can use his maneuver to
+        regain 10 Stamina once per round. Rivalry Vurkor selects one creature within
+        line of effect at the start of an encounter. Both Vurkor and the creature
+        can add a 1d3 to all power rolls made against each other.

@@ -1,5 +1,5 @@
-_id: ikF60GGu4V6cnKzW
-_key: '!actors!ikF60GGu4V6cnKzW'
+_id: zU6rbgrrZS9vWqBT
+_key: '!actors!zU6rbgrrZS9vWqBT'
 name: Human Guard
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: vdIJogvobIru441L
-  _key: '!items!vdIJogvobIru441L'
+- _id: Vc2taGAVJ2XNoIBM
+  _key: '!items!Vc2taGAVJ2XNoIBM'
   name: Halberd
   type: monsterAbility
   img: icons/svg/book.svg
@@ -65,6 +65,11 @@ items:
       melee: 2
     target:
       text: One creature or object per minion
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -73,3 +78,7 @@ items:
         damage: 4
       tier3:
         damage: 5
+    postPowerRollEffect:
+      text: If the guard is flanked, they can make a free strike against an additional
+        target adjacent to them. Supernatural Insight The guard ignores concealment
+        if it’s granted by a supernatural effect, or the target is supernatural.

@@ -1,5 +1,5 @@
-_id: SYDClx9iRGnmLAjs
-_key: '!actors!SYDClx9iRGnmLAjs'
+_id: 8Z7eRQhn66u1S4YY
+_key: '!actors!8Z7eRQhn66u1S4YY'
 name: Goblin Underboss
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: kFQGvYdPnpBPgnG5
-  _key: '!items!kFQGvYdPnpBPgnG5'
+- _id: lSjYCCiOPwX3UB62
+  _key: '!items!lSjYCCiOPwX3UB62'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -59,6 +59,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -67,8 +72,10 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: TExyOOt7z6ZY43BN
-  _key: '!items!TExyOOt7z6ZY43BN'
+    postPowerRollEffect:
+      text: One ally adjacent to the target can make a free strike against them.
+- _id: 342ao9KHr8I6BhoP
+  _key: '!items!342ao9KHr8I6BhoP'
   name: Get Reckless!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,3 +87,9 @@ items:
       burst: 5
     target:
       text: All allies in the burst
+      ally: true
+    prePowerRollEffect:
+      text: Until the start of the underboss’s next turn, each target has an edge
+        on strikes, and strikes made against them have an edge. 2 Malice Strikes made
+        against each target no longer have an edge. Crafty The underboss doesn’t provoke
+        opportunity attacks by moving.

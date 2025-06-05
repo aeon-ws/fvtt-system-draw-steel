@@ -1,5 +1,5 @@
-_id: 7GvpB1E3llsfG6mZ
-_key: '!actors!7GvpB1E3llsfG6mZ'
+_id: UC3crgu2Ksq1XA0d
+_key: '!actors!UC3crgu2Ksq1XA0d'
 name: Ghoul
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: o7o1zklnoYCaCaw8
-  _key: '!items!o7o1zklnoYCaCaw8'
+- _id: ZInC3p9tJ9xDhiFU
+  _key: '!items!ZInC3p9tJ9xDhiFU'
   name: Razor Claws
   type: monsterAbility
   img: icons/svg/book.svg
@@ -62,6 +62,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -75,8 +80,8 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: QIIP9hcgVR3VURy2
-  _key: '!items!QIIP9hcgVR3VURy2'
+- _id: nr46JheMecHJGIan
+  _key: '!items!nr46JheMecHJGIan'
   name: Leap
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,5 +92,12 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
+      self: true
+    prePowerRollEffect:
+      text: The ghoul jumps 3 squares. If they land on a size 1 enemy, that enemy
+        is knocked prone and the ghoul makes a free strike against them. Hunger If
+        the ghoul charges, their speed increases by 2 until the end of their turn.
+        Arise The first time the ghoul is reduced to Stamina 0 by damage that isn’t
+        fire damage or holy damage and their body isn’t destroyed, they regain 1 Stamina
+        and fall prone.

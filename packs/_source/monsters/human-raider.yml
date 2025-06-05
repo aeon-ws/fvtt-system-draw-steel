@@ -1,5 +1,5 @@
-_id: 0ZrwqPkX9tBnrQt7
-_key: '!actors!0ZrwqPkX9tBnrQt7'
+_id: aATnt5BcZVo3NAAW
+_key: '!actors!aATnt5BcZVo3NAAW'
 name: Human Raider
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: AomgODNTZELFQIOK
-  _key: '!items!AomgODNTZELFQIOK'
+- _id: w1sRAWNfXqOOtAhd
+  _key: '!items!w1sRAWNfXqOOtAhd'
   name: Handaxes
   type: monsterAbility
   img: icons/svg/book.svg
@@ -66,6 +66,11 @@ items:
       melee: 1
     target:
       text: One creature or object per minion
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -74,3 +79,7 @@ items:
         damage: 2
       tier3:
         damage: 3
+    postPowerRollEffect:
+      text: lf this ability is used while charging, the raider can make a ranged free
+        strike before using the ability. Supernatural Insight The raider ignores concealment
+        if it’s granted by a supernatural effect, or the target is supernatural.

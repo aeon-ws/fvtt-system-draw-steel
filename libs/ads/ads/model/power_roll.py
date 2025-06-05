@@ -10,7 +10,9 @@ class PowerRollTier(TypedDict):
 
 
 class PowerRoll(TypedDict):
-    bonus: int
+    # If the power roll doesn't have a bonus, it represents a resistance test.  The details will be in the
+    # prePowerRollEffect text.
+    bonus: int | None
     tier1: PowerRollTier
     tier2: PowerRollTier
     tier3: PowerRollTier

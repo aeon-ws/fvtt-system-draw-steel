@@ -1,5 +1,5 @@
-_id: r7aIkYbBriJJRj0R
-_key: '!actors!r7aIkYbBriJJRj0R'
+_id: pFlkSMBzgt3DMmfB
+_key: '!actors!pFlkSMBzgt3DMmfB'
 name: Bugbear Channeler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: iLI1P9oVNC4dTrXw
-  _key: '!items!iLI1P9oVNC4dTrXw'
+- _id: o35wa5qdQFdac3pd
+  _key: '!items!o35wa5qdQFdac3pd'
   name: Shadow Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       ranged: 8
     target:
       text: 2 creatures or objects on the ground
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -75,8 +80,11 @@ items:
         damage: 13
         effect:
           text: pull 4
-- _id: rAf8uCv8G7WM1oeh
-  _key: '!items!rAf8uCv8G7WM1oeh'
+    postPowerRollEffect:
+      text: Each square that a target is pulled through becomes difficult terrain
+        for enemies.
+- _id: vQHFmo90Xibr6hII
+  _key: '!items!vQHFmo90Xibr6hII'
   name: Blistering Element
   type: monsterAbility
   img: icons/svg/book.svg
@@ -89,6 +97,7 @@ items:
       burst: 3
     target:
       text: All enemies in the burst
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -112,8 +121,11 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: ZY67xuK68pk48cVr
-  _key: '!items!ZY67xuK68pk48cVr'
+    postPowerRollEffect:
+      text: 'The channeler chooses one of the following damage types for the damage:
+        acid, cold, corruption, fire, or poison.'
+- _id: pt43VdLy6qQS7d3N
+  _key: '!items!pt43VdLy6qQS7d3N'
   name: Twist Shape
   type: monsterAbility
   img: icons/svg/book.svg
@@ -127,6 +139,10 @@ items:
       ranged: 5
     target:
       text: 1 creature
+      ally: true
+      self: true
+      enemy: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -150,8 +166,12 @@ items:
           value: 2
           effect:
             text: shapechanged
-- _id: 5UEU2Ycft6pQlpNK
-  _key: '!items!5UEU2Ycft6pQlpNK'
+    postPowerRollEffect:
+      text: A shapechanged creature has their limbs violently stretched and their
+        skin becomes paper thin. They are slowed and have fire weakness 10 while they
+        have this effect.
+- _id: AOMM0vzB8OiE9w2i
+  _key: '!items!AOMM0vzB8OiE9w2i'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -163,9 +183,17 @@ items:
       melee: 1
     target:
       text: 1 size 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     trigger: The target is force moved into a square adjacent to the
-- _id: KtGPnywioecmUQmR
-  _key: '!items!KtGPnywioecmUQmR'
+    prePowerRollEffect:
+      text: Vertical push 3. An ally target doesn’t take damage from being force moved.
+        Catcher (Free Triggered Action} channeler. The target is grabbed by the channeler.
+- _id: JdyHeE0jQTBMJUcG
+  _key: '!items!JdyHeE0jQTBMJUcG'
   name: Shadow Veil
   type: monsterAbility
   img: icons/svg/book.svg
@@ -179,4 +207,10 @@ items:
       ranged: 5
     target:
       text: 1 ally
+      ally: true
+      count: 1
     trigger: The target takes damage.
+    prePowerRollEffect:
+      text: The channeler collapses the target into their shadow and halves the damage.
+        The target can’t be targeted by strikes until they reform from the shadows
+        at the start of their next turn.

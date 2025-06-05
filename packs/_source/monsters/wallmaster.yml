@@ -1,5 +1,5 @@
-_id: 59d5slxUeQ7x7u93
-_key: '!actors!59d5slxUeQ7x7u93'
+_id: WiulqhPnR3zcL7v8
+_key: '!actors!WiulqhPnR3zcL7v8'
 name: Wallmaster
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -48,8 +48,8 @@ system:
   weakness:
     acid: 3
 items:
-- _id: Ckm8bmw2dONRjjld
-  _key: '!items!Ckm8bmw2dONRjjld'
+- _id: oo1nVso0bJCI6YI9
+  _key: '!items!oo1nVso0bJCI6YI9'
   name: Wall Slam
   type: monsterAbility
   img: icons/svg/book.svg
@@ -63,6 +63,11 @@ items:
       melee: 1
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -81,8 +86,11 @@ items:
           value: 2
           effect:
             text: prone can
-- _id: aEsKELj1pg0DJAa9
-  _key: '!items!aEsKELj1pg0DJAa9'
+    prePowerRollEffect:
+      text: The wallmaster chooses two wall segments within 10 squares. Each segment
+        falls on a single target within distance, and is then destroyed.
+- _id: spm7EBtxgOkKJoZn
+  _key: '!items!spm7EBtxgOkKJoZn'
   name: Dead End
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,6 +103,11 @@ items:
       melee: 1
     target:
       text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -106,8 +119,11 @@ items:
       tier3:
         effect:
           text: Push5
-- _id: py37lkfit5CRIZpI
-  _key: '!items!py37lkfit5CRIZpI'
+    prePowerRollEffect:
+      text: The wallmaster chooses one wall segment within 10 squares. The segment
+        pushes a target within distance, and shifts into each square they leave behind.
+- _id: fHEmKF6H2QN6YRSO
+  _key: '!items!fHEmKF6H2QN6YRSO'
   name: The Wall Sees All
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,10 +135,13 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
-- _id: Kr8B1EHFPc8KH7kh
-  _key: '!items!Kr8B1EHFPc8KH7kh'
+      self: true
+    prePowerRollEffect:
+      text: The wallmaster teleports to a wall within distance and affixes itself
+        to it.
+- _id: FIJkD1dixt6HeTcS
+  _key: '!items!FIJkD1dixt6HeTcS'
   name: Wall Redirect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -134,4 +153,13 @@ items:
       melee: 1
     target:
       text: 1 ally
+      ally: true
+      count: 1
     trigger: A creature damages the wall with a strike.
+    prePowerRollEffect:
+      text: The wall redirects the strike to the target creature and isn’t targeted
+        by the strike. Living Labyrinth The wallmaster starts combat affixed to a
+        wall. At the start of each round of combat while affixed to a wall, the wallmaster
+        creates a 20 wall of stone within a distance of 10 squares. Any walls created
+        by the wallmaster in the previous round are destroyed or replaced by the new
+        walls.

@@ -1,5 +1,5 @@
-_id: 3cTln65X9q01a4JB
-_key: '!actors!3cTln65X9q01a4JB'
+_id: Efmjf1akereuctDW
+_key: '!actors!Efmjf1akereuctDW'
 name: Goblin Runner
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: oFfbaewt2L5h9Ayx
-  _key: '!items!oFfbaewt2L5h9Ayx'
+- _id: 8zYeC5TETXaO7od2
+  _key: '!items!8zYeC5TETXaO7od2'
   name: Club Charge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -63,6 +63,11 @@ items:
       melee: 1
     target:
       text: One creature or object per minion
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:

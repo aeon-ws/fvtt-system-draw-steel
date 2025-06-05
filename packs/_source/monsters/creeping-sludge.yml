@@ -1,5 +1,5 @@
-_id: E2YYDwL0YsIU87az
-_key: '!actors!E2YYDwL0YsIU87az'
+_id: IEFv4EZZXrZLtxwF
+_key: '!actors!IEFv4EZZXrZLtxwF'
 name: Creeping Sludge
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 2
     acid: 2
 items:
-- _id: qr9YrMzanAysU7m2
-  _key: '!items!qr9YrMzanAysU7m2'
+- _id: XAdu1NlV9ASFPmvu
+  _key: '!items!XAdu1NlV9ASFPmvu'
   name: Corrode
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       melee: 2
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -73,8 +78,11 @@ items:
         damage: 5
         effect:
           text: vertical pull 2
-- _id: ixKpJM1MpJ0diL5x
-  _key: '!items!ixKpJM1MpJ0diL5x'
+    postPowerRollEffect:
+      text: The target gains damage weakness 2 and a -1 penalty to potent effects
+        (save ends). This effect stacks until the target saves.
+- _id: QICNDfvnUN9hfyv7
+  _key: '!items!QICNDfvnUN9hfyv7'
   name: Oozen Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,3 +96,27 @@ items:
       burst: 2
     target:
       text: Each enemy and object in the burst
+      enemy: true
+      object: true
+    powerRoll:
+      tier1:
+        effect:
+          text: grabbed
+      tier2:
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: grabbed vertical pull 1
+      tier3:
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: grabbed vertical pull 2
+    postPowerRollEffect:
+      text: The creeping sludge can have an unlimited number of targets grabbed. Gelatinous
+        The creeping sludge can move through spaces as if it were size 1T. When it
+        takes damage, it can use a free triggered action to split into two creeping
+        sludges, splitting their current Stamina in half between them. The new creature
+        has none of the benefits, effects, or conditions that the original has. ;

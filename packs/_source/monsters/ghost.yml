@@ -1,5 +1,5 @@
-_id: rKcRpvw1iqTELRk5
-_key: '!actors!rKcRpvw1iqTELRk5'
+_id: JLISr2gTt6LTW4Tg
+_key: '!actors!JLISr2gTt6LTW4Tg'
 name: Ghost
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 3
     poison: 3
 items:
-- _id: U4Vr7GIVdsRYbWxc
-  _key: '!items!U4Vr7GIVdsRYbWxc'
+- _id: YmnbVUSgYLKvHAFI
+  _key: '!items!YmnbVUSgYLKvHAFI'
   name: Heat Death
   type: monsterAbility
   img: icons/svg/book.svg
@@ -62,6 +62,10 @@ items:
       ranged: 5
     target:
       text: Two creatures
+      ally: true
+      self: true
+      enemy: true
+      count: 2
     powerRoll:
       bonus: 3
       tier1:
@@ -85,8 +89,10 @@ items:
           value: 3
           effect:
             text: slowed save ends
-- _id: NSICL4Xlle8UzguX
-  _key: '!items!NSICL4Xlle8UzguX'
+    postPowerRollEffect:
+      text: The next strike made against the target has an edge.
+- _id: THMAHWn8o70hzHKO
+  _key: '!items!THMAHWn8o70hzHKO'
   name: Haunt
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,10 +103,15 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self or one incorporeal ally
-- _id: jnCYfS0q9CFAB8qC
-  _key: '!items!jnCYfS0q9CFAB8qC'
+      self: true
+      ally: true
+      count: 1
+    prePowerRollEffect:
+      text: The target shifts up to their speed. 2 Malice The ghost chooses one additional
+        target.
+- _id: NfFF6z39lJrfwoaJ
+  _key: '!items!NfFF6z39lJrfwoaJ'
   name: Shriek
   type: monsterAbility
   img: icons/svg/book.svg
@@ -113,9 +124,16 @@ items:
       melee: 1
     target:
       text: The triggering creature
+      ally: true
+      self: true
+      enemy: true
     trigger: A creature within distance targets the ghost with a strike.
-- _id: HP3XtjDzN1fUPr1Y
-  _key: '!items!HP3XtjDzN1fUPr1Y'
+    prePowerRollEffect:
+      text: The ghost halves the incoming damage and the target takes 2 sonic damage.
+        Phantom Flow Each incorporeal undead creature within 10 squares of the ghost
+        ignores difficult terrain.
+- _id: CW67XFY8IHfmNdaP
+  _key: '!items!CW67XFY8IHfmNdaP'
   name: Paranormal Activity (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +146,13 @@ items:
       burst: 5
     target:
       text: Each size 1S or larger object in the burst
-- _id: j8ch1TDCcz99KG7L
-  _key: '!items!j8ch1TDCcz99KG7L'
+      object: true
+      count: 1
+    prePowerRollEffect:
+      text: Each target floats 1 square into the air and is pulled 5 squares toward
+        the nearest enemy within 3 squares of them.
+- _id: 8JSMnAS2gJ3cOB8M
+  _key: '!items!8JSMnAS2gJ3cOB8M'
   name: Spirited Away (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -142,6 +165,7 @@ items:
       burst: 5
     target:
       text: Each enemy in the burst
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -162,8 +186,13 @@ items:
           value: 3
           effect:
             text: levitated (EoE)
-- _id: 5P1AOcgW9fbKmOVV
-  _key: '!items!5P1AOcgW9fbKmOVV'
+    postPowerRollEffect:
+      text: A levitated target floats 1 square off the ground when they are first
+        affected, then rises 1 square at the end of each of their turns. If a levitated
+        target can’t already fly, they can fly but are slowed and weakened while flying
+        in this way.
+- _id: HBFru98woUivnr73
+  _key: '!items!HBFru98woUivnr73'
   name: Awful Wail (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -176,6 +205,7 @@ items:
       burst: 5
     target:
       text: Each enemy in the burst
+      enemy: true
     powerRoll:
       bonus: 3
       tier1:
@@ -184,3 +214,9 @@ items:
         damage: 5
       tier3:
         damage: 8
+    postPowerRollEffect:
+      text: P<2 the target is reduced to 1 Stamina if they are winded after taking
+        damage. Corruptive Phasing The ghost can move through other creatures and
+        objects at normal speed. The first time in a round that the ghost passes through
+        a creature, that creature takes 2 corruption damage. The ghost doesn’t take
+        damage from being force moved into objects. -

@@ -1,5 +1,5 @@
-_id: EyU2mOEkAFwNFM7A
-_key: '!actors!EyU2mOEkAFwNFM7A'
+_id: sfzy1ZB8a1wehfnT
+_key: '!actors!sfzy1ZB8a1wehfnT'
 name: Goblin Stinker
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: zB7Kk1YvNmLo3VNk
-  _key: '!items!zB7Kk1YvNmLo3VNk'
+- _id: 7k6DwKHqi0HxiTLn
+  _key: '!items!7k6DwKHqi0HxiTLn'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,7 @@ items:
         within: 15
     target:
       text: Each enemy in the cube
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -75,8 +76,8 @@ items:
         damage: 3
         effect:
           text: slide 3
-- _id: FjAqNytX7Av1NFVz
-  _key: '!items!FjAqNytX7Av1NFVz'
+- _id: UDzUSrC7NBri0bhF
+  _key: '!items!UDzUSrC7NBri0bhF'
   name: Swamp Gas
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,3 +93,10 @@ items:
         within: 10
     target:
       text: Special
+      special: true
+    prePowerRollEffect:
+      text: The area is filled with a green haze until the start of the stinker’s
+        next turn or until the stinker is reduced to Stamina 0. The area is difficult
+        terrain for non-goblin creatures, and each such creature who moves within
+        the area takes 2 poison damage for each square moved. The haze can’t be dispersed
+        by wind. Crafty The stinker doesn’t provoke opportunity attacks by moving.

@@ -1,5 +1,5 @@
-_id: J6CF0KQ3dEaL5XnB
-_key: '!actors!J6CF0KQ3dEaL5XnB'
+_id: t6WvIi2KHY2COnXR
+_key: '!actors!t6WvIi2KHY2COnXR'
 name: Spindlegoth
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 1
     freeStrikeDamage: 2
 items:
-- _id: HWUOhhdxPwhN5rNu
-  _key: '!items!HWUOhhdxPwhN5rNu'
+- _id: ojtZksW3LZUxz9qa
+  _key: '!items!ojtZksW3LZUxz9qa'
   name: Choking Thread
   type: monsterAbility
   img: icons/svg/book.svg
@@ -59,6 +59,11 @@ items:
       ranged: 5
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -77,8 +82,11 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
-- _id: Uuukuww3DLlECuy8
-  _key: '!items!Uuukuww3DLlECuy8'
+    postPowerRollEffect:
+      text: The target suffocates while restrained by this ability. If this ability
+        fails to restrain the target, the spindlegoth shifts 2 and hides.
+- _id: dnaWCBLWgyB6f1jI
+  _key: '!items!dnaWCBLWgyB6f1jI'
   name: Thread Whip
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,6 +100,7 @@ items:
       burst: 1
     target:
       text: Each enemy in the burst
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -103,8 +112,8 @@ items:
       tier3:
         effect:
           text: Vertical slide 3
-- _id: VllCs9lPayLDQswz
-  _key: '!items!VllCs9lPayLDQswz'
+- _id: eD9MFpJKmDZvGACC
+  _key: '!items!eD9MFpJKmDZvGACC'
   name: Tightwire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -116,5 +125,10 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
+      self: true
+    prePowerRollEffect:
+      text: The spindlegoth shifts up to their speed, including vertically. They must
+        end this movement on a solid surface. Needlefoot The spindlegoth ignores difficult
+        terrain. Whenever the spindlegoth enters a square while climbing, the surface
+        they’re climbing on takes 1 damage.

@@ -1,5 +1,5 @@
-_id: KQp8DoDItMNAtOJW
-_key: '!actors!KQp8DoDItMNAtOJW'
+_id: Mc06MD9oXmCrwD5t
+_key: '!actors!Mc06MD9oXmCrwD5t'
 name: War Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 2
     freeStrikeDamage: 4
 items:
-- _id: GR9My7FW1AqGig9Q
-  _key: '!items!GR9My7FW1AqGig9Q'
+- _id: cmtgEauSf2Do21yi
+  _key: '!items!cmtgEauSf2Do21yi'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -59,6 +59,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -72,8 +77,8 @@ items:
           value: 2
           effect:
             text: weakened (save ends)
-- _id: muuJrDsLfeUbP1YY
-  _key: '!items!muuJrDsLfeUbP1YY'
+- _id: Uq0QjwjLejBVxpDI
+  _key: '!items!Uq0QjwjLejBVxpDI'
   name: Leg Blade
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,6 +92,11 @@ items:
       melee: 1
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -95,8 +105,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: 9VfTIuhnJ8fLbKKt
-  _key: '!items!9VfTIuhnJ8fLbKKt'
+- _id: ylFOQNtzInkl5P38
+  _key: '!items!ylFOQNtzInkl5P38'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,10 +118,14 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
-- _id: zTyBKkpNQfElYNEI
-  _key: '!items!zTyBKkpNQfElYNEI'
+      self: true
+    prePowerRollEffect:
+      text: The spider shifts up to their speed and makes a Leg Blade strike against
+        each creature who comes within 1 of the spider during the move. The spider
+        makes one power roll against all targets.
+- _id: hCyaC6xHjwreVU1B
+  _key: '!items!hCyaC6xHjwreVU1B'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -124,11 +138,27 @@ items:
       cube:
         size: 3
         within: 1
+    powerRoll:
+      tier1:
+        effect:
+          text: 0restrained (save ends)
+      tier2:
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 1
+          effect:
+            text: restrained (save ends)
+      tier3:
+        potencyEffect:
+          targetCharacteristic: agility
+          value: 2
+          effect:
+            text: restrained (save ends)
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: lLvAxSnAYIzpPpW4
-  _key: '!items!lLvAxSnAYIzpPpW4'
+- _id: VDtRSNRfGEGaROH0
+  _key: '!items!VDtRSNRfGEGaROH0'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -139,6 +169,13 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
+      self: true
     trigger: The spider or an ally riding the spider take damage.
+    prePowerRollEffect:
+      text: The spider halves the damage, and then shifts 2 squares after the triggering
+        effect resolves. Ride Launcher An ally who leaps off the back of the spider
+        can jump up to 6 squares without a test, and takes no damage if they fall
+        during the jump. After the jump, the first melee strike an ally makes on the
+        same turn gains an edge. Wide Back Two of the spider’s size 1 allies can occupy
+        the same space while riding the spider.

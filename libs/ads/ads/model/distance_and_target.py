@@ -23,7 +23,12 @@ class Distance(TypedDict, total=False):
 
 
 class Target(TypedDict, total=False):
+    ally: Optional[bool]
+    creature: Optional[bool]
+    enemy: Optional[bool]
+    object: Optional[bool]
     self: Optional[bool]
+
     special: Optional[bool]
     filter: Optional[str]
     text: str

@@ -1,5 +1,5 @@
-_id: uCwbNC2wycywchPV
-_key: '!actors!uCwbNC2wycywchPV'
+_id: QsZ8GUsQuToAcKIa
+_key: '!actors!QsZ8GUsQuToAcKIa'
 name: Werewolf
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: v4m8fBECKXiz0Kqy
-  _key: '!items!v4m8fBECKXiz0Kqy'
+- _id: T539kB2RNmb868EP
+  _key: '!items!T539kB2RNmb868EP'
   name: Accursed Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       melee: 1
     target:
       text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 3
       tier1:
@@ -69,8 +74,13 @@ items:
         damage: 13
       tier3:
         damage: 16
-- _id: NlHjNz0lqCQD7WbH
-  _key: '!items!NlHjNz0lqCQD7WbH'
+    postPowerRollEffect:
+      text: A creature afflicted with lycanthropy accumulates 2 rage at the end of
+        each of their turns whenever they’re in combat. Their rage does not disappear
+        after completing a respite; they must complete the Find a Cure project to
+        end this condition.
+- _id: nVSVbYQJsCh9ze9f
+  _key: '!items!nVSVbYQJsCh9ze9f'
   name: Ripping Claws
   type: monsterAbility
   img: icons/svg/book.svg
@@ -84,6 +94,11 @@ items:
       melee: 1
     target:
       text: Two creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 3
       tier1:
@@ -97,8 +112,8 @@ items:
         damage: 11
       tier3:
         damage: 14
-- _id: vmDx9Yp9NVRyCWVC
-  _key: '!items!vmDx9Yp9NVRyCWVC'
+- _id: AiuvHZo8daTROdew
+  _key: '!items!AiuvHZo8daTROdew'
   name: Berserker Slash
   type: monsterAbility
   img: icons/svg/book.svg
@@ -113,6 +128,8 @@ items:
       burst: 1
     target:
       text: All enemies and objects in the burst
+      enemy: true
+      object: true
     powerRoll:
       bonus: 3
       tier1:
@@ -127,8 +144,10 @@ items:
         damage: 7
         effect:
           text: rage slide 3
-- _id: mbYYfUqmXdixGoKj
-  _key: '!items!mbYYfUqmXdixGoKj'
+    postPowerRollEffect:
+      text: The werewolf shifts up to their speed before using this ability.
+- _id: 3TMcTkNuyYxFvOaI
+  _key: '!items!3TMcTkNuyYxFvOaI'
   name: Wall Leap
   type: monsterAbility
   img: icons/svg/book.svg
@@ -139,10 +158,14 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
-- _id: QZfr98CrIz8fF90Z
-  _key: '!items!QZfr98CrIz8fF90Z'
+      self: true
+    prePowerRollEffect:
+      text: The werewolf jumps 4 squares. If they end this movement at a wall, the
+        werewolf jumps off the wall 4 squares and makes a melee free strike that M<2
+        knocks the target prone.
+- _id: 3ZryF6ugktAtrAqv
+  _key: '!items!3ZryF6ugktAtrAqv'
   name: Facepalm and Head Slam
   type: monsterAbility
   img: icons/svg/book.svg
@@ -155,9 +178,16 @@ items:
       melee: 1
     target:
       text: 1 creature
+      ally: true
+      self: true
+      enemy: true
+      count: 1
     trigger: The target targets the werewolf with a melee ability after
-- _id: 91voMnM4VCnNJHWG
-  _key: '!items!91voMnM4VCnNJHWG'
+    prePowerRollEffect:
+      text: The target is knocked prone and takes 5 damage before executing the ability.
+        Vukenstep The werewolfignores difficult terrain.
+- _id: 8evfrzGB57OA4Mka
+  _key: '!items!8evfrzGB57OA4Mka'
   name: Howl (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -169,8 +199,24 @@ items:
       burst: 5
     target:
       text: All enemies in the burst
-- _id: jVzgBu8ifTwBOC82
-  _key: '!items!jVzgBu8ifTwBOC82'
+      enemy: true
+    powerRoll:
+      tier1:
+        effect:
+          text: Target move 5 up to their speed away from the werewolf frightened
+            (save ends)
+      tier2:
+        effect:
+          text: Frightened (EoT)
+      tier3:
+        effect:
+          text: no effect
+    prePowerRollEffect:
+      text: Each target makes an Intuition test.
+    postPowerRollEffect:
+      text: Enemies that have 1 or more rage gain 4 rage and howl along with the werewolf.
+- _id: 2RhtbRiYZmtg4W7E
+  _key: '!items!2RhtbRiYZmtg4W7E'
   name: Full Wolf (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -181,10 +227,17 @@ items:
     distance:
       self: true
     target:
-      self: true
       text: Self
-- _id: keQ3mykfQfjE7hG4
-  _key: '!items!keQ3mykfQfjE7hG4'
+      self: true
+    prePowerRollEffect:
+      text: The werewolf changes into a massive wolf, pushing adjacent creatures out
+        of their way and moving into a square that can accommodate their new size.
+        Until they die or the end of the encounter, their Speed is 10, their Size
+        is 3, and their Stability is 2. Each of the werewolf’s strikes deal an additional
+        2 damage and inflict an additional 1 rage. The potency of the werewolf’s Accursed
+        Bite increases by 1.
+- _id: LZPzNmgYNbqtKX5S
+  _key: '!items!LZPzNmgYNbqtKX5S'
   name: Rampage (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -198,6 +251,9 @@ items:
       burst: 2
     target:
       text: All creatures in the burst
+      ally: true
+      self: true
+      enemy: true
     powerRoll:
       bonus: 3
       tier1:
@@ -206,3 +262,5 @@ items:
         damage: 8
       tier3:
         damage: 11
+    postPowerRollEffect:
+      text: The werewolf shifts up to their speed before and after using this ability.

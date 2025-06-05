@@ -1,5 +1,5 @@
-_id: dKu3bCBPkO5A19UK
-_key: '!actors!dKu3bCBPkO5A19UK'
+_id: R7AsHPAQHx5xkJe0
+_key: '!actors!R7AsHPAQHx5xkJe0'
 name: Ogre Goon
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 4
     freeStrikeDamage: 5
 items:
-- _id: 17VKerOoKB28BGj2
-  _key: '!items!17VKerOoKB28BGj2'
+- _id: O5VuzQZYY9aZUxxz
+  _key: '!items!O5VuzQZYY9aZUxxz'
   name: Club Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -59,6 +59,11 @@ items:
       melee: 2
     target:
       text: 2 creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
     powerRoll:
       bonus: 2
       tier1:
@@ -73,8 +78,11 @@ items:
         damage: 14
         effect:
           text: push 6 prone
-- _id: 9bIAYa02GfvkRBVN
-  _key: '!items!9bIAYa02GfvkRBVN'
+    postPowerRollEffect:
+      text: This strike deals an additional 4 damage to each creature and object that
+        takes damage from any force movement it causes.
+- _id: MW76fTINXVU95DtZ
+  _key: '!items!MW76fTINXVU95DtZ'
   name: Grabby Hand
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,6 +96,11 @@ items:
       melee: 1
     target:
       text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -100,8 +113,12 @@ items:
         damage: 14
         effect:
           text: grabbed
-- _id: Cin1Sq2sHReW3NJ0
-  _key: '!items!Cin1Sq2sHReW3NJ0'
+    postPowerRollEffect:
+      text: The goon can only have one target grabbed at a time. 1 Malice The target
+        has a bane on escaping the grab while the goon crushes the target in their
+        hand.
+- _id: xgsyPC0qjNEOCdWJ
+  _key: '!items!xgsyPC0qjNEOCdWJ'
   name: People Bowling
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,6 +136,10 @@ items:
         within: 1
     target:
       text: All creatures and objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
     powerRoll:
       bonus: 3
       tier1:
@@ -129,8 +150,12 @@ items:
         damage: 12
         effect:
           text: prone
-- _id: 9a0L9veEOJJKwNZX
-  _key: '!items!9a0L9veEOJJKwNZX'
+    prePowerRollEffect:
+      text: The goon hurls what’s in their hand down the line and rolls power. The
+        hurled creature or object counts as a target and lands in the last square
+        of the line (or nearest unoccupied square of the goon’s choice).
+- _id: AQl8e6WAt0lkqugb
+  _key: '!items!AQl8e6WAt0lkqugb'
   name: Swat The Fly
   type: monsterAbility
   img: icons/svg/book.svg
@@ -142,4 +167,11 @@ items:
       melee: 1
     target:
       text: 1 adjacent creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     trigger: The target moves or shifts away from the goon.
+    prePowerRollEffect:
+      text: Slide 5. Defiant Anger The goon has damage immunity 2 while they are winded.

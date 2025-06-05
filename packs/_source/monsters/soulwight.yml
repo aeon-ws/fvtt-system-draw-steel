@@ -1,5 +1,5 @@
-_id: iTYEorwltxklouSa
-_key: '!actors!iTYEorwltxklouSa'
+_id: XzLWBwyOn1840SI9
+_key: '!actors!XzLWBwyOn1840SI9'
 name: Soulwight
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: Xb7uOjIdhq8LwyTG
-  _key: '!items!Xb7uOjIdhq8LwyTG'
+- _id: kV6yW2O0o6PzoPBd
+  _key: '!items!kV6yW2O0o6PzoPBd'
   name: Soulstealer Longsword
   type: monsterAbility
   img: icons/svg/book.svg
@@ -61,6 +61,11 @@ items:
       melee: 1
     target:
       text: One creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
     powerRoll:
       bonus: 2
       tier1:
@@ -79,8 +84,12 @@ items:
           value: 2
           effect:
             text: slowed and weakened
-- _id: ZbehuOwWBTA5dBQ9
-  _key: '!items!ZbehuOwWBTA5dBQ9'
+    postPowerRollEffect:
+      text: The target appears to rapidly age each time they take damage from this
+        ability. The target regains their former appearance when the soulwight is
+        destroyed.
+- _id: EZWNEvRvaoxhijtG
+  _key: '!items!EZWNEvRvaoxhijtG'
   name: Stolen Vitality
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,3 +103,10 @@ items:
       ranged: 5
     target:
       text: One ally
+      ally: true
+      count: 1
+    prePowerRollEffect:
+      text: The target regains 10 Stamina. The soulwight can’t use this maneuver again
+        until they strike a creature with their lifestealer longsword. Arise The first
+        time the soulwight is reduced to Stamina 0 by damage that isn’t fire damage
+        or holy damage and their body isn’t destroyed, they 1 Stamina and fall prone.
