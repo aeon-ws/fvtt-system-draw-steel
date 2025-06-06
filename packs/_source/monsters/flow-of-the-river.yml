@@ -1,5 +1,5 @@
-_id: LizxLk0WRsY0r6pw
-_key: '!actors!LizxLk0WRsY0r6pw'
+_id: WngInWPcJf3dUnfZ
+_key: '!actors!WngInWPcJf3dUnfZ'
 name: Flow of the River
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: CCnQnKgUcF7l8Hby
-  _key: '!items!CCnQnKgUcF7l8Hby'
+- _id: 1LnHJ3dTc50zTcTc
+  _key: '!items!1LnHJ3dTc50zTcTc'
   name: Bite and Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -74,12 +74,12 @@ items:
       tier1:
         damage: 2
         effect:
-          text: shift 1 pull 1
+          text: shift 1
       tier2:
         damage: 3
         effect:
-          text: shift 2 pull 2
+          text: shift 2
       tier3:
         damage: 5
         effect:
-          text: shift 3 pull 3
+          text: shift 3

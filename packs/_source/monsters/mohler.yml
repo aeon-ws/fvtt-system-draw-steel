@@ -1,5 +1,5 @@
-_id: y1Wmbyhh0iMXAlGS
-_key: '!actors!y1Wmbyhh0iMXAlGS'
+_id: VeRZsyNmxiPKWwVD
+_key: '!actors!VeRZsyNmxiPKWwVD'
 name: Mohler
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: KpvUcfOt7hvhdKZP
-  _key: '!items!KpvUcfOt7hvhdKZP'
+- _id: DpOYe446eKuRuEno
+  _key: '!items!DpOYe446eKuRuEno'
   name: Earth Bump
   type: monsterAbility
   img: icons/svg/book.svg

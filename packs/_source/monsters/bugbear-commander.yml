@@ -1,5 +1,5 @@
-_id: c7ilhSylobpm9csf
-_key: '!actors!c7ilhSylobpm9csf'
+_id: AWgv5Qg1bjZloyXM
+_key: '!actors!AWgv5Qg1bjZloyXM'
 name: Bugbear Commander
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: QUf1eoOfDP1mZceG
-  _key: '!items!QUf1eoOfDP1mZceG'
+- _id: 95FD95SEGZmKWhfm
+  _key: '!items!95FD95SEGZmKWhfm'
   name: Inspiring Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,14 +79,13 @@ items:
     postPowerRollEffect:
       text: 1 ally within 5 of the commander has an edge on their next strike until
         the start of the commander's next turn.
-- _id: 1wftaIrT8p8p5IIY
-  _key: '!items!1wftaIrT8p8p5IIY'
+- _id: 6kFBItphrDobVWle
+  _key: '!items!6kFBItphrDobVWle'
   name: You Next!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: mainAction
     distance:
       ranged: 8
@@ -96,15 +95,14 @@ items:
       count: 1
     prePowerRollEffect:
       text: The target moves up to their speed and uses a signature action.
-- _id: 0mizvjZYQmQ8qpMn
-  _key: '!items!0mizvjZYQmQ8qpMn'
+- _id: VGnbeaiFMFL9ug2l
+  _key: '!items!VGnbeaiFMFL9ug2l'
   name: Fall Back!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
     maliceCost: 5
-    keywords:
-    - —
+    keywords: []
     type: mainAction
     distance:
       self: true
@@ -115,14 +113,13 @@ items:
     prePowerRollEffect:
       text: Each target shifts up to their speed. Each target can use the Throw maneuver
         if they are grabbing a creature or object.
-- _id: Q1adNln4KdoUd03t
-  _key: '!items!Q1adNln4KdoUd03t'
+- _id: m5SYHTPgt0U0wbdr
+  _key: '!items!m5SYHTPgt0U0wbdr'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: maneuver
     distance:
       melee: 1
@@ -135,7 +132,7 @@ items:
       count: 1
     trigger: The target is force moved into a square adjacent to the
     prePowerRollEffect:
-      text: Vertical push 4. An ally target doesn’t take damage from being force moved.
-        Catcher (Free Triggered Action} commander. The target is grabbed by the commander.
-        The Commander’s Watching While an ally has line of effect to the commander,
+      text: Vertical push 4. An ally target doesn't take damage from being force moved.
+        Catcher (Free Triggered Action commander. The target is grabbed by the commander.
+        The Commander's Watching While an ally has line of effect to the commander,
         the ally can end one condition afflicting them at the start of their turn.

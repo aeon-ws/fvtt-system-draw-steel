@@ -1,5 +1,5 @@
-_id: GEIrfPiEcgKnUFRc
-_key: '!actors!GEIrfPiEcgKnUFRc'
+_id: Atecek9ojPWPIPig
+_key: '!actors!Atecek9ojPWPIPig'
 name: Clawfish
 type: minion
 img: icons/svg/mystery-man.svg
@@ -51,8 +51,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: ke6YS1qrbvTI5iY9
-  _key: '!items!ke6YS1qrbvTI5iY9'
+- _id: UGyrDzD8v2j64y0h
+  _key: '!items!UGyrDzD8v2j64y0h'
   name: Hookclaw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -84,4 +84,4 @@ items:
     postPowerRollEffect:
       text: A target grabbed by this ability takes 2 lightning damage at the start
         of each of their turns. Shocking The clawfish deals 2 lightning damage to
-        each wet enemy within 2 at the start of each of the clawfish’s turns.
+        each wet enemy within 2 at the start of each of the clawfish's turns.

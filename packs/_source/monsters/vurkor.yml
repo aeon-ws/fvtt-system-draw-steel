@@ -1,5 +1,5 @@
-_id: 8FvCqQ815NV5WbRB
-_key: '!actors!8FvCqQ815NV5WbRB'
+_id: uKa7ystYLt9jXZwO
+_key: '!actors!uKa7ystYLt9jXZwO'
 name: Vurkor
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: IQMVJRWb98CRMiCD
-  _key: '!items!IQMVJRWb98CRMiCD'
+- _id: aHO3v0ZA0WDAK8Pk
+  _key: '!items!aHO3v0ZA0WDAK8Pk'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,8 +80,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: d9LAOAM1FaYDur0y
-  _key: '!items!d9LAOAM1FaYDur0y'
+- _id: FzCVYnlTvWZ2JDkx
+  _key: '!items!FzCVYnlTvWZ2JDkx'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -114,8 +114,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: ARscWVpnu7gYvLoj
-  _key: '!items!ARscWVpnu7gYvLoj'
+- _id: kYO0x1bl9eAtBMGY
+  _key: '!items!kYO0x1bl9eAtBMGY'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg

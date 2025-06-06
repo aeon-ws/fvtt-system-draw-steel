@@ -1,5 +1,5 @@
-_id: BPKkIDQynhKxJ2c6
-_key: '!actors!BPKkIDQynhKxJ2c6'
+_id: DHSkjmoP7HJ086tr
+_key: '!actors!DHSkjmoP7HJ086tr'
 name: Shade
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: tjEsfBQKPE365yMF
-  _key: '!items!tjEsfBQKPE365yMF'
+- _id: JtrwghwaJ4eppkkv
+  _key: '!items!JtrwghwaJ4eppkkv'
   name: Life Drain
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,4 +79,8 @@ items:
       tier3:
         damage: 5
         effect:
-          text: the target move 5 up to their
+          text: the target move 5 up to their speed away from all shades Shadow Phasing
+            The shade can move through other creatures and objects at normal speed
+            The first time in a round that the shade passes through a creature that
+            creature takes 1 corruption damage The shade doesn t take damage from
+            being force moved into objects

@@ -1,5 +1,5 @@
-_id: m1LEkIhnXXMUb9lN
-_key: '!actors!m1LEkIhnXXMUb9lN'
+_id: CSwM0CMxIfoB35dI
+_key: '!actors!CSwM0CMxIfoB35dI'
 name: Human Archer
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: WanUSuJ2mr2egGX0
-  _key: '!items!WanUSuJ2mr2egGX0'
+- _id: JbOdOHgM2r2cNYkX
+  _key: '!items!JbOdOHgM2r2cNYkX'
   name: Crossbow
   type: monsterAbility
   img: icons/svg/book.svg

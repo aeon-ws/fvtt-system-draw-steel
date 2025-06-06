@@ -1,5 +1,5 @@
-_id: JOEz44dnxIeLwcLk
-_key: '!actors!JOEz44dnxIeLwcLk'
+_id: vfleBeNfWBTyAGSM
+_key: '!actors!vfleBeNfWBTyAGSM'
 name: Dwarf Stonewhisperer
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: fsT2PB4TGS6gOwaw
-  _key: '!items!fsT2PB4TGS6gOwaw'
+- _id: HFpNovkPoItywuOd
+  _key: '!items!HFpNovkPoItywuOd'
   name: Tile Slide
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be slid by this ability.
-- _id: d2nIkdqTrJTaXedS
-  _key: '!items!d2nIkdqTrJTaXedS'
+- _id: fQwG76SBUXv0s48K
+  _key: '!items!fQwG76SBUXv0s48K'
   name: Stone Wave
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: t50TzVjwtAWUP3W2
-_key: '!actors!t50TzVjwtAWUP3W2'
+_id: f0KiCB77bSZ6EZPT
+_key: '!actors!f0KiCB77bSZ6EZPT'
 name: Goblin Sniper
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: J4vGiq60oVh7CnMT
-  _key: '!items!J4vGiq60oVh7CnMT'
+- _id: 8eaU8AuHiCQxgWW2
+  _key: '!items!8eaU8AuHiCQxgWW2'
   name: Bow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -76,13 +76,23 @@ items:
       tier3:
         damage: 5
     postPowerRollEffect:
-      text: If the sniper doesn’t use a move action this turn, the ability has an
-        edge. Crafty The sniper doesn’t provoke opportunity attacks by moving. GOBLIN
-        SPINECLEAVER Levet 1 Minton BRUTE Goblin, Humanoid EV 3 for four minions Stamina
-        5 Speed 5 (climb) Size 1S / Stability 0 With Captain Strike damage +1 Free
-        Strike 2 Might+2 Agility+O0 Reason+0O Intuition+O Presence -1
-- _id: QUyFEyRMbErWOqOi
-  _key: '!items!QUyFEyRMbErWOqOi'
+      text: If the sniper doesn't use a move action this turn, the ability has an
+        edge.
+- _id: 4ZdSfpZqC2BRFEpa
+  _key: '!items!4ZdSfpZqC2BRFEpa'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The sniper doesn't provoke opportunity attacks by moving. GOBLIN SPINECLEAVER
+        Levet 1 Minton BRUTE Goblin, Humanoid EV 3 for four minions Stamina 5 Speed
+        5 (climb) Size 1S / Stability 0 With Captain Strike damage +1 Free Strike
+        2 Might+2 Agility+O0 Reason+0O Intuition+O Presence -1
+- _id: R8f1zBcZ9DbXrOeH
+  _key: '!items!R8f1zBcZ9DbXrOeH'
   name: Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -115,3 +125,13 @@ items:
         damage: 5
         effect:
           text: push 4
+- _id: 5pFyA8ZyIXFhP3iK
+  _key: '!items!5pFyA8ZyIXFhP3iK'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The spinecleaver doesn't provoke opportunity attacks by moving.

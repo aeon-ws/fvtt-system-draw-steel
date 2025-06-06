@@ -1,5 +1,5 @@
-_id: 8Klpz0cGrEgp5Bhl
-_key: '!actors!8Klpz0cGrEgp5Bhl'
+_id: Wi84OLYeVP8KaNXj
+_key: '!actors!Wi84OLYeVP8KaNXj'
 name: Decrepit Skeleton
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: F4eG0jnqSubWcGAN
-  _key: '!items!F4eG0jnqSubWcGAN'
+- _id: Z8DLjuUPmYSUAkoS
+  _key: '!items!Z8DLjuUPmYSUAkoS'
   name: Bone Bow
   type: monsterAbility
   img: icons/svg/book.svg

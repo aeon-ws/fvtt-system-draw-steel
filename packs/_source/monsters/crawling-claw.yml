@@ -1,5 +1,5 @@
-_id: fLCwpDh3TL7WGbi1
-_key: '!actors!fLCwpDh3TL7WGbi1'
+_id: tad42mt37EnXahZU
+_key: '!actors!tad42mt37EnXahZU'
 name: Crawling Claw
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: TxrSLO5IRefQL9O6
-  _key: '!items!TxrSLO5IRefQL9O6'
+- _id: T62Me5eocSnN2ptM
+  _key: '!items!T62Me5eocSnN2ptM'
   name: Fingernails
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,4 +79,4 @@ items:
         damage: 37
     postPowerRollEffect:
       text: The crawling claw shifts a number of squares equal to the damage dealt.
-        Disorganized The crawling claw can’t grant the flanking benefit to allies.
+        Disorganized The crawling claw can't grant the flanking benefit to allies.

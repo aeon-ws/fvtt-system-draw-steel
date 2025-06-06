@@ -1,23 +1,21 @@
 // src/main.ts
 
-import { HeroData } from "@data/heroData";
-import { EnemyData } from "@data/enemyData";
-import { clearSquadHighlights, highlightSquad, MinionSquad } from "@data/minionSquad";
-import { IMinionData, MinionData } from "@data/minionData";
-import { HeroSheet } from "@ui/heroSheet";
-import { EnemySheet } from "@ui/enemySheet";
-import { MinionSheet } from "@ui/minionSheet";
-import { ObjectSheet } from "@ui/objectSheet";
-import { AdsToken } from "@ui/adsToken";
+import { HeroData } from "@hero/heroData";
+import { EnemyData } from "@enemy/enemyData";
+import { clearSquadHighlights, highlightSquad, MinionSquad } from "@minion/minionSquad";
+import { IMinionData, MinionData } from "@minion/minionData";
+import { HeroSheet } from "@hero/heroSheet";
+import { EnemySheet } from "@enemy/enemySheet";
+import { MinionSheet } from "@minion/minionSheet";
+import { ObjectSheet } from "@object/objectSheet";
+import { ActorToken } from "@actor/actorToken";
 import { asEnemyToken, asMinionToken } from "@utils/tokenDocument";
 import { isMinionActor } from "@utils/actor";
-
-import "/ui/styles/styles.scss";
-import { AdsTokenHud } from "@ui/token-hud/adsTokenHud";
-import { Effects } from "data/effects/effects";
-import { ObjectData } from "@data/objectData";
-import { AbilityData } from "@data/abilityData";
-
+import { ActorTokenHud } from "@actor/actorTokenHud";
+import { Effects } from "@actor/effects";
+import { ObjectData } from "@object/objectData";
+import { AbilityData } from "@actor/abilityData";
+import "/styles.scss";
 
 Hooks.once("init", async () => {
     console.log("Aeon-Draw-Steel | Initializing system");
@@ -77,8 +75,8 @@ Hooks.once("init", async () => {
 
     // Hook up the system-specific token and token HUD classes.
     // @ts-ignore
-    CONFIG.Token.hudClass = AdsTokenHud;
-    CONFIG.Token.objectClass = AdsToken;
+    CONFIG.Token.hudClass = ActorTokenHud;
+    CONFIG.Token.objectClass = ActorToken;
     CONFIG.statusEffects = Effects;
     CONFIG.Item.dataModels.enemyAbility = AbilityData;
     CONFIG.Item.dataModels.heroAbility = AbilityData;

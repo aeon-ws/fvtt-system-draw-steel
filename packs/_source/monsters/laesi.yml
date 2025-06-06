@@ -1,5 +1,5 @@
-_id: AFANbEDWu8YbqQp7
-_key: '!actors!AFANbEDWu8YbqQp7'
+_id: XkaIjFq2F8YimwFk
+_key: '!actors!XkaIjFq2F8YimwFk'
 name: Laesi
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: zygHDY0xBxogecFq
-  _key: '!items!zygHDY0xBxogecFq'
+- _id: 0PjCavbxlmdmiEP0
+  _key: '!items!0PjCavbxlmdmiEP0'
   name: Nimble Step
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,8 +79,8 @@ items:
         damage: 13
         effect:
           text: shift 4
-- _id: rWLjVTBuIftHsItP
-  _key: '!items!rWLjVTBuIftHsItP'
+- _id: SF10l8MXJgbpHtZS
+  _key: '!items!SF10l8MXJgbpHtZS'
   name: Numb
   type: monsterAbility
   img: icons/svg/book.svg

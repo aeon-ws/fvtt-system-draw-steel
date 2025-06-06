@@ -1,5 +1,5 @@
-_id: dvAIjBKq8xWONaYs
-_key: '!actors!dvAIjBKq8xWONaYs'
+_id: JFabfyBGtMogH6RH
+_key: '!actors!JFabfyBGtMogH6RH'
 name: Dwarf Warden
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: w6O7bEmIQHxG617Y
-  _key: '!items!w6O7bEmIQHxG617Y'
+- _id: 5AEpuUS8dceCtTgA
+  _key: '!items!5AEpuUS8dceCtTgA'
   name: Concussive Maul
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: sa4RsyS6NYLKdkLw
-  _key: '!items!sa4RsyS6NYLKdkLw'
+- _id: LrdWxR0ZKU5djPGD
+  _key: '!items!LrdWxR0ZKU5djPGD'
   name: Concussive Shockwave
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: 31wBSkF9vrOGay4m
-_key: '!actors!31wBSkF9vrOGay4m'
+_id: 00BqMZZWitGJwGtQ
+_key: '!actors!00BqMZZWitGJwGtQ'
 name: Sudden Downpour
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
   immunity:
     fire: 2
 items:
-- _id: WCI72BEWojlgdkaP
-  _key: '!items!WCI72BEWojlgdkaP'
+- _id: iNuD1J5sy8GFugX6
+  _key: '!items!iNuD1J5sy8GFugX6'
   name: Leap Upon
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
             text: bleeding (save ends)
     postPowerRollEffect:
       text: The downpour jumps 3 squares before making the strike.
-- _id: QauPAOwplnDTztmL
-  _key: '!items!QauPAOwplnDTztmL'
+- _id: tNj8zNkg3bYsZ1nX
+  _key: '!items!tNj8zNkg3bYsZ1nX'
   name: See Through
   type: monsterAbility
   img: icons/svg/book.svg

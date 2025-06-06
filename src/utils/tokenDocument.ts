@@ -1,11 +1,11 @@
 
-import { IHeroData } from "@data/heroData";
-import { IEnemyData } from "@data/enemyData";
-import { IMinionData } from "@data/minionData";
+import { IHeroData } from "@hero/heroData";
+import { IEnemyData } from "@enemy/enemyData";
+import { IMinionData } from "@minion/minionData";
 import { getActorTypeAsString } from "@utils/actor";
-import { MinionTokenDocument } from "@data/minionTokenDocument";
-import { EnemyTokenDocument } from "@data/enemyTokenDocument";
-import { HeroTokenDocument } from "@data/heroTokenDocument";
+import { MinionTokenDocument } from "@minion/minionTokenDocument";
+import { EnemyTokenDocument } from "@enemy/enemyTokenDocument";
+import { HeroTokenDocument } from "@hero/heroTokenDocument";
 
 
 export function getTokenDocument(id: string): TokenDocument | null {

@@ -5,12 +5,12 @@ from typing import Any, Dict, List, Optional, Pattern, Tuple
 import yaml
 
 from ads.api.ability_and_trait_parser import (
-    DAMAGE_TYPES,
     get_foundry_item_model,
     parse_ability_block,
     split_ability_blocks,
 )
 from ads.api.foundry import generate_id
+from ads.api.power_roll_parser import DAMAGE_TYPES
 from ads.api.string_format import sanitize_name, title_case
 from ads.model import (
     AppliedCaptainEffects,
@@ -796,18 +796,36 @@ def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
     ) as source_file:
         source_lines = source_file.readlines()
 
-    monster_headers = get_monster_headers_from_source_lines(source_lines)
+    pre_sanitized_source_lines: list[str] = []
+    for line in source_lines:
+        pre_sanitized_line = (
+            line.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
+        )
+        pre_sanitized_line = re.sub(
+            r"[^A-Za-z0-9/'\"\[\]()<!?.,; +-]", " ", pre_sanitized_line
+        )
+        pre_sanitized_line = re.sub(r"\s+", " ", pre_sanitized_line)
+        pre_sanitized_source_lines.append(pre_sanitized_line.strip())
+
+    # for trait_name in TRAIT_NAMES:
+    #     print(f"[{trait_name}]")
+    #     for line in pre_sanitized_source_lines:
+    #         if re.match(rf"{trait_name}", line, re.IGNORECASE):
+    #             print(f"  - {line.strip()}")
+    # return
+
+    monster_headers = get_monster_headers_from_source_lines(pre_sanitized_source_lines)
     monster_blocks = group_source_lines_into_monsters_blocks(
-        source_lines, monster_headers
+        pre_sanitized_source_lines, monster_headers
     )
 
     monster_foundry_actor_models: list[dict[str, Any]] = []
     for monster_block in monster_blocks:
-        # if monster_block.header.name in [
-        #     # "Mystic Queen Bargnot",
-        #     # "Goblin Warrior",
-        #     "Werewolf",
-        #     # "Goblin Spinecleaver",
+        # if monster_block["header"]["name"] in [
+        #     #     # "Mystic Queen Bargnot",
+        #     # "Dwarf Trapper",
+        #     # "Werewolf",
+        #     "Goblin Spinecleaver",
         # ]:
         monster_model = get_monster_model_from_block(monster_block)
         monster_foundry_actor_model = get_monster_foundry_actor_model(monster_model)

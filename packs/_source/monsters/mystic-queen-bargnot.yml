@@ -1,5 +1,5 @@
-_id: gNPSAAXaSCwIrK0Y
-_key: '!actors!gNPSAAXaSCwIrK0Y'
+_id: jCAEFrgH25vPL6jG
+_key: '!actors!jCAEFrgH25vPL6jG'
 name: Mystic Queen Bargnot
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: LEKboDa0Yk8CeBOC
-  _key: '!items!LEKboDa0Yk8CeBOC'
+- _id: J18ViiMKi9dHrhTw
+  _key: '!items!J18ViiMKi9dHrhTw'
   name: Power Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,14 +88,13 @@ items:
             text: prone
     postPowerRollEffect:
       text: An ally within 10 of Queen Bargnot can make a free strike.
-- _id: XbPC3L7Ejq6kiRn1
-  _key: '!items!XbPC3L7Ejq6kiRn1'
+- _id: YITxBBOvxrovO3Cz
+  _key: '!items!YITxBBOvxrovO3Cz'
   name: Get Out There!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: maneuver
     distance:
       melee: 1
@@ -106,14 +105,13 @@ items:
     prePowerRollEffect:
       text: Queen Bargnot throws the ally up to 5 squares. The ally can make a melee
         free strike when they land.
-- _id: hsDaXdVL6zunIsJ1
-  _key: '!items!hsDaXdVL6zunIsJ1'
+- _id: BbTSwa6kjiGUBMhw
+  _key: '!items!BbTSwa6kjiGUBMhw'
   name: Show Them Your Might!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: freeTriggeredAction
     distance:
       melee: 1
@@ -124,20 +122,38 @@ items:
     trigger: A creature targets Queen Bargnot with a strike.
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead. Queen Bargnot
-        shifts 1. End Effect At the end of their turn, Queen Bargnot can take 5 damage
-        to end one save ends effect affecting her. This damage can’t be reduced in
-        any way. Cunning Queen Bargnot doesn’t provoke opportunity attacks from enemies
-        by moving. Whenever Queen Bargnot is adjacent to an enemy and willingly moves
-        to a space no longer adjacent to that enemy, Queen Bargnot can make an opportunity
-        attack against them as a triggered action.
-- _id: C7aBt4mOhqBA40cI
-  _key: '!items!C7aBt4mOhqBA40cI'
+        shifts 1.
+- _id: PqnI0D7H739esu2l
+  _key: '!items!PqnI0D7H739esu2l'
+  name: End Effect
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: At the end of their turn, Queen Bargnot can take 5 damage to end one save
+        ends effect affecting her. This damage can't be reduced in any way.
+- _id: b1OfsXqyXshYYsoF
+  _key: '!items!b1OfsXqyXshYYsoF'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Queen Bargnot doesn't provoke opportunity attacks from enemies by moving.
+        Whenever Queen Bargnot is adjacent to an enemy and willingly moves to a space
+        no longer adjacent to that enemy, Queen Bargnot can make an opportunity attack
+        against them as a triggered action.
+- _id: ERt9PR77MRzFh3k5
+  _key: '!items!ERt9PR77MRzFh3k5'
   name: Focus Fire (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: villainAction
     distance:
       ranged: 10
@@ -149,14 +165,13 @@ items:
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: 3YT0YNxLQCipXHGb
-  _key: '!items!3YT0YNxLQCipXHGb'
+- _id: XPVhj5Z58KhZz2Ux
+  _key: '!items!XPVhj5Z58KhZz2Ux'
   name: Kill! (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: villainAction
     distance:
       special: true
@@ -166,8 +181,8 @@ items:
     prePowerRollEffect:
       text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
         them, or 4 damage for each mystic goblin adjacent to them.
-- _id: Q05zBUj8ADzCNhiq
-  _key: '!items!Q05zBUj8ADzCNhiq'
+- _id: It6hrAnRFbmQpzit
+  _key: '!items!It6hrAnRFbmQpzit'
   name: Oversurge (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg

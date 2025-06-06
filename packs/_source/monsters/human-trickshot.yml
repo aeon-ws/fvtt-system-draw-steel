@@ -1,5 +1,5 @@
-_id: dbG8WFkiQqg453Xt
-_key: '!actors!dbG8WFkiQqg453Xt'
+_id: oXpUbiaFCorA7I26
+_key: '!actors!oXpUbiaFCorA7I26'
 name: Human Trickshot
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: FEhtWV0l3VA3BMr9
-  _key: '!items!FEhtWV0l3VA3BMr9'
+- _id: OlBnawh5ZYV3uJeh
+  _key: '!items!OlBnawh5ZYV3uJeh'
   name: Trick Crossbow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -76,7 +76,9 @@ items:
         damage: 9
       tier3:
         damage: 12
+    maliceEffect:
+      text: 3 Malice The trickshot targets an additional creature or object. Supernatural
+        Insight The trickshot ignores concealment if it's granted by a supernatural
+        effect, or the target is supernatural.
     postPowerRollEffect:
-      text: The irickshot ignores cover and concealment. 3 Malice The trickshot targets
-        an additional creature or object. Supernatural Insight The trickshot ignores
-        concealment if it’s granted by a supernatural effect, or the target is supernatural.
+      text: The irickshot ignores cover and concealment.

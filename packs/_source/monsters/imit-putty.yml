@@ -1,5 +1,5 @@
-_id: HjpsfR10K6X1TMNU
-_key: '!actors!HjpsfR10K6X1TMNU'
+_id: k2U9QmlOsATKklZ2
+_key: '!actors!k2U9QmlOsATKklZ2'
 name: Imit Putty
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: 0ZRiC5scwRpkPyLV
-  _key: '!items!0ZRiC5scwRpkPyLV'
+- _id: 7IpDp9S7Pdw55kLM
+  _key: '!items!7IpDp9S7Pdw55kLM'
   name: Sputter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -77,8 +77,8 @@ items:
         damage: 7
         effect:
           text: shift 2
-- _id: p7kSzpvN16ZSLdEM
-  _key: '!items!p7kSzpvN16ZSLdEM'
+- _id: sIKKEqzJFnaarZc0
+  _key: '!items!sIKKEqzJFnaarZc0'
   name: Uncanny Impression
   type: monsterAbility
   img: icons/svg/book.svg
@@ -98,9 +98,18 @@ items:
       count: 1
     prePowerRollEffect:
       text: Until the end of the encounter, the imit putty changes its size to match
-        the target and replaces its signature action with one of the target’s signature
-        actions, using their bonuses for any power roll. Gelatinous The imit putty
-        can move through spaces as if it were size 1T. When it takes damage, it can
-        use a free triggered action to split into two imit putties, splitting their
-        current Stamina in half between them. The new creature has none of the benefits,
-        effects, or conditions that the original has.
+        the target and replaces its signature action with one of the target's signature
+        actions, using their bonuses for any power roll.
+- _id: Jj0rZrBGj7UmPjYr
+  _key: '!items!Jj0rZrBGj7UmPjYr'
+  name: Gelatinous
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The imit putty can move through spaces as if it were size 1T. When it
+        takes damage, it can use a free triggered action to split into two imit putties,
+        splitting their current Stamina in half between them. The new creature has
+        none of the benefits, effects, or conditions that the original has.

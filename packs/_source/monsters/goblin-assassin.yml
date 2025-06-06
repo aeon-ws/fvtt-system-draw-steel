@@ -1,5 +1,5 @@
-_id: oEVxInU4IMVHzvmw
-_key: '!actors!oEVxInU4IMVHzvmw'
+_id: pSskis1ddJh5mL9f
+_key: '!actors!pSskis1ddJh5mL9f'
 name: Goblin Assassin
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 0
     freeStrikeDamage: 2
 items:
-- _id: tNqvdEeu4Bm24Yl8
-  _key: '!items!tNqvdEeu4Bm24Yl8'
+- _id: gQLHGL6nIpn07cM6
+  _key: '!items!gQLHGL6nIpn07cM6'
   name: Sword Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -75,8 +75,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 damage if the assassin has an edge
         on the power roll.
-- _id: bfDCn33wokUyJsqC
-  _key: '!items!bfDCn33wokUyJsqC'
+- _id: FjKBaxtg2jQCV2I7
+  _key: '!items!FjKBaxtg2jQCV2I7'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -117,3 +117,23 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
+- _id: WfSPmiy4YZYXNiGz
+  _key: '!items!WfSPmiy4YZYXNiGz'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The assassin doesn't provoke opportunity attacks by moving.
+- _id: 3xdd6Lcn0ePLmbv2
+  _key: '!items!3xdd6Lcn0ePLmbv2'
+  name: Slip Away
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The assassin can take the Hide maneuver even while observed.

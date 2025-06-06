@@ -1,5 +1,5 @@
-_id: yWIhluS9rsvRTFSt
-_key: '!actors!yWIhluS9rsvRTFSt'
+_id: 1g0uvcd04JlQkRse
+_key: '!actors!1g0uvcd04JlQkRse'
 name: Tomb Horror
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   weakness:
     fire: 3
 items:
-- _id: DJPoZ7iTgT357XtI
-  _key: '!items!DJPoZ7iTgT357XtI'
+- _id: UkEde25Z3AmckwnP
+  _key: '!items!UkEde25Z3AmckwnP'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
     postPowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: wY3wgw502Q6do1Jl
-  _key: '!items!wY3wgw502Q6do1Jl'
+- _id: ydJPCtnDlEXlWD9w
+  _key: '!items!ydJPCtnDlEXlWD9w'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,14 +128,13 @@ items:
     postPowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: i6TX4i0stHu5HtP7
-  _key: '!items!i6TX4i0stHu5HtP7'
+- _id: HrzVfJuch6ViBUtp
+  _key: '!items!HrzVfJuch6ViBUtp'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: maneuver
     distance:
       ranged: 5
@@ -149,7 +148,7 @@ items:
     trigger: The target deals damage to the tomb horror or a casket or
     prePowerRollEffect:
       text: The tomb horror shifts up to their speed, including vertically. They must
-        end this movement on a solid surface. Curse For the Defilers (Triggered Action}
+        end this movement on a solid surface. Curse For the Defilers (Triggered Action
         relic within distance that the tomb horror was feeding on. The target is P<2
         slowed (save ends). The tomb horror then moves up to their speed towards the
         target. Enervating Horror A creature that starts their turn adjacent to the

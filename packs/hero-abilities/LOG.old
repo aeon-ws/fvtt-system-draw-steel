@@ -1,4 +1,1 @@
-2025/05/31-18:38:20.588 5bc4 Log #9: 0 ops saved to Table #10 OK
-2025/05/31-18:38:20.588 5bc4 Archiving C:\Users\MortenNystrupRasmuss\AppData\Local\FoundryVTT\Data\systems\aeon-draw-steel\packs\hero-abilities/000009.log: OK
-2025/05/31-18:38:20.592 5bc4 Archiving C:\Users\MortenNystrupRasmuss\AppData\Local\FoundryVTT\Data\systems\aeon-draw-steel\packs\hero-abilities/MANIFEST-000008: OK
-2025/05/31-18:38:20.596 5bc4 **** Repaired leveldb C:\Users\MortenNystrupRasmuss\AppData\Local\FoundryVTT\Data\systems\aeon-draw-steel\packs\hero-abilities; recovered 0 files; 0 bytes. Some data may have been lost. ****
+2025/05/31-18:38:20.606 5bc4 Delete type=3 #1

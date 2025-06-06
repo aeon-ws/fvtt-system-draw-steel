@@ -1,5 +1,5 @@
-_id: pFlkSMBzgt3DMmfB
-_key: '!actors!pFlkSMBzgt3DMmfB'
+_id: 342xmEL3EovUbLks
+_key: '!actors!342xmEL3EovUbLks'
 name: Bugbear Channeler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: o35wa5qdQFdac3pd
-  _key: '!items!o35wa5qdQFdac3pd'
+- _id: 30guQqgGVdqErW1A
+  _key: '!items!30guQqgGVdqErW1A'
   name: Shadow Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,8 +83,8 @@ items:
     postPowerRollEffect:
       text: Each square that a target is pulled through becomes difficult terrain
         for enemies.
-- _id: vQHFmo90Xibr6hII
-  _key: '!items!vQHFmo90Xibr6hII'
+- _id: oP4EAC841MgXm7bf
+  _key: '!items!oP4EAC841MgXm7bf'
   name: Blistering Element
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,10 +122,10 @@ items:
           effect:
             text: bleeding (save ends)
     postPowerRollEffect:
-      text: 'The channeler chooses one of the following damage types for the damage:
-        acid, cold, corruption, fire, or poison.'
-- _id: pt43VdLy6qQS7d3N
-  _key: '!items!pt43VdLy6qQS7d3N'
+      text: The channeler chooses one of the following damage types for the damage
+        acid, cold, corruption, fire, or poison.
+- _id: YOK46gUBTWdEbtfy
+  _key: '!items!YOK46gUBTWdEbtfy'
   name: Twist Shape
   type: monsterAbility
   img: icons/svg/book.svg
@@ -165,19 +165,18 @@ items:
           targetCharacteristic: presence
           value: 2
           effect:
-            text: shapechanged
+            text: shapechanged (save ends)
     postPowerRollEffect:
       text: A shapechanged creature has their limbs violently stretched and their
         skin becomes paper thin. They are slowed and have fire weakness 10 while they
         have this effect.
-- _id: AOMM0vzB8OiE9w2i
-  _key: '!items!AOMM0vzB8OiE9w2i'
+- _id: RZ9tTHFrZdUDE20O
+  _key: '!items!RZ9tTHFrZdUDE20O'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: maneuver
     distance:
       melee: 1
@@ -190,10 +189,10 @@ items:
       count: 1
     trigger: The target is force moved into a square adjacent to the
     prePowerRollEffect:
-      text: Vertical push 3. An ally target doesn’t take damage from being force moved.
-        Catcher (Free Triggered Action} channeler. The target is grabbed by the channeler.
-- _id: JdyHeE0jQTBMJUcG
-  _key: '!items!JdyHeE0jQTBMJUcG'
+      text: Vertical push 3. An ally target doesn't take damage from being force moved.
+        Catcher (Free Triggered Action channeler. The target is grabbed by the channeler.
+- _id: JzA24zyzuyCgtVgz
+  _key: '!items!JzA24zyzuyCgtVgz'
   name: Shadow Veil
   type: monsterAbility
   img: icons/svg/book.svg
@@ -212,5 +211,5 @@ items:
     trigger: The target takes damage.
     prePowerRollEffect:
       text: The channeler collapses the target into their shadow and halves the damage.
-        The target can’t be targeted by strikes until they reform from the shadows
+        The target can't be targeted by strikes until they reform from the shadows
         at the start of their next turn.

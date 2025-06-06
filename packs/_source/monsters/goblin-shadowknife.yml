@@ -1,5 +1,5 @@
-_id: s0p3xQYE13rqXzh6
-_key: '!actors!s0p3xQYE13rqXzh6'
+_id: Lg8fSYZEIEVHUGeq
+_key: '!actors!Lg8fSYZEIEVHUGeq'
 name: Goblin Shadowknife
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: K1CgZpLhWuHBepZg
-  _key: '!items!K1CgZpLhWuHBepZg'
+- _id: 1dDiGQwyyPFJakzv
+  _key: '!items!1dDiGQwyyPFJakzv'
   name: Shadow Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,8 +81,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 corruption damage if the shadowknife
         has an edge on the power roll.
-- _id: ciART0kHUJCC5glL
-  _key: '!items!ciART0kHUJCC5glL'
+- _id: wqjVe9p18hT99wyP
+  _key: '!items!wqjVe9p18hT99wyP'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -123,3 +123,27 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
+- _id: ssxuk3LHj40EOo7p
+  _key: '!items!ssxuk3LHj40EOo7p'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The shadowknife doesn't provoke opportunity attacks from enemies by moving.
+        Whenever the shadowknife is adjacent to an enemy and willingly moves to a
+        space no longer adjacent to that enemy, the shadowknife can make an opportunity
+        attack against them as a triggered action.
+- _id: Xm9SU4pyTcPiNkDe
+  _key: '!items!Xm9SU4pyTcPiNkDe'
+  name: Hide While Observed
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The shadowknife can take the Hide maneuver even while observed. They become
+        revealed if they end their turn without cover or concealment.

@@ -1,5 +1,5 @@
-_id: az3BZ4OkwkSbv7w7
-_key: '!actors!az3BZ4OkwkSbv7w7'
+_id: c04nssp69JrddIqU
+_key: '!actors!c04nssp69JrddIqU'
 name: Human Scoundrel
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: ClzXYQD2AyBbXC5j
-  _key: '!items!ClzXYQD2AyBbXC5j'
+- _id: Tq59LOCmkxLn1qY0
+  _key: '!items!Tq59LOCmkxLn1qY0'
   name: Rapier Dagger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,8 +78,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 damage if the scoundrel has an edge
         on the power roll.
-- _id: QI7wbKl5ENbUhPUy
-  _key: '!items!QI7wbKl5ENbUhPUy'
+- _id: icU98WRDfZ8mnlqF
+  _key: '!items!icU98WRDfZ8mnlqF'
   name: Dagger Storm
   type: monsterAbility
   img: icons/svg/book.svg

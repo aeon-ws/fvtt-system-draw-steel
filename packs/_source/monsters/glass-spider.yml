@@ -1,5 +1,5 @@
-_id: TfaHb3t9oBEsuOTx
-_key: '!actors!TfaHb3t9oBEsuOTx'
+_id: HULcMfxYFljPHhCo
+_key: '!actors!HULcMfxYFljPHhCo'
 name: Glass Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   weakness:
     sonic: 5
 items:
-- _id: lK8nbj6T2KtkDvO6
-  _key: '!items!lK8nbj6T2KtkDvO6'
+- _id: vhbiLiCdMGNd47w6
+  _key: '!items!vhbiLiCdMGNd47w6'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,8 +78,10 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: HRQsMdRCsGdW0Prw
-  _key: '!items!HRQsMdRCsGdW0Prw'
+    maliceEffect:
+      text: 2 Malice A<3 bleeding (save ends).
+- _id: nfbOOeDPnf5A8SSz
+  _key: '!items!nfbOOeDPnf5A8SSz'
   name: Slashing Leg
   type: monsterAbility
   img: icons/svg/book.svg
@@ -106,15 +108,14 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: C7hiy1fkQsF6MHih
-  _key: '!items!C7hiy1fkQsF6MHih'
+- _id: Jm9PZNqjEo6wKa0d
+  _key: '!items!Jm9PZNqjEo6wKa0d'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
   system:
     maliceCost: 5
-    keywords:
-    - —
+    keywords: []
     type: mainAction
     distance:
       self: true
@@ -125,8 +126,8 @@ items:
       text: The spider shifts up to their speed and makes a Slashing Leg strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: ABlJXgx3KxmK1UIE
-  _key: '!items!ABlJXgx3KxmK1UIE'
+- _id: Eug3shYVHNgU9rCR
+  _key: '!items!Eug3shYVHNgU9rCR'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -159,14 +160,13 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: oXpOZmbezDup0Nif
-  _key: '!items!oXpOZmbezDup0Nif'
+- _id: nNGUFXRoKbYkyYEB
+  _key: '!items!nNGUFXRoKbYkyYEB'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: triggeredAction
     distance:
       self: true

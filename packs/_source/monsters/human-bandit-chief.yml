@@ -1,5 +1,5 @@
-_id: K3Cz0IJDtctaxWKN
-_key: '!actors!K3Cz0IJDtctaxWKN'
+_id: RZc5y3LgyKWah2t9
+_key: '!actors!RZc5y3LgyKWah2t9'
 name: Human Bandit Chief
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,25 +47,23 @@ system:
     corruption: 4
     psychic: 4
 items:
-- _id: CQcD3f43VAF1sTnS
-  _key: '!items!CQcD3f43VAF1sTnS'
+- _id: QIAeQ3phFyC6tgZG
+  _key: '!items!QIAeQ3phFyC6tgZG'
   name: Whip Magic Longsword
   type: monsterAbility
   img: icons/svg/book.svg
   system:
     keywords:
-    - Magic
     - Melee
-    - Strike
     - Weapon
     type: mainAction
     distance:
-      melee: 3
+      melee: 1
     target:
-      text: Two enemies or objects
+      text: One enemy or object
       enemy: true
       object: true
-      count: 2
+      count: 1
     powerRoll:
       bonus: 3
       tier1:
@@ -80,77 +78,46 @@ items:
         damage: 15
         effect:
           text: pull 3
+    maliceEffect:
+      text: 2 Malice This ability targets each enemy adjacent to the bandit chief.
     postPowerRollEffect:
       text: A target who is adjacent to the bandit chief after the ability resolves
-        takes 5 corruption damage. 2 Malice The bandit chief targets an additional
-        enemy or object.
-- _id: uu49yhWMLiZAeNTq
-  _key: '!items!uu49yhWMLiZAeNTq'
-  name: Kneel Peasant!
-  type: monsterAbility
-  img: icons/svg/book.svg
-  system:
-    keywords:
-    - Melee
-    - Weapon
-    type: maneuver
-    distance:
-      melee: 1
-    target:
-      text: One enemy or object
-      enemy: true
-      object: true
-      count: 1
-    powerRoll:
-      bonus: 3
-      tier1:
-        effect:
-          text: Push1
-        potencyEffect:
-          targetCharacteristic: might
-          value: 1
-          effect:
-            text: prone
-      tier2:
-        effect:
-          text: Push 2
-        potencyEffect:
-          targetCharacteristic: might
-          value: 2
-          effect:
-            text: prone
-      tier3:
-        effect:
-          text: Push 4
-        potencyEffect:
-          targetCharacteristic: might
-          value: 3
-          effect:
-            text: prone
-- _id: YgdRQBG6oLyPMIP3
-  _key: '!items!YgdRQBG6oLyPMIP3'
+        takes 5 corruption damage.
+- _id: Q3BzTB1TekrOpWtJ
+  _key: '!items!Q3BzTB1TekrOpWtJ'
   name: Bloodstones
   type: monsterAbility
   img: icons/svg/book.svg
   system:
     keywords:
-    - Area
+    - Magic
     type: triggeredAction
     distance:
-      burst: 0
+      self: true
     target:
-      text: All artillery allies in the burst
-      ally: true
+      text: Self
+      self: true
     trigger: The bandit chief makes a power roll.
     prePowerRollEffect:
       text: The bandit chief takes 9 corruption damage and increases the result of
-        the power roll by one tier. End Effect At the end of their turn, the bandit
-        chief can take 5 damage to end one save ends effect affecting them. This damage
-        can’t be reduced in any way. Supernatural Insight The bandit chief ignores
-        concealment if it’s granted by a supernatural effect, or the target is supernatural.
-        Shoot! (Villain Action 1} Each target makes a ranged free strike.
-- _id: ZQj2NAwjQSm515Tg
-  _key: '!items!ZQj2NAwjQSm515Tg'
+        the power roll by one tier.
+- _id: rhefG9ZeELWv8nOq
+  _key: '!items!rhefG9ZeELWv8nOq'
+  name: End Effect
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: At the end of their turn, the bandit chief can take 5 damage to end one
+        save ends effect affecting them. This damage can't be reduced in any way.
+        Supernatural Insight The bandit chief ignores concealment if it's granted
+        by a supernatural effect, or the target is supernatural. Shoot! (Villain Action
+        1 Keywords Area Distance 10 burst Target All artillery allies in the burst
+        Effect Each target makes a ranged free strike.
+- _id: ybKM1OmlPlFs4uIV
+  _key: '!items!ybKM1OmlPlFs4uIV'
   name: Form Up! (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -167,14 +134,13 @@ items:
       text: Each target shifts up to their speed. Until the end of the encounter,
         the bandit chief and all allies have damage immunity 2 while adjacent to a
         target.
-- _id: YqpHOeGnPLQot8xV
-  _key: '!items!YqpHOeGnPLQot8xV'
+- _id: ycusmNBqm1TnMezl
+  _key: '!items!ycusmNBqm1TnMezl'
   name: Lead From the Front (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: villainAction
     distance:
       self: true
@@ -183,5 +149,5 @@ items:
       special: true
     prePowerRollEffect:
       text: Shift 10. During or after this movement, the bandit chief can use their
-        Whip & Magic Longsword targeting up to four targets. One ally adjacent to
-        each target can make a free strike against that target.
+        Whip Magic Longsword targeting up to four targets. One ally adjacent to each
+        target can make a free strike against that target.

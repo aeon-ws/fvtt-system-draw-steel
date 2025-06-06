@@ -15,6 +15,7 @@ class Ability(TypedDict):
         "maneuver",
         "freeManeuver",
         "villainAction",
+        "monsterTrait",
     ]
     maliceCost: NotRequired[Optional[int]]
     powerRoll: NotRequired[Optional[PowerRoll]]
@@ -23,6 +24,7 @@ class Ability(TypedDict):
     target: NotRequired[Optional[Target]]
     trigger: NotRequired[Optional[str]]
     prePowerRollEffect: NotRequired[Optional[Effect]]
+    maliceEffect: NotRequired[Optional[Effect]]
     postPowerRollEffect: NotRequired[Optional[Effect]]
     header_raw: str
 

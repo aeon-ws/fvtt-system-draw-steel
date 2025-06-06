@@ -1,5 +1,5 @@
-_id: uORuTNNUzu1NGoL3
-_key: '!actors!uORuTNNUzu1NGoL3'
+_id: oivtOYoBpRYGJcRW
+_key: '!actors!oivtOYoBpRYGJcRW'
 name: Memorial Ivy
 type: minion
 img: icons/svg/mystery-man.svg
@@ -52,8 +52,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 3
 items:
-- _id: ERRmO8NO7PfjapqN
-  _key: '!items!ERRmO8NO7PfjapqN'
+- _id: BpHZZoKHbluAZ3Q5
+  _key: '!items!BpHZZoKHbluAZ3Q5'
   name: Grasping Ivy
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,4 +85,10 @@ items:
       tier3:
         damage: 5
         effect:
-          text: pull 5
+          text: pull 5 Creeper The memorial Ivy can use its move action to
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: compel a creature or object it s climbing on to move up to their
+              speed An ally can choose to fail

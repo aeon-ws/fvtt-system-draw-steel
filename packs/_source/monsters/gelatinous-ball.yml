@@ -1,5 +1,5 @@
-_id: K1Y7UO66dRjlxJAh
-_key: '!actors!K1Y7UO66dRjlxJAh'
+_id: bEwisxCEpw7L4ZWH
+_key: '!actors!bEwisxCEpw7L4ZWH'
 name: Gelatinous Ball
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: 383TtQ7mRExNlx1J
-  _key: '!items!383TtQ7mRExNlx1J'
+- _id: IQftZAAfXliNQYRu
+  _key: '!items!IQftZAAfXliNQYRu'
   name: Bowl
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,3 +80,24 @@ items:
         damage: 5
         effect:
           text: slide 3
+    maliceEffect:
+      text: 2 Malice Instead of being force moved, a size 1L or smaller target is
+        A<1 restrained (save ends). While restrained by this ability, the target moves
+        with the gelatinous ball. When restrained ends, the target moves to the nearest
+        unoccupied square adjacent to the gelatinous ball. Rolling Whenever the gelatinous
+        ball uses a move action or is force moved horizontally, it must move in a
+        straight line until it reaches its maximum speed or until a creature or object
+        is directly in front of it.
+- _id: Q5nTjshwBTlSEKlY
+  _key: '!items!Q5nTjshwBTlSEKlY'
+  name: Gelatinous
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The gelatinous ball can move through spaces as if it were size 1T. When
+        it takes damage, it can use a free triggered action to split into two gelatinous
+        balls, splitting their current Stamina in half between them. The new creature
+        has none of the benefits, effects, or conditions that the original has.

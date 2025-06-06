@@ -1,5 +1,5 @@
-_id: Mc06MD9oXmCrwD5t
-_key: '!actors!Mc06MD9oXmCrwD5t'
+_id: PIOQ9ZXx6VtpBMAj
+_key: '!actors!PIOQ9ZXx6VtpBMAj'
 name: War Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 2
     freeStrikeDamage: 4
 items:
-- _id: cmtgEauSf2Do21yi
-  _key: '!items!cmtgEauSf2Do21yi'
+- _id: Mwg1eavY3MAV0aCz
+  _key: '!items!Mwg1eavY3MAV0aCz'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -77,8 +77,10 @@ items:
           value: 2
           effect:
             text: weakened (save ends)
-- _id: Uq0QjwjLejBVxpDI
-  _key: '!items!Uq0QjwjLejBVxpDI'
+    maliceEffect:
+      text: 2 Malice M<3 weakened (save ends).
+- _id: CJxPm8v1Sf6Ri2z7
+  _key: '!items!CJxPm8v1Sf6Ri2z7'
   name: Leg Blade
   type: monsterAbility
   img: icons/svg/book.svg
@@ -105,15 +107,14 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: ylFOQNtzInkl5P38
-  _key: '!items!ylFOQNtzInkl5P38'
+- _id: wOaefYWMX4Fopdgj
+  _key: '!items!wOaefYWMX4Fopdgj'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
   system:
     maliceCost: 5
-    keywords:
-    - —
+    keywords: []
     type: mainAction
     distance:
       self: true
@@ -124,8 +125,8 @@ items:
       text: The spider shifts up to their speed and makes a Leg Blade strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: hCyaC6xHjwreVU1B
-  _key: '!items!hCyaC6xHjwreVU1B'
+- _id: zUYt40tz1n7WoS23
+  _key: '!items!zUYt40tz1n7WoS23'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -157,14 +158,13 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: VDtRSNRfGEGaROH0
-  _key: '!items!VDtRSNRfGEGaROH0'
+- _id: a9zDa7BnglqJhvJt
+  _key: '!items!a9zDa7BnglqJhvJt'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: triggeredAction
     distance:
       self: true
@@ -177,5 +177,5 @@ items:
         effect resolves. Ride Launcher An ally who leaps off the back of the spider
         can jump up to 6 squares without a test, and takes no damage if they fall
         during the jump. After the jump, the first melee strike an ally makes on the
-        same turn gains an edge. Wide Back Two of the spider’s size 1 allies can occupy
+        same turn gains an edge. Wide Back Two of the spider's size 1 allies can occupy
         the same space while riding the spider.

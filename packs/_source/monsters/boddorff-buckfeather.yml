@@ -1,5 +1,5 @@
-_id: VRADR7hYuYEhxvsg
-_key: '!actors!VRADR7hYuYEhxvsg'
+_id: 8zkhqwfLKeBSmzZH
+_key: '!actors!8zkhqwfLKeBSmzZH'
 name: Boddorff Buckfeather
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: z42fFkqp1SrduSJs
-  _key: '!items!z42fFkqp1SrduSJs'
+- _id: TYQn9aG08t9ofI1P
+  _key: '!items!TYQn9aG08t9ofI1P'
   name: Thunder of Heavens
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,8 +78,8 @@ items:
     postPowerRollEffect:
       text: Boddorff or an ally within distance regains Stamina equal to half the
         damage dealt.
-- _id: MWmEOT4LJ76O8iU6
-  _key: '!items!MWmEOT4LJ76O8iU6'
+- _id: wldKXUc46p192JWH
+  _key: '!items!wldKXUc46p192JWH'
   name: Imbue with Might
   type: monsterAbility
   img: icons/svg/book.svg
@@ -98,7 +98,7 @@ items:
     prePowerRollEffect:
       text: Each target has an edge on their next strike. Stalwart Guardian Strikes
         made against allies adjacent to Boddorff have a bane. Nimblestep Boddorff
-        ignores the effects of difficult terrain and moves at full speed while he’s
+        ignores the effects of difficult terrain and moves at full speed while he's
         sneaking. Rivalry Boddorff selects one creature within line of effect at the
         start of an encounter. Both Boddorff and the creature can add a 143 to all
         power rolls made against each other.

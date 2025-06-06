@@ -1,6 +1,1 @@
-2025/05/31-18:38:20.609 5bc4 Log #126: 0 ops saved to Table #127 OK
-2025/05/31-18:38:20.610 5bc4 Archiving C:\Users\MortenNystrupRasmuss\AppData\Local\FoundryVTT\Data\systems\aeon-draw-steel\packs\monster-abilities/000126.log: OK
-2025/05/31-18:38:20.610 5bc4 Table #121: 1 entries OK
-2025/05/31-18:38:20.610 5bc4 Table #125: 1 entries OK
-2025/05/31-18:38:20.614 5bc4 Archiving C:\Users\MortenNystrupRasmuss\AppData\Local\FoundryVTT\Data\systems\aeon-draw-steel\packs\monster-abilities/MANIFEST-000124: OK
-2025/05/31-18:38:20.619 5bc4 **** Repaired leveldb C:\Users\MortenNystrupRasmuss\AppData\Local\FoundryVTT\Data\systems\aeon-draw-steel\packs\monster-abilities; recovered 2 files; 1517 bytes. Some data may have been lost. ****
+2025/05/31-18:38:20.628 5bc4 Delete type=3 #1

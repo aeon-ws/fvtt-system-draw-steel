@@ -1,5 +1,5 @@
-_id: fRDog5otGLL9Fivb
-_key: '!actors!fRDog5otGLL9Fivb'
+_id: ws0N5vrj33yia134
+_key: '!actors!ws0N5vrj33yia134'
 name: Black Ichor
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: OJWLkNmTUs3H8bXk
-  _key: '!items!OJWLkNmTUs3H8bXk'
+- _id: IkXkVZEfOxpa5eoh
+  _key: '!items!IkXkVZEfOxpa5eoh'
   name: Burning Spray
   type: monsterAbility
   img: icons/svg/book.svg
@@ -77,3 +77,10 @@ items:
         damage: 4
       tier3:
         damage: 5
+        effect:
+          text: the tareet s next strike has its damage halved Malice Emitter The
+            Director gains 1 additional malice at the start of each round while at
+            least one black ichor is alive on the encounter map Amorphous The black
+            ichor can move through spaces as if it were size 1T and can occupy another
+            creature or object s space An enemy or object that starts their turn in
+            the same square as a black ichor takes 2 acid damage

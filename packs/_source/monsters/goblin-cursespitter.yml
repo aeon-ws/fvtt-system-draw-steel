@@ -1,5 +1,5 @@
-_id: ppbNgkNJwNh4iHTT
-_key: '!actors!ppbNgkNJwNh4iHTT'
+_id: OhhhAYK1ISpiD1kI
+_key: '!actors!OhhhAYK1ISpiD1kI'
 name: Goblin Cursespitter
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: Q8SAUuh42mcHDDAh
-  _key: '!items!Q8SAUuh42mcHDDAh'
+- _id: qR7x7M1sWdS0HoMm
+  _key: '!items!qR7x7M1sWdS0HoMm'
   name: Eye of Surlach
   type: monsterAbility
   img: icons/svg/book.svg
@@ -67,11 +67,8 @@ items:
       bonus: 2
       tier1:
         damage: 3
-        potencyEffect:
-          targetCharacteristic: intuition
-          value: 0
-          effect:
-            text: weakened (save ends)
+        effect:
+          text: 0 weakened (save ends)
       tier2:
         damage: 4
         potencyEffect:
@@ -86,8 +83,8 @@ items:
           value: 2
           effect:
             text: weakened (save ends)
-- _id: TUrJPWSPC53EDqk5
-  _key: '!items!TUrJPWSPC53EDqk5'
+- _id: o1pN59aLBFQDbWSv
+  _key: '!items!o1pN59aLBFQDbWSv'
   name: Dizzying Hex
   type: monsterAbility
   img: icons/svg/book.svg
@@ -127,3 +124,13 @@ items:
           value: 2
           effect:
             text: and can
+- _id: vJC3nryEniY2CIPT
+  _key: '!items!vJC3nryEniY2CIPT'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The cursespitter doesn't provoke opportunity attacks by moving.

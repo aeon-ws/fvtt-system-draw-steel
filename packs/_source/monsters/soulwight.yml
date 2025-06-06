@@ -1,5 +1,5 @@
-_id: XzLWBwyOn1840SI9
-_key: '!actors!XzLWBwyOn1840SI9'
+_id: 0TGr7bD09l4unLwQ
+_key: '!actors!0TGr7bD09l4unLwQ'
 name: Soulwight
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: kV6yW2O0o6PzoPBd
-  _key: '!items!kV6yW2O0o6PzoPBd'
+- _id: N7OPJHQ0MFBvCrah
+  _key: '!items!N7OPJHQ0MFBvCrah'
   name: Soulstealer Longsword
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,13 +83,13 @@ items:
           targetCharacteristic: might
           value: 2
           effect:
-            text: slowed and weakened
+            text: slowed and weakened save ends
     postPowerRollEffect:
       text: The target appears to rapidly age each time they take damage from this
         ability. The target regains their former appearance when the soulwight is
         destroyed.
-- _id: EZWNEvRvaoxhijtG
-  _key: '!items!EZWNEvRvaoxhijtG'
+- _id: 9QdA5PxbaGeVnbxh
+  _key: '!items!9QdA5PxbaGeVnbxh'
   name: Stolen Vitality
   type: monsterAbility
   img: icons/svg/book.svg
@@ -106,7 +106,17 @@ items:
       ally: true
       count: 1
     prePowerRollEffect:
-      text: The target regains 10 Stamina. The soulwight can’t use this maneuver again
-        until they strike a creature with their lifestealer longsword. Arise The first
-        time the soulwight is reduced to Stamina 0 by damage that isn’t fire damage
-        or holy damage and their body isn’t destroyed, they 1 Stamina and fall prone.
+      text: The target regains 10 Stamina. The soulwight can't use this maneuver again
+        until they strike a creature with their lifestealer longsword.
+- _id: GFZi8HpmLqFeCN8h
+  _key: '!items!GFZi8HpmLqFeCN8h'
+  name: Arise
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The first time the soulwight is reduced to Stamina 0 by damage that isn't
+        fire damage or holy damage and their body isn't destroyed, they 1 Stamina
+        and fall prone.

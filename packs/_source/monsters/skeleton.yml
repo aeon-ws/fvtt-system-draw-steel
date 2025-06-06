@@ -1,5 +1,5 @@
-_id: 3YKEpsAHdfo81CP1
-_key: '!actors!3YKEpsAHdfo81CP1'
+_id: 67djbtxev2vYNFky
+_key: '!actors!67djbtxev2vYNFky'
 name: Skeleton
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: utY39rE7dVaFa6oZ
-  _key: '!items!utY39rE7dVaFa6oZ'
+- _id: fdI9seESAu83rWHe
+  _key: '!items!fdI9seESAu83rWHe'
   name: Bone Shards
   type: monsterAbility
   img: icons/svg/book.svg
@@ -77,10 +77,10 @@ items:
       tier3:
         damage: 7
     postPowerRollEffect:
-      text: Until the start of the skeleton’s next turn, the target takes 2 damage
+      text: Until the start of the skeleton's next turn, the target takes 2 damage
         the first time they move on their turn.
-- _id: QRnoCmxXPyl0SzJl
-  _key: '!items!QRnoCmxXPyl0SzJl'
+- _id: U1cnkVCvWspUZBsO
+  _key: '!items!U1cnkVCvWspUZBsO'
   name: Bone Spur
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,6 +119,16 @@ items:
           effect:
             text: bleeding (save ends)
     postPowerRollEffect:
-      text: Each target has a bane on their next strike. Arise The first time the
-        skeleton is reduced to Stamina 0 by damage that isn’t fire damage or holy
-        damage and their body isn’t destroyed, they regain 1 Stamina and fall prone.
+      text: Each target has a bane on their next strike.
+- _id: 4fcwdhn2wLwPckJ7
+  _key: '!items!4fcwdhn2wLwPckJ7'
+  name: Arise
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The first time the skeleton is reduced to Stamina 0 by damage that isn't
+        fire damage or holy damage and their body isn't destroyed, they regain 1 Stamina
+        and fall prone.

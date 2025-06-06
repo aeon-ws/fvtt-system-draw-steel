@@ -1,5 +1,5 @@
 
-import { IMinionCombatData } from "@data/minionData";
+import { IMinionCombatData } from "@minion/minionData";
 
 
 export type KeysExcept<T, K extends keyof T> = keyof Omit<T, K>;

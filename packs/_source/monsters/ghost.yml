@@ -1,5 +1,5 @@
-_id: JLISr2gTt6LTW4Tg
-_key: '!actors!JLISr2gTt6LTW4Tg'
+_id: 5in36MOVOtVcB5vM
+_key: '!actors!5in36MOVOtVcB5vM'
 name: Ghost
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 3
     poison: 3
 items:
-- _id: YmnbVUSgYLKvHAFI
-  _key: '!items!YmnbVUSgYLKvHAFI'
+- _id: v7bEOFJfrCdeA1W6
+  _key: '!items!v7bEOFJfrCdeA1W6'
   name: Heat Death
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
             text: slowed save ends
     postPowerRollEffect:
       text: The next strike made against the target has an edge.
-- _id: THMAHWn8o70hzHKO
-  _key: '!items!THMAHWn8o70hzHKO'
+- _id: HpiT0XGm6IVCFmHj
+  _key: '!items!HpiT0XGm6IVCFmHj'
   name: Haunt
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,10 +108,11 @@ items:
       ally: true
       count: 1
     prePowerRollEffect:
-      text: The target shifts up to their speed. 2 Malice The ghost chooses one additional
-        target.
-- _id: NfFF6z39lJrfwoaJ
-  _key: '!items!NfFF6z39lJrfwoaJ'
+      text: The target shifts up to their speed.
+    maliceEffect:
+      text: 2 Malice The ghost chooses one additional target.
+- _id: zt69igTVCu7u6jcs
+  _key: '!items!zt69igTVCu7u6jcs'
   name: Shriek
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,8 +133,8 @@ items:
       text: The ghost halves the incoming damage and the target takes 2 sonic damage.
         Phantom Flow Each incorporeal undead creature within 10 squares of the ghost
         ignores difficult terrain.
-- _id: CW67XFY8IHfmNdaP
-  _key: '!items!CW67XFY8IHfmNdaP'
+- _id: GZHnVR4CcW0x07Uv
+  _key: '!items!GZHnVR4CcW0x07Uv'
   name: Paranormal Activity (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -151,8 +152,8 @@ items:
     prePowerRollEffect:
       text: Each target floats 1 square into the air and is pulled 5 squares toward
         the nearest enemy within 3 squares of them.
-- _id: 8JSMnAS2gJ3cOB8M
-  _key: '!items!8JSMnAS2gJ3cOB8M'
+- _id: OyJNx8lHZRJveRrv
+  _key: '!items!OyJNx8lHZRJveRrv'
   name: Spirited Away (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -189,10 +190,10 @@ items:
     postPowerRollEffect:
       text: A levitated target floats 1 square off the ground when they are first
         affected, then rises 1 square at the end of each of their turns. If a levitated
-        target can’t already fly, they can fly but are slowed and weakened while flying
+        target can't already fly, they can fly but are slowed and weakened while flying
         in this way.
-- _id: HBFru98woUivnr73
-  _key: '!items!HBFru98woUivnr73'
+- _id: xgKbHE8AljZBjiRl
+  _key: '!items!xgKbHE8AljZBjiRl'
   name: Awful Wail (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -216,7 +217,17 @@ items:
         damage: 8
     postPowerRollEffect:
       text: P<2 the target is reduced to 1 Stamina if they are winded after taking
-        damage. Corruptive Phasing The ghost can move through other creatures and
-        objects at normal speed. The first time in a round that the ghost passes through
-        a creature, that creature takes 2 corruption damage. The ghost doesn’t take
-        damage from being force moved into objects. -
+        damage.
+- _id: 9LrU7Z8QYphNmmpP
+  _key: '!items!9LrU7Z8QYphNmmpP'
+  name: Corruptive Phasing
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The ghost can move through other creatures and objects at normal speed.
+        The first time in a round that the ghost passes through a creature, that creature
+        takes 2 corruption damage. The ghost doesn't take damage from being force
+        moved into objects. -

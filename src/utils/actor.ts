@@ -1,7 +1,7 @@
 
-import { IHeroData } from "@data/heroData";
-import { IEnemyData } from "@data/enemyData";
-import { IMinionData } from "@data/minionData";
+import { IHeroData } from "@hero/heroData";
+import { IEnemyData } from "@enemy/enemyData";
+import { IMinionData } from "@minion/minionData";
 
 
 export function getActor(id: string): Actor | null {

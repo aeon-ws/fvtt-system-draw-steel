@@ -1,5 +1,5 @@
-_id: bgQuMb27ru0KBkUI
-_key: '!actors!bgQuMb27ru0KBkUI'
+_id: dxTPi3LTFoSTGnsS
+_key: '!actors!dxTPi3LTFoSTGnsS'
 name: Human Knave
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 2
     psychic: 2
 items:
-- _id: Q1CKNtW2izzhm0VA
-  _key: '!items!Q1CKNtW2izzhm0VA'
+- _id: 1ZQ3IAXA5VNmGKE3
+  _key: '!items!1ZQ3IAXA5VNmGKE3'
   name: Morningstar Javelin
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,10 +81,10 @@ items:
           targetCharacteristic: might
           value: 2
           effect:
-            text: the target has a double bane on
+            text: the target has a double bane on their next power roll
     postPowerRollEffect:
-      text: Taunted (EoT). I’m Your Enemy The knave can make a free strike against
+      text: Taunted (EoT). I'm Your Enemy The knave can make a free strike against
         an adjacent creature they have taunted whenever the creature deals damage
         to a creature other than the knave. Overwhelm An enemy who starts their turn
-        adjacent to the knave can’t shift. Supernatural Insight The knave ignores
-        concealment if it’s granted by a supernatural effect, or the target is supernatural.
+        adjacent to the knave can't shift. Supernatural Insight The knave ignores
+        concealment if it's granted by a supernatural effect, or the target is supernatural.

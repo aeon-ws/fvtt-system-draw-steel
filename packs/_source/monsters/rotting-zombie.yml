@@ -1,5 +1,5 @@
-_id: Wgq48v2mBENT7X50
-_key: '!actors!Wgq48v2mBENT7X50'
+_id: 8boomfFixufnWVUC
+_key: '!actors!8boomfFixufnWVUC'
 name: Rotting Zombie
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: RIbDMOtCeJXvifFg
-  _key: '!items!RIbDMOtCeJXvifFg'
+- _id: ngzOE4E7FEkOkOJj
+  _key: '!items!ngzOE4E7FEkOkOJj'
   name: Rotting Fist
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: WiulqhPnR3zcL7v8
-_key: '!actors!WiulqhPnR3zcL7v8'
+_id: TuX6KDtRoh4qDikw
+_key: '!actors!TuX6KDtRoh4qDikw'
 name: Wallmaster
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -48,8 +48,8 @@ system:
   weakness:
     acid: 3
 items:
-- _id: oo1nVso0bJCI6YI9
-  _key: '!items!oo1nVso0bJCI6YI9'
+- _id: NAU0vgd8ObgCvmKB
+  _key: '!items!NAU0vgd8ObgCvmKB'
   name: Wall Slam
   type: monsterAbility
   img: icons/svg/book.svg
@@ -89,8 +89,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster chooses two wall segments within 10 squares. Each segment
         falls on a single target within distance, and is then destroyed.
-- _id: spm7EBtxgOkKJoZn
-  _key: '!items!spm7EBtxgOkKJoZn'
+- _id: R4gtF2Qqpywx5cZg
+  _key: '!items!R4gtF2Qqpywx5cZg'
   name: Dead End
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,8 +122,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster chooses one wall segment within 10 squares. The segment
         pushes a target within distance, and shifts into each square they leave behind.
-- _id: fHEmKF6H2QN6YRSO
-  _key: '!items!fHEmKF6H2QN6YRSO'
+- _id: JGVgdvFbYP9W1ljD
+  _key: '!items!JGVgdvFbYP9W1ljD'
   name: The Wall Sees All
   type: monsterAbility
   img: icons/svg/book.svg
@@ -140,14 +140,13 @@ items:
     prePowerRollEffect:
       text: The wallmaster teleports to a wall within distance and affixes itself
         to it.
-- _id: FIJkD1dixt6HeTcS
-  _key: '!items!FIJkD1dixt6HeTcS'
+- _id: lFMQpKArgU0CCYDY
+  _key: '!items!lFMQpKArgU0CCYDY'
   name: Wall Redirect
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    keywords:
-    - —
+    keywords: []
     type: triggeredAction
     distance:
       melee: 1
@@ -157,7 +156,7 @@ items:
       count: 1
     trigger: A creature damages the wall with a strike.
     prePowerRollEffect:
-      text: The wall redirects the strike to the target creature and isn’t targeted
+      text: The wall redirects the strike to the target creature and isn't targeted
         by the strike. Living Labyrinth The wallmaster starts combat affixed to a
         wall. At the start of each round of combat while affixed to a wall, the wallmaster
         creates a 20 wall of stone within a distance of 10 squares. Any walls created

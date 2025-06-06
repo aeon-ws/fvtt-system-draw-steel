@@ -1,5 +1,5 @@
-_id: QOyh1KU0o3UUbYBN
-_key: '!actors!QOyh1KU0o3UUbYBN'
+_id: wXMcVLjs3loUt5mJ
+_key: '!actors!wXMcVLjs3loUt5mJ'
 name: Goblin Battleborn
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: HtS2nDbRe6XJ6fNZ
-  _key: '!items!HtS2nDbRe6XJ6fNZ'
+- _id: DlbQIwhP1u4VqOQN
+  _key: '!items!DlbQIwhP1u4VqOQN'
   name: Spear Charge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -75,9 +75,9 @@ items:
       tier3:
         damage: 8
         effect:
-          text: prone the battleborn continues charging
-- _id: c8FMdaD1be7M1KLZ
-  _key: '!items!c8FMdaD1be7M1KLZ'
+          text: prone
+- _id: 1cPtSPD8Ez6pMK2C
+  _key: '!items!1cPtSPD8Ez6pMK2C'
   name: Battle Flurry
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,3 +119,16 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
+- _id: k20xq8n7N0oDpgLz
+  _key: '!items!k20xq8n7N0oDpgLz'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The battleborn doesn't provoke opportunity attacks from enemies by moving.
+        Whenever the battleborn is adjacent to an enemy and willingly moves to a space
+        no longer adjacent to that enemy, the battleborn can make an opportunity attack
+        against them as a triggered action.

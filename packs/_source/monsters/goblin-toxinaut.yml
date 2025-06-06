@@ -1,5 +1,5 @@
-_id: p9SeqyTiWZS8Dnot
-_key: '!actors!p9SeqyTiWZS8Dnot'
+_id: Wf4PJNQ2zIPneGew
+_key: '!actors!Wf4PJNQ2zIPneGew'
 name: Goblin Toxinaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   immunity:
     poison: 3
 items:
-- _id: GhHZFTiAAu4BbiBs
-  _key: '!items!GhHZFTiAAu4BbiBs'
+- _id: pD5Tkg2WI9nI1oHT
+  _key: '!items!pD5Tkg2WI9nI1oHT'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,14 +78,23 @@ items:
       tier3:
         damage: 5
         effect:
-          text: slide 3
+          text: slide 3 1
     postPowerRollEffect:
-      text: The area is filled with a green haze until the start of the toxinaut’s
+      text: The area is filled with a green haze until the start of the toxinaut's
         next turn or until the toxinaut is reduced to Stamina 0. The area is difficult
         terrain for non-goblin creatures, and each such creature who moves within
         the area takes 2 poison damage for each square moved. The poison damage ignores
-        immunity. The haze can’t be dispersed by wind. Cunning The toxinaut doesn’t
-        provoke opportunity attacks from enemies by moving. Whenever the toxinaut
-        is adjacent to an enemy and willingly moves to a space no longer adjacent
-        to that enemy, the toxinaut can make an opportunity attack against them as
-        a triggered action.
+        immunity. The haze can't be dispersed by wind.
+- _id: toKunYCyqiNl80QR
+  _key: '!items!toKunYCyqiNl80QR'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The toxinaut doesn't provoke opportunity attacks from enemies by moving.
+        Whenever the toxinaut is adjacent to an enemy and willingly moves to a space
+        no longer adjacent to that enemy, the toxinaut can make an opportunity attack
+        against them as a triggered action.

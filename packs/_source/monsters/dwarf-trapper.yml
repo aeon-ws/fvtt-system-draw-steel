@@ -1,5 +1,5 @@
-_id: awyh8QyGaWtoX2uO
-_key: '!actors!awyh8QyGaWtoX2uO'
+_id: 2eMnhFnJZctyC5cW
+_key: '!actors!2eMnhFnJZctyC5cW'
 name: Dwarf Trapper
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 2
     freeStrikeDamage: 3
 items:
-- _id: u3GZS0JcHsGigOom
-  _key: '!items!u3GZS0JcHsGigOom'
+- _id: rGCOIDPnTkTgvmlB
+  _key: '!items!rGCOIDPnTkTgvmlB'
   name: Concussive Bolts
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,8 +83,8 @@ items:
           text: push 6
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: 5zGmtBmX3OZHTwE5
-  _key: '!items!5zGmtBmX3OZHTwE5'
+- _id: VzEolocYoW5rw4VZ
+  _key: '!items!VzEolocYoW5rw4VZ'
   name: Steam Powered Snare
   type: monsterAbility
   img: icons/svg/book.svg

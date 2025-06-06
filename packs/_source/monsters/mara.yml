@@ -1,5 +1,5 @@
-_id: jww83YMQTvhzD1T0
-_key: '!actors!jww83YMQTvhzD1T0'
+_id: bDTeHyQXcvGP30Tj
+_key: '!actors!bDTeHyQXcvGP30Tj'
 name: Mara
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: CPiQn4pCgwcm01hp
-  _key: '!items!CPiQn4pCgwcm01hp'
+- _id: BEYDgPJzflVcPxgL
+  _key: '!items!BEYDgPJzflVcPxgL'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,8 +80,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: AyDzz3Xw1Lzvy2lG
-  _key: '!items!AyDzz3Xw1Lzvy2lG'
+- _id: YFkahIkLaG8iPcP8
+  _key: '!items!YFkahIkLaG8iPcP8'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -114,8 +114,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: XjVg5C2b2GehpVed
-  _key: '!items!XjVg5C2b2GehpVed'
+- _id: O9WNg01UcFvfm46j
+  _key: '!items!O9WNg01UcFvfm46j'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg

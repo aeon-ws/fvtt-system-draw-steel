@@ -1,5 +1,5 @@
-_id: d5j25SheAutDRhWB
-_key: '!actors!d5j25SheAutDRhWB'
+_id: eizT8Hq8xhXycjkT
+_key: '!actors!eizT8Hq8xhXycjkT'
 name: Goblin Spinecleaver
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: TvdWIs9KyAghiC0d
-  _key: '!items!TvdWIs9KyAghiC0d'
+- _id: FetwCkHz5GTlDK7Y
+  _key: '!items!FetwCkHz5GTlDK7Y'
   name: Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,3 +81,13 @@ items:
         damage: 55
         effect:
           text: push 4
+- _id: qNR3qQjLCrhDzyAt
+  _key: '!items!qNR3qQjLCrhDzyAt'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The spinecleaver doesn't provoke opportunity attacks by moving.
