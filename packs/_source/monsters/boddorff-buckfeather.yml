@@ -1,5 +1,5 @@
-_id: 8zkhqwfLKeBSmzZH
-_key: '!actors!8zkhqwfLKeBSmzZH'
+_id: MlpglPainQlWZ2yz
+_key: '!actors!MlpglPainQlWZ2yz'
 name: Boddorff Buckfeather
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: TYQn9aG08t9ofI1P
-  _key: '!items!TYQn9aG08t9ofI1P'
+- _id: 117zHBAedKVLcpXr
+  _key: '!actors.items!MlpglPainQlWZ2yz.117zHBAedKVLcpXr'
   name: Thunder of Heavens
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,8 +78,8 @@ items:
     postPowerRollEffect:
       text: Boddorff or an ally within distance regains Stamina equal to half the
         damage dealt.
-- _id: wldKXUc46p192JWH
-  _key: '!items!wldKXUc46p192JWH'
+- _id: ZNQaDGnjwZUXLoIU
+  _key: '!actors.items!MlpglPainQlWZ2yz.ZNQaDGnjwZUXLoIU'
   name: Imbue with Might
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,9 +96,37 @@ items:
       ally: true
       count: 5
     prePowerRollEffect:
-      text: Each target has an edge on their next strike. Stalwart Guardian Strikes
-        made against allies adjacent to Boddorff have a bane. Nimblestep Boddorff
-        ignores the effects of difficult terrain and moves at full speed while he's
-        sneaking. Rivalry Boddorff selects one creature within line of effect at the
-        start of an encounter. Both Boddorff and the creature can add a 143 to all
-        power rolls made against each other.
+      text: Each target has an edge on their next strike.
+- _id: CzuOApdosjeK8Aun
+  _key: '!actors.items!MlpglPainQlWZ2yz.CzuOApdosjeK8Aun'
+  name: Stalwart Guardian
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Strikes made against allies adjacent to Boddorff have a bane.
+- _id: nPNgOejzdFKc5tu6
+  _key: '!actors.items!MlpglPainQlWZ2yz.nPNgOejzdFKc5tu6'
+  name: Nimblestep
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Boddorff ignores the effects of difficult terrain and moves at full speed
+        while he's sneaking.
+- _id: aeamizEgHuVW3YEH
+  _key: '!actors.items!MlpglPainQlWZ2yz.aeamizEgHuVW3YEH'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Boddorff selects one creature within line of effect at the start of an
+        encounter. Both Boddorff and the creature can add a 143 to all power rolls
+        made against each other.

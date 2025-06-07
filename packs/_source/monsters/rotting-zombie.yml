@@ -1,5 +1,5 @@
-_id: 8boomfFixufnWVUC
-_key: '!actors!8boomfFixufnWVUC'
+_id: zs4cdPveK3LCSSdX
+_key: '!actors!zs4cdPveK3LCSSdX'
 name: Rotting Zombie
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: ngzOE4E7FEkOkOJj
-  _key: '!items!ngzOE4E7FEkOkOJj'
+- _id: wOHfrk1Troffy8BM
+  _key: '!actors.items!zs4cdPveK3LCSSdX.wOHfrk1Troffy8BM'
   name: Rotting Fist
   type: monsterAbility
   img: icons/svg/book.svg
@@ -82,3 +82,15 @@ items:
           value: 2
           effect:
             text: prone if size 1 slowed (save ends)
+- _id: XGVidhmhszFcAClA
+  _key: '!actors.items!zs4cdPveK3LCSSdX.XGVidhmhszFcAClA'
+  name: Death Grasp
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: When the rotting zombie is reduced to Stamina 0, their square becomes
+        difficult terrain. The first time any enemy enters this space, they are M<2
+        slowed (save ends).

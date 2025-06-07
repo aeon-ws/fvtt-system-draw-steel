@@ -1,5 +1,5 @@
-_id: 67djbtxev2vYNFky
-_key: '!actors!67djbtxev2vYNFky'
+_id: hMKD8Sm8gYNFVjtX
+_key: '!actors!hMKD8Sm8gYNFVjtX'
 name: Skeleton
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: fdI9seESAu83rWHe
-  _key: '!items!fdI9seESAu83rWHe'
+- _id: JLLQH7VojC1sknS3
+  _key: '!actors.items!hMKD8Sm8gYNFVjtX.JLLQH7VojC1sknS3'
   name: Bone Shards
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,8 +79,8 @@ items:
     postPowerRollEffect:
       text: Until the start of the skeleton's next turn, the target takes 2 damage
         the first time they move on their turn.
-- _id: U1cnkVCvWspUZBsO
-  _key: '!items!U1cnkVCvWspUZBsO'
+- _id: KBCsfL8aEfirJpUH
+  _key: '!actors.items!hMKD8Sm8gYNFVjtX.KBCsfL8aEfirJpUH'
   name: Bone Spur
   type: monsterAbility
   img: icons/svg/book.svg
@@ -120,8 +120,8 @@ items:
             text: bleeding (save ends)
     postPowerRollEffect:
       text: Each target has a bane on their next strike.
-- _id: 4fcwdhn2wLwPckJ7
-  _key: '!items!4fcwdhn2wLwPckJ7'
+- _id: 2DpOPr85UXdsXjCn
+  _key: '!actors.items!hMKD8Sm8gYNFVjtX.2DpOPr85UXdsXjCn'
   name: Arise
   type: monsterAbility
   img: icons/svg/book.svg

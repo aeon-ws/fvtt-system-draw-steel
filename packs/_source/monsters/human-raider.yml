@@ -1,5 +1,5 @@
-_id: tZrJ1uMR2YwWxISh
-_key: '!actors!tZrJ1uMR2YwWxISh'
+_id: saGXMQvDcBcJTSEf
+_key: '!actors!saGXMQvDcBcJTSEf'
 name: Human Raider
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: joqjTZapsjFoN8qP
-  _key: '!items!joqjTZapsjFoN8qP'
+- _id: LTnbCpBNw25OXtLY
+  _key: '!actors.items!saGXMQvDcBcJTSEf.LTnbCpBNw25OXtLY'
   name: Handaxes
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,5 +81,15 @@ items:
         damage: 3
     postPowerRollEffect:
       text: lf this ability is used while charging, the raider can make a ranged free
-        strike before using the ability. Supernatural Insight The raider ignores concealment
-        if it's granted by a supernatural effect, or the target is supernatural.
+        strike before using the ability.
+- _id: E5TltrBH0jChpe7E
+  _key: '!actors.items!saGXMQvDcBcJTSEf.E5TltrBH0jChpe7E'
+  name: Supernatural Insight
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The raider ignores concealment if it's granted by a supernatural effect,
+        or the target is supernatural.

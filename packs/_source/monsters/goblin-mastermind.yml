@@ -1,5 +1,5 @@
-_id: mcDpGgJnhrPbHCw0
-_key: '!actors!mcDpGgJnhrPbHCw0'
+_id: h3xJiFd6Ojz1Q6sW
+_key: '!actors!h3xJiFd6Ojz1Q6sW'
 name: Goblin Mastermind
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: 4Xv8o47KkjyO2i74
-  _key: '!items!4Xv8o47KkjyO2i74'
+- _id: kHDtquD6C3gSLJf2
+  _key: '!actors.items!h3xJiFd6Ojz1Q6sW.kHDtquD6C3gSLJf2'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -75,8 +75,8 @@ items:
         damage: 7
     postPowerRollEffect:
       text: One ally adjacent to the target can make a free strike against them.
-- _id: AGSzBpo3YLHyYx9q
-  _key: '!items!AGSzBpo3YLHyYx9q'
+- _id: bbClODOieRv2u7wL
+  _key: '!actors.items!h3xJiFd6Ojz1Q6sW.bbClODOieRv2u7wL'
   name: Goad
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,10 +91,19 @@ items:
       target uses a strike that targets the mastermind or
     prePowerRollEffect:
       text: The mastermind retargets the strike to target themself or another ally.
-        The new target must be a valid option for the strike. Saw You Coming The mastermind
-        can't be surprised.
-- _id: J3pXnVkt8iuce6tm
-  _key: '!items!J3pXnVkt8iuce6tm'
+        The new target must be a valid option for the strike.
+- _id: N8vTNs31cwyQ2qZZ
+  _key: '!actors.items!h3xJiFd6Ojz1Q6sW.N8vTNs31cwyQ2qZZ'
+  name: Saw You Coming
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The mastermind can't be surprised.
+- _id: r3wFwPcGvuxZ51ry
+  _key: '!actors.items!h3xJiFd6Ojz1Q6sW.r3wFwPcGvuxZ51ry'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

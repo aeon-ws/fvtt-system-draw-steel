@@ -1,5 +1,5 @@
-_id: DHSkjmoP7HJ086tr
-_key: '!actors!DHSkjmoP7HJ086tr'
+_id: FGrsIcSWg7OtELJ7
+_key: '!actors!FGrsIcSWg7OtELJ7'
 name: Shade
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: JtrwghwaJ4eppkkv
-  _key: '!items!JtrwghwaJ4eppkkv'
+- _id: UNu6hpDOBg2N8AtH
+  _key: '!actors.items!FGrsIcSWg7OtELJ7.UNu6hpDOBg2N8AtH'
   name: Life Drain
   type: monsterAbility
   img: icons/svg/book.svg

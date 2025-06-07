@@ -1,5 +1,5 @@
-_id: Wi84OLYeVP8KaNXj
-_key: '!actors!Wi84OLYeVP8KaNXj'
+_id: pVTaykRxLWYkzUlQ
+_key: '!actors!pVTaykRxLWYkzUlQ'
 name: Decrepit Skeleton
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: Z8DLjuUPmYSUAkoS
-  _key: '!items!Z8DLjuUPmYSUAkoS'
+- _id: 0dAQma7ibtnZu9uJ
+  _key: '!actors.items!pVTaykRxLWYkzUlQ.0dAQma7ibtnZu9uJ'
   name: Bone Bow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,6 +79,16 @@ items:
         damage: 5
     postPowerRollEffect:
       text: The decrepit skeleton chooses one other target within distance to take
-        1 damage. Bonetrops When the decrepit skeleton is reduced to Stamina 0, their
-        square becomes difficult terrain. The first time any enemy enters this space,
-        they take 1 damage.
+        1 damage.
+- _id: sBNyd3RoQ1Ca0S6s
+  _key: '!actors.items!pVTaykRxLWYkzUlQ.sBNyd3RoQ1Ca0S6s'
+  name: Bonetrops
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: When the decrepit skeleton is reduced to Stamina 0, their square becomes
+        difficult terrain. The first time any enemy enters this space, they take 1
+        damage.

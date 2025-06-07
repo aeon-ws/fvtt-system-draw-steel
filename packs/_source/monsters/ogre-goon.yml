@@ -1,5 +1,5 @@
-_id: VNzNZGP1d7MgvMJg
-_key: '!actors!VNzNZGP1d7MgvMJg'
+_id: xqcmHYtLUEYux4zF
+_key: '!actors!xqcmHYtLUEYux4zF'
 name: Ogre Goon
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 4
     freeStrikeDamage: 5
 items:
-- _id: nzdzbFFpqID9BakW
-  _key: '!items!nzdzbFFpqID9BakW'
+- _id: Isv34QtxyyoyjDg5
+  _key: '!actors.items!xqcmHYtLUEYux4zF.Isv34QtxyyoyjDg5'
   name: Club Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,8 +81,8 @@ items:
     postPowerRollEffect:
       text: This strike deals an additional 4 damage to each creature and object that
         takes damage from any force movement it causes.
-- _id: 57EUkkTnuo0DdzbD
-  _key: '!items!57EUkkTnuo0DdzbD'
+- _id: 0AbQPRIGf444zLDD
+  _key: '!actors.items!xqcmHYtLUEYux4zF.0AbQPRIGf444zLDD'
   name: Grabby Hand
   type: monsterAbility
   img: icons/svg/book.svg
@@ -118,8 +118,8 @@ items:
         the target in their hand.
     postPowerRollEffect:
       text: The goon can only have one target grabbed at a time.
-- _id: haYtjHIz1xKlaqyG
-  _key: '!items!haYtjHIz1xKlaqyG'
+- _id: 6CDrDFonscN1assV
+  _key: '!actors.items!xqcmHYtLUEYux4zF.6CDrDFonscN1assV'
   name: People Bowling
   type: monsterAbility
   img: icons/svg/book.svg
@@ -155,8 +155,8 @@ items:
       text: The goon hurls what's in their hand down the line and rolls power. The
         hurled creature or object counts as a target and lands in the last square
         of the line (or nearest unoccupied square of the goon's choice).
-- _id: mFsDUquw5JGV0joN
-  _key: '!items!mFsDUquw5JGV0joN'
+- _id: M2DjZLY7BImY2BjB
+  _key: '!actors.items!xqcmHYtLUEYux4zF.M2DjZLY7BImY2BjB'
   name: Swat The Fly
   type: monsterAbility
   img: icons/svg/book.svg
@@ -174,4 +174,14 @@ items:
       count: 1
     trigger: The target moves or shifts away from the goon.
     prePowerRollEffect:
-      text: Slide 5. Defiant Anger The goon has damage immunity 2 while they are winded.
+      text: Slide 5.
+- _id: WjuAkMaun6GvXorX
+  _key: '!actors.items!xqcmHYtLUEYux4zF.WjuAkMaun6GvXorX'
+  name: Defiant Anger
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The goon has damage immunity 2 while they are winded.

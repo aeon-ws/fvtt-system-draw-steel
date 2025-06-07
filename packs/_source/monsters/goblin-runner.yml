@@ -1,5 +1,5 @@
-_id: rRaiiIM1BqeDJ5dk
-_key: '!actors!rRaiiIM1BqeDJ5dk'
+_id: KPevhAQaBrGawFDy
+_key: '!actors!KPevhAQaBrGawFDy'
 name: Goblin Runner
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: Ozoammf1Y5Fb2IYW
-  _key: '!items!Ozoammf1Y5Fb2IYW'
+- _id: PlwYThpL2AhdGhtN
+  _key: '!actors.items!KPevhAQaBrGawFDy.PlwYThpL2AhdGhtN'
   name: Club Charge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -76,8 +76,8 @@ items:
         damage: 2
       tier3:
         damage: 3
-- _id: KSflmXfAR9IpROHh
-  _key: '!items!KSflmXfAR9IpROHh'
+- _id: PMOYsvLiNZa0pwJs
+  _key: '!actors.items!KPevhAQaBrGawFDy.PMOYsvLiNZa0pwJs'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

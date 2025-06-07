@@ -1,5 +1,5 @@
-_id: 1g0uvcd04JlQkRse
-_key: '!actors!1g0uvcd04JlQkRse'
+_id: iPO0Wbjf6w6qfJeO
+_key: '!actors!iPO0Wbjf6w6qfJeO'
 name: Tomb Horror
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   weakness:
     fire: 3
 items:
-- _id: UkEde25Z3AmckwnP
-  _key: '!items!UkEde25Z3AmckwnP'
+- _id: niRXeJJEHTAJb1Fg
+  _key: '!actors.items!iPO0Wbjf6w6qfJeO.niRXeJJEHTAJb1Fg'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
     postPowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: ydJPCtnDlEXlWD9w
-  _key: '!items!ydJPCtnDlEXlWD9w'
+- _id: fyVazOc4TgVgpMsy
+  _key: '!actors.items!iPO0Wbjf6w6qfJeO.fyVazOc4TgVgpMsy'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     postPowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: HrzVfJuch6ViBUtp
-  _key: '!items!HrzVfJuch6ViBUtp'
+- _id: iPfv9Fwb1bGY773m
+  _key: '!actors.items!iPO0Wbjf6w6qfJeO.iPfv9Fwb1bGY773m'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
@@ -151,5 +151,15 @@ items:
         end this movement on a solid surface. Curse For the Defilers (Triggered Action
         relic within distance that the tomb horror was feeding on. The target is P<2
         slowed (save ends). The tomb horror then moves up to their speed towards the
-        target. Enervating Horror A creature that starts their turn adjacent to the
-        tomb horror takes 5 corruption damage and is I<1 frightened (EoT).
+        target.
+- _id: dMggudBhodu7yJPS
+  _key: '!actors.items!iPO0Wbjf6w6qfJeO.dMggudBhodu7yJPS'
+  name: Enervating Horror
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: A creature that starts their turn adjacent to the tomb horror takes 5
+        corruption damage and is I<1 frightened (EoT).

@@ -1,5 +1,5 @@
-_id: uKa7ystYLt9jXZwO
-_key: '!actors!uKa7ystYLt9jXZwO'
+_id: xwGHaLtEO90RjTD8
+_key: '!actors!xwGHaLtEO90RjTD8'
 name: Vurkor
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: aHO3v0ZA0WDAK8Pk
-  _key: '!items!aHO3v0ZA0WDAK8Pk'
+- _id: hsf0Kj2SRN45Qfic
+  _key: '!actors.items!xwGHaLtEO90RjTD8.hsf0Kj2SRN45Qfic'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,8 +80,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: FzCVYnlTvWZ2JDkx
-  _key: '!items!FzCVYnlTvWZ2JDkx'
+- _id: 6rQyBX6oCp2kF5Ix
+  _key: '!actors.items!xwGHaLtEO90RjTD8.6rQyBX6oCp2kF5Ix'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -114,8 +114,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: kYO0x1bl9eAtBMGY
-  _key: '!items!kYO0x1bl9eAtBMGY'
+- _id: zSGHE9ZGYEKmHgOd
+  _key: '!actors.items!xwGHaLtEO90RjTD8.zSGHE9ZGYEKmHgOd'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,7 +132,26 @@ items:
     trigger: Vurkor takes damage.
     prePowerRollEffect:
       text: Vurkor teleports 2 squares. Each creature adjacent to his original space
-        takes 2 corruption damage. Glowing Recovery Vurkor can use his maneuver to
-        regain 10 Stamina once per round. Rivalry Vurkor selects one creature within
-        line of effect at the start of an encounter. Both Vurkor and the creature
-        can add a 1d3 to all power rolls made against each other.
+        takes 2 corruption damage.
+- _id: 0oV3xa2xl2LmEq35
+  _key: '!actors.items!xwGHaLtEO90RjTD8.0oV3xa2xl2LmEq35'
+  name: Glowing Recovery
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Vurkor can use his maneuver to regain 10 Stamina once per round.
+- _id: RekevaIEmOJtsJ4O
+  _key: '!actors.items!xwGHaLtEO90RjTD8.RekevaIEmOJtsJ4O'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Vurkor selects one creature within line of effect at the start of an encounter.
+        Both Vurkor and the creature can add a 1d3 to all power rolls made against
+        each other.

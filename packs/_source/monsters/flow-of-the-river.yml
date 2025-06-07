@@ -1,5 +1,5 @@
-_id: WngInWPcJf3dUnfZ
-_key: '!actors!WngInWPcJf3dUnfZ'
+_id: bbjg4pKpR44NPFky
+_key: '!actors!bbjg4pKpR44NPFky'
 name: Flow of the River
 type: minion
 img: icons/svg/mystery-man.svg
@@ -49,8 +49,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: 1LnHJ3dTc50zTcTc
-  _key: '!items!1LnHJ3dTc50zTcTc'
+- _id: Ce16NK2YI9Z2gxPG
+  _key: '!actors.items!bbjg4pKpR44NPFky.Ce16NK2YI9Z2gxPG'
   name: Bite and Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,3 +83,36 @@ items:
         damage: 5
         effect:
           text: shift 3
+- _id: ZDnTNhpPAgR0mqcB
+  _key: '!actors.items!bbjg4pKpR44NPFky.ZDnTNhpPAgR0mqcB'
+  name: Aquavuken
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The flow ignores difficult terrain and can move on top of water as if
+        it was solid ground.
+- _id: kYG35zy0tYn1tpt5
+  _key: '!actors.items!bbjg4pKpR44NPFky.kYG35zy0tYn1tpt5'
+  name: Pack Strong
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The flow can't be flanked or frightened while adjacent to an ally.
+- _id: ZZDkOhss98UEvVii
+  _key: '!actors.items!bbjg4pKpR44NPFky.ZZDkOhss98UEvVii'
+  name: Water Weird
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Once during their turn, the flow can enter an adjacent body of water and
+        reappear in an unoccupied space adjacent to another body of water within 5.
+        Body of water includes ally water wolves and other water elementals.

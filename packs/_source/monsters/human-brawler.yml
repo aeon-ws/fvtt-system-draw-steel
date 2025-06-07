@@ -1,5 +1,5 @@
-_id: j56eKhEAAs0BjSts
-_key: '!actors!j56eKhEAAs0BjSts'
+_id: XLTaY9XWAj4Foqog
+_key: '!actors!XLTaY9XWAj4Foqog'
 name: Human Brawler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: VSvB4reEPlQ6pZPk
-  _key: '!items!VSvB4reEPlQ6pZPk'
+- _id: z1XN9SoJj6Om0nxq
+  _key: '!actors.items!XLTaY9XWAj4Foqog.z1XN9SoJj6Om0nxq'
   name: Haymaker
   type: monsterAbility
   img: icons/svg/book.svg
@@ -82,8 +82,8 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: brawler deals an additional 2 damage if the target is already grabbed.
-- _id: FJmiQgpT8FqfN30C
-  _key: '!items!FJmiQgpT8FqfN30C'
+- _id: CgKtTGVflNC0Ypjc
+  _key: '!actors.items!XLTaY9XWAj4Foqog.CgKtTGVflNC0Ypjc'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,7 +100,27 @@ items:
       enemy: true
       count: 1
     prePowerRollEffect:
-      text: Push 5. Shoot the Hostage The brawler takes half damage from strikes if
-        they have a creature or object grabbed. The grabbed creature or object takes
-        the other half of the damage. Supernatural Insight The brawler ignores concealment
-        if it's granted by a supernatural effect, or the target is supernatural.
+      text: Push 5.
+- _id: NaapHfZvJ4MgXEoY
+  _key: '!actors.items!XLTaY9XWAj4Foqog.NaapHfZvJ4MgXEoY'
+  name: Shoot the Hostage
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The brawler takes half damage from strikes if they have a creature or
+        object grabbed. The grabbed creature or object takes the other half of the
+        damage.
+- _id: PVXt20H9EXzUpder
+  _key: '!actors.items!XLTaY9XWAj4Foqog.PVXt20H9EXzUpder'
+  name: Supernatural Insight
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The brawler ignores concealment if it's granted by a supernatural effect,
+        or the target is supernatural.

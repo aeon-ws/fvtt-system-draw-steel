@@ -1,5 +1,5 @@
-_id: 33czQ4xD1O8chcB7
-_key: '!actors!33czQ4xD1O8chcB7'
+_id: i07tHga4stOM2fGy
+_key: '!actors!i07tHga4stOM2fGy'
 name: Ogre Juggernaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: VARSvBCkVbFwG2qz
-  _key: '!items!VARSvBCkVbFwG2qz'
+- _id: HpvHE61aBUOqEdQM
+  _key: '!actors.items!i07tHga4stOM2fGy.HpvHE61aBUOqEdQM'
   name: Pitchfork Catapult
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
             text: vertical slide 3
     maliceEffect:
       text: 1 Malice Each target is M<1 bleeding (save ends).
-- _id: 19XbmkY1o97jyNCc
-  _key: '!items!19XbmkY1o97jyNCc'
+- _id: VRwM2Ki8SzW0MLdE
+  _key: '!actors.items!i07tHga4stOM2fGy.VRwM2Ki8SzW0MLdE'
   name: Earth Breaking Jump
   type: monsterAbility
   img: icons/svg/book.svg
@@ -127,8 +127,8 @@ items:
             text: prone
     prePowerRollEffect:
       text: The juggernaut jumps up to 6 squares before using this ability.
-- _id: byFSf4ApkhB0gE8m
-  _key: '!items!byFSf4ApkhB0gE8m'
+- _id: nGuZrtjlzsKJzkhV
+  _key: '!actors.items!i07tHga4stOM2fGy.nGuZrtjlzsKJzkhV'
   name: Horrible Bellow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -165,8 +165,8 @@ items:
     postPowerRollEffect:
       text: All ogres have an edge on strikes against creatures frightened by this
         ability.
-- _id: IRJ1QfcvldP9IMZi
-  _key: '!items!IRJ1QfcvldP9IMZi'
+- _id: liv4xzFdlFvQjW4C
+  _key: '!actors.items!i07tHga4stOM2fGy.liv4xzFdlFvQjW4C'
   name: Hrraaaaaagh!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -181,9 +181,27 @@ items:
       self: true
     trigger: The juggernaut takes damage.
     prePowerRollEffect:
-      text: The juggernaut moves up to their speed and makes a free strike. Destructive
-        Path The juggernaut automatically destroys unattended, mundane size 1 objects
+      text: The juggernaut moves up to their speed and makes a free strike.
+- _id: breQzFPN5dMqP676
+  _key: '!actors.items!i07tHga4stOM2fGy.breQzFPN5dMqP676'
+  name: Destructive Path
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The juggernaut automatically destroys unattended, mundane size 1 objects
         in their path during their movement. They can break through any mundane wall
         made of wood, stone, or a similarly sturdy material in this way, so long as
-        the wall is no more than 1 square thick. Defiant Anger The juggernaut has
-        damage immunity 2 while they are winded.
+        the wall is no more than 1 square thick.
+- _id: RslzFc2uOyiv5Ec6
+  _key: '!actors.items!i07tHga4stOM2fGy.RslzFc2uOyiv5Ec6'
+  name: Defiant Anger
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The juggernaut has damage immunity 2 while they are winded.

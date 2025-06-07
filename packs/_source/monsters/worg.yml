@@ -1,5 +1,5 @@
-_id: jDlyKXr2x96OpESK
-_key: '!actors!jDlyKXr2x96OpESK'
+_id: ARyr1FVVrxJa1nwL
+_key: '!actors!ARyr1FVVrxJa1nwL'
 name: Worg
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 1
     freeStrikeDamage: 1
 items:
-- _id: YTlvXs5RPBQ2pVAz
-  _key: '!items!YTlvXs5RPBQ2pVAz'
+- _id: cck5Yk7AmsSWKqJU
+  _key: '!actors.items!ARyr1FVVrxJa1nwL.cck5Yk7AmsSWKqJU'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -73,8 +73,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: 0Wva1raTMSAwFi1Z
-  _key: '!items!0Wva1raTMSAwFi1Z'
+- _id: VreTxQLPpimtGQwX
+  _key: '!actors.items!ARyr1FVVrxJa1nwL.VreTxQLPpimtGQwX'
   name: Sprint
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,7 +88,26 @@ items:
       text: Self
       self: true
     prePowerRollEffect:
-      text: The worg moves up to their speed. Mounted Charger lf a worg used as a
-        mount charges, their rider gains an edge on melee strikes until the end of
-        their turn. Shared Crafty lf the worg's rider has the Crafty trait, the worg
-        also has the Crafty trait.
+      text: The worg moves up to their speed.
+- _id: 2jq0zch8STRhBRab
+  _key: '!actors.items!ARyr1FVVrxJa1nwL.2jq0zch8STRhBRab'
+  name: Mounted Charger
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: lf a worg used as a mount charges, their rider gains an edge on melee
+        strikes until the end of their turn.
+- _id: 8u7lfXGNUaXVRaBN
+  _key: '!actors.items!ARyr1FVVrxJa1nwL.8u7lfXGNUaXVRaBN'
+  name: Shared Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: lf the worg's rider has the Crafty trait, the worg also has the Crafty
+        trait.

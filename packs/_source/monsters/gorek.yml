@@ -1,5 +1,5 @@
-_id: ezdt1uSXQ3X0idhF
-_key: '!actors!ezdt1uSXQ3X0idhF'
+_id: rweWYmKS1vyeUU0k
+_key: '!actors!rweWYmKS1vyeUU0k'
 name: Gorek
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: fKvnDwPoqr1voZuI
-  _key: '!items!fKvnDwPoqr1voZuI'
+- _id: PbF7y17yxTnEL4HR
+  _key: '!actors.items!rweWYmKS1vyeUU0k.PbF7y17yxTnEL4HR'
   name: Brutal Impact
   type: monsterAbility
   img: icons/svg/book.svg
@@ -82,9 +82,37 @@ items:
       text: 2 Malice Each target is M<1 slowed (save ends). Let's Tussle (Action)
         2D10 + 2 2 Malice
     postPowerRollEffect:
-      text: Gorek has an edge on strikes against a grabbed creature. Overwhelm Once
-        per turn, when Gorek force moves a target or shifts into a square adjacent
-        to a creature or object, he can make a free strike against them. Great Fortitude
-        Gorek can't be weakened. Rivalry Gorek selects one creature within line of
-        effect at the start of an encounter. Both Gorek and the creature can add a
-        1d3 to all power rolls made against each other.
+      text: Gorek has an edge on strikes against a grabbed creature.
+- _id: rmWjqyXU2ypNxZM2
+  _key: '!actors.items!rweWYmKS1vyeUU0k.rmWjqyXU2ypNxZM2'
+  name: Overwhelm
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Once per turn, when Gorek force moves a target or shifts into a square
+        adjacent to a creature or object, he can make a free strike against them.
+- _id: MwEN7iKTtA7bACwj
+  _key: '!actors.items!rweWYmKS1vyeUU0k.MwEN7iKTtA7bACwj'
+  name: Great Fortitude
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Gorek can't be weakened.
+- _id: HubWCKfbVpOoij3D
+  _key: '!actors.items!rweWYmKS1vyeUU0k.HubWCKfbVpOoij3D'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Gorek selects one creature within line of effect at the start of an encounter.
+        Both Gorek and the creature can add a 1d3 to all power rolls made against
+        each other.

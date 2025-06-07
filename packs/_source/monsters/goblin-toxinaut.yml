@@ -1,5 +1,5 @@
-_id: Wf4PJNQ2zIPneGew
-_key: '!actors!Wf4PJNQ2zIPneGew'
+_id: uO2fAOaHsaBlx6Dq
+_key: '!actors!uO2fAOaHsaBlx6Dq'
 name: Goblin Toxinaut
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   immunity:
     poison: 3
 items:
-- _id: pD5Tkg2WI9nI1oHT
-  _key: '!items!pD5Tkg2WI9nI1oHT'
+- _id: lPDMVWsT6wZEXCwN
+  _key: '!actors.items!uO2fAOaHsaBlx6Dq.lPDMVWsT6wZEXCwN'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
         terrain for non-goblin creatures, and each such creature who moves within
         the area takes 2 poison damage for each square moved. The poison damage ignores
         immunity. The haze can't be dispersed by wind.
-- _id: toKunYCyqiNl80QR
-  _key: '!items!toKunYCyqiNl80QR'
+- _id: hZEkVido0XeZKvEJ
+  _key: '!actors.items!uO2fAOaHsaBlx6Dq.hZEkVido0XeZKvEJ'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

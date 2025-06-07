@@ -1,5 +1,5 @@
-_id: RZc5y3LgyKWah2t9
-_key: '!actors!RZc5y3LgyKWah2t9'
+_id: q3NufgRXn3vfp44N
+_key: '!actors!q3NufgRXn3vfp44N'
 name: Human Bandit Chief
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 4
     psychic: 4
 items:
-- _id: QIAeQ3phFyC6tgZG
-  _key: '!items!QIAeQ3phFyC6tgZG'
+- _id: WX6yiMkAQK3WTZ86
+  _key: '!actors.items!q3NufgRXn3vfp44N.WX6yiMkAQK3WTZ86'
   name: Whip Magic Longsword
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,8 +83,8 @@ items:
     postPowerRollEffect:
       text: A target who is adjacent to the bandit chief after the ability resolves
         takes 5 corruption damage.
-- _id: Q3BzTB1TekrOpWtJ
-  _key: '!items!Q3BzTB1TekrOpWtJ'
+- _id: OF6tCJ8rdaea4bR2
+  _key: '!actors.items!q3NufgRXn3vfp44N.OF6tCJ8rdaea4bR2'
   name: Bloodstones
   type: monsterAbility
   img: icons/svg/book.svg
@@ -101,8 +101,8 @@ items:
     prePowerRollEffect:
       text: The bandit chief takes 9 corruption damage and increases the result of
         the power roll by one tier.
-- _id: rhefG9ZeELWv8nOq
-  _key: '!items!rhefG9ZeELWv8nOq'
+- _id: ALSto3qAS3ebB8Ku
+  _key: '!actors.items!q3NufgRXn3vfp44N.ALSto3qAS3ebB8Ku'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -112,12 +112,21 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, the bandit chief can take 5 damage to end one
         save ends effect affecting them. This damage can't be reduced in any way.
-        Supernatural Insight The bandit chief ignores concealment if it's granted
-        by a supernatural effect, or the target is supernatural. Shoot! (Villain Action
-        1 Keywords Area Distance 10 burst Target All artillery allies in the burst
-        Effect Each target makes a ranged free strike.
-- _id: ybKM1OmlPlFs4uIV
-  _key: '!items!ybKM1OmlPlFs4uIV'
+- _id: ek9ZdZmudgGrgx0W
+  _key: '!actors.items!q3NufgRXn3vfp44N.ek9ZdZmudgGrgx0W'
+  name: Supernatural Insight
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The bandit chief ignores concealment if it's granted by a supernatural
+        effect, or the target is supernatural. Shoot! (Villain Action 1 Keywords Area
+        Distance 10 burst Target All artillery allies in the burst Effect Each target
+        makes a ranged free strike.
+- _id: h4Xf0dCK3cUZtPSd
+  _key: '!actors.items!q3NufgRXn3vfp44N.h4Xf0dCK3cUZtPSd'
   name: Form Up! (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
@@ -134,8 +143,8 @@ items:
       text: Each target shifts up to their speed. Until the end of the encounter,
         the bandit chief and all allies have damage immunity 2 while adjacent to a
         target.
-- _id: ycusmNBqm1TnMezl
-  _key: '!items!ycusmNBqm1TnMezl'
+- _id: xmIOV5yHwqwn1KtR
+  _key: '!actors.items!q3NufgRXn3vfp44N.xmIOV5yHwqwn1KtR'
   name: Lead From the Front (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg

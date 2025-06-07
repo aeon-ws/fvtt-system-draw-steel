@@ -1,5 +1,5 @@
-_id: TuX6KDtRoh4qDikw
-_key: '!actors!TuX6KDtRoh4qDikw'
+_id: S1vFswsLyyHkn5a1
+_key: '!actors!S1vFswsLyyHkn5a1'
 name: Wallmaster
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -48,8 +48,8 @@ system:
   weakness:
     acid: 3
 items:
-- _id: NAU0vgd8ObgCvmKB
-  _key: '!items!NAU0vgd8ObgCvmKB'
+- _id: FSdb6lIf1pdDP6ff
+  _key: '!actors.items!S1vFswsLyyHkn5a1.FSdb6lIf1pdDP6ff'
   name: Wall Slam
   type: monsterAbility
   img: icons/svg/book.svg
@@ -89,8 +89,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster chooses two wall segments within 10 squares. Each segment
         falls on a single target within distance, and is then destroyed.
-- _id: R4gtF2Qqpywx5cZg
-  _key: '!items!R4gtF2Qqpywx5cZg'
+- _id: EdLHYfAUTkvMVOtz
+  _key: '!actors.items!S1vFswsLyyHkn5a1.EdLHYfAUTkvMVOtz'
   name: Dead End
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,8 +122,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster chooses one wall segment within 10 squares. The segment
         pushes a target within distance, and shifts into each square they leave behind.
-- _id: JGVgdvFbYP9W1ljD
-  _key: '!items!JGVgdvFbYP9W1ljD'
+- _id: QxaQoZLCt8I7KLXQ
+  _key: '!actors.items!S1vFswsLyyHkn5a1.QxaQoZLCt8I7KLXQ'
   name: The Wall Sees All
   type: monsterAbility
   img: icons/svg/book.svg
@@ -140,8 +140,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster teleports to a wall within distance and affixes itself
         to it.
-- _id: lFMQpKArgU0CCYDY
-  _key: '!items!lFMQpKArgU0CCYDY'
+- _id: ViUBVT7sPbvpdEwG
+  _key: '!actors.items!S1vFswsLyyHkn5a1.ViUBVT7sPbvpdEwG'
   name: Wall Redirect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -157,8 +157,17 @@ items:
     trigger: A creature damages the wall with a strike.
     prePowerRollEffect:
       text: The wall redirects the strike to the target creature and isn't targeted
-        by the strike. Living Labyrinth The wallmaster starts combat affixed to a
-        wall. At the start of each round of combat while affixed to a wall, the wallmaster
-        creates a 20 wall of stone within a distance of 10 squares. Any walls created
-        by the wallmaster in the previous round are destroyed or replaced by the new
-        walls.
+        by the strike.
+- _id: GGe27V1O1eutaPM5
+  _key: '!actors.items!S1vFswsLyyHkn5a1.GGe27V1O1eutaPM5'
+  name: Living Labyrinth
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The wallmaster starts combat affixed to a wall. At the start of each round
+        of combat while affixed to a wall, the wallmaster creates a 20 wall of stone
+        within a distance of 10 squares. Any walls created by the wallmaster in the
+        previous round are destroyed or replaced by the new walls.

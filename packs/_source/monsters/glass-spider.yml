@@ -1,5 +1,5 @@
-_id: HULcMfxYFljPHhCo
-_key: '!actors!HULcMfxYFljPHhCo'
+_id: ErmPHI2n5sdfxrlz
+_key: '!actors!ErmPHI2n5sdfxrlz'
 name: Glass Spider
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   weakness:
     sonic: 5
 items:
-- _id: vhbiLiCdMGNd47w6
-  _key: '!items!vhbiLiCdMGNd47w6'
+- _id: 4HGfEzsRNTszP9CS
+  _key: '!actors.items!ErmPHI2n5sdfxrlz.4HGfEzsRNTszP9CS'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,8 +80,8 @@ items:
             text: bleeding (save ends)
     maliceEffect:
       text: 2 Malice A<3 bleeding (save ends).
-- _id: nfbOOeDPnf5A8SSz
-  _key: '!items!nfbOOeDPnf5A8SSz'
+- _id: 24YTd7wM202pKRvf
+  _key: '!actors.items!ErmPHI2n5sdfxrlz.24YTd7wM202pKRvf'
   name: Slashing Leg
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,8 +108,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: Jm9PZNqjEo6wKa0d
-  _key: '!items!Jm9PZNqjEo6wKa0d'
+- _id: BANCFJ8eb5EIp9Wd
+  _key: '!actors.items!ErmPHI2n5sdfxrlz.BANCFJ8eb5EIp9Wd'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -126,8 +126,8 @@ items:
       text: The spider shifts up to their speed and makes a Slashing Leg strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: Eug3shYVHNgU9rCR
-  _key: '!items!Eug3shYVHNgU9rCR'
+- _id: gscaZGXt7VgEJ7eb
+  _key: '!actors.items!ErmPHI2n5sdfxrlz.gscaZGXt7VgEJ7eb'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -160,8 +160,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: nNGUFXRoKbYkyYEB
-  _key: '!items!nNGUFXRoKbYkyYEB'
+- _id: gngkiktd7UvNR8mM
+  _key: '!actors.items!ErmPHI2n5sdfxrlz.gngkiktd7UvNR8mM'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg

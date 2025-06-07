@@ -1965,7 +1965,7 @@ Distance Melee 1 Target One creature or object
 * 12-16 6 damage; shift 1
 % 17+ Zdamage; shift2
 
-Uncanny Impression (Maneuver) © 2d10 + 2 5 Malice
+Uncanny Impression (Maneuver) 5 Malice
 Keywords Magic, Ranged
 Distance Ranged 10 Target One creature
 Effect Until the end of the encounter, the imit putty changes its

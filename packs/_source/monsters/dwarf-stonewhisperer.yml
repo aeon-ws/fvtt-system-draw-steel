@@ -1,5 +1,5 @@
-_id: vfleBeNfWBTyAGSM
-_key: '!actors!vfleBeNfWBTyAGSM'
+_id: RBvcXGaIRAaQwiw0
+_key: '!actors!RBvcXGaIRAaQwiw0'
 name: Dwarf Stonewhisperer
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: HFpNovkPoItywuOd
-  _key: '!items!HFpNovkPoItywuOd'
+- _id: fD51Nm2k8BSfCx9G
+  _key: '!actors.items!RBvcXGaIRAaQwiw0.fD51Nm2k8BSfCx9G'
   name: Tile Slide
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be slid by this ability.
-- _id: fQwG76SBUXv0s48K
-  _key: '!items!fQwG76SBUXv0s48K'
+- _id: aQ8u4wvhUUCoJ9j2
+  _key: '!actors.items!RBvcXGaIRAaQwiw0.aQ8u4wvhUUCoJ9j2'
   name: Stone Wave
   type: monsterAbility
   img: icons/svg/book.svg
@@ -145,7 +145,16 @@ items:
             text: slowed (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability. The affected
-        area is considered difficult terrain for enemies. Stonewalker The stonewhisperer
-        can phase through 2 squares of stone as part of any movement they take. If
-        they end their movement inside stone, they are shunted out into the square
-        where they entered it.
+        area is considered difficult terrain for enemies.
+- _id: 1aL8DscoJV5N3MI6
+  _key: '!actors.items!RBvcXGaIRAaQwiw0.1aL8DscoJV5N3MI6'
+  name: Stonewalker
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The stonewhisperer can phase through 2 squares of stone as part of any
+        movement they take. If they end their movement inside stone, they are shunted
+        out into the square where they entered it.

@@ -1,5 +1,5 @@
-_id: XkaIjFq2F8YimwFk
-_key: '!actors!XkaIjFq2F8YimwFk'
+_id: 5nVa0egLiI3YGudk
+_key: '!actors!5nVa0egLiI3YGudk'
 name: Laesi
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: 0PjCavbxlmdmiEP0
-  _key: '!items!0PjCavbxlmdmiEP0'
+- _id: DpZRRh5EK55ZSgPj
+  _key: '!actors.items!5nVa0egLiI3YGudk.DpZRRh5EK55ZSgPj'
   name: Nimble Step
   type: monsterAbility
   img: icons/svg/book.svg
@@ -79,8 +79,8 @@ items:
         damage: 13
         effect:
           text: shift 4
-- _id: SF10l8MXJgbpHtZS
-  _key: '!items!SF10l8MXJgbpHtZS'
+- _id: KZqTIa5RtrSGItp1
+  _key: '!actors.items!5nVa0egLiI3YGudk.KZqTIa5RtrSGItp1'
   name: Numb
   type: monsterAbility
   img: icons/svg/book.svg
@@ -124,3 +124,36 @@ items:
           value: 2
           effect:
             text: slowed and dazed (EoT)
+- _id: uLuSGlhI1JgNK8Vg
+  _key: '!actors.items!5nVa0egLiI3YGudk.uLuSGlhI1JgNK8Vg'
+  name: Inertial Shield
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Laesi halves the damage of the first strike she is targeted by each round.
+- _id: 2msHpIbWLydZxdys
+  _key: '!actors.items!5nVa0egLiI3YGudk.2msHpIbWLydZxdys'
+  name: Determination
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: If Laesi is frightened, slowed, or weakened, she can use a maneuver to
+        end the condition.
+- _id: Rr74dDUnFMkkkXj0
+  _key: '!actors.items!5nVa0egLiI3YGudk.Rr74dDUnFMkkkXj0'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Laesi selects one creature within line of effect at the start of an encounter.
+        Both Laesi and the creature can add a 13 to all power rolls made against each
+        other.

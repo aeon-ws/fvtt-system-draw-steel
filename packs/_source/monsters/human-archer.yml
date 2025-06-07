@@ -1,5 +1,5 @@
-_id: CSwM0CMxIfoB35dI
-_key: '!actors!CSwM0CMxIfoB35dI'
+_id: eBTg1RgLocniDMWR
+_key: '!actors!eBTg1RgLocniDMWR'
 name: Human Archer
 type: minion
 img: icons/svg/mystery-man.svg
@@ -50,8 +50,8 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: JbOdOHgM2r2cNYkX
-  _key: '!items!JbOdOHgM2r2cNYkX'
+- _id: QETZ1v5dC48mUtOL
+  _key: '!actors.items!eBTg1RgLocniDMWR.QETZ1v5dC48mUtOL'
   name: Crossbow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,3 +78,14 @@ items:
         damage: 4
       tier3:
         damage: 5
+- _id: SokZ4GcT7yArj7XP
+  _key: '!actors.items!eBTg1RgLocniDMWR.SokZ4GcT7yArj7XP'
+  name: Supernatural Insight
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The archer ignores concealment if it's granted by a supernatural effect,
+        or the target is supernatural.

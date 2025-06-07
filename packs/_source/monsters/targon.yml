@@ -1,5 +1,5 @@
-_id: 91Qmi9FZkZGBf9AG
-_key: '!actors!91Qmi9FZkZGBf9AG'
+_id: 2rzoQ2BjVvuT0aYj
+_key: '!actors!2rzoQ2BjVvuT0aYj'
 name: Targon
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: y6X33UJfydGCfV5S
-  _key: '!items!y6X33UJfydGCfV5S'
+- _id: Xg2qRK9bnXRan8De
+  _key: '!actors.items!2rzoQ2BjVvuT0aYj.Xg2qRK9bnXRan8De'
   name: Dual Targeting Shot
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,8 +78,8 @@ items:
         of the targets. I'll Cover You! (Action) 2d10 + 2 9 3 Malice
     postPowerRollEffect:
       text: An ally adjacent to the target regains 5 Stamina.
-- _id: RSTEwduyioR4mND2
-  _key: '!items!RSTEwduyioR4mND2'
+- _id: 1gdvPMxPexFKrLsB
+  _key: '!actors.items!2rzoQ2BjVvuT0aYj.1gdvPMxPexFKrLsB'
   name: Overwatch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,7 +96,27 @@ items:
     trigger: The target moves.
     prePowerRollEffect:
       text: At any point during the movement, Targon makes a free strike against the
-        target. Determination f Targon is frightened, slowed, or weakened, he can
-        use a maneuver to end the condition. Rivalry Targon selects one creature within
-        line of effect at the start of an encounter. Both Targon and the creature
-        can add a 1d3 to all power rolls made against each other.
+        target.
+- _id: 3C2awQoitnkKRVp7
+  _key: '!actors.items!2rzoQ2BjVvuT0aYj.3C2awQoitnkKRVp7'
+  name: Determination
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: f Targon is frightened, slowed, or weakened, he can use a maneuver to
+        end the condition.
+- _id: GIefuOoIxXsq4IfQ
+  _key: '!actors.items!2rzoQ2BjVvuT0aYj.GIefuOoIxXsq4IfQ'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Targon selects one creature within line of effect at the start of an encounter.
+        Both Targon and the creature can add a 1d3 to all power rolls made against
+        each other.

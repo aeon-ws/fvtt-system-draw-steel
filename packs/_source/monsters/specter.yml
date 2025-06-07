@@ -1,5 +1,5 @@
-_id: JhkjM6CIjFdl1IL0
-_key: '!actors!JhkjM6CIjFdl1IL0'
+_id: UTtwtqwYzcF89Sed
+_key: '!actors!UTtwtqwYzcF89Sed'
 name: Specter
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: usL7zXtI1wawNRb7
-  _key: '!items!usL7zXtI1wawNRb7'
+- _id: WMdPXpTsnM4g7F6i
+  _key: '!actors.items!UTtwtqwYzcF89Sed.WMdPXpTsnM4g7F6i'
   name: Decaying Touch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
       text: 2 Malice The potency of this ability increases by 1. A living creature
         killed by this ability becomes a specter who appears in the target's space
         under the Director's control.
-- _id: D96r4ibHIMxZmmyB
-  _key: '!items!D96r4ibHIMxZmmyB'
+- _id: FTIGKespSjiKWZAp
+  _key: '!actors.items!UTtwtqwYzcF89Sed.FTIGKespSjiKWZAp'
   name: Hidden Movement
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,8 +109,8 @@ items:
     prePowerRollEffect:
       text: The specter turns invisible, moves up to their speed, and becomes visible
         again.
-- _id: mfZkf78AreDmxZdM
-  _key: '!items!mfZkf78AreDmxZdM'
+- _id: ae5KDD0qTU97ue93
+  _key: '!actors.items!UTtwtqwYzcF89Sed.ae5KDD0qTU97ue93'
   name: Corruptive Phasing
   type: monsterAbility
   img: icons/svg/book.svg

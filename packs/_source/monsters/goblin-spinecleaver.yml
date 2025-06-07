@@ -1,5 +1,5 @@
-_id: eizT8Hq8xhXycjkT
-_key: '!actors!eizT8Hq8xhXycjkT'
+_id: mSlBcw29B8qeehwP
+_key: '!actors!mSlBcw29B8qeehwP'
 name: Goblin Spinecleaver
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: FetwCkHz5GTlDK7Y
-  _key: '!items!FetwCkHz5GTlDK7Y'
+- _id: iPWxNXqkLpz2igOe
+  _key: '!actors.items!mSlBcw29B8qeehwP.iPWxNXqkLpz2igOe'
   name: Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -81,8 +81,8 @@ items:
         damage: 55
         effect:
           text: push 4
-- _id: qNR3qQjLCrhDzyAt
-  _key: '!items!qNR3qQjLCrhDzyAt'
+- _id: yiH1DB5ysvwzZZrX
+  _key: '!actors.items!mSlBcw29B8qeehwP.yiH1DB5ysvwzZZrX'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

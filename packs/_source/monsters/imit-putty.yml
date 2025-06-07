@@ -1,5 +1,5 @@
-_id: k2U9QmlOsATKklZ2
-_key: '!actors!k2U9QmlOsATKklZ2'
+_id: lBm3wU2T61UmAvLj
+_key: '!actors!lBm3wU2T61UmAvLj'
 name: Imit Putty
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: 7IpDp9S7Pdw55kLM
-  _key: '!items!7IpDp9S7Pdw55kLM'
+- _id: ANVWA4pPSoQJSbPx
+  _key: '!actors.items!lBm3wU2T61UmAvLj.ANVWA4pPSoQJSbPx'
   name: Sputter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -77,8 +77,8 @@ items:
         damage: 7
         effect:
           text: shift 2
-- _id: sIKKEqzJFnaarZc0
-  _key: '!items!sIKKEqzJFnaarZc0'
+- _id: 6AngVeIUUVy5oXsC
+  _key: '!actors.items!lBm3wU2T61UmAvLj.6AngVeIUUVy5oXsC'
   name: Uncanny Impression
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,8 +100,8 @@ items:
       text: Until the end of the encounter, the imit putty changes its size to match
         the target and replaces its signature action with one of the target's signature
         actions, using their bonuses for any power roll.
-- _id: Jj0rZrBGj7UmPjYr
-  _key: '!items!Jj0rZrBGj7UmPjYr'
+- _id: GJtomEqKLppyy3jA
+  _key: '!actors.items!lBm3wU2T61UmAvLj.GJtomEqKLppyy3jA'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg

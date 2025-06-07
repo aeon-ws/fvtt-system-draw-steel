@@ -1,5 +1,5 @@
-_id: JFabfyBGtMogH6RH
-_key: '!actors!JFabfyBGtMogH6RH'
+_id: PSyGh8Io8ZF9X6IH
+_key: '!actors!PSyGh8Io8ZF9X6IH'
 name: Dwarf Warden
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: 5AEpuUS8dceCtTgA
-  _key: '!items!5AEpuUS8dceCtTgA'
+- _id: KdF9SY68fqUxFhJb
+  _key: '!actors.items!PSyGh8Io8ZF9X6IH.KdF9SY68fqUxFhJb'
   name: Concussive Maul
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: LrdWxR0ZKU5djPGD
-  _key: '!items!LrdWxR0ZKU5djPGD'
+- _id: 1nCRZAR5DRqfR1wf
+  _key: '!actors.items!PSyGh8Io8ZF9X6IH.1nCRZAR5DRqfR1wf'
   name: Concussive Shockwave
   type: monsterAbility
   img: icons/svg/book.svg
@@ -133,6 +133,15 @@ items:
           effect:
             text: dazed (save ends)
     postPowerRollEffect:
-      text: A target restrained by a dwarf can be pushed by this ability. Escort the
-        Prisoners Whenever the warden moves, they can carry an adjacent restrained
-        enemy as if they were grabbed.
+      text: A target restrained by a dwarf can be pushed by this ability.
+- _id: 2RNHswMUNOG7POEu
+  _key: '!actors.items!PSyGh8Io8ZF9X6IH.2RNHswMUNOG7POEu'
+  name: Escort the Prisoners
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Whenever the warden moves, they can carry an adjacent restrained enemy
+        as if they were grabbed.

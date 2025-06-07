@@ -1,5 +1,5 @@
-_id: bEwisxCEpw7L4ZWH
-_key: '!actors!bEwisxCEpw7L4ZWH'
+_id: NZlGaIJhrEvxvrUe
+_key: '!actors!NZlGaIJhrEvxvrUe'
 name: Gelatinous Ball
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: IQftZAAfXliNQYRu
-  _key: '!items!IQftZAAfXliNQYRu'
+- _id: PpxZONeoEjMq0J4L
+  _key: '!actors.items!NZlGaIJhrEvxvrUe.PpxZONeoEjMq0J4L'
   name: Bowl
   type: monsterAbility
   img: icons/svg/book.svg
@@ -84,12 +84,21 @@ items:
       text: 2 Malice Instead of being force moved, a size 1L or smaller target is
         A<1 restrained (save ends). While restrained by this ability, the target moves
         with the gelatinous ball. When restrained ends, the target moves to the nearest
-        unoccupied square adjacent to the gelatinous ball. Rolling Whenever the gelatinous
-        ball uses a move action or is force moved horizontally, it must move in a
-        straight line until it reaches its maximum speed or until a creature or object
-        is directly in front of it.
-- _id: Q5nTjshwBTlSEKlY
-  _key: '!items!Q5nTjshwBTlSEKlY'
+        unoccupied square adjacent to the gelatinous ball.
+- _id: 5fNoBe5gLsT3oVzX
+  _key: '!actors.items!NZlGaIJhrEvxvrUe.5fNoBe5gLsT3oVzX'
+  name: Rolling
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Whenever the gelatinous ball uses a move action or is force moved horizontally,
+        it must move in a straight line until it reaches its maximum speed or until
+        a creature or object is directly in front of it.
+- _id: r8JGWNKwaYzns4wd
+  _key: '!actors.items!NZlGaIJhrEvxvrUe.r8JGWNKwaYzns4wd'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg

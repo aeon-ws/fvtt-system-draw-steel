@@ -739,7 +739,7 @@ def get_monster_foundry_actor_model(
     }
 
     for ability in monster_model.get("abilities", []):
-        monster_foundry_actor_model["items"].append(get_foundry_item_model(ability))
+        monster_foundry_actor_model["items"].append(get_foundry_item_model(actor_id, ability))
 
     # Add optionals (immunity/weakness)
     for field_name in (

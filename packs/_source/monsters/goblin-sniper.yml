@@ -1,5 +1,5 @@
-_id: f0KiCB77bSZ6EZPT
-_key: '!actors!f0KiCB77bSZ6EZPT'
+_id: OZBDjJhfxnlDEr7A
+_key: '!actors!OZBDjJhfxnlDEr7A'
 name: Goblin Sniper
 type: minion
 img: icons/svg/mystery-man.svg
@@ -47,8 +47,8 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: 8eaU8AuHiCQxgWW2
-  _key: '!items!8eaU8AuHiCQxgWW2'
+- _id: kktGSF9t0d2rUzQ6
+  _key: '!actors.items!OZBDjJhfxnlDEr7A.kktGSF9t0d2rUzQ6'
   name: Bow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -78,8 +78,8 @@ items:
     postPowerRollEffect:
       text: If the sniper doesn't use a move action this turn, the ability has an
         edge.
-- _id: 4ZdSfpZqC2BRFEpa
-  _key: '!items!4ZdSfpZqC2BRFEpa'
+- _id: 69IsafdyQQkkHLmX
+  _key: '!actors.items!OZBDjJhfxnlDEr7A.69IsafdyQQkkHLmX'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
         Levet 1 Minton BRUTE Goblin, Humanoid EV 3 for four minions Stamina 5 Speed
         5 (climb) Size 1S / Stability 0 With Captain Strike damage +1 Free Strike
         2 Might+2 Agility+O0 Reason+0O Intuition+O Presence -1
-- _id: R8f1zBcZ9DbXrOeH
-  _key: '!items!R8f1zBcZ9DbXrOeH'
+- _id: a6kasmFUko6nHFbj
+  _key: '!actors.items!OZBDjJhfxnlDEr7A.a6kasmFUko6nHFbj'
   name: Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -125,8 +125,8 @@ items:
         damage: 5
         effect:
           text: push 4
-- _id: 5pFyA8ZyIXFhP3iK
-  _key: '!items!5pFyA8ZyIXFhP3iK'
+- _id: SVavlISi8caN5IPh
+  _key: '!actors.items!OZBDjJhfxnlDEr7A.SVavlISi8caN5IPh'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

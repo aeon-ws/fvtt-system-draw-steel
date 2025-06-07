@@ -1,5 +1,5 @@
-_id: BzZKjbqQFEthFhEQ
-_key: '!actors!BzZKjbqQFEthFhEQ'
+_id: aLsdpcnVIHbyLynA
+_key: '!actors!aLsdpcnVIHbyLynA'
 name: Spindlegoth
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -44,8 +44,8 @@ system:
     stability: 1
     freeStrikeDamage: 2
 items:
-- _id: dZI4rQcQQvIiDxRv
-  _key: '!items!dZI4rQcQQvIiDxRv'
+- _id: At1Sj8uD4WH6TtRS
+  _key: '!actors.items!aLsdpcnVIHbyLynA.At1Sj8uD4WH6TtRS'
   name: Choking Thread
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
     postPowerRollEffect:
       text: The target suffocates while restrained by this ability. If this ability
         fails to restrain the target, the spindlegoth shifts 2 and hides.
-- _id: Q5v7N9PvzQ9xQFOp
-  _key: '!items!Q5v7N9PvzQ9xQFOp'
+- _id: Y5iTV7eORRlQaL1L
+  _key: '!actors.items!aLsdpcnVIHbyLynA.Y5iTV7eORRlQaL1L'
   name: Thread Whip
   type: monsterAbility
   img: icons/svg/book.svg
@@ -112,8 +112,8 @@ items:
       tier3:
         effect:
           text: Vertical slide 3
-- _id: o6Jr9rLhvgjSpSby
-  _key: '!items!o6Jr9rLhvgjSpSby'
+- _id: EnD523K21xNo1uAN
+  _key: '!actors.items!aLsdpcnVIHbyLynA.EnD523K21xNo1uAN'
   name: Tightwire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
     prePowerRollEffect:
       text: The spindlegoth shifts up to their speed, including vertically. They must
         end this movement on a solid surface.
-- _id: Qsz6t5so7BgHoKjt
-  _key: '!items!Qsz6t5so7BgHoKjt'
+- _id: xBtuaIvaP7k2AG57
+  _key: '!actors.items!aLsdpcnVIHbyLynA.xBtuaIvaP7k2AG57'
   name: Needlefoot
   type: monsterAbility
   img: icons/svg/book.svg

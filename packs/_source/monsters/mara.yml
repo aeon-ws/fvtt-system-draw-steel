@@ -1,5 +1,5 @@
-_id: bDTeHyQXcvGP30Tj
-_key: '!actors!bDTeHyQXcvGP30Tj'
+_id: L552hD8WWDDzeP44
+_key: '!actors!L552hD8WWDDzeP44'
 name: Mara
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -45,8 +45,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: BEYDgPJzflVcPxgL
-  _key: '!items!BEYDgPJzflVcPxgL'
+- _id: 1zkBLlWBhB9NGdyQ
+  _key: '!actors.items!L552hD8WWDDzeP44.1zkBLlWBhB9NGdyQ'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -80,8 +80,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: YFkahIkLaG8iPcP8
-  _key: '!items!YFkahIkLaG8iPcP8'
+- _id: 3WxZLQfhDeAsdSuj
+  _key: '!actors.items!L552hD8WWDDzeP44.3WxZLQfhDeAsdSuj'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -114,8 +114,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: O9WNg01UcFvfm46j
-  _key: '!items!O9WNg01UcFvfm46j'
+- _id: jahaq4EwTEDXcZde
+  _key: '!actors.items!L552hD8WWDDzeP44.jahaq4EwTEDXcZde'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,7 +132,27 @@ items:
     trigger: Mara takes damage.
     prePowerRollEffect:
       text: Mara teleports 2 squares. Each creature adjacent to her original space
-        takes 2 corruption damage. Determination If Mara is frightened, slowed, or
-        weakened, she can use a maneuver to end the condition. Rivalry Mara selects
-        one creature within line of effect at the start of an encounter. Both Mara
-        and the creature can add a 1d3 to all power rolls made against each other.
+        takes 2 corruption damage.
+- _id: VooRNqZFaS9qIizt
+  _key: '!actors.items!L552hD8WWDDzeP44.VooRNqZFaS9qIizt'
+  name: Determination
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: If Mara is frightened, slowed, or weakened, she can use a maneuver to
+        end the condition.
+- _id: ylUz2GnoHV2noJ6K
+  _key: '!actors.items!L552hD8WWDDzeP44.ylUz2GnoHV2noJ6K'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Mara selects one creature within line of effect at the start of an encounter.
+        Both Mara and the creature can add a 1d3 to all power rolls made against each
+        other.

@@ -1,5 +1,5 @@
 import re
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, List, Optional
 
 from ads.api.distance_and_target_parser import parse_distance, parse_target
 from ads.api.foundry import generate_id
@@ -8,7 +8,6 @@ from ads.api.string_format import title_case
 from ads.model import (
     Ability,
     Effect,
-    PotencyEffect,
 )
 
 ABILITY_TYPE_MAP = {
@@ -27,9 +26,12 @@ ABILITY_TYPE_MAP = {
 
 TRAIT_NAMES = [
     "Accursed Rage",
+    "Amorphous",
+    "Aquavuken",
     "Arise",
     "Backstab",
     "Block",
+    "Bonetrops",
     "Burrow",
     "Camouflage",
     "Charm",
@@ -38,23 +40,35 @@ TRAIT_NAMES = [
     "Climb",
     "Corruptive Phasing",
     "Crafty",
+    "Creeper",
     "Cunning",
     "Curse Mark",
     "Cursed Transference",
     "Death Fumes",
+    "Death Grasp",
+    "Death Void",
     "Deflect",
+    "Defiant Anger",
+    "Destructive Path",
+    "Determination",
+    "Disorganized",
+    "Earthwalk",
     "End Effect",
     "Endless Knight",
+    "Enervating Horror",
     "Entangle",
+    "Escort the Prisoners",
     "Fade",
     "Fickle and Free",
     "Flight",
     "Fortify",
     "Frenzy",
     "Gelatinous",
+    "Glowing Recovery",
     "Gnaw",
     "Go for the Jugular",
     "Grappler",
+    "Great Fortitude",
     "Hamstring Slice",
     "Hide While Observed",
     "Hold 'Em Down",
@@ -62,19 +76,29 @@ TRAIT_NAMES = [
     "Hunger",
     "Hunter",
     "Hypnosis",
+    "I'm Your Enemy",
+    "Im Your Enemy",
     "Imitate",
     "Imposer",
     "Incorporeal",
+    "Inertial Shield",
     "Inspire",
     "Lash Out",
     "Like the Wind",
+    "Living Labyrinth",
     "Magic Beacon",
+    "Malice Emitter",
     "Motivate",
+    "Mounted Charger",
     "Multilimb",
     "Mug",
     "Needlefoot",
+    "Nimblestep",
     "Otherworldly Grace",
+    "Overwhelm",
+    "Pack Strong",
     "Pack Tactics",
+    "Phantom Flow",
     "Pierce",
     "Possession",
     "Power Through",
@@ -84,26 +108,40 @@ TRAIT_NAMES = [
     "Quick Thinking",
     "Rage",
     "Reach",
+    "Ride Launcher",
+    "Rivalry",
+    "Rolling",
+    "Saw You Coming",
+    "Seismic Sense",
     "Shapeshifter",
+    "Shared Crafty",
     "Shared Ferocity",
     "Shared Otherworldly Grace",
     "Shield Bash",
+    "Shocking",
+    "Shoot the Hostage",
     "Sidestep",
     "Skewer",
     "Slip Away",
     "Sneak",
+    "Soft Underbelly",
     "Solo Monster",
+    "Solo Turns",
     "Soul Chill",
     "Spark of Life",
     "Spellcast",
     "Stalk",
+    "Stalwart Guardian",
     "Steal",
     "Sticky Sludge",
+    "Stonewalker",
     "Strength",
     "Sunder",
+    "Supernatural Insight",
     "Swarm",
     "Swim",
     "Taunt",
+    "The Commander’s Watching",
     "Thick Hide",
     "Thicket and Thorns",
     "Toxin Burst",
@@ -116,7 +154,9 @@ TRAIT_NAMES = [
     "Volley",
     "Vukenstep",
     "Ward",
+    "Water Weird",
     "Whispered Hex",
+    "Wide Back",
 ]
 
 TRAIT_NAME_PATTERN = f"(?P<traitName>{'|'.join([rf'{t}' for t in TRAIT_NAMES])})"
@@ -381,7 +421,7 @@ def split_ability_blocks(lines: list[str]) -> list[list[str]]:
                 blocks.append(current_block)
             # If the header is not at the very start, split line
             if m.start() > 0:
-                before = line[: m.start()].strip()
+                before = line[: m.start()].strip()  # type: ignore # noqa: F841
                 after = line[m.start() :].strip()
                 # Usually, anything before is junk or previous block content—ignore or flag
                 # (If you want to print for review: print(f"Orphan pre-header content: '{before}'"))
@@ -406,7 +446,7 @@ def get_dict_without_none_values(input_dict: dict[str, Any]) -> dict[str, Any]:
     cleaned: dict[str, Any] = {}
     for key, value in input_dict.items():
         if isinstance(value, dict):
-            nested = get_dict_without_none_values(value)
+            nested = get_dict_without_none_values(value)  # type: ignore
             if nested:
                 cleaned[key] = nested
         elif value is not None:
@@ -414,12 +454,12 @@ def get_dict_without_none_values(input_dict: dict[str, Any]) -> dict[str, Any]:
     return cleaned
 
 
-def get_foundry_item_model(ability: Ability) -> dict[str, Any]:
+def get_foundry_item_model(actor_id: str, ability: Ability) -> dict[str, Any]:
     item_id = generate_id()
 
     item_model: dict[str, Any] = {
         "_id": item_id,
-        "_key": f"!items!{item_id}",
+        "_key": f"!actors.items!{actor_id}.{item_id}",
         "name": ability["name"],
         "type": "monsterAbility",
         "img": "icons/svg/book.svg",

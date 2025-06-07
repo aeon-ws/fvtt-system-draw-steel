@@ -1,5 +1,5 @@
-_id: 342xmEL3EovUbLks
-_key: '!actors!342xmEL3EovUbLks'
+_id: jq8Cg1XjtuQjWmV3
+_key: '!actors!jq8Cg1XjtuQjWmV3'
 name: Bugbear Channeler
 type: enemy
 img: icons/svg/mystery-man.svg
@@ -46,8 +46,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: 30guQqgGVdqErW1A
-  _key: '!items!30guQqgGVdqErW1A'
+- _id: BlG21vRNqhctBFND
+  _key: '!actors.items!jq8Cg1XjtuQjWmV3.BlG21vRNqhctBFND'
   name: Shadow Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,8 +83,8 @@ items:
     postPowerRollEffect:
       text: Each square that a target is pulled through becomes difficult terrain
         for enemies.
-- _id: oP4EAC841MgXm7bf
-  _key: '!items!oP4EAC841MgXm7bf'
+- _id: NkuN6y2Y4DZQ18uN
+  _key: '!actors.items!jq8Cg1XjtuQjWmV3.NkuN6y2Y4DZQ18uN'
   name: Blistering Element
   type: monsterAbility
   img: icons/svg/book.svg
@@ -124,8 +124,8 @@ items:
     postPowerRollEffect:
       text: The channeler chooses one of the following damage types for the damage
         acid, cold, corruption, fire, or poison.
-- _id: YOK46gUBTWdEbtfy
-  _key: '!items!YOK46gUBTWdEbtfy'
+- _id: ZcE0KFSr6g6wXet8
+  _key: '!actors.items!jq8Cg1XjtuQjWmV3.ZcE0KFSr6g6wXet8'
   name: Twist Shape
   type: monsterAbility
   img: icons/svg/book.svg
@@ -170,8 +170,8 @@ items:
       text: A shapechanged creature has their limbs violently stretched and their
         skin becomes paper thin. They are slowed and have fire weakness 10 while they
         have this effect.
-- _id: RZ9tTHFrZdUDE20O
-  _key: '!items!RZ9tTHFrZdUDE20O'
+- _id: nn0DBGGNMtl7O7zo
+  _key: '!actors.items!jq8Cg1XjtuQjWmV3.nn0DBGGNMtl7O7zo'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -191,8 +191,8 @@ items:
     prePowerRollEffect:
       text: Vertical push 3. An ally target doesn't take damage from being force moved.
         Catcher (Free Triggered Action channeler. The target is grabbed by the channeler.
-- _id: JzA24zyzuyCgtVgz
-  _key: '!items!JzA24zyzuyCgtVgz'
+- _id: 7jXjZYi2d61YCzyb
+  _key: '!actors.items!jq8Cg1XjtuQjWmV3.7jXjZYi2d61YCzyb'
   name: Shadow Veil
   type: monsterAbility
   img: icons/svg/book.svg
