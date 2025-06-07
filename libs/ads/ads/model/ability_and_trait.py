@@ -8,14 +8,14 @@ from ads.model.power_roll import PowerRoll
 class Ability(TypedDict):
     name: str
     type: Literal[
-        "mainAction",
-        "triggeredAction",
-        "freeTriggeredAction",
         "freeMainAction",
-        "maneuver",
         "freeManeuver",
-        "villainAction",
+        "freeTriggeredAction",
+        "mainAction",
+        "maneuver",
+        "triggeredAction",
         "monsterTrait",
+        "villainAction",
     ]
     maliceCost: NotRequired[Optional[int]]
     powerRoll: NotRequired[Optional[PowerRoll]]

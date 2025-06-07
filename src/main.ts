@@ -14,8 +14,11 @@ import { isMinionActor } from "@utils/actor";
 import { ActorTokenHud } from "@actor/actorTokenHud";
 import { Effects } from "@actor/effects";
 import { ObjectData } from "@object/objectData";
-import { AbilityData } from "@actor/abilityData";
+import { EnemyAbilityData } from "@domain/actor/creature/enemy/enemyAbilityData";
+import { HeroAbilityData } from "@domain/actor/creature/hero/heroAbilityData";
+
 import "/styles.scss";
+
 
 Hooks.once("init", async () => {
     console.log("Aeon-Draw-Steel | Initializing system");
@@ -78,8 +81,8 @@ Hooks.once("init", async () => {
     CONFIG.Token.hudClass = ActorTokenHud;
     CONFIG.Token.objectClass = ActorToken;
     CONFIG.statusEffects = Effects;
-    CONFIG.Item.dataModels.enemyAbility = AbilityData;
-    CONFIG.Item.dataModels.heroAbility = AbilityData;
+    CONFIG.Item.dataModels.enemyAbility = EnemyAbilityData;
+    CONFIG.Item.dataModels.heroAbility = HeroAbilityData;
     // CONFIG.Item.typeLabels = {
     //     enemyAbility: "Aeon Draw Steel: Enemy Ability",
     //     heroAbility: "Aeon Draw Steel: Hero Ability"

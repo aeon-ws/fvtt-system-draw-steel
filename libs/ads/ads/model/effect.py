@@ -5,11 +5,13 @@ from ads.model.immunity_or_weakness import ImmunityOrWeakness
 
 class Effect(TypedDict, total=False):
     text: str
+
     targets: str
-    duration: Optional[Literal["endOfTargetTurn", "saveEnds", "endOfEncounter"]]
+    duration: Optional[Literal["startOfTargetTurn", "endOfTargetTurn", "saveEnds", "endOfEncounter"]]
+
     bleeding: bool
-    grabbed: bool
     frightened: bool
+    grabbed: bool
     noEffect: bool
     prone: bool
     restrained: bool
