@@ -1,5 +1,5 @@
-_id: 1e6eDdDuf4i30Uus
-_key: '!actors!1e6eDdDuf4i30Uus'
+_id: 6VR939LnE4R9shnz
+_key: '!actors!6VR939LnE4R9shnz'
 name: Goblin Assassin
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-assassin-01.png
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 2
 items:
-- _id: yECNQPmVZzs4wMbJ
-  _key: '!actors.items!1e6eDdDuf4i30Uus.yECNQPmVZzs4wMbJ'
+- _id: B5Me54I0szqBr7IN
+  _key: '!actors.items!6VR939LnE4R9shnz.B5Me54I0szqBr7IN'
   name: Sword Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,8 +87,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 damage if the assassin has an edge
         on the power roll.
-- _id: eoRXmu6weQYS9TMt
-  _key: '!actors.items!1e6eDdDuf4i30Uus.eoRXmu6weQYS9TMt'
+- _id: HCKBQp6Q8gyHUXb9
+  _key: '!actors.items!6VR939LnE4R9shnz.HCKBQp6Q8gyHUXb9'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -131,8 +131,8 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
-- _id: yiXLG0HImzXxyxr1
-  _key: '!actors.items!1e6eDdDuf4i30Uus.yiXLG0HImzXxyxr1'
+- _id: vwswDk65ZPDAnFoC
+  _key: '!actors.items!6VR939LnE4R9shnz.vwswDk65ZPDAnFoC'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
@@ -143,8 +143,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The assassin doesn't provoke opportunity attacks by moving.
-- _id: QlnQhTOUaJt3YA35
-  _key: '!actors.items!1e6eDdDuf4i30Uus.QlnQhTOUaJt3YA35'
+- _id: MY1J5ikbFKoTzHIp
+  _key: '!actors.items!6VR939LnE4R9shnz.MY1J5ikbFKoTzHIp'
   name: Slip Away
   type: monsterAbility
   img: icons/svg/book.svg

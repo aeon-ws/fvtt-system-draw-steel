@@ -1,5 +1,5 @@
-_id: eOz1eH1KpHvxJASI
-_key: '!actors!eOz1eH1KpHvxJASI'
+_id: kE6rIEJ7r4YW1x5e
+_key: '!actors!kE6rIEJ7r4YW1x5e'
 name: Boddorff Buckfeather
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/boddorff-buckfeather-01.png
@@ -55,8 +55,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: bjxmJ2dNxGJo53TW
-  _key: '!actors.items!eOz1eH1KpHvxJASI.bjxmJ2dNxGJo53TW'
+- _id: maPaSoqUWzVbTV9C
+  _key: '!actors.items!kE6rIEJ7r4YW1x5e.maPaSoqUWzVbTV9C'
   name: Thunder of Heavens
   type: monsterAbility
   img: icons/svg/book.svg
@@ -90,8 +90,8 @@ items:
     postPowerRollEffect:
       text: Boddorff or an ally within distance regains Stamina equal to half the
         damage dealt.
-- _id: yrC7Z75FqdnlI15H
-  _key: '!actors.items!eOz1eH1KpHvxJASI.yrC7Z75FqdnlI15H'
+- _id: PdOR6wpCUznU50ej
+  _key: '!actors.items!kE6rIEJ7r4YW1x5e.PdOR6wpCUznU50ej'
   name: Imbue with Might
   type: monsterAbility
   img: icons/svg/book.svg
@@ -111,8 +111,8 @@ items:
       count: 5
     prePowerRollEffect:
       text: Each target has an edge on their next strike.
-- _id: 5x7FKwZTTNnJRus3
-  _key: '!actors.items!eOz1eH1KpHvxJASI.5x7FKwZTTNnJRus3'
+- _id: NZAVzlZLlH1rQiHn
+  _key: '!actors.items!kE6rIEJ7r4YW1x5e.NZAVzlZLlH1rQiHn'
   name: Stalwart Guardian
   type: monsterAbility
   img: icons/svg/book.svg
@@ -123,8 +123,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Strikes made against allies adjacent to Boddorff have a bane.
-- _id: lHCjvxbIAcbXRXrt
-  _key: '!actors.items!eOz1eH1KpHvxJASI.lHCjvxbIAcbXRXrt'
+- _id: G0EIlP3hljTKcbWr
+  _key: '!actors.items!kE6rIEJ7r4YW1x5e.G0EIlP3hljTKcbWr'
   name: Nimblestep
   type: monsterAbility
   img: icons/svg/book.svg
@@ -136,8 +136,8 @@ items:
     prePowerRollEffect:
       text: Boddorff ignores the effects of difficult terrain and moves at full speed
         while he's sneaking.
-- _id: vCZQ7XTWFbgB3Lqs
-  _key: '!actors.items!eOz1eH1KpHvxJASI.vCZQ7XTWFbgB3Lqs'
+- _id: YCYfxRKrp01u9aBX
+  _key: '!actors.items!kE6rIEJ7r4YW1x5e.YCYfxRKrp01u9aBX'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

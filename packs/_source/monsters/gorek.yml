@@ -1,5 +1,5 @@
-_id: vKLavfyoEunXiKvu
-_key: '!actors!vKLavfyoEunXiKvu'
+_id: Fj23MIxI9v1h5G2V
+_key: '!actors!Fj23MIxI9v1h5G2V'
 name: Gorek
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/gorek-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: y6fRC4HlhRTSbxLd
-  _key: '!actors.items!vKLavfyoEunXiKvu.y6fRC4HlhRTSbxLd'
+- _id: BVaVG1zawfpdP6EB
+  _key: '!actors.items!Fj23MIxI9v1h5G2V.BVaVG1zawfpdP6EB'
   name: Brutal Impact
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,13 +93,13 @@ items:
           text: push 3
     maliceEffect:
       text: 2 Malice Each target is M<1 slowed (save ends).
-- _id: EMcCrCyumaxO4wAX
-  _key: '!actors.items!vKLavfyoEunXiKvu.EMcCrCyumaxO4wAX'
-  name: Lets Tussle
+- _id: ClGnAh3kZPPnuZbi
+  _key: '!actors.items!Fj23MIxI9v1h5G2V.ClGnAh3kZPPnuZbi'
+  name: Let's Tussle
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Lets Tussle
+    name: Let's Tussle
     maliceCost: 2
     isSignature: false
     keywords:
@@ -140,8 +140,8 @@ items:
             text: grabbed
     postPowerRollEffect:
       text: Gorek has an edge on strikes against a grabbed creature.
-- _id: HwtJ0XahJ3hK2EOm
-  _key: '!actors.items!vKLavfyoEunXiKvu.HwtJ0XahJ3hK2EOm'
+- _id: su9jge1GJQQO3jGJ
+  _key: '!actors.items!Fj23MIxI9v1h5G2V.su9jge1GJQQO3jGJ'
   name: Overwhelm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -153,8 +153,8 @@ items:
     prePowerRollEffect:
       text: Once per turn, when Gorek force moves a target or shifts into a square
         adjacent to a creature or object, he can make a free strike against them.
-- _id: JLLhwBB2Scd4c4de
-  _key: '!actors.items!vKLavfyoEunXiKvu.JLLhwBB2Scd4c4de'
+- _id: eb4kHbwGORSN8DLs
+  _key: '!actors.items!Fj23MIxI9v1h5G2V.eb4kHbwGORSN8DLs'
   name: Great Fortitude
   type: monsterAbility
   img: icons/svg/book.svg
@@ -165,8 +165,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Gorek can't be weakened.
-- _id: f6DBbrLrfBxU3aAm
-  _key: '!actors.items!vKLavfyoEunXiKvu.f6DBbrLrfBxU3aAm'
+- _id: V678X5gd0BLuG4xH
+  _key: '!actors.items!Fj23MIxI9v1h5G2V.V678X5gd0BLuG4xH'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

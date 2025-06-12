@@ -1,5 +1,5 @@
-_id: ifJASFSABRsnIV8V
-_key: '!actors!ifJASFSABRsnIV8V'
+_id: Bn67XYdOuLYTn2Qw
+_key: '!actors!Bn67XYdOuLYTn2Qw'
 name: Zombie
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/zombie-01.png
@@ -56,8 +56,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: UmbxqV8pbHvgaVo8
-  _key: '!actors.items!ifJASFSABRsnIV8V.UmbxqV8pbHvgaVo8'
+- _id: bMbbORY8XI4N3gTM
+  _key: '!actors.items!Bn67XYdOuLYTn2Qw.bMbbORY8XI4N3gTM'
   name: Clobber and Clutch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
         damage. If a creature takes 5 or more corruption damage this way, they become
         insatiably hungry for flesh. The target must complete the Find a Cure project
         to end this effect.
-- _id: FGxaejBsUqA9OTf9
-  _key: '!actors.items!ifJASFSABRsnIV8V.FGxaejBsUqA9OTf9'
+- _id: zENI4y4onYuy6UsL
+  _key: '!actors.items!Bn67XYdOuLYTn2Qw.zENI4y4onYuy6UsL'
   name: Zombie Dust
   type: monsterAbility
   img: icons/svg/book.svg
@@ -131,8 +131,8 @@ items:
             text: dazed (save ends)
     prePowerRollEffect:
       text: The zombie falls prone, expelling a wave of rot and dust.
-- _id: 0zAZuQH0NP2bwyBC
-  _key: '!actors.items!ifJASFSABRsnIV8V.0zAZuQH0NP2bwyBC'
+- _id: TswrP7sQ0SZTASM2
+  _key: '!actors.items!Bn67XYdOuLYTn2Qw.TswrP7sQ0SZTASM2'
   name: Endless Knight
   type: monsterAbility
   img: icons/svg/book.svg

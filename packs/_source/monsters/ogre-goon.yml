@@ -1,5 +1,5 @@
-_id: sdFjFeW8mr0e8vAP
-_key: '!actors!sdFjFeW8mr0e8vAP'
+_id: WPtNa4CDv4Pa4gup
+_key: '!actors!WPtNa4CDv4Pa4gup'
 name: Ogre Goon
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/ogre-goon-01.png
@@ -54,8 +54,8 @@ system:
     stability: 4
     freeStrikeDamage: 5
 items:
-- _id: PPBNmgkOTMNSTlPB
-  _key: '!actors.items!sdFjFeW8mr0e8vAP.PPBNmgkOTMNSTlPB'
+- _id: WrJHNtO7lqAVeVFN
+  _key: '!actors.items!WPtNa4CDv4Pa4gup.WrJHNtO7lqAVeVFN'
   name: Club Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
     postPowerRollEffect:
       text: This strike deals an additional 4 damage to each creature and object that
         takes damage from any force movement it causes.
-- _id: 80zOOSO5nWn81kD1
-  _key: '!actors.items!sdFjFeW8mr0e8vAP.80zOOSO5nWn81kD1'
+- _id: rJtsyrxx9u6rfXbU
+  _key: '!actors.items!WPtNa4CDv4Pa4gup.rJtsyrxx9u6rfXbU'
   name: Grabby Hand
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,8 +132,8 @@ items:
         the target in their hand.
     postPowerRollEffect:
       text: The goon can only have one target grabbed at a time.
-- _id: yOObs6hRFH2CVKTo
-  _key: '!actors.items!sdFjFeW8mr0e8vAP.yOObs6hRFH2CVKTo'
+- _id: kdwJt06yE7KvSE7q
+  _key: '!actors.items!WPtNa4CDv4Pa4gup.kdwJt06yE7KvSE7q'
   name: People Bowling
   type: monsterAbility
   img: icons/svg/book.svg
@@ -171,8 +171,8 @@ items:
       text: The goon hurls what's in their hand down the line and rolls power. The
         hurled creature or object counts as a target and lands in the last square
         of the line (or nearest unoccupied square of the goon's choice).
-- _id: JZLORhT5W4NWCZng
-  _key: '!actors.items!sdFjFeW8mr0e8vAP.JZLORhT5W4NWCZng'
+- _id: CEohqzaS3nX15ygN
+  _key: '!actors.items!WPtNa4CDv4Pa4gup.CEohqzaS3nX15ygN'
   name: Swat The Fly
   type: monsterAbility
   img: icons/svg/book.svg
@@ -193,8 +193,8 @@ items:
     trigger: The target moves or shifts away from the goon.
     prePowerRollEffect:
       text: Slide 5.
-- _id: dXnRM19PAerpJTut
-  _key: '!actors.items!sdFjFeW8mr0e8vAP.dXnRM19PAerpJTut'
+- _id: lafmSWNKVH1pmKf2
+  _key: '!actors.items!WPtNa4CDv4Pa4gup.lafmSWNKVH1pmKf2'
   name: Defiant Anger
   type: monsterAbility
   img: icons/svg/book.svg

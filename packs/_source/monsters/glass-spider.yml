@@ -1,5 +1,5 @@
-_id: FBUnPjZavF57i4tN
-_key: '!actors!FBUnPjZavF57i4tN'
+_id: b4PEWp4mfQKs1UKp
+_key: '!actors!b4PEWp4mfQKs1UKp'
 name: Glass Spider
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/glass-spider-01.png
@@ -55,8 +55,8 @@ system:
   weakness:
     sonic: 5
 items:
-- _id: ds25Mtt83k9D00OY
-  _key: '!actors.items!FBUnPjZavF57i4tN.ds25Mtt83k9D00OY'
+- _id: flYXnlRoM8NA5TVh
+  _key: '!actors.items!b4PEWp4mfQKs1UKp.flYXnlRoM8NA5TVh'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
             text: bleeding (save ends)
     maliceEffect:
       text: 2 Malice A<3 bleeding (save ends).
-- _id: eSbVTzdpqoLL36r9
-  _key: '!actors.items!FBUnPjZavF57i4tN.eSbVTzdpqoLL36r9'
+- _id: nKhEFjP0xNXtHWsA
+  _key: '!actors.items!b4PEWp4mfQKs1UKp.nKhEFjP0xNXtHWsA'
   name: Slashing Leg
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,8 +122,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: PepcFahnzgYmIYdU
-  _key: '!actors.items!FBUnPjZavF57i4tN.PepcFahnzgYmIYdU'
+- _id: DTWItCXeoSv0XAMT
+  _key: '!actors.items!b4PEWp4mfQKs1UKp.DTWItCXeoSv0XAMT'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -142,8 +142,8 @@ items:
       text: The spider shifts up to their speed and makes a Slashing Leg strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: D427BVXlOkOWdENf
-  _key: '!actors.items!FBUnPjZavF57i4tN.D427BVXlOkOWdENf'
+- _id: N39Mxsld1sCUksPa
+  _key: '!actors.items!b4PEWp4mfQKs1UKp.N39Mxsld1sCUksPa'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -178,8 +178,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: WDecAY5Cbv2mIyGV
-  _key: '!actors.items!FBUnPjZavF57i4tN.WDecAY5Cbv2mIyGV'
+- _id: LkIu5x3F1gV6eNka
+  _key: '!actors.items!b4PEWp4mfQKs1UKp.LkIu5x3F1gV6eNka'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg

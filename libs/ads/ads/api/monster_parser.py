@@ -826,9 +826,6 @@ def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
         pre_sanitized_line = re.sub(r"\s+", " ", pre_sanitized_line)
         pre_sanitized_source_lines.append(pre_sanitized_line.strip())
 
-        if pre_sanitized_line.find("ROGUE") > -1:
-            print(f"[DEBUG] Found rogue line: {pre_sanitized_line.strip()}")
-
     # for trait_name in TRAIT_NAMES:
     #     print(f"[{trait_name}]")
     #     for line in pre_sanitized_source_lines:

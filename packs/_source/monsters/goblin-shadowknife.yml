@@ -1,5 +1,5 @@
-_id: LA9su4HiOZQoLwmb
-_key: '!actors!LA9su4HiOZQoLwmb'
+_id: 5poIZYsc7ln4ZxoD
+_key: '!actors!5poIZYsc7ln4ZxoD'
 name: Goblin Shadowknife
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-shadowknife-01.png
@@ -57,8 +57,8 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: PWRr8uHTwZMgK6ve
-  _key: '!actors.items!LA9su4HiOZQoLwmb.PWRr8uHTwZMgK6ve'
+- _id: tn4URHsmgYQf3PIT
+  _key: '!actors.items!5poIZYsc7ln4ZxoD.tn4URHsmgYQf3PIT'
   name: Shadow Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 corruption damage if the shadowknife
         has an edge on the power roll.
-- _id: 0nKX90MVrGboE5WI
-  _key: '!actors.items!LA9su4HiOZQoLwmb.0nKX90MVrGboE5WI'
+- _id: kHDtMH2QgRhUi05t
+  _key: '!actors.items!5poIZYsc7ln4ZxoD.kHDtMH2QgRhUi05t'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -137,8 +137,8 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
-- _id: MBdm9RF67kWw4haL
-  _key: '!actors.items!LA9su4HiOZQoLwmb.MBdm9RF67kWw4haL'
+- _id: VZcwXssT6az5FMLh
+  _key: '!actors.items!5poIZYsc7ln4ZxoD.VZcwXssT6az5FMLh'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +152,8 @@ items:
         Whenever the shadowknife is adjacent to an enemy and willingly moves to a
         space no longer adjacent to that enemy, the shadowknife can make an opportunity
         attack against them as a triggered action.
-- _id: udSoUU22UvCme6pJ
-  _key: '!actors.items!LA9su4HiOZQoLwmb.udSoUU22UvCme6pJ'
+- _id: QnRNaxNCSIrYFCIO
+  _key: '!actors.items!5poIZYsc7ln4ZxoD.QnRNaxNCSIrYFCIO'
   name: Hide While Observed
   type: monsterAbility
   img: icons/svg/book.svg

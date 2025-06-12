@@ -1,5 +1,5 @@
-_id: wSDIEWMO4bxaQrXn
-_key: '!actors!wSDIEWMO4bxaQrXn'
+_id: wOprr82K2a8dTRZJ
+_key: '!actors!wOprr82K2a8dTRZJ'
 name: Goblin Deathtongue
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
@@ -57,8 +57,8 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: zdGgaAxhT1xBhpar
-  _key: '!actors.items!wSDIEWMO4bxaQrXn.zdGgaAxhT1xBhpar'
+- _id: 1hqVphCqtNxyuP9Z
+  _key: '!actors.items!wOprr82K2a8dTRZJ.1hqVphCqtNxyuP9Z'
   name: Gaze of Surlach
   type: monsterAbility
   img: icons/svg/book.svg
@@ -98,8 +98,8 @@ items:
           value: 2
           effect:
             text: slowed and weakened (save ends)
-- _id: 2cpHhc4tvMCzaEQa
-  _key: '!actors.items!wSDIEWMO4bxaQrXn.2cpHhc4tvMCzaEQa'
+- _id: BHvbiYgirREPOcb2
+  _key: '!actors.items!wOprr82K2a8dTRZJ.BHvbiYgirREPOcb2'
   name: Dizzying Hex
   type: monsterAbility
   img: icons/svg/book.svg
@@ -140,8 +140,8 @@ items:
           value: 2
           effect:
             text: and can
-- _id: hM4xMGKgshC81iGo
-  _key: '!actors.items!wSDIEWMO4bxaQrXn.hM4xMGKgshC81iGo'
+- _id: 0aUX3P9f9koCWjgv
+  _key: '!actors.items!wOprr82K2a8dTRZJ.0aUX3P9f9koCWjgv'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

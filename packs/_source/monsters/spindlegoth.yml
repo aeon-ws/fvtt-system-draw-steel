@@ -1,5 +1,5 @@
-_id: TtFPPrnF3VQApXhJ
-_key: '!actors!TtFPPrnF3VQApXhJ'
+_id: 9Asv2D9aZNUPoky9
+_key: '!actors!9Asv2D9aZNUPoky9'
 name: Spindlegoth
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.png
@@ -54,8 +54,8 @@ system:
     stability: 1
     freeStrikeDamage: 2
 items:
-- _id: It5uJxH0kCfFPoZO
-  _key: '!actors.items!TtFPPrnF3VQApXhJ.It5uJxH0kCfFPoZO'
+- _id: BWNx977ejfc8KNzh
+  _key: '!actors.items!9Asv2D9aZNUPoky9.BWNx977ejfc8KNzh'
   name: Choking Thread
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
     postPowerRollEffect:
       text: The target suffocates while restrained by this ability. If this ability
         fails to restrain the target, the spindlegoth shifts 2 and hides.
-- _id: Zdb9k1ZG7WheBb0u
-  _key: '!actors.items!TtFPPrnF3VQApXhJ.Zdb9k1ZG7WheBb0u'
+- _id: 3vqbCWoWVeAlD5Lz
+  _key: '!actors.items!9Asv2D9aZNUPoky9.3vqbCWoWVeAlD5Lz'
   name: Thread Whip
   type: monsterAbility
   img: icons/svg/book.svg
@@ -126,8 +126,8 @@ items:
       tier3:
         effect:
           text: Vertical slide 3
-- _id: 5ymsBXSUhSwzx3Ca
-  _key: '!actors.items!TtFPPrnF3VQApXhJ.5ymsBXSUhSwzx3Ca'
+- _id: G6NDjWUjeVA8OlOg
+  _key: '!actors.items!9Asv2D9aZNUPoky9.G6NDjWUjeVA8OlOg'
   name: Tightwire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -145,8 +145,8 @@ items:
     prePowerRollEffect:
       text: The spindlegoth shifts up to their speed, including vertically. They must
         end this movement on a solid surface.
-- _id: ODUmU42QIh9uGpqQ
-  _key: '!actors.items!TtFPPrnF3VQApXhJ.ODUmU42QIh9uGpqQ'
+- _id: PRkbEyIDfjHtnpLB
+  _key: '!actors.items!9Asv2D9aZNUPoky9.PRkbEyIDfjHtnpLB'
   name: Needlefoot
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: 5W7Jcrn0vvzTGgu2
-_key: '!actors!5W7Jcrn0vvzTGgu2'
+_id: R5dCLmzExvpdqXOc
+_key: '!actors!R5dCLmzExvpdqXOc'
 name: Human Knave
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-knave-01.png
@@ -57,8 +57,8 @@ system:
     corruption: 2
     psychic: 2
 items:
-- _id: a5wC5JqZQDFyBpcg
-  _key: '!actors.items!5W7Jcrn0vvzTGgu2.a5wC5JqZQDFyBpcg'
+- _id: YnrP8BMo14WoXa9f
+  _key: '!actors.items!R5dCLmzExvpdqXOc.YnrP8BMo14WoXa9f'
   name: Morningstar Javelin
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,21 +96,21 @@ items:
             text: the target has a double bane on their next power roll
     postPowerRollEffect:
       text: Taunted (EoT).
-- _id: lYNgrDT9f8QTFduk
-  _key: '!actors.items!5W7Jcrn0vvzTGgu2.lYNgrDT9f8QTFduk'
-  name: Im Your Enemy
+- _id: ydJhcxmKdet9K8OZ
+  _key: '!actors.items!R5dCLmzExvpdqXOc.ydJhcxmKdet9K8OZ'
+  name: I'm Your Enemy
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Im Your Enemy
+    name: I'm Your Enemy
     isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: The knave can make a free strike against an adjacent creature they have
         taunted whenever the creature deals damage to a creature other than the knave.
-- _id: T2QvLyXxHxEpGCWy
-  _key: '!actors.items!5W7Jcrn0vvzTGgu2.T2QvLyXxHxEpGCWy'
+- _id: aR1H5fvXZZPfPXHD
+  _key: '!actors.items!R5dCLmzExvpdqXOc.aR1H5fvXZZPfPXHD'
   name: Overwhelm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -121,8 +121,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: An enemy who starts their turn adjacent to the knave can't shift.
-- _id: 7UlOAlrBTV945bTU
-  _key: '!actors.items!5W7Jcrn0vvzTGgu2.7UlOAlrBTV945bTU'
+- _id: DRINPSf7YK57WueY
+  _key: '!actors.items!R5dCLmzExvpdqXOc.DRINPSf7YK57WueY'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

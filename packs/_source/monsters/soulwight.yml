@@ -1,5 +1,5 @@
-_id: 8Wiw8PORfk5ZSEkm
-_key: '!actors!8Wiw8PORfk5ZSEkm'
+_id: KXgj2WPkt7uJZEB6
+_key: '!actors!KXgj2WPkt7uJZEB6'
 name: Soulwight
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/soulwight-01.png
@@ -56,8 +56,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: XEyYCIhzduWdVF4C
-  _key: '!actors.items!8Wiw8PORfk5ZSEkm.XEyYCIhzduWdVF4C'
+- _id: 4bfnDrcgM3wG5cdr
+  _key: '!actors.items!KXgj2WPkt7uJZEB6.4bfnDrcgM3wG5cdr'
   name: Soulstealer Longsword
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,8 +100,8 @@ items:
       text: The target appears to rapidly age each time they take damage from this
         ability. The target regains their former appearance when the soulwight is
         destroyed.
-- _id: EKVsgPhmaWg8VITl
-  _key: '!actors.items!8Wiw8PORfk5ZSEkm.EKVsgPhmaWg8VITl'
+- _id: RlTqUHysaE6sw0J6
+  _key: '!actors.items!KXgj2WPkt7uJZEB6.RlTqUHysaE6sw0J6'
   name: Stolen Vitality
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,8 +122,8 @@ items:
     prePowerRollEffect:
       text: The target regains 10 Stamina. The soulwight can't use this maneuver again
         until they strike a creature with their lifestealer longsword.
-- _id: 6zeviG4AEisXBFxn
-  _key: '!actors.items!8Wiw8PORfk5ZSEkm.6zeviG4AEisXBFxn'
+- _id: 5mEvI20TNwUxkPAU
+  _key: '!actors.items!KXgj2WPkt7uJZEB6.5mEvI20TNwUxkPAU'
   name: Arise
   type: monsterAbility
   img: icons/svg/book.svg

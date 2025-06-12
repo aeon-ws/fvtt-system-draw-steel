@@ -1,5 +1,5 @@
-_id: Td1rt2zdLuBHhjRf
-_key: '!actors!Td1rt2zdLuBHhjRf'
+_id: 3bFYkCBvNla9jzhJ
+_key: '!actors!3bFYkCBvNla9jzhJ'
 name: Clawfish
 type: minion
 img: systems/aeon-draw-steel/images/monsters/clawfish-01.png
@@ -61,8 +61,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: PYzTaBk0A6wQxXYf
-  _key: '!actors.items!Td1rt2zdLuBHhjRf.PYzTaBk0A6wQxXYf'
+- _id: ooCK0aWLxvlV9j7P
+  _key: '!actors.items!3bFYkCBvNla9jzhJ.ooCK0aWLxvlV9j7P'
   name: Hookclaw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,8 +96,8 @@ items:
     postPowerRollEffect:
       text: A target grabbed by this ability takes 2 lightning damage at the start
         of each of their turns.
-- _id: mgq07eWOZfT7Tpw0
-  _key: '!actors.items!Td1rt2zdLuBHhjRf.mgq07eWOZfT7Tpw0'
+- _id: 6wtl96Ya2HioEbAP
+  _key: '!actors.items!3bFYkCBvNla9jzhJ.6wtl96Ya2HioEbAP'
   name: Shocking
   type: monsterAbility
   img: icons/svg/book.svg

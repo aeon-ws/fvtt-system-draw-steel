@@ -162,7 +162,7 @@ TRAIT_NAMES = [
 TRAIT_NAME_PATTERN = f"(?P<traitName>{'|'.join([rf'{t}' for t in TRAIT_NAMES])})"
 
 ABILITY_NAME_PATTERN = r"(?P<abilityName>[A-Za-z][A-Za-z!?' ]+[A-Za-z!?])"
-ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action ?[123]?|(?:Main )?Action))[)]"
+ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action\s?(?P<villainActionOrdinal>[123])?|(?:Main )?Action))[)]"
 OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*[+]\s*(?P<bonus>[+]?[1-5])\s*)?"
 OPTIONAL_COST_PATTERN = (
     r"(?:(?P<maliceCost>[0-9]{0,2})\s?Malice|(?P<signature>Signature))?"
@@ -210,6 +210,7 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
     model = Ability(
         name=header["name"],
         type=header["type"],
+        villainActionOrdinal=header.get("villainActionOrdinal", None),
         maliceCost=header["maliceCost"],
         isSignature=header["isSignature"],
         powerRoll=parse_power_roll_block(header, ability_lines),
@@ -330,13 +331,17 @@ def parse_ability_header(
     header_line: str, monster_name: str
 ) -> Optional[Dict[str, Any]]:
     """Parse ability header, returning name, type, maliceCost, powerRoll bonus. Warn on partial match."""
+    normalized = re.sub(r"[^A-Za-z0-9!()' +-]", "", header_line)
     normalized = (
-        re.sub("[^A-Za-z0-9!() +-]", "", header_line)
-        .replace("2 9 3 Malice", "2 3 Malice")
-        .replace("2 0 5 Malice", "2 5 Malice")
+        re.sub(r"([+]\s*[1-5])\s*.\s+(1?[0-9]\s?Malice)", r"\1 \2", header_line)
         .replace("  ", " ")
         .strip()
     )
+    # normalized = (
+    #     normalized.replace("2 9 3 Malice", "2 3 Malice")
+    #     .replace("2 0 5 Malice", "2 5 Malice")
+    #     .replace("  ", " ").strip()
+    # )
 
     match = ABILITY_HEADER_REGEX.match(normalized)
     if not match:
@@ -344,15 +349,12 @@ def parse_ability_header(
             f"*** [WARN] [{monster_name}]: Could not parse ability header: '{header_line}'\n   Normalized as: {repr(normalized)}"
         )
         return None
-    # else:
-    # print(f"[{normalized}]")
 
     groups = match.groupdict()
 
     # Determine ability type
     type_raw = groups.get("type") or ""
-    type_key = type_raw.strip().lower()
-    type_key = type_key.replace("  ", " ")
+    type_key = type_raw.replace("  ", " ").replace("  ", " ").strip().lower()
     ability_type = ABILITY_TYPE_MAP.get(type_key, "monsterTrait")
 
     # Villain actions always come in threes and have an integer suffix in the range 1 - 3 that prescribes
@@ -360,9 +362,8 @@ def parse_ability_header(
     # the unique name; however, it needs to be stored in the model and exported for later use in Foundry
     # both for display purposes as well as to preserve aforementioned sequence information.
     villain_action_ordinal: Optional[int] = None
-    if "villain action" in type_key:
-        ability_type = "villainAction"
-        villain_action_ordinal = 1
+    if ability_type == "villainAction":
+        villain_action_ordinal = int(groups["villainActionOrdinal"])
 
     isSignature = groups.get("signature", None) is not None
 
@@ -393,9 +394,7 @@ def parse_ability_header(
     )
 
     ability_header: dict[str, Any] = {
-        "name": f"{name} ({title_case(type_key)})"
-        if ability_type == "villainAction"
-        else name,
+        "name": name,
         "type": ability_type,
         "villainActionOrdinal": villain_action_ordinal,
         "maliceCost": malice_cost,
@@ -476,6 +475,7 @@ def get_foundry_item_model(actor_id: str, ability: Ability) -> dict[str, Any]:
             "isSignature": ability.get("isSignature", False),
             "keywords": ability["keywords"],
             "type": ability["type"],
+            "villainActionOrdinal": ability.get("villainActionOrdinal", None),
             "distance": ability.get("distance", None),
             "target": ability.get("target", None),
             "powerRoll": ability.get("powerRoll", None),

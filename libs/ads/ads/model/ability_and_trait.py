@@ -17,6 +17,7 @@ class Ability(TypedDict):
         "monsterTrait",
         "villainAction",
     ]
+    villainActionOrdinal: NotRequired[Optional[int]]
     maliceCost: NotRequired[Optional[int]]
     powerRoll: NotRequired[Optional[PowerRoll]]
     keywords: List[str]

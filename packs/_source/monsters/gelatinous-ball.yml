@@ -1,5 +1,5 @@
-_id: a70CvnLQCopqq3p3
-_key: '!actors!a70CvnLQCopqq3p3'
+_id: HmN8xEGROOquvF53
+_key: '!actors!HmN8xEGROOquvF53'
 name: Gelatinous Ball
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/gelatinous-ball-01.png
@@ -55,8 +55,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: wBSuICks5jSyS9OG
-  _key: '!actors.items!a70CvnLQCopqq3p3.wBSuICks5jSyS9OG'
+- _id: H1KmdijWTaoRnIxI
+  _key: '!actors.items!HmN8xEGROOquvF53.H1KmdijWTaoRnIxI'
   name: Bowl
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
         A<1 restrained (save ends). While restrained by this ability, the target moves
         with the gelatinous ball. When restrained ends, the target moves to the nearest
         unoccupied square adjacent to the gelatinous ball.
-- _id: TgRcTWBI8ZOvbpBE
-  _key: '!actors.items!a70CvnLQCopqq3p3.TgRcTWBI8ZOvbpBE'
+- _id: zKBZShuf657BuABX
+  _key: '!actors.items!HmN8xEGROOquvF53.zKBZShuf657BuABX'
   name: Rolling
   type: monsterAbility
   img: icons/svg/book.svg
@@ -111,8 +111,8 @@ items:
       text: Whenever the gelatinous ball uses a move action or is force moved horizontally,
         it must move in a straight line until it reaches its maximum speed or until
         a creature or object is directly in front of it.
-- _id: eHIIMfT4t7IQdEqy
-  _key: '!actors.items!a70CvnLQCopqq3p3.eHIIMfT4t7IQdEqy'
+- _id: MqpPyCx6kzdHd3ew
+  _key: '!actors.items!HmN8xEGROOquvF53.MqpPyCx6kzdHd3ew'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg

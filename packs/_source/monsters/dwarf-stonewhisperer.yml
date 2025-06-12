@@ -1,5 +1,5 @@
-_id: uaGaXUsfufgW8DYL
-_key: '!actors!uaGaXUsfufgW8DYL'
+_id: ht5adpK8JCw2BFlH
+_key: '!actors!ht5adpK8JCw2BFlH'
 name: Dwarf Stonewhisperer
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/dwarf-stonewhisperer-01.png
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: GW9Dy2CM7uSyjuyc
-  _key: '!actors.items!uaGaXUsfufgW8DYL.GW9Dy2CM7uSyjuyc'
+- _id: tAfCipmP73XnNNiJ
+  _key: '!actors.items!ht5adpK8JCw2BFlH.tAfCipmP73XnNNiJ'
   name: Tile Slide
   type: monsterAbility
   img: icons/svg/book.svg
@@ -107,8 +107,8 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be slid by this ability.
-- _id: 6sKTjOZoebQCJ7cl
-  _key: '!actors.items!uaGaXUsfufgW8DYL.6sKTjOZoebQCJ7cl'
+- _id: CXbZ6RDv5CGjstQJ
+  _key: '!actors.items!ht5adpK8JCw2BFlH.CXbZ6RDv5CGjstQJ'
   name: Stone Wave
   type: monsterAbility
   img: icons/svg/book.svg
@@ -160,8 +160,8 @@ items:
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability. The affected
         area is considered difficult terrain for enemies.
-- _id: GSGIzPFjLTUh6M8I
-  _key: '!actors.items!uaGaXUsfufgW8DYL.GSGIzPFjLTUh6M8I'
+- _id: 9Ena4ZQTMQsmGyJz
+  _key: '!actors.items!ht5adpK8JCw2BFlH.9Ena4ZQTMQsmGyJz'
   name: Stonewalker
   type: monsterAbility
   img: icons/svg/book.svg

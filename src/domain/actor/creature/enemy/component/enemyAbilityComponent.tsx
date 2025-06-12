@@ -29,7 +29,7 @@ export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponent
             case "triggeredAction":
                 return "(Triggered Action)";
             case "villainAction":
-                return "";
+                return `(Villain Action ${ability.villainActionOrdinal})`;
         }
     };
 

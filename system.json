@@ -38,7 +38,7 @@
       "name": "Aeon Draw Steel",
       "color": "#cd2c1e",
       "sorting": "m",
-      "packs": ["monsters", "heroAbilities", "monsterAbilities"]
+      "packs": ["monsters", "heroAbilities"]
     }
   ],
   "languages": [

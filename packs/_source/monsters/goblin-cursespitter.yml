@@ -1,5 +1,5 @@
-_id: 6icnMC7GTxR5vEgj
-_key: '!actors!6icnMC7GTxR5vEgj'
+_id: wx3Ieic88KN5iwB6
+_key: '!actors!wx3Ieic88KN5iwB6'
 name: Goblin Cursespitter
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-cursespitter-01.png
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: Z2O1BcTSMOlAn55P
-  _key: '!actors.items!6icnMC7GTxR5vEgj.Z2O1BcTSMOlAn55P'
+- _id: HbbohrnSJlShhu3M
+  _key: '!actors.items!wx3Ieic88KN5iwB6.HbbohrnSJlShhu3M'
   name: Eye of Surlach
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
           value: 2
           effect:
             text: weakened (save ends)
-- _id: nhtaW30s6vvGhDWS
-  _key: '!actors.items!6icnMC7GTxR5vEgj.nhtaW30s6vvGhDWS'
+- _id: KulKvdQdd5Xs3QkF
+  _key: '!actors.items!wx3Ieic88KN5iwB6.KulKvdQdd5Xs3QkF'
   name: Dizzying Hex
   type: monsterAbility
   img: icons/svg/book.svg
@@ -138,8 +138,8 @@ items:
           value: 2
           effect:
             text: and can
-- _id: GCCHDBEDya80X3HH
-  _key: '!actors.items!6icnMC7GTxR5vEgj.GCCHDBEDya80X3HH'
+- _id: dNZQ5l9QVPFlU0Qg
+  _key: '!actors.items!wx3Ieic88KN5iwB6.dNZQ5l9QVPFlU0Qg'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

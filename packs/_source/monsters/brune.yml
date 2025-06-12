@@ -1,5 +1,5 @@
-_id: O3eQir0e0icbTZkI
-_key: '!actors!O3eQir0e0icbTZkI'
+_id: NMXmekb2cQnoUxfc
+_key: '!actors!NMXmekb2cQnoUxfc'
 name: Brune
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/brune-01.png
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: hEwRxgy6hv8O2BaQ
-  _key: '!actors.items!O3eQir0e0icbTZkI.hEwRxgy6hv8O2BaQ'
+- _id: BmYyb5WvlkyyLmTW
+  _key: '!actors.items!NMXmekb2cQnoUxfc.BmYyb5WvlkyyLmTW'
   name: Butcher Knife
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: Brune deals an additional 2 damage if the target is already grabbed.
-- _id: bvA3csurRWcYE5dW
-  _key: '!actors.items!O3eQir0e0icbTZkI.bvA3csurRWcYE5dW'
+- _id: 3yfzCRVqWpxW57GJ
+  _key: '!actors.items!NMXmekb2cQnoUxfc.3yfzCRVqWpxW57GJ'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -115,8 +115,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: Nb0Ywq6BLduuTs9g
-  _key: '!actors.items!O3eQir0e0icbTZkI.Nb0Ywq6BLduuTs9g'
+- _id: toMWBsZfY4WwQsAN
+  _key: '!actors.items!NMXmekb2cQnoUxfc.toMWBsZfY4WwQsAN'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     prePowerRollEffect:
       text: Brune takes half damage from strikes if he has a creature or object grabbed.
         The grabbed creature or object takes the other half of the damage.
-- _id: VIdpj4tyPqrGEBn1
-  _key: '!actors.items!O3eQir0e0icbTZkI.VIdpj4tyPqrGEBn1'
+- _id: SdcxyC9fn6QqCoOY
+  _key: '!actors.items!NMXmekb2cQnoUxfc.SdcxyC9fn6QqCoOY'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

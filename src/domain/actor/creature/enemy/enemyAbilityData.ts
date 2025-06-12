@@ -4,6 +4,7 @@ export type EnemyAbilityType = AbilityType | "monsterTrait" | "villainAction";
 
 export interface IEnemyAbilityData extends IActorAbilityData {
     type: EnemyAbilityType;
+    villainActionOrdinal?: number;
     maliceCost: number;
 }
 
@@ -16,6 +17,7 @@ export class EnemyAbilityData<TData extends IEnemyAbilityData = IEnemyAbilityDat
             // ...this.createTargetField(),
 
             maliceCost: new foundry.data.fields.NumberField({ initial: 0 }),
+            villainActionOrdinal: new foundry.data.fields.NumberField({ required: false, nullable: true }),
 
             // prePowerRollEffect: new foundry.data.fields.SchemaField({
             //     ...this.createEffectFields()

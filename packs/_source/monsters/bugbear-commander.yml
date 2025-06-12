@@ -1,5 +1,5 @@
-_id: 4rASlxz17JOg7OE2
-_key: '!actors!4rASlxz17JOg7OE2'
+_id: 579M6YXiwIUI56Gd
+_key: '!actors!579M6YXiwIUI56Gd'
 name: Bugbear Commander
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/bugbear-commander-01.png
@@ -56,8 +56,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: UCzyqmKShqlsnxjX
-  _key: '!actors.items!4rASlxz17JOg7OE2.UCzyqmKShqlsnxjX'
+- _id: 0KBd1twj7S80X5SG
+  _key: '!actors.items!579M6YXiwIUI56Gd.0KBd1twj7S80X5SG'
   name: Inspiring Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
     postPowerRollEffect:
       text: 1 ally within 5 of the commander has an edge on their next strike until
         the start of the commander's next turn.
-- _id: rQ1BfcjTZnq6Kjsb
-  _key: '!actors.items!4rASlxz17JOg7OE2.rQ1BfcjTZnq6Kjsb'
+- _id: OQlvR7gzStkFH723
+  _key: '!actors.items!579M6YXiwIUI56Gd.OQlvR7gzStkFH723'
   name: You Next!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,8 +109,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: The target moves up to their speed and uses a signature action.
-- _id: 8pYYV9ZKwRsfzw58
-  _key: '!actors.items!4rASlxz17JOg7OE2.8pYYV9ZKwRsfzw58'
+- _id: lIbBAK3irhaPjqMF
+  _key: '!actors.items!579M6YXiwIUI56Gd.lIbBAK3irhaPjqMF'
   name: Fall Back!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
     prePowerRollEffect:
       text: Each target shifts up to their speed. Each target can use the Throw maneuver
         if they are grabbing a creature or object.
-- _id: 5rkLGx6suQomPJEs
-  _key: '!actors.items!4rASlxz17JOg7OE2.5rkLGx6suQomPJEs'
+- _id: U3HBzLTnYBTTSDEi
+  _key: '!actors.items!579M6YXiwIUI56Gd.U3HBzLTnYBTTSDEi'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg

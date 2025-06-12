@@ -1,5 +1,5 @@
-_id: v7UuEGirBpvtcOuG
-_key: '!actors!v7UuEGirBpvtcOuG'
+_id: dy0UyTwMpwPrixHo
+_key: '!actors!dy0UyTwMpwPrixHo'
 name: Targon
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/targon-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: 1EHjRlqlu4AUZY0Z
-  _key: '!actors.items!v7UuEGirBpvtcOuG.1EHjRlqlu4AUZY0Z'
+- _id: ftS9lIxF4cuJqGz1
+  _key: '!actors.items!dy0UyTwMpwPrixHo.ftS9lIxF4cuJqGz1'
   name: Dual Targeting Shot
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,13 +88,13 @@ items:
     maliceEffect:
       text: 2 Malice Two allies within distance can make a free strike against one
         of the targets.
-- _id: IX7yW9AneNRyQr93
-  _key: '!actors.items!v7UuEGirBpvtcOuG.IX7yW9AneNRyQr93'
-  name: Ill Cover You!
+- _id: n183FlgQVDDOzYjD
+  _key: '!actors.items!dy0UyTwMpwPrixHo.n183FlgQVDDOzYjD'
+  name: I'll Cover You!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Ill Cover You!
+    name: I'll Cover You!
     maliceCost: 3
     isSignature: false
     keywords:
@@ -136,8 +136,8 @@ items:
             text: weakened (save ends)
     postPowerRollEffect:
       text: An ally adjacent to the target regains 5 Stamina.
-- _id: cGrSI6btzLJ7bYE3
-  _key: '!actors.items!v7UuEGirBpvtcOuG.cGrSI6btzLJ7bYE3'
+- _id: JGsgYfo9G6zRxpeX
+  _key: '!actors.items!dy0UyTwMpwPrixHo.JGsgYfo9G6zRxpeX'
   name: Overwatch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -157,8 +157,8 @@ items:
     prePowerRollEffect:
       text: At any point during the movement, Targon makes a free strike against the
         target.
-- _id: dJedDGJgxy6rVcVC
-  _key: '!actors.items!v7UuEGirBpvtcOuG.dJedDGJgxy6rVcVC'
+- _id: 45jdaFylVBnq3iR8
+  _key: '!actors.items!dy0UyTwMpwPrixHo.45jdaFylVBnq3iR8'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -170,8 +170,8 @@ items:
     prePowerRollEffect:
       text: f Targon is frightened, slowed, or weakened, he can use a maneuver to
         end the condition.
-- _id: NSmCPEJtCClVlXI6
-  _key: '!actors.items!v7UuEGirBpvtcOuG.NSmCPEJtCClVlXI6'
+- _id: bRmVYj96mruNj5LT
+  _key: '!actors.items!dy0UyTwMpwPrixHo.bRmVYj96mruNj5LT'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

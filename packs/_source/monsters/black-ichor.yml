@@ -1,5 +1,5 @@
-_id: AWSUEEx4aq3oEBOh
-_key: '!actors!AWSUEEx4aq3oEBOh'
+_id: 7edcXxhosESu0xxx
+_key: '!actors!7edcXxhosESu0xxx'
 name: Black Ichor
 type: minion
 img: systems/aeon-draw-steel/images/monsters/black-ichor-01.png
@@ -59,8 +59,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: 3lUXakJo4POL6PjL
-  _key: '!actors.items!AWSUEEx4aq3oEBOh.3lUXakJo4POL6PjL'
+- _id: FHwzVvB10wYhLEK1
+  _key: '!actors.items!7edcXxhosESu0xxx.FHwzVvB10wYhLEK1'
   name: Burning Spray
   type: monsterAbility
   img: icons/svg/book.svg
@@ -89,8 +89,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: QeK4PjoOJyNYldsw
-  _key: '!actors.items!AWSUEEx4aq3oEBOh.QeK4PjoOJyNYldsw'
+- _id: 8DxF7CdlW4wKxc5D
+  _key: '!actors.items!7edcXxhosESu0xxx.8DxF7CdlW4wKxc5D'
   name: Malice Emitter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -102,8 +102,8 @@ items:
     prePowerRollEffect:
       text: The Director gains 1 additional malice at the start of each round while
         at least one black ichor is alive on the encounter map.
-- _id: svAcvMgR00lhlqKD
-  _key: '!actors.items!AWSUEEx4aq3oEBOh.svAcvMgR00lhlqKD'
+- _id: ySA4Rk0ivp3qKaMd
+  _key: '!actors.items!7edcXxhosESu0xxx.ySA4Rk0ivp3qKaMd'
   name: Amorphous
   type: monsterAbility
   img: icons/svg/book.svg

@@ -10,8 +10,8 @@ export interface ICreatureData extends IActorData {
 
     characteristics: ICharacteristicsData;
     combat: ICreatureCombatData;
-    immunity: IImmunityData;
-    weakness: IWeaknessData;
+    immunity?: IImmunityData;
+    weakness?: IWeaknessData;
 }
 
 export interface IImmunityData {
@@ -75,7 +75,7 @@ export class CreatureData<TData extends ICreatureData = ICreatureData> extends A
                 poison: new NumberField({ initial: 0 }),
                 psychic: new NumberField({ initial: 0 }),
                 sonic: new NumberField({ initial: 0 }),
-            })
+            }, { default: undefined, required: false, nullable: true })
         }
     }
 
@@ -92,7 +92,7 @@ export class CreatureData<TData extends ICreatureData = ICreatureData> extends A
                 poison: new NumberField({ initial: 0 }),
                 psychic: new NumberField({ initial: 0 }),
                 sonic: new NumberField({ initial: 0 }),
-            })
+            }, { default: undefined, required: false, nullable: true })
         }
     }
 

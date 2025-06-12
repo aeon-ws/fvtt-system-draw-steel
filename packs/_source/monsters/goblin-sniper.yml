@@ -1,5 +1,5 @@
-_id: S99xbrDivtaGaCSg
-_key: '!actors!S99xbrDivtaGaCSg'
+_id: YtdSyk6iQZUknvZ9
+_key: '!actors!YtdSyk6iQZUknvZ9'
 name: Goblin Sniper
 type: minion
 img: systems/aeon-draw-steel/images/monsters/goblin-sniper-01.png
@@ -57,8 +57,8 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: s4CFdUKtd8dIYCS1
-  _key: '!actors.items!S99xbrDivtaGaCSg.s4CFdUKtd8dIYCS1'
+- _id: u1R8UxwKa1o8omhr
+  _key: '!actors.items!YtdSyk6iQZUknvZ9.u1R8UxwKa1o8omhr'
   name: Bow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -90,8 +90,8 @@ items:
     postPowerRollEffect:
       text: If the sniper doesn't use a move action this turn, the ability has an
         edge.
-- _id: tQGSrFmyMklsENC6
-  _key: '!actors.items!S99xbrDivtaGaCSg.tQGSrFmyMklsENC6'
+- _id: tj7LdpYTDKsQKJ2n
+  _key: '!actors.items!YtdSyk6iQZUknvZ9.tj7LdpYTDKsQKJ2n'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

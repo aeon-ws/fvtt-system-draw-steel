@@ -1,5 +1,5 @@
-_id: 2TqnS4ezkY5phsxc
-_key: '!actors!2TqnS4ezkY5phsxc'
+_id: EiFUjNs49kLW3Va5
+_key: '!actors!EiFUjNs49kLW3Va5'
 name: Vurkor
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/vurkor-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: 69Ksexb4AvPo5t1z
-  _key: '!actors.items!2TqnS4ezkY5phsxc.69Ksexb4AvPo5t1z'
+- _id: qTOt1oIN0Y27nLJB
+  _key: '!actors.items!EiFUjNs49kLW3Va5.qTOt1oIN0Y27nLJB'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: H1ikf7tRQH5GkNEa
-  _key: '!actors.items!2TqnS4ezkY5phsxc.H1ikf7tRQH5GkNEa'
+- _id: ui1W3MYcuIzTGMuf
+  _key: '!actors.items!EiFUjNs49kLW3Va5.ui1W3MYcuIzTGMuf'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: HAPUhjps1Fa9gt7a
-  _key: '!actors.items!2TqnS4ezkY5phsxc.HAPUhjps1Fa9gt7a'
+- _id: zmAvjtlhrAjbghCB
+  _key: '!actors.items!EiFUjNs49kLW3Va5.zmAvjtlhrAjbghCB'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Vurkor teleports 2 squares. Each creature adjacent to his original space
         takes 2 corruption damage.
-- _id: BeZoYEbo0SabeJxy
-  _key: '!actors.items!2TqnS4ezkY5phsxc.BeZoYEbo0SabeJxy'
+- _id: 4zCBVMjGU6w1BjoL
+  _key: '!actors.items!EiFUjNs49kLW3Va5.4zCBVMjGU6w1BjoL'
   name: Glowing Recovery
   type: monsterAbility
   img: icons/svg/book.svg
@@ -161,8 +161,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Vurkor can use his maneuver to regain 10 Stamina once per round.
-- _id: OFPJDcCw9daT9iv7
-  _key: '!actors.items!2TqnS4ezkY5phsxc.OFPJDcCw9daT9iv7'
+- _id: 2gTDuVqymGUSAEcu
+  _key: '!actors.items!EiFUjNs49kLW3Va5.2gTDuVqymGUSAEcu'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

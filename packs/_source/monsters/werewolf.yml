@@ -1,5 +1,5 @@
-_id: aORzsKAQCwwKXTrx
-_key: '!actors!aORzsKAQCwwKXTrx'
+_id: 7vdYLWT39CjDkYpV
+_key: '!actors!7vdYLWT39CjDkYpV'
 name: Werewolf
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/werewolf-01.png
@@ -55,8 +55,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: rLnp0bQfnsIrnqPZ
-  _key: '!actors.items!aORzsKAQCwwKXTrx.rLnp0bQfnsIrnqPZ'
+- _id: v9T3ed064ae4nWai
+  _key: '!actors.items!7vdYLWT39CjDkYpV.v9T3ed064ae4nWai'
   name: Solo Monster
   type: monsterAbility
   img: icons/svg/book.svg
@@ -70,8 +70,8 @@ items:
         turns consecutively. End Effect At the end of their turn, the werewolf can
         take 5 damage to end one save ends effect affecting them. This damage can't
         be reduced in any way.
-- _id: SvWHPWUV7XjDQ2CA
-  _key: '!actors.items!aORzsKAQCwwKXTrx.SvWHPWUV7XjDQ2CA'
+- _id: N8IV4ozXs2RW5t0M
+  _key: '!actors.items!7vdYLWT39CjDkYpV.N8IV4ozXs2RW5t0M'
   name: Shapeshifter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -83,8 +83,8 @@ items:
     prePowerRollEffect:
       text: The werewolf enters combat in their hybrid humanoid form. Their shape
         can't change via any effects beyond their own ability.
-- _id: mrBeS1dmxgaogQKv
-  _key: '!actors.items!aORzsKAQCwwKXTrx.mrBeS1dmxgaogQKv'
+- _id: Kd9C7owNLnzdoGLt
+  _key: '!actors.items!7vdYLWT39CjDkYpV.Kd9C7owNLnzdoGLt'
   name: Shared Ferocity
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,8 +96,8 @@ items:
     prePowerRollEffect:
       text: The Director gains 1d3 malice the first time a creature uses an ability
         that costs ferocity while within line of effect of the werewolf.
-- _id: EEI4JtTybBFRwLjN
-  _key: '!actors.items!aORzsKAQCwwKXTrx.EEI4JtTybBFRwLjN'
+- _id: CgGcvlZ84vHXJYsz
+  _key: '!actors.items!7vdYLWT39CjDkYpV.CgGcvlZ84vHXJYsz'
   name: Accursed Rage
   type: monsterAbility
   img: icons/svg/book.svg
@@ -113,8 +113,8 @@ items:
         all of their rage, shift up to their speed towards the nearest creature, and
         make a melee free strike against them. A creature that takes damage in this
         way gains 1 rage. All accumulated rage disappears after completing a respite.
-- _id: iEJw5VWgcJoxDZXB
-  _key: '!actors.items!aORzsKAQCwwKXTrx.iEJw5VWgcJoxDZXB'
+- _id: T926vjKwGnk1gPx1
+  _key: '!actors.items!7vdYLWT39CjDkYpV.T926vjKwGnk1gPx1'
   name: Accursed Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -158,8 +158,8 @@ items:
         each of their turns whenever they're in combat. Their rage does not disappear
         after completing a respite; they must complete the Find a Cure project to
         end this condition.
-- _id: 4bqM6qdZV3gfHTWr
-  _key: '!actors.items!aORzsKAQCwwKXTrx.4bqM6qdZV3gfHTWr'
+- _id: 2yAggO1IAIVSLgda
+  _key: '!actors.items!7vdYLWT39CjDkYpV.2yAggO1IAIVSLgda'
   name: Ripping Claws
   type: monsterAbility
   img: icons/svg/book.svg
@@ -207,8 +207,8 @@ items:
           value: 3
           effect:
             text: bleeding (save ends)
-- _id: ockPJLdu0WKiGDkU
-  _key: '!actors.items!aORzsKAQCwwKXTrx.ockPJLdu0WKiGDkU'
+- _id: DOjFT4K15EkXJ3VJ
+  _key: '!actors.items!7vdYLWT39CjDkYpV.DOjFT4K15EkXJ3VJ'
   name: Berserker Slash
   type: monsterAbility
   img: icons/svg/book.svg
@@ -243,8 +243,8 @@ items:
           text: 3 rage
     postPowerRollEffect:
       text: The werewolf shifts up to their speed before using this ability.
-- _id: ik0H9fFgvk9e0uXJ
-  _key: '!actors.items!aORzsKAQCwwKXTrx.ik0H9fFgvk9e0uXJ'
+- _id: 4Nv5aW8JotoFkDwM
+  _key: '!actors.items!7vdYLWT39CjDkYpV.4Nv5aW8JotoFkDwM'
   name: Wall Leap
   type: monsterAbility
   img: icons/svg/book.svg
@@ -262,8 +262,8 @@ items:
       text: The werewolf jumps 4 squares. If they end this movement at a wall, the
         werewolf jumps off the wall 4 squares and makes a melee free strike that M<2
         knocks the target prone.
-- _id: MgasVYm2ORrqcfIH
-  _key: '!actors.items!aORzsKAQCwwKXTrx.MgasVYm2ORrqcfIH'
+- _id: v8re9GsWnrGog3nU
+  _key: '!actors.items!7vdYLWT39CjDkYpV.v8re9GsWnrGog3nU'
   name: Facepalm and Head Slam
   type: monsterAbility
   img: icons/svg/book.svg
@@ -284,8 +284,8 @@ items:
     trigger: The target targets the werewolf with a melee ability after
     prePowerRollEffect:
       text: The target is knocked prone and takes 5 damage before executing the ability.
-- _id: FZQdEORu2lZWsWBh
-  _key: '!actors.items!aORzsKAQCwwKXTrx.FZQdEORu2lZWsWBh'
+- _id: PLrnx1JMqhgOlAe6
+  _key: '!actors.items!7vdYLWT39CjDkYpV.PLrnx1JMqhgOlAe6'
   name: Vukenstep
   type: monsterAbility
   img: icons/svg/book.svg
@@ -296,17 +296,18 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The werewolfignores difficult terrain.
-- _id: z4AcvQkNcUG3KLXa
-  _key: '!actors.items!aORzsKAQCwwKXTrx.z4AcvQkNcUG3KLXa'
-  name: Howl (Villain Action 1)
+- _id: YimURuMNrbdTdrmc
+  _key: '!actors.items!7vdYLWT39CjDkYpV.YimURuMNrbdTdrmc'
+  name: Howl
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Howl (Villain Action 1)
+    name: Howl
     isSignature: false
     keywords:
     - Area
     type: villainAction
+    villainActionOrdinal: 1
     distance:
       burst: 5
     target:
@@ -326,16 +327,17 @@ items:
       text: Each target makes an Intuition test.
     postPowerRollEffect:
       text: Enemies that have 1 or more rage gain 4 rage and howl along with the werewolf.
-- _id: PKnVDcckaUiDMydX
-  _key: '!actors.items!aORzsKAQCwwKXTrx.PKnVDcckaUiDMydX'
-  name: Full Wolf (Villain Action 2)
+- _id: gMlkdu9PyR2hLLkG
+  _key: '!actors.items!7vdYLWT39CjDkYpV.gMlkdu9PyR2hLLkG'
+  name: Full Wolf
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Full Wolf (Villain Action 2)
+    name: Full Wolf
     isSignature: false
     keywords: []
     type: villainAction
+    villainActionOrdinal: 2
     distance:
       self: true
     target:
@@ -348,19 +350,20 @@ items:
         is 3, and their Stability is 2. Each of the werewolf's strikes deal an additional
         2 damage and inflict an additional 1 rage. The potency of the werewolf's Accursed
         Bite increases by 1.
-- _id: i5lDf0EdRwxRPonI
-  _key: '!actors.items!aORzsKAQCwwKXTrx.i5lDf0EdRwxRPonI'
-  name: Rampage (Villain Action 3)
+- _id: pLDz4vD9CxZarbeT
+  _key: '!actors.items!7vdYLWT39CjDkYpV.pLDz4vD9CxZarbeT'
+  name: Rampage
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Rampage (Villain Action 3)
+    name: Rampage
     isSignature: false
     keywords:
     - Area
     - Melee
     - Weapon
     type: villainAction
+    villainActionOrdinal: 3
     distance:
       burst: 2
     target:

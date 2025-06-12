@@ -1,5 +1,5 @@
-_id: zMz4q89OLQvpF4h7
-_key: '!actors!zMz4q89OLQvpF4h7'
+_id: noitvArNt6mLLCPp
+_key: '!actors!noitvArNt6mLLCPp'
 name: Mystic Queen Bargnot
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: bHktTFewKeH3jEwY
-  _key: '!actors.items!zMz4q89OLQvpF4h7.bHktTFewKeH3jEwY'
+- _id: JEESs2AdWAOhEze8
+  _key: '!actors.items!noitvArNt6mLLCPp.JEESs2AdWAOhEze8'
   name: Power Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,8 +100,8 @@ items:
             text: prone
     postPowerRollEffect:
       text: An ally within 10 of Queen Bargnot can make a free strike.
-- _id: XmnvnGyLQgiQICxz
-  _key: '!actors.items!zMz4q89OLQvpF4h7.XmnvnGyLQgiQICxz'
+- _id: LJXgJCX9spYpIA5U
+  _key: '!actors.items!noitvArNt6mLLCPp.LJXgJCX9spYpIA5U'
   name: Get Out There!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,8 +119,8 @@ items:
     prePowerRollEffect:
       text: Queen Bargnot throws the ally up to 5 squares. The ally can make a melee
         free strike when they land.
-- _id: rul3Qm50y8m2vC79
-  _key: '!actors.items!zMz4q89OLQvpF4h7.rul3Qm50y8m2vC79'
+- _id: 7Oi7fiy8ocyjWQPa
+  _key: '!actors.items!noitvArNt6mLLCPp.7Oi7fiy8ocyjWQPa'
   name: Show Them Your Might!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -139,8 +139,8 @@ items:
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead. Queen Bargnot
         shifts 1.
-- _id: SdftY2okfwO88YeW
-  _key: '!actors.items!zMz4q89OLQvpF4h7.SdftY2okfwO88YeW'
+- _id: x45LoLYYTCduPCNz
+  _key: '!actors.items!noitvArNt6mLLCPp.x45LoLYYTCduPCNz'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +152,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, Queen Bargnot can take 5 damage to end one save
         ends effect affecting her. This damage can't be reduced in any way.
-- _id: AkZYGeP6rIO4oNEx
-  _key: '!actors.items!zMz4q89OLQvpF4h7.AkZYGeP6rIO4oNEx'
+- _id: 1nYJ2NfJJNYiLeWM
+  _key: '!actors.items!noitvArNt6mLLCPp.1nYJ2NfJJNYiLeWM'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -167,16 +167,17 @@ items:
         Whenever Queen Bargnot is adjacent to an enemy and willingly moves to a space
         no longer adjacent to that enemy, Queen Bargnot can make an opportunity attack
         against them as a triggered action.
-- _id: iCWsQZ16DZRAvmpu
-  _key: '!actors.items!zMz4q89OLQvpF4h7.iCWsQZ16DZRAvmpu'
-  name: Focus Fire (Villain Action 1)
+- _id: I49brdnRCo5E92N4
+  _key: '!actors.items!noitvArNt6mLLCPp.I49brdnRCo5E92N4'
+  name: Focus Fire
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Focus Fire (Villain Action 1)
+    name: Focus Fire
     isSignature: false
     keywords: []
     type: villainAction
+    villainActionOrdinal: 1
     distance:
       ranged: 10
     target:
@@ -187,16 +188,17 @@ items:
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: zPNPMUccJBprFVjM
-  _key: '!actors.items!zMz4q89OLQvpF4h7.zPNPMUccJBprFVjM'
-  name: Kill! (Villain Action 2)
+- _id: Lt4SDZuukCkRCDtA
+  _key: '!actors.items!noitvArNt6mLLCPp.Lt4SDZuukCkRCDtA'
+  name: Kill!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Kill! (Villain Action 2)
+    name: Kill!
     isSignature: false
     keywords: []
     type: villainAction
+    villainActionOrdinal: 2
     distance:
       special: true
     target:
@@ -205,18 +207,19 @@ items:
     prePowerRollEffect:
       text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
         them, or 4 damage for each mystic goblin adjacent to them.
-- _id: dkrUBjK48ua2q69H
-  _key: '!actors.items!zMz4q89OLQvpF4h7.dkrUBjK48ua2q69H'
-  name: Oversurge (Villain Action 3)
+- _id: iNcmA1hAApLy6hA7
+  _key: '!actors.items!noitvArNt6mLLCPp.iNcmA1hAApLy6hA7'
+  name: Oversurge
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Oversurge (Villain Action 3)
+    name: Oversurge
     isSignature: false
     keywords:
     - Area
     - Magic
     type: villainAction
+    villainActionOrdinal: 3
     distance:
       burst: 5
     target:

@@ -1,5 +1,5 @@
-_id: ncSxZoaCmOdOwPEH
-_key: '!actors!ncSxZoaCmOdOwPEH'
+_id: 7LF8Nv76p8gD2dIZ
+_key: '!actors!7LF8Nv76p8gD2dIZ'
 name: Goblin Warrior
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-warrior-01.png
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: RlDEczc9STKaA6vK
-  _key: '!actors.items!ncSxZoaCmOdOwPEH.RlDEczc9STKaA6vK'
+- _id: c7cJH5TsA1sSiSej
+  _key: '!actors.items!7LF8Nv76p8gD2dIZ.c7cJH5TsA1sSiSej'
   name: Spear Charge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: SUJFkhh1Nvlt7IyP
-  _key: '!actors.items!ncSxZoaCmOdOwPEH.SUJFkhh1Nvlt7IyP'
+- _id: deq7HzPQpXpkA4rH
+  _key: '!actors.items!7LF8Nv76p8gD2dIZ.deq7HzPQpXpkA4rH'
   name: Bury the Point
   type: monsterAbility
   img: icons/svg/book.svg
@@ -130,8 +130,8 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: Cd3MZcsrEhB8cef6
-  _key: '!actors.items!ncSxZoaCmOdOwPEH.Cd3MZcsrEhB8cef6'
+- _id: pYVllXP95nzloFlU
+  _key: '!actors.items!7LF8Nv76p8gD2dIZ.pYVllXP95nzloFlU'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

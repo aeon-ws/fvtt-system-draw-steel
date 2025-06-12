@@ -1,5 +1,5 @@
-_id: OXFwYxBk8kst5rot
-_key: '!actors!OXFwYxBk8kst5rot'
+_id: mXiz3E64rp1fys0u
+_key: '!actors!mXiz3E64rp1fys0u'
 name: Ghost
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/ghost-01.png
@@ -57,8 +57,8 @@ system:
     corruption: 3
     poison: 3
 items:
-- _id: GcjTRTWJ0RfiXD40
-  _key: '!actors.items!OXFwYxBk8kst5rot.GcjTRTWJ0RfiXD40'
+- _id: ww46KhWM9R84kJrl
+  _key: '!actors.items!mXiz3E64rp1fys0u.ww46KhWM9R84kJrl'
   name: Heat Death
   type: monsterAbility
   img: icons/svg/book.svg
@@ -103,8 +103,8 @@ items:
             text: slowed save ends
     postPowerRollEffect:
       text: The next strike made against the target has an edge.
-- _id: Y9QNlSQ7gSLmXUYR
-  _key: '!actors.items!OXFwYxBk8kst5rot.Y9QNlSQ7gSLmXUYR'
+- _id: pV0bbjcuC4T6OiUH
+  _key: '!actors.items!mXiz3E64rp1fys0u.pV0bbjcuC4T6OiUH'
   name: Haunt
   type: monsterAbility
   img: icons/svg/book.svg
@@ -125,8 +125,8 @@ items:
       text: The target shifts up to their speed.
     maliceEffect:
       text: 2 Malice The ghost chooses one additional target.
-- _id: uNNPlDN8UFOmkxtF
-  _key: '!actors.items!OXFwYxBk8kst5rot.uNNPlDN8UFOmkxtF'
+- _id: B99mEPzYYDKnu6Pj
+  _key: '!actors.items!mXiz3E64rp1fys0u.B99mEPzYYDKnu6Pj'
   name: Shriek
   type: monsterAbility
   img: icons/svg/book.svg
@@ -147,8 +147,8 @@ items:
     trigger: A creature within distance targets the ghost with a strike.
     prePowerRollEffect:
       text: The ghost halves the incoming damage and the target takes 2 sonic damage.
-- _id: EH9sBevpp6aOvNGM
-  _key: '!actors.items!OXFwYxBk8kst5rot.EH9sBevpp6aOvNGM'
+- _id: onPbbERaRNY0tU6F
+  _key: '!actors.items!mXiz3E64rp1fys0u.onPbbERaRNY0tU6F'
   name: Phantom Flow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -160,18 +160,19 @@ items:
     prePowerRollEffect:
       text: Each incorporeal undead creature within 10 squares of the ghost ignores
         difficult terrain.
-- _id: UP0CMIUIN8cUvPu2
-  _key: '!actors.items!OXFwYxBk8kst5rot.UP0CMIUIN8cUvPu2'
-  name: Paranormal Activity (Villain Action 1)
+- _id: cHccHEqIIyEoIons
+  _key: '!actors.items!mXiz3E64rp1fys0u.cHccHEqIIyEoIons'
+  name: Paranormal Activity
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Paranormal Activity (Villain Action 1)
+    name: Paranormal Activity
     isSignature: false
     keywords:
     - Area
     - Magic
     type: villainAction
+    villainActionOrdinal: 1
     distance:
       burst: 5
     target:
@@ -181,18 +182,19 @@ items:
     prePowerRollEffect:
       text: Each target floats 1 square into the air and is pulled 5 squares toward
         the nearest enemy within 3 squares of them.
-- _id: P7LSDNwgko7ROdwF
-  _key: '!actors.items!OXFwYxBk8kst5rot.P7LSDNwgko7ROdwF'
-  name: Spirited Away (Villain Action 2)
+- _id: 8ERyHGYVwThOcpQm
+  _key: '!actors.items!mXiz3E64rp1fys0u.8ERyHGYVwThOcpQm'
+  name: Spirited Away
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Spirited Away (Villain Action 2)
+    name: Spirited Away
     isSignature: false
     keywords:
     - Area
     - Magic
     type: villainAction
+    villainActionOrdinal: 2
     distance:
       burst: 5
     target:
@@ -223,18 +225,19 @@ items:
         affected, then rises 1 square at the end of each of their turns. If a levitated
         target can't already fly, they can fly but are slowed and weakened while flying
         in this way.
-- _id: gz5DmCAImIRZvXhF
-  _key: '!actors.items!OXFwYxBk8kst5rot.gz5DmCAImIRZvXhF'
-  name: Awful Wail (Villain Action 3)
+- _id: 9bUm3Z2Ui8FyFWiz
+  _key: '!actors.items!mXiz3E64rp1fys0u.9bUm3Z2Ui8FyFWiz'
+  name: Awful Wail
   type: monsterAbility
   img: icons/svg/book.svg
   system:
-    name: Awful Wail (Villain Action 3)
+    name: Awful Wail
     isSignature: false
     keywords:
     - Area
     - Magic
     type: villainAction
+    villainActionOrdinal: 3
     distance:
       burst: 5
     target:
@@ -251,8 +254,8 @@ items:
     postPowerRollEffect:
       text: P<2 the target is reduced to 1 Stamina if they are winded after taking
         damage.
-- _id: NS6NopVMQ5v4yd6D
-  _key: '!actors.items!OXFwYxBk8kst5rot.NS6NopVMQ5v4yd6D'
+- _id: lW4vm0k7TO5WhrR1
+  _key: '!actors.items!mXiz3E64rp1fys0u.lW4vm0k7TO5WhrR1'
   name: Corruptive Phasing
   type: monsterAbility
   img: icons/svg/book.svg
