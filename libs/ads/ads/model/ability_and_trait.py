@@ -25,6 +25,7 @@ class Ability(TypedDict):
     trigger: NotRequired[Optional[str]]
     prePowerRollEffect: NotRequired[Optional[Effect]]
     maliceEffect: NotRequired[Optional[Effect]]
+    isSignature: NotRequired[Optional[bool]]
     postPowerRollEffect: NotRequired[Optional[Effect]]
     header_raw: str
 

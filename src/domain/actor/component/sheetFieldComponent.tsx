@@ -3,28 +3,63 @@ import clsx from "classnames";
 import React from "react";
 
 import { IImmunityData, IWeaknessData } from "@creature/creatureData";
-import { jsx, JSX } from "react/jsx-runtime";
+import { JSX } from "react/jsx-runtime";
 
 
-interface ArrayFieldProps {
-    label?: string; // e.g., "Keywords"
-    values: (string | number)[]; // e.g., ["Melee", "Strike", "Weapon"]
-    valueSeparator?: string; // e.g., ", "
-    classNames?: string[];
+interface IArrayFieldProps {
+    label?: string | undefined;
+    labelClassNames?: string[] | undefined;
+    values: (string | number)[];
+    valueSeparator?: string;
+    valueClassNames?: string[];
 }
 
-export const ArrayField: React.FC<ArrayFieldProps> = ({ label, values, valueSeparator, classNames }) => {
+export function ArrayField({
+    label,
+    labelClassNames,
+    values,
+    valueSeparator = ", ",
+    valueClassNames
+}: IArrayFieldProps): JSX.Element | null {
     if (!values || values.length === 0) return null;
 
-    const separator = valueSeparator || ", ";
     return (
-        <span className={clsx(classNames)}> {
-            values.map(
-                (value, index) =>
-                    <span>{value}{index < values.length - 1 && separator}</span>
-            )
-        }
+        <span>
+            {label && (
+                <span className={clsx(labelClassNames)}>{label}</span>
+            )}
+            <span className={clsx(valueClassNames)}>
+                {values.map((value, index) => (
+                    <React.Fragment key={index}>
+                        {value}
+                        {index < values.length - 1 && valueSeparator}
+                    </React.Fragment>
+                ))}
+            </span>
         </span>
+    );
+}
+
+interface IDistanceFieldRowProps {
+    distanceLabel: string;
+    distanceTypeLabel1: string;
+    value1: number | string;
+    distanceTypeLabel2?: string | undefined;
+    value2?: number | string | undefined;
+}
+
+export function DistanceFieldRow({
+    distanceLabel,
+    distanceTypeLabel1,
+    value1,
+    distanceTypeLabel2,
+    value2
+}: IDistanceFieldRowProps): JSX.Element | null {
+    return (
+        <div className="field-row">
+            <span className="label">{distanceLabel}</span>
+            <span className="value">{distanceTypeLabel1} {value1} {distanceTypeLabel2 && value2 !== undefined && value2 !== null && value2 !== 0 && (`or ${distanceTypeLabel2} ${value2}`)}</span>
+        </div>
     );
 }
 
@@ -139,7 +174,6 @@ const ImmunityOrWeaknessField: React.FC<ImmunityOrWeaknessFieldProps> = ({ field
             .join(", ");
 
     if (!damageTypesAndValuesAsString) return null;
-    console.log("ImmunityOrWeaknessField | damageTypesAndValuesAsString:", damageTypesAndValuesAsString);
 
     return (
         <span>

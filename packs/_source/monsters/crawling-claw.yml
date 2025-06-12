@@ -1,8 +1,8 @@
-_id: v495NAnhUfobJvLJ
-_key: '!actors!v495NAnhUfobJvLJ'
+_id: kdvmaXHMmm4I7OiT
+_key: '!actors!kdvmaXHMmm4I7OiT'
 name: Crawling Claw
 type: minion
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/crawling-claw-01.png
 prototypeToken:
   name: Crawling Claw
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/crawling-claw-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Crawling Claw
   keywords:
@@ -49,12 +59,14 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: GbF8oUMl0ceHYRvg
-  _key: '!actors.items!v495NAnhUfobJvLJ.GbF8oUMl0ceHYRvg'
+- _id: yKMn3YLUfbpBSMJA
+  _key: '!actors.items!kdvmaXHMmm4I7OiT.yKMn3YLUfbpBSMJA'
   name: Fingernails
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Fingernails
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -79,12 +91,14 @@ items:
         damage: 37
     postPowerRollEffect:
       text: The crawling claw shifts a number of squares equal to the damage dealt.
-- _id: vU4mw3WAoulytiAj
-  _key: '!actors.items!v495NAnhUfobJvLJ.vU4mw3WAoulytiAj'
+- _id: 1XzDc4FFLNUgGzfR
+  _key: '!actors.items!kdvmaXHMmm4I7OiT.1XzDc4FFLNUgGzfR'
   name: Disorganized
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Disorganized
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

@@ -187,7 +187,7 @@ Hooks.on("createActor", async (actor: Actor) => {
             "prototypeToken.actor.system.stamina.perMinion": maxStamina,
             "prototypeToken.system.stamina.value": maxStamina,
             "prototypeToken.system.stamina.perMinion": maxStamina,
-            "prototypeToken.displayName": 30,
+            "prototypeToken.displayName": 50,
             "prototypeToken.displayBars": 50,
             "prototypeToken.bar1.attribute": "stamina",
             "prototypeToken.bar2.attribute": "heroicResource",

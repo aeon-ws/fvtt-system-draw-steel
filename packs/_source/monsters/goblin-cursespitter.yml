@@ -1,8 +1,8 @@
-_id: mfLQR3hrryhGLQEg
-_key: '!actors!mfLQR3hrryhGLQEg'
+_id: 6icnMC7GTxR5vEgj
+_key: '!actors!6icnMC7GTxR5vEgj'
 name: Goblin Cursespitter
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/goblin-cursespitter-01.png
 prototypeToken:
   name: Goblin Cursespitter
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/goblin-cursespitter-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Goblin Cursespitter
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: ptuINMTVCDUT6GaX
-  _key: '!actors.items!mfLQR3hrryhGLQEg.ptuINMTVCDUT6GaX'
+- _id: Z2O1BcTSMOlAn55P
+  _key: '!actors.items!6icnMC7GTxR5vEgj.Z2O1BcTSMOlAn55P'
   name: Eye of Surlach
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Eye of Surlach
+    isSignature: true
     keywords:
     - Magic
     - Ranged
@@ -83,13 +95,15 @@ items:
           value: 2
           effect:
             text: weakened (save ends)
-- _id: fUQCFQZzUnPGZw1A
-  _key: '!actors.items!mfLQR3hrryhGLQEg.fUQCFQZzUnPGZw1A'
+- _id: nhtaW30s6vvGhDWS
+  _key: '!actors.items!6icnMC7GTxR5vEgj.nhtaW30s6vvGhDWS'
   name: Dizzying Hex
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Dizzying Hex
     maliceCost: 1
+    isSignature: false
     keywords:
     - Magic
     - Ranged
@@ -124,12 +138,14 @@ items:
           value: 2
           effect:
             text: and can
-- _id: vONaaVTqeatJXcZG
-  _key: '!actors.items!mfLQR3hrryhGLQEg.vONaaVTqeatJXcZG'
+- _id: GCCHDBEDya80X3HH
+  _key: '!actors.items!6icnMC7GTxR5vEgj.GCCHDBEDya80X3HH'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Crafty
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

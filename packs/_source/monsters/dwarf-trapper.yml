@@ -1,8 +1,8 @@
-_id: uJGVGgTl5zK2un1n
-_key: '!actors!uJGVGgTl5zK2un1n'
+_id: 57Zg1lOzKD4bF3eS
+_key: '!actors!57Zg1lOzKD4bF3eS'
 name: Dwarf Trapper
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/dwarf-trapper-01.png
 prototypeToken:
   name: Dwarf Trapper
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/dwarf-trapper-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Dwarf Trapper
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 2
     freeStrikeDamage: 3
 items:
-- _id: c6SHtBR0z2gCjbzl
-  _key: '!actors.items!uJGVGgTl5zK2un1n.c6SHtBR0z2gCjbzl'
+- _id: atHNNAYhzYG5D2gK
+  _key: '!actors.items!57Zg1lOzKD4bF3eS.atHNNAYhzYG5D2gK'
   name: Concussive Bolts
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Concussive Bolts
+    isSignature: true
     keywords:
     - Charge
     - Melee
@@ -83,13 +95,15 @@ items:
           text: push 6
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: J1lxgmLmwbk4h32d
-  _key: '!actors.items!uJGVGgTl5zK2un1n.J1lxgmLmwbk4h32d'
+- _id: 7mgEHwMGYaQukJnk
+  _key: '!actors.items!57Zg1lOzKD4bF3eS.7mgEHwMGYaQukJnk'
   name: Steam Powered Snare
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Steam Powered Snare
     maliceCost: 3
+    isSignature: false
     keywords:
     - Area
     - Ranged

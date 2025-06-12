@@ -117,7 +117,7 @@ Distance Melee 1 Target One creature or object
 
 3% 17+ Sdamage
 
-Bury the Point (Action) © 2d10 + 2 4 2 Malice
+Bury the Point (Action) © 2d10 + 2 © 2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature
 
@@ -630,7 +630,7 @@ Distance Melee 1 Target One creature or object
 %* 12-16 4damage
 *% 17+ 5Sdamage
 
-Bury the Point (Action) © 2d10 + 2 > 2 Malice
+Bury the Point (Action) © 2d10 + 2 © 2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature
 + $11 5 damage; M<0 bleeding (save ends)
@@ -1105,7 +1105,7 @@ Distance Melee 1 Target Two creatures or objects
 
 2 Malice Each target is M<1 slowed (save ends).
 
-Let’s Tussle (Action) © 2D10 + 2 © 2 Malice
+Let's Tussle (Action)  2D10 + 2  2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature the fury’s size or smaller
 + <11 8 damage; M<0 grabbed
@@ -2354,7 +2354,7 @@ Distance Melee 1 Target Two creatures or objects
 
 2 Malice Each target is M<1 slowed (save ends).
 
-Let’s Tussle (Action) © 2D10 + 2 © 2 Malice
+Let's Tussle (Action)  2D10 + 2  2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature the fury’s size or smaller
 + <11 8 damage; M<0 grabbed
@@ -4276,7 +4276,7 @@ Distance Melee 1 Target One creature or object
 
 4% 8617+ 5damage
 
-Bury the Point (Action) © 2d10 + 2 > 2 Malice
+Bury the Point (Action) © 2d10 + 2 © 2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature
 + <s11 5 damage; M<0 bleeding (save ends)

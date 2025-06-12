@@ -1,8 +1,8 @@
-_id: bMEZ4W9hcT4RaBFW
-_key: '!actors!bMEZ4W9hcT4RaBFW'
+_id: 4rASlxz17JOg7OE2
+_key: '!actors!4rASlxz17JOg7OE2'
 name: Bugbear Commander
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/bugbear-commander-01.png
 prototypeToken:
   name: Bugbear Commander
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/bugbear-commander-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Bugbear Commander
   keywords:
@@ -46,12 +56,14 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: QPUTWooGqmF1iKOQ
-  _key: '!actors.items!bMEZ4W9hcT4RaBFW.QPUTWooGqmF1iKOQ'
+- _id: UCzyqmKShqlsnxjX
+  _key: '!actors.items!4rASlxz17JOg7OE2.UCzyqmKShqlsnxjX'
   name: Inspiring Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Inspiring Swordplay
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -79,12 +91,14 @@ items:
     postPowerRollEffect:
       text: 1 ally within 5 of the commander has an edge on their next strike until
         the start of the commander's next turn.
-- _id: rNWhRdfhkCORMQq4
-  _key: '!actors.items!bMEZ4W9hcT4RaBFW.rNWhRdfhkCORMQq4'
+- _id: rQ1BfcjTZnq6Kjsb
+  _key: '!actors.items!4rASlxz17JOg7OE2.rQ1BfcjTZnq6Kjsb'
   name: You Next!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: You Next!
+    isSignature: false
     keywords: []
     type: mainAction
     distance:
@@ -95,13 +109,15 @@ items:
       count: 1
     prePowerRollEffect:
       text: The target moves up to their speed and uses a signature action.
-- _id: ql2Jro5NMWYRNH9o
-  _key: '!actors.items!bMEZ4W9hcT4RaBFW.ql2Jro5NMWYRNH9o'
+- _id: 8pYYV9ZKwRsfzw58
+  _key: '!actors.items!4rASlxz17JOg7OE2.8pYYV9ZKwRsfzw58'
   name: Fall Back!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Fall Back!
     maliceCost: 5
+    isSignature: false
     keywords: []
     type: mainAction
     distance:
@@ -113,12 +129,14 @@ items:
     prePowerRollEffect:
       text: Each target shifts up to their speed. Each target can use the Throw maneuver
         if they are grabbing a creature or object.
-- _id: wp6w5LcEZmqu0Jdq
-  _key: '!actors.items!bMEZ4W9hcT4RaBFW.wp6w5LcEZmqu0Jdq'
+- _id: 5rkLGx6suQomPJEs
+  _key: '!actors.items!4rASlxz17JOg7OE2.5rkLGx6suQomPJEs'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Throw
+    isSignature: false
     keywords: []
     type: maneuver
     distance:

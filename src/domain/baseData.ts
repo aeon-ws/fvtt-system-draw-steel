@@ -22,9 +22,4 @@ export class BaseData<TData extends IBaseData = IBaseData, TParentData extends f
             ...this.createBaseFields(),
         }
     }
-
-    prepareBaseData(): void {
-        const name = this.data.name;
-        this.data.name = (name && name.length > 0) ? name : String(this.parent.name);
-    }
 }

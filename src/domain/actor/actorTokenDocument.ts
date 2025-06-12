@@ -39,7 +39,7 @@ export class ActorTokenDocument<TActorData extends IActorData> {
     }
 
     get name(): string {
-        return this.name;
+        return this._tokenDocument.name;
     }
 
     get type(): string {

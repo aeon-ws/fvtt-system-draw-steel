@@ -1,8 +1,8 @@
-_id: q3NufgRXn3vfp44N
-_key: '!actors!q3NufgRXn3vfp44N'
+_id: gDAqZ3GygAfLDH0R
+_key: '!actors!gDAqZ3GygAfLDH0R'
 name: Human Bandit Chief
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/human-bandit-chief-01.png
 prototypeToken:
   name: Human Bandit Chief
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/human-bandit-chief-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Human Bandit Chief
   keywords:
@@ -47,12 +57,14 @@ system:
     corruption: 4
     psychic: 4
 items:
-- _id: WX6yiMkAQK3WTZ86
-  _key: '!actors.items!q3NufgRXn3vfp44N.WX6yiMkAQK3WTZ86'
+- _id: pGn2QpLlQSkVrAl4
+  _key: '!actors.items!gDAqZ3GygAfLDH0R.pGn2QpLlQSkVrAl4'
   name: Whip Magic Longsword
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Whip Magic Longsword
+    isSignature: true
     keywords:
     - Melee
     - Weapon
@@ -83,12 +95,14 @@ items:
     postPowerRollEffect:
       text: A target who is adjacent to the bandit chief after the ability resolves
         takes 5 corruption damage.
-- _id: OF6tCJ8rdaea4bR2
-  _key: '!actors.items!q3NufgRXn3vfp44N.OF6tCJ8rdaea4bR2'
+- _id: TAQgy4U5bCssoIpx
+  _key: '!actors.items!gDAqZ3GygAfLDH0R.TAQgy4U5bCssoIpx'
   name: Bloodstones
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Bloodstones
+    isSignature: false
     keywords:
     - Magic
     type: triggeredAction
@@ -101,23 +115,27 @@ items:
     prePowerRollEffect:
       text: The bandit chief takes 9 corruption damage and increases the result of
         the power roll by one tier.
-- _id: ALSto3qAS3ebB8Ku
-  _key: '!actors.items!q3NufgRXn3vfp44N.ALSto3qAS3ebB8Ku'
+- _id: mtboIIS9niuyoyIn
+  _key: '!actors.items!gDAqZ3GygAfLDH0R.mtboIIS9niuyoyIn'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: End Effect
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: At the end of their turn, the bandit chief can take 5 damage to end one
         save ends effect affecting them. This damage can't be reduced in any way.
-- _id: ek9ZdZmudgGrgx0W
-  _key: '!actors.items!q3NufgRXn3vfp44N.ek9ZdZmudgGrgx0W'
+- _id: RFUlbm5p6QBXNb9F
+  _key: '!actors.items!gDAqZ3GygAfLDH0R.RFUlbm5p6QBXNb9F'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Supernatural Insight
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
@@ -125,12 +143,14 @@ items:
         effect, or the target is supernatural. Shoot! (Villain Action 1 Keywords Area
         Distance 10 burst Target All artillery allies in the burst Effect Each target
         makes a ranged free strike.
-- _id: h4Xf0dCK3cUZtPSd
-  _key: '!actors.items!q3NufgRXn3vfp44N.h4Xf0dCK3cUZtPSd'
+- _id: PZyd996KMTZA1h3z
+  _key: '!actors.items!gDAqZ3GygAfLDH0R.PZyd996KMTZA1h3z'
   name: Form Up! (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Form Up! (Villain Action 2)
+    isSignature: false
     keywords:
     - Area
     type: villainAction
@@ -143,12 +163,14 @@ items:
       text: Each target shifts up to their speed. Until the end of the encounter,
         the bandit chief and all allies have damage immunity 2 while adjacent to a
         target.
-- _id: xmIOV5yHwqwn1KtR
-  _key: '!actors.items!q3NufgRXn3vfp44N.xmIOV5yHwqwn1KtR'
+- _id: eT74arcP4bS288sz
+  _key: '!actors.items!gDAqZ3GygAfLDH0R.eT74arcP4bS288sz'
   name: Lead From the Front (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Lead From the Front (Villain Action 3)
+    isSignature: false
     keywords: []
     type: villainAction
     distance:

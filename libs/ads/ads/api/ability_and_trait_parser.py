@@ -161,13 +161,15 @@ TRAIT_NAMES = [
 
 TRAIT_NAME_PATTERN = f"(?P<traitName>{'|'.join([rf'{t}' for t in TRAIT_NAMES])})"
 
-ABILITY_NAME_PATTERN = r"(?P<abilityName>[A-Za-z][A-Za-z!? ]+[A-Za-z!?])"
+ABILITY_NAME_PATTERN = r"(?P<abilityName>[A-Za-z][A-Za-z!?' ]+[A-Za-z!?])"
 ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action ?[123]?|(?:Main )?Action))[)]"
-OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*[+]\s*(?P<bonus>[-+]?[1-5])\s*)?"
-OPTIONAL_COST_PATTERN = r"(?:(?P<maliceCost>[0-9]{0,2})\s?Malice|Signature)?"
+OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*[+]\s*(?P<bonus>[+]?[1-5])\s*)?"
+OPTIONAL_COST_PATTERN = (
+    r"(?:(?P<maliceCost>[0-9]{0,2})\s?Malice|(?P<signature>Signature))?"
+)
 
 ABILITY_HEADER_REGEX = re.compile(
-    rf"^(?:{TRAIT_NAME_PATTERN}\s*$|{ABILITY_NAME_PATTERN}\s?{ABILITY_TYPE_PATTERN}\s?{OPTIONAL_POWER_ROLL_PATTERN}\s?{OPTIONAL_COST_PATTERN})\s?"
+    rf"^(?:{TRAIT_NAME_PATTERN}\s*$|{ABILITY_NAME_PATTERN}\s?{ABILITY_TYPE_PATTERN}\s?{OPTIONAL_POWER_ROLL_PATTERN}\s*{OPTIONAL_COST_PATTERN})\s?"
 )
 
 
@@ -209,6 +211,7 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
         name=header["name"],
         type=header["type"],
         maliceCost=header["maliceCost"],
+        isSignature=header["isSignature"],
         powerRoll=parse_power_roll_block(header, ability_lines),
         keywords=[],
         distance=None,
@@ -361,11 +364,14 @@ def parse_ability_header(
         ability_type = "villainAction"
         villain_action_ordinal = 1
 
+    isSignature = groups.get("signature", None) is not None
+
     # Malice cost: "Signature" is 0, otherwise integer.
     if groups.get("maliceCost") is not None:
         malice_cost = int(groups["maliceCost"])
     elif "signature" in normalized.lower():
         malice_cost = None
+        isSignature = True
     else:
         malice_cost = None
 
@@ -393,6 +399,7 @@ def parse_ability_header(
         "type": ability_type,
         "villainActionOrdinal": villain_action_ordinal,
         "maliceCost": malice_cost,
+        "isSignature": isSignature,
         "powerRollBonus": power_roll_bonus,
         "header_raw": header_line.strip(),
     }
@@ -464,7 +471,9 @@ def get_foundry_item_model(actor_id: str, ability: Ability) -> dict[str, Any]:
         "type": "monsterAbility",
         "img": "icons/svg/book.svg",
         "system": {
+            "name": ability["name"],
             "maliceCost": ability.get("maliceCost", None),
+            "isSignature": ability.get("isSignature", False),
             "keywords": ability["keywords"],
             "type": ability["type"],
             "distance": ability.get("distance", None),

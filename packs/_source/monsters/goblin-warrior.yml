@@ -1,8 +1,8 @@
-_id: kbwF0knDRM2lmNAJ
-_key: '!actors!kbwF0knDRM2lmNAJ'
+_id: ncSxZoaCmOdOwPEH
+_key: '!actors!ncSxZoaCmOdOwPEH'
 name: Goblin Warrior
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/goblin-warrior-01.png
 prototypeToken:
   name: Goblin Warrior
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/goblin-warrior-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Goblin Warrior
   keywords:
@@ -37,19 +47,21 @@ system:
     max: 15
     value: 15
   combat:
-    size: '15'
+    size: 1S
     speed: 6
     movementTypes:
     - climb
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: bitYUIvPKH19cU0A
-  _key: '!actors.items!kbwF0knDRM2lmNAJ.bitYUIvPKH19cU0A'
+- _id: RlDEczc9STKaA6vK
+  _key: '!actors.items!ncSxZoaCmOdOwPEH.RlDEczc9STKaA6vK'
   name: Spear Charge
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Spear Charge
+    isSignature: true
     keywords:
     - Charge
     - Melee
@@ -73,12 +85,15 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: V2KrPuiDZY0ZpOaa
-  _key: '!actors.items!kbwF0knDRM2lmNAJ.V2KrPuiDZY0ZpOaa'
+- _id: SUJFkhh1Nvlt7IyP
+  _key: '!actors.items!ncSxZoaCmOdOwPEH.SUJFkhh1Nvlt7IyP'
   name: Bury the Point
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Bury the Point
+    maliceCost: 2
+    isSignature: false
     keywords:
     - Melee
     - Strike
@@ -115,12 +130,14 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: 2dzC42whhF71H5sD
-  _key: '!actors.items!kbwF0knDRM2lmNAJ.2dzC42whhF71H5sD'
+- _id: Cd3MZcsrEhB8cef6
+  _key: '!actors.items!ncSxZoaCmOdOwPEH.Cd3MZcsrEhB8cef6'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Crafty
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

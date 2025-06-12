@@ -1,8 +1,8 @@
-_id: hQmFYDYGTVkR0E0G
-_key: '!actors!hQmFYDYGTVkR0E0G'
+_id: EcrBwnpRlpTI316C
+_key: '!actors!EcrBwnpRlpTI316C'
 name: Goblin Underboss
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/goblin-underboss-01.png
 prototypeToken:
   name: Goblin Underboss
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/goblin-underboss-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Goblin Underboss
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: jAZQEU2NtKw130aT
-  _key: '!actors.items!hQmFYDYGTVkR0E0G.jAZQEU2NtKw130aT'
+- _id: Chs7UjiJOn7eoLvH
+  _key: '!actors.items!EcrBwnpRlpTI316C.Chs7UjiJOn7eoLvH'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Swordplay
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -74,12 +86,14 @@ items:
         damage: 5
     postPowerRollEffect:
       text: One ally adjacent to the target can make a free strike against them.
-- _id: q2tqDDHI3jBHKY1P
-  _key: '!actors.items!hQmFYDYGTVkR0E0G.q2tqDDHI3jBHKY1P'
+- _id: bMo2CwQCcfAqAv4W
+  _key: '!actors.items!EcrBwnpRlpTI316C.bMo2CwQCcfAqAv4W'
   name: Get Reckless!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Get Reckless!
+    isSignature: false
     keywords:
     - Area
     type: maneuver
@@ -93,12 +107,14 @@ items:
         on strikes, and strikes made against them have an edge.
     maliceEffect:
       text: 2 Malice Strikes made against each target no longer have an edge.
-- _id: ZYLQTt3ObbnuNAr4
-  _key: '!actors.items!hQmFYDYGTVkR0E0G.ZYLQTt3ObbnuNAr4'
+- _id: NUX9spAJEbYHnOMU
+  _key: '!actors.items!EcrBwnpRlpTI316C.NUX9spAJEbYHnOMU'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Crafty
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

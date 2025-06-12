@@ -1,8 +1,8 @@
-_id: XLTaY9XWAj4Foqog
-_key: '!actors!XLTaY9XWAj4Foqog'
+_id: IHWFDz1460IWDk1T
+_key: '!actors!IHWFDz1460IWDk1T'
 name: Human Brawler
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/human-brawler-01.png
 prototypeToken:
   name: Human Brawler
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/human-brawler-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Human Brawler
   keywords:
@@ -47,12 +57,14 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: z1XN9SoJj6Om0nxq
-  _key: '!actors.items!XLTaY9XWAj4Foqog.z1XN9SoJj6Om0nxq'
+- _id: RWpDNLRZVD8POH66
+  _key: '!actors.items!IHWFDz1460IWDk1T.RWpDNLRZVD8POH66'
   name: Haymaker
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Haymaker
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -82,13 +94,15 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: brawler deals an additional 2 damage if the target is already grabbed.
-- _id: CgKtTGVflNC0Ypjc
-  _key: '!actors.items!XLTaY9XWAj4Foqog.CgKtTGVflNC0Ypjc'
+- _id: UHHxgJcfxbsVeFWt
+  _key: '!actors.items!IHWFDz1460IWDk1T.UHHxgJcfxbsVeFWt'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Throw
     maliceCost: 1
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -101,24 +115,28 @@ items:
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: NaapHfZvJ4MgXEoY
-  _key: '!actors.items!XLTaY9XWAj4Foqog.NaapHfZvJ4MgXEoY'
+- _id: BwI03Eskjm2EG1KN
+  _key: '!actors.items!IHWFDz1460IWDk1T.BwI03Eskjm2EG1KN'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Shoot the Hostage
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: The brawler takes half damage from strikes if they have a creature or
         object grabbed. The grabbed creature or object takes the other half of the
         damage.
-- _id: PVXt20H9EXzUpder
-  _key: '!actors.items!XLTaY9XWAj4Foqog.PVXt20H9EXzUpder'
+- _id: CmNDOk0rtH3GjJZr
+  _key: '!actors.items!IHWFDz1460IWDk1T.CmNDOk0rtH3GjJZr'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Supernatural Insight
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

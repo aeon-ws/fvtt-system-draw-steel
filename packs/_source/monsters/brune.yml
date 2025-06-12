@@ -1,8 +1,8 @@
-_id: JGZK8S3xzqgsbRGM
-_key: '!actors!JGZK8S3xzqgsbRGM'
+_id: O3eQir0e0icbTZkI
+_key: '!actors!O3eQir0e0icbTZkI'
 name: Brune
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/brune-01.png
 prototypeToken:
   name: Brune
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/brune-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Brune
   keywords:
@@ -47,12 +57,14 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: ldsLShf09UkMdwq8
-  _key: '!actors.items!JGZK8S3xzqgsbRGM.ldsLShf09UkMdwq8'
+- _id: hEwRxgy6hv8O2BaQ
+  _key: '!actors.items!O3eQir0e0icbTZkI.hEwRxgy6hv8O2BaQ'
   name: Butcher Knife
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Butcher Knife
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -82,13 +94,15 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: Brune deals an additional 2 damage if the target is already grabbed.
-- _id: X5k42xeZikmBk0g6
-  _key: '!actors.items!JGZK8S3xzqgsbRGM.X5k42xeZikmBk0g6'
+- _id: bvA3csurRWcYE5dW
+  _key: '!actors.items!O3eQir0e0icbTZkI.bvA3csurRWcYE5dW'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Throw
     maliceCost: 1
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -101,23 +115,27 @@ items:
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: RKhogA1ryxsbOYbA
-  _key: '!actors.items!JGZK8S3xzqgsbRGM.RKhogA1ryxsbOYbA'
+- _id: Nb0Ywq6BLduuTs9g
+  _key: '!actors.items!O3eQir0e0icbTZkI.Nb0Ywq6BLduuTs9g'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Shoot the Hostage
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: Brune takes half damage from strikes if he has a creature or object grabbed.
         The grabbed creature or object takes the other half of the damage.
-- _id: PuPiUhDa8nvBez5h
-  _key: '!actors.items!JGZK8S3xzqgsbRGM.PuPiUhDa8nvBez5h'
+- _id: VIdpj4tyPqrGEBn1
+  _key: '!actors.items!O3eQir0e0icbTZkI.VIdpj4tyPqrGEBn1'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Supernatural Insight
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

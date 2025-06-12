@@ -1,8 +1,8 @@
-_id: zs4cdPveK3LCSSdX
-_key: '!actors!zs4cdPveK3LCSSdX'
+_id: mwFBk3VlbsU1axoV
+_key: '!actors!mwFBk3VlbsU1axoV'
 name: Rotting Zombie
 type: minion
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/rotting-zombie-01.png
 prototypeToken:
   name: Rotting Zombie
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/rotting-zombie-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Rotting Zombie
   keywords:
@@ -49,12 +59,14 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: wOHfrk1Troffy8BM
-  _key: '!actors.items!zs4cdPveK3LCSSdX.wOHfrk1Troffy8BM'
+- _id: yqW29E7h6cX5b5q2
+  _key: '!actors.items!mwFBk3VlbsU1axoV.yqW29E7h6cX5b5q2'
   name: Rotting Fist
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Rotting Fist
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -82,12 +94,14 @@ items:
           value: 2
           effect:
             text: prone if size 1 slowed (save ends)
-- _id: XGVidhmhszFcAClA
-  _key: '!actors.items!zs4cdPveK3LCSSdX.XGVidhmhszFcAClA'
+- _id: gzQaAX3tkfQGUVcx
+  _key: '!actors.items!mwFBk3VlbsU1axoV.gzQaAX3tkfQGUVcx'
   name: Death Grasp
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Death Grasp
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

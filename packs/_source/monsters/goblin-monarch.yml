@@ -1,8 +1,8 @@
-_id: QbhTaWfpFylyW4kP
-_key: '!actors!QbhTaWfpFylyW4kP'
+_id: OWG1qnRsSPDWuHz8
+_key: '!actors!OWG1qnRsSPDWuHz8'
 name: Goblin Monarch
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/goblin-monarch-01.png
 prototypeToken:
   name: Goblin Monarch
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/goblin-monarch-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Goblin Monarch
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: 4iV8KiWYG4VcTAKL
-  _key: '!actors.items!QbhTaWfpFylyW4kP.4iV8KiWYG4VcTAKL'
+- _id: 06rnGWhNHp5PMwnF
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.06rnGWhNHp5PMwnF'
   name: Handaxe
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Handaxe
+    isSignature: true
     keywords:
     - Melee
     - Ranged
@@ -76,13 +88,15 @@ items:
         damage: 13
     postPowerRollEffect:
       text: An ally within 10 of the monarch can make a free strike.
-- _id: HTbZagJzfELlZxfv
-  _key: '!actors.items!QbhTaWfpFylyW4kP.HTbZagJzfELlZxfv'
+- _id: 1N0bazKETPO8fsA7
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.1N0bazKETPO8fsA7'
   name: Get in Here!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Get in Here!
     maliceCost: 1
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -92,12 +106,14 @@ items:
       special: true
     prePowerRollEffect:
       text: Two goblin runners appear in unoccupied spaces.
-- _id: nvdKpcb34U80G2TA
-  _key: '!actors.items!QbhTaWfpFylyW4kP.nvdKpcb34U80G2TA'
+- _id: 61OOwXmq6On9mPvN
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.61OOwXmq6On9mPvN'
   name: Meat Shield
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Meat Shield
+    isSignature: false
     keywords: []
     type: triggeredAction
     distance:
@@ -109,33 +125,39 @@ items:
     trigger: A creature targets the monarch with a strike.
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead.
-- _id: epoOay3NAI9CkSKT
-  _key: '!actors.items!QbhTaWfpFylyW4kP.epoOay3NAI9CkSKT'
+- _id: kHJsLk01nCH2MXS7
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.kHJsLk01nCH2MXS7'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: End Effect
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: At the end of their turn, the monarch can take 5 damage to end one save
         ends effect affecting them. This damage can't be reduced in any way.
-- _id: sCkY0EGLr3AlIXqL
-  _key: '!actors.items!QbhTaWfpFylyW4kP.sCkY0EGLr3AlIXqL'
+- _id: ENNNrWzyqJHioRmu
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.ENNNrWzyqJHioRmu'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Crafty
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: The monarch doesn't provoke opportunity attacks by moving.
-- _id: 2dr0YSjEBgVoIYhh
-  _key: '!actors.items!QbhTaWfpFylyW4kP.2dr0YSjEBgVoIYhh'
+- _id: lmEy2L3EpxwhhkL4
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.lmEy2L3EpxwhhkL4'
   name: What Are You Waiting For (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: What Are You Waiting For (Villain Action 1)
+    isSignature: false
     keywords: []
     type: villainAction
     distance:
@@ -149,12 +171,14 @@ items:
       text: Each target can move up to their speed or make a free strike. Focus Fire
         (Villain Action 2 Each ally within 10 squares of the target can move up to
         their speed toward the target.
-- _id: 2SXE4JN1r1BnlPhR
-  _key: '!actors.items!QbhTaWfpFylyW4kP.2SXE4JN1r1BnlPhR'
+- _id: 0uDpkoKSOBIwERMg
+  _key: '!actors.items!OWG1qnRsSPDWuHz8.0uDpkoKSOBIwERMg'
   name: Kill! (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Kill! (Villain Action 3)
+    isSignature: false
     keywords: []
     type: villainAction
     distance:

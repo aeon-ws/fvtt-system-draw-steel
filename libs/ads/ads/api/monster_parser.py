@@ -390,7 +390,7 @@ def parse_size_and_stability(
             r"\bSize\s+(\w+)\s*/\s*Stability\s*([0-9O]+)", source_line, re.IGNORECASE
         )
         if size_and_stability_matches:
-            size = size_and_stability_matches.group(1)
+            size = size_and_stability_matches.group(1).replace("5", "S")
             stability = int(size_and_stability_matches.group(2).replace("O", "0"))
             return size, stability
     raise ValueError(
@@ -688,12 +688,19 @@ def get_monster_foundry_actor_model(
     except Exception:
         width = 1
 
+    if monster_model["size"].endswith("S") or monster_model["size"].endswith("T"):
+        ring_scale = 1.2
+    else:
+        ring_scale = 1.0
+
+    monster_image_path = f"systems/aeon-draw-steel/images/monsters/{monster_model['name'].replace(' ', '-').lower()}-01.png"
+
     monster_foundry_actor_model: dict[str, Any] = {
         "_id": actor_id,
         "_key": f"!actors!{actor_id}",
         "name": monster_model["name"],
         "type": "minion" if is_minion else "enemy",
-        "img": "icons/svg/mystery-man.svg",
+        "img": monster_image_path,
         "prototypeToken": {
             "name": monster_model["name"],
             "displayName": 50,
@@ -705,7 +712,14 @@ def get_monster_foundry_actor_model(
             "width": width,
             "height": width,
             "lockRotation": True,
-            "texture": {"img": "icons/svg/mystery-man.svg"},
+            "texture": {"img": monster_image_path},
+            "appendNumber": False,
+            "ring": {
+                "enabled": True,
+                "colors": {"ring": "#ac936c", "background": "#ac936c"},
+                "effects": 1,
+                "subject": {"scale": ring_scale, "texture": None},
+            },
         },
         "system": {
             "name": monster_model["name"],
@@ -739,7 +753,9 @@ def get_monster_foundry_actor_model(
     }
 
     for ability in monster_model.get("abilities", []):
-        monster_foundry_actor_model["items"].append(get_foundry_item_model(actor_id, ability))
+        monster_foundry_actor_model["items"].append(
+            get_foundry_item_model(actor_id, ability)
+        )
 
     # Add optionals (immunity/weakness)
     for field_name in (
@@ -804,8 +820,14 @@ def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
         pre_sanitized_line = re.sub(
             r"[^A-Za-z0-9/'\"\[\]()<!?.,; +-]", " ", pre_sanitized_line
         )
+        pre_sanitized_line = re.sub(
+            "minton", "minion", pre_sanitized_line, 0, re.IGNORECASE
+        )
         pre_sanitized_line = re.sub(r"\s+", " ", pre_sanitized_line)
         pre_sanitized_source_lines.append(pre_sanitized_line.strip())
+
+        if pre_sanitized_line.find("ROGUE") > -1:
+            print(f"[DEBUG] Found rogue line: {pre_sanitized_line.strip()}")
 
     # for trait_name in TRAIT_NAMES:
     #     print(f"[{trait_name}]")

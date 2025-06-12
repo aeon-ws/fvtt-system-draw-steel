@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import { EnemySheetComponent } from "@enemy/enemySheetComponent";
 import { isEnemyActor } from "@utils/actor";
 import { IEnemyData } from "@enemy/enemyData";
+import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 
 
 export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
@@ -39,11 +40,8 @@ export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
         }
         this._reactRoot.render(
             <EnemySheetComponent
-                {...this.system}
-                onChangeResource={async (delta: number) => {
-                    const newValue = this.system.stamina.value + delta;
-                    await this._actor.update({ "system.stamina.value": newValue });
-                }}
+                enemy={this.system}
+                abilities={this.actor.items.map(item => item.system as unknown as IEnemyAbilityData)}
             />
         );
 

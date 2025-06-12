@@ -129,6 +129,11 @@ export class ActorData<TData extends IActorData = IActorData> extends BaseData<T
         return !this.isDead && this.data.stamina.value <= this.windedThreshold;
     }
 
+    prepareBaseData(): void {
+        const name = this.data.name;
+        this.data.name = (name && name.length > 0) ? name : String(this.parent.name);
+    }
+
     override prepareDerivedData() {
         super.prepareDerivedData();
 

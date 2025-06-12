@@ -1,8 +1,8 @@
-_id: bbjg4pKpR44NPFky
-_key: '!actors!bbjg4pKpR44NPFky'
+_id: o6hOSI4sBu2U4NBZ
+_key: '!actors!o6hOSI4sBu2U4NBZ'
 name: Flow of the River
 type: minion
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.png
 prototypeToken:
   name: Flow of the River
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Flow of the River
   keywords:
@@ -49,12 +59,14 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: Ce16NK2YI9Z2gxPG
-  _key: '!actors.items!bbjg4pKpR44NPFky.Ce16NK2YI9Z2gxPG'
+- _id: BYMBlkRjICYx26BO
+  _key: '!actors.items!o6hOSI4sBu2U4NBZ.BYMBlkRjICYx26BO'
   name: Bite and Drag
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Bite and Drag
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -83,33 +95,39 @@ items:
         damage: 5
         effect:
           text: shift 3
-- _id: ZDnTNhpPAgR0mqcB
-  _key: '!actors.items!bbjg4pKpR44NPFky.ZDnTNhpPAgR0mqcB'
+- _id: 02RugJV28nVeTGGu
+  _key: '!actors.items!o6hOSI4sBu2U4NBZ.02RugJV28nVeTGGu'
   name: Aquavuken
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Aquavuken
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: The flow ignores difficult terrain and can move on top of water as if
         it was solid ground.
-- _id: kYG35zy0tYn1tpt5
-  _key: '!actors.items!bbjg4pKpR44NPFky.kYG35zy0tYn1tpt5'
+- _id: DnIzs0wOZu9YEHnS
+  _key: '!actors.items!o6hOSI4sBu2U4NBZ.DnIzs0wOZu9YEHnS'
   name: Pack Strong
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Pack Strong
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: The flow can't be flanked or frightened while adjacent to an ally.
-- _id: ZZDkOhss98UEvVii
-  _key: '!actors.items!bbjg4pKpR44NPFky.ZZDkOhss98UEvVii'
+- _id: FkJxQVT9eAcRc88m
+  _key: '!actors.items!o6hOSI4sBu2U4NBZ.FkJxQVT9eAcRc88m'
   name: Water Weird
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Water Weird
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

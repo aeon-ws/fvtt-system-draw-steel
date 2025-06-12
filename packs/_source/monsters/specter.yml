@@ -1,8 +1,8 @@
-_id: UTtwtqwYzcF89Sed
-_key: '!actors!UTtwtqwYzcF89Sed'
+_id: eZV2px9R8Sc0d00A
+_key: '!actors!eZV2px9R8Sc0d00A'
 name: Specter
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/specter-01.png
 prototypeToken:
   name: Specter
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/specter-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Specter
   keywords:
@@ -47,12 +57,14 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: WMdPXpTsnM4g7F6i
-  _key: '!actors.items!UTtwtqwYzcF89Sed.WMdPXpTsnM4g7F6i'
+- _id: b3VxVSSKFB1zsnxN
+  _key: '!actors.items!eZV2px9R8Sc0d00A.b3VxVSSKFB1zsnxN'
   name: Decaying Touch
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Decaying Touch
+    isSignature: true
     keywords:
     - Magic
     - Melee
@@ -93,12 +105,14 @@ items:
       text: 2 Malice The potency of this ability increases by 1. A living creature
         killed by this ability becomes a specter who appears in the target's space
         under the Director's control.
-- _id: FTIGKespSjiKWZAp
-  _key: '!actors.items!UTtwtqwYzcF89Sed.FTIGKespSjiKWZAp'
+- _id: gtl4ogtLz8mInrl4
+  _key: '!actors.items!eZV2px9R8Sc0d00A.gtl4ogtLz8mInrl4'
   name: Hidden Movement
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Hidden Movement
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -109,12 +123,14 @@ items:
     prePowerRollEffect:
       text: The specter turns invisible, moves up to their speed, and becomes visible
         again.
-- _id: ae5KDD0qTU97ue93
-  _key: '!actors.items!UTtwtqwYzcF89Sed.ae5KDD0qTU97ue93'
+- _id: M0VNDifv59GrRmZU
+  _key: '!actors.items!eZV2px9R8Sc0d00A.M0VNDifv59GrRmZU'
   name: Corruptive Phasing
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Corruptive Phasing
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

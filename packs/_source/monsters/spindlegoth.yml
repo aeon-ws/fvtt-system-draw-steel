@@ -1,8 +1,8 @@
-_id: aLsdpcnVIHbyLynA
-_key: '!actors!aLsdpcnVIHbyLynA'
+_id: TtFPPrnF3VQApXhJ
+_key: '!actors!TtFPPrnF3VQApXhJ'
 name: Spindlegoth
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.png
 prototypeToken:
   name: Spindlegoth
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Spindlegoth
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 1
     freeStrikeDamage: 2
 items:
-- _id: At1Sj8uD4WH6TtRS
-  _key: '!actors.items!aLsdpcnVIHbyLynA.At1Sj8uD4WH6TtRS'
+- _id: It5uJxH0kCfFPoZO
+  _key: '!actors.items!TtFPPrnF3VQApXhJ.It5uJxH0kCfFPoZO'
   name: Choking Thread
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Choking Thread
+    isSignature: true
     keywords:
     - Strike
     - Ranged
@@ -85,13 +97,15 @@ items:
     postPowerRollEffect:
       text: The target suffocates while restrained by this ability. If this ability
         fails to restrain the target, the spindlegoth shifts 2 and hides.
-- _id: Y5iTV7eORRlQaL1L
-  _key: '!actors.items!aLsdpcnVIHbyLynA.Y5iTV7eORRlQaL1L'
+- _id: Zdb9k1ZG7WheBb0u
+  _key: '!actors.items!TtFPPrnF3VQApXhJ.Zdb9k1ZG7WheBb0u'
   name: Thread Whip
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Thread Whip
     maliceCost: 3
+    isSignature: false
     keywords:
     - Area
     - Weapon
@@ -112,13 +126,15 @@ items:
       tier3:
         effect:
           text: Vertical slide 3
-- _id: EnD523K21xNo1uAN
-  _key: '!actors.items!aLsdpcnVIHbyLynA.EnD523K21xNo1uAN'
+- _id: 5ymsBXSUhSwzx3Ca
+  _key: '!actors.items!TtFPPrnF3VQApXhJ.5ymsBXSUhSwzx3Ca'
   name: Tightwire
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Tightwire
     maliceCost: 1
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -129,12 +145,14 @@ items:
     prePowerRollEffect:
       text: The spindlegoth shifts up to their speed, including vertically. They must
         end this movement on a solid surface.
-- _id: xBtuaIvaP7k2AG57
-  _key: '!actors.items!aLsdpcnVIHbyLynA.xBtuaIvaP7k2AG57'
+- _id: ODUmU42QIh9uGpqQ
+  _key: '!actors.items!TtFPPrnF3VQApXhJ.ODUmU42QIh9uGpqQ'
   name: Needlefoot
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Needlefoot
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

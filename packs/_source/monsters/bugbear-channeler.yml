@@ -1,8 +1,8 @@
-_id: jq8Cg1XjtuQjWmV3
-_key: '!actors!jq8Cg1XjtuQjWmV3'
+_id: oB7Rp09gpmDM8dEg
+_key: '!actors!oB7Rp09gpmDM8dEg'
 name: Bugbear Channeler
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/bugbear-channeler-01.png
 prototypeToken:
   name: Bugbear Channeler
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/bugbear-channeler-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Bugbear Channeler
   keywords:
@@ -46,12 +56,14 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: BlG21vRNqhctBFND
-  _key: '!actors.items!jq8Cg1XjtuQjWmV3.BlG21vRNqhctBFND'
+- _id: dJdn5oldN7j7dshy
+  _key: '!actors.items!oB7Rp09gpmDM8dEg.dJdn5oldN7j7dshy'
   name: Shadow Drag
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Shadow Drag
+    isSignature: true
     keywords:
     - Magic
     - Ranged
@@ -83,12 +95,14 @@ items:
     postPowerRollEffect:
       text: Each square that a target is pulled through becomes difficult terrain
         for enemies.
-- _id: NkuN6y2Y4DZQ18uN
-  _key: '!actors.items!jq8Cg1XjtuQjWmV3.NkuN6y2Y4DZQ18uN'
+- _id: AJvT50UgkyrSJccR
+  _key: '!actors.items!oB7Rp09gpmDM8dEg.AJvT50UgkyrSJccR'
   name: Blistering Element
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Blistering Element
+    isSignature: false
     keywords:
     - Area
     - Magic
@@ -124,13 +138,15 @@ items:
     postPowerRollEffect:
       text: The channeler chooses one of the following damage types for the damage
         acid, cold, corruption, fire, or poison.
-- _id: ZcE0KFSr6g6wXet8
-  _key: '!actors.items!jq8Cg1XjtuQjWmV3.ZcE0KFSr6g6wXet8'
+- _id: vhl7XolYmogxEFfr
+  _key: '!actors.items!oB7Rp09gpmDM8dEg.vhl7XolYmogxEFfr'
   name: Twist Shape
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Twist Shape
     maliceCost: 5
+    isSignature: false
     keywords:
     - Magic
     - Ranged
@@ -170,12 +186,14 @@ items:
       text: A shapechanged creature has their limbs violently stretched and their
         skin becomes paper thin. They are slowed and have fire weakness 10 while they
         have this effect.
-- _id: nn0DBGGNMtl7O7zo
-  _key: '!actors.items!jq8Cg1XjtuQjWmV3.nn0DBGGNMtl7O7zo'
+- _id: LS0zzyF2DvJ3vnLg
+  _key: '!actors.items!oB7Rp09gpmDM8dEg.LS0zzyF2DvJ3vnLg'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Throw
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -191,13 +209,15 @@ items:
     prePowerRollEffect:
       text: Vertical push 3. An ally target doesn't take damage from being force moved.
         Catcher (Free Triggered Action channeler. The target is grabbed by the channeler.
-- _id: 7jXjZYi2d61YCzyb
-  _key: '!actors.items!jq8Cg1XjtuQjWmV3.7jXjZYi2d61YCzyb'
+- _id: GDHCRvh0PTS0fpVV
+  _key: '!actors.items!oB7Rp09gpmDM8dEg.GDHCRvh0PTS0fpVV'
   name: Shadow Veil
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Shadow Veil
     maliceCost: 1
+    isSignature: false
     keywords:
     - Magic
     - Ranged

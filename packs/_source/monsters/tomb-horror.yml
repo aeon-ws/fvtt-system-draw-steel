@@ -1,8 +1,8 @@
-_id: iPO0Wbjf6w6qfJeO
-_key: '!actors!iPO0Wbjf6w6qfJeO'
+_id: MTmJkyMTER7HwycR
+_key: '!actors!MTmJkyMTER7HwycR'
 name: Tomb Horror
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/tomb-horror-01.png
 prototypeToken:
   name: Tomb Horror
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 2
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/tomb-horror-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Tomb Horror
   keywords:
@@ -49,12 +59,14 @@ system:
   weakness:
     fire: 3
 items:
-- _id: niRXeJJEHTAJb1Fg
-  _key: '!actors.items!iPO0Wbjf6w6qfJeO.niRXeJJEHTAJb1Fg'
+- _id: 24UFjGOJIu0XZdQC
+  _key: '!actors.items!MTmJkyMTER7HwycR.24UFjGOJIu0XZdQC'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Ruinous Grasp
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -85,13 +97,15 @@ items:
     postPowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: fyVazOc4TgVgpMsy
-  _key: '!actors.items!iPO0Wbjf6w6qfJeO.fyVazOc4TgVgpMsy'
+- _id: ZgXkns4QvwyYU1kO
+  _key: '!actors.items!MTmJkyMTER7HwycR.ZgXkns4QvwyYU1kO'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Hundred Horrors
     maliceCost: 5
+    isSignature: false
     keywords:
     - Area
     - Weapon
@@ -128,12 +142,14 @@ items:
     postPowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: iPfv9Fwb1bGY773m
-  _key: '!actors.items!iPO0Wbjf6w6qfJeO.iPfv9Fwb1bGY773m'
+- _id: qFyR7uI0CrnqOSkH
+  _key: '!actors.items!MTmJkyMTER7HwycR.qFyR7uI0CrnqOSkH'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Latch Hook
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -152,12 +168,14 @@ items:
         relic within distance that the tomb horror was feeding on. The target is P<2
         slowed (save ends). The tomb horror then moves up to their speed towards the
         target.
-- _id: dMggudBhodu7yJPS
-  _key: '!actors.items!iPO0Wbjf6w6qfJeO.dMggudBhodu7yJPS'
+- _id: AyvLWjuyeDhcbbHJ
+  _key: '!actors.items!MTmJkyMTER7HwycR.AyvLWjuyeDhcbbHJ'
   name: Enervating Horror
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Enervating Horror
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

@@ -1,8 +1,8 @@
-_id: OZBDjJhfxnlDEr7A
-_key: '!actors!OZBDjJhfxnlDEr7A'
+_id: S99xbrDivtaGaCSg
+_key: '!actors!S99xbrDivtaGaCSg'
 name: Goblin Sniper
 type: minion
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/goblin-sniper-01.png
 prototypeToken:
   name: Goblin Sniper
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/goblin-sniper-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Goblin Sniper
   keywords:
@@ -47,12 +57,14 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: kktGSF9t0d2rUzQ6
-  _key: '!actors.items!OZBDjJhfxnlDEr7A.kktGSF9t0d2rUzQ6'
+- _id: s4CFdUKtd8dIYCS1
+  _key: '!actors.items!S99xbrDivtaGaCSg.s4CFdUKtd8dIYCS1'
   name: Bow
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Bow
+    isSignature: true
     keywords:
     - Ranged
     - Strike
@@ -78,60 +90,15 @@ items:
     postPowerRollEffect:
       text: If the sniper doesn't use a move action this turn, the ability has an
         edge.
-- _id: 69IsafdyQQkkHLmX
-  _key: '!actors.items!OZBDjJhfxnlDEr7A.69IsafdyQQkkHLmX'
+- _id: tQGSrFmyMklsENC6
+  _key: '!actors.items!S99xbrDivtaGaCSg.tQGSrFmyMklsENC6'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Crafty
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
-      text: The sniper doesn't provoke opportunity attacks by moving. GOBLIN SPINECLEAVER
-        Levet 1 Minton BRUTE Goblin, Humanoid EV 3 for four minions Stamina 5 Speed
-        5 (climb) Size 1S / Stability 0 With Captain Strike damage +1 Free Strike
-        2 Might+2 Agility+O0 Reason+0O Intuition+O Presence -1
-- _id: a6kasmFUko6nHFbj
-  _key: '!actors.items!OZBDjJhfxnlDEr7A.a6kasmFUko6nHFbj'
-  name: Axe
-  type: monsterAbility
-  img: icons/svg/book.svg
-  system:
-    keywords:
-    - Melee
-    - Strike
-    - Weapon
-    type: mainAction
-    distance:
-      melee: 1
-    target:
-      text: One creature or object per minion
-      ally: true
-      self: true
-      enemy: true
-      object: true
-      count: 1
-    powerRoll:
-      bonus: 2
-      tier1:
-        damage: 2
-        effect:
-          text: push 1
-      tier2:
-        damage: 4
-        effect:
-          text: push 3
-      tier3:
-        damage: 5
-        effect:
-          text: push 4
-- _id: SVavlISi8caN5IPh
-  _key: '!actors.items!OZBDjJhfxnlDEr7A.SVavlISi8caN5IPh'
-  name: Crafty
-  type: monsterAbility
-  img: icons/svg/book.svg
-  system:
-    keywords: []
-    type: monsterTrait
-    prePowerRollEffect:
-      text: The spinecleaver doesn't provoke opportunity attacks by moving.
+      text: The sniper doesn't provoke opportunity attacks by moving.

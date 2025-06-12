@@ -1,8 +1,8 @@
-_id: nmSeOAcjiKScfTD6
-_key: '!actors!nmSeOAcjiKScfTD6'
+_id: 8Wiw8PORfk5ZSEkm
+_key: '!actors!8Wiw8PORfk5ZSEkm'
 name: Soulwight
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/soulwight-01.png
 prototypeToken:
   name: Soulwight
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/soulwight-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Soulwight
   keywords:
@@ -46,12 +56,14 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: B8Q32b3gcbxpQVF0
-  _key: '!actors.items!nmSeOAcjiKScfTD6.B8Q32b3gcbxpQVF0'
+- _id: XEyYCIhzduWdVF4C
+  _key: '!actors.items!8Wiw8PORfk5ZSEkm.XEyYCIhzduWdVF4C'
   name: Soulstealer Longsword
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Soulstealer Longsword
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -88,13 +100,15 @@ items:
       text: The target appears to rapidly age each time they take damage from this
         ability. The target regains their former appearance when the soulwight is
         destroyed.
-- _id: v0uik36dgBkUhSEF
-  _key: '!actors.items!nmSeOAcjiKScfTD6.v0uik36dgBkUhSEF'
+- _id: EKVsgPhmaWg8VITl
+  _key: '!actors.items!8Wiw8PORfk5ZSEkm.EKVsgPhmaWg8VITl'
   name: Stolen Vitality
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Stolen Vitality
     maliceCost: 3
+    isSignature: false
     keywords:
     - Magic
     - Ranged
@@ -108,12 +122,14 @@ items:
     prePowerRollEffect:
       text: The target regains 10 Stamina. The soulwight can't use this maneuver again
         until they strike a creature with their lifestealer longsword.
-- _id: wjs90SGCKIMiXrNo
-  _key: '!actors.items!nmSeOAcjiKScfTD6.wjs90SGCKIMiXrNo'
+- _id: 6zeviG4AEisXBFxn
+  _key: '!actors.items!8Wiw8PORfk5ZSEkm.6zeviG4AEisXBFxn'
   name: Arise
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Arise
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

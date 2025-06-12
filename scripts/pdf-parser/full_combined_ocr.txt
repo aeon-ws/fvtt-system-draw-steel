@@ -1104,7 +1104,7 @@ Distance Melee 1 Target Two creatures or objects
 
 2 Malice Each target is M<1 slowed (save ends).
 
-Let’s Tussle (Action) © 2D10 + 2 © 2 Malice
+Let's Tussle (Action)  2D10 + 2  2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature the fury’s size or smaller
 + <11 8 damage; M<0 grabbed
@@ -2352,7 +2352,7 @@ Distance Melee 1 Target Two creatures or objects
 
 2 Malice Each target is M<1 slowed (save ends).
 
-Let’s Tussle (Action) © 2D10 + 2 © 2 Malice
+Let's Tussle (Action)  2D10 + 2  2 Malice
 Keywords Melee, Strike, Weapon
 Distance Melee 1 Target One creature the fury’s size or smaller
 + <11 8 damage; M<0 grabbed

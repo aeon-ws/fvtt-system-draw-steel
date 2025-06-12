@@ -1,8 +1,8 @@
-_id: nvcyK8bYOaMLP4s6
-_key: '!actors!nvcyK8bYOaMLP4s6'
+_id: KLVnHjm3L3N1acvP
+_key: '!actors!KLVnHjm3L3N1acvP'
 name: Human Guard
 type: minion
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/human-guard-01.png
 prototypeToken:
   name: Human Guard
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/human-guard-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Human Guard
   keywords:
@@ -50,12 +60,14 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: J2xqM8yyUvET9Pnd
-  _key: '!actors.items!nvcyK8bYOaMLP4s6.J2xqM8yyUvET9Pnd'
+- _id: 3WxqkGMld4alCa4t
+  _key: '!actors.items!KLVnHjm3L3N1acvP.3WxqkGMld4alCa4t'
   name: Halberd
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Halberd
+    isSignature: true
     keywords:
     - Melee
     - Strike
@@ -81,12 +93,14 @@ items:
     postPowerRollEffect:
       text: If the guard is flanked, they can make a free strike against an additional
         target adjacent to them.
-- _id: T3x8sFPFmDkkiiFK
-  _key: '!actors.items!nvcyK8bYOaMLP4s6.T3x8sFPFmDkkiiFK'
+- _id: Ijyx5GozGtWzvydr
+  _key: '!actors.items!KLVnHjm3L3N1acvP.Ijyx5GozGtWzvydr'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Supernatural Insight
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

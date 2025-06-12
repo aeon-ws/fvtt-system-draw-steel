@@ -1,8 +1,8 @@
-_id: RBvcXGaIRAaQwiw0
-_key: '!actors!RBvcXGaIRAaQwiw0'
+_id: uaGaXUsfufgW8DYL
+_key: '!actors!uaGaXUsfufgW8DYL'
 name: Dwarf Stonewhisperer
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/dwarf-stonewhisperer-01.png
 prototypeToken:
   name: Dwarf Stonewhisperer
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/dwarf-stonewhisperer-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Dwarf Stonewhisperer
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: fD51Nm2k8BSfCx9G
-  _key: '!actors.items!RBvcXGaIRAaQwiw0.fD51Nm2k8BSfCx9G'
+- _id: GW9Dy2CM7uSyjuyc
+  _key: '!actors.items!uaGaXUsfufgW8DYL.GW9Dy2CM7uSyjuyc'
   name: Tile Slide
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Tile Slide
+    isSignature: true
     keywords:
     - Area
     - Magic
@@ -95,13 +107,15 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be slid by this ability.
-- _id: aQ8u4wvhUUCoJ9j2
-  _key: '!actors.items!RBvcXGaIRAaQwiw0.aQ8u4wvhUUCoJ9j2'
+- _id: 6sKTjOZoebQCJ7cl
+  _key: '!actors.items!uaGaXUsfufgW8DYL.6sKTjOZoebQCJ7cl'
   name: Stone Wave
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Stone Wave
     maliceCost: 3
+    isSignature: false
     keywords:
     - Area
     - Magic
@@ -146,12 +160,14 @@ items:
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability. The affected
         area is considered difficult terrain for enemies.
-- _id: 1aL8DscoJV5N3MI6
-  _key: '!actors.items!RBvcXGaIRAaQwiw0.1aL8DscoJV5N3MI6'
+- _id: GSGIzPFjLTUh6M8I
+  _key: '!actors.items!uaGaXUsfufgW8DYL.GSGIzPFjLTUh6M8I'
   name: Stonewalker
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Stonewalker
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

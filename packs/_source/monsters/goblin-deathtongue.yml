@@ -1,8 +1,8 @@
-_id: DS3FLy0nNKtHJHAv
-_key: '!actors!DS3FLy0nNKtHJHAv'
+_id: wSDIEWMO4bxaQrXn
+_key: '!actors!wSDIEWMO4bxaQrXn'
 name: Goblin Deathtongue
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
 prototypeToken:
   name: Goblin Deathtongue
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
 system:
   name: Goblin Deathtongue
   keywords:
@@ -47,12 +57,14 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: KQFOll1qBwoHEjdI
-  _key: '!actors.items!DS3FLy0nNKtHJHAv.KQFOll1qBwoHEjdI'
+- _id: zdGgaAxhT1xBhpar
+  _key: '!actors.items!wSDIEWMO4bxaQrXn.zdGgaAxhT1xBhpar'
   name: Gaze of Surlach
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Gaze of Surlach
+    isSignature: true
     keywords:
     - Magic
     - Ranged
@@ -86,12 +98,14 @@ items:
           value: 2
           effect:
             text: slowed and weakened (save ends)
-- _id: BxSmg6Df6qmFPPSJ
-  _key: '!actors.items!DS3FLy0nNKtHJHAv.BxSmg6Df6qmFPPSJ'
+- _id: 2cpHhc4tvMCzaEQa
+  _key: '!actors.items!wSDIEWMO4bxaQrXn.2cpHhc4tvMCzaEQa'
   name: Dizzying Hex
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Dizzying Hex
+    isSignature: false
     keywords:
     - Magic
     - Ranged
@@ -126,12 +140,14 @@ items:
           value: 2
           effect:
             text: and can
-- _id: 7m3b1tDjdDz8BCCg
-  _key: '!actors.items!DS3FLy0nNKtHJHAv.7m3b1tDjdDz8BCCg'
+- _id: hM4xMGKgshC81iGo
+  _key: '!actors.items!wSDIEWMO4bxaQrXn.hM4xMGKgshC81iGo'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Cunning
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

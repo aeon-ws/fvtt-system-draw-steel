@@ -1,8 +1,8 @@
-_id: NZlGaIJhrEvxvrUe
-_key: '!actors!NZlGaIJhrEvxvrUe'
+_id: a70CvnLQCopqq3p3
+_key: '!actors!a70CvnLQCopqq3p3'
 name: Gelatinous Ball
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/gelatinous-ball-01.png
 prototypeToken:
   name: Gelatinous Ball
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/gelatinous-ball-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Gelatinous Ball
   keywords:
@@ -45,12 +55,14 @@ system:
   immunity:
     acid: 2
 items:
-- _id: PpxZONeoEjMq0J4L
-  _key: '!actors.items!NZlGaIJhrEvxvrUe.PpxZONeoEjMq0J4L'
+- _id: wBSuICks5jSyS9OG
+  _key: '!actors.items!a70CvnLQCopqq3p3.wBSuICks5jSyS9OG'
   name: Bowl
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Bowl
+    isSignature: true
     keywords:
     - Charge
     - Melee
@@ -85,24 +97,28 @@ items:
         A<1 restrained (save ends). While restrained by this ability, the target moves
         with the gelatinous ball. When restrained ends, the target moves to the nearest
         unoccupied square adjacent to the gelatinous ball.
-- _id: 5fNoBe5gLsT3oVzX
-  _key: '!actors.items!NZlGaIJhrEvxvrUe.5fNoBe5gLsT3oVzX'
+- _id: TgRcTWBI8ZOvbpBE
+  _key: '!actors.items!a70CvnLQCopqq3p3.TgRcTWBI8ZOvbpBE'
   name: Rolling
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Rolling
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: Whenever the gelatinous ball uses a move action or is force moved horizontally,
         it must move in a straight line until it reaches its maximum speed or until
         a creature or object is directly in front of it.
-- _id: r8JGWNKwaYzns4wd
-  _key: '!actors.items!NZlGaIJhrEvxvrUe.r8JGWNKwaYzns4wd'
+- _id: eHIIMfT4t7IQdEqy
+  _key: '!actors.items!a70CvnLQCopqq3p3.eHIIMfT4t7IQdEqy'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Gelatinous
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:

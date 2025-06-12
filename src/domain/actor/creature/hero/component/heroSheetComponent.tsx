@@ -15,7 +15,7 @@ export function HeroSheetComponent(context: IHeroComponentContext) {
               <span className="right">Level&nbsp;{context.level}&nbsp;{context.type}&nbsp;{context.role}</span>
             </div>
             <div className="subheader-row">
-              <ArrayField classNames={["left"]} values={context.keywords} />
+              <ArrayField valueClassNames={["left"]} values={context.keywords} />
               <EncounterValueField label="EV" encounterValue={context.encounterValue} enemyType={context.type} />
             </div>
             <div className="divider"></div>

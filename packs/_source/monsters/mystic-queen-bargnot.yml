@@ -1,8 +1,8 @@
-_id: HrLxtQxzwIe0WTmK
-_key: '!actors!HrLxtQxzwIe0WTmK'
+_id: zMz4q89OLQvpF4h7
+_key: '!actors!zMz4q89OLQvpF4h7'
 name: Mystic Queen Bargnot
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.png
 prototypeToken:
   name: Mystic Queen Bargnot
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Mystic Queen Bargnot
   keywords:
@@ -45,12 +55,14 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: Wzr29d6l4gdJF8Un
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.Wzr29d6l4gdJF8Un'
+- _id: bHktTFewKeH3jEwY
+  _key: '!actors.items!zMz4q89OLQvpF4h7.bHktTFewKeH3jEwY'
   name: Power Axe
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Power Axe
+    isSignature: true
     keywords:
     - Melee
     - Ranged
@@ -88,12 +100,14 @@ items:
             text: prone
     postPowerRollEffect:
       text: An ally within 10 of Queen Bargnot can make a free strike.
-- _id: nOrUDEfhYUcMaiI3
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.nOrUDEfhYUcMaiI3'
+- _id: XmnvnGyLQgiQICxz
+  _key: '!actors.items!zMz4q89OLQvpF4h7.XmnvnGyLQgiQICxz'
   name: Get Out There!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Get Out There!
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -105,12 +119,14 @@ items:
     prePowerRollEffect:
       text: Queen Bargnot throws the ally up to 5 squares. The ally can make a melee
         free strike when they land.
-- _id: kebyhLf5lTcpvEs5
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.kebyhLf5lTcpvEs5'
+- _id: rul3Qm50y8m2vC79
+  _key: '!actors.items!zMz4q89OLQvpF4h7.rul3Qm50y8m2vC79'
   name: Show Them Your Might!
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Show Them Your Might!
+    isSignature: false
     keywords: []
     type: freeTriggeredAction
     distance:
@@ -123,23 +139,27 @@ items:
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead. Queen Bargnot
         shifts 1.
-- _id: L4Lr44i5BTj6od10
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.L4Lr44i5BTj6od10'
+- _id: SdftY2okfwO88YeW
+  _key: '!actors.items!zMz4q89OLQvpF4h7.SdftY2okfwO88YeW'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: End Effect
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: At the end of their turn, Queen Bargnot can take 5 damage to end one save
         ends effect affecting her. This damage can't be reduced in any way.
-- _id: Z865W79lW3Oc8vAf
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.Z865W79lW3Oc8vAf'
+- _id: AkZYGeP6rIO4oNEx
+  _key: '!actors.items!zMz4q89OLQvpF4h7.AkZYGeP6rIO4oNEx'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Cunning
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
@@ -147,12 +167,14 @@ items:
         Whenever Queen Bargnot is adjacent to an enemy and willingly moves to a space
         no longer adjacent to that enemy, Queen Bargnot can make an opportunity attack
         against them as a triggered action.
-- _id: s27v41n6dNMLN6iX
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.s27v41n6dNMLN6iX'
+- _id: iCWsQZ16DZRAvmpu
+  _key: '!actors.items!zMz4q89OLQvpF4h7.iCWsQZ16DZRAvmpu'
   name: Focus Fire (Villain Action 1)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Focus Fire (Villain Action 1)
+    isSignature: false
     keywords: []
     type: villainAction
     distance:
@@ -165,12 +187,14 @@ items:
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: KuBFtFQgnCBfwJPc
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.KuBFtFQgnCBfwJPc'
+- _id: zPNPMUccJBprFVjM
+  _key: '!actors.items!zMz4q89OLQvpF4h7.zPNPMUccJBprFVjM'
   name: Kill! (Villain Action 2)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Kill! (Villain Action 2)
+    isSignature: false
     keywords: []
     type: villainAction
     distance:
@@ -181,12 +205,14 @@ items:
     prePowerRollEffect:
       text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
         them, or 4 damage for each mystic goblin adjacent to them.
-- _id: zMDFZ6PsnYb9QFhl
-  _key: '!actors.items!HrLxtQxzwIe0WTmK.zMDFZ6PsnYb9QFhl'
+- _id: dkrUBjK48ua2q69H
+  _key: '!actors.items!zMz4q89OLQvpF4h7.dkrUBjK48ua2q69H'
   name: Oversurge (Villain Action 3)
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Oversurge (Villain Action 3)
+    isSignature: false
     keywords:
     - Area
     - Magic

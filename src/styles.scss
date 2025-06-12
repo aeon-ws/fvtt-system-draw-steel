@@ -1,4 +1,7 @@
 $enemy-sheet-left-right-padding: 0.4rem;
+$font-weight-bold: 700;
+$font-weight-normal: 500;
+$label-value-gap: 0.4em;
 
 .enemy-sheet {
   background: #f7f4ed;
@@ -14,8 +17,8 @@ $enemy-sheet-left-right-padding: 0.4rem;
 
   .header {
     background: #c2dbf7;
-    color: #222;
-    font-weight: bold;
+    // color: #222;
+    font-weight: $font-weight-bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +30,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
     border-radius: 6px 6px 0 0;
     margin-bottom: 0.15em;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     letter-spacing: 1px;
 
     .right {
@@ -43,8 +46,12 @@ $enemy-sheet-left-right-padding: 0.4rem;
     padding-left: $enemy-sheet-left-right-padding;
     padding-right: $enemy-sheet-left-right-padding;
     padding-top: 0rem;
-    color: #444;
-    font-weight: 500;
+    // color: #444;
+    font-weight: $font-weight-normal;
+
+    overflow-x: visible;
+    white-space: pre;
+    word-break: keep-all;
 
     .left {
       flex: 1;
@@ -53,6 +60,88 @@ $enemy-sheet-left-right-padding: 0.4rem;
     .right {
       flex: 1;
       text-align: right;
+    }
+
+    .label {
+      font-weight: $font-weight-bold;
+      // align-items: baseline;
+    }
+
+    .value {
+      font-weight: $font-weight-normal;
+      margin-left: $label-value-gap;
+    }
+  }
+
+  .ability {
+    .subheader-row {
+      .left {
+        .label {
+          font-style: italic;
+        }
+      }
+
+      .right {
+        .signature {
+          color: #0066bb;
+        }
+
+        .malice {
+          color: #aa0066;
+        }
+      }
+    }
+
+    .power-roll-section {
+      .field-row {
+        display: flex;
+        padding-left: $enemy-sheet-left-right-padding;
+        padding-right: $enemy-sheet-left-right-padding;
+        white-space: nowrap;
+
+        overflow-x: visible;
+        white-space: pre;
+        word-break: keep-all;
+
+        .label {
+          font-weight: $font-weight-bold;
+        }
+
+        .value {
+          font-weight: $font-weight-normal;
+          margin-left: $label-value-gap;
+        }
+      }
+
+      .power-roll-table {
+        display: flex;
+        flex-direction: column;
+        // gap: 0.25rem; // vertical gap between rows, adjust as needed
+        padding-left: 0.15em;
+        width: max-content;
+
+        .power-roll-tier {
+          display: grid;
+          grid-template-columns: 1.2em 2.8em 25em;
+          align-items: normal;
+          // Optionally: min-width for responsive design
+          // min-width: 10em;
+
+          .symbol {
+            text-align: center;
+          }
+
+          .label {
+            text-align: right;
+            font-weight: $font-weight-normal;
+          }
+
+          .value {
+            text-align: left;
+            padding-left: 1em;
+          }
+        }
+      }
     }
   }
 
@@ -104,13 +193,13 @@ $enemy-sheet-left-right-padding: 0.4rem;
     align-items: baseline;
 
     .label {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       //white-space: pre;
     }
 
     .value {
-      margin-left: 0.2em;
-      font-weight: 500;
+      margin-left: $label-value-gap;
+      font-weight: $font-weight-normal;
       //white-space: pre;
     }
   }
@@ -128,18 +217,22 @@ $enemy-sheet-left-right-padding: 0.4rem;
     padding-right: $enemy-sheet-left-right-padding;
 
     .characteristic {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       display: flex;
       align-items: baseline;
       white-space: nowrap;
 
       .value {
-        font-weight: 700;
-        margin-left: 0.2em;
+        font-weight: $font-weight-normal;
+        margin-left: $label-value-gap;
       }
     }
   }
 }
+
+
+
+
 
 .ads-add-captain-to-squad,
 .ads-add-minion-to-squad {
@@ -203,7 +296,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
       .actor-name {
         margin: 0;
         font-size: 16px;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         color: var(--color-text-primary);
       }
 
@@ -223,7 +316,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
+      font-weight: $font-weight-bold;
       font-size: 20px;
       color: white;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -277,7 +370,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         background: white;
         font-size: 16px;
         transition: all 0.2s ease;
@@ -313,7 +406,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
       }
 
       .total {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         font-size: 24px;
         color: var(--color-primary);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -327,7 +420,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
       border-radius: 6px;
       margin-bottom: 12px;
       border-left: 4px solid var(--color-primary);
-      font-weight: 500;
+      font-weight: $font-weight-normal;
     }
 
     .breakdown {
@@ -385,7 +478,7 @@ $enemy-sheet-left-right-padding: 0.4rem;
       em {
         color: var(--color-condition, #7b1fa2);
         font-style: normal;
-        font-weight: 500;
+        font-weight: $font-weight-normal;
       }
     }
   }

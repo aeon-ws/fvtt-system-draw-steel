@@ -7,7 +7,7 @@ import { IMinionData } from "@minion/minionData";
 import { IObjectData } from "@object/objectData";
 import { CreatureData, IWeaknessData } from "@creature/creatureData";
 
-export type AbilityKeyword = ["Area", "Charge", "Magic", "Melee", "Psionic", "Ranged", "Strike", "Weapon"];
+export type AbilityKeyword = "Area" | "Charge" | "Magic" | "Melee" | "Psionic" | "Ranged" | "Strike" | "Weapon";
 export type AbilityType = "mainAction" | "freeAction" | "freeManeuver" | "freeTriggeredAction" | "maneuver" | "triggeredAction";
 export type CharacteristicType = "might" | "agility" | "reason" | "intuition" | "presence";
 
@@ -19,6 +19,7 @@ export interface IActorAbilityData extends IItemData {
     //     If property type == "mainAction" && property maliceCost == 0, then the ability is a signature
     //         ability (not used here, but will be used in display logic).
     maliceCost: number;
+    isSignature: boolean;
     // The distance of the ability, 
     distance: {
         self: boolean,
@@ -169,6 +170,8 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
             ...this.createBaseFields(),
 
             type: new foundry.data.fields.StringField({ required: true, initial: "mainAction" }),
+
+            isSignature: new foundry.data.fields.BooleanField({ initial: false }),
 
             trigger: new foundry.data.fields.StringField({ initial: "" }),
         }

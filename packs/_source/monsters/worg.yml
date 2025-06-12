@@ -1,8 +1,8 @@
-_id: ARyr1FVVrxJa1nwL
-_key: '!actors!ARyr1FVVrxJa1nwL'
+_id: GqdYMB2Zun1dl3ID
+_key: '!actors!GqdYMB2Zun1dl3ID'
 name: Worg
 type: enemy
-img: icons/svg/mystery-man.svg
+img: systems/aeon-draw-steel/images/monsters/worg-01.png
 prototypeToken:
   name: Worg
   displayName: 50
@@ -17,7 +17,17 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: icons/svg/mystery-man.svg
+    img: systems/aeon-draw-steel/images/monsters/worg-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
 system:
   name: Worg
   keywords:
@@ -44,12 +54,14 @@ system:
     stability: 1
     freeStrikeDamage: 1
 items:
-- _id: cck5Yk7AmsSWKqJU
-  _key: '!actors.items!ARyr1FVVrxJa1nwL.cck5Yk7AmsSWKqJU'
+- _id: BYmxHKo9CkOXf9jP
+  _key: '!actors.items!GqdYMB2Zun1dl3ID.BYmxHKo9CkOXf9jP'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Bite
+    isSignature: true
     keywords:
     - Charge
     - Melee
@@ -73,13 +85,15 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: VreTxQLPpimtGQwX
-  _key: '!actors.items!ARyr1FVVrxJa1nwL.VreTxQLPpimtGQwX'
+- _id: f8qtFW04G8qsWkiW
+  _key: '!actors.items!GqdYMB2Zun1dl3ID.f8qtFW04G8qsWkiW'
   name: Sprint
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Sprint
     maliceCost: 1
+    isSignature: false
     keywords: []
     type: maneuver
     distance:
@@ -89,23 +103,27 @@ items:
       self: true
     prePowerRollEffect:
       text: The worg moves up to their speed.
-- _id: 2jq0zch8STRhBRab
-  _key: '!actors.items!ARyr1FVVrxJa1nwL.2jq0zch8STRhBRab'
+- _id: lYfC9NqJss32jHHa
+  _key: '!actors.items!GqdYMB2Zun1dl3ID.lYfC9NqJss32jHHa'
   name: Mounted Charger
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Mounted Charger
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
       text: lf a worg used as a mount charges, their rider gains an edge on melee
         strikes until the end of their turn.
-- _id: 8u7lfXGNUaXVRaBN
-  _key: '!actors.items!ARyr1FVVrxJa1nwL.8u7lfXGNUaXVRaBN'
+- _id: NiYdBhDxle0xKkTH
+  _key: '!actors.items!GqdYMB2Zun1dl3ID.NiYdBhDxle0xKkTH'
   name: Shared Crafty
   type: monsterAbility
   img: icons/svg/book.svg
   system:
+    name: Shared Crafty
+    isSignature: false
     keywords: []
     type: monsterTrait
     prePowerRollEffect:
