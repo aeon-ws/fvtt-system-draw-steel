@@ -1,5 +1,5 @@
-_id: KymlcBCguCS3kR5X
-_key: '!actors!KymlcBCguCS3kR5X'
+_id: aI23VxG0LusnJHr1
+_key: '!actors!aI23VxG0LusnJHr1'
 name: Imit Putty
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/imit-putty-01.png
@@ -55,8 +55,8 @@ system:
   immunity:
     acid: 2
 items:
-- _id: vxaEV8EcuYw1Iv1P
-  _key: '!actors.items!KymlcBCguCS3kR5X.vxaEV8EcuYw1Iv1P'
+- _id: IpzHu5hEPxOnZ4pE
+  _key: '!actors.items!aI23VxG0LusnJHr1.IpzHu5hEPxOnZ4pE'
   name: Sputter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -71,7 +71,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -89,8 +89,8 @@ items:
         damage: 7
         effect:
           text: shift 2
-- _id: yEgIBqs3iIsL8uxV
-  _key: '!actors.items!KymlcBCguCS3kR5X.yEgIBqs3iIsL8uxV'
+- _id: Mp9F6hZa3C42AR4T
+  _key: '!actors.items!aI23VxG0LusnJHr1.Mp9F6hZa3C42AR4T'
   name: Uncanny Impression
   type: monsterAbility
   img: icons/svg/book.svg
@@ -105,7 +105,7 @@ items:
     distance:
       ranged: 10
     target:
-      text: One creature
+      text: 1 creature
       ally: true
       self: true
       enemy: true
@@ -114,8 +114,8 @@ items:
       text: Until the end of the encounter, the imit putty changes its size to match
         the target and replaces its signature action with one of the target's signature
         actions, using their bonuses for any power roll.
-- _id: 0B7EnpI6uSVnRsPi
-  _key: '!actors.items!KymlcBCguCS3kR5X.0B7EnpI6uSVnRsPi'
+- _id: MwGUcxlMH72hpkIE
+  _key: '!actors.items!aI23VxG0LusnJHr1.MwGUcxlMH72hpkIE'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg

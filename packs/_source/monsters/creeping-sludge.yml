@@ -1,5 +1,5 @@
-_id: k7SHmCbTdiSKAbAU
-_key: '!actors!k7SHmCbTdiSKAbAU'
+_id: vCSWs24Us5bRjbGV
+_key: '!actors!vCSWs24Us5bRjbGV'
 name: Creeping Sludge
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/creeping-sludge-01.png
@@ -56,8 +56,8 @@ system:
     corruption: 2
     acid: 2
 items:
-- _id: zoFtZIAK9g8ELMdq
-  _key: '!actors.items!k7SHmCbTdiSKAbAU.zoFtZIAK9g8ELMdq'
+- _id: QZQ0VQJHk5FD39YQ
+  _key: '!actors.items!vCSWs24Us5bRjbGV.QZQ0VQJHk5FD39YQ'
   name: Corrode
   type: monsterAbility
   img: icons/svg/book.svg
@@ -72,7 +72,7 @@ items:
     distance:
       melee: 2
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -82,19 +82,22 @@ items:
       bonus: 2
       tier1:
         damage: 3
+        damageType: corruption
       tier2:
         damage: 4
+        damageType: corruption
         effect:
           text: vertical pull 1
       tier3:
         damage: 5
+        damageType: corruption
         effect:
           text: vertical pull 2
     postPowerRollEffect:
       text: The target gains damage weakness 2 and a -1 penalty to potent effects
         (save ends). This effect stacks until the target saves.
-- _id: fnmaUhRC4MRBSsYW
-  _key: '!actors.items!k7SHmCbTdiSKAbAU.fnmaUhRC4MRBSsYW'
+- _id: GfDBAwB7Uir7Y8Q4
+  _key: '!actors.items!vCSWs24Us5bRjbGV.GfDBAwB7Uir7Y8Q4'
   name: Oozen Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,7 +112,7 @@ items:
     distance:
       burst: 2
     target:
-      text: Each enemy and object in the burst
+      text: Each enemy and object
       enemy: true
       object: true
     powerRoll:
@@ -130,8 +133,8 @@ items:
             text: grabbed vertical pull 2
     postPowerRollEffect:
       text: The creeping sludge can have an unlimited number of targets grabbed.
-- _id: gmcWznu55c8JobdX
-  _key: '!actors.items!k7SHmCbTdiSKAbAU.gmcWznu55c8JobdX'
+- _id: NPbRfairBapct6JV
+  _key: '!actors.items!vCSWs24Us5bRjbGV.NPbRfairBapct6JV'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg

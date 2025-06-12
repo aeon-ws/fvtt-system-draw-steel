@@ -1,5 +1,5 @@
-_id: hNygBt8aBN2sww1o
-_key: '!actors!hNygBt8aBN2sww1o'
+_id: 81MHQS5CwLnJK7EQ
+_key: '!actors!81MHQS5CwLnJK7EQ'
 name: Tomb Horror
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/tomb-horror-01.png
@@ -59,8 +59,8 @@ system:
   weakness:
     fire: 3
 items:
-- _id: 1irFms8vafywSWdl
-  _key: '!actors.items!hNygBt8aBN2sww1o.1irFms8vafywSWdl'
+- _id: d5PwhSn5UbA8StfB
+  _key: '!actors.items!81MHQS5CwLnJK7EQ.d5PwhSn5UbA8StfB'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -75,7 +75,7 @@ items:
     distance:
       melee: 5
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -85,10 +85,12 @@ items:
       bonus: 2
       tier1:
         damage: 7
+        damageType: corruption
         effect:
           text: pull 2
       tier2:
         damage: 11
+        damageType: corruption
         effect:
           text: pull 4
       tier3:
@@ -97,8 +99,8 @@ items:
     postPowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: HoFIP8LhyBf5189R
-  _key: '!actors.items!hNygBt8aBN2sww1o.HoFIP8LhyBf5189R'
+- _id: LgFdoRuPgeucsZhl
+  _key: '!actors.items!81MHQS5CwLnJK7EQ.LgFdoRuPgeucsZhl'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
@@ -142,8 +144,8 @@ items:
     postPowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: KH3nsr6SsdkHFewZ
-  _key: '!actors.items!hNygBt8aBN2sww1o.KH3nsr6SsdkHFewZ'
+- _id: 9sxEmAgm021GjPcm
+  _key: '!actors.items!81MHQS5CwLnJK7EQ.9sxEmAgm021GjPcm'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
@@ -168,8 +170,8 @@ items:
         relic within distance that the tomb horror was feeding on. The target is P<2
         slowed (save ends). The tomb horror then moves up to their speed towards the
         target.
-- _id: 9pAuyjTHwC6o7epu
-  _key: '!actors.items!hNygBt8aBN2sww1o.9pAuyjTHwC6o7epu'
+- _id: ZuTfO56RW9Zpu1rX
+  _key: '!actors.items!81MHQS5CwLnJK7EQ.ZuTfO56RW9Zpu1rX'
   name: Enervating Horror
   type: monsterAbility
   img: icons/svg/book.svg

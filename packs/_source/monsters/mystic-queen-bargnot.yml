@@ -1,5 +1,5 @@
-_id: noitvArNt6mLLCPp
-_key: '!actors!noitvArNt6mLLCPp'
+_id: WAKHdghhzhL51Uwz
+_key: '!actors!WAKHdghhzhL51Uwz'
 name: Mystic Queen Bargnot
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: JEESs2AdWAOhEze8
-  _key: '!actors.items!noitvArNt6mLLCPp.JEESs2AdWAOhEze8'
+- _id: QpSRZnfvkhZTrb8A
+  _key: '!actors.items!WAKHdghhzhL51Uwz.QpSRZnfvkhZTrb8A'
   name: Power Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -73,7 +73,7 @@ items:
       melee: 1
       ranged: 5
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -100,8 +100,8 @@ items:
             text: prone
     postPowerRollEffect:
       text: An ally within 10 of Queen Bargnot can make a free strike.
-- _id: LJXgJCX9spYpIA5U
-  _key: '!actors.items!noitvArNt6mLLCPp.LJXgJCX9spYpIA5U'
+- _id: MQfg6FTDpkkX71Tv
+  _key: '!actors.items!WAKHdghhzhL51Uwz.MQfg6FTDpkkX71Tv'
   name: Get Out There!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -113,14 +113,14 @@ items:
     distance:
       melee: 1
     target:
-      text: One ally
+      text: 1 ally
       ally: true
       count: 1
     prePowerRollEffect:
       text: Queen Bargnot throws the ally up to 5 squares. The ally can make a melee
         free strike when they land.
-- _id: 7Oi7fiy8ocyjWQPa
-  _key: '!actors.items!noitvArNt6mLLCPp.7Oi7fiy8ocyjWQPa'
+- _id: LnbjRWcJEO1zAPyw
+  _key: '!actors.items!WAKHdghhzhL51Uwz.LnbjRWcJEO1zAPyw'
   name: Show Them Your Might!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,15 +132,15 @@ items:
     distance:
       melee: 1
     target:
-      text: One ally
+      text: 1 ally
       ally: true
       count: 1
     trigger: A creature targets Queen Bargnot with a strike.
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead. Queen Bargnot
         shifts 1.
-- _id: x45LoLYYTCduPCNz
-  _key: '!actors.items!noitvArNt6mLLCPp.x45LoLYYTCduPCNz'
+- _id: UzZDJpq61b4VG32G
+  _key: '!actors.items!WAKHdghhzhL51Uwz.UzZDJpq61b4VG32G'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +152,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, Queen Bargnot can take 5 damage to end one save
         ends effect affecting her. This damage can't be reduced in any way.
-- _id: 1nYJ2NfJJNYiLeWM
-  _key: '!actors.items!noitvArNt6mLLCPp.1nYJ2NfJJNYiLeWM'
+- _id: 0iKsP1awnxk8gYSf
+  _key: '!actors.items!WAKHdghhzhL51Uwz.0iKsP1awnxk8gYSf'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -167,8 +167,8 @@ items:
         Whenever Queen Bargnot is adjacent to an enemy and willingly moves to a space
         no longer adjacent to that enemy, Queen Bargnot can make an opportunity attack
         against them as a triggered action.
-- _id: I49brdnRCo5E92N4
-  _key: '!actors.items!noitvArNt6mLLCPp.I49brdnRCo5E92N4'
+- _id: Qtm28GZFBE1eoMij
+  _key: '!actors.items!WAKHdghhzhL51Uwz.Qtm28GZFBE1eoMij'
   name: Focus Fire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -181,15 +181,15 @@ items:
     distance:
       ranged: 10
     target:
-      text: One enemy or object
+      text: 1 enemy or object
       enemy: true
       object: true
       count: 1
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: Lt4SDZuukCkRCDtA
-  _key: '!actors.items!noitvArNt6mLLCPp.Lt4SDZuukCkRCDtA'
+- _id: CNQrBofpOWe3udLa
+  _key: '!actors.items!WAKHdghhzhL51Uwz.CNQrBofpOWe3udLa'
   name: Kill!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -207,8 +207,8 @@ items:
     prePowerRollEffect:
       text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
         them, or 4 damage for each mystic goblin adjacent to them.
-- _id: iNcmA1hAApLy6hA7
-  _key: '!actors.items!noitvArNt6mLLCPp.iNcmA1hAApLy6hA7'
+- _id: Ki2M1Rk1Ey33hd1v
+  _key: '!actors.items!WAKHdghhzhL51Uwz.Ki2M1Rk1Ey33hd1v'
   name: Oversurge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -223,7 +223,7 @@ items:
     distance:
       burst: 5
     target:
-      text: Each enemy and object in the burst
+      text: Each enemy and object
       enemy: true
       object: true
     powerRoll:

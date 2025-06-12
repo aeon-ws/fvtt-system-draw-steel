@@ -1,5 +1,5 @@
-_id: jwZXWVyg4ldDIzeN
-_key: '!actors!jwZXWVyg4ldDIzeN'
+_id: RXG7NHvojtV9Zoch
+_key: '!actors!RXG7NHvojtV9Zoch'
 name: Human Brawler
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-brawler-01.png
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: dxTePET9m4Arq2ID
-  _key: '!actors.items!jwZXWVyg4ldDIzeN.dxTePET9m4Arq2ID'
+- _id: WJqEbaLNugfFWfNP
+  _key: '!actors.items!RXG7NHvojtV9Zoch.WJqEbaLNugfFWfNP'
   name: Haymaker
   type: monsterAbility
   img: icons/svg/book.svg
@@ -73,7 +73,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -94,8 +94,8 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: brawler deals an additional 2 damage if the target is already grabbed.
-- _id: yns7ykwKA7i4cszO
-  _key: '!actors.items!jwZXWVyg4ldDIzeN.yns7ykwKA7i4cszO'
+- _id: 3IbRRVk6oZLBBLCb
+  _key: '!actors.items!RXG7NHvojtV9Zoch.3IbRRVk6oZLBBLCb'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,15 +108,15 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature grabbed by the brawler
+      text: 1 creature grabbed by the brawler
       ally: true
       self: true
       enemy: true
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: dJQHicvzhvccJmUm
-  _key: '!actors.items!jwZXWVyg4ldDIzeN.dJQHicvzhvccJmUm'
+- _id: 6BsIvnuGXpozCDsT
+  _key: '!actors.items!RXG7NHvojtV9Zoch.6BsIvnuGXpozCDsT'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
       text: The brawler takes half damage from strikes if they have a creature or
         object grabbed. The grabbed creature or object takes the other half of the
         damage.
-- _id: Cb3Pd8qGhz2GumO5
-  _key: '!actors.items!jwZXWVyg4ldDIzeN.Cb3Pd8qGhz2GumO5'
+- _id: PawGFutEPswo2yEY
+  _key: '!actors.items!RXG7NHvojtV9Zoch.PawGFutEPswo2yEY'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: a7EYsQ16u13tPiMT
-_key: '!actors!a7EYsQ16u13tPiMT'
+_id: 1r9Q8H3W2tiC7v0W
+_key: '!actors!1r9Q8H3W2tiC7v0W'
 name: Worg
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/worg-01.png
@@ -54,8 +54,8 @@ system:
     stability: 1
     freeStrikeDamage: 1
 items:
-- _id: jUJ6dGU4HfZp2HhX
-  _key: '!actors.items!a7EYsQ16u13tPiMT.jUJ6dGU4HfZp2HhX'
+- _id: VbeWt2jcQF6CNfof
+  _key: '!actors.items!1r9Q8H3W2tiC7v0W.VbeWt2jcQF6CNfof'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -71,7 +71,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -85,8 +85,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: KRzpbrjwL7ZYSO1v
-  _key: '!actors.items!a7EYsQ16u13tPiMT.KRzpbrjwL7ZYSO1v'
+- _id: 3qiw98vltNnLWkcr
+  _key: '!actors.items!1r9Q8H3W2tiC7v0W.3qiw98vltNnLWkcr'
   name: Sprint
   type: monsterAbility
   img: icons/svg/book.svg
@@ -103,8 +103,8 @@ items:
       self: true
     prePowerRollEffect:
       text: The worg moves up to their speed.
-- _id: L4gczNJxVbFD7iJq
-  _key: '!actors.items!a7EYsQ16u13tPiMT.L4gczNJxVbFD7iJq'
+- _id: BiImReKDS8rOZ18C
+  _key: '!actors.items!1r9Q8H3W2tiC7v0W.BiImReKDS8rOZ18C'
   name: Mounted Charger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -116,8 +116,8 @@ items:
     prePowerRollEffect:
       text: lf a worg used as a mount charges, their rider gains an edge on melee
         strikes until the end of their turn.
-- _id: CquU2DEbimMhN9EO
-  _key: '!actors.items!a7EYsQ16u13tPiMT.CquU2DEbimMhN9EO'
+- _id: K8V1qE42enm5onFe
+  _key: '!actors.items!1r9Q8H3W2tiC7v0W.K8V1qE42enm5onFe'
   name: Shared Crafty
   type: monsterAbility
   img: icons/svg/book.svg

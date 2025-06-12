@@ -16,7 +16,7 @@ DISTANCE_PATTERN_BY_TYPE = {
     ),
     "melee": re.compile(rf"^.*{MELEE_DISTANCE_PATTERN}.*$", re.IGNORECASE),
     "ranged": re.compile(rf"^.*{RANGED_DISTANCE_PATTERN}.*$", re.IGNORECASE),
-    "burst": re.compile(r"^.*(?P<burstSize>\d\d?)\s*burst.*$", re.IGNORECASE),
+    "burst": re.compile(r"^[^0-9]*(?P<burstSize>\d\d?)\s*burst.*$", re.IGNORECASE),
     "cube": re.compile(
         r"^.*(?P<cubeSize>\d\d?)\s*cube\s*within\s*(?P<cubeWithin>\d\d?).*$",
         re.IGNORECASE,
@@ -103,8 +103,20 @@ def parse_target(distance_and_target_line: str) -> Target | None:
         f"[WARN] Didn't find Target in same line as Distance, which is highly unusual (but not illegal, nor completely unheard of): '{distance_and_target_line}'"
         return None
 
-    target_source = distance_and_target_line.split("Target")[-1].strip()
-    normalized = target_source.replace("  ", " ").replace("  ", " ").strip()
+    normalized = (
+        distance_and_target_line.split("Target")[-1]
+        .replace("  ", " ")
+        .replace("  ", " ")
+        .strip()
+    )
+    normalized = re.sub(
+        r"\s*in the (?:area|aura|burst|cube|line|square)\s*", "", normalized
+    )
+    normalized = re.sub(r"[Oo]ne\s", r"1 ", normalized)
+    normalized = re.sub(r"[Tt]wo\s", r"2 ", normalized)
+    normalized = re.sub(r"[Tt]hree\s", r"3 ", normalized)
+    normalized = re.sub(r"[Ff]our\s", r"4 ", normalized)
+    normalized = re.sub(r"[Ff]ive\s", r"5 ", normalized)
 
     target = Target(text=normalized)
 

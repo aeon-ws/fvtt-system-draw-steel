@@ -99,7 +99,7 @@ export class ActorToken extends Token {
         const cornerRadius = barHeight / 2;
 
         const isValueZeroOrBelow = currentValue <= 0;
-        let fillColor = isValueZeroOrBelow ? "#660000" : "#bb0000"; // e.g., red or green
+        let fillColor = isValueZeroOrBelow ? "#660000" : "#bb0000"; // e.g., dark or medium red
 
         let fillFraction = 1;
         if (isValueZeroOrBelow) {

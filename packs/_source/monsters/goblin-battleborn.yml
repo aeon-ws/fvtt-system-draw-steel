@@ -1,5 +1,5 @@
-_id: MOJlhbkqp8GJrLxf
-_key: '!actors!MOJlhbkqp8GJrLxf'
+_id: 7lm9GaIC8VfFOyNL
+_key: '!actors!7lm9GaIC8VfFOyNL'
 name: Goblin Battleborn
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-battleborn-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: rpZuZa7zDfojLy6K
-  _key: '!actors.items!MOJlhbkqp8GJrLxf.rpZuZa7zDfojLy6K'
+- _id: YNaMFHQh7Mv67VDu
+  _key: '!actors.items!7lm9GaIC8VfFOyNL.YNaMFHQh7Mv67VDu'
   name: Spear Charge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -72,7 +72,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -88,8 +88,8 @@ items:
         damage: 8
         effect:
           text: prone
-- _id: 6WndmpQtsFAOV16d
-  _key: '!actors.items!MOJlhbkqp8GJrLxf.6WndmpQtsFAOV16d'
+- _id: rsJRtfrKb2o3Jes2
+  _key: '!actors.items!7lm9GaIC8VfFOyNL.rsJRtfrKb2o3Jes2'
   name: Battle Flurry
   type: monsterAbility
   img: icons/svg/book.svg
@@ -105,7 +105,7 @@ items:
     distance:
       burst: 1
     target:
-      text: Each creature and object in the burst
+      text: Each creature and object
       ally: true
       self: true
       enemy: true
@@ -133,8 +133,8 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: sydlR3vh60ycWNtA
-  _key: '!actors.items!MOJlhbkqp8GJrLxf.sydlR3vh60ycWNtA'
+- _id: eH50cmkidly8Nhql
+  _key: '!actors.items!7lm9GaIC8VfFOyNL.eH50cmkidly8Nhql'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

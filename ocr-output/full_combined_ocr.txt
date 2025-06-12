@@ -4073,7 +4073,7 @@ Distance 10 burst Target Each ally
 Effect Each target can move up to their speed or make a free
 strike.
 
-Focus Fire (Villain Action 2}
+Focus Fire (Villain Action 2)
 Keywords —
 Distance Ranged 10 Target One enemy or object
 Effect Each ally within 10 squares of the target can move up to
@@ -4089,7 +4089,6 @@ The Delian Tomb © 2025 MCDM Productions, LLC
 
 
 --- Page 37 right ---
-r
 
 | WAR SPIDER LEVEL 1 ELITE MOUNT
 
@@ -4367,16 +4366,16 @@ Might-2 Agility+1 Reason+0 Intuition+2 Presence +0
 Eye of Surlach (Action) © 2d10 + 2 © Signature
 Keywords Magic, Ranged, Strike
 Distance Ranged 15 Target One creature
-+ $11 3corruption damage; I<O weakened (save ends)
++ $11 3 corruption damage; I<0 weakened (save ends)
 *% 12-16 4 corruption damage; I<1 weakened (save ends)
 4% = = 17+ 5 corruption damage; I<2 weakened (save ends)
 
 Dizzying Hex (Maneuver) ® 2d10 + 2 1 Malice
 Keywords Magic, Ranged
 Distance Ranged 10 Target One creature
-+ <11 1<Oprone
-% 12-16 1<1 prone can’t stand (EoT)
-3% 17+ prone I<2 and can’t stand (save ends)
++ <11 1<0 prone
+% 12-16 1<1 prone can't stand (EoT)
+3% 17+ prone I<2 and can't stand (save ends)
 
 Crafty
 The cursespitter doesn’t provoke opportunity attacks by moving.
@@ -4623,16 +4622,16 @@ Might-2 Agility+1 Reason+0 Intuition+2 Presence +0
 Eye of Surlach (Action) © 2d10 + 2 > Signature
 Keywords Magic, Ranged, Strike
 Distance Ranged 15 Target One creature
-+ <11 3 corruption damage; I<O0 weakened (save ends)
++ <11 3 corruption damage; I<0 weakened (save ends)
 *% 12-16 4 corruption damage; I<1 weakened (save ends)
 4% = 817+ 5 corruption damage; I<2 weakened (save ends)
 
 Dizzying Hex (Maneuver) @ 2d10 + 2 % 1 Malice
 Keywords Magic, Ranged
 Distance Ranged 10 Target One creature
-+ <11 I<Oprone
-%* 12-16 I<1 prone can’t stand (EoT)
-% = == 17+ prone I<2 and can’t stand (save ends)
++ <11 I<0 prone
+%* 12-16 I<1 prone can't stand (EoT)
+% = == 17+ prone I<2 and can't stand (save ends)
 
 Crafty
 The cursespitter doesn’t provoke opportunity attacks by moving.

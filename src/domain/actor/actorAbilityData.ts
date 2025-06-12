@@ -10,6 +10,7 @@ import { CreatureData, IWeaknessData } from "@creature/creatureData";
 export type AbilityKeyword = "Area" | "Charge" | "Magic" | "Melee" | "Psionic" | "Ranged" | "Strike" | "Weapon";
 export type AbilityType = "mainAction" | "freeAction" | "freeManeuver" | "freeTriggeredAction" | "maneuver" | "triggeredAction";
 export type CharacteristicType = "might" | "agility" | "reason" | "intuition" | "presence";
+export type DamageType = "acid" | "cold" | "corruption" | "fire" | "holy" | "lightning" | "poison" | "psychic" | "sonic";
 
 export interface IActorAbilityData extends IItemData {
     // Value of the game term "keywords" in the ability game text.
@@ -95,6 +96,7 @@ export interface IPowerRollTierData {
     // The damage value that is stated in the game text for enemy and minion abilities.  For hero abilities,
     // this is the damage value that is calculated dynamically and should never be imported.
     damage: number | null;
+    damageType?: DamageType | null;
     effect: IEffectData | null;
     potencyEffect: IPotencyEffectData | null;
 }
@@ -218,6 +220,7 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
     static createPowerRollTierFields() {
         return {
             damage: new foundry.data.fields.NumberField({ initial: null }),
+            damageType: new foundry.data.fields.StringField({ initial: null, required: false, nullable: true }),
             effect: new foundry.data.fields.SchemaField({
                 ...this.createEffectFields()
             }, { required: false, nullable: true }),

@@ -1,5 +1,6 @@
 import re
 from typing import Any, List, Optional
+
 from typing_extensions import Literal
 
 from ads.model import (
@@ -33,7 +34,7 @@ POWER_ROLL_RANGE_PATTERN = r"[^1l!]*(11|12.16|17[4]?[+]?).?\s*"
 POWER_ROLL_DAMAGE_TYPE_PATTERN = rf"(?P<damageType>{DAMAGE_TYPE_PATTERN})?"
 DAMAGE_PATTERN = rf"[^0-9]?(?P<damage>[1-9][0-9]?)\s*[^0-9]?{POWER_ROLL_DAMAGE_TYPE_PATTERN}[^0-9]?\s*damage;?\s*"
 POWER_ROLL_EFFECT_PATTERN = rf"[^A-Za-z0-9]*(?P<effectText>[A-Za-z0-9 ,.-]+{POWER_ROLL_EFFECT_KEYWORDS}[A-Za-z0-9 ,.-]*(?:[(](?P<effectDuration>{EFFECT_DURATION_PATTERN})?[)])?).*"
-POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])\s?<\s?(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9 ,.-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?)"
+POWER_ROLL_POTENCY_EFFECT_PATTERN = rf"[^MARIPmarip]*(?P<potencyTargetCharacteristic>[MARIPmarip])\s?<\s?(?P<potencyValue>[0-6])[^A-Za-z0-9]*(?P<potencyEffectText>(?P<potencyEffect>[A-Za-z0-9;',. +-]+)\s*(?:[(](?P<potencyEffectDuration>{EFFECT_DURATION_PATTERN})[)])?)"
 
 POWER_ROLL_LINE_PATTERN_BY_TYPE = {
     "noEffect": re.compile(
@@ -171,7 +172,7 @@ def parse_power_roll_block(
 
 
 def parse_power_roll_tier_lines(power_roll_line: str) -> PowerRollTier:
-    normalized = re.sub("[^A-Za-z0-9(); <+-]", " ", power_roll_line)
+    normalized = re.sub("[^A-Za-z0-9();' <+-]", " ", power_roll_line)
     normalized = (
         normalized.replace("damase", "damage")
         .replace("a aken", "and weakened")
@@ -310,6 +311,7 @@ def parse_power_roll_tier_lines(power_roll_line: str) -> PowerRollTier:
 
     return PowerRollTier(
         damage=int(groups["damage"]) if hasDamage else None,
+        damageType=groups.get("damageType", None) if hasDamage else None,
         effect=Effect(text=groups["effectText"].strip()) if hasEffect else None,
         potencyEffect=parse_potency_effect(
             groups["potencyTargetCharacteristic"],

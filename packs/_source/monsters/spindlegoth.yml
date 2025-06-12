@@ -1,5 +1,5 @@
-_id: 9Asv2D9aZNUPoky9
-_key: '!actors!9Asv2D9aZNUPoky9'
+_id: fMqdAf9MVbec4INC
+_key: '!actors!fMqdAf9MVbec4INC'
 name: Spindlegoth
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.png
@@ -54,8 +54,8 @@ system:
     stability: 1
     freeStrikeDamage: 2
 items:
-- _id: BWNx977ejfc8KNzh
-  _key: '!actors.items!9Asv2D9aZNUPoky9.BWNx977ejfc8KNzh'
+- _id: F7cQFi3ATxeieDfQ
+  _key: '!actors.items!fMqdAf9MVbec4INC.F7cQFi3ATxeieDfQ'
   name: Choking Thread
   type: monsterAbility
   img: icons/svg/book.svg
@@ -70,7 +70,7 @@ items:
     distance:
       ranged: 5
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -97,8 +97,8 @@ items:
     postPowerRollEffect:
       text: The target suffocates while restrained by this ability. If this ability
         fails to restrain the target, the spindlegoth shifts 2 and hides.
-- _id: 3vqbCWoWVeAlD5Lz
-  _key: '!actors.items!9Asv2D9aZNUPoky9.3vqbCWoWVeAlD5Lz'
+- _id: 5vgT1SgATW6DUaAd
+  _key: '!actors.items!fMqdAf9MVbec4INC.5vgT1SgATW6DUaAd'
   name: Thread Whip
   type: monsterAbility
   img: icons/svg/book.svg
@@ -113,7 +113,7 @@ items:
     distance:
       burst: 1
     target:
-      text: Each enemy in the burst
+      text: Each enemy
       enemy: true
     powerRoll:
       bonus: 2
@@ -126,8 +126,8 @@ items:
       tier3:
         effect:
           text: Vertical slide 3
-- _id: G6NDjWUjeVA8OlOg
-  _key: '!actors.items!9Asv2D9aZNUPoky9.G6NDjWUjeVA8OlOg'
+- _id: ieqnbnbLqE9beCmC
+  _key: '!actors.items!fMqdAf9MVbec4INC.ieqnbnbLqE9beCmC'
   name: Tightwire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -145,8 +145,8 @@ items:
     prePowerRollEffect:
       text: The spindlegoth shifts up to their speed, including vertically. They must
         end this movement on a solid surface.
-- _id: PRkbEyIDfjHtnpLB
-  _key: '!actors.items!9Asv2D9aZNUPoky9.PRkbEyIDfjHtnpLB'
+- _id: Jrhhwq2gagY6rUrC
+  _key: '!actors.items!fMqdAf9MVbec4INC.Jrhhwq2gagY6rUrC'
   name: Needlefoot
   type: monsterAbility
   img: icons/svg/book.svg

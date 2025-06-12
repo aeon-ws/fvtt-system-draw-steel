@@ -1,5 +1,5 @@
-_id: 3mcWmSmmXgyugaBn
-_key: '!actors!3mcWmSmmXgyugaBn'
+_id: 2WUin6tyipVHNWFI
+_key: '!actors!2WUin6tyipVHNWFI'
 name: Rotting Zombie
 type: minion
 img: systems/aeon-draw-steel/images/monsters/rotting-zombie-01.png
@@ -59,8 +59,8 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: l3b4uRlbsB57MxtL
-  _key: '!actors.items!3mcWmSmmXgyugaBn.l3b4uRlbsB57MxtL'
+- _id: 7PQSvvvROw6IZmcY
+  _key: '!actors.items!2WUin6tyipVHNWFI.7PQSvvvROw6IZmcY'
   name: Rotting Fist
   type: monsterAbility
   img: icons/svg/book.svg
@@ -75,7 +75,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object per minion
+      text: 1 creature or object per minion
       ally: true
       self: true
       enemy: true
@@ -94,8 +94,8 @@ items:
           value: 2
           effect:
             text: prone if size 1 slowed (save ends)
-- _id: yFVkrddB0UR3lhmy
-  _key: '!actors.items!3mcWmSmmXgyugaBn.yFVkrddB0UR3lhmy'
+- _id: VI0IrtD218dIzHdy
+  _key: '!actors.items!2WUin6tyipVHNWFI.VI0IrtD218dIzHdy'
   name: Death Grasp
   type: monsterAbility
   img: icons/svg/book.svg

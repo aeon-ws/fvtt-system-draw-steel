@@ -1,7 +1,17 @@
 $enemy-sheet-left-right-padding: 0.4rem;
 $font-weight-bold: 700;
-$font-weight-normal: 500;
+$font-weight-half-bold: 500;
+$font-weight-normal: 400;
 $label-value-gap: 0.4em;
+
+.sheet-window {
+  min-width: 588px;
+}
+
+.window-content.sheet {
+  overflow: auto;
+  min-width: 550px;
+}
 
 .enemy-sheet {
   background: #f7f4ed;
@@ -13,7 +23,11 @@ $label-value-gap: 0.4em;
   padding: 0;
   margin: 0;
   overflow: hidden;
-  width: 550px;
+  width: 100%;//550px;
+  min-width: 550px;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
 
   .header {
     background: #c2dbf7;
@@ -81,14 +95,12 @@ $label-value-gap: 0.4em;
         }
       }
 
-      .right {
-        .signature {
-          color: #0066bb;
-        }
+      .signature {
+        color: #0066bb;
+      }
 
-        .malice {
-          color: #aa0066;
-        }
+      .malice {
+        color: #aa0066;
       }
     }
 
@@ -97,11 +109,9 @@ $label-value-gap: 0.4em;
         display: flex;
         padding-left: $enemy-sheet-left-right-padding;
         padding-right: $enemy-sheet-left-right-padding;
-        white-space: nowrap;
-
-        overflow-x: visible;
         white-space: pre;
         word-break: keep-all;
+        overflow-x: visible;
 
         .label {
           font-weight: $font-weight-bold;
@@ -133,14 +143,36 @@ $label-value-gap: 0.4em;
 
           .label {
             text-align: right;
-            font-weight: $font-weight-normal;
+            font-weight: $font-weight-half-bold;
           }
 
           .value {
             text-align: left;
             padding-left: 1em;
+            font-weight: $font-weight-half-bold;
+            color: #004477;
+
+            .potency-effect {
+              font-weight: $font-weight-half-bold;
+              color: #ee0000;
+            }
           }
         }
+      }
+    }
+
+    .effect-field {
+      padding-left: $enemy-sheet-left-right-padding;
+      padding-right: $enemy-sheet-left-right-padding;
+      word-break: break-word;
+
+      .label {
+        font-weight: $font-weight-bold;
+        margin-right: $label-value-gap;
+      }
+
+      .value {
+        font-weight: $font-weight-normal;
       }
     }
   }
@@ -183,6 +215,7 @@ $label-value-gap: 0.4em;
 
       .field-row {
         text-align: right;
+        white-space: pre;
         padding-right: $enemy-sheet-left-right-padding;
       }
     }

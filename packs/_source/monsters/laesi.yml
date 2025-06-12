@@ -1,5 +1,5 @@
-_id: heUC5bA4JXtNZC25
-_key: '!actors!heUC5bA4JXtNZC25'
+_id: baGfTjntoAPlP3mB
+_key: '!actors!baGfTjntoAPlP3mB'
 name: Laesi
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/laesi-01.png
@@ -55,8 +55,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: FNbPUkMiAgt5bCVh
-  _key: '!actors.items!heUC5bA4JXtNZC25.FNbPUkMiAgt5bCVh'
+- _id: pQ5doo2FJSQ1mLhY
+  _key: '!actors.items!baGfTjntoAPlP3mB.pQ5doo2FJSQ1mLhY'
   name: Nimble Step
   type: monsterAbility
   img: icons/svg/book.svg
@@ -71,7 +71,7 @@ items:
     distance:
       melee: 1
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -91,8 +91,8 @@ items:
         damage: 13
         effect:
           text: shift 4
-- _id: SoB9ObuVYqneIxur
-  _key: '!actors.items!heUC5bA4JXtNZC25.SoB9ObuVYqneIxur'
+- _id: ZC5VyVwfYTcZYZxd
+  _key: '!actors.items!baGfTjntoAPlP3mB.ZC5VyVwfYTcZYZxd'
   name: Numb
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,7 +109,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -138,8 +138,8 @@ items:
           value: 2
           effect:
             text: slowed and dazed (EoT)
-- _id: 6xEXFklocIE5UAOK
-  _key: '!actors.items!heUC5bA4JXtNZC25.6xEXFklocIE5UAOK'
+- _id: geCqxnLf7yo5qoyK
+  _key: '!actors.items!baGfTjntoAPlP3mB.geCqxnLf7yo5qoyK'
   name: Inertial Shield
   type: monsterAbility
   img: icons/svg/book.svg
@@ -150,8 +150,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Laesi halves the damage of the first strike she is targeted by each round.
-- _id: NikvjaHkdSFmUuSY
-  _key: '!actors.items!heUC5bA4JXtNZC25.NikvjaHkdSFmUuSY'
+- _id: jgTRmXQoX0NH5qgM
+  _key: '!actors.items!baGfTjntoAPlP3mB.jgTRmXQoX0NH5qgM'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -163,8 +163,8 @@ items:
     prePowerRollEffect:
       text: If Laesi is frightened, slowed, or weakened, she can use a maneuver to
         end the condition.
-- _id: UIdcuLeWYlJf2Baj
-  _key: '!actors.items!heUC5bA4JXtNZC25.UIdcuLeWYlJf2Baj'
+- _id: q1jFGetUDjvFNKbQ
+  _key: '!actors.items!baGfTjntoAPlP3mB.q1jFGetUDjvFNKbQ'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

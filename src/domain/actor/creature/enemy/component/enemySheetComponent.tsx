@@ -1,7 +1,7 @@
 // src/components/enemySheetComponent.tsx
 
 import { IEnemyData } from "@enemy/enemyData";
-import { ArrayField, CharacteristicFieldRow, EncounterValueField, ImmunityAndWeaknessFieldRow, SizeAndStabilityFieldsRow, StatFieldRow } from "@actor/sheetFieldComponent";
+import { ArrayField, CharacteristicField, EncounterValueField, ImmunityAndWeaknessFields, SizeAndStabilityFields, StatField } from "@actor/sheetFieldComponent";
 import { EnemyAbilityComponent } from "@enemy/enemyAbilityComponent";
 import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 
@@ -28,25 +28,25 @@ export function EnemySheetComponent(context: IEnemyComponentContext) {
                 <div className="divider"></div>
                 <div className="columns">
                     <div className="column left-column">
-                        <StatFieldRow label="Stamina" value={
+                        <StatField label="Stamina" value={
                             enemy.stamina.value !== enemy.stamina.max
                                 ? `${enemy.stamina.value} / ${enemy.stamina.max}`
                                 : enemy.stamina.max} />
-                        <StatFieldRow label="Speed" value={enemy.combat.speed} />
+                        <StatField label="Speed" value={enemy.combat.speed} />
                     </div>
                     <div className="column right-column">
-                        <ImmunityAndWeaknessFieldRow immunityLabel="Immunity" immunity={enemy.immunity} weaknessLabel="Weakness" weakness={enemy.weakness} />
-                        <SizeAndStabilityFieldsRow sizeLabel="Size" sizeValue={enemy.combat.size} stabilityLabel="Stability" stabilityValue={enemy.combat.stability} />
-                        <StatFieldRow label="Free Strike" value={enemy.combat.freeStrikeDamage} defaultValue="1" />
+                        <ImmunityAndWeaknessFields immunityLabel="Immunity" immunity={enemy.immunity} weaknessLabel="Weakness" weakness={enemy.weakness} />
+                        <SizeAndStabilityFields sizeLabel="Size" sizeValue={enemy.combat.size} stabilityLabel="Stability" stabilityValue={enemy.combat.stability} />
+                        <StatField label="Free Strike" value={enemy.combat.freeStrikeDamage} defaultValue="1" />
                     </div>
                 </div>
                 <div className="divider"></div>
                 <div className="characteristics-row">
-                    <CharacteristicFieldRow label="Might" value={enemy.characteristics.might} />
-                    <CharacteristicFieldRow label="Agility" value={enemy.characteristics.agility} />
-                    <CharacteristicFieldRow label="Reason" value={enemy.characteristics.reason} />
-                    <CharacteristicFieldRow label="Intuition" value={enemy.characteristics.intuition} />
-                    <CharacteristicFieldRow label="Presence" value={enemy.characteristics.presence} />
+                    <CharacteristicField label="Might" value={enemy.characteristics.might} />
+                    <CharacteristicField label="Agility" value={enemy.characteristics.agility} />
+                    <CharacteristicField label="Reason" value={enemy.characteristics.reason} />
+                    <CharacteristicField label="Intuition" value={enemy.characteristics.intuition} />
+                    <CharacteristicField label="Presence" value={enemy.characteristics.presence} />
                 </div>
                 <div className="divider"></div>
                 <>

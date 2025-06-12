@@ -17,6 +17,8 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
 
         if (!isHeroActor(options.document)) throw new Error("Cannot create HeroSheet for non-hero token.");
 
+        console.log("ActorSheetV2 Default Options:", foundry.applications.sheets.ActorSheetV2.DEFAULT_OPTIONS);
+
         this._actor = options.document as Actor;
     }
 
@@ -26,13 +28,16 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
         return `Hero: ${this.system.name}`;
     }
 
-    static get defaultOptions() {
-        return foundry.utils.mergeObject(super.DEFAULT_OPTIONS, {
-            classes: ["draw-steel", "sheet", "actor", "enemy"],
-            width: 600,
-            height: 400,
-        });
-    }
+    static defaultOptions = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, {
+        classes: ["draw-steel", "sheet", "actor", "enemy"],
+        window: {
+            resizable: true
+        },
+        position: {
+            width: 588,
+            height: 700
+        },
+    });
 
     async _renderHTML(context: object): Promise<HTMLElement> {
         // Create the React container if needed
@@ -54,6 +59,8 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
 
     _replaceHTML(element: HTMLElement): void {
         const windowContent = this.element.querySelector('.window-content');
+        windowContent?.classList.add("sheet");
+
         if (windowContent) {
             windowContent.innerHTML = "";
             windowContent.appendChild(element);

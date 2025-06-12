@@ -1,5 +1,5 @@
-_id: YNQx9poM4axZoq0E
-_key: '!actors!YNQx9poM4axZoq0E'
+_id: 56R4qTWBxajHsyRf
+_key: '!actors!56R4qTWBxajHsyRf'
 name: Skeleton
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/skeleton-01.png
@@ -56,8 +56,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: gEb0i9CSkfZCccT5
-  _key: '!actors.items!YNQx9poM4axZoq0E.gEb0i9CSkfZCccT5'
+- _id: rzHaC5Nxmyx136na
+  _key: '!actors.items!56R4qTWBxajHsyRf.rzHaC5Nxmyx136na'
   name: Bone Shards
   type: monsterAbility
   img: icons/svg/book.svg
@@ -74,7 +74,7 @@ items:
       melee: 1
       ranged: 10
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -91,8 +91,8 @@ items:
     postPowerRollEffect:
       text: Until the start of the skeleton's next turn, the target takes 2 damage
         the first time they move on their turn.
-- _id: CExvIRXkE4OdYeUY
-  _key: '!actors.items!YNQx9poM4axZoq0E.CExvIRXkE4OdYeUY'
+- _id: nvgJGXVzdHTtYALe
+  _key: '!actors.items!56R4qTWBxajHsyRf.nvgJGXVzdHTtYALe'
   name: Bone Spur
   type: monsterAbility
   img: icons/svg/book.svg
@@ -107,7 +107,7 @@ items:
     distance:
       burst: 1
     target:
-      text: Each enemy in the burst
+      text: Each enemy
       enemy: true
     powerRoll:
       bonus: 2
@@ -134,8 +134,8 @@ items:
             text: bleeding (save ends)
     postPowerRollEffect:
       text: Each target has a bane on their next strike.
-- _id: pLDvEGvm4u7xxgiY
-  _key: '!actors.items!YNQx9poM4axZoq0E.pLDvEGvm4u7xxgiY'
+- _id: eo1oNzjyUrrSnKU6
+  _key: '!actors.items!56R4qTWBxajHsyRf.eo1oNzjyUrrSnKU6'
   name: Arise
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: Fj23MIxI9v1h5G2V
-_key: '!actors!Fj23MIxI9v1h5G2V'
+_id: kdfHTNevHSua3fHr
+_key: '!actors!kdfHTNevHSua3fHr'
 name: Gorek
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/gorek-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: BVaVG1zawfpdP6EB
-  _key: '!actors.items!Fj23MIxI9v1h5G2V.BVaVG1zawfpdP6EB'
+- _id: sbuT2jbbJ7tQ8g8Y
+  _key: '!actors.items!kdfHTNevHSua3fHr.sbuT2jbbJ7tQ8g8Y'
   name: Brutal Impact
   type: monsterAbility
   img: icons/svg/book.svg
@@ -71,7 +71,7 @@ items:
     distance:
       melee: 1
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -93,8 +93,8 @@ items:
           text: push 3
     maliceEffect:
       text: 2 Malice Each target is M<1 slowed (save ends).
-- _id: ClGnAh3kZPPnuZbi
-  _key: '!actors.items!Fj23MIxI9v1h5G2V.ClGnAh3kZPPnuZbi'
+- _id: hy5wAE9WxgemDMY8
+  _key: '!actors.items!kdfHTNevHSua3fHr.hy5wAE9WxgemDMY8'
   name: Let's Tussle
   type: monsterAbility
   img: icons/svg/book.svg
@@ -110,7 +110,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature the fury's size or smaller
+      text: 1 creature the fury's size or smaller
       ally: true
       self: true
       enemy: true
@@ -140,8 +140,8 @@ items:
             text: grabbed
     postPowerRollEffect:
       text: Gorek has an edge on strikes against a grabbed creature.
-- _id: su9jge1GJQQO3jGJ
-  _key: '!actors.items!Fj23MIxI9v1h5G2V.su9jge1GJQQO3jGJ'
+- _id: D4iFBybYFnsCWpNy
+  _key: '!actors.items!kdfHTNevHSua3fHr.D4iFBybYFnsCWpNy'
   name: Overwhelm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -153,8 +153,8 @@ items:
     prePowerRollEffect:
       text: Once per turn, when Gorek force moves a target or shifts into a square
         adjacent to a creature or object, he can make a free strike against them.
-- _id: eb4kHbwGORSN8DLs
-  _key: '!actors.items!Fj23MIxI9v1h5G2V.eb4kHbwGORSN8DLs'
+- _id: c1rbUhGGJVhmyG44
+  _key: '!actors.items!kdfHTNevHSua3fHr.c1rbUhGGJVhmyG44'
   name: Great Fortitude
   type: monsterAbility
   img: icons/svg/book.svg
@@ -165,8 +165,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Gorek can't be weakened.
-- _id: V678X5gd0BLuG4xH
-  _key: '!actors.items!Fj23MIxI9v1h5G2V.V678X5gd0BLuG4xH'
+- _id: 2UP7rMZh8fbbbUxL
+  _key: '!actors.items!kdfHTNevHSua3fHr.2UP7rMZh8fbbbUxL'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

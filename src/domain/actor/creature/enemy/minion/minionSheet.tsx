@@ -48,6 +48,8 @@ export class MinionSheet extends foundry.applications.sheets.ActorSheetV2 {
         // Instead of replacing the entire sheet element,
         // inject your React root into the ".window-content" section
         const windowContent = this.element.querySelector('.window-content');
+        windowContent?.classList.add("sheet");
+
         if (windowContent) {
             // Clear existing content
             windowContent.innerHTML = "";

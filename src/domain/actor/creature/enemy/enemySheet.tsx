@@ -51,7 +51,13 @@ export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
     _replaceHTML(element: HTMLElement): void {
         // Instead of replacing the entire sheet element,
         // inject your React root into the ".window-content" section
+        
         const windowContent = this.element.querySelector('.window-content');
+        windowContent?.classList.add("sheet");
+
+        const window = windowContent?.parentElement
+        window?.classList.add("sheet-window");
+
         if (windowContent) {
             // Clear existing content
             windowContent.innerHTML = "";

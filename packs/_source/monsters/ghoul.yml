@@ -1,5 +1,5 @@
-_id: 2oyrttT7hU35Xr2I
-_key: '!actors!2oyrttT7hU35Xr2I'
+_id: O2T1ZN0Q7nXMzIQE
+_key: '!actors!O2T1ZN0Q7nXMzIQE'
 name: Ghoul
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/ghoul-01.png
@@ -56,8 +56,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: m8a85xMxYivnZkkg
-  _key: '!actors.items!2oyrttT7hU35Xr2I.m8a85xMxYivnZkkg'
+- _id: pyexNj3MKy7oyQvQ
+  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.pyexNj3MKy7oyQvQ'
   name: Razor Claws
   type: monsterAbility
   img: icons/svg/book.svg
@@ -73,7 +73,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -92,8 +92,8 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: BflHnDwRTSBk22HY
-  _key: '!actors.items!2oyrttT7hU35Xr2I.BflHnDwRTSBk22HY'
+- _id: z6HwaO3A5vz9pgox
+  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.z6HwaO3A5vz9pgox'
   name: Leap
   type: monsterAbility
   img: icons/svg/book.svg
@@ -110,8 +110,8 @@ items:
     prePowerRollEffect:
       text: The ghoul jumps 3 squares. If they land on a size 1 enemy, that enemy
         is knocked prone and the ghoul makes a free strike against them.
-- _id: BsY3vn8A406ShVHh
-  _key: '!actors.items!2oyrttT7hU35Xr2I.BsY3vn8A406ShVHh'
+- _id: GrNZD8sSlNo49L8I
+  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.GrNZD8sSlNo49L8I'
   name: Hunger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -123,8 +123,8 @@ items:
     prePowerRollEffect:
       text: If the ghoul charges, their speed increases by 2 until the end of their
         turn.
-- _id: rbNfp0uBiKYHN46Y
-  _key: '!actors.items!2oyrttT7hU35Xr2I.rbNfp0uBiKYHN46Y'
+- _id: 0r7BAsxZSTEi4HJw
+  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.0r7BAsxZSTEi4HJw'
   name: Arise
   type: monsterAbility
   img: icons/svg/book.svg

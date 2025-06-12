@@ -1,5 +1,5 @@
-_id: 2yn7wco8fImVTG0N
-_key: '!actors!2yn7wco8fImVTG0N'
+_id: LuSJgVQcxzamd4Dl
+_key: '!actors!LuSJgVQcxzamd4Dl'
 name: Arixx
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/arixx-01.png
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: 4DZX6EoaBnSaGQWC
-  _key: '!actors.items!2yn7wco8fImVTG0N.4DZX6EoaBnSaGQWC'
+- _id: uB59jlGfStVDwmuC
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.uB59jlGfStVDwmuC'
   name: Solo Monster
   type: monsterAbility
   img: icons/svg/book.svg
@@ -69,8 +69,8 @@ items:
         turns consecutively. End Effect At the end of their turn, the arixx can take
         5 damage to end one save ends effect affecting them. This damage can't be
         reduced in any way.
-- _id: TLmigOQopymkSjiR
-  _key: '!actors.items!2yn7wco8fImVTG0N.TLmigOQopymkSjiR'
+- _id: SoQqAyOoxy5iq4p4
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.SoQqAyOoxy5iq4p4'
   name: Soft Underbelly
   type: monsterAbility
   img: icons/svg/book.svg
@@ -82,8 +82,8 @@ items:
     prePowerRollEffect:
       text: A prone creature gains a double edge on melee strikes against the arixx
         instead of taking a bane.
-- _id: ML2E9927ohSTSsQm
-  _key: '!actors.items!2yn7wco8fImVTG0N.ML2E9927ohSTSsQm'
+- _id: b6k90zh0G01wJenT
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.b6k90zh0G01wJenT'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -98,7 +98,7 @@ items:
     distance:
       melee: 2
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -119,8 +119,8 @@ items:
     postPowerRollEffect:
       text: A size 1 target grabbed this way takes 3 acid damage at the start of each
         of their turns.
-- _id: JDf0WWcntuX9r8ya
-  _key: '!actors.items!2yn7wco8fImVTG0N.JDf0WWcntuX9r8ya'
+- _id: LBOxbVRFSIoHKdrw
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.LBOxbVRFSIoHKdrw'
   name: Claw Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -135,7 +135,7 @@ items:
     distance:
       melee: 2
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -166,8 +166,8 @@ items:
             text: grabbed
     postPowerRollEffect:
       text: The arixx can vertically slide each grabbed target up to 3 squares.
-- _id: k76NjZDzJR2RDoGU
-  _key: '!actors.items!2yn7wco8fImVTG0N.k76NjZDzJR2RDoGU'
+- _id: Yn6w9zhGVcbhkLUx
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.Yn6w9zhGVcbhkLUx'
   name: Spitfire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -182,7 +182,7 @@ items:
     distance:
       ranged: 10
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -192,18 +192,21 @@ items:
       bonus: 3
       tier1:
         damage: 4
+        damageType: acid
       tier2:
         damage: 6
+        damageType: acid
       tier3:
         damage: 7
+        damageType: acid
         effect:
           text: prone
     postPowerRollEffect:
       text: The areas on the ground beneath each target are covered in burning acid.
         An enemy who enters an affected square for the first time on their turn or
         starts their turn there takes 2 acid damage.
-- _id: m910fRMgcjY2LEjC
-  _key: '!actors.items!2yn7wco8fImVTG0N.m910fRMgcjY2LEjC'
+- _id: JW9GzoYPJxtGNRHf
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.JW9GzoYPJxtGNRHf'
   name: Dirt Devil
   type: monsterAbility
   img: icons/svg/book.svg
@@ -218,7 +221,7 @@ items:
     distance:
       burst: 3
     target:
-      text: Each enemy in the burst
+      text: Each enemy
       enemy: true
     powerRoll:
       bonus: 3
@@ -236,8 +239,8 @@ items:
       text: The arixx flings rocks and debris everywhere. They have a double edge
         on the power roll if the arixx started their turn underground. The affected
         area is considered difficult terrain for enemies.
-- _id: QMxjRGXJdEz6x3MF
-  _key: '!actors.items!2yn7wco8fImVTG0N.QMxjRGXJdEz6x3MF'
+- _id: vxfDgsm0a9lfK8xP
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.vxfDgsm0a9lfK8xP'
   name: Dust Cloud
   type: monsterAbility
   img: icons/svg/book.svg
@@ -257,8 +260,8 @@ items:
         next turn. An enemy has a bane on power rolls while occupying an affected
         square or targeting a creature occupying an affected square. The arixx then
         moves up to their speed.
-- _id: Gabu59QMM3Bg34xY
-  _key: '!actors.items!2yn7wco8fImVTG0N.Gabu59QMM3Bg34xY'
+- _id: BZBiUqVwgevRdIBT
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.BZBiUqVwgevRdIBT'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -276,8 +279,8 @@ items:
     prePowerRollEffect:
       text: The arixx halves the damage and shifts up to 3 squares after the triggering
         effect resolves.
-- _id: yjCXSaTt7tenkYlb
-  _key: '!actors.items!2yn7wco8fImVTG0N.yjCXSaTt7tenkYlb'
+- _id: mi0yprQcnqHwfP6c
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.mi0yprQcnqHwfP6c'
   name: Earthwalk
   type: monsterAbility
   img: icons/svg/book.svg
@@ -289,8 +292,8 @@ items:
     prePowerRollEffect:
       text: Difficult terrain composed of earth or loose rock doesn't cost the arixx
         extra movement.
-- _id: beQWcF1PmhAlOGUb
-  _key: '!actors.items!2yn7wco8fImVTG0N.beQWcF1PmhAlOGUb'
+- _id: 1aTvQLkhmLxk853H
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.1aTvQLkhmLxk853H'
   name: Acid Spew
   type: monsterAbility
   img: icons/svg/book.svg
@@ -317,16 +320,19 @@ items:
       bonus: 3
       tier1:
         damage: 5
+        damageType: acid
       tier2:
         damage: 8
+        damageType: acid
       tier3:
         damage: 11
+        damageType: acid
     postPowerRollEffect:
       text: The ground within the affected area is covered in a puddle of acid. An
         enemy who enters an affected square for the first time on their turn or starts
         their turn there takes 2 acid damage.
-- _id: aBcd619kmuvDisle
-  _key: '!actors.items!2yn7wco8fImVTG0N.aBcd619kmuvDisle'
+- _id: rR3K62NwH8eh1GAG
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.rR3K62NwH8eh1GAG'
   name: Sinkhole
   type: monsterAbility
   img: icons/svg/book.svg
@@ -345,8 +351,8 @@ items:
       text: The arixx shifts up to their speed. If the arixx ends this move underground
         and within 2 squares of a creature, the arixx uses Bite against the creature
         and can then use the Dig maneuver.
-- _id: NNo4SvnkFspN22Kr
-  _key: '!actors.items!2yn7wco8fImVTG0N.NNo4SvnkFspN22Kr'
+- _id: BZeS0OosawAXXMgq
+  _key: '!actors.items!LuSJgVQcxzamd4Dl.BZeS0OosawAXXMgq'
   name: Acid and Claws
   type: monsterAbility
   img: icons/svg/book.svg
@@ -362,7 +368,7 @@ items:
     distance:
       burst: 2
     target:
-      text: Each creature in the burst
+      text: Each creature
       ally: true
       self: true
       enemy: true
@@ -370,6 +376,7 @@ items:
       bonus: 3
       tier1:
         damage: 5
+        damageType: acid
         potencyEffect:
           targetCharacteristic: might
           value: 1
@@ -377,6 +384,7 @@ items:
             text: weakened (save ends)
       tier2:
         damage: 8
+        damageType: acid
         potencyEffect:
           targetCharacteristic: might
           value: 2
@@ -384,6 +392,7 @@ items:
             text: weakened (save ends)
       tier3:
         damage: 11
+        damageType: acid
         potencyEffect:
           targetCharacteristic: might
           value: 3

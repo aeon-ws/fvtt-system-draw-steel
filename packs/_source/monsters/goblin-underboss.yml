@@ -1,5 +1,5 @@
-_id: tA92mzLaVMoBv9ZY
-_key: '!actors!tA92mzLaVMoBv9ZY'
+_id: NocyaUOVOclTSnXK
+_key: '!actors!NocyaUOVOclTSnXK'
 name: Goblin Underboss
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-underboss-01.png
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: 6v0J5IJwk05WJStj
-  _key: '!actors.items!tA92mzLaVMoBv9ZY.6v0J5IJwk05WJStj'
+- _id: sQiQFNFqqAO3PhWc
+  _key: '!actors.items!NocyaUOVOclTSnXK.sQiQFNFqqAO3PhWc'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -70,7 +70,7 @@ items:
     distance:
       melee: 1
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -86,8 +86,8 @@ items:
         damage: 5
     postPowerRollEffect:
       text: One ally adjacent to the target can make a free strike against them.
-- _id: OzYCq511Jz874Xau
-  _key: '!actors.items!tA92mzLaVMoBv9ZY.OzYCq511Jz874Xau'
+- _id: AvXb7AweqOhNh5Bm
+  _key: '!actors.items!NocyaUOVOclTSnXK.AvXb7AweqOhNh5Bm'
   name: Get Reckless!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,15 +100,15 @@ items:
     distance:
       burst: 5
     target:
-      text: All allies in the burst
+      text: All allies
       ally: true
     prePowerRollEffect:
       text: Until the start of the underboss's next turn, each target has an edge
         on strikes, and strikes made against them have an edge.
     maliceEffect:
       text: 2 Malice Strikes made against each target no longer have an edge.
-- _id: F2xuUgRG4XwGmVe1
-  _key: '!actors.items!tA92mzLaVMoBv9ZY.F2xuUgRG4XwGmVe1'
+- _id: 0ghLdmezbkBqRj0d
+  _key: '!actors.items!NocyaUOVOclTSnXK.0ghLdmezbkBqRj0d'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

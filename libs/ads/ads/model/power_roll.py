@@ -5,6 +5,7 @@ from ads.model.effect import Effect, PotencyEffect
 
 class PowerRollTier(TypedDict):
     damage: NotRequired[Optional[int]]
+    damageType: NotRequired[Optional[str]]
     effect: NotRequired[Optional[Effect]]
     potencyEffect: NotRequired[Optional[PotencyEffect]]
 

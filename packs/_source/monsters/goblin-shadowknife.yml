@@ -1,5 +1,5 @@
-_id: 5poIZYsc7ln4ZxoD
-_key: '!actors!5poIZYsc7ln4ZxoD'
+_id: HT7Ut95sMCIV98O7
+_key: '!actors!HT7Ut95sMCIV98O7'
 name: Goblin Shadowknife
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-shadowknife-01.png
@@ -57,8 +57,8 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: tn4URHsmgYQf3PIT
-  _key: '!actors.items!5poIZYsc7ln4ZxoD.tn4URHsmgYQf3PIT'
+- _id: 8iLbWyd0q9TJ8o8y
+  _key: '!actors.items!HT7Ut95sMCIV98O7.8iLbWyd0q9TJ8o8y'
   name: Shadow Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -76,7 +76,7 @@ items:
       melee: 1
       ranged: 5
     target:
-      text: One creature or object
+      text: 1 creature or object
       ally: true
       self: true
       enemy: true
@@ -86,15 +86,18 @@ items:
       bonus: 2
       tier1:
         damage: 5
+        damageType: corruption
       tier2:
         damage: 6
+        damageType: corruption
       tier3:
         damage: 8
+        damageType: corruption
     postPowerRollEffect:
       text: This ability deals an additional 2 corruption damage if the shadowknife
         has an edge on the power roll.
-- _id: kHDtMH2QgRhUi05t
-  _key: '!actors.items!5poIZYsc7ln4ZxoD.kHDtMH2QgRhUi05t'
+- _id: DedKkMWvAseZy02y
+  _key: '!actors.items!HT7Ut95sMCIV98O7.DedKkMWvAseZy02y'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,7 +112,7 @@ items:
     distance:
       ranged: 10
     target:
-      text: Three creatures
+      text: 3 creatures
       ally: true
       self: true
       enemy: true
@@ -118,6 +121,7 @@ items:
       bonus: 2
       tier1:
         damage: 3
+        damageType: corruption
         potencyEffect:
           targetCharacteristic: agility
           value: 0
@@ -125,6 +129,7 @@ items:
             text: restrained (save ends)
       tier2:
         damage: 5
+        damageType: corruption
         potencyEffect:
           targetCharacteristic: agility
           value: 1
@@ -132,13 +137,14 @@ items:
             text: restrained (save ends)
       tier3:
         damage: 6
+        damageType: corruption
         potencyEffect:
           targetCharacteristic: agility
           value: 2
           effect:
             text: restrained (save ends)
-- _id: VZcwXssT6az5FMLh
-  _key: '!actors.items!5poIZYsc7ln4ZxoD.VZcwXssT6az5FMLh'
+- _id: aj6O4dl912EMisiu
+  _key: '!actors.items!HT7Ut95sMCIV98O7.aj6O4dl912EMisiu'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +158,8 @@ items:
         Whenever the shadowknife is adjacent to an enemy and willingly moves to a
         space no longer adjacent to that enemy, the shadowknife can make an opportunity
         attack against them as a triggered action.
-- _id: QnRNaxNCSIrYFCIO
-  _key: '!actors.items!5poIZYsc7ln4ZxoD.QnRNaxNCSIrYFCIO'
+- _id: vNjMJzrgMl1rSeSK
+  _key: '!actors.items!HT7Ut95sMCIV98O7.vNjMJzrgMl1rSeSK'
   name: Hide While Observed
   type: monsterAbility
   img: icons/svg/book.svg

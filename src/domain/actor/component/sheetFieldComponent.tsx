@@ -4,6 +4,7 @@ import React from "react";
 
 import { IImmunityData, IWeaknessData } from "@creature/creatureData";
 import { JSX } from "react/jsx-runtime";
+import { IEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
 
 
 interface IArrayFieldProps {
@@ -40,7 +41,7 @@ export function ArrayField({
     );
 }
 
-interface IDistanceFieldRowProps {
+interface IDistanceFieldProps {
     distanceLabel: string;
     distanceTypeLabel1: string;
     value1: number | string;
@@ -48,13 +49,13 @@ interface IDistanceFieldRowProps {
     value2?: number | string | undefined;
 }
 
-export function DistanceFieldRow({
+export function DistanceField({
     distanceLabel,
     distanceTypeLabel1,
     value1,
     distanceTypeLabel2,
     value2
-}: IDistanceFieldRowProps): JSX.Element | null {
+}: IDistanceFieldProps): JSX.Element | null {
     return (
         <div className="field-row">
             <span className="label">{distanceLabel}</span>
@@ -63,7 +64,7 @@ export function DistanceFieldRow({
     );
 }
 
-interface StatFieldRowProps {
+interface StatFieldProps {
     label: string;
     value?: number | string | null;
     template?: string; // e.g., "Strike damage +{value}"
@@ -72,7 +73,7 @@ interface StatFieldRowProps {
     defaultValue?: string | null; // If not null, allows 0 or empty values to be displayed
 }
 
-export const StatFieldRow: React.FC<StatFieldRowProps> = ({
+export const StatField: React.FC<StatFieldProps> = ({
     label,
     value,
     template,
@@ -97,14 +98,14 @@ export const StatFieldRow: React.FC<StatFieldRowProps> = ({
     );
 }
 
-interface SizeAndStabilityFieldsRowProps {
+interface SizeAndStabilityFieldsProps {
     sizeLabel: string;
     sizeValue: string | number;
     stabilityLabel: string;
     stabilityValue: string | number;
 }
 
-export const SizeAndStabilityFieldsRow: React.FC<SizeAndStabilityFieldsRowProps> = ({ sizeLabel, sizeValue, stabilityLabel, stabilityValue }) => {
+export const SizeAndStabilityFields: React.FC<SizeAndStabilityFieldsProps> = ({ sizeLabel, sizeValue, stabilityLabel, stabilityValue }) => {
     return (
         <div className="field-row">
             <span className="label">{sizeLabel}</span>
@@ -116,12 +117,12 @@ export const SizeAndStabilityFieldsRow: React.FC<SizeAndStabilityFieldsRowProps>
     );
 }
 
-interface CharacteristicFieldRowProps {
+interface CharacteristicFieldProps {
     label: string;
     value?: number | string | null;
 }
 
-export const CharacteristicFieldRow: React.FC<CharacteristicFieldRowProps> = ({ label, value }) => {
+export const CharacteristicField: React.FC<CharacteristicFieldProps> = ({ label, value }) => {
     if (value === null || value === undefined || value === "" || value === 0) {
         value = 0;
     }
@@ -146,7 +147,7 @@ export const EncounterValueField: React.FC<EncounterValueFieldProps> = ({ label 
         : <span className="right">{label} {encounterValue}</span>
 }
 
-interface ImmunityAndWeaknessFieldRowProps {
+interface ImmunityAndWeaknessFieldsProps {
     immunityLabel: string;
     immunity: IImmunityData
     weaknessLabel: string;
@@ -183,7 +184,7 @@ const ImmunityOrWeaknessField: React.FC<ImmunityOrWeaknessFieldProps> = ({ field
     )
 }
 
-export const ImmunityAndWeaknessFieldRow: React.FC<ImmunityAndWeaknessFieldRowProps> = ({
+export const ImmunityAndWeaknessFields: React.FC<ImmunityAndWeaknessFieldsProps> = ({
     immunityLabel,
     immunity,
     weaknessLabel,
@@ -211,3 +212,94 @@ export const ImmunityAndWeaknessFieldRow: React.FC<ImmunityAndWeaknessFieldRowPr
         </div>
     );
 };
+
+
+export function getPowerRollDamageText(tier: IPowerRollTierData): string {
+    if (!tier.damage) return "";
+
+    const damageValueText = tier.damage > 0 ? `${tier.damage} ` : null;
+    const damageTypeText = tier.damageType ? `${tier.damageType} ` : "";
+
+    return damageValueText ? `${damageValueText}${damageTypeText} damage; ` : "";
+}
+
+interface IPowerRollPotencyEffectProps {
+    tier: IPowerRollTierData;
+}
+
+export function PowerRollPotencyEffect({ tier }: IPowerRollPotencyEffectProps): JSX.Element | null {
+    if (!tier.potencyEffect) return null;
+
+    const potencyValueText = tier.potencyEffect.value >= 0 ? `${tier.potencyEffect.value} ` : null;
+    const potencyTargetCharacteristicInitial = tier.potencyEffect.targetCharacteristic[0].toUpperCase();
+
+    return potencyValueText ? (
+        <>
+            <span className="potency-effect">{`${potencyTargetCharacteristicInitial}<${potencyValueText}`}</span>
+            <span>{tier.potencyEffect.effect.text}</span>
+        </>
+    ) : null;
+}
+
+export function getPowerRollEffectText(tier: IPowerRollTierData): string {
+    if (!tier.effect) return "";
+
+    return tier.effect.text?.length > 0 ? `${tier.effect.text} ` : "";
+}
+
+interface IPowerRollTierProps {
+    symbol: string;
+    label: string;
+    tier: IPowerRollTierData;
+}
+
+export function PowerRollTier({ symbol, label, tier }: IPowerRollTierProps): JSX.Element | null {
+    return (
+        <div className="power-roll-tier">
+            <span className="symbol">{symbol}</span>
+            <span className="label">{label}</span>
+            <span className="value">
+                {getPowerRollDamageText(tier)}
+                {getPowerRollEffectText(tier)}
+                <PowerRollPotencyEffect tier={tier} />
+            </span>
+        </div>
+    );
+}
+
+interface IPowerRollFieldProps {
+    powerRoll?: IPowerRollData | null;
+}
+
+export function PowerRollField({ powerRoll }: IPowerRollFieldProps): JSX.Element | null {
+    if (!powerRoll) return null;
+
+    return (
+        <div className="power-roll-section">
+            {powerRoll.bonus && (
+                <StatField label="Power Roll" value={`2d10 + ${powerRoll.bonus}`} />
+            )}
+            <div className="power-roll-table">
+                <PowerRollTier symbol="✦" label="≤11" tier={powerRoll.tier1} />
+                <PowerRollTier symbol="★" label="12-16" tier={powerRoll.tier2} />
+                <PowerRollTier symbol="✸" label="17+" tier={powerRoll.tier3} />
+            </div>
+        </div>
+    );
+}
+
+interface IEffectFieldProps {
+    label?: string | null;
+    effect?: IEffectData | null;
+}
+
+export function EffectField({ label, effect }: IEffectFieldProps): JSX.Element | null {
+    if (!effect || !effect.text || effect.text.length === 0) return null;
+
+    return (
+        <div className="effect-field">
+            {label && <span className="label">{label}</span>}
+            <span className="value">{effect.text}</span>
+        </div>
+    );
+}

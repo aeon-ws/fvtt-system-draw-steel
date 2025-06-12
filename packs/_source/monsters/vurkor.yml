@@ -1,5 +1,5 @@
-_id: EiFUjNs49kLW3Va5
-_key: '!actors!EiFUjNs49kLW3Va5'
+_id: 6eJ1MD0cw4KwNCLl
+_key: '!actors!6eJ1MD0cw4KwNCLl'
 name: Vurkor
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/vurkor-01.png
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: qTOt1oIN0Y27nLJB
-  _key: '!actors.items!EiFUjNs49kLW3Va5.qTOt1oIN0Y27nLJB'
+- _id: RCRVuy20Brl6mhsg
+  _key: '!actors.items!6eJ1MD0cw4KwNCLl.RCRVuy20Brl6mhsg'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -72,7 +72,7 @@ items:
     distance:
       ranged: 10
     target:
-      text: Two creatures or objects
+      text: 2 creatures or objects
       ally: true
       self: true
       enemy: true
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: ui1W3MYcuIzTGMuf
-  _key: '!actors.items!EiFUjNs49kLW3Va5.ui1W3MYcuIzTGMuf'
+- _id: X1xeTwWN9NZkjH6P
+  _key: '!actors.items!6eJ1MD0cw4KwNCLl.X1xeTwWN9NZkjH6P'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -111,7 +111,7 @@ items:
         size: 3
         within: 10
     target:
-      text: All enemies in the cube
+      text: All enemies
       enemy: true
     powerRoll:
       bonus: 2
@@ -128,8 +128,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: zmAvjtlhrAjbghCB
-  _key: '!actors.items!EiFUjNs49kLW3Va5.zmAvjtlhrAjbghCB'
+- _id: 68Yi7vRMLBRxN4Ax
+  _key: '!actors.items!6eJ1MD0cw4KwNCLl.68Yi7vRMLBRxN4Ax'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Vurkor teleports 2 squares. Each creature adjacent to his original space
         takes 2 corruption damage.
-- _id: 4zCBVMjGU6w1BjoL
-  _key: '!actors.items!EiFUjNs49kLW3Va5.4zCBVMjGU6w1BjoL'
+- _id: U8kkFn42kewqiKfg
+  _key: '!actors.items!6eJ1MD0cw4KwNCLl.U8kkFn42kewqiKfg'
   name: Glowing Recovery
   type: monsterAbility
   img: icons/svg/book.svg
@@ -161,8 +161,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Vurkor can use his maneuver to regain 10 Stamina once per round.
-- _id: 2gTDuVqymGUSAEcu
-  _key: '!actors.items!EiFUjNs49kLW3Va5.2gTDuVqymGUSAEcu'
+- _id: TuQZkb8woL09wZmc
+  _key: '!actors.items!6eJ1MD0cw4KwNCLl.TuQZkb8woL09wZmc'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg
