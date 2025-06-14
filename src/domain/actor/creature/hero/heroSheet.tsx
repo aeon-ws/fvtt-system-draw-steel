@@ -29,7 +29,7 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
     }
 
     static defaultOptions = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, {
-        classes: ["draw-steel", "sheet", "actor", "enemy"],
+        classes: ["draw-steel", "sheet", "actor"],
         window: {
             resizable: true
         },
@@ -60,6 +60,9 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
     _replaceHTML(element: HTMLElement): void {
         const windowContent = this.element.querySelector('.window-content');
         windowContent?.classList.add("sheet");
+
+        const window = windowContent?.parentElement
+        window?.classList.add("sheet-window");
 
         if (windowContent) {
             windowContent.innerHTML = "";

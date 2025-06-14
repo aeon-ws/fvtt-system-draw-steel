@@ -6,6 +6,7 @@ import { EnemyAbilityComponent } from "@enemy/enemyAbilityComponent";
 import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 
 export interface IEnemyComponentContext {
+    ref: React.RefObject<HTMLFormElement | null>;
     enemy: IEnemyData;
     abilities: IEnemyAbilityData[]
 }
@@ -15,7 +16,7 @@ export function EnemySheetComponent(context: IEnemyComponentContext) {
     const abilities = context.abilities;
 
     return (
-        <form autoComplete="off" className="aeon-draw-steel sheet actor minion">
+        <form ref={context.ref} autoComplete="off" className="aeon-draw-steel sheet actor enemy">
             <div className="enemy-sheet">
                 <div className="header">
                     <span className="left">{enemy.name}&nbsp;</span>
@@ -50,9 +51,18 @@ export function EnemySheetComponent(context: IEnemyComponentContext) {
                 </div>
                 <div className="divider"></div>
                 <>
-                    {abilities.map(ability => (
-                        <EnemyAbilityComponent key={ability.name} enemy={enemy} ability={ability} />
-                    ))}
+                    {abilities
+                        .slice()
+                        .sort((a, b) =>
+                            (a.isSignature ? -1 : 1) - (b.isSignature ? -1 : 1)
+                            || (a.type === "monsterTrait" ? 1 : -1) - (b.type === "monsterTrait" ? 1 : -1)
+                            || (a.type as string).localeCompare(b.type as string)
+                            || (a.villainActionOrdinal ?? 0) - (b.villainActionOrdinal ?? 0)
+                            || (a.name as string).localeCompare(b.name as string)
+                        )
+                        .map(ability => (
+                            <EnemyAbilityComponent key={ability.name} enemy={enemy} ability={ability} />
+                        ))}
                 </>
             </div>
         </form >
