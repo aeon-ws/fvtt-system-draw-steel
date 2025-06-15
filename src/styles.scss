@@ -30,7 +30,7 @@ $label-value-gap: 0.4em;
   scrollbar-width: thin;
 
   .header {
-    background: #c2dbf7;
+    background: #D9D9D9;
     // color: #222;
     font-weight: $font-weight-bold;
     display: flex;
@@ -50,6 +50,34 @@ $label-value-gap: 0.4em;
     .right {
       text-align: right;
       text-transform: unset;
+    }
+
+    &.ambusher {
+      background: #F7D957;
+    }
+    &.artillery {
+      background: #CCC0D9;
+    }
+    &.brute {
+      background: #8DB3E2;
+    }
+    &.controller {
+      background: #FF7D7D;
+    }
+    &.defender {
+      background: #C4BC96;
+    }
+    &.harrier, &.skirmisher {
+      background: #E5B8B7;
+    }
+    &.hexer {
+      background: #D6E3BC;
+    }
+    &.mount {
+      background: #B6DDE8;
+    }
+    &.support {
+      background: #FBD4B4;
     }
   }
 

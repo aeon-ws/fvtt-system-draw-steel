@@ -7,6 +7,7 @@ import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 
 
 export interface IMinionComponentContext {
+    ref: React.RefObject<HTMLFormElement | null>;
     enemy: IMinionData;
     abilities: IEnemyAbilityData[]
 }
@@ -16,9 +17,9 @@ export function MinionSheetComponent(context: IMinionComponentContext) {
     const abilities = context.abilities;
 
     return (
-        <form autoComplete="off" className="aeon-draw-steel sheet actor minion">
+        <form ref={context.ref} autoComplete="off" className="aeon-draw-steel sheet actor minion">
             <div className="enemy-sheet">
-                <div className="header">
+                <div className={`header ${enemy.role.toLowerCase()}`}>
                     <span className="left">{enemy.name}&nbsp;</span>
                     <span className="right">Level&nbsp;{enemy.level}&nbsp;{enemy.type}&nbsp;{enemy.role}</span>
                 </div>
