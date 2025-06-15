@@ -1,0 +1,62 @@
+name: Build & Release FoundryVTT System
+
+on:
+  push:
+    tags:
+      - "v*.*.*" # Triggers when you push a new version tag, e.g. v0.1.0
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Create Release ZIP
+        run: |
+          zip -r fvtt-system-draw-steel.zip dist system.json README.md
+
+      - name: Get Tag Name
+        id: get_tag
+        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Update system.json manifest URLs
+        run: |
+          RAW_MANIFEST_URL="https://raw.githubusercontent.com/${{ github.repository }}/main/system.json"
+          RELEASE_ZIP_URL="https://github.com/${{ github.repository }}/releases/download/${{ env.TAG }}/fvtt-system-draw-steel.zip"
+          jq ".manifest=\"${RAW_MANIFEST_URL}\" | .download=\"${RELEASE_ZIP_URL}\" | .version=\"${{ env.TAG }}\"" system.json > system.json.tmp
+          mv system.json.tmp system.json
+
+      - name: Upload updated system.json as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: system.json
+          path: system.json
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: ${{ env.TAG }}
+          body: |
+            Automated release for ${{ env.TAG }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload ZIP to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          files: fvtt-system-draw-steel.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
