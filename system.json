@@ -1,7 +1,7 @@
 {
   "id": "aeon-draw-steel",
   "title": "Aeon Draw Steel",
-  "version": "0.1.0",
+  "version": "v0.1.3",
   "description": "Unofficial Foundry VTT system for Draw Steel (Powered by Draw Steel).",
   "authors": [
     {
@@ -13,8 +13,12 @@
     "verified": "13"
   },
   "relationships": {},
-  "esmodules": ["dist/main.js"],
-  "styles": ["dist/styles.css"],
+  "esmodules": [
+    "dist/main.js"
+  ],
+  "styles": [
+    "dist/styles.css"
+  ],
   "packs": [
     {
       "name": "monsters",
@@ -38,7 +42,10 @@
       "name": "Aeon Draw Steel",
       "color": "#cd2c1e",
       "sorting": "m",
-      "packs": ["monsters", "heroAbilities"]
+      "packs": [
+        "monsters",
+        "heroAbilities"
+      ]
     }
   ],
   "languages": [
@@ -49,7 +56,7 @@
     }
   ],
   "url": "https://yourhost.com/",
-  "manifest": "https://yourhost.com/system.json",
+  "manifest": "https://raw.githubusercontent.com/aeon-ws/fvtt-system-draw-steel/main/system.json",
   "readme": "https://yourhost.com/README.md",
   "bugs": "https://yourhost.com/issues",
   "license": "LICENSE",
@@ -73,5 +80,6 @@
   "grid": {
     "distance": 1,
     "units": "sq"
-  }
+  },
+  "download": "https://github.com/aeon-ws/fvtt-system-draw-steel/releases/download/v0.1.3/fvtt-system-draw-steel.zip"
 }
