@@ -1,17 +1,23 @@
-name: Build & Release FoundryVTT System
+name: Build, Update Manifest, Release Foundry System
 
 on:
   push:
     tags:
-      - "v*.*.*" # Triggers when you push a new version tag, e.g. v0.1.0
+      - 'v*.*.*'   # Runs only for version tags like v0.2.0
 
 jobs:
-  build-and-release:
+  build-release:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    permissions:
+      contents: write  # Required for pushing to main and creating releases
 
-      - name: Setup Node.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: main  # Ensures we’re working with the main branch
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -19,44 +25,52 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (Vite)
+      - name: Build with Vite
         run: npx vite build
 
-      - name: Create Release ZIP
+      - name: Get version and URLs
+        id: meta
+        run: |
+          TAG="${GITHUB_REF##*/}"
+          RAW_MANIFEST="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/system.json"
+          ZIP_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/fvtt-system-draw-steel.zip"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "manifest_url=$RAW_MANIFEST" >> $GITHUB_OUTPUT
+          echo "download_url=$ZIP_URL" >> $GITHUB_OUTPUT
+
+      - name: Update system.json with release URLs and version
+        run: |
+          jq \
+            --arg manifest "${{ steps.meta.outputs.manifest_url }}" \
+            --arg download "${{ steps.meta.outputs.download_url }}" \
+            --arg version "${{ steps.meta.outputs.tag }}" \
+            '.manifest=$manifest | .download=$download | .version=$version' \
+            system.json > system.tmp.json
+          mv system.tmp.json system.json
+
+      - name: Commit and push updated system.json to main
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update system.json for ${{ steps.meta.outputs.tag }}"
+          branch: main
+          file_pattern: system.json
+          push_options: --force  # Remove if you want non-forced push
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+        env:
+          # Use GITHUB_TOKEN by default, or BOT_TOKEN if required
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Zip release files
         run: |
           zip -r fvtt-system-draw-steel.zip dist system.json README.md lang packs icons images
 
-      - name: Get Tag Name
-        id: get_tag
-        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
-
-      - name: Update system.json manifest URLs
-        run: |
-          RAW_MANIFEST_URL="https://raw.githubusercontent.com/${{ github.repository }}/main/system.json"
-          RELEASE_ZIP_URL="https://github.com/${{ github.repository }}/releases/download/${{ env.TAG }}/fvtt-system-draw-steel.zip"
-          jq ".manifest=\"${RAW_MANIFEST_URL}\" | .download=\"${RELEASE_ZIP_URL}\" | .version=\"${{ env.TAG }}\"" system.json > system.json.tmp
-          mv system.json.tmp system.json
-
-      - name: Upload updated system.json as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: system.json
-          path: system.json
-
-      - name: Create GitHub Release
+      - name: Create GitHub Release & upload ZIP
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.TAG }}
-          name: ${{ env.TAG }}
-          body: |
-            Automated release for ${{ env.TAG }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload ZIP to Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ env.TAG }}
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: ${{ steps.meta.outputs.tag }}
+          body: "Automated release for ${{ steps.meta.outputs.tag }}"
           files: fvtt-system-draw-steel.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
