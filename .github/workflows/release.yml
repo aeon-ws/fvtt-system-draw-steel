@@ -19,12 +19,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Build (Vite)
+        run: npx vite build
 
       - name: Create Release ZIP
         run: |
-          zip -r fvtt-system-draw-steel.zip dist system.json README.md
+          zip -r fvtt-system-draw-steel.zip dist system.json README.md lang packs icons images
 
       - name: Get Tag Name
         id: get_tag
