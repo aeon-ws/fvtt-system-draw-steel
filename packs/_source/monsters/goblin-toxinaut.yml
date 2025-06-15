@@ -1,0 +1,117 @@
+_id: A7Brtp9VKuQ3CqWd
+_key: '!actors!A7Brtp9VKuQ3CqWd'
+name: Goblin Toxinaut
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.png
+prototypeToken:
+  name: Goblin Toxinaut
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
+system:
+  name: Goblin Toxinaut
+  keywords:
+  - Goblin
+  - Humanoid
+  - Mystic Goblin
+  level: 2
+  type: Horde
+  role: Controller
+  encounterValue: 4
+  characteristics:
+    might: -1
+    agility: 1
+    reason: 0
+    intuition: 1
+    presence: 2
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 4
+  immunity:
+    poison: 3
+items:
+- _id: HQvluBQGw9AxdlJx
+  _key: '!actors.items!A7Brtp9VKuQ3CqWd.HQvluBQGw9AxdlJx'
+  name: Toxic Winds
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Toxic Winds
+    isSignature: true
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      cube:
+        size: 4
+        within: 10
+    target:
+      text: Special
+      special: true
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+        damageType: poison
+        effect:
+          text: slide 1
+      tier2:
+        damage: 3
+        damageType: poison
+        effect:
+          text: slide 2
+      tier3:
+        damage: 5
+        damageType: poison
+        effect:
+          text: slide 3 1
+    postPowerRollEffect:
+      text: The area is filled with a green haze until the start of the toxinaut's
+        next turn or until the toxinaut is reduced to Stamina 0. The area is difficult
+        terrain for non-goblin creatures, and each such creature who moves within
+        the area takes 2 poison damage for each square moved. The poison damage ignores
+        immunity. The haze can't be dispersed by wind.
+- _id: 1jMmRwd14SXi6bMo
+  _key: '!actors.items!A7Brtp9VKuQ3CqWd.1jMmRwd14SXi6bMo'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Cunning
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The toxinaut doesn't provoke opportunity attacks from enemies by moving.
+        Whenever the toxinaut is adjacent to an enemy and willingly moves to a space
+        no longer adjacent to that enemy, the toxinaut can make an opportunity attack
+        against them as a triggered action.

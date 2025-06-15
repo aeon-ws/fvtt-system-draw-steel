@@ -1,5 +1,5 @@
 
-$devFolderPath = "c:/_/aeon/draw-steel-foundry";
+$devFolderPath = "c:/_/aeon/fvtt-system-draw-steel";
 $fvttAppPath = "C:/Program Files/Foundry Virtual Tabletop";
 $fvttDataPath = "C:/Users/MortenNystrupRasmuss/AppData/Local/FoundryVTT";
 
@@ -13,14 +13,14 @@ fvtt package pack `
     --inputDirectory "$devFolderPath/packs/_source/monsters" `
     --recursive `
     --yaml `
-    --outputDirectory "$devFolderPath/packs/monsters" `
+    --outputDirectory "$devFolderPath/packs" `
     --verbose;
 
-fvtt package pack `
-    --compendiumName "monster-abilities" `
-    --compendiumType Actor `
-    --inputDirectory "$devFolderPath/packs/_source/monster-abilities" `
-    --recursive `
-    --yaml `
-    --outputDirectory "$devFolderPath/packs/monster-abilities" `
-    --verbose;
+# fvtt package pack `
+#     --compendiumName "monster-abilities" `
+#     --compendiumType Actor `
+#     --inputDirectory "$devFolderPath/packs/_source/monster-abilities" `
+#     --recursive `
+#     --yaml `
+#     --outputDirectory "$devFolderPath/packs/monster-abilities" `
+#     --verbose;

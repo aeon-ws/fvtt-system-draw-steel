@@ -13,9 +13,34 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "paths": {
-      "@data/*": ["data/items/*", "data/models/*", "data/tokens/*"],
-      "@utils/*": ["utils/*"],
-      "@ui/*": ["ui/*", "ui/components/*", "ui/sheets/*", "ui/styles/*", "ui/token-hud/*"],
+      "@domain/*": ["domain/*"],
+      "@actor/*": ["domain/actor/*", "domain/actor/component/*"],
+      "@creature/*": [
+        "domain/actor/creature/*",
+        "domain/actor/creature/component/*",
+      ],
+      "@enemy/*": [
+        "domain/actor/creature/enemy/*",
+        "domain/actor/creature/enemy/component/*",
+      ],
+      "@minion/*": [
+        "domain/actor/creature/enemy/minion/*",
+        "domain/actor/creature/enemy/minion/component/*",
+        "domain/actor/creature/enemy/minion/component/hud/*"
+      ],
+      "@hero/*": [
+        "domain/actor/creature/hero/*",
+        "domain/actor/creature/hero/component/*"
+      ],
+      "@object/*": [
+        "domain/actor/object/*",
+        "domain/actor/object/component/*"
+      ],
+      "@mechanics/*": [
+        "domain/mechanics/power-roll/*",
+        "domain/mechanics/power-roll/component/*"
+      ],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src/**/*", "types"]

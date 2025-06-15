@@ -1,0 +1,404 @@
+_id: GjwddkgpQUJ1f2MP
+_key: '!actors!GjwddkgpQUJ1f2MP'
+name: Werewolf
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/werewolf-01.png
+prototypeToken:
+  name: Werewolf
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/werewolf-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
+system:
+  name: Werewolf
+  keywords:
+  - Accursed
+  - Humanoid
+  - Werebeast
+  level: 1
+  type: Solo
+  role: None
+  encounterValue: 36
+  characteristics:
+    might: 3
+    agility: 2
+    reason: -1
+    intuition: 1
+    presence: 1
+  stamina:
+    max: 200
+    value: 200
+  combat:
+    size: 1M
+    speed: 7
+    movementTypes:
+    - walk
+    stability: 0
+    freeStrikeDamage: 5
+items:
+- _id: NiMDf9R65b0vFXjk
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.NiMDf9R65b0vFXjk'
+  name: Solo Monster
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Solo Monster
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Solo Turns The werewolf takes up to two turns each round. They can't take
+        turns consecutively. End Effect At the end of their turn, the werewolf can
+        take 5 damage to end one save ends effect affecting them. This damage can't
+        be reduced in any way.
+- _id: gDmKHapkWu8vEb4j
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.gDmKHapkWu8vEb4j'
+  name: Shapeshifter
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Shapeshifter
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The werewolf enters combat in their hybrid humanoid form. Their shape
+        can't change via any effects beyond their own ability.
+- _id: vc2lm1MShJQPWZm7
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.vc2lm1MShJQPWZm7'
+  name: Shared Ferocity
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Shared Ferocity
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The Director gains 1d3 malice the first time a creature uses an ability
+        that costs ferocity while within line of effect of the werewolf.
+- _id: ArOEwGJPJtvz57bB
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.ArOEwGJPJtvz57bB'
+  name: Accursed Rage
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Accursed Rage
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The werewolf's ferocity is expressed through rage. Their abilities are
+        capable of inflicting rage points on enemies (excluding stormwight furies).
+        If a creature has 10 or more rage at the start of their turn, they expend
+        all of their rage, shift up to their speed towards the nearest creature, and
+        make a melee free strike against them. A creature that takes damage in this
+        way gains 1 rage. All accumulated rage disappears after completing a respite.
+- _id: w7DhIgiZX0bL0sIn
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.w7DhIgiZX0bL0sIn'
+  name: Accursed Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Accursed Bite
+    isSignature: true
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 9
+        effect:
+          text: 2 rage
+      tier2:
+        damage: 13
+        effect:
+          text: 4 rage
+      tier3:
+        damage: 16
+        effect:
+          text: 5 rage
+    maliceEffect:
+      text: 2 Malice The target has P<0 lycanthropy. The potency of this ability increases
+        by 1 each time the werewolf forces the same target to resist it.
+    postPowerRollEffect:
+      text: A creature afflicted with lycanthropy accumulates 2 rage at the end of
+        each of their turns whenever they're in combat. Their rage does not disappear
+        after completing a respite; they must complete the Find a Cure project to
+        end this condition.
+- _id: T49t3OVwgitM6prJ
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.T49t3OVwgitM6prJ'
+  name: Ripping Claws
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Ripping Claws
+    isSignature: false
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 2 creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 11
+        effect:
+          text: 1 rage
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 14
+        effect:
+          text: 3 rage
+        potencyEffect:
+          targetCharacteristic: might
+          value: 3
+          effect:
+            text: bleeding (save ends)
+- _id: yEV2SUUZIpPv20FZ
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.yEV2SUUZIpPv20FZ'
+  name: Berserker Slash
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Berserker Slash
+    maliceCost: 3
+    isSignature: false
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: mainAction
+    distance:
+      burst: 1
+    target:
+      text: All enemies and objects
+      enemy: true
+      object: true
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 4
+        effect:
+          text: push 2
+      tier2:
+        damage: 6
+        effect:
+          text: 1 rage
+      tier3:
+        damage: 7
+        effect:
+          text: 3 rage
+    postPowerRollEffect:
+      text: The werewolf shifts up to their speed before using this ability.
+- _id: 01yiJ4OgNBLa7R6m
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.01yiJ4OgNBLa7R6m'
+  name: Wall Leap
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Wall Leap
+    isSignature: false
+    keywords: []
+    type: maneuver
+    distance:
+      self: true
+    target:
+      text: Self
+      self: true
+    prePowerRollEffect:
+      text: The werewolf jumps 4 squares. If they end this movement at a wall, the
+        werewolf jumps off the wall 4 squares and makes a melee free strike that M<2
+        knocks the target prone.
+- _id: 9CBk75oiHfJq6d7x
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.9CBk75oiHfJq6d7x'
+  name: Facepalm and Head Slam
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Facepalm and Head Slam
+    maliceCost: 2
+    isSignature: false
+    keywords: []
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature
+      ally: true
+      self: true
+      enemy: true
+      count: 1
+    trigger: The target targets the werewolf with a melee ability after
+    prePowerRollEffect:
+      text: The target is knocked prone and takes 5 damage before executing the ability.
+- _id: jvEZBgl7htZyISfw
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.jvEZBgl7htZyISfw'
+  name: Vukenstep
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Vukenstep
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The werewolfignores difficult terrain.
+- _id: XHt0nrNFmuobA5XA
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.XHt0nrNFmuobA5XA'
+  name: Howl
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Howl
+    isSignature: false
+    keywords:
+    - Area
+    type: villainAction
+    villainActionOrdinal: 1
+    distance:
+      burst: 5
+    target:
+      text: All enemies
+      enemy: true
+    powerRoll:
+      tier1:
+        effect:
+          text: Target move 5 up to their speed away from the werewolf
+      tier2:
+        effect:
+          text: Frightened (EoT)
+      tier3:
+        effect:
+          text: no effect
+    prePowerRollEffect:
+      text: Each target makes an Intuition test.
+    postPowerRollEffect:
+      text: Enemies that have 1 or more rage gain 4 rage and howl along with the werewolf.
+- _id: x4Hcb68cXmsJ11FY
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.x4Hcb68cXmsJ11FY'
+  name: Full Wolf
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Full Wolf
+    isSignature: false
+    keywords: []
+    type: villainAction
+    villainActionOrdinal: 2
+    distance:
+      self: true
+    target:
+      text: Self
+      self: true
+    prePowerRollEffect:
+      text: The werewolf changes into a massive wolf, pushing adjacent creatures out
+        of their way and moving into a square that can accommodate their new size.
+        Until they die or the end of the encounter, their Speed is 10, their Size
+        is 3, and their Stability is 2. Each of the werewolf's strikes deal an additional
+        2 damage and inflict an additional 1 rage. The potency of the werewolf's Accursed
+        Bite increases by 1.
+- _id: lUPyKdOgEuro6SUy
+  _key: '!actors.items!GjwddkgpQUJ1f2MP.lUPyKdOgEuro6SUy'
+  name: Rampage
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Rampage
+    isSignature: false
+    keywords:
+    - Area
+    - Melee
+    - Weapon
+    type: villainAction
+    villainActionOrdinal: 3
+    distance:
+      burst: 2
+    target:
+      text: All creatures
+      ally: true
+      self: true
+      enemy: true
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 5
+        effect:
+          text: 2 rage
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: bleeding (save ends)
+      tier2:
+        damage: 8
+        effect:
+          text: 4 rage
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: bleeding (save ends)
+      tier3:
+        damage: 11
+        effect:
+          text: 8 rage
+        potencyEffect:
+          targetCharacteristic: might
+          value: 3
+          effect:
+            text: bleeding (save ends)
+    postPowerRollEffect:
+      text: The werewolf shifts up to their speed before and after using this ability.

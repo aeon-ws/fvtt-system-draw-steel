@@ -1,0 +1,211 @@
+_id: u66Gun4n1ecfemWO
+_key: '!actors!u66Gun4n1ecfemWO'
+name: Goblin Monarch
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/goblin-monarch-01.png
+prototypeToken:
+  name: Goblin Monarch
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-monarch-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
+system:
+  name: Goblin Monarch
+  keywords:
+  - Goblin
+  - Humanoid
+  level: 1
+  type: Leader
+  role: None
+  encounterValue: 12
+  characteristics:
+    might: 3
+    agility: 2
+    reason: -4
+    intuition: 0
+    presence: -3
+  stamina:
+    max: 86
+    value: 86
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+    - climb
+    stability: 1
+    freeStrikeDamage: 4
+items:
+- _id: 9ZYr5i7D7l3UQCbk
+  _key: '!actors.items!u66Gun4n1ecfemWO.9ZYr5i7D7l3UQCbk'
+  name: Handaxe
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Handaxe
+    isSignature: true
+    keywords:
+    - Melee
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+      ranged: 5
+    target:
+      text: 2 creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 7
+      tier2:
+        damage: 10
+      tier3:
+        damage: 13
+    postPowerRollEffect:
+      text: An ally within 10 of the monarch can make a free strike.
+- _id: 2kdXxZLBclhFrQ2L
+  _key: '!actors.items!u66Gun4n1ecfemWO.2kdXxZLBclhFrQ2L'
+  name: Get in Here!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Get in Here!
+    maliceCost: 1
+    isSignature: false
+    keywords: []
+    type: maneuver
+    distance:
+      ranged: 20
+    target:
+      text: Special
+      special: true
+    prePowerRollEffect:
+      text: Two goblin runners appear in unoccupied spaces.
+- _id: grlP50LPH4nTQmr0
+  _key: '!actors.items!u66Gun4n1ecfemWO.grlP50LPH4nTQmr0'
+  name: Meat Shield
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Meat Shield
+    isSignature: false
+    keywords: []
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: 1 ally
+      ally: true
+      count: 1
+    trigger: A creature targets the monarch with a strike.
+    prePowerRollEffect:
+      text: The ally becomes the target of the triggering strike instead.
+- _id: fuFlPIYnh5RewbJh
+  _key: '!actors.items!u66Gun4n1ecfemWO.fuFlPIYnh5RewbJh'
+  name: End Effect
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: End Effect
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: At the end of their turn, the monarch can take 5 damage to end one save
+        ends effect affecting them. This damage can't be reduced in any way.
+- _id: 8TmIcsL0UNc37BEc
+  _key: '!actors.items!u66Gun4n1ecfemWO.8TmIcsL0UNc37BEc'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Crafty
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The monarch doesn't provoke opportunity attacks by moving.
+- _id: 4TXD9JZeVvLyXhE8
+  _key: '!actors.items!u66Gun4n1ecfemWO.4TXD9JZeVvLyXhE8'
+  name: What Are You Waiting For?
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: What Are You Waiting For?
+    isSignature: false
+    keywords:
+    - Area
+    type: villainAction
+    villainActionOrdinal: 1
+    distance:
+      burst: 10
+    target:
+      text: Each ally
+      ally: true
+    prePowerRollEffect:
+      text: Each target can move up to their speed or make a free strike.
+- _id: bN7DMduGFHRwsSZ0
+  _key: '!actors.items!u66Gun4n1ecfemWO.bN7DMduGFHRwsSZ0'
+  name: Focus Fire
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Focus Fire
+    isSignature: false
+    keywords: []
+    type: villainAction
+    villainActionOrdinal: 2
+    distance:
+      ranged: 10
+    target:
+      text: 1 enemy or object
+      enemy: true
+      object: true
+      count: 1
+    prePowerRollEffect:
+      text: Each ally within 10 squares of the target can move up to their speed toward
+        the target.
+- _id: RwAvs1mJGsLqCd6X
+  _key: '!actors.items!u66Gun4n1ecfemWO.RwAvs1mJGsLqCd6X'
+  name: Kill!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Kill!
+    isSignature: false
+    keywords: []
+    type: villainAction
+    villainActionOrdinal: 3
+    distance:
+      special: true
+    target:
+      text: Special
+      special: true
+    prePowerRollEffect:
+      text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
+        them.

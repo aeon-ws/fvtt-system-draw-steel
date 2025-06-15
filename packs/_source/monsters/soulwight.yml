@@ -1,0 +1,141 @@
+_id: anbBWrpaG23R32bJ
+_key: '!actors!anbBWrpaG23R32bJ'
+name: Soulwight
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/soulwight-01.png
+prototypeToken:
+  name: Soulwight
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/soulwight-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
+system:
+  name: Soulwight
+  keywords:
+  - Undead
+  level: 1
+  type: Horde
+  role: Hexer
+  encounterValue: 3
+  characteristics:
+    might: 2
+    agility: 1
+    reason: 0
+    intuition: 0
+    presence: 1
+  stamina:
+    max: 10
+    value: 10
+  combat:
+    size: 1M
+    speed: 5
+    movementTypes:
+    - walk
+    stability: 0
+    freeStrikeDamage: 1
+  immunity:
+    corruption: 1
+    poison: 1
+items:
+- _id: Da2tyKq9edpIjKpc
+  _key: '!actors.items!anbBWrpaG23R32bJ.Da2tyKq9edpIjKpc'
+  name: Soulstealer Longsword
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Soulstealer Longsword
+    isSignature: true
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+        damageType: corruption
+      tier2:
+        damage: 4
+        damageType: corruption
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 5
+        damageType: corruption
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: slowed and weakened save ends
+    postPowerRollEffect:
+      text: The target appears to rapidly age each time they take damage from this
+        ability. The target regains their former appearance when the soulwight is
+        destroyed.
+- _id: PMnKACwto1JeyKe4
+  _key: '!actors.items!anbBWrpaG23R32bJ.PMnKACwto1JeyKe4'
+  name: Stolen Vitality
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Stolen Vitality
+    maliceCost: 3
+    isSignature: false
+    keywords:
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      ranged: 5
+    target:
+      text: 1 ally
+      ally: true
+      count: 1
+    prePowerRollEffect:
+      text: The target regains 10 Stamina. The soulwight can't use this maneuver again
+        until they strike a creature with their lifestealer longsword.
+- _id: rXc6UG8k9BSB3Q97
+  _key: '!actors.items!anbBWrpaG23R32bJ.rXc6UG8k9BSB3Q97'
+  name: Arise
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Arise
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The first time the soulwight is reduced to Stamina 0 by damage that isn't
+        fire damage or holy damage and their body isn't destroyed, they 1 Stamina
+        and fall prone.

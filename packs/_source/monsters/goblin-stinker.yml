@@ -1,0 +1,131 @@
+_id: uBs4AJYI8TkVTiAO
+_key: '!actors!uBs4AJYI8TkVTiAO'
+name: Goblin Stinker
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/goblin-stinker-01.png
+prototypeToken:
+  name: Goblin Stinker
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-stinker-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
+system:
+  name: Goblin Stinker
+  keywords:
+  - Goblin
+  - Humanoid
+  level: 1
+  type: Horde
+  role: Controller
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 1
+    reason: 0
+    intuition: 0
+    presence: 2
+  stamina:
+    max: 10
+    value: 10
+  combat:
+    size: 1S
+    speed: 5
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 1
+items:
+- _id: LpLQRcKA2eSJHLys
+  _key: '!actors.items!uBs4AJYI8TkVTiAO.LpLQRcKA2eSJHLys'
+  name: Toxic Winds
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Toxic Winds
+    isSignature: true
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      cube:
+        size: 3
+        within: 15
+    target:
+      text: Each enemy
+      enemy: true
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 1
+        damageType: poison
+        effect:
+          text: slide 1
+      tier2:
+        damage: 2
+        damageType: poison
+        effect:
+          text: slide 2
+      tier3:
+        damage: 3
+        damageType: poison
+        effect:
+          text: slide 3 1
+- _id: bys4OnZT2T4V74aM
+  _key: '!actors.items!uBs4AJYI8TkVTiAO.bys4OnZT2T4V74aM'
+  name: Swamp Gas
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Swamp Gas
+    isSignature: false
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      cube:
+        size: 3
+        within: 10
+    target:
+      text: Special
+      special: true
+    prePowerRollEffect:
+      text: The area is filled with a green haze until the start of the stinker's
+        next turn or until the stinker is reduced to Stamina 0. The area is difficult
+        terrain for non-goblin creatures, and each such creature who moves within
+        the area takes 2 poison damage for each square moved. The haze can't be dispersed
+        by wind.
+- _id: saUClPu8F467ksOJ
+  _key: '!actors.items!uBs4AJYI8TkVTiAO.saUClPu8F467ksOJ'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Crafty
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The stinker doesn't provoke opportunity attacks by moving.

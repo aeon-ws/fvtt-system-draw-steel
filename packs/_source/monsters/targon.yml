@@ -1,0 +1,186 @@
+_id: 1BgvccKOVVV38OSc
+_key: '!actors!1BgvccKOVVV38OSc'
+name: Targon
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/targon-01.png
+prototypeToken:
+  name: Targon
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/targon-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
+system:
+  name: Targon
+  keywords:
+  - Humanoid
+  - Human
+  - Rival
+  level: 2
+  type: Elite
+  role: Artillery
+  encounterValue: 16
+  characteristics:
+    might: 2
+    agility: 0
+    reason: 1
+    intuition: 0
+    presence: 0
+  stamina:
+    max: 60
+    value: 60
+  combat:
+    size: 1M
+    speed: 5
+    movementTypes:
+    - walk
+    stability: 2
+    freeStrikeDamage: 5
+items:
+- _id: WHJ0HwgCuggGkFYN
+  _key: '!actors.items!1BgvccKOVVV38OSc.WHJ0HwgCuggGkFYN'
+  name: Dual Targeting Shot
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Dual Targeting Shot
+    isSignature: true
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: 2 creatures or objects
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 2
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 7
+      tier2:
+        damage: 11
+      tier3:
+        damage: 14
+    maliceEffect:
+      text: 2 Malice Two allies within distance can make a free strike against one
+        of the targets.
+- _id: IvWVyhQolnBMbbbQ
+  _key: '!actors.items!1BgvccKOVVV38OSc.IvWVyhQolnBMbbbQ'
+  name: I'll Cover You!
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: I'll Cover You!
+    maliceCost: 3
+    isSignature: false
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 5
+    target:
+      text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 8
+        potencyEffect:
+          targetCharacteristic: might
+          value: 0
+          effect:
+            text: weakened (save ends)
+      tier2:
+        damage: 13
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: weakened (save ends)
+      tier3:
+        damage: 16
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: weakened (save ends)
+    postPowerRollEffect:
+      text: An ally adjacent to the target regains 5 Stamina.
+- _id: Xbdpq2wTdwO7nSBX
+  _key: '!actors.items!1BgvccKOVVV38OSc.Xbdpq2wTdwO7nSBX'
+  name: Overwatch
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Overwatch
+    isSignature: false
+    keywords:
+    - Ranged
+    type: triggeredAction
+    distance:
+      ranged: 10
+    target:
+      text: 1 enemy
+      enemy: true
+      count: 1
+    trigger: The target moves.
+    prePowerRollEffect:
+      text: At any point during the movement, Targon makes a free strike against the
+        target.
+- _id: WakDdIS2PLct8vVk
+  _key: '!actors.items!1BgvccKOVVV38OSc.WakDdIS2PLct8vVk'
+  name: Determination
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Determination
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: f Targon is frightened, slowed, or weakened, he can use a maneuver to
+        end the condition.
+- _id: 77x2gxzECE6vrSZI
+  _key: '!actors.items!1BgvccKOVVV38OSc.77x2gxzECE6vrSZI'
+  name: Rivalry
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Rivalry
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Targon selects one creature within line of effect at the start of an encounter.
+        Both Targon and the creature can add a 1d3 to all power rolls made against
+        each other.

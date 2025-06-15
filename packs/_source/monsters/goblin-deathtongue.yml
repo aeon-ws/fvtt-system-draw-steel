@@ -1,0 +1,160 @@
+_id: 58qodv9QknnXDb0k
+_key: '!actors!58qodv9QknnXDb0k'
+name: Goblin Deathtongue
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
+prototypeToken:
+  name: Goblin Deathtongue
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
+system:
+  name: Goblin Deathtongue
+  keywords:
+  - Goblin
+  - Humanoid
+  - Mystic Goblin
+  level: 2
+  type: Horde
+  role: Hexer
+  encounterValue: 4
+  characteristics:
+    might: -1
+    agility: 2
+    reason: 0
+    intuition: 2
+    presence: 0
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 2
+items:
+- _id: yK5hiH1PbmCPgEjU
+  _key: '!actors.items!58qodv9QknnXDb0k.yK5hiH1PbmCPgEjU'
+  name: Gaze of Surlach
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Gaze of Surlach
+    isSignature: true
+    keywords:
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 15
+    target:
+      text: 1 creature
+      ally: true
+      self: true
+      enemy: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+        damageType: corruption
+        effect:
+          text: 0 weakened (save ends)
+      tier2:
+        damage: 5
+        damageType: corruption
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: weakened (save ends)
+      tier3:
+        damage: 7
+        damageType: corruption
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: slowed and weakened (save ends)
+- _id: ghuQyX1EAt1mMya4
+  _key: '!actors.items!58qodv9QknnXDb0k.ghuQyX1EAt1mMya4'
+  name: Dizzying Hex
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Dizzying Hex
+    isSignature: false
+    keywords:
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      ranged: 10
+    target:
+      text: 1 creature
+      ally: true
+      self: true
+      enemy: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 0
+          effect:
+            text: prone
+      tier2:
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 1
+          effect:
+            text: prone can't stand (EoT)
+      tier3:
+        effect:
+          text: prone
+        potencyEffect:
+          targetCharacteristic: intuition
+          value: 2
+          effect:
+            text: and can't stand (save ends)
+- _id: 63ZB51jVNkUym7YO
+  _key: '!actors.items!58qodv9QknnXDb0k.63ZB51jVNkUym7YO'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Cunning
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The deathtongue doesn't provoke opportunity attacks from enemies by moving.
+        Whenever the deathtongue is adjacent to an enemy and willingly moves to a
+        space no longer adjacent to that enemy, the deathtongue can make an opportunity
+        attack against them as a triggered action.

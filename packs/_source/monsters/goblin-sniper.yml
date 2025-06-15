@@ -1,0 +1,104 @@
+_id: TUVpyQkzRs0xB1SU
+_key: '!actors!TUVpyQkzRs0xB1SU'
+name: Goblin Sniper
+type: minion
+img: systems/aeon-draw-steel/images/monsters/goblin-sniper-01.png
+prototypeToken:
+  name: Goblin Sniper
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-sniper-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.2
+      texture: null
+system:
+  name: Goblin Sniper
+  keywords:
+  - Goblin
+  - Humanoid
+  level: 1
+  type: Minion
+  role: Artillery
+  encounterValue: 3
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 3
+    perMinion: 3
+    value: 3
+  combat:
+    size: 1S
+    speed: 5
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 2
+  derivedCaptainBonuses:
+    rangedDistanceBonus: 5
+items:
+- _id: AJBiDMCsVejuxxdn
+  _key: '!actors.items!TUVpyQkzRs0xB1SU.AJBiDMCsVejuxxdn'
+  name: Bow
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Bow
+    isSignature: true
+    keywords:
+    - Ranged
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 10
+    target:
+      text: 1 creature or object per minion
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+    postPowerRollEffect:
+      text: If the sniper doesn't use a move action this turn, the ability has an
+        edge.
+- _id: 9QbvNeKfyqsJPFLL
+  _key: '!actors.items!TUVpyQkzRs0xB1SU.9QbvNeKfyqsJPFLL'
+  name: Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Crafty
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The sniper doesn't provoke opportunity attacks by moving.

@@ -1,0 +1,277 @@
+_id: G2zdSK2TcOQ9441m
+_key: '!actors!G2zdSK2TcOQ9441m'
+name: Ghost
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/ghost-01.png
+prototypeToken:
+  name: Ghost
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/ghost-01.png
+  appendNumber: false
+  ring:
+    enabled: true
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.0
+      texture: null
+system:
+  name: Ghost
+  keywords:
+  - Undead
+  level: 1
+  type: Leader
+  role: None
+  encounterValue: 12
+  characteristics:
+    might: -2
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: 3
+  stamina:
+    max: 80
+    value: 80
+  combat:
+    size: 1M
+    speed: 6
+    movementTypes:
+    - fly
+    - hover
+    stability: 1
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 3
+    poison: 3
+items:
+- _id: bW6tV0QVtJ2DZDt2
+  _key: '!actors.items!G2zdSK2TcOQ9441m.bW6tV0QVtJ2DZDt2'
+  name: Heat Death
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Heat Death
+    isSignature: true
+    keywords:
+    - Magic
+    - Ranged
+    - Strike
+    type: mainAction
+    distance:
+      ranged: 5
+    target:
+      text: 2 creatures
+      ally: true
+      self: true
+      enemy: true
+      count: 2
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 7
+        damageType: cold
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 1
+          effect:
+            text: slowed (save ends)
+      tier2:
+        damage: 10
+        damageType: cold
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 2
+          effect:
+            text: slowed (save ends)
+      tier3:
+        damage: 13
+        damageType: cold
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 3
+          effect:
+            text: slowed save ends
+    postPowerRollEffect:
+      text: The next strike made against the target has an edge.
+- _id: HdFA9En23cQVecDr
+  _key: '!actors.items!G2zdSK2TcOQ9441m.HdFA9En23cQVecDr'
+  name: Haunt
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Haunt
+    isSignature: false
+    keywords:
+    - Ranged
+    type: maneuver
+    distance:
+      self: true
+    target:
+      text: Self or 1 incorporeal ally
+      self: true
+      ally: true
+      count: 1
+    prePowerRollEffect:
+      text: The target shifts up to their speed.
+    maliceEffect:
+      text: 2 Malice The ghost chooses one additional target.
+- _id: QSiz3TLi56OjxLuM
+  _key: '!actors.items!G2zdSK2TcOQ9441m.QSiz3TLi56OjxLuM'
+  name: Shriek
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Shriek
+    maliceCost: 1
+    isSignature: false
+    keywords:
+    - Magic
+    type: triggeredAction
+    distance:
+      melee: 1
+    target:
+      text: The triggering creature
+      ally: true
+      self: true
+      enemy: true
+    trigger: A creature within distance targets the ghost with a strike.
+    prePowerRollEffect:
+      text: The ghost halves the incoming damage and the target takes 2 sonic damage.
+- _id: Yg0Eu8EDfzoaI9lG
+  _key: '!actors.items!G2zdSK2TcOQ9441m.Yg0Eu8EDfzoaI9lG'
+  name: Phantom Flow
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Phantom Flow
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: Each incorporeal undead creature within 10 squares of the ghost ignores
+        difficult terrain.
+- _id: BL6OfvhRvAsEPQTK
+  _key: '!actors.items!G2zdSK2TcOQ9441m.BL6OfvhRvAsEPQTK'
+  name: Paranormal Activity
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Paranormal Activity
+    isSignature: false
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    villainActionOrdinal: 1
+    distance:
+      burst: 5
+    target:
+      text: Each size 1S or larger object
+      object: true
+      count: 1
+    prePowerRollEffect:
+      text: Each target floats 1 square into the air and is pulled 5 squares toward
+        the nearest enemy within 3 squares of them.
+- _id: 64rZGOgQWRxENHZM
+  _key: '!actors.items!G2zdSK2TcOQ9441m.64rZGOgQWRxENHZM'
+  name: Spirited Away
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Spirited Away
+    isSignature: false
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    villainActionOrdinal: 2
+    distance:
+      burst: 5
+    target:
+      text: Each enemy
+      enemy: true
+    powerRoll:
+      bonus: 2
+      tier1:
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 1
+          effect:
+            text: levitated (EoT)
+      tier2:
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 2
+          effect:
+            text: levitated (EoT)
+      tier3:
+        potencyEffect:
+          targetCharacteristic: presence
+          value: 3
+          effect:
+            text: levitated (EoE)
+    postPowerRollEffect:
+      text: A levitated target floats 1 square off the ground when they are first
+        affected, then rises 1 square at the end of each of their turns. If a levitated
+        target can't already fly, they can fly but are slowed and weakened while flying
+        in this way.
+- _id: kEPIilE60JbRUHzl
+  _key: '!actors.items!G2zdSK2TcOQ9441m.kEPIilE60JbRUHzl'
+  name: Awful Wail
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Awful Wail
+    isSignature: false
+    keywords:
+    - Area
+    - Magic
+    type: villainAction
+    villainActionOrdinal: 3
+    distance:
+      burst: 5
+    target:
+      text: Each enemy
+      enemy: true
+    powerRoll:
+      bonus: 3
+      tier1:
+        damage: 3
+        damageType: sonic
+      tier2:
+        damage: 5
+        damageType: sonic
+      tier3:
+        damage: 8
+        damageType: sonic
+    postPowerRollEffect:
+      text: P<2 the target is reduced to 1 Stamina if they are winded after taking
+        damage.
+- _id: 49sKJZU9Ob4YeZAv
+  _key: '!actors.items!G2zdSK2TcOQ9441m.49sKJZU9Ob4YeZAv'
+  name: Corruptive Phasing
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Corruptive Phasing
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The ghost can move through other creatures and objects at normal speed.
+        The first time in a round that the ghost passes through a creature, that creature
+        takes 2 corruption damage. The ghost doesn't take damage from being force
+        moved into objects. -
