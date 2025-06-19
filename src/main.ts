@@ -2,7 +2,7 @@
 
 import { HeroData } from "@hero/heroData";
 import { EnemyData } from "@enemy/enemyData";
-import { clearSquadHighlights, highlightSquad, MinionSquad } from "@minion/minionSquad";
+import { clearSquadSymbol, addSquadSymbolToSquad, MinionSquad } from "@minion/minionSquad";
 import { IMinionData, MinionData } from "@minion/minionData";
 import { HeroSheet } from "@hero/heroSheet";
 import { EnemySheet } from "@enemy/enemySheet";
@@ -164,13 +164,13 @@ Hooks.on("hoverToken", async (token: Token, hovered: boolean) => {
     const minionOrEnemy = asEnemyToken(token.document) || asMinionToken(token.document);
     if (minionOrEnemy) {
         if (hovered) {
-            clearSquadHighlights();
-            highlightSquad(token.scene, minionOrEnemy);
+            clearSquadSymbol();
+            addSquadSymbolToSquad(token.scene, minionOrEnemy);
             return;
         }
     }
 
-    clearSquadHighlights();
+    clearSquadSymbol();
 });
 
 Hooks.on("createActor", async (actor: Actor) => {

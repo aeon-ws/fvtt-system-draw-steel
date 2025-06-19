@@ -17,6 +17,8 @@ export function AddMinionToSquadButton({ contextMinion }: IMinionControlsProps):
 
         // Clone the context minion token.
         const protoData = foundry.utils.deepClone(contextMinion.tokenDocument.toObject());
+        console.log("AddMinionToSquadButton | onAddMinionButtonClick | contextMinion:", contextMinion);
+        console.log("AddMinionToSquadButton | onAddMinionButtonClick | game.scenes!.active!.tokens.contents:", game.scenes!.active!.tokens.contents);
         const tokenDocumentsOfTypeInScene = game.scenes!.active!.tokens.contents.filter(token => token!.actor!.id === contextMinion.actor.id);
         const minionNumbersInUseInScene = tokenDocumentsOfTypeInScene.map(td => td.name.replace(new RegExp("[^0-9]", "gi"), ""));
         console.log("AddMinionToSquadButton | onAddMinionButtonClick | minionNumbersInUseInScene:", minionNumbersInUseInScene);

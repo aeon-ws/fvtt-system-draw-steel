@@ -30,7 +30,7 @@ export class ActorToken extends Token {
         }
 
         if (!this.nameplate) {
-            this.nameplate = new PreciseText();
+            this.nameplate = new PIXI.Text();
         }
         // console.log("Aeon-Draw-Steel | Setting token nameplate style.");
         this.nameplate.style = new PIXI.TextStyle({
@@ -90,9 +90,9 @@ export class ActorToken extends Token {
         parentTokenHeight: number
     ): void {
         parent.removeChildren();
+        parent.zIndex = 3;
 
         const bar = new PIXI.Graphics();
-
         const segmentFraction = 1 / segmentCount;
         const barHeight = Math.max(17, Math.floor(parentTokenHeight * 0.10));
         const barWidth = parentTokenWidth - 2;

@@ -6,39 +6,37 @@ import { IMinionData } from "@minion/minionData";
 
 // Global map to store current squad highlights.
 // Effectively available for the duration of the current user session.
-const CurrentSquadHighlights = new Map<string, PIXI.Graphics>();
+const CurrentSquadHighlights = new Map<string, PIXI.Text>();
 
-export function clearSquadHighlights() {
+export function clearSquadSymbol() {
     for (let [_, highlight] of CurrentSquadHighlights.entries()) {
         if (highlight.parent) highlight.parent.removeChild(highlight);
     }
     CurrentSquadHighlights.clear();
 }
 
-export function addSquadHighlight(canvasToken: Token | null | undefined, isEnemyToken: boolean = false) {
+export function addSquadSymbolToToken(canvasToken: Token | null | undefined, isEnemyToken: boolean = false) {
     if (!canvasToken) return;
 
-    const highlight = new PIXI.Graphics();
-    if (isEnemyToken) {
-        highlight.lineStyle(8, 0xffcc00, 1);
-        highlight.drawRect(5, 5, canvasToken.w - 10, canvasToken.h - 10);
+    const textStyle = new PIXI.TextStyle({
+        fill: 0xffaa00,
+        fontFamily: "Font Awesome 6 Pro",
+        fontSize: 24,
+        fontWeight: "400",
+        stroke: "#000000",
+        strokeThickness: 2,
+    });
+    const symbol = new PIXI.Text(isEnemyToken ? "\uf6a5" : "\uf500", textStyle);
+    symbol.anchor.set(1, 0);
+    symbol.position.set(canvasToken.w - 5, 5);
+    symbol.zIndex = 3;
 
-        highlight.lineStyle(2, 0x000000, 1);
-        highlight.drawRect(5, 5, canvasToken.w - 10, canvasToken.h - 10);
-    }
-    else {
-        highlight.lineStyle(4, 0xffcc00, 1);
-        highlight.drawRect(2, 2, canvasToken.w - 4, canvasToken.h - 4);
-    }
-    highlight.endFill();
-
-    // Make sure it appears below the normal selection frame.
-    canvasToken.addChildAt(highlight, 0);
-    CurrentSquadHighlights.set(canvasToken.id, highlight);
+    canvasToken.addChildAt(symbol, 0);
+    CurrentSquadHighlights.set(canvasToken.id, symbol);
 }
 
-export function highlightSquad(scene: Scene, contextEnemyOrMinion: EnemyTokenDocument | MinionTokenDocument) {
-    clearSquadHighlights();
+export function addSquadSymbolToSquad(scene: Scene, contextEnemyOrMinion: EnemyTokenDocument | MinionTokenDocument) {
+    clearSquadSymbol();
 
     const contextSquadId = contextEnemyOrMinion.data.squadId;
     if (!scene || !contextEnemyOrMinion.id || !contextSquadId) return;
@@ -51,7 +49,7 @@ export function highlightSquad(scene: Scene, contextEnemyOrMinion: EnemyTokenDoc
         if (!currentSquadId) return;
 
         if (currentSquadId === contextSquadId) {
-            addSquadHighlight(currentEnemyOrMinion?.tokenDocument.object, isEnemyToken(currentEnemyOrMinion.tokenDocument));
+            addSquadSymbolToToken(currentEnemyOrMinion?.tokenDocument.object, isEnemyToken(currentEnemyOrMinion.tokenDocument));
         }
     });
 }
