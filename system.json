@@ -1,7 +1,7 @@
 {
   "id": "aeon-draw-steel",
   "title": "Aeon Draw Steel",
-  "version": "v0.1.4",
+  "version": "v0.1.5",
   "description": "Unofficial Foundry VTT system for Draw Steel (Powered by Draw Steel).",
   "authors": [
     {
@@ -81,5 +81,5 @@
     "distance": 1,
     "units": "sq"
   },
-  "download": "https://github.com/aeon-ws/fvtt-system-draw-steel/releases/download/v0.1.4/fvtt-system-draw-steel.zip"
+  "download": "https://github.com/aeon-ws/fvtt-system-draw-steel/releases/download/v0.1.5/fvtt-system-draw-steel.zip"
 }
