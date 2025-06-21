@@ -1,5 +1,5 @@
-_id: eTHzQQiwlfHh6Lun
-_key: '!actors!eTHzQQiwlfHh6Lun'
+_id: cQ8hK9w6cbPOZaxz
+_key: '!actors!cQ8hK9w6cbPOZaxz'
 name: Bugbear Channeler
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/bugbear-channeler-01.webp
@@ -56,8 +56,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: La6uzDs2RGv9O38G
-  _key: '!actors.items!eTHzQQiwlfHh6Lun.La6uzDs2RGv9O38G'
+- _id: ui0zKYAwDGUrF7ug
+  _key: '!actors.items!cQ8hK9w6cbPOZaxz.ui0zKYAwDGUrF7ug'
   name: Shadow Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
     postPowerRollEffect:
       text: Each square that a target is pulled through becomes difficult terrain
         for enemies.
-- _id: O5XwbhZug3lB4k88
-  _key: '!actors.items!eTHzQQiwlfHh6Lun.O5XwbhZug3lB4k88'
+- _id: 497Qd2vQEsIAZpg3
+  _key: '!actors.items!cQ8hK9w6cbPOZaxz.497Qd2vQEsIAZpg3'
   name: Blistering Element
   type: monsterAbility
   img: icons/svg/book.svg
@@ -138,8 +138,8 @@ items:
     postPowerRollEffect:
       text: The channeler chooses one of the following damage types for the damage
         acid, cold, corruption, fire, or poison.
-- _id: R25VZZQavEkiR35c
-  _key: '!actors.items!eTHzQQiwlfHh6Lun.R25VZZQavEkiR35c'
+- _id: FF5TfUDCd089vJV7
+  _key: '!actors.items!cQ8hK9w6cbPOZaxz.FF5TfUDCd089vJV7'
   name: Twist Shape
   type: monsterAbility
   img: icons/svg/book.svg
@@ -189,8 +189,8 @@ items:
       text: A shapechanged creature has their limbs violently stretched and their
         skin becomes paper thin. They are slowed and have fire weakness 10 while they
         have this effect.
-- _id: Hy2XeXSfg4HTPnfc
-  _key: '!actors.items!eTHzQQiwlfHh6Lun.Hy2XeXSfg4HTPnfc'
+- _id: KKZmGCqvGNHw6QFG
+  _key: '!actors.items!cQ8hK9w6cbPOZaxz.KKZmGCqvGNHw6QFG'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -212,8 +212,8 @@ items:
     prePowerRollEffect:
       text: Vertical push 3. An ally target doesn't take damage from being force moved.
         Catcher (Free Triggered Action channeler. The target is grabbed by the channeler.
-- _id: kd0PyIKIEMPZh1Of
-  _key: '!actors.items!eTHzQQiwlfHh6Lun.kd0PyIKIEMPZh1Of'
+- _id: 3Yv01EW0nh4vtAWn
+  _key: '!actors.items!cQ8hK9w6cbPOZaxz.3Yv01EW0nh4vtAWn'
   name: Shadow Veil
   type: monsterAbility
   img: icons/svg/book.svg

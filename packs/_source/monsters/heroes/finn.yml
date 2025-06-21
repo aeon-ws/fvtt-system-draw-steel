@@ -1,0 +1,49 @@
+_id: i04G2DxC7Clbi002
+_key: "!actors!i04G2DxC7Clbi002"
+name: Finn
+type: hero
+img: systems/aeon-draw-steel/images/monsters/skeleton-01.webp
+prototypeToken:
+  name: Finn
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: heroicResource
+  disposition: 1
+  actorLink: true
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/skeleton-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+system:
+  name: Finn
+  keywords:
+    - Riverfolk
+    - Humanoid
+  level: 1
+  characteristics:
+    might: -1
+    agility: 2
+    reason: 1
+    intuition: 2
+    presence: 1
+  stamina:
+    max: 21
+    value: 21
+  recovery:
+    recoveryValue: 7
+    recoveriesMax: 8
+    recoveriesCurrent: 8
+  combat:
+    size: 1S
+    speed: 8
+    movementTypes:
+      - walk
+    stability: 0
+items:

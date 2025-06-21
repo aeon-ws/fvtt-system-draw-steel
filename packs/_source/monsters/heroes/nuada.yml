@@ -1,0 +1,51 @@
+_id: i04G2DxC7Clbi003
+_key: '!actors!i04G2DxC7Clbi003'
+name: Nuada
+type: hero
+img: systems/aeon-draw-steel/images/monsters/skeleton-01.webp
+prototypeToken:
+  name: Nuada
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: heroicResource
+  disposition: 1
+  actorLink: true
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/skeleton-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+system:
+  name: Nuada
+  keywords:
+  - Elf
+  - Humanoid
+  level: 1
+  characteristics:
+    might: 2
+    agility: 1
+    reason: 0
+    intuition: 0
+    presence: 2
+  stamina:
+    max: 30
+    value: 30
+  recovery:
+    recoveryValue: 10
+    recoveriesMax: 12
+    recoveriesCurrent: 12
+  combat:
+    size: 1M
+    speed: 5
+    movementTypes:
+    - walk
+    stability: 2
+  immunity:
+    corruption: 3
+items:

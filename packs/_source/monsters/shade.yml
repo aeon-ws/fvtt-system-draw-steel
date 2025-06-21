@@ -1,5 +1,5 @@
-_id: mKb2zympZb1n6UnP
-_key: '!actors!mKb2zympZb1n6UnP'
+_id: 4kPerp6SNjaFlpdy
+_key: '!actors!4kPerp6SNjaFlpdy'
 name: Shade
 type: minion
 img: systems/aeon-draw-steel/images/monsters/shade-01.webp
@@ -60,8 +60,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: B3XAZXiHZySp4gbJ
-  _key: '!actors.items!mKb2zympZb1n6UnP.B3XAZXiHZySp4gbJ'
+- _id: suEdXCGWfXeHHVhS
+  _key: '!actors.items!4kPerp6SNjaFlpdy.suEdXCGWfXeHHVhS'
   name: Life Drain
   type: monsterAbility
   img: icons/svg/book.svg

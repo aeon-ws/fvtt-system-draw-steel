@@ -1,5 +1,5 @@
-_id: xqKVJZEmAKbc2VAF
-_key: '!actors!xqKVJZEmAKbc2VAF'
+_id: e7U3shL7cgxG5zlU
+_key: '!actors!e7U3shL7cgxG5zlU'
 name: War Spider
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/war-spider-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 4
 items:
-- _id: 3dOXtTKngkNmcL3r
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.3dOXtTKngkNmcL3r'
+- _id: hPXsZKT3jffCtt2c
+  _key: '!actors.items!e7U3shL7cgxG5zlU.hPXsZKT3jffCtt2c'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
             text: weakened (save ends)
     maliceEffect:
       text: 2 Malice M<3 weakened (save ends).
-- _id: yHAVv8Q8pHbOeHrH
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.yHAVv8Q8pHbOeHrH'
+- _id: YVKE9cXneFuTkt1X
+  _key: '!actors.items!e7U3shL7cgxG5zlU.YVKE9cXneFuTkt1X'
   name: Leg Blade
   type: monsterAbility
   img: icons/svg/book.svg
@@ -124,8 +124,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: qxAQrod7wPK4ZclX
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.qxAQrod7wPK4ZclX'
+- _id: qdlOPJUWw8aY3h9F
+  _key: '!actors.items!e7U3shL7cgxG5zlU.qdlOPJUWw8aY3h9F'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
       text: The spider shifts up to their speed and makes a Leg Blade strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: epwNyG4coZRpTqeZ
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.epwNyG4coZRpTqeZ'
+- _id: YJxSlmAlhNX4bFEj
+  _key: '!actors.items!e7U3shL7cgxG5zlU.YJxSlmAlhNX4bFEj'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -179,8 +179,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: Xc4jOsCrL5ta5BMg
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.Xc4jOsCrL5ta5BMg'
+- _id: 4yMpYMReRv8iXz1o
+  _key: '!actors.items!e7U3shL7cgxG5zlU.4yMpYMReRv8iXz1o'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -198,8 +198,8 @@ items:
     prePowerRollEffect:
       text: The spider halves the damage, and then shifts 2 squares after the triggering
         effect resolves.
-- _id: hhX2Er5v6tLMtZRB
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.hhX2Er5v6tLMtZRB'
+- _id: g3aR29pMOo7XEvRq
+  _key: '!actors.items!e7U3shL7cgxG5zlU.g3aR29pMOo7XEvRq'
   name: Ride Launcher
   type: monsterAbility
   img: icons/svg/book.svg
@@ -212,8 +212,8 @@ items:
       text: An ally who leaps off the back of the spider can jump up to 6 squares
         without a test, and takes no damage if they fall during the jump. After the
         jump, the first melee strike an ally makes on the same turn gains an edge.
-- _id: xQ6Pz2CoSMKkmkrB
-  _key: '!actors.items!xqKVJZEmAKbc2VAF.xQ6Pz2CoSMKkmkrB'
+- _id: 1m9F75wtXX8SRvFE
+  _key: '!actors.items!e7U3shL7cgxG5zlU.1m9F75wtXX8SRvFE'
   name: Wide Back
   type: monsterAbility
   img: icons/svg/book.svg

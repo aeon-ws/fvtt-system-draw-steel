@@ -1,5 +1,5 @@
-_id: zkeiNRpuUQhHBYMQ
-_key: '!actors!zkeiNRpuUQhHBYMQ'
+_id: fP7ViMGKfiYfW1a1
+_key: '!actors!fP7ViMGKfiYfW1a1'
 name: Human Bandit Chief
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-bandit-chief-01.webp
@@ -57,8 +57,8 @@ system:
     corruption: 4
     psychic: 4
 items:
-- _id: h04WdEFWTSkVpuBj
-  _key: '!actors.items!zkeiNRpuUQhHBYMQ.h04WdEFWTSkVpuBj'
+- _id: fMNJvys1ajXyGh3q
+  _key: '!actors.items!fP7ViMGKfiYfW1a1.fMNJvys1ajXyGh3q'
   name: Whip Magic Longsword
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
     postPowerRollEffect:
       text: A target who is adjacent to the bandit chief after the ability resolves
         takes 5 corruption damage.
-- _id: 0GXbi1DqEiCuTjXm
-  _key: '!actors.items!zkeiNRpuUQhHBYMQ.0GXbi1DqEiCuTjXm'
+- _id: 8qrfKuGs55X7TSeC
+  _key: '!actors.items!fP7ViMGKfiYfW1a1.8qrfKuGs55X7TSeC'
   name: Bloodstones
   type: monsterAbility
   img: icons/svg/book.svg
@@ -115,8 +115,8 @@ items:
     prePowerRollEffect:
       text: The bandit chief takes 9 corruption damage and increases the result of
         the power roll by one tier.
-- _id: w9t0MS61GgTrKPhM
-  _key: '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM'
+- _id: kW20zgwgqfWEZyIq
+  _key: '!actors.items!fP7ViMGKfiYfW1a1.kW20zgwgqfWEZyIq'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, the bandit chief can take 5 damage to end one
         save ends effect affecting them. This damage can't be reduced in any way.
-- _id: KuY32LjYk0JNC7T6
-  _key: '!actors.items!zkeiNRpuUQhHBYMQ.KuY32LjYk0JNC7T6'
+- _id: wnGzrKRw5swLJvqe
+  _key: '!actors.items!fP7ViMGKfiYfW1a1.wnGzrKRw5swLJvqe'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
@@ -143,8 +143,8 @@ items:
         effect, or the target is supernatural. Shoot! (Villain Action 1 Keywords Area
         Distance 10 burst Target All artillery allies in the burst Effect Each target
         makes a ranged free strike.
-- _id: TDO9r6f5BM2OfFbp
-  _key: '!actors.items!zkeiNRpuUQhHBYMQ.TDO9r6f5BM2OfFbp'
+- _id: 1Z6FPEid2vjGk9mu
+  _key: '!actors.items!fP7ViMGKfiYfW1a1.1Z6FPEid2vjGk9mu'
   name: Form Up!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -164,8 +164,8 @@ items:
       text: Each target shifts up to their speed. Until the end of the encounter,
         the bandit chief and all allies have damage immunity 2 while adjacent to a
         target.
-- _id: 2yNmcDbyscax1FdZ
-  _key: '!actors.items!zkeiNRpuUQhHBYMQ.2yNmcDbyscax1FdZ'
+- _id: iUrzyulcOKM6UHYY
+  _key: '!actors.items!fP7ViMGKfiYfW1a1.iUrzyulcOKM6UHYY'
   name: Lead From the Front
   type: monsterAbility
   img: icons/svg/book.svg

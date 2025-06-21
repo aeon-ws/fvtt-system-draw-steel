@@ -1,5 +1,5 @@
-_id: saw9NwsVbrgJoqkV
-_key: '!actors!saw9NwsVbrgJoqkV'
+_id: aIbVNzKCaYh2gxvo
+_key: '!actors!aIbVNzKCaYh2gxvo'
 name: Mohler
 type: minion
 img: systems/aeon-draw-steel/images/monsters/mohler-01.webp
@@ -57,8 +57,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: HIfJxlSoKPMelfNY
-  _key: '!actors.items!saw9NwsVbrgJoqkV.HIfJxlSoKPMelfNY'
+- _id: IdQVfMlWeakwntXk
+  _key: '!actors.items!aIbVNzKCaYh2gxvo.IdQVfMlWeakwntXk'
   name: Earth Bump
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,8 +87,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: ajJJOBjLSeXxjDki
-  _key: '!actors.items!saw9NwsVbrgJoqkV.ajJJOBjLSeXxjDki'
+- _id: 8VDRwjNyTbA6j0ks
+  _key: '!actors.items!aIbVNzKCaYh2gxvo.8VDRwjNyTbA6j0ks'
   name: Seismic Sense
   type: monsterAbility
   img: icons/svg/book.svg

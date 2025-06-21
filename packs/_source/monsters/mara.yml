@@ -1,5 +1,5 @@
-_id: RK1THwWEKeYrUmXf
-_key: '!actors!RK1THwWEKeYrUmXf'
+_id: 4RQV7q1VCsgkLnF3
+_key: '!actors!4RQV7q1VCsgkLnF3'
 name: Mara
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/mara-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: 5kVIyANvuH8IF9r8
-  _key: '!actors.items!RK1THwWEKeYrUmXf.5kVIyANvuH8IF9r8'
+- _id: h9egYeJG0jr23QFL
+  _key: '!actors.items!4RQV7q1VCsgkLnF3.h9egYeJG0jr23QFL'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: mFzTiSZAbeiytvL0
-  _key: '!actors.items!RK1THwWEKeYrUmXf.mFzTiSZAbeiytvL0'
+- _id: ZWmKfPGPuMm10BpA
+  _key: '!actors.items!4RQV7q1VCsgkLnF3.ZWmKfPGPuMm10BpA'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: uJLPfyeBcmqsduot
-  _key: '!actors.items!RK1THwWEKeYrUmXf.uJLPfyeBcmqsduot'
+- _id: pGicc8AccqGaqv17
+  _key: '!actors.items!4RQV7q1VCsgkLnF3.pGicc8AccqGaqv17'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Mara teleports 2 squares. Each creature adjacent to her original space
         takes 2 corruption damage.
-- _id: I1rb3eJAmOlhTQRX
-  _key: '!actors.items!RK1THwWEKeYrUmXf.I1rb3eJAmOlhTQRX'
+- _id: uU8axkPL0K1bbr7M
+  _key: '!actors.items!4RQV7q1VCsgkLnF3.uU8axkPL0K1bbr7M'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -162,8 +162,8 @@ items:
     prePowerRollEffect:
       text: If Mara is frightened, slowed, or weakened, she can use a maneuver to
         end the condition.
-- _id: LktDd2BjKVzUvJbL
-  _key: '!actors.items!RK1THwWEKeYrUmXf.LktDd2BjKVzUvJbL'
+- _id: FKdnd1OOWFhNGe1c
+  _key: '!actors.items!4RQV7q1VCsgkLnF3.FKdnd1OOWFhNGe1c'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

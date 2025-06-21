@@ -1,5 +1,5 @@
-_id: AVtt3yPlFDKpht6l
-_key: '!actors!AVtt3yPlFDKpht6l'
+_id: 3dVh9yA87RikpHvu
+_key: '!actors!3dVh9yA87RikpHvu'
 name: Flow of the River
 type: minion
 img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.webp
@@ -59,8 +59,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: 5FB4nFkZ8Jyhdpuc
-  _key: '!actors.items!AVtt3yPlFDKpht6l.5FB4nFkZ8Jyhdpuc'
+- _id: 2EwZy0KixoalXtfS
+  _key: '!actors.items!3dVh9yA87RikpHvu.2EwZy0KixoalXtfS'
   name: Bite and Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
         damage: 5
         effect:
           text: shift 3
-- _id: 25HipWmSm6K2Cshs
-  _key: '!actors.items!AVtt3yPlFDKpht6l.25HipWmSm6K2Cshs'
+- _id: Gvf58HFerqiW7Klq
+  _key: '!actors.items!3dVh9yA87RikpHvu.Gvf58HFerqiW7Klq'
   name: Aquavuken
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,8 +108,8 @@ items:
     prePowerRollEffect:
       text: The flow ignores difficult terrain and can move on top of water as if
         it was solid ground.
-- _id: Yuji0rfI0jSARdYk
-  _key: '!actors.items!AVtt3yPlFDKpht6l.Yuji0rfI0jSARdYk'
+- _id: KxPFTBBwiAHqNC5n
+  _key: '!actors.items!3dVh9yA87RikpHvu.KxPFTBBwiAHqNC5n'
   name: Pack Strong
   type: monsterAbility
   img: icons/svg/book.svg
@@ -120,8 +120,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The flow can't be flanked or frightened while adjacent to an ally.
-- _id: bxrFF97Fmhgq8RfD
-  _key: '!actors.items!AVtt3yPlFDKpht6l.bxrFF97Fmhgq8RfD'
+- _id: 7lhdFyizmsO4WR52
+  _key: '!actors.items!3dVh9yA87RikpHvu.7lhdFyizmsO4WR52'
   name: Water Weird
   type: monsterAbility
   img: icons/svg/book.svg

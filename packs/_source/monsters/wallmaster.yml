@@ -1,5 +1,5 @@
-_id: Zwah9RrPq1WB7IIe
-_key: '!actors!Zwah9RrPq1WB7IIe'
+_id: 2irpVtjhgOWMUiQ8
+_key: '!actors!2irpVtjhgOWMUiQ8'
 name: Wallmaster
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/wallmaster-01.webp
@@ -58,8 +58,8 @@ system:
   weakness:
     acid: 3
 items:
-- _id: DBR7IQ9tStSWOd49
-  _key: '!actors.items!Zwah9RrPq1WB7IIe.DBR7IQ9tStSWOd49'
+- _id: 5SlGPJayUqsXDNhp
+  _key: '!actors.items!2irpVtjhgOWMUiQ8.5SlGPJayUqsXDNhp'
   name: Wall Slam
   type: monsterAbility
   img: icons/svg/book.svg
@@ -101,8 +101,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster chooses two wall segments within 10 squares. Each segment
         falls on a single target within distance, and is then destroyed.
-- _id: pO5tDj0gyTeolZKQ
-  _key: '!actors.items!Zwah9RrPq1WB7IIe.pO5tDj0gyTeolZKQ'
+- _id: y68We1XpMmWx9yXJ
+  _key: '!actors.items!2irpVtjhgOWMUiQ8.y68We1XpMmWx9yXJ'
   name: Dead End
   type: monsterAbility
   img: icons/svg/book.svg
@@ -136,8 +136,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster chooses one wall segment within 10 squares. The segment
         pushes a target within distance, and shifts into each square they leave behind.
-- _id: QDwcyvjwF9NGvxbq
-  _key: '!actors.items!Zwah9RrPq1WB7IIe.QDwcyvjwF9NGvxbq'
+- _id: 8fucMSE7lFt3R0JZ
+  _key: '!actors.items!2irpVtjhgOWMUiQ8.8fucMSE7lFt3R0JZ'
   name: The Wall Sees All
   type: monsterAbility
   img: icons/svg/book.svg
@@ -156,8 +156,8 @@ items:
     prePowerRollEffect:
       text: The wallmaster teleports to a wall within distance and affixes itself
         to it.
-- _id: ePJVRHaHNHDS5bBK
-  _key: '!actors.items!Zwah9RrPq1WB7IIe.ePJVRHaHNHDS5bBK'
+- _id: o4qxVb9ZjejOTMeQ
+  _key: '!actors.items!2irpVtjhgOWMUiQ8.o4qxVb9ZjejOTMeQ'
   name: Wall Redirect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -176,8 +176,8 @@ items:
     prePowerRollEffect:
       text: The wall redirects the strike to the target creature and isn't targeted
         by the strike.
-- _id: RDcBqRJqBMKcVKW5
-  _key: '!actors.items!Zwah9RrPq1WB7IIe.RDcBqRJqBMKcVKW5'
+- _id: 1xZikb173DOyHUMH
+  _key: '!actors.items!2irpVtjhgOWMUiQ8.1xZikb173DOyHUMH'
   name: Living Labyrinth
   type: monsterAbility
   img: icons/svg/book.svg

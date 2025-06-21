@@ -1,5 +1,5 @@
-_id: jyRR6UVujULpI3UJ
-_key: '!actors!jyRR6UVujULpI3UJ'
+_id: tqhIg8AYesKVm1uX
+_key: '!actors!tqhIg8AYesKVm1uX'
 name: Dwarf Warden
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/dwarf-warden-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: 4VHUkBCtEUIe4aEx
-  _key: '!actors.items!jyRR6UVujULpI3UJ.4VHUkBCtEUIe4aEx'
+- _id: QEMGYPIzkjIZSRnZ
+  _key: '!actors.items!tqhIg8AYesKVm1uX.QEMGYPIzkjIZSRnZ'
   name: Concussive Maul
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
             text: restrained (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: cYk5Pg7JWDyyoVp5
-  _key: '!actors.items!jyRR6UVujULpI3UJ.cYk5Pg7JWDyyoVp5'
+- _id: 3YnlmAEHfDeAfJV4
+  _key: '!actors.items!tqhIg8AYesKVm1uX.3YnlmAEHfDeAfJV4'
   name: Concussive Shockwave
   type: monsterAbility
   img: icons/svg/book.svg
@@ -148,8 +148,8 @@ items:
             text: dazed (save ends)
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: iaGM725OcLDxgJor
-  _key: '!actors.items!jyRR6UVujULpI3UJ.iaGM725OcLDxgJor'
+- _id: e9qXpztKlNQVzxCw
+  _key: '!actors.items!tqhIg8AYesKVm1uX.e9qXpztKlNQVzxCw'
   name: Escort the Prisoners
   type: monsterAbility
   img: icons/svg/book.svg

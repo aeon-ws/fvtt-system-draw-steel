@@ -1,5 +1,5 @@
-_id: 2cDINIqZxbzVAyYf
-_key: '!actors!2cDINIqZxbzVAyYf'
+_id: EGHRcCOtYFzQVcAm
+_key: '!actors!EGHRcCOtYFzQVcAm'
 name: Tomb Horror
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/tomb-horror-01.webp
@@ -59,8 +59,8 @@ system:
   weakness:
     fire: 3
 items:
-- _id: JlqQSHu1n10UMvJP
-  _key: '!actors.items!2cDINIqZxbzVAyYf.JlqQSHu1n10UMvJP'
+- _id: rCxEu7OrsgMoLU69
+  _key: '!actors.items!EGHRcCOtYFzQVcAm.rCxEu7OrsgMoLU69'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -99,8 +99,8 @@ items:
     postPowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: 3HxiuH9c6DvQGbeF
-  _key: '!actors.items!2cDINIqZxbzVAyYf.3HxiuH9c6DvQGbeF'
+- _id: lQ8ev9nDwXu1AUtP
+  _key: '!actors.items!EGHRcCOtYFzQVcAm.lQ8ev9nDwXu1AUtP'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
     postPowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: 2JswPr1esXbnb2dt
-  _key: '!actors.items!2cDINIqZxbzVAyYf.2JswPr1esXbnb2dt'
+- _id: ApDNNTohPyhrgcjI
+  _key: '!actors.items!EGHRcCOtYFzQVcAm.ApDNNTohPyhrgcjI'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
@@ -170,8 +170,8 @@ items:
         relic within distance that the tomb horror was feeding on. The target is P<2
         slowed (save ends). The tomb horror then moves up to their speed towards the
         target.
-- _id: 8sAyLyrHfjPqLkP1
-  _key: '!actors.items!2cDINIqZxbzVAyYf.8sAyLyrHfjPqLkP1'
+- _id: NwJgZcQdkxouuApQ
+  _key: '!actors.items!EGHRcCOtYFzQVcAm.NwJgZcQdkxouuApQ'
   name: Enervating Horror
   type: monsterAbility
   img: icons/svg/book.svg

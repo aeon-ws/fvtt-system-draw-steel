@@ -1,5 +1,5 @@
-_id: AAq4XwEcMDsT97VY
-_key: '!actors!AAq4XwEcMDsT97VY'
+_id: Mnnv17vMljoyXxPw
+_key: '!actors!Mnnv17vMljoyXxPw'
 name: Goblin Monarch
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-monarch-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: VkZ8YA5j2jSs3kF9
-  _key: '!actors.items!AAq4XwEcMDsT97VY.VkZ8YA5j2jSs3kF9'
+- _id: ROMNGHNVIXw8lH8D
+  _key: '!actors.items!Mnnv17vMljoyXxPw.ROMNGHNVIXw8lH8D'
   name: Handaxe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,8 +88,8 @@ items:
         damage: 13
     postPowerRollEffect:
       text: An ally within 10 of the monarch can make a free strike.
-- _id: NbttTZlwAD43IOgc
-  _key: '!actors.items!AAq4XwEcMDsT97VY.NbttTZlwAD43IOgc'
+- _id: N16lqPqwCERAP6wr
+  _key: '!actors.items!Mnnv17vMljoyXxPw.N16lqPqwCERAP6wr'
   name: Get in Here!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -106,8 +106,8 @@ items:
       special: true
     prePowerRollEffect:
       text: Two goblin runners appear in unoccupied spaces.
-- _id: eh409bsEWDjErVJT
-  _key: '!actors.items!AAq4XwEcMDsT97VY.eh409bsEWDjErVJT'
+- _id: Y1OFQseC03lcaTkl
+  _key: '!actors.items!Mnnv17vMljoyXxPw.Y1OFQseC03lcaTkl'
   name: Meat Shield
   type: monsterAbility
   img: icons/svg/book.svg
@@ -125,8 +125,8 @@ items:
     trigger: A creature targets the monarch with a strike.
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead.
-- _id: M6cR48GrdXO18IWW
-  _key: '!actors.items!AAq4XwEcMDsT97VY.M6cR48GrdXO18IWW'
+- _id: 6VNrhX3GRoRq8bHc
+  _key: '!actors.items!Mnnv17vMljoyXxPw.6VNrhX3GRoRq8bHc'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -138,8 +138,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, the monarch can take 5 damage to end one save
         ends effect affecting them. This damage can't be reduced in any way.
-- _id: DFyoOMtFLhCBU3tZ
-  _key: '!actors.items!AAq4XwEcMDsT97VY.DFyoOMtFLhCBU3tZ'
+- _id: Jbq0rL3bPthylOAh
+  _key: '!actors.items!Mnnv17vMljoyXxPw.Jbq0rL3bPthylOAh'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
@@ -150,8 +150,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The monarch doesn't provoke opportunity attacks by moving.
-- _id: 8tZGNNjcspgX9OEk
-  _key: '!actors.items!AAq4XwEcMDsT97VY.8tZGNNjcspgX9OEk'
+- _id: qdioQEwEIPzrReTj
+  _key: '!actors.items!Mnnv17vMljoyXxPw.qdioQEwEIPzrReTj'
   name: What Are You Waiting For?
   type: monsterAbility
   img: icons/svg/book.svg
@@ -169,8 +169,8 @@ items:
       ally: true
     prePowerRollEffect:
       text: Each target can move up to their speed or make a free strike.
-- _id: 620KV4vZEeZ2Jfk4
-  _key: '!actors.items!AAq4XwEcMDsT97VY.620KV4vZEeZ2Jfk4'
+- _id: clk5qpOuSmFwmnuv
+  _key: '!actors.items!Mnnv17vMljoyXxPw.clk5qpOuSmFwmnuv'
   name: Focus Fire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -190,8 +190,8 @@ items:
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: KM4ssGjPt5lAIMRt
-  _key: '!actors.items!AAq4XwEcMDsT97VY.KM4ssGjPt5lAIMRt'
+- _id: EWQPMgfXHmGoA1Bx
+  _key: '!actors.items!Mnnv17vMljoyXxPw.EWQPMgfXHmGoA1Bx'
   name: Kill!
   type: monsterAbility
   img: icons/svg/book.svg

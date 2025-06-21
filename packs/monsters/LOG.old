@@ -1,14 +1,14 @@
-2025/06/21-15:11:21.133 78e8 Recovering log #324
-2025/06/21-15:11:21.142 78e8 Delete type=0 #324
-2025/06/21-15:11:21.142 78e8 Delete type=3 #322
-2025/06/21-15:11:21.164 b14 Level-0 table #330: started
-2025/06/21-15:11:21.168 b14 Level-0 table #330: 102063 bytes OK
-2025/06/21-15:11:21.171 b14 Delete type=0 #328
-2025/06/21-15:11:21.172 b14 Manual compaction at level-0 from '!actors!08Eqzb8qGbW0Ocwi' @ 72057594037927935 : 1 .. '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 0 : 0; will stop at '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 24327 : 1
-2025/06/21-15:11:21.172 b14 Compacting 1@0 + 1@1 files
-2025/06/21-15:11:21.175 b14 Generated table #331@0: 328 keys, 91694 bytes
-2025/06/21-15:11:21.176 b14 Compacted 1@0 + 1@1 files => 91694 bytes
-2025/06/21-15:11:21.179 b14 compacted to: files[ 0 1 0 0 0 0 0 ]
-2025/06/21-15:11:21.179 b14 Delete type=2 #326
-2025/06/21-15:11:21.179 b14 Delete type=2 #330
-2025/06/21-15:11:21.179 b14 Manual compaction at level-0 from '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 24327 : 1 .. '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 0 : 0; will stop at (end)
+2025/06/21-19:59:38.445 6358 Recovering log #338
+2025/06/21-19:59:38.455 6358 Delete type=0 #338
+2025/06/21-19:59:38.455 6358 Delete type=3 #337
+2025/06/21-19:59:38.475 3e5c Level-0 table #342: started
+2025/06/21-19:59:38.478 3e5c Level-0 table #342: 103485 bytes OK
+2025/06/21-19:59:38.482 3e5c Delete type=0 #340
+2025/06/21-19:59:38.482 3e5c Manual compaction at level-0 from '!actors!0VH4MCI8uf5bIedL' @ 72057594037927935 : 1 .. '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 0 : 0; will stop at '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 25798 : 0
+2025/06/21-19:59:38.482 3e5c Compacting 1@0 + 1@1 files
+2025/06/21-19:59:38.486 3e5c Generated table #343@0: 332 keys, 92993 bytes
+2025/06/21-19:59:38.486 3e5c Compacted 1@0 + 1@1 files => 92993 bytes
+2025/06/21-19:59:38.489 3e5c compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/06/21-19:59:38.490 3e5c Delete type=2 #336
+2025/06/21-19:59:38.490 3e5c Delete type=2 #342
+2025/06/21-19:59:38.490 3e5c Manual compaction at level-0 from '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 25798 : 0 .. '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 0 : 0; will stop at (end)

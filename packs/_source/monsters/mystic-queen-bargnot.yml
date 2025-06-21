@@ -1,5 +1,5 @@
-_id: SfQXmcDIcm0NtUmp
-_key: '!actors!SfQXmcDIcm0NtUmp'
+_id: 2FSIBLbTkjPiaxJy
+_key: '!actors!2FSIBLbTkjPiaxJy'
 name: Mystic Queen Bargnot
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: bcowWfwnLz0Hxocc
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.bcowWfwnLz0Hxocc'
+- _id: BaO8I9Z6nuGEyock
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.BaO8I9Z6nuGEyock'
   name: Power Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,8 +100,8 @@ items:
             text: prone
     postPowerRollEffect:
       text: An ally within 10 of Queen Bargnot can make a free strike.
-- _id: 48uRAyByoLzVUo2K
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.48uRAyByoLzVUo2K'
+- _id: dBCVn9JY86fq3Heu
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.dBCVn9JY86fq3Heu'
   name: Get Out There!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,8 +119,8 @@ items:
     prePowerRollEffect:
       text: Queen Bargnot throws the ally up to 5 squares. The ally can make a melee
         free strike when they land.
-- _id: mFhT8Zkv9ylS2YGk
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.mFhT8Zkv9ylS2YGk'
+- _id: TdFSagF6P6q7nlZ6
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.TdFSagF6P6q7nlZ6'
   name: Show Them Your Might!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -139,8 +139,8 @@ items:
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead. Queen Bargnot
         shifts 1.
-- _id: wNSR0MRnhswBdJrY
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.wNSR0MRnhswBdJrY'
+- _id: UXL7gHwJ7vikgv7T
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.UXL7gHwJ7vikgv7T'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +152,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, Queen Bargnot can take 5 damage to end one save
         ends effect affecting her. This damage can't be reduced in any way.
-- _id: y9haJvlfpGJtIsVs
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.y9haJvlfpGJtIsVs'
+- _id: OicX5LyR4xjCkob2
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.OicX5LyR4xjCkob2'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -167,8 +167,8 @@ items:
         Whenever Queen Bargnot is adjacent to an enemy and willingly moves to a space
         no longer adjacent to that enemy, Queen Bargnot can make an opportunity attack
         against them as a triggered action.
-- _id: mT58yWqzL4BgJZDM
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.mT58yWqzL4BgJZDM'
+- _id: 8S9cxsN2jlPbCNTw
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.8S9cxsN2jlPbCNTw'
   name: Focus Fire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -188,8 +188,8 @@ items:
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: Y4nrOqLaTgsA3xff
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.Y4nrOqLaTgsA3xff'
+- _id: OGwtuOF50pjgT00m
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.OGwtuOF50pjgT00m'
   name: Kill!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -207,8 +207,8 @@ items:
     prePowerRollEffect:
       text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
         them, or 4 damage for each mystic goblin adjacent to them.
-- _id: RkVpGIxXmsRn8vgB
-  _key: '!actors.items!SfQXmcDIcm0NtUmp.RkVpGIxXmsRn8vgB'
+- _id: s085oHTw3Tpv2q6D
+  _key: '!actors.items!2FSIBLbTkjPiaxJy.s085oHTw3Tpv2q6D'
   name: Oversurge
   type: monsterAbility
   img: icons/svg/book.svg

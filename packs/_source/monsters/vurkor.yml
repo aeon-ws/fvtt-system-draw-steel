@@ -1,5 +1,5 @@
-_id: weRT2yumNeW7MyrL
-_key: '!actors!weRT2yumNeW7MyrL'
+_id: 8lRm8vO1hrQQ3tsv
+_key: '!actors!8lRm8vO1hrQQ3tsv'
 name: Vurkor
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/vurkor-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: Ff5TQ6w27yCtoa2h
-  _key: '!actors.items!weRT2yumNeW7MyrL.Ff5TQ6w27yCtoa2h'
+- _id: 0JPhCK5jRWiqSJt2
+  _key: '!actors.items!8lRm8vO1hrQQ3tsv.0JPhCK5jRWiqSJt2'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: WEGm1BfqSlQXq7BN
-  _key: '!actors.items!weRT2yumNeW7MyrL.WEGm1BfqSlQXq7BN'
+- _id: obKQYdkHjw31Ga6Y
+  _key: '!actors.items!8lRm8vO1hrQQ3tsv.obKQYdkHjw31Ga6Y'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: H04jVbjjnJWmgAj0
-  _key: '!actors.items!weRT2yumNeW7MyrL.H04jVbjjnJWmgAj0'
+- _id: K7Gl301aQxKpHxlj
+  _key: '!actors.items!8lRm8vO1hrQQ3tsv.K7Gl301aQxKpHxlj'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Vurkor teleports 2 squares. Each creature adjacent to his original space
         takes 2 corruption damage.
-- _id: v7kV7fKhLypwXicO
-  _key: '!actors.items!weRT2yumNeW7MyrL.v7kV7fKhLypwXicO'
+- _id: 1sKiOwdIRaDd0E9T
+  _key: '!actors.items!8lRm8vO1hrQQ3tsv.1sKiOwdIRaDd0E9T'
   name: Glowing Recovery
   type: monsterAbility
   img: icons/svg/book.svg
@@ -161,8 +161,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Vurkor can use his maneuver to regain 10 Stamina once per round.
-- _id: Z4v0ugxvIbsCANig
-  _key: '!actors.items!weRT2yumNeW7MyrL.Z4v0ugxvIbsCANig'
+- _id: KDOkWEMw5myIVASW
+  _key: '!actors.items!8lRm8vO1hrQQ3tsv.KDOkWEMw5myIVASW'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

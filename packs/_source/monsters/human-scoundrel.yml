@@ -1,5 +1,5 @@
-_id: Ylt0lnbB7gfr3fqo
-_key: '!actors!Ylt0lnbB7gfr3fqo'
+_id: OOi8meyASiXOP22F
+_key: '!actors!OOi8meyASiXOP22F'
 name: Human Scoundrel
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-scoundrel-01.webp
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: lFYXMtoqKlMhn6Bc
-  _key: '!actors.items!Ylt0lnbB7gfr3fqo.lFYXMtoqKlMhn6Bc'
+- _id: GgWqswO4Wd0GS9z8
+  _key: '!actors.items!OOi8meyASiXOP22F.GgWqswO4Wd0GS9z8'
   name: Rapier Dagger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -90,8 +90,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 damage if the scoundrel has an edge
         on the power roll.
-- _id: kShtWcm0XeqtSN1p
-  _key: '!actors.items!Ylt0lnbB7gfr3fqo.kShtWcm0XeqtSN1p'
+- _id: nJztq5zlIcRVB0EA
+  _key: '!actors.items!OOi8meyASiXOP22F.nJztq5zlIcRVB0EA'
   name: Dagger Storm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -101,8 +101,8 @@ items:
     isSignature: false
     keywords: []
     type: mainAction
-- _id: SyHBbrVh7IkTwRLR
-  _key: '!actors.items!Ylt0lnbB7gfr3fqo.SyHBbrVh7IkTwRLR'
+- _id: dldsCKCmz9zo4cCR
+  _key: '!actors.items!OOi8meyASiXOP22F.dldsCKCmz9zo4cCR'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

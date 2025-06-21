@@ -1,5 +1,5 @@
-_id: AcFspIlA01KJVbUN
-_key: '!actors!AcFspIlA01KJVbUN'
+_id: xWkyMzQfMmZfhSLy
+_key: '!actors!xWkyMzQfMmZfhSLy'
 name: Human Archer
 type: minion
 img: systems/aeon-draw-steel/images/monsters/human-archer-01.webp
@@ -60,8 +60,8 @@ system:
   derivedCaptainBonuses:
     rangedDistanceBonus: 5
 items:
-- _id: 3F7vsA25RdzwjCEP
-  _key: '!actors.items!AcFspIlA01KJVbUN.3F7vsA25RdzwjCEP'
+- _id: d0Wm2H58yN4hQPvr
+  _key: '!actors.items!xWkyMzQfMmZfhSLy.d0Wm2H58yN4hQPvr'
   name: Crossbow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -90,8 +90,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: iDpeHMPqRZZhAXAB
-  _key: '!actors.items!AcFspIlA01KJVbUN.iDpeHMPqRZZhAXAB'
+- _id: 8UiVU6sskbmr7kKz
+  _key: '!actors.items!xWkyMzQfMmZfhSLy.8UiVU6sskbmr7kKz'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

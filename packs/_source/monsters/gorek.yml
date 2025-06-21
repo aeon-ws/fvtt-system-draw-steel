@@ -1,5 +1,5 @@
-_id: ViqG7LepfAg2PfkN
-_key: '!actors!ViqG7LepfAg2PfkN'
+_id: NZkK5Y4pNU3LSOIj
+_key: '!actors!NZkK5Y4pNU3LSOIj'
 name: Gorek
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/gorek-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: EDiwqHwpahBTQAbV
-  _key: '!actors.items!ViqG7LepfAg2PfkN.EDiwqHwpahBTQAbV'
+- _id: fr0281UCXJDLZ4Zq
+  _key: '!actors.items!NZkK5Y4pNU3LSOIj.fr0281UCXJDLZ4Zq'
   name: Brutal Impact
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
           text: push 3
     maliceEffect:
       text: 2 Malice Each target is M<1 slowed (save ends).
-- _id: WY9MVP5QxZG89yoC
-  _key: '!actors.items!ViqG7LepfAg2PfkN.WY9MVP5QxZG89yoC'
+- _id: gj4wLCsBpAVAin0S
+  _key: '!actors.items!NZkK5Y4pNU3LSOIj.gj4wLCsBpAVAin0S'
   name: Let's Tussle
   type: monsterAbility
   img: icons/svg/book.svg
@@ -140,8 +140,8 @@ items:
             text: grabbed
     postPowerRollEffect:
       text: Gorek has an edge on strikes against a grabbed creature.
-- _id: nWWNTKS2JdDSnVHX
-  _key: '!actors.items!ViqG7LepfAg2PfkN.nWWNTKS2JdDSnVHX'
+- _id: vNayoAwyDLbH1L4f
+  _key: '!actors.items!NZkK5Y4pNU3LSOIj.vNayoAwyDLbH1L4f'
   name: Overwhelm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -153,8 +153,8 @@ items:
     prePowerRollEffect:
       text: Once per turn, when Gorek force moves a target or shifts into a square
         adjacent to a creature or object, he can make a free strike against them.
-- _id: xK9pYsVIRtz7vCvX
-  _key: '!actors.items!ViqG7LepfAg2PfkN.xK9pYsVIRtz7vCvX'
+- _id: i1SRcuK2ZMRa71tU
+  _key: '!actors.items!NZkK5Y4pNU3LSOIj.i1SRcuK2ZMRa71tU'
   name: Great Fortitude
   type: monsterAbility
   img: icons/svg/book.svg
@@ -165,8 +165,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Gorek can't be weakened.
-- _id: lGXszSr7KIVLjJtk
-  _key: '!actors.items!ViqG7LepfAg2PfkN.lGXszSr7KIVLjJtk'
+- _id: NtZ1wzvtTO9Fb9Bj
+  _key: '!actors.items!NZkK5Y4pNU3LSOIj.NtZ1wzvtTO9Fb9Bj'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

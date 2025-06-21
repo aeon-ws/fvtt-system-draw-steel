@@ -1,0 +1,49 @@
+_id: i04G2DxC7Clbi001
+_key: '!actors!i04G2DxC7Clbi001'
+name: Eridun
+type: hero
+img: systems/aeon-draw-steel/images/monsters/skeleton-01.webp
+prototypeToken:
+  name: Eridun
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: heroicResource
+  disposition: 1
+  actorLink: true
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/skeleton-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+system:
+  name: Eridun
+  keywords:
+  - Elf
+  - Humanoid
+  level: 1
+  characteristics:
+    might: -1
+    agility: 2
+    reason: 2
+    intuition: -1
+    presence: 2
+  stamina:
+    max: 18
+    value: 18
+  recovery:
+    recoveryValue: 6
+    recoveriesMax: 8
+    recoveriesCurrent: 8
+  combat:
+    size: 1M
+    speed: 5
+    movementTypes:
+    - walk
+    stability: 0
+items:

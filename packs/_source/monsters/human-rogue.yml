@@ -1,5 +1,5 @@
-_id: e8JEh2zWbIeB2ewq
-_key: '!actors!e8JEh2zWbIeB2ewq'
+_id: 4JXnVfWsAUL2scLP
+_key: '!actors!4JXnVfWsAUL2scLP'
 name: Human Rogue
 type: minion
 img: systems/aeon-draw-steel/images/monsters/human-rogue-01.webp
@@ -60,8 +60,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: YBRkrGux0RWhIgbf
-  _key: '!actors.items!e8JEh2zWbIeB2ewq.YBRkrGux0RWhIgbf'
+- _id: vcuD5RZlmycMleDB
+  _key: '!actors.items!4JXnVfWsAUL2scLP.vcuD5RZlmycMleDB'
   name: Concealed Dagger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 3 damage if the spy was disguised or
         hidden before using it.
-- _id: qgHGxA5FbFVC8TZz
-  _key: '!actors.items!e8JEh2zWbIeB2ewq.qgHGxA5FbFVC8TZz'
+- _id: AH0ia8gNNLvHlzRN
+  _key: '!actors.items!4JXnVfWsAUL2scLP.AH0ia8gNNLvHlzRN'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
