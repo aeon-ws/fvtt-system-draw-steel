@@ -1,8 +1,8 @@
-_id: BQbR7cA1eNiR7XNY
-_key: '!actors!BQbR7cA1eNiR7XNY'
+_id: AVCx3kuLP4kELaLk
+_key: '!actors!AVCx3kuLP4kELaLk'
 name: Human Raider
 type: minion
-img: systems/aeon-draw-steel/images/monsters/human-raider-01.png
+img: systems/aeon-draw-steel/images/monsters/human-raider-01.webp
 prototypeToken:
   name: Human Raider
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/human-raider-01.png
+    img: systems/aeon-draw-steel/images/monsters/human-raider-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Human Raider
@@ -60,8 +60,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: pB8p9QgqVOcOI6VG
-  _key: '!actors.items!BQbR7cA1eNiR7XNY.pB8p9QgqVOcOI6VG'
+- _id: vcVfzvs9TV2XSlrh
+  _key: '!actors.items!AVCx3kuLP4kELaLk.vcVfzvs9TV2XSlrh'
   name: Handaxes
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
     postPowerRollEffect:
       text: lf this ability is used while charging, the raider can make a ranged free
         strike before using the ability.
-- _id: i9ynGqM2f1TluAQo
-  _key: '!actors.items!BQbR7cA1eNiR7XNY.i9ynGqM2f1TluAQo'
+- _id: BqM39MkDsYiFkD2p
+  _key: '!actors.items!AVCx3kuLP4kELaLk.BqM39MkDsYiFkD2p'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

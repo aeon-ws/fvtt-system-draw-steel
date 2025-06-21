@@ -1,8 +1,8 @@
-_id: U1pEU7wYQi9oWgwu
-_key: '!actors!U1pEU7wYQi9oWgwu'
+_id: Pv44BtxxKg7yXa2n
+_key: '!actors!Pv44BtxxKg7yXa2n'
 name: Ogre Goon
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/ogre-goon-01.png
+img: systems/aeon-draw-steel/images/monsters/ogre-goon-01.webp
 prototypeToken:
   name: Ogre Goon
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 2
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/ogre-goon-01.png
+    img: systems/aeon-draw-steel/images/monsters/ogre-goon-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Ogre Goon
@@ -54,8 +54,8 @@ system:
     stability: 4
     freeStrikeDamage: 5
 items:
-- _id: PhCM7cKEdvan3Mrg
-  _key: '!actors.items!U1pEU7wYQi9oWgwu.PhCM7cKEdvan3Mrg'
+- _id: o6YNbzfnkMlLOX8j
+  _key: '!actors.items!Pv44BtxxKg7yXa2n.o6YNbzfnkMlLOX8j'
   name: Club Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
     postPowerRollEffect:
       text: This strike deals an additional 4 damage to each creature and object that
         takes damage from any force movement it causes.
-- _id: l2jsQt7emLiA0X8B
-  _key: '!actors.items!U1pEU7wYQi9oWgwu.l2jsQt7emLiA0X8B'
+- _id: qgkQb4yf4ktlkD2r
+  _key: '!actors.items!Pv44BtxxKg7yXa2n.qgkQb4yf4ktlkD2r'
   name: Grabby Hand
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,8 +132,8 @@ items:
         the target in their hand.
     postPowerRollEffect:
       text: The goon can only have one target grabbed at a time.
-- _id: TZglHmi4oAPOFFpu
-  _key: '!actors.items!U1pEU7wYQi9oWgwu.TZglHmi4oAPOFFpu'
+- _id: e4iOrN0hhqYD6mq3
+  _key: '!actors.items!Pv44BtxxKg7yXa2n.e4iOrN0hhqYD6mq3'
   name: People Bowling
   type: monsterAbility
   img: icons/svg/book.svg
@@ -171,8 +171,8 @@ items:
       text: The goon hurls what's in their hand down the line and rolls power. The
         hurled creature or object counts as a target and lands in the last square
         of the line (or nearest unoccupied square of the goon's choice).
-- _id: NWtbBsW0ii5MwYlc
-  _key: '!actors.items!U1pEU7wYQi9oWgwu.NWtbBsW0ii5MwYlc'
+- _id: 8LiyhQaUmkUYnrDt
+  _key: '!actors.items!Pv44BtxxKg7yXa2n.8LiyhQaUmkUYnrDt'
   name: Swat The Fly
   type: monsterAbility
   img: icons/svg/book.svg
@@ -193,8 +193,8 @@ items:
     trigger: The target moves or shifts away from the goon.
     prePowerRollEffect:
       text: Slide 5.
-- _id: QyJ4Ez0m7bOsHr1N
-  _key: '!actors.items!U1pEU7wYQi9oWgwu.QyJ4Ez0m7bOsHr1N'
+- _id: fX39FcweN9E6Gomo
+  _key: '!actors.items!Pv44BtxxKg7yXa2n.fX39FcweN9E6Gomo'
   name: Defiant Anger
   type: monsterAbility
   img: icons/svg/book.svg

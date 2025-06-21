@@ -1,8 +1,8 @@
-_id: 1r9Q8H3W2tiC7v0W
-_key: '!actors!1r9Q8H3W2tiC7v0W'
+_id: Wn4NdwJEIXofioIU
+_key: '!actors!Wn4NdwJEIXofioIU'
 name: Worg
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/worg-01.png
+img: systems/aeon-draw-steel/images/monsters/worg-01.webp
 prototypeToken:
   name: Worg
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/worg-01.png
+    img: systems/aeon-draw-steel/images/monsters/worg-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Worg
@@ -54,8 +54,8 @@ system:
     stability: 1
     freeStrikeDamage: 1
 items:
-- _id: VbeWt2jcQF6CNfof
-  _key: '!actors.items!1r9Q8H3W2tiC7v0W.VbeWt2jcQF6CNfof'
+- _id: 0W0IQ1Er8JXkGCDy
+  _key: '!actors.items!Wn4NdwJEIXofioIU.0W0IQ1Er8JXkGCDy'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -85,8 +85,8 @@ items:
         damage: 4
       tier3:
         damage: 5
-- _id: 3qiw98vltNnLWkcr
-  _key: '!actors.items!1r9Q8H3W2tiC7v0W.3qiw98vltNnLWkcr'
+- _id: lhsWMCNQpTkdR3zJ
+  _key: '!actors.items!Wn4NdwJEIXofioIU.lhsWMCNQpTkdR3zJ'
   name: Sprint
   type: monsterAbility
   img: icons/svg/book.svg
@@ -103,8 +103,8 @@ items:
       self: true
     prePowerRollEffect:
       text: The worg moves up to their speed.
-- _id: BiImReKDS8rOZ18C
-  _key: '!actors.items!1r9Q8H3W2tiC7v0W.BiImReKDS8rOZ18C'
+- _id: VXzktLJ9DFrc8Wvg
+  _key: '!actors.items!Wn4NdwJEIXofioIU.VXzktLJ9DFrc8Wvg'
   name: Mounted Charger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -116,8 +116,8 @@ items:
     prePowerRollEffect:
       text: lf a worg used as a mount charges, their rider gains an edge on melee
         strikes until the end of their turn.
-- _id: K8V1qE42enm5onFe
-  _key: '!actors.items!1r9Q8H3W2tiC7v0W.K8V1qE42enm5onFe'
+- _id: XUwekfhivVlKJdam
+  _key: '!actors.items!Wn4NdwJEIXofioIU.XUwekfhivVlKJdam'
   name: Shared Crafty
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,8 +1,8 @@
-_id: clMGw5UON6GBjiYz
-_key: '!actors!clMGw5UON6GBjiYz'
+_id: RK1THwWEKeYrUmXf
+_key: '!actors!RK1THwWEKeYrUmXf'
 name: Mara
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/mara-01.png
+img: systems/aeon-draw-steel/images/monsters/mara-01.webp
 prototypeToken:
   name: Mara
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/mara-01.png
+    img: systems/aeon-draw-steel/images/monsters/mara-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Mara
@@ -55,8 +55,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: vvGHYberPwOAWu0j
-  _key: '!actors.items!clMGw5UON6GBjiYz.vvGHYberPwOAWu0j'
+- _id: 5kVIyANvuH8IF9r8
+  _key: '!actors.items!RK1THwWEKeYrUmXf.5kVIyANvuH8IF9r8'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: qUe7NAkUA2vu5ds3
-  _key: '!actors.items!clMGw5UON6GBjiYz.qUe7NAkUA2vu5ds3'
+- _id: mFzTiSZAbeiytvL0
+  _key: '!actors.items!RK1THwWEKeYrUmXf.mFzTiSZAbeiytvL0'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     postPowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: ihr5PruSPkmtw51J
-  _key: '!actors.items!clMGw5UON6GBjiYz.ihr5PruSPkmtw51J'
+- _id: uJLPfyeBcmqsduot
+  _key: '!actors.items!RK1THwWEKeYrUmXf.uJLPfyeBcmqsduot'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Mara teleports 2 squares. Each creature adjacent to her original space
         takes 2 corruption damage.
-- _id: yI581S7YlT8kVd1C
-  _key: '!actors.items!clMGw5UON6GBjiYz.yI581S7YlT8kVd1C'
+- _id: I1rb3eJAmOlhTQRX
+  _key: '!actors.items!RK1THwWEKeYrUmXf.I1rb3eJAmOlhTQRX'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -162,8 +162,8 @@ items:
     prePowerRollEffect:
       text: If Mara is frightened, slowed, or weakened, she can use a maneuver to
         end the condition.
-- _id: GELTqSkLWyaO9jlT
-  _key: '!actors.items!clMGw5UON6GBjiYz.GELTqSkLWyaO9jlT'
+- _id: LktDd2BjKVzUvJbL
+  _key: '!actors.items!RK1THwWEKeYrUmXf.LktDd2BjKVzUvJbL'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

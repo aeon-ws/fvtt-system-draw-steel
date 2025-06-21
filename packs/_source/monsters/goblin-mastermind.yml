@@ -1,8 +1,8 @@
-_id: sqK5e0eCFAKuXl0g
-_key: '!actors!sqK5e0eCFAKuXl0g'
+_id: ZuY3sw8cqVHG2jXS
+_key: '!actors!ZuY3sw8cqVHG2jXS'
 name: Goblin Mastermind
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/goblin-mastermind-01.png
+img: systems/aeon-draw-steel/images/monsters/goblin-mastermind-01.webp
 prototypeToken:
   name: Goblin Mastermind
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/goblin-mastermind-01.png
+    img: systems/aeon-draw-steel/images/monsters/goblin-mastermind-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Goblin Mastermind
@@ -55,8 +55,8 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: xCaZ6EWWZnrguqsE
-  _key: '!actors.items!sqK5e0eCFAKuXl0g.xCaZ6EWWZnrguqsE'
+- _id: coUyLt3CM3pc8HIY
+  _key: '!actors.items!ZuY3sw8cqVHG2jXS.coUyLt3CM3pc8HIY'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,8 +87,8 @@ items:
         damage: 7
     postPowerRollEffect:
       text: One ally adjacent to the target can make a free strike against them.
-- _id: XCdpbTeqSk90hc5A
-  _key: '!actors.items!sqK5e0eCFAKuXl0g.XCdpbTeqSk90hc5A'
+- _id: 8kHAbLy7RnleQxvQ
+  _key: '!actors.items!ZuY3sw8cqVHG2jXS.8kHAbLy7RnleQxvQ'
   name: Goad
   type: monsterAbility
   img: icons/svg/book.svg
@@ -106,8 +106,8 @@ items:
     prePowerRollEffect:
       text: The mastermind retargets the strike to target themself or another ally.
         The new target must be a valid option for the strike.
-- _id: 5Or3Dm8shHCqkSAp
-  _key: '!actors.items!sqK5e0eCFAKuXl0g.5Or3Dm8shHCqkSAp'
+- _id: Kzpyx3JyAtysHNC2
+  _key: '!actors.items!ZuY3sw8cqVHG2jXS.Kzpyx3JyAtysHNC2'
   name: Saw You Coming
   type: monsterAbility
   img: icons/svg/book.svg
@@ -118,8 +118,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The mastermind can't be surprised.
-- _id: G2tVsEU25bmcjxBt
-  _key: '!actors.items!sqK5e0eCFAKuXl0g.G2tVsEU25bmcjxBt'
+- _id: T1Xrhfr4NlXoxtGH
+  _key: '!actors.items!ZuY3sw8cqVHG2jXS.T1Xrhfr4NlXoxtGH'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,8 +1,8 @@
-_id: rcWJDQsTfBacGm4F
-_key: '!actors!rcWJDQsTfBacGm4F'
+_id: GChHKeTJApxrgaBi
+_key: '!actors!GChHKeTJApxrgaBi'
 name: Brune
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/brune-01.png
+img: systems/aeon-draw-steel/images/monsters/brune-01.webp
 prototypeToken:
   name: Brune
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/brune-01.png
+    img: systems/aeon-draw-steel/images/monsters/brune-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Brune
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: xQJ6POT3km99mPNe
-  _key: '!actors.items!rcWJDQsTfBacGm4F.xQJ6POT3km99mPNe'
+- _id: SGvy71A9DooFRsQY
+  _key: '!actors.items!GChHKeTJApxrgaBi.SGvy71A9DooFRsQY'
   name: Butcher Knife
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: Brune deals an additional 2 damage if the target is already grabbed.
-- _id: QhnpN9aVW4GhIjNI
-  _key: '!actors.items!rcWJDQsTfBacGm4F.QhnpN9aVW4GhIjNI'
+- _id: 8snwQYsHSwMyryQv
+  _key: '!actors.items!GChHKeTJApxrgaBi.8snwQYsHSwMyryQv'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -115,8 +115,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: Ru1jJ9jD90X3bgwD
-  _key: '!actors.items!rcWJDQsTfBacGm4F.Ru1jJ9jD90X3bgwD'
+- _id: TLJNpI3a7ezsvBTA
+  _key: '!actors.items!GChHKeTJApxrgaBi.TLJNpI3a7ezsvBTA'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     prePowerRollEffect:
       text: Brune takes half damage from strikes if he has a creature or object grabbed.
         The grabbed creature or object takes the other half of the damage.
-- _id: TNK9C0ort2XoMowe
-  _key: '!actors.items!rcWJDQsTfBacGm4F.TNK9C0ort2XoMowe'
+- _id: epYhDLW2xk4jhEV8
+  _key: '!actors.items!GChHKeTJApxrgaBi.epYhDLW2xk4jhEV8'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

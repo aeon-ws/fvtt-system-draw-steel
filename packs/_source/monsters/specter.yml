@@ -1,8 +1,8 @@
-_id: M47IfjSJTZ7rvnBS
-_key: '!actors!M47IfjSJTZ7rvnBS'
+_id: K5sFCUoGaiS2O7Fz
+_key: '!actors!K5sFCUoGaiS2O7Fz'
 name: Specter
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/specter-01.png
+img: systems/aeon-draw-steel/images/monsters/specter-01.webp
 prototypeToken:
   name: Specter
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/specter-01.png
+    img: systems/aeon-draw-steel/images/monsters/specter-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Specter
@@ -57,8 +57,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: rpcXJNkln5AOcmA7
-  _key: '!actors.items!M47IfjSJTZ7rvnBS.rpcXJNkln5AOcmA7'
+- _id: XuEpfKLkAeeN8rel
+  _key: '!actors.items!K5sFCUoGaiS2O7Fz.XuEpfKLkAeeN8rel'
   name: Decaying Touch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,8 +108,8 @@ items:
       text: 2 Malice The potency of this ability increases by 1. A living creature
         killed by this ability becomes a specter who appears in the target's space
         under the Director's control.
-- _id: 0UF87rnKU6KAvub6
-  _key: '!actors.items!M47IfjSJTZ7rvnBS.0UF87rnKU6KAvub6'
+- _id: 4raIuAH7RF7NeV3Q
+  _key: '!actors.items!K5sFCUoGaiS2O7Fz.4raIuAH7RF7NeV3Q'
   name: Hidden Movement
   type: monsterAbility
   img: icons/svg/book.svg
@@ -126,8 +126,8 @@ items:
     prePowerRollEffect:
       text: The specter turns invisible, moves up to their speed, and becomes visible
         again.
-- _id: xmsYt3soUMmjh3ml
-  _key: '!actors.items!M47IfjSJTZ7rvnBS.xmsYt3soUMmjh3ml'
+- _id: Xr0lpZKbUNvX5tWq
+  _key: '!actors.items!K5sFCUoGaiS2O7Fz.Xr0lpZKbUNvX5tWq'
   name: Corruptive Phasing
   type: monsterAbility
   img: icons/svg/book.svg

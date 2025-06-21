@@ -1,8 +1,8 @@
-_id: UEHKY5MYOnQ1bzFh
-_key: '!actors!UEHKY5MYOnQ1bzFh'
+_id: 3QflefcFs8FqZ49p
+_key: '!actors!3QflefcFs8FqZ49p'
 name: Ogre Juggernaut
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/ogre-juggernaut-01.png
+img: systems/aeon-draw-steel/images/monsters/ogre-juggernaut-01.webp
 prototypeToken:
   name: Ogre Juggernaut
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 2
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/ogre-juggernaut-01.png
+    img: systems/aeon-draw-steel/images/monsters/ogre-juggernaut-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Ogre Juggernaut
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: tQR1K20dz8hpf5Vf
-  _key: '!actors.items!UEHKY5MYOnQ1bzFh.tQR1K20dz8hpf5Vf'
+- _id: PLmM9KocLw6H0Nk2
+  _key: '!actors.items!3QflefcFs8FqZ49p.PLmM9KocLw6H0Nk2'
   name: Pitchfork Catapult
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
             text: vertical slide 3
     maliceEffect:
       text: 1 Malice Each target is M<1 bleeding (save ends).
-- _id: VNFnj5ob4tAuqGSe
-  _key: '!actors.items!UEHKY5MYOnQ1bzFh.VNFnj5ob4tAuqGSe'
+- _id: 9hHrmfyEywsiS9JU
+  _key: '!actors.items!3QflefcFs8FqZ49p.9hHrmfyEywsiS9JU'
   name: Earth Breaking Jump
   type: monsterAbility
   img: icons/svg/book.svg
@@ -141,8 +141,8 @@ items:
             text: prone
     prePowerRollEffect:
       text: The juggernaut jumps up to 6 squares before using this ability.
-- _id: rFV5q3kxj60JsyXb
-  _key: '!actors.items!UEHKY5MYOnQ1bzFh.rFV5q3kxj60JsyXb'
+- _id: D9faROviWC2Mw3se
+  _key: '!actors.items!3QflefcFs8FqZ49p.D9faROviWC2Mw3se'
   name: Horrible Bellow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -181,8 +181,8 @@ items:
     postPowerRollEffect:
       text: All ogres have an edge on strikes against creatures frightened by this
         ability.
-- _id: 2gUNsfsna3lpn8y1
-  _key: '!actors.items!UEHKY5MYOnQ1bzFh.2gUNsfsna3lpn8y1'
+- _id: qnbPwGr2JweaS80O
+  _key: '!actors.items!3QflefcFs8FqZ49p.qnbPwGr2JweaS80O'
   name: Hrraaaaaagh!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -200,8 +200,8 @@ items:
     trigger: The juggernaut takes damage.
     prePowerRollEffect:
       text: The juggernaut moves up to their speed and makes a free strike.
-- _id: MPDiJZk72idALeZJ
-  _key: '!actors.items!UEHKY5MYOnQ1bzFh.MPDiJZk72idALeZJ'
+- _id: yXJSXiVwvwQslYCx
+  _key: '!actors.items!3QflefcFs8FqZ49p.yXJSXiVwvwQslYCx'
   name: Destructive Path
   type: monsterAbility
   img: icons/svg/book.svg
@@ -215,8 +215,8 @@ items:
         in their path during their movement. They can break through any mundane wall
         made of wood, stone, or a similarly sturdy material in this way, so long as
         the wall is no more than 1 square thick.
-- _id: rdJKYGsuIZrPNM6U
-  _key: '!actors.items!UEHKY5MYOnQ1bzFh.rdJKYGsuIZrPNM6U'
+- _id: WmgLtYUTjmuPhbrL
+  _key: '!actors.items!3QflefcFs8FqZ49p.WmgLtYUTjmuPhbrL'
   name: Defiant Anger
   type: monsterAbility
   img: icons/svg/book.svg

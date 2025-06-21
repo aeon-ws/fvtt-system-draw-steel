@@ -1,8 +1,8 @@
-_id: HT7Ut95sMCIV98O7
-_key: '!actors!HT7Ut95sMCIV98O7'
+_id: Gx7VrvfWVfzOCTd0
+_key: '!actors!Gx7VrvfWVfzOCTd0'
 name: Goblin Shadowknife
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/goblin-shadowknife-01.png
+img: systems/aeon-draw-steel/images/monsters/goblin-shadowknife-01.webp
 prototypeToken:
   name: Goblin Shadowknife
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/goblin-shadowknife-01.png
+    img: systems/aeon-draw-steel/images/monsters/goblin-shadowknife-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Goblin Shadowknife
@@ -57,8 +57,8 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: 8iLbWyd0q9TJ8o8y
-  _key: '!actors.items!HT7Ut95sMCIV98O7.8iLbWyd0q9TJ8o8y'
+- _id: C8uOLPIBofq17SwS
+  _key: '!actors.items!Gx7VrvfWVfzOCTd0.C8uOLPIBofq17SwS'
   name: Shadow Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,8 +96,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 corruption damage if the shadowknife
         has an edge on the power roll.
-- _id: DedKkMWvAseZy02y
-  _key: '!actors.items!HT7Ut95sMCIV98O7.DedKkMWvAseZy02y'
+- _id: mzelftKkPc5ocBBj
+  _key: '!actors.items!Gx7VrvfWVfzOCTd0.mzelftKkPc5ocBBj'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -143,8 +143,8 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
-- _id: aj6O4dl912EMisiu
-  _key: '!actors.items!HT7Ut95sMCIV98O7.aj6O4dl912EMisiu'
+- _id: HKuLs1WLjHUliCnw
+  _key: '!actors.items!Gx7VrvfWVfzOCTd0.HKuLs1WLjHUliCnw'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -158,8 +158,8 @@ items:
         Whenever the shadowknife is adjacent to an enemy and willingly moves to a
         space no longer adjacent to that enemy, the shadowknife can make an opportunity
         attack against them as a triggered action.
-- _id: vNjMJzrgMl1rSeSK
-  _key: '!actors.items!HT7Ut95sMCIV98O7.vNjMJzrgMl1rSeSK'
+- _id: pZzYSApjGuwe5UCQ
+  _key: '!actors.items!Gx7VrvfWVfzOCTd0.pZzYSApjGuwe5UCQ'
   name: Hide While Observed
   type: monsterAbility
   img: icons/svg/book.svg

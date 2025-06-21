@@ -1,8 +1,8 @@
-_id: G2zdSK2TcOQ9441m
-_key: '!actors!G2zdSK2TcOQ9441m'
+_id: ToGGZZgLnwLkrOtt
+_key: '!actors!ToGGZZgLnwLkrOtt'
 name: Ghost
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/ghost-01.png
+img: systems/aeon-draw-steel/images/monsters/ghost-01.webp
 prototypeToken:
   name: Ghost
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/ghost-01.png
+    img: systems/aeon-draw-steel/images/monsters/ghost-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Ghost
@@ -57,8 +57,8 @@ system:
     corruption: 3
     poison: 3
 items:
-- _id: bW6tV0QVtJ2DZDt2
-  _key: '!actors.items!G2zdSK2TcOQ9441m.bW6tV0QVtJ2DZDt2'
+- _id: TUgBdaClKEwKAOoH
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.TUgBdaClKEwKAOoH'
   name: Heat Death
   type: monsterAbility
   img: icons/svg/book.svg
@@ -106,8 +106,8 @@ items:
             text: slowed save ends
     postPowerRollEffect:
       text: The next strike made against the target has an edge.
-- _id: HdFA9En23cQVecDr
-  _key: '!actors.items!G2zdSK2TcOQ9441m.HdFA9En23cQVecDr'
+- _id: GI3kBbyzQX60tW4d
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.GI3kBbyzQX60tW4d'
   name: Haunt
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
       text: The target shifts up to their speed.
     maliceEffect:
       text: 2 Malice The ghost chooses one additional target.
-- _id: QSiz3TLi56OjxLuM
-  _key: '!actors.items!G2zdSK2TcOQ9441m.QSiz3TLi56OjxLuM'
+- _id: yv1ayeMp26zBYp12
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.yv1ayeMp26zBYp12'
   name: Shriek
   type: monsterAbility
   img: icons/svg/book.svg
@@ -150,8 +150,8 @@ items:
     trigger: A creature within distance targets the ghost with a strike.
     prePowerRollEffect:
       text: The ghost halves the incoming damage and the target takes 2 sonic damage.
-- _id: Yg0Eu8EDfzoaI9lG
-  _key: '!actors.items!G2zdSK2TcOQ9441m.Yg0Eu8EDfzoaI9lG'
+- _id: v2nlZiWcjwnF1FhO
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.v2nlZiWcjwnF1FhO'
   name: Phantom Flow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -163,8 +163,8 @@ items:
     prePowerRollEffect:
       text: Each incorporeal undead creature within 10 squares of the ghost ignores
         difficult terrain.
-- _id: BL6OfvhRvAsEPQTK
-  _key: '!actors.items!G2zdSK2TcOQ9441m.BL6OfvhRvAsEPQTK'
+- _id: gFpHJFuYRHeGGaRn
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.gFpHJFuYRHeGGaRn'
   name: Paranormal Activity
   type: monsterAbility
   img: icons/svg/book.svg
@@ -185,8 +185,8 @@ items:
     prePowerRollEffect:
       text: Each target floats 1 square into the air and is pulled 5 squares toward
         the nearest enemy within 3 squares of them.
-- _id: 64rZGOgQWRxENHZM
-  _key: '!actors.items!G2zdSK2TcOQ9441m.64rZGOgQWRxENHZM'
+- _id: oETt62ZzFWABqX0u
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.oETt62ZzFWABqX0u'
   name: Spirited Away
   type: monsterAbility
   img: icons/svg/book.svg
@@ -228,8 +228,8 @@ items:
         affected, then rises 1 square at the end of each of their turns. If a levitated
         target can't already fly, they can fly but are slowed and weakened while flying
         in this way.
-- _id: kEPIilE60JbRUHzl
-  _key: '!actors.items!G2zdSK2TcOQ9441m.kEPIilE60JbRUHzl'
+- _id: oapIUSYpGP0Bxc3R
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.oapIUSYpGP0Bxc3R'
   name: Awful Wail
   type: monsterAbility
   img: icons/svg/book.svg
@@ -260,8 +260,8 @@ items:
     postPowerRollEffect:
       text: P<2 the target is reduced to 1 Stamina if they are winded after taking
         damage.
-- _id: 49sKJZU9Ob4YeZAv
-  _key: '!actors.items!G2zdSK2TcOQ9441m.49sKJZU9Ob4YeZAv'
+- _id: tF6R2vfzyJkn9AeK
+  _key: '!actors.items!ToGGZZgLnwLkrOtt.tF6R2vfzyJkn9AeK'
   name: Corruptive Phasing
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,8 +1,8 @@
-_id: A7Brtp9VKuQ3CqWd
-_key: '!actors!A7Brtp9VKuQ3CqWd'
+_id: Isf4yw1Wn2atjrlf
+_key: '!actors!Isf4yw1Wn2atjrlf'
 name: Goblin Toxinaut
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.png
+img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.webp
 prototypeToken:
   name: Goblin Toxinaut
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.png
+    img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.2
+      scale: 1.1
       texture: null
 system:
   name: Goblin Toxinaut
@@ -57,8 +57,8 @@ system:
   immunity:
     poison: 3
 items:
-- _id: HQvluBQGw9AxdlJx
-  _key: '!actors.items!A7Brtp9VKuQ3CqWd.HQvluBQGw9AxdlJx'
+- _id: ihetRjVBoGiDJRGd
+  _key: '!actors.items!Isf4yw1Wn2atjrlf.ihetRjVBoGiDJRGd'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,8 +100,8 @@ items:
         terrain for non-goblin creatures, and each such creature who moves within
         the area takes 2 poison damage for each square moved. The poison damage ignores
         immunity. The haze can't be dispersed by wind.
-- _id: 1jMmRwd14SXi6bMo
-  _key: '!actors.items!A7Brtp9VKuQ3CqWd.1jMmRwd14SXi6bMo'
+- _id: nSsxz2vV88pvsWE5
+  _key: '!actors.items!Isf4yw1Wn2atjrlf.nSsxz2vV88pvsWE5'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

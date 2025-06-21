@@ -1,8 +1,8 @@
-_id: 2UesEkmupdXVSzaK
-_key: '!actors!2UesEkmupdXVSzaK'
+_id: Gfa6zovWm8h53fLW
+_key: '!actors!Gfa6zovWm8h53fLW'
 name: Sudden Downpour
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/sudden-downpour-01.png
+img: systems/aeon-draw-steel/images/monsters/sudden-downpour-01.webp
 prototypeToken:
   name: Sudden Downpour
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/sudden-downpour-01.png
+    img: systems/aeon-draw-steel/images/monsters/sudden-downpour-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Sudden Downpour
@@ -56,8 +56,8 @@ system:
   immunity:
     fire: 2
 items:
-- _id: N9mGg8EM1iiwghfg
-  _key: '!actors.items!2UesEkmupdXVSzaK.N9mGg8EM1iiwghfg'
+- _id: nNhGlkmKFfe2jIQL
+  _key: '!actors.items!Gfa6zovWm8h53fLW.nNhGlkmKFfe2jIQL'
   name: Leap Upon
   type: monsterAbility
   img: icons/svg/book.svg
@@ -105,8 +105,8 @@ items:
             text: bleeding (save ends)
     postPowerRollEffect:
       text: The downpour jumps 3 squares before making the strike.
-- _id: 0EPvY2RVZAF08J5N
-  _key: '!actors.items!2UesEkmupdXVSzaK.0EPvY2RVZAF08J5N'
+- _id: KS7qdyoI6rDB52tE
+  _key: '!actors.items!Gfa6zovWm8h53fLW.KS7qdyoI6rDB52tE'
   name: See Through
   type: monsterAbility
   img: icons/svg/book.svg
@@ -116,8 +116,8 @@ items:
     isSignature: false
     keywords: []
     type: maneuver
-- _id: jxiE4wpsIUu4Tm4P
-  _key: '!actors.items!2UesEkmupdXVSzaK.jxiE4wpsIUu4Tm4P'
+- _id: 2Y9jgngDGZIjnJgh
+  _key: '!actors.items!Gfa6zovWm8h53fLW.2Y9jgngDGZIjnJgh'
   name: Aquavuken
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
     prePowerRollEffect:
       text: The downpour ignores difficult terrain and can move on top of water as
         if it was solid ground.
-- _id: 1gVjj3oHGaSVNIqW
-  _key: '!actors.items!2UesEkmupdXVSzaK.1gVjj3oHGaSVNIqW'
+- _id: BSYx53eb2NIx02l9
+  _key: '!actors.items!Gfa6zovWm8h53fLW.BSYx53eb2NIx02l9'
   name: Pack Strong
   type: monsterAbility
   img: icons/svg/book.svg
@@ -141,8 +141,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The downpour can't be flanked or frightened while adjacent to an ally.
-- _id: NEfVavUeIhvDH194
-  _key: '!actors.items!2UesEkmupdXVSzaK.NEfVavUeIhvDH194'
+- _id: F3YJ0J4NPscP8Rnf
+  _key: '!actors.items!Gfa6zovWm8h53fLW.F3YJ0J4NPscP8Rnf'
   name: Water Weird
   type: monsterAbility
   img: icons/svg/book.svg

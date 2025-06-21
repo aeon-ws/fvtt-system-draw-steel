@@ -1,8 +1,8 @@
-_id: 7DB5J22vmMkI6U4Q
-_key: '!actors!7DB5J22vmMkI6U4Q'
+_id: LgEH7g6R55dcUTum
+_key: '!actors!LgEH7g6R55dcUTum'
 name: Goblin Assassin
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/goblin-assassin-01.png
+img: systems/aeon-draw-steel/images/monsters/goblin-assassin-01.webp
 prototypeToken:
   name: Goblin Assassin
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/goblin-assassin-01.png
+    img: systems/aeon-draw-steel/images/monsters/goblin-assassin-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.2
+      scale: 1.1
       texture: null
 system:
   name: Goblin Assassin
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 2
 items:
-- _id: cpShoI7cnhk6n8DW
-  _key: '!actors.items!7DB5J22vmMkI6U4Q.cpShoI7cnhk6n8DW'
+- _id: 5cz8twzsEvah9fol
+  _key: '!actors.items!LgEH7g6R55dcUTum.5cz8twzsEvah9fol'
   name: Sword Stab
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,8 +87,8 @@ items:
     postPowerRollEffect:
       text: This ability deals an additional 2 damage if the assassin has an edge
         on the power roll.
-- _id: lt4qJ3dyA0hq7qWJ
-  _key: '!actors.items!7DB5J22vmMkI6U4Q.lt4qJ3dyA0hq7qWJ'
+- _id: XdYJ7wiiBvQhcjcT
+  _key: '!actors.items!LgEH7g6R55dcUTum.XdYJ7wiiBvQhcjcT'
   name: Shadow Chains
   type: monsterAbility
   img: icons/svg/book.svg
@@ -134,8 +134,8 @@ items:
           value: 2
           effect:
             text: restrained (save ends)
-- _id: 3cUovxYssPt7NF1v
-  _key: '!actors.items!7DB5J22vmMkI6U4Q.3cUovxYssPt7NF1v'
+- _id: xK4KdlUBMqwioQ8x
+  _key: '!actors.items!LgEH7g6R55dcUTum.xK4KdlUBMqwioQ8x'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg
@@ -146,8 +146,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The assassin doesn't provoke opportunity attacks by moving.
-- _id: XLNmoBiVg4FxvYhn
-  _key: '!actors.items!7DB5J22vmMkI6U4Q.XLNmoBiVg4FxvYhn'
+- _id: 33vh5OUQcpxCsWJm
+  _key: '!actors.items!LgEH7g6R55dcUTum.33vh5OUQcpxCsWJm'
   name: Slip Away
   type: monsterAbility
   img: icons/svg/book.svg

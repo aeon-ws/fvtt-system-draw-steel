@@ -1,8 +1,8 @@
-_id: uBs4AJYI8TkVTiAO
-_key: '!actors!uBs4AJYI8TkVTiAO'
+_id: qHxHMh4hwevct1Kh
+_key: '!actors!qHxHMh4hwevct1Kh'
 name: Goblin Stinker
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/goblin-stinker-01.png
+img: systems/aeon-draw-steel/images/monsters/goblin-stinker-01.webp
 prototypeToken:
   name: Goblin Stinker
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/goblin-stinker-01.png
+    img: systems/aeon-draw-steel/images/monsters/goblin-stinker-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.2
+      scale: 1.1
       texture: null
 system:
   name: Goblin Stinker
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: LpLQRcKA2eSJHLys
-  _key: '!actors.items!uBs4AJYI8TkVTiAO.LpLQRcKA2eSJHLys'
+- _id: u22O4rpLXmrVaoNM
+  _key: '!actors.items!qHxHMh4hwevct1Kh.u22O4rpLXmrVaoNM'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
         damageType: poison
         effect:
           text: slide 3 1
-- _id: bys4OnZT2T4V74aM
-  _key: '!actors.items!uBs4AJYI8TkVTiAO.bys4OnZT2T4V74aM'
+- _id: mPvo1IZp7sqQhqBM
+  _key: '!actors.items!qHxHMh4hwevct1Kh.mPvo1IZp7sqQhqBM'
   name: Swamp Gas
   type: monsterAbility
   img: icons/svg/book.svg
@@ -117,8 +117,8 @@ items:
         terrain for non-goblin creatures, and each such creature who moves within
         the area takes 2 poison damage for each square moved. The haze can't be dispersed
         by wind.
-- _id: saUClPu8F467ksOJ
-  _key: '!actors.items!uBs4AJYI8TkVTiAO.saUClPu8F467ksOJ'
+- _id: hm0rNv2gzXE2H5zT
+  _key: '!actors.items!qHxHMh4hwevct1Kh.hm0rNv2gzXE2H5zT'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

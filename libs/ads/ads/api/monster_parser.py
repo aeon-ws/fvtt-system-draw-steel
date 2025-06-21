@@ -689,11 +689,11 @@ def get_monster_foundry_actor_model(
         width = 1
 
     if monster_model["size"].endswith("S") or monster_model["size"].endswith("T"):
-        ring_scale = 1.2
+        ring_scale = 1.1
     else:
-        ring_scale = 1.0
+        ring_scale = 0.9
 
-    monster_image_path = f"systems/aeon-draw-steel/images/monsters/{monster_model['name'].replace(' ', '-').lower()}-01.png"
+    monster_image_path = f"systems/aeon-draw-steel/images/monsters/{monster_model['name'].replace(' ', '-').lower()}-01.webp"
 
     monster_foundry_actor_model: dict[str, Any] = {
         "_id": actor_id,
@@ -715,7 +715,7 @@ def get_monster_foundry_actor_model(
             "texture": {"img": monster_image_path},
             "appendNumber": False,
             "ring": {
-                "enabled": True,
+                "enabled": False,
                 "colors": {"ring": "#ac936c", "background": "#ac936c"},
                 "effects": 1,
                 "subject": {"scale": ring_scale, "texture": None},

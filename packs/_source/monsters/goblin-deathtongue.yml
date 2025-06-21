@@ -1,8 +1,8 @@
-_id: 58qodv9QknnXDb0k
-_key: '!actors!58qodv9QknnXDb0k'
+_id: JPULIaymD3sJyFzi
+_key: '!actors!JPULIaymD3sJyFzi'
 name: Goblin Deathtongue
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
+img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.webp
 prototypeToken:
   name: Goblin Deathtongue
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.png
+    img: systems/aeon-draw-steel/images/monsters/goblin-deathtongue-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.2
+      scale: 1.1
       texture: null
 system:
   name: Goblin Deathtongue
@@ -57,8 +57,8 @@ system:
   immunity:
     corruption: 2
 items:
-- _id: yK5hiH1PbmCPgEjU
-  _key: '!actors.items!58qodv9QknnXDb0k.yK5hiH1PbmCPgEjU'
+- _id: LYKHLwHXhSsllZkZ
+  _key: '!actors.items!JPULIaymD3sJyFzi.LYKHLwHXhSsllZkZ'
   name: Gaze of Surlach
   type: monsterAbility
   img: icons/svg/book.svg
@@ -101,8 +101,8 @@ items:
           value: 2
           effect:
             text: slowed and weakened (save ends)
-- _id: ghuQyX1EAt1mMya4
-  _key: '!actors.items!58qodv9QknnXDb0k.ghuQyX1EAt1mMya4'
+- _id: 1dIuZyCXpRSQFrLK
+  _key: '!actors.items!JPULIaymD3sJyFzi.1dIuZyCXpRSQFrLK'
   name: Dizzying Hex
   type: monsterAbility
   img: icons/svg/book.svg
@@ -143,8 +143,8 @@ items:
           value: 2
           effect:
             text: and can't stand (save ends)
-- _id: 63ZB51jVNkUym7YO
-  _key: '!actors.items!58qodv9QknnXDb0k.63ZB51jVNkUym7YO'
+- _id: LLEWEu7hDz6QoKsN
+  _key: '!actors.items!JPULIaymD3sJyFzi.LLEWEu7hDz6QoKsN'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

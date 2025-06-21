@@ -1,8 +1,8 @@
-_id: AHspe49FVgh9mS6W
-_key: '!actors!AHspe49FVgh9mS6W'
+_id: KcAb9DHDlUjRo6LM
+_key: '!actors!KcAb9DHDlUjRo6LM'
 name: Dame Cornelia
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/dame-cornelia-01.png
+img: systems/aeon-draw-steel/images/monsters/dame-cornelia-01.webp
 prototypeToken:
   name: Dame Cornelia
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/dame-cornelia-01.png
+    img: systems/aeon-draw-steel/images/monsters/dame-cornelia-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Dame Cornelia
@@ -56,8 +56,8 @@ system:
     corruption: 2
     psychic: 2
 items:
-- _id: L3DejZHYCTnWdnt8
-  _key: '!actors.items!AHspe49FVgh9mS6W.L3DejZHYCTnWdnt8'
+- _id: El9kgrt85NYRZ3Cm
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.El9kgrt85NYRZ3Cm'
   name: Zweihander Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -101,8 +101,8 @@ items:
       text: 1 Malice The ally can use their signature action instead.
     postPowerRollEffect:
       text: An ally within 10 of Cornelia can make a free strike.
-- _id: raChbCNPaGt31NvX
-  _key: '!actors.items!AHspe49FVgh9mS6W.raChbCNPaGt31NvX'
+- _id: WiVbdGiIgvrss3Rc
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.WiVbdGiIgvrss3Rc'
   name: You!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -121,8 +121,8 @@ items:
       text: The target is marked until the start of Cornelia's next turn. Cornelia
         and each of her allies gain an edge on abilities used against targets marked
         by her.
-- _id: bm3qNojriyqy908q
-  _key: '!actors.items!AHspe49FVgh9mS6W.bm3qNojriyqy908q'
+- _id: xm1PxdCP7Drm8fEx
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.xm1PxdCP7Drm8fEx'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -134,8 +134,8 @@ items:
     prePowerRollEffect:
       text: At the end of her turn, Cornelia can take 5 damage to end one save ends
         effect affecting her. This damage can't be reduced in any way.
-- _id: vDGEhJ7ogLuhmNtW
-  _key: '!actors.items!AHspe49FVgh9mS6W.vDGEhJ7ogLuhmNtW'
+- _id: Y0Hp5Ex4Bw0x0GPj
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.Y0Hp5Ex4Bw0x0GPj'
   name: Death Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -147,8 +147,8 @@ items:
     prePowerRollEffect:
       text: When Cornelia is destroyed, each enemy within 2 squares of her takes 5
         corruption damage.
-- _id: W0SOaCgpmdLoMIbH
-  _key: '!actors.items!AHspe49FVgh9mS6W.W0SOaCgpmdLoMIbH'
+- _id: r9IBNzeOUk3oiHGN
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.r9IBNzeOUk3oiHGN'
   name: Parry!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -166,8 +166,8 @@ items:
     prePowerRollEffect:
       text: The damage is halved. Advance! (Villain Action 1 Cornelia shifts up to
         her speed. During or after this movement, she can use Zweihander Swing twice.
-- _id: nxMEn9R3AGQRS1jn
-  _key: '!actors.items!AHspe49FVgh9mS6W.nxMEn9R3AGQRS1jn'
+- _id: EGYbcxzvqeCiP4KR
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.EGYbcxzvqeCiP4KR'
   name: Back!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -186,8 +186,8 @@ items:
       enemy: true
     prePowerRollEffect:
       text: Slide 5.
-- _id: da7g03xNIJGvdZh6
-  _key: '!actors.items!AHspe49FVgh9mS6W.da7g03xNIJGvdZh6'
+- _id: v7yXh8lXXw9tTuE6
+  _key: '!actors.items!KcAb9DHDlUjRo6LM.v7yXh8lXXw9tTuE6'
   name: Can Throw My Blade and So Should You!
   type: monsterAbility
   img: icons/svg/book.svg

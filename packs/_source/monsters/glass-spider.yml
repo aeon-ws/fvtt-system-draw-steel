@@ -1,8 +1,8 @@
-_id: sQJKLnezXgItQ37C
-_key: '!actors!sQJKLnezXgItQ37C'
+_id: akoCTlnA0muZ1PEj
+_key: '!actors!akoCTlnA0muZ1PEj'
 name: Glass Spider
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/glass-spider-01.png
+img: systems/aeon-draw-steel/images/monsters/glass-spider-01.webp
 prototypeToken:
   name: Glass Spider
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 3
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/glass-spider-01.png
+    img: systems/aeon-draw-steel/images/monsters/glass-spider-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Glass Spider
@@ -55,8 +55,8 @@ system:
   weakness:
     sonic: 5
 items:
-- _id: wkIlAOteS90mDp49
-  _key: '!actors.items!sQJKLnezXgItQ37C.wkIlAOteS90mDp49'
+- _id: gzZ0m4tvkBJovS3y
+  _key: '!actors.items!akoCTlnA0muZ1PEj.gzZ0m4tvkBJovS3y'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
             text: bleeding (save ends)
     maliceEffect:
       text: 2 Malice A<3 bleeding (save ends).
-- _id: JWd94wkh0SLp5if8
-  _key: '!actors.items!sQJKLnezXgItQ37C.JWd94wkh0SLp5if8'
+- _id: 3yMb8Owy5ylck5I0
+  _key: '!actors.items!akoCTlnA0muZ1PEj.3yMb8Owy5ylck5I0'
   name: Slashing Leg
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,8 +122,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: RuVQFAvjafqThPhN
-  _key: '!actors.items!sQJKLnezXgItQ37C.RuVQFAvjafqThPhN'
+- _id: jf1vjJsEWZIYDjJ6
+  _key: '!actors.items!akoCTlnA0muZ1PEj.jf1vjJsEWZIYDjJ6'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -142,8 +142,8 @@ items:
       text: The spider shifts up to their speed and makes a Slashing Leg strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: 3U3B0nLR8dwcYM6S
-  _key: '!actors.items!sQJKLnezXgItQ37C.3U3B0nLR8dwcYM6S'
+- _id: TAqumMHLCNXrcwQP
+  _key: '!actors.items!akoCTlnA0muZ1PEj.TAqumMHLCNXrcwQP'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -178,8 +178,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: Pyt8R6idAg5odiRW
-  _key: '!actors.items!sQJKLnezXgItQ37C.Pyt8R6idAg5odiRW'
+- _id: 17ExWTwunz1Atys9
+  _key: '!actors.items!akoCTlnA0muZ1PEj.17ExWTwunz1Atys9'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg

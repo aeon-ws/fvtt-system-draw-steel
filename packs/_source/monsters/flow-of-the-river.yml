@@ -1,8 +1,8 @@
-_id: pfo4k9tYg9kPjThH
-_key: '!actors!pfo4k9tYg9kPjThH'
+_id: AVtt3yPlFDKpht6l
+_key: '!actors!AVtt3yPlFDKpht6l'
 name: Flow of the River
 type: minion
-img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.png
+img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.webp
 prototypeToken:
   name: Flow of the River
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.png
+    img: systems/aeon-draw-steel/images/monsters/flow-of-the-river-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Flow of the River
@@ -59,8 +59,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: TgitJlJAp7B3d9qJ
-  _key: '!actors.items!pfo4k9tYg9kPjThH.TgitJlJAp7B3d9qJ'
+- _id: 5FB4nFkZ8Jyhdpuc
+  _key: '!actors.items!AVtt3yPlFDKpht6l.5FB4nFkZ8Jyhdpuc'
   name: Bite and Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
         damage: 5
         effect:
           text: shift 3
-- _id: GgfVZavWDRC7WRrD
-  _key: '!actors.items!pfo4k9tYg9kPjThH.GgfVZavWDRC7WRrD'
+- _id: 25HipWmSm6K2Cshs
+  _key: '!actors.items!AVtt3yPlFDKpht6l.25HipWmSm6K2Cshs'
   name: Aquavuken
   type: monsterAbility
   img: icons/svg/book.svg
@@ -108,8 +108,8 @@ items:
     prePowerRollEffect:
       text: The flow ignores difficult terrain and can move on top of water as if
         it was solid ground.
-- _id: L4H8lNlqHHNGdyJz
-  _key: '!actors.items!pfo4k9tYg9kPjThH.L4H8lNlqHHNGdyJz'
+- _id: Yuji0rfI0jSARdYk
+  _key: '!actors.items!AVtt3yPlFDKpht6l.Yuji0rfI0jSARdYk'
   name: Pack Strong
   type: monsterAbility
   img: icons/svg/book.svg
@@ -120,8 +120,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The flow can't be flanked or frightened while adjacent to an ally.
-- _id: FKb7JHKnNw5X6vxi
-  _key: '!actors.items!pfo4k9tYg9kPjThH.FKb7JHKnNw5X6vxi'
+- _id: bxrFF97Fmhgq8RfD
+  _key: '!actors.items!AVtt3yPlFDKpht6l.bxrFF97Fmhgq8RfD'
   name: Water Weird
   type: monsterAbility
   img: icons/svg/book.svg

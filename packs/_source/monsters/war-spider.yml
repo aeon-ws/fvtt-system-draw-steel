@@ -1,8 +1,8 @@
-_id: fEpjTwAfgqFcHSOI
-_key: '!actors!fEpjTwAfgqFcHSOI'
+_id: xqKVJZEmAKbc2VAF
+_key: '!actors!xqKVJZEmAKbc2VAF'
 name: War Spider
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/war-spider-01.png
+img: systems/aeon-draw-steel/images/monsters/war-spider-01.webp
 prototypeToken:
   name: War Spider
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 3
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/war-spider-01.png
+    img: systems/aeon-draw-steel/images/monsters/war-spider-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: War Spider
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 4
 items:
-- _id: WW5ZbwkR3qMmJJzs
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.WW5ZbwkR3qMmJJzs'
+- _id: 3dOXtTKngkNmcL3r
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.3dOXtTKngkNmcL3r'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
             text: weakened (save ends)
     maliceEffect:
       text: 2 Malice M<3 weakened (save ends).
-- _id: muST2OFIBf19BYpy
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.muST2OFIBf19BYpy'
+- _id: yHAVv8Q8pHbOeHrH
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.yHAVv8Q8pHbOeHrH'
   name: Leg Blade
   type: monsterAbility
   img: icons/svg/book.svg
@@ -124,8 +124,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: HyDN2bUWNFBFzZ9X
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.HyDN2bUWNFBFzZ9X'
+- _id: qxAQrod7wPK4ZclX
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.qxAQrod7wPK4ZclX'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
       text: The spider shifts up to their speed and makes a Leg Blade strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: RQPbJkWI2xEae1Y2
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.RQPbJkWI2xEae1Y2'
+- _id: epwNyG4coZRpTqeZ
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.epwNyG4coZRpTqeZ'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -179,8 +179,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: OZ5bCovDs2YgCcPu
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.OZ5bCovDs2YgCcPu'
+- _id: Xc4jOsCrL5ta5BMg
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.Xc4jOsCrL5ta5BMg'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg
@@ -198,8 +198,8 @@ items:
     prePowerRollEffect:
       text: The spider halves the damage, and then shifts 2 squares after the triggering
         effect resolves.
-- _id: 6ueBptApQKLbLkaS
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.6ueBptApQKLbLkaS'
+- _id: hhX2Er5v6tLMtZRB
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.hhX2Er5v6tLMtZRB'
   name: Ride Launcher
   type: monsterAbility
   img: icons/svg/book.svg
@@ -212,8 +212,8 @@ items:
       text: An ally who leaps off the back of the spider can jump up to 6 squares
         without a test, and takes no damage if they fall during the jump. After the
         jump, the first melee strike an ally makes on the same turn gains an edge.
-- _id: eoEgIbsQzE7UhUWc
-  _key: '!actors.items!fEpjTwAfgqFcHSOI.eoEgIbsQzE7UhUWc'
+- _id: xQ6Pz2CoSMKkmkrB
+  _key: '!actors.items!xqKVJZEmAKbc2VAF.xQ6Pz2CoSMKkmkrB'
   name: Wide Back
   type: monsterAbility
   img: icons/svg/book.svg

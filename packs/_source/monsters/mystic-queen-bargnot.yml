@@ -1,8 +1,8 @@
-_id: WAKHdghhzhL51Uwz
-_key: '!actors!WAKHdghhzhL51Uwz'
+_id: SfQXmcDIcm0NtUmp
+_key: '!actors!SfQXmcDIcm0NtUmp'
 name: Mystic Queen Bargnot
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.png
+img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.webp
 prototypeToken:
   name: Mystic Queen Bargnot
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.png
+    img: systems/aeon-draw-steel/images/monsters/mystic-queen-bargnot-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Mystic Queen Bargnot
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: QpSRZnfvkhZTrb8A
-  _key: '!actors.items!WAKHdghhzhL51Uwz.QpSRZnfvkhZTrb8A'
+- _id: bcowWfwnLz0Hxocc
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.bcowWfwnLz0Hxocc'
   name: Power Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -100,8 +100,8 @@ items:
             text: prone
     postPowerRollEffect:
       text: An ally within 10 of Queen Bargnot can make a free strike.
-- _id: MQfg6FTDpkkX71Tv
-  _key: '!actors.items!WAKHdghhzhL51Uwz.MQfg6FTDpkkX71Tv'
+- _id: 48uRAyByoLzVUo2K
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.48uRAyByoLzVUo2K'
   name: Get Out There!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,8 +119,8 @@ items:
     prePowerRollEffect:
       text: Queen Bargnot throws the ally up to 5 squares. The ally can make a melee
         free strike when they land.
-- _id: LnbjRWcJEO1zAPyw
-  _key: '!actors.items!WAKHdghhzhL51Uwz.LnbjRWcJEO1zAPyw'
+- _id: mFhT8Zkv9ylS2YGk
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.mFhT8Zkv9ylS2YGk'
   name: Show Them Your Might!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -139,8 +139,8 @@ items:
     prePowerRollEffect:
       text: The ally becomes the target of the triggering strike instead. Queen Bargnot
         shifts 1.
-- _id: UzZDJpq61b4VG32G
-  _key: '!actors.items!WAKHdghhzhL51Uwz.UzZDJpq61b4VG32G'
+- _id: wNSR0MRnhswBdJrY
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.wNSR0MRnhswBdJrY'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +152,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, Queen Bargnot can take 5 damage to end one save
         ends effect affecting her. This damage can't be reduced in any way.
-- _id: 0iKsP1awnxk8gYSf
-  _key: '!actors.items!WAKHdghhzhL51Uwz.0iKsP1awnxk8gYSf'
+- _id: y9haJvlfpGJtIsVs
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.y9haJvlfpGJtIsVs'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg
@@ -167,8 +167,8 @@ items:
         Whenever Queen Bargnot is adjacent to an enemy and willingly moves to a space
         no longer adjacent to that enemy, Queen Bargnot can make an opportunity attack
         against them as a triggered action.
-- _id: Qtm28GZFBE1eoMij
-  _key: '!actors.items!WAKHdghhzhL51Uwz.Qtm28GZFBE1eoMij'
+- _id: mT58yWqzL4BgJZDM
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.mT58yWqzL4BgJZDM'
   name: Focus Fire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -188,8 +188,8 @@ items:
     prePowerRollEffect:
       text: Each ally within 10 squares of the target can move up to their speed toward
         the target.
-- _id: CNQrBofpOWe3udLa
-  _key: '!actors.items!WAKHdghhzhL51Uwz.CNQrBofpOWe3udLa'
+- _id: Y4nrOqLaTgsA3xff
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.Y4nrOqLaTgsA3xff'
   name: Kill!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -207,8 +207,8 @@ items:
     prePowerRollEffect:
       text: Each enemy in the encounter takes 2 damage for each goblin adjacent to
         them, or 4 damage for each mystic goblin adjacent to them.
-- _id: Ki2M1Rk1Ey33hd1v
-  _key: '!actors.items!WAKHdghhzhL51Uwz.Ki2M1Rk1Ey33hd1v'
+- _id: RkVpGIxXmsRn8vgB
+  _key: '!actors.items!SfQXmcDIcm0NtUmp.RkVpGIxXmsRn8vgB'
   name: Oversurge
   type: monsterAbility
   img: icons/svg/book.svg

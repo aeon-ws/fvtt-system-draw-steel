@@ -1,8 +1,8 @@
-_id: O2T1ZN0Q7nXMzIQE
-_key: '!actors!O2T1ZN0Q7nXMzIQE'
+_id: 3eBs958LhKieLyqy
+_key: '!actors!3eBs958LhKieLyqy'
 name: Ghoul
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/ghoul-01.png
+img: systems/aeon-draw-steel/images/monsters/ghoul-01.webp
 prototypeToken:
   name: Ghoul
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/ghoul-01.png
+    img: systems/aeon-draw-steel/images/monsters/ghoul-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Ghoul
@@ -56,8 +56,8 @@ system:
     corruption: 1
     poison: 1
 items:
-- _id: pyexNj3MKy7oyQvQ
-  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.pyexNj3MKy7oyQvQ'
+- _id: 9Gr82kxC8o0p843K
+  _key: '!actors.items!3eBs958LhKieLyqy.9Gr82kxC8o0p843K'
   name: Razor Claws
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
           value: 2
           effect:
             text: bleeding (save ends)
-- _id: z6HwaO3A5vz9pgox
-  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.z6HwaO3A5vz9pgox'
+- _id: IHhUPIb5H6HN7hpz
+  _key: '!actors.items!3eBs958LhKieLyqy.IHhUPIb5H6HN7hpz'
   name: Leap
   type: monsterAbility
   img: icons/svg/book.svg
@@ -110,8 +110,8 @@ items:
     prePowerRollEffect:
       text: The ghoul jumps 3 squares. If they land on a size 1 enemy, that enemy
         is knocked prone and the ghoul makes a free strike against them.
-- _id: GrNZD8sSlNo49L8I
-  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.GrNZD8sSlNo49L8I'
+- _id: uJ4f4pI3Hq3Ri9tT
+  _key: '!actors.items!3eBs958LhKieLyqy.uJ4f4pI3Hq3Ri9tT'
   name: Hunger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -123,8 +123,8 @@ items:
     prePowerRollEffect:
       text: If the ghoul charges, their speed increases by 2 until the end of their
         turn.
-- _id: 0r7BAsxZSTEi4HJw
-  _key: '!actors.items!O2T1ZN0Q7nXMzIQE.0r7BAsxZSTEi4HJw'
+- _id: ZrEzaoVO47mllaSM
+  _key: '!actors.items!3eBs958LhKieLyqy.ZrEzaoVO47mllaSM'
   name: Arise
   type: monsterAbility
   img: icons/svg/book.svg

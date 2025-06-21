@@ -1,8 +1,8 @@
-_id: 9kKxQQMvVB3a0IHs
-_key: '!actors!9kKxQQMvVB3a0IHs'
+_id: 0i0BYZyDoZ0R0FG9
+_key: '!actors!0i0BYZyDoZ0R0FG9'
 name: Human Knave
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/human-knave-01.png
+img: systems/aeon-draw-steel/images/monsters/human-knave-01.webp
 prototypeToken:
   name: Human Knave
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/human-knave-01.png
+    img: systems/aeon-draw-steel/images/monsters/human-knave-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Human Knave
@@ -57,8 +57,8 @@ system:
     corruption: 2
     psychic: 2
 items:
-- _id: KHPkCncszIOfZwxH
-  _key: '!actors.items!9kKxQQMvVB3a0IHs.KHPkCncszIOfZwxH'
+- _id: z0JytPHaHeu2qmgZ
+  _key: '!actors.items!0i0BYZyDoZ0R0FG9.z0JytPHaHeu2qmgZ'
   name: Morningstar Javelin
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,8 +96,8 @@ items:
             text: the target has a double bane on their next power roll
     postPowerRollEffect:
       text: Taunted (EoT).
-- _id: GA9zocXhwaPLqAEA
-  _key: '!actors.items!9kKxQQMvVB3a0IHs.GA9zocXhwaPLqAEA'
+- _id: M2KJMJAwcIQyYWuQ
+  _key: '!actors.items!0i0BYZyDoZ0R0FG9.M2KJMJAwcIQyYWuQ'
   name: I'm Your Enemy
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,8 +109,8 @@ items:
     prePowerRollEffect:
       text: The knave can make a free strike against an adjacent creature they have
         taunted whenever the creature deals damage to a creature other than the knave.
-- _id: Nbh76aytQaulN2at
-  _key: '!actors.items!9kKxQQMvVB3a0IHs.Nbh76aytQaulN2at'
+- _id: IkSCXbUw1FV2v6mU
+  _key: '!actors.items!0i0BYZyDoZ0R0FG9.IkSCXbUw1FV2v6mU'
   name: Overwhelm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -121,8 +121,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: An enemy who starts their turn adjacent to the knave can't shift.
-- _id: sQTSO27Oa1vxx31P
-  _key: '!actors.items!9kKxQQMvVB3a0IHs.sQTSO27Oa1vxx31P'
+- _id: 0IO9ljtiHvBSyY3p
+  _key: '!actors.items!0i0BYZyDoZ0R0FG9.0IO9ljtiHvBSyY3p'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

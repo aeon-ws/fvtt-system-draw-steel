@@ -1,8 +1,8 @@
-_id: RXG7NHvojtV9Zoch
-_key: '!actors!RXG7NHvojtV9Zoch'
+_id: 9TQM5mYKDz8w6CkJ
+_key: '!actors!9TQM5mYKDz8w6CkJ'
 name: Human Brawler
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/human-brawler-01.png
+img: systems/aeon-draw-steel/images/monsters/human-brawler-01.webp
 prototypeToken:
   name: Human Brawler
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/human-brawler-01.png
+    img: systems/aeon-draw-steel/images/monsters/human-brawler-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.0
+      scale: 0.9
       texture: null
 system:
   name: Human Brawler
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: WJqEbaLNugfFWfNP
-  _key: '!actors.items!RXG7NHvojtV9Zoch.WJqEbaLNugfFWfNP'
+- _id: vvVnrGxwvYN9Pfj5
+  _key: '!actors.items!9TQM5mYKDz8w6CkJ.vvVnrGxwvYN9Pfj5'
   name: Haymaker
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: brawler deals an additional 2 damage if the target is already grabbed.
-- _id: 3IbRRVk6oZLBBLCb
-  _key: '!actors.items!RXG7NHvojtV9Zoch.3IbRRVk6oZLBBLCb'
+- _id: CDPl9qlJ7c8WijQ2
+  _key: '!actors.items!9TQM5mYKDz8w6CkJ.CDPl9qlJ7c8WijQ2'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -115,8 +115,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: 6BsIvnuGXpozCDsT
-  _key: '!actors.items!RXG7NHvojtV9Zoch.6BsIvnuGXpozCDsT'
+- _id: FpFXjwpPvkQbT0EG
+  _key: '!actors.items!9TQM5mYKDz8w6CkJ.FpFXjwpPvkQbT0EG'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
       text: The brawler takes half damage from strikes if they have a creature or
         object grabbed. The grabbed creature or object takes the other half of the
         damage.
-- _id: PawGFutEPswo2yEY
-  _key: '!actors.items!RXG7NHvojtV9Zoch.PawGFutEPswo2yEY'
+- _id: 8Db5Q5TTiV8AwvJG
+  _key: '!actors.items!9TQM5mYKDz8w6CkJ.8Db5Q5TTiV8AwvJG'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,8 +1,8 @@
-_id: fMqdAf9MVbec4INC
-_key: '!actors!fMqdAf9MVbec4INC'
+_id: YPniJGWMSbnWJOhv
+_key: '!actors!YPniJGWMSbnWJOhv'
 name: Spindlegoth
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.png
+img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.webp
 prototypeToken:
   name: Spindlegoth
   displayName: 50
@@ -17,16 +17,16 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.png
+    img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.webp
   appendNumber: false
   ring:
-    enabled: true
+    enabled: false
     colors:
       ring: '#ac936c'
       background: '#ac936c'
     effects: 1
     subject:
-      scale: 1.2
+      scale: 1.1
       texture: null
 system:
   name: Spindlegoth
@@ -54,8 +54,8 @@ system:
     stability: 1
     freeStrikeDamage: 2
 items:
-- _id: F7cQFi3ATxeieDfQ
-  _key: '!actors.items!fMqdAf9MVbec4INC.F7cQFi3ATxeieDfQ'
+- _id: 6XcTTxblHmto9p35
+  _key: '!actors.items!YPniJGWMSbnWJOhv.6XcTTxblHmto9p35'
   name: Choking Thread
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
     postPowerRollEffect:
       text: The target suffocates while restrained by this ability. If this ability
         fails to restrain the target, the spindlegoth shifts 2 and hides.
-- _id: 5vgT1SgATW6DUaAd
-  _key: '!actors.items!fMqdAf9MVbec4INC.5vgT1SgATW6DUaAd'
+- _id: MnOKyJxveQaXriOW
+  _key: '!actors.items!YPniJGWMSbnWJOhv.MnOKyJxveQaXriOW'
   name: Thread Whip
   type: monsterAbility
   img: icons/svg/book.svg
@@ -126,8 +126,8 @@ items:
       tier3:
         effect:
           text: Vertical slide 3
-- _id: ieqnbnbLqE9beCmC
-  _key: '!actors.items!fMqdAf9MVbec4INC.ieqnbnbLqE9beCmC'
+- _id: V2KeT28AKTH5TGyB
+  _key: '!actors.items!YPniJGWMSbnWJOhv.V2KeT28AKTH5TGyB'
   name: Tightwire
   type: monsterAbility
   img: icons/svg/book.svg
@@ -145,8 +145,8 @@ items:
     prePowerRollEffect:
       text: The spindlegoth shifts up to their speed, including vertically. They must
         end this movement on a solid surface.
-- _id: Jrhhwq2gagY6rUrC
-  _key: '!actors.items!fMqdAf9MVbec4INC.Jrhhwq2gagY6rUrC'
+- _id: hnIsYGG90YrBri5G
+  _key: '!actors.items!YPniJGWMSbnWJOhv.hnIsYGG90YrBri5G'
   name: Needlefoot
   type: monsterAbility
   img: icons/svg/book.svg
