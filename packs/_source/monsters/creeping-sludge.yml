@@ -1,5 +1,5 @@
-_id: pEKxM4cfs3m5mFfc
-_key: '!actors!pEKxM4cfs3m5mFfc'
+_id: 3iIxYToxn9HRhcig
+_key: '!actors!3iIxYToxn9HRhcig'
 name: Creeping Sludge
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/creeping-sludge-01.webp
@@ -56,8 +56,8 @@ system:
     corruption: 2
     acid: 2
 items:
-- _id: MJpVRxd0ZMZkUhnd
-  _key: '!actors.items!pEKxM4cfs3m5mFfc.MJpVRxd0ZMZkUhnd'
+- _id: 7LKWWtOPwLN0jhlT
+  _key: '!actors.items!3iIxYToxn9HRhcig.7LKWWtOPwLN0jhlT'
   name: Corrode
   type: monsterAbility
   img: icons/svg/book.svg
@@ -96,8 +96,8 @@ items:
     postPowerRollEffect:
       text: The target gains damage weakness 2 and a -1 penalty to potent effects
         (save ends). This effect stacks until the target saves.
-- _id: FQZNy3qjC42Kjv4k
-  _key: '!actors.items!pEKxM4cfs3m5mFfc.FQZNy3qjC42Kjv4k'
+- _id: dxkhQDV9BzaVz6fq
+  _key: '!actors.items!3iIxYToxn9HRhcig.dxkhQDV9BzaVz6fq'
   name: Oozen Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -133,8 +133,8 @@ items:
             text: grabbed vertical pull 2
     postPowerRollEffect:
       text: The creeping sludge can have an unlimited number of targets grabbed.
-- _id: bUYhfvC3wQmiqi57
-  _key: '!actors.items!pEKxM4cfs3m5mFfc.bUYhfvC3wQmiqi57'
+- _id: COfw6la7ZW1U8iss
+  _key: '!actors.items!3iIxYToxn9HRhcig.COfw6la7ZW1U8iss'
   name: Gelatinous
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: yznyGjvhtExIRBtv
-_key: '!actors!yznyGjvhtExIRBtv'
+_id: WrtciqsjOCnpfSYO
+_key: '!actors!WrtciqsjOCnpfSYO'
 name: Human Trickshot
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-trickshot-01.webp
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: hmuiKMsPKZQSo6VK
-  _key: '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK'
+- _id: DKhs6X525DypYNJh
+  _key: '!actors.items!WrtciqsjOCnpfSYO.DKhs6X525DypYNJh'
   name: Trick Crossbow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
       text: 3 Malice The trickshot targets an additional creature or object.
     postPowerRollEffect:
       text: The irickshot ignores cover and concealment.
-- _id: WYmBFyoYT2GJO3j8
-  _key: '!actors.items!yznyGjvhtExIRBtv.WYmBFyoYT2GJO3j8'
+- _id: 6ildRxSHFupnvZud
+  _key: '!actors.items!WrtciqsjOCnpfSYO.6ildRxSHFupnvZud'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

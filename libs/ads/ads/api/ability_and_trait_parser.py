@@ -327,6 +327,72 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
     return model
 
 
+def get_lines_by_field_name(ability_lines: List[str]) -> dict[str, list[str]]:
+    lines_by_field_name: dict[str, list[str]] = {}
+    current_field_name: str | None = None
+    pre_power_roll_effect_encountered: bool = False
+    current_power_roll_tier: int = 0
+    for index, ability_line in enumerate(ability_lines[1:]):
+        ability_line = ability_line.strip()
+
+        if re.match(r"^[^1]{0,9}(11|12.16|17).", ability_line):
+            current_power_roll_tier += 1
+            current_field_name = f"powerRollTier{current_power_roll_tier}"
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif ability_line.startswith("Keywords"):
+            current_field_name = "keywords"
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif ability_line.startswith("Distance"):
+            current_field_name = "distance"
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif ability_line.startswith("Target"):
+            current_field_name = "target"
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif ability_line.startswith("Trigger"):
+            current_field_name = "trigger"
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif ability_line.startswith("Effect"):
+            if pre_power_roll_effect_encountered:
+                current_field_name = "postPowerRollEffect"
+            else:
+                current_field_name = "prePowerRollEffect"
+                pre_power_roll_effect_encountered = True
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif re.match(r"^[^1-9]{0,3}[1-9]\s*Malice.", ability_line):
+            current_field_name = "maliceEffect"
+            append_to_lines_by_field_name(
+                lines_by_field_name, current_field_name, ability_line
+            )
+        elif current_field_name:
+            lines_by_field_name[current_field_name].append(ability_line)
+        else:
+            raise ValueError(
+                f"Unexpected line encountered in ability block: '{ability_line}'"
+            )
+
+    return lines_by_field_name
+
+
+def append_to_lines_by_field_name(
+    lines_by_field_name: dict[str, list[str]], field_name: str, line: str
+) -> None:
+    if field_name not in lines_by_field_name:
+        lines_by_field_name[field_name] = []
+    lines_by_field_name[field_name].append(line.strip())
+
+
 def parse_ability_header(
     header_line: str, monster_name: str
 ) -> Optional[Dict[str, Any]]:
@@ -337,11 +403,6 @@ def parse_ability_header(
         .replace("  ", " ")
         .strip()
     )
-    # normalized = (
-    #     normalized.replace("2 9 3 Malice", "2 3 Malice")
-    #     .replace("2 0 5 Malice", "2 5 Malice")
-    #     .replace("  ", " ").strip()
-    # )
 
     match = ABILITY_HEADER_REGEX.match(normalized)
     if not match:

@@ -1,5 +1,5 @@
-_id: YC1LATcwAk1DEFrP
-_key: '!actors!YC1LATcwAk1DEFrP'
+_id: DJbNLViswHH7y8yL
+_key: '!actors!DJbNLViswHH7y8yL'
 name: Goblin Runner
 type: minion
 img: systems/aeon-draw-steel/images/monsters/goblin-runner-01.webp
@@ -57,8 +57,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: CUzxmpTFwqbZzCIr
-  _key: '!actors.items!YC1LATcwAk1DEFrP.CUzxmpTFwqbZzCIr'
+- _id: Y9II65OTVYYG1ARX
+  _key: '!actors.items!DJbNLViswHH7y8yL.Y9II65OTVYYG1ARX'
   name: Club Charge
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,8 +88,8 @@ items:
         damage: 2
       tier3:
         damage: 3
-- _id: sXslOxGlMTVgajwM
-  _key: '!actors.items!YC1LATcwAk1DEFrP.sXslOxGlMTVgajwM'
+- _id: KAB2DCF4kv0mmijr
+  _key: '!actors.items!DJbNLViswHH7y8yL.KAB2DCF4kv0mmijr'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

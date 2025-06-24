@@ -1,5 +1,5 @@
-_id: XpL1Mu3YxZYv1ihu
-_key: '!actors!XpL1Mu3YxZYv1ihu'
+_id: 708jwMDpFshUsvEl
+_key: '!actors!708jwMDpFshUsvEl'
 name: Sudden Downpour
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/sudden-downpour-01.webp
@@ -56,8 +56,8 @@ system:
   immunity:
     fire: 2
 items:
-- _id: f6G63VmvCQeBP3pK
-  _key: '!actors.items!XpL1Mu3YxZYv1ihu.f6G63VmvCQeBP3pK'
+- _id: jTPZVDWTQuTR0xt0
+  _key: '!actors.items!708jwMDpFshUsvEl.jTPZVDWTQuTR0xt0'
   name: Leap Upon
   type: monsterAbility
   img: icons/svg/book.svg
@@ -105,8 +105,8 @@ items:
             text: bleeding (save ends)
     postPowerRollEffect:
       text: The downpour jumps 3 squares before making the strike.
-- _id: H4UZOTtNTnDx4iEQ
-  _key: '!actors.items!XpL1Mu3YxZYv1ihu.H4UZOTtNTnDx4iEQ'
+- _id: fF970P0mDiWiMRAo
+  _key: '!actors.items!708jwMDpFshUsvEl.fF970P0mDiWiMRAo'
   name: See Through
   type: monsterAbility
   img: icons/svg/book.svg
@@ -116,8 +116,8 @@ items:
     isSignature: false
     keywords: []
     type: maneuver
-- _id: qdJP6CM9yoTjBB0A
-  _key: '!actors.items!XpL1Mu3YxZYv1ihu.qdJP6CM9yoTjBB0A'
+- _id: STZRE0P6NtN5q9az
+  _key: '!actors.items!708jwMDpFshUsvEl.STZRE0P6NtN5q9az'
   name: Aquavuken
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
     prePowerRollEffect:
       text: The downpour ignores difficult terrain and can move on top of water as
         if it was solid ground.
-- _id: MjRWYL3dKC1ok7JG
-  _key: '!actors.items!XpL1Mu3YxZYv1ihu.MjRWYL3dKC1ok7JG'
+- _id: PkAwrVJeHrLEfgOQ
+  _key: '!actors.items!708jwMDpFshUsvEl.PkAwrVJeHrLEfgOQ'
   name: Pack Strong
   type: monsterAbility
   img: icons/svg/book.svg
@@ -141,8 +141,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The downpour can't be flanked or frightened while adjacent to an ally.
-- _id: 1ezEiS3AVvBhPUVA
-  _key: '!actors.items!XpL1Mu3YxZYv1ihu.1ezEiS3AVvBhPUVA'
+- _id: Ytf43Ugq0K92NxdJ
+  _key: '!actors.items!708jwMDpFshUsvEl.Ytf43Ugq0K92NxdJ'
   name: Water Weird
   type: monsterAbility
   img: icons/svg/book.svg

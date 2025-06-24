@@ -817,6 +817,8 @@ def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
         pre_sanitized_line = (
             line.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
         )
+        pre_sanitized_line = re.sub(r"[{]", "(", pre_sanitized_line)
+        pre_sanitized_line = re.sub(r"[}]", ")", pre_sanitized_line)
         pre_sanitized_line = re.sub(
             r"[^A-Za-z0-9/'\"\[\]()<!?.,; +-]", " ", pre_sanitized_line
         )

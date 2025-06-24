@@ -1,5 +1,5 @@
-_id: AaPqJiUqD9p0Vv6J
-_key: '!actors!AaPqJiUqD9p0Vv6J'
+_id: zgOgiqK7mp6ThtY8
+_key: '!actors!zgOgiqK7mp6ThtY8'
 name: Bugbear Commander
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/bugbear-commander-01.webp
@@ -56,8 +56,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: mtqdN7MWY8zKasZO
-  _key: '!actors.items!AaPqJiUqD9p0Vv6J.mtqdN7MWY8zKasZO'
+- _id: aOgagn4Ji0hQCjjh
+  _key: '!actors.items!zgOgiqK7mp6ThtY8.aOgagn4Ji0hQCjjh'
   name: Inspiring Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
     postPowerRollEffect:
       text: 1 ally within 5 of the commander has an edge on their next strike until
         the start of the commander's next turn.
-- _id: 92achj1bXIcal7CB
-  _key: '!actors.items!AaPqJiUqD9p0Vv6J.92achj1bXIcal7CB'
+- _id: iVaOQbHkC8UYz2Gj
+  _key: '!actors.items!zgOgiqK7mp6ThtY8.iVaOQbHkC8UYz2Gj'
   name: You Next!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,8 +109,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: The target moves up to their speed and uses a signature action.
-- _id: YyyMSEvxyp2JIw9d
-  _key: '!actors.items!AaPqJiUqD9p0Vv6J.YyyMSEvxyp2JIw9d'
+- _id: WR46A1WPuqDi7nIm
+  _key: '!actors.items!zgOgiqK7mp6ThtY8.WR46A1WPuqDi7nIm'
   name: Fall Back!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,16 +129,39 @@ items:
     prePowerRollEffect:
       text: Each target shifts up to their speed. Each target can use the Throw maneuver
         if they are grabbing a creature or object.
-- _id: m0JsYhgO6q3qa8JY
-  _key: '!actors.items!AaPqJiUqD9p0Vv6J.m0JsYhgO6q3qa8JY'
+- _id: tyt9lAmEyhogfPaI
+  _key: '!actors.items!zgOgiqK7mp6ThtY8.tyt9lAmEyhogfPaI'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
   system:
     name: Throw
     isSignature: false
-    keywords: []
+    keywords:
+    - Melee
+    - Strike
     type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object grabbed by the
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    prePowerRollEffect:
+      text: Vertical push 4. An ally target doesn't take damage from being force moved.
+- _id: FCcODIyWLSPjE3EG
+  _key: '!actors.items!zgOgiqK7mp6ThtY8.FCcODIyWLSPjE3EG'
+  name: Catcher
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Catcher
+    isSignature: false
+    keywords: []
+    type: freeTriggeredAction
     distance:
       melee: 1
     target:
@@ -150,7 +173,6 @@ items:
       count: 1
     trigger: The target is force moved into a square adjacent to the
     prePowerRollEffect:
-      text: Vertical push 4. An ally target doesn't take damage from being force moved.
-        Catcher (Free Triggered Action commander. The target is grabbed by the commander.
-        The Commander's Watching While an ally has line of effect to the commander,
-        the ally can end one condition afflicting them at the start of their turn.
+      text: The target is grabbed by the commander. The Commander's Watching While
+        an ally has line of effect to the commander, the ally can end one condition
+        afflicting them at the start of their turn.

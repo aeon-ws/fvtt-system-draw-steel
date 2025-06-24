@@ -1,5 +1,5 @@
-_id: CkBCeFbHKwSIeZvz
-_key: '!actors!CkBCeFbHKwSIeZvz'
+_id: XSZXdCgenVutUaz2
+_key: '!actors!XSZXdCgenVutUaz2'
 name: Human Brawler
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-brawler-01.webp
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: idqoRc56AqslkRZL
-  _key: '!actors.items!CkBCeFbHKwSIeZvz.idqoRc56AqslkRZL'
+- _id: 3Cp5oqH57RAPPwWN
+  _key: '!actors.items!XSZXdCgenVutUaz2.3Cp5oqH57RAPPwWN'
   name: Haymaker
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
             text: grabbed target has a bane on escaping the grab
     postPowerRollEffect:
       text: brawler deals an additional 2 damage if the target is already grabbed.
-- _id: 0qy9kZdnKek71tiC
-  _key: '!actors.items!CkBCeFbHKwSIeZvz.0qy9kZdnKek71tiC'
+- _id: c81XqGLdcSpYXvbG
+  _key: '!actors.items!XSZXdCgenVutUaz2.c81XqGLdcSpYXvbG'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -115,8 +115,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: Push 5.
-- _id: 0tA2UTrmmUPkWLxO
-  _key: '!actors.items!CkBCeFbHKwSIeZvz.0tA2UTrmmUPkWLxO'
+- _id: viAO7ZWyaDyzs8Ub
+  _key: '!actors.items!XSZXdCgenVutUaz2.viAO7ZWyaDyzs8Ub'
   name: Shoot the Hostage
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
       text: The brawler takes half damage from strikes if they have a creature or
         object grabbed. The grabbed creature or object takes the other half of the
         damage.
-- _id: Ukno9uWmwb3OR4C5
-  _key: '!actors.items!CkBCeFbHKwSIeZvz.Ukno9uWmwb3OR4C5'
+- _id: qN05epZnUe0np0sd
+  _key: '!actors.items!XSZXdCgenVutUaz2.qN05epZnUe0np0sd'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

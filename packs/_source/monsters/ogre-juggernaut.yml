@@ -1,5 +1,5 @@
-_id: lr8oKKWeXtVQ33hw
-_key: '!actors!lr8oKKWeXtVQ33hw'
+_id: qUH3ea4ayI2LfmHs
+_key: '!actors!qUH3ea4ayI2LfmHs'
 name: Ogre Juggernaut
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/ogre-juggernaut-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: SRnaQ1e44MNT58Ob
-  _key: '!actors.items!lr8oKKWeXtVQ33hw.SRnaQ1e44MNT58Ob'
+- _id: gBKviJpSWSc312HA
+  _key: '!actors.items!qUH3ea4ayI2LfmHs.gBKviJpSWSc312HA'
   name: Pitchfork Catapult
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
             text: vertical slide 3
     maliceEffect:
       text: 1 Malice Each target is M<1 bleeding (save ends).
-- _id: s7sqMSvb0T1048jE
-  _key: '!actors.items!lr8oKKWeXtVQ33hw.s7sqMSvb0T1048jE'
+- _id: R4xK7oD0JSvlFhgW
+  _key: '!actors.items!qUH3ea4ayI2LfmHs.R4xK7oD0JSvlFhgW'
   name: Earth Breaking Jump
   type: monsterAbility
   img: icons/svg/book.svg
@@ -141,8 +141,8 @@ items:
             text: prone
     prePowerRollEffect:
       text: The juggernaut jumps up to 6 squares before using this ability.
-- _id: TNYjgZBZxEOXpHBs
-  _key: '!actors.items!lr8oKKWeXtVQ33hw.TNYjgZBZxEOXpHBs'
+- _id: 8psQ4D1KcJ5knOdx
+  _key: '!actors.items!qUH3ea4ayI2LfmHs.8psQ4D1KcJ5knOdx'
   name: Horrible Bellow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -181,8 +181,8 @@ items:
     postPowerRollEffect:
       text: All ogres have an edge on strikes against creatures frightened by this
         ability.
-- _id: xSCw55Ztfo2VoiCb
-  _key: '!actors.items!lr8oKKWeXtVQ33hw.xSCw55Ztfo2VoiCb'
+- _id: hmTNyRS8J0Z1CGn1
+  _key: '!actors.items!qUH3ea4ayI2LfmHs.hmTNyRS8J0Z1CGn1'
   name: Hrraaaaaagh!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -200,8 +200,8 @@ items:
     trigger: The juggernaut takes damage.
     prePowerRollEffect:
       text: The juggernaut moves up to their speed and makes a free strike.
-- _id: tICBIKbMzIkolgHx
-  _key: '!actors.items!lr8oKKWeXtVQ33hw.tICBIKbMzIkolgHx'
+- _id: pfrCp1RrAGg5TR0J
+  _key: '!actors.items!qUH3ea4ayI2LfmHs.pfrCp1RrAGg5TR0J'
   name: Destructive Path
   type: monsterAbility
   img: icons/svg/book.svg
@@ -215,8 +215,8 @@ items:
         in their path during their movement. They can break through any mundane wall
         made of wood, stone, or a similarly sturdy material in this way, so long as
         the wall is no more than 1 square thick.
-- _id: W2pIMQ3ic256pNc7
-  _key: '!actors.items!lr8oKKWeXtVQ33hw.W2pIMQ3ic256pNc7'
+- _id: LxvEmVqX7GXFihph
+  _key: '!actors.items!qUH3ea4ayI2LfmHs.LxvEmVqX7GXFihph'
   name: Defiant Anger
   type: monsterAbility
   img: icons/svg/book.svg

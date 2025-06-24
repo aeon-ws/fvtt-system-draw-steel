@@ -1,5 +1,5 @@
-_id: EGHRcCOtYFzQVcAm
-_key: '!actors!EGHRcCOtYFzQVcAm'
+_id: m9WMwNk6esnKD4Om
+_key: '!actors!m9WMwNk6esnKD4Om'
 name: Tomb Horror
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/tomb-horror-01.webp
@@ -59,8 +59,8 @@ system:
   weakness:
     fire: 3
 items:
-- _id: rCxEu7OrsgMoLU69
-  _key: '!actors.items!EGHRcCOtYFzQVcAm.rCxEu7OrsgMoLU69'
+- _id: nd3wNnFPklzBMgVL
+  _key: '!actors.items!m9WMwNk6esnKD4Om.nd3wNnFPklzBMgVL'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -99,8 +99,8 @@ items:
     postPowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: lQ8ev9nDwXu1AUtP
-  _key: '!actors.items!EGHRcCOtYFzQVcAm.lQ8ev9nDwXu1AUtP'
+- _id: 1b7yJrz7mGhZkZvc
+  _key: '!actors.items!m9WMwNk6esnKD4Om.1b7yJrz7mGhZkZvc'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
     postPowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: ApDNNTohPyhrgcjI
-  _key: '!actors.items!EGHRcCOtYFzQVcAm.ApDNNTohPyhrgcjI'
+- _id: m60i3kJ8QC6fZjrZ
+  _key: '!actors.items!m9WMwNk6esnKD4Om.m60i3kJ8QC6fZjrZ'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
@@ -154,6 +154,24 @@ items:
     isSignature: false
     keywords: []
     type: maneuver
+    distance:
+      self: true
+    target:
+      text: Self
+      self: true
+    prePowerRollEffect:
+      text: The tomb horror shifts up to their speed, including vertically. They must
+        end this movement on a solid surface.
+- _id: dr0CE1UHpbZCf3T4
+  _key: '!actors.items!m9WMwNk6esnKD4Om.dr0CE1UHpbZCf3T4'
+  name: Curse For the Defilers
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Curse For the Defilers
+    isSignature: false
+    keywords: []
+    type: triggeredAction
     distance:
       ranged: 5
     target:
@@ -165,13 +183,10 @@ items:
       count: 1
     trigger: The target deals damage to the tomb horror or a casket or
     prePowerRollEffect:
-      text: The tomb horror shifts up to their speed, including vertically. They must
-        end this movement on a solid surface. Curse For the Defilers (Triggered Action
-        relic within distance that the tomb horror was feeding on. The target is P<2
-        slowed (save ends). The tomb horror then moves up to their speed towards the
-        target.
-- _id: NwJgZcQdkxouuApQ
-  _key: '!actors.items!EGHRcCOtYFzQVcAm.NwJgZcQdkxouuApQ'
+      text: The target is P<2 slowed (save ends). The tomb horror then moves up to
+        their speed towards the target.
+- _id: lb2BWaVt5f4KA0SN
+  _key: '!actors.items!m9WMwNk6esnKD4Om.lb2BWaVt5f4KA0SN'
   name: Enervating Horror
   type: monsterAbility
   img: icons/svg/book.svg

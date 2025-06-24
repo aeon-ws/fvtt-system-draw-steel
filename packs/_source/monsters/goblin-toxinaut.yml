@@ -1,5 +1,5 @@
-_id: jwyFmwFDuouorCCT
-_key: '!actors!jwyFmwFDuouorCCT'
+_id: IGO3tRpuEtg4bhWD
+_key: '!actors!IGO3tRpuEtg4bhWD'
 name: Goblin Toxinaut
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.webp
@@ -57,8 +57,8 @@ system:
   immunity:
     poison: 3
 items:
-- _id: ngiQkWHGy950Vi43
-  _key: '!actors.items!jwyFmwFDuouorCCT.ngiQkWHGy950Vi43'
+- _id: VKeVTNL8utyaZV53
+  _key: '!actors.items!IGO3tRpuEtg4bhWD.VKeVTNL8utyaZV53'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -73,10 +73,10 @@ items:
     distance:
       cube:
         size: 4
-        within: 10
+        within: 15
     target:
-      text: Special
-      special: true
+      text: Each enemy
+      enemy: true
     powerRoll:
       bonus: 2
       tier1:
@@ -94,14 +94,34 @@ items:
         damageType: poison
         effect:
           text: slide 3 1
-    postPowerRollEffect:
+- _id: ptO4CjzEGNzBrw5U
+  _key: '!actors.items!IGO3tRpuEtg4bhWD.ptO4CjzEGNzBrw5U'
+  name: Swamp Fumes
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Swamp Fumes
+    isSignature: false
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      cube:
+        size: 4
+        within: 10
+    target:
+      text: Special
+      special: true
+    prePowerRollEffect:
       text: The area is filled with a green haze until the start of the toxinaut's
         next turn or until the toxinaut is reduced to Stamina 0. The area is difficult
         terrain for non-goblin creatures, and each such creature who moves within
         the area takes 2 poison damage for each square moved. The poison damage ignores
         immunity. The haze can't be dispersed by wind.
-- _id: 75v8fzWJVe4BGzj4
-  _key: '!actors.items!jwyFmwFDuouorCCT.75v8fzWJVe4BGzj4'
+- _id: H0DREpEbHLrbm8Ll
+  _key: '!actors.items!IGO3tRpuEtg4bhWD.H0DREpEbHLrbm8Ll'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

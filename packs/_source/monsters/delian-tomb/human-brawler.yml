@@ -1,0 +1,144 @@
+_id: CkBCeFbHKwSIeZvz
+_key: '!actors!CkBCeFbHKwSIeZvz'
+name: Human Brawler
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/human-brawler-01.webp
+prototypeToken:
+  name: Human Brawler
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/human-brawler-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 0.9
+      texture: null
+system:
+  name: Human Brawler
+  keywords:
+  - Human
+  - Humanoid
+  level: 1
+  type: Platoon
+  role: Brute
+  encounterValue: 6
+  characteristics:
+    might: 2
+    agility: 1
+    reason: 0
+    intuition: 0
+    presence: 0
+  stamina:
+    max: 40
+    value: 40
+  combat:
+    size: 1M
+    speed: 5
+    movementTypes:
+    - walk
+    stability: 0
+    freeStrikeDamage: 4
+  immunity:
+    corruption: 1
+    psychic: 1
+items:
+- _id: idqoRc56AqslkRZL
+  _key: '!actors.items!CkBCeFbHKwSIeZvz.idqoRc56AqslkRZL'
+  name: Haymaker
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Haymaker
+    isSignature: true
+    keywords:
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 6
+      tier2:
+        damage: 9
+      tier3:
+        damage: 12
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: grabbed target has a bane on escaping the grab
+    postPowerRollEffect:
+      text: brawler deals an additional 2 damage if the target is already grabbed.
+- _id: 0qy9kZdnKek71tiC
+  _key: '!actors.items!CkBCeFbHKwSIeZvz.0qy9kZdnKek71tiC'
+  name: Throw
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Throw
+    maliceCost: 1
+    isSignature: false
+    keywords: []
+    type: maneuver
+    distance:
+      melee: 1
+    target:
+      text: 1 creature grabbed by the brawler
+      ally: true
+      self: true
+      enemy: true
+      count: 1
+    prePowerRollEffect:
+      text: Push 5.
+- _id: 0tA2UTrmmUPkWLxO
+  _key: '!actors.items!CkBCeFbHKwSIeZvz.0tA2UTrmmUPkWLxO'
+  name: Shoot the Hostage
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Shoot the Hostage
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The brawler takes half damage from strikes if they have a creature or
+        object grabbed. The grabbed creature or object takes the other half of the
+        damage.
+- _id: Ukno9uWmwb3OR4C5
+  _key: '!actors.items!CkBCeFbHKwSIeZvz.Ukno9uWmwb3OR4C5'
+  name: Supernatural Insight
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Supernatural Insight
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The brawler ignores concealment if it's granted by a supernatural effect,
+        or the target is supernatural.

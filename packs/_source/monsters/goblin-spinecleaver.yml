@@ -1,5 +1,5 @@
-_id: LGWLFTGtYzEt9gZA
-_key: '!actors!LGWLFTGtYzEt9gZA'
+_id: PBQwv8PT8Xb6ZjRv
+_key: '!actors!PBQwv8PT8Xb6ZjRv'
 name: Goblin Spinecleaver
 type: minion
 img: systems/aeon-draw-steel/images/monsters/goblin-spinecleaver-01.webp
@@ -57,8 +57,8 @@ system:
   derivedCaptainBonuses:
     strikeDamage: 1
 items:
-- _id: gP3t9uLXO3LPpIm9
-  _key: '!actors.items!LGWLFTGtYzEt9gZA.gP3t9uLXO3LPpIm9'
+- _id: pWaT7FfQkfBMiSQb
+  _key: '!actors.items!PBQwv8PT8Xb6ZjRv.pWaT7FfQkfBMiSQb'
   name: Axe
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
         damage: 5
         effect:
           text: push 4
-- _id: wX4kML6zMQGfLsRS
-  _key: '!actors.items!LGWLFTGtYzEt9gZA.wX4kML6zMQGfLsRS'
+- _id: 7heuK62X7m4bt4an
+  _key: '!actors.items!PBQwv8PT8Xb6ZjRv.7heuK62X7m4bt4an'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

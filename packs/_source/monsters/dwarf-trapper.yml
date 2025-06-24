@@ -1,5 +1,5 @@
-_id: eTBf5RnUkbbfokax
-_key: '!actors!eTBf5RnUkbbfokax'
+_id: Aq0FwvZwxTsXRnRb
+_key: '!actors!Aq0FwvZwxTsXRnRb'
 name: Dwarf Trapper
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/dwarf-trapper-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 2
     freeStrikeDamage: 3
 items:
-- _id: 8055uAPiaHdiSLbn
-  _key: '!actors.items!eTBf5RnUkbbfokax.8055uAPiaHdiSLbn'
+- _id: Tk60GCVcwPb5j2hd
+  _key: '!actors.items!Aq0FwvZwxTsXRnRb.Tk60GCVcwPb5j2hd'
   name: Concussive Bolts
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
           text: push 6
     postPowerRollEffect:
       text: A target restrained by a dwarf can be pushed by this ability.
-- _id: 9rzHYg84xk1lT10S
-  _key: '!actors.items!eTBf5RnUkbbfokax.9rzHYg84xk1lT10S'
+- _id: 0W3FCW8qn7KRL2Jm
+  _key: '!actors.items!Aq0FwvZwxTsXRnRb.0W3FCW8qn7KRL2Jm'
   name: Steam Powered Snare
   type: monsterAbility
   img: icons/svg/book.svg

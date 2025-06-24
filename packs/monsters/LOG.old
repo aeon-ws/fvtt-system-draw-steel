@@ -1,14 +1,14 @@
-2025/06/21-19:59:38.445 6358 Recovering log #338
-2025/06/21-19:59:38.455 6358 Delete type=0 #338
-2025/06/21-19:59:38.455 6358 Delete type=3 #337
-2025/06/21-19:59:38.475 3e5c Level-0 table #342: started
-2025/06/21-19:59:38.478 3e5c Level-0 table #342: 103485 bytes OK
-2025/06/21-19:59:38.482 3e5c Delete type=0 #340
-2025/06/21-19:59:38.482 3e5c Manual compaction at level-0 from '!actors!0VH4MCI8uf5bIedL' @ 72057594037927935 : 1 .. '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 0 : 0; will stop at '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 25798 : 0
-2025/06/21-19:59:38.482 3e5c Compacting 1@0 + 1@1 files
-2025/06/21-19:59:38.486 3e5c Generated table #343@0: 332 keys, 92993 bytes
-2025/06/21-19:59:38.486 3e5c Compacted 1@0 + 1@1 files => 92993 bytes
-2025/06/21-19:59:38.489 3e5c compacted to: files[ 0 1 0 0 0 0 0 ]
-2025/06/21-19:59:38.490 3e5c Delete type=2 #336
-2025/06/21-19:59:38.490 3e5c Delete type=2 #342
-2025/06/21-19:59:38.490 3e5c Manual compaction at level-0 from '!actors.items!zkeiNRpuUQhHBYMQ.w9t0MS61GgTrKPhM' @ 25798 : 0 .. '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 0 : 0; will stop at (end)
+2025/06/23-22:35:58.482 713c Recovering log #351
+2025/06/23-22:35:58.492 713c Delete type=0 #351
+2025/06/23-22:35:58.492 713c Delete type=3 #349
+2025/06/23-22:35:58.498 9574 Level-0 table #357: started
+2025/06/23-22:35:58.501 9574 Level-0 table #357: 93103 bytes OK
+2025/06/23-22:35:58.505 9574 Delete type=0 #355
+2025/06/23-22:35:58.505 9574 Manual compaction at level-0 from '!actors!0VH4MCI8uf5bIedL' @ 72057594037927935 : 1 .. '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 0 : 0; will stop at '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 26669 : 1
+2025/06/23-22:35:58.505 9574 Compacting 1@0 + 1@1 files
+2025/06/23-22:35:58.509 9574 Generated table #358@0: 333 keys, 93103 bytes
+2025/06/23-22:35:58.509 9574 Compacted 1@0 + 1@1 files => 93103 bytes
+2025/06/23-22:35:58.512 9574 compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/06/23-22:35:58.512 9574 Delete type=2 #353
+2025/06/23-22:35:58.513 9574 Delete type=2 #357
+2025/06/23-22:35:58.513 9574 Manual compaction at level-0 from '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 26669 : 1 .. '!actors.items!yznyGjvhtExIRBtv.hmuiKMsPKZQSo6VK' @ 0 : 0; will stop at (end)

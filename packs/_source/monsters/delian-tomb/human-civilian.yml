@@ -1,0 +1,48 @@
+_id: Yj94TwAyKLXkuir1
+_key: '!actors!Yj94TwAyKLXkuir1'
+name: Human Civilian
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/goblin-warrior-01.webp
+prototypeToken:
+  name: Human Civilian
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: 1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-warrior-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+system:
+  name: Human Civilian
+  keywords:
+  - Human
+  - Humanoid
+  level: 1
+  type: Minion
+  role: Harrier
+  encounterValue: 0
+  characteristics:
+    might: 0
+    agility: 0
+    reason: 0
+    intuition: 0
+    presence: 0
+  stamina:
+    max: 8
+    value: 8
+  combat:
+    size: 1M
+    speed: 5
+    movementTypes:
+    stability: 0
+    freeStrikeDamage: 0
+items:
