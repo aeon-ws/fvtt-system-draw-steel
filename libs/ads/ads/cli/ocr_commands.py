@@ -14,7 +14,7 @@ def export(
     ] = "c:/_/aeon/fvtt-system-draw-steel/ocr-output/full_combined_ocr.txt",
     yaml_folder_path: Annotated[
         str, Option(case_sensitive=False)
-    ] = "c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters",
+    ] = "c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters/imported",
 ) -> None:
     print(
         f"Exporting data from OCR file [{ocr_file_path}] to YAML files in folder [{yaml_folder_path}]..."

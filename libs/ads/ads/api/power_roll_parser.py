@@ -106,68 +106,27 @@ def map_initial_to_characteristic_name(
 
 
 def parse_power_roll_block(
-    header: dict[str, Any], ability_lines: List[str]
+    header: dict[str, Any], power_roll_lines: List[str]
 ) -> PowerRoll | None:
     powerRollBonus: int | None = header["powerRollBonus"]
-    current_power_roll_tier: int = 0
-    power_roll_lines_by_tier: dict[str, list[str]] = {
-        "tier1": [],
-        "tier2": [],
-        "tier3": [],
-    }
 
-    for line in ability_lines:
-        line = line.strip()
-
-        if re.match(r"^[^1]{0,9}(11|12.16|17).", line):
-            current_power_roll_tier += 1
-            power_roll_lines_by_tier[f"tier{current_power_roll_tier}"].append(line)
-        elif (
-            line.startswith("Effect") or (re.match(r"^[^1-9]{0,3}[1-9]\s*Malice", line))
-        ) and current_power_roll_tier > 0:
-            # If we encounter an Effect line, it means we have reached the end of the power roll lines.
-            break
-        elif current_power_roll_tier > 0:
-            # If we are in a power roll tier but encounter a line that doesn't match the expected pattern,
-            # we assume it is part of the current power roll tier.
-            power_roll_lines_by_tier[f"tier{current_power_roll_tier}"].append(line)
-
-    if not any(
-        [
-            len(power_roll_lines) > 0
-            for power_roll_lines in power_roll_lines_by_tier.values()
-        ]
-    ):
+    if len(power_roll_lines) == 0:
         if powerRollBonus is not None:
             print(
-                f"  *** [WARN] [{header['name']}]: Ability has a power roll bonus yet no power roll lines found in ability block: {ability_lines}"
+                f"  *** [WARN] [{header['name']}]: Ability has a power roll bonus yet no power roll lines found in ability block: {power_roll_lines}"
             )
         return None
-    if not all(
-        [
-            len(power_roll_lines) > 0
-            for power_roll_lines in power_roll_lines_by_tier.values()
-        ]
-    ):
+
+    if len(power_roll_lines) != 3:
         raise ValueError(
-            f"  *** [ERROR] [{
-                header['name']
-            }]: Expected precisely 3 power roll lines, but found {
-                len(
-                    [
-                        power_roll_lines
-                        for power_roll_lines in power_roll_lines_by_tier.values()
-                        if len(power_roll_lines) > 0
-                    ]
-                )
-            }: {power_roll_lines_by_tier}"
+            f"  *** [ERROR] [{header['name']}]: Expected precisely 3 power roll lines, but found {len(power_roll_lines)}: {power_roll_lines}"
         )
 
     return PowerRoll(
         bonus=powerRollBonus or None,
-        tier1=parse_power_roll_tier_lines(" ".join(power_roll_lines_by_tier["tier1"])),
-        tier2=parse_power_roll_tier_lines(" ".join(power_roll_lines_by_tier["tier2"])),
-        tier3=parse_power_roll_tier_lines(" ".join(power_roll_lines_by_tier["tier3"])),
+        tier1=parse_power_roll_tier_lines(power_roll_lines[0]),
+        tier2=parse_power_roll_tier_lines(power_roll_lines[1]),
+        tier3=parse_power_roll_tier_lines(power_roll_lines[2]),
     )
 
 

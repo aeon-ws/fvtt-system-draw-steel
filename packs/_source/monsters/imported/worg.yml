@@ -1,0 +1,131 @@
+_id: M3nPJZnX86XcSWBE
+_key: '!actors!M3nPJZnX86XcSWBE'
+name: Worg
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/worg-01.webp
+prototypeToken:
+  name: Worg
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/worg-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 0.9
+      texture: null
+system:
+  name: Worg
+  keywords:
+  - Animal
+  - Goblin
+  level: 1
+  type: Horde
+  role: Mount
+  encounterValue: 3
+  characteristics:
+    might: 1
+    agility: 2
+    reason: -1
+    intuition: 0
+    presence: -1
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1L
+    speed: 5
+    movementTypes:
+    - walk
+    stability: 1
+    freeStrikeDamage: 1
+items:
+- _id: iqDE4dd6bTe0xxvW
+  _key: '!actors.items!M3nPJZnX86XcSWBE.iqDE4dd6bTe0xxvW'
+  name: Bite
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Bite
+    isSignature: true
+    keywords:
+    - Charge
+    - Melee
+    - Strike
+    - Weapon
+    type: mainAction
+    distance:
+      melee: 1
+    target:
+      text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 3
+      tier2:
+        damage: 4
+      tier3:
+        damage: 5
+- _id: MIAD3cOWhC4MMD8K
+  _key: '!actors.items!M3nPJZnX86XcSWBE.MIAD3cOWhC4MMD8K'
+  name: Sprint
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Sprint
+    maliceCost: 1
+    isSignature: false
+    keywords: []
+    type: maneuver
+    distance:
+      self: true
+    target:
+      text: Self
+      self: true
+    prePowerRollEffect:
+      text: The worg moves up to their speed.
+- _id: rVHmou407ORPFTbX
+  _key: '!actors.items!M3nPJZnX86XcSWBE.rVHmou407ORPFTbX'
+  name: Mounted Charger
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Mounted Charger
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: lf a worg used as a mount charges, their rider gains an edge on melee
+        strikes until the end of their turn.
+- _id: isjL7rEUdfHcNSqi
+  _key: '!actors.items!M3nPJZnX86XcSWBE.isjL7rEUdfHcNSqi'
+  name: Shared Crafty
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Shared Crafty
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: lf the worg's rider has the Crafty trait, the worg also has the Crafty
+        trait.

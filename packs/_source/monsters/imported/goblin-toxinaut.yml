@@ -1,0 +1,137 @@
+_id: kxe5uZTQ8pJnusQr
+_key: '!actors!kxe5uZTQ8pJnusQr'
+name: Goblin Toxinaut
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.webp
+prototypeToken:
+  name: Goblin Toxinaut
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.1
+      texture: null
+system:
+  name: Goblin Toxinaut
+  keywords:
+  - Goblin
+  - Humanoid
+  - Mystic Goblin
+  level: 2
+  type: Horde
+  role: Controller
+  encounterValue: 4
+  characteristics:
+    might: -1
+    agility: 1
+    reason: 0
+    intuition: 1
+    presence: 2
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 6
+    movementTypes:
+    - climb
+    stability: 0
+    freeStrikeDamage: 4
+  immunity:
+    poison: 3
+items:
+- _id: 7o6rmAPr4Me3oBGD
+  _key: '!actors.items!kxe5uZTQ8pJnusQr.7o6rmAPr4Me3oBGD'
+  name: Toxic Winds
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Toxic Winds
+    isSignature: true
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: mainAction
+    distance:
+      cube:
+        size: 4
+        within: 15
+    target:
+      text: Each enemy
+      enemy: true
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 2
+        damageType: poison
+        effect:
+          text: slide 1
+      tier2:
+        damage: 3
+        damageType: poison
+        effect:
+          text: slide 2
+      tier3:
+        damage: 5
+        damageType: poison
+        effect:
+          text: slide 3 1
+- _id: iH5q5i47APHRDrfy
+  _key: '!actors.items!kxe5uZTQ8pJnusQr.iH5q5i47APHRDrfy'
+  name: Swamp Fumes
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Swamp Fumes
+    isSignature: false
+    keywords:
+    - Area
+    - Magic
+    - Ranged
+    type: maneuver
+    distance:
+      cube:
+        size: 4
+        within: 10
+    target:
+      text: Special
+      special: true
+    prePowerRollEffect:
+      text: The area is filled with a green haze until the start of the toxinaut's
+        next turn or until the toxinaut is reduced to Stamina 0. The area is difficult
+        terrain for non-goblin creatures, and each such creature who moves within
+        the area takes 2 poison damage for each square moved. The poison damage ignores
+        immunity. The haze can't be dispersed by wind.
+- _id: EiF1F2dkYptGxOoO
+  _key: '!actors.items!kxe5uZTQ8pJnusQr.EiF1F2dkYptGxOoO'
+  name: Cunning
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Cunning
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The toxinaut doesn't provoke opportunity attacks from enemies by moving.
+        Whenever the toxinaut is adjacent to an enemy and willingly moves to a space
+        no longer adjacent to that enemy, the toxinaut can make an opportunity attack
+        against them as a triggered action.

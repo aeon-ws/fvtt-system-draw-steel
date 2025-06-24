@@ -1,0 +1,160 @@
+_id: KZasP0mXABEqF3PP
+_key: '!actors!KZasP0mXABEqF3PP'
+name: Spindlegoth
+type: enemy
+img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.webp
+prototypeToken:
+  name: Spindlegoth
+  displayName: 50
+  displayBars: 50
+  bar1:
+    attribute: stamina
+  bar2:
+    attribute: null
+  disposition: -1
+  actorLink: false
+  width: 1
+  height: 1
+  lockRotation: true
+  texture:
+    img: systems/aeon-draw-steel/images/monsters/spindlegoth-01.webp
+  appendNumber: false
+  ring:
+    enabled: false
+    colors:
+      ring: '#ac936c'
+      background: '#ac936c'
+    effects: 1
+    subject:
+      scale: 1.1
+      texture: null
+system:
+  name: Spindlegoth
+  keywords:
+  - Beast
+  - Ruinborn
+  level: 1
+  type: Horde
+  role: Ambusher
+  encounterValue: 3
+  characteristics:
+    might: -1
+    agility: 2
+    reason: 0
+    intuition: 0
+    presence: -2
+  stamina:
+    max: 15
+    value: 15
+  combat:
+    size: 1S
+    speed: 7
+    movementTypes:
+    - climb
+    stability: 1
+    freeStrikeDamage: 2
+items:
+- _id: LHvbDuCC5Ooy3Umi
+  _key: '!actors.items!KZasP0mXABEqF3PP.LHvbDuCC5Ooy3Umi'
+  name: Choking Thread
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Choking Thread
+    isSignature: true
+    keywords:
+    - Strike
+    - Ranged
+    - Weapon
+    type: mainAction
+    distance:
+      ranged: 5
+    target:
+      text: 1 creature or object
+      ally: true
+      self: true
+      enemy: true
+      object: true
+      count: 1
+    powerRoll:
+      bonus: 2
+      tier1:
+        damage: 4
+      tier2:
+        damage: 6
+        potencyEffect:
+          targetCharacteristic: might
+          value: 1
+          effect:
+            text: restrained (save ends)
+      tier3:
+        damage: 7
+        potencyEffect:
+          targetCharacteristic: might
+          value: 2
+          effect:
+            text: restrained (save ends)
+    prePowerRollEffect:
+      text: The target suffocates while restrained by this ability. If this ability
+        fails to restrain the target, the spindlegoth shifts 2 and hides.
+- _id: d9mh489H3vr9mhOA
+  _key: '!actors.items!KZasP0mXABEqF3PP.d9mh489H3vr9mhOA'
+  name: Thread Whip
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Thread Whip
+    maliceCost: 3
+    isSignature: false
+    keywords:
+    - Area
+    - Weapon
+    type: maneuver
+    distance:
+      burst: 1
+    target:
+      text: Each enemy
+      enemy: true
+    powerRoll:
+      bonus: 2
+      tier1:
+        effect:
+          text: Vertical slide 1
+      tier2:
+        effect:
+          text: Vertical slide 2
+      tier3:
+        effect:
+          text: Vertical slide 3
+- _id: qfRGGumKoOpRyZLO
+  _key: '!actors.items!KZasP0mXABEqF3PP.qfRGGumKoOpRyZLO'
+  name: Tightwire
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Tightwire
+    maliceCost: 1
+    isSignature: false
+    keywords: []
+    type: maneuver
+    distance:
+      self: true
+    target:
+      text: Self
+      self: true
+    prePowerRollEffect:
+      text: The spindlegoth shifts up to their speed, including vertically. They must
+        end this movement on a solid surface.
+- _id: uW354ddSS3LCWk44
+  _key: '!actors.items!KZasP0mXABEqF3PP.uW354ddSS3LCWk44'
+  name: Needlefoot
+  type: monsterAbility
+  img: icons/svg/book.svg
+  system:
+    name: Needlefoot
+    isSignature: false
+    keywords: []
+    type: monsterTrait
+    prePowerRollEffect:
+      text: The spindlegoth ignores difficult terrain. Whenever the spindlegoth enters
+        a square while climbing, the surface they're climbing on takes 1 damage.

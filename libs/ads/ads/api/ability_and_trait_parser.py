@@ -161,7 +161,7 @@ TRAIT_NAMES = [
 
 TRAIT_NAME_PATTERN = f"(?P<traitName>{'|'.join([rf'{t}' for t in TRAIT_NAMES])})"
 
-ABILITY_NAME_PATTERN = r"(?P<abilityName>[A-Za-z][A-Za-z!?' ]+[A-Za-z!?])"
+ABILITY_NAME_PATTERN = r"(?P<abilityName>[A-Za-z][A-Za-z!?',: ]+[A-Za-z!?])"
 ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action\s?(?P<villainActionOrdinal>[123])?|(?:Main )?Action))[)]"
 OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*[+]\s*(?P<bonus>[+]?[1-5])\s*)?"
 OPTIONAL_COST_PATTERN = (
@@ -207,13 +207,22 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
             header_raw=header_line,
         )
 
+    field_lines = get_lines_by_field_name(ability_lines)
+
     model = Ability(
         name=header["name"],
         type=header["type"],
         villainActionOrdinal=header.get("villainActionOrdinal", None),
         maliceCost=header["maliceCost"],
         isSignature=header["isSignature"],
-        powerRoll=parse_power_roll_block(header, ability_lines),
+        powerRoll=parse_power_roll_block(
+            header,
+            [
+                field_line.line
+                for field_line in field_lines
+                if field_line.field_name.startswith("powerRollTier")
+            ],
+        ),
         keywords=[],
         distance=None,
         target=None,
@@ -224,165 +233,112 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
         header_raw=header_line,
     )
 
-    pre_power_roll_effect_lines: List[str] = []
-    post_power_roll_effect_lines: List[str] = []
-    malice_effect_lines: List[str] = []
-    power_roll_line_encountered = False
-    final_effect_line_encountered = False
-    final_malice_effect_line_encountered = False
-
-    for index, ability_line in enumerate(ability_lines[1:]):
-        ability_line = ability_line.strip()
-        if ability_line.startswith("Keywords"):
+    for field_name, field_line in [
+        (field_line.field_name, field_line.line)
+        for field_line in field_lines
+        if not field_line.field_name.startswith("powerRollTier")
+    ]:
+        if field_name == "keywords":
             keywords = [
                 w.strip()
-                for w in ability_line[len("Keywords") :].replace(",", " ").split()
+                for w in field_line.replace("Keywords", "").replace(",", " ").split()
                 if w
             ]
             model["keywords"] = keywords
-            # print(f"  - Keywords: {keywords}")
-        elif ability_line.startswith("Distance"):
+        elif field_name == "distance":
             # Compensation for a hard error in the source PDF: the post power roll effect is labeled
             # "Distance" instead of "Effect".
-            if "The affected area is considered difficult terrain for" in ability_line:
+            if "The affected area is considered difficult terrain for" in field_line:
                 model["postPowerRollEffect"] = Effect(
                     text="The affected area is considered difficult terrain for the rest of the encounter."
                 )
             # Compensation for a hard error in the source PDF: the post power roll effect is labeled
             # "Distance" instead of "Trigger".
-            elif "The target uses a strike that targets the mastermind" in ability_line:
-                model["trigger"] = (
-                    f"{ability_line[len('Distance') :].strip()} {ability_lines[index + 1].strip()}"
-                )
+            elif "The target uses a strike that targets the mastermind" in field_line:
+                model["trigger"] = field_line.replace("Distance", "").strip()
             else:
-                model["distance"] = parse_distance(ability_line)
+                model["distance"] = parse_distance(field_line)
 
-            model["target"] = parse_target(ability_line)
-        elif ability_line.startswith("Target"):
-            model["target"] = parse_target(ability_line)
-        elif ability_line.startswith("Trigger"):
-            model["trigger"] = ability_line[len("Trigger") :].strip()
-        elif re.match(r"^[^1]{0,9}(?:11|12.16|17).", ability_line):
-            power_roll_line_encountered = True
-            final_effect_line_encountered = True
-            final_malice_effect_line_encountered = True
-        elif re.match(r"^[^1-9]{0,3}[1-9]\s*Malice.", ability_line):
+            model["target"] = parse_target(field_line)
+        elif field_name == "target":
+            model["target"] = parse_target(field_line)
+        elif field_name == "trigger":
+            model["trigger"] = field_line.replace("Trigger", "").strip()
+        elif field_name == "maliceEffect":
             # This is a malice effect line, which is like a post-power-roll effect line but the effect costs
             # malice and the presence of the malice effect line doesn't preclude the existence of both types
             # of effect line.
-            final_effect_line_encountered = True
-            final_malice_effect_line_encountered = False
-            malice_effect_lines.append(ability_line.strip())
-        elif ability_line.startswith("Effect"):
-            final_effect_line_encountered = False
-            final_malice_effect_line_encountered = True
-            effect_text = ability_line[len("Effect") :].strip()
-            if power_roll_line_encountered:
-                # We have already encountered a power roll line, so this is a post-power-roll effect.
-                post_power_roll_effect_lines.append(effect_text)
-            else:
-                # We haven't encountered a power roll line yet, so this is a pre-power-roll effect.
-                pre_power_roll_effect_lines.append(effect_text)
-        elif malice_effect_lines:
-            # We have already encountered a malice effect line, so we append the current line to the malice effect lines.
-            malice_effect_lines.append(ability_line)
-        elif pre_power_roll_effect_lines:
-            # We have already encountered the pre-power-roll effect section and no other line signatures
-            # matched this subsequent line, so we append the line to the effect line list.
-            pre_power_roll_effect_lines.append(ability_line)
-        elif post_power_roll_effect_lines:
-            # We have already encountered the post-power-roll effect section and no other line signatures
-            # matched this subsequent line, so we append the line to the effect line list.
-            post_power_roll_effect_lines.append(ability_line)
-
-        if final_malice_effect_line_encountered or index == len(ability_lines) - 2:
-            # If we have already registered the final line of the current malice effect, or if we are at the last
-            # line of the ability block as a whole, we commit the current malice effect to the model.
-            if malice_effect_lines:
-                model["maliceEffect"] = Effect(
-                    text=" ".join(malice_effect_lines).replace("  ", " ").strip()
-                )
-                malice_effect_lines = []
-
-        if final_effect_line_encountered or index == len(ability_lines) - 2:
-            # If we have already registered the final line of the current effect, or if we are at the last
-            # line of the ability block as a whole, we commit the current effect to the model.
-            if pre_power_roll_effect_lines:
-                # We have pre-power-roll effect lines, so we join them into a single effect description.
-                model["prePowerRollEffect"] = Effect(
-                    text=" ".join(pre_power_roll_effect_lines)
-                    .replace("  ", " ")
-                    .strip()
-                )
-                pre_power_roll_effect_lines = []
-            elif post_power_roll_effect_lines:
-                # We have post-power-roll effect lines, so we join them into a single effect description.
-                model["postPowerRollEffect"] = Effect(
-                    text=" ".join(post_power_roll_effect_lines)
-                    .replace("  ", " ")
-                    .strip()
-                )
-                post_power_roll_effect_lines = []
+            model["maliceEffect"] = Effect(text=field_line.replace("  ", " ").strip())
+        elif field_name == "prePowerRollEffect":
+            model["prePowerRollEffect"] = Effect(
+                text=field_line.replace("Effect", "")
+                .replace("  ", " ")
+                .replace("  ", " ")
+                .strip()
+            )
+        elif field_name == "postPowerRollEffect":
+            model["postPowerRollEffect"] = Effect(
+                text=field_line.replace("Effect", "")
+                .replace("  ", " ")
+                .replace("  ", " ")
+                .strip()
+            )
 
     return model
 
 
-def get_lines_by_field_name(ability_lines: List[str]) -> dict[str, list[str]]:
+class FieldLine(object):
+    def __init__(self, field_name: str, line: str):
+        self.field_name = field_name
+        self.line = line
+
+    def __repr__(self) -> str:
+        return f"{self.field_name}: {self.line}"
+
+
+def get_lines_by_field_name(ability_lines: List[str]) -> list[FieldLine]:
     lines_by_field_name: dict[str, list[str]] = {}
     current_field_name: str | None = None
     pre_power_roll_effect_encountered: bool = False
     current_power_roll_tier: int = 0
-    for index, ability_line in enumerate(ability_lines[1:]):
+
+    for ability_line in ability_lines[1:]:
         ability_line = ability_line.strip()
 
         if re.match(r"^[^1]{0,9}(11|12.16|17).", ability_line):
             current_power_roll_tier += 1
             current_field_name = f"powerRollTier{current_power_roll_tier}"
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
         elif ability_line.startswith("Keywords"):
             current_field_name = "keywords"
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
         elif ability_line.startswith("Distance"):
             current_field_name = "distance"
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
         elif ability_line.startswith("Target"):
             current_field_name = "target"
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
         elif ability_line.startswith("Trigger"):
             current_field_name = "trigger"
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
         elif ability_line.startswith("Effect"):
             if pre_power_roll_effect_encountered:
                 current_field_name = "postPowerRollEffect"
             else:
                 current_field_name = "prePowerRollEffect"
                 pre_power_roll_effect_encountered = True
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
         elif re.match(r"^[^1-9]{0,3}[1-9]\s*Malice.", ability_line):
             current_field_name = "maliceEffect"
-            append_to_lines_by_field_name(
-                lines_by_field_name, current_field_name, ability_line
-            )
-        elif current_field_name:
-            lines_by_field_name[current_field_name].append(ability_line)
-        else:
-            raise ValueError(
-                f"Unexpected line encountered in ability block: '{ability_line}'"
-            )
 
-    return lines_by_field_name
+        if not current_field_name:
+            print(
+                f"*** [WARN]: Orphan line encountered in ability block: [{ability_line}]\nDefaulting to [prePowerRollEffect] field name."
+            )
+            current_field_name = "prePowerRollEffect"
+
+        append_to_lines_by_field_name(
+            lines_by_field_name, current_field_name, ability_line
+        )
+
+    return [
+        FieldLine(field_name_and_lines[0], " ".join(field_name_and_lines[1]))
+        for field_name_and_lines in lines_by_field_name.items()
+    ]
 
 
 def append_to_lines_by_field_name(

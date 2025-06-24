@@ -771,14 +771,14 @@ def get_monster_foundry_actor_model(
     return monster_foundry_actor_model
 
 
-def export_yaml(monster_foundry_actor_models: list[dict[str, Any]]):
+def export_yaml(
+    monster_foundry_actor_models: list[dict[str, Any]], yaml_folder_path: str
+):
     for monster_foundry_actor_model in monster_foundry_actor_models:
         file_name = (
             f"{str(monster_foundry_actor_model['name']).replace(' ', '-').lower()}.yml"
         )
-        file_path = (
-            f"c:/_/aeon/fvtt-system-draw-steel/packs/_source/monsters/{file_name}"
-        )
+        file_path = f"{yaml_folder_path}/{file_name}"
         with open(file_path, "w", encoding="utf-8") as file:
             yaml.safe_dump(
                 monster_foundry_actor_model,
@@ -826,14 +826,9 @@ def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
             "minton", "minion", pre_sanitized_line, 0, re.IGNORECASE
         )
         pre_sanitized_line = re.sub(r"\s+", " ", pre_sanitized_line)
-        pre_sanitized_source_lines.append(pre_sanitized_line.strip())
-
-    # for trait_name in TRAIT_NAMES:
-    #     print(f"[{trait_name}]")
-    #     for line in pre_sanitized_source_lines:
-    #         if re.match(rf"{trait_name}", line, re.IGNORECASE):
-    #             print(f"  - {line.strip()}")
-    # return
+        pre_sanitized_source_lines.append(
+            pre_sanitized_line.replace("  ", " ").replace("  ", " ").strip()
+        )
 
     monster_headers = get_monster_headers_from_source_lines(pre_sanitized_source_lines)
     monster_blocks = group_source_lines_into_monsters_blocks(
@@ -852,4 +847,4 @@ def export_monsters(ocr_file_path: str, yaml_folder_path: str) -> None:
         monster_foundry_actor_model = get_monster_foundry_actor_model(monster_model)
         monster_foundry_actor_models.append(monster_foundry_actor_model)
 
-    export_yaml(deduplicate_monsters(monster_foundry_actor_models))
+    export_yaml(deduplicate_monsters(monster_foundry_actor_models), yaml_folder_path)
