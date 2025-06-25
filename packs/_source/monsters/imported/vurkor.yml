@@ -1,5 +1,5 @@
-_id: UUxuOJNRst1gp0ya
-_key: '!actors!UUxuOJNRst1gp0ya'
+_id: 5vlW0wHF5gExVOhL
+_key: '!actors!5vlW0wHF5gExVOhL'
 name: Vurkor
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/vurkor-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: k3EiVygh9Fm37Q41
-  _key: '!actors.items!UUxuOJNRst1gp0ya.k3EiVygh9Fm37Q41'
+- _id: OO8EpWQFg2S4ithC
+  _key: '!actors.items!5vlW0wHF5gExVOhL.OO8EpWQFg2S4ithC'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: pkfCp9npGHLtjp4f
-  _key: '!actors.items!UUxuOJNRst1gp0ya.pkfCp9npGHLtjp4f'
+- _id: bNQixClNf9R1ojrY
+  _key: '!actors.items!5vlW0wHF5gExVOhL.bNQixClNf9R1ojrY'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     prePowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: QadzMZxsOdcbgq5L
-  _key: '!actors.items!UUxuOJNRst1gp0ya.QadzMZxsOdcbgq5L'
+- _id: IXDLOzb2fhkWgdgj
+  _key: '!actors.items!5vlW0wHF5gExVOhL.IXDLOzb2fhkWgdgj'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Vurkor teleports 2 squares. Each creature adjacent to his original space
         takes 2 corruption damage.
-- _id: Gh7qF4tj8CtQTfcB
-  _key: '!actors.items!UUxuOJNRst1gp0ya.Gh7qF4tj8CtQTfcB'
+- _id: EATKKRiwlrGfxZTu
+  _key: '!actors.items!5vlW0wHF5gExVOhL.EATKKRiwlrGfxZTu'
   name: Glowing Recovery
   type: monsterAbility
   img: icons/svg/book.svg
@@ -161,8 +161,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Vurkor can use his maneuver to regain 10 Stamina once per round.
-- _id: NjpNoco2Nie0wc05
-  _key: '!actors.items!UUxuOJNRst1gp0ya.NjpNoco2Nie0wc05'
+- _id: 3adc69j3PyPTwge8
+  _key: '!actors.items!5vlW0wHF5gExVOhL.3adc69j3PyPTwge8'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

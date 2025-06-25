@@ -1,5 +1,5 @@
-_id: cAXDrr8I7jvXHYQ7
-_key: '!actors!cAXDrr8I7jvXHYQ7'
+_id: BmTN2nloBCMyy2iK
+_key: '!actors!BmTN2nloBCMyy2iK'
 name: Human Scoundrel
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-scoundrel-01.webp
@@ -57,8 +57,8 @@ system:
     corruption: 1
     psychic: 1
 items:
-- _id: sVr3GiEXlNM62Db1
-  _key: '!actors.items!cAXDrr8I7jvXHYQ7.sVr3GiEXlNM62Db1'
+- _id: llWycSyKQvjmN1Qd
+  _key: '!actors.items!BmTN2nloBCMyy2iK.llWycSyKQvjmN1Qd'
   name: Rapier Dagger
   type: monsterAbility
   img: icons/svg/book.svg
@@ -90,8 +90,8 @@ items:
     prePowerRollEffect:
       text: This ability deals an additional 2 damage if the scoundrel has an edge
         on the power roll.
-- _id: KIOruYXy2YspD01W
-  _key: '!actors.items!cAXDrr8I7jvXHYQ7.KIOruYXy2YspD01W'
+- _id: IxXsCTCZqC11kEU9
+  _key: '!actors.items!BmTN2nloBCMyy2iK.IxXsCTCZqC11kEU9'
   name: Dagger Storm
   type: monsterAbility
   img: icons/svg/book.svg
@@ -104,8 +104,8 @@ items:
     prePowerRollEffect:
       text: The scoundrel uses Rapier Dagger targeting three creatures or objects.
         They can shift 2 before or after each strike.
-- _id: X0GrsWZp5tn42QZD
-  _key: '!actors.items!cAXDrr8I7jvXHYQ7.X0GrsWZp5tn42QZD'
+- _id: 1C6LqiW2RNJBVQhz
+  _key: '!actors.items!BmTN2nloBCMyy2iK.1C6LqiW2RNJBVQhz'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

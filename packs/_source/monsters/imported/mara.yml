@@ -1,5 +1,5 @@
-_id: GOgsRwnwmZ2rdPez
-_key: '!actors!GOgsRwnwmZ2rdPez'
+_id: NVdkbwAM0bJNRPVs
+_key: '!actors!NVdkbwAM0bJNRPVs'
 name: Mara
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/mara-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 1
     freeStrikeDamage: 5
 items:
-- _id: caSDBlJnasGUdsnX
-  _key: '!actors.items!GOgsRwnwmZ2rdPez.caSDBlJnasGUdsnX'
+- _id: vwsxLD3UeakWFmIp
+  _key: '!actors.items!NVdkbwAM0bJNRPVs.vwsxLD3UeakWFmIp'
   name: The Writhing Green
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
         damage: 13
         effect:
           text: slide 3
-- _id: SUz0XXCWAF5etL8i
-  _key: '!actors.items!GOgsRwnwmZ2rdPez.SUz0XXCWAF5etL8i'
+- _id: rH1muDKbeC6zj8yj
+  _key: '!actors.items!NVdkbwAM0bJNRPVs.rH1muDKbeC6zj8yj'
   name: The Earth Devours
   type: monsterAbility
   img: icons/svg/book.svg
@@ -128,8 +128,8 @@ items:
     prePowerRollEffect:
       text: The affected area is difficult terrain for enemies. An enemy has acid
         weakness 2 while occupying an affected square.
-- _id: xctJanId8hUb2KM6
-  _key: '!actors.items!GOgsRwnwmZ2rdPez.xctJanId8hUb2KM6'
+- _id: RB4spwGrBIYvJH29
+  _key: '!actors.items!NVdkbwAM0bJNRPVs.RB4spwGrBIYvJH29'
   name: Jaws of the Void
   type: monsterAbility
   img: icons/svg/book.svg
@@ -149,8 +149,8 @@ items:
     prePowerRollEffect:
       text: Mara teleports 2 squares. Each creature adjacent to her original space
         takes 2 corruption damage.
-- _id: m5HnxM0QHLMPQ3Qw
-  _key: '!actors.items!GOgsRwnwmZ2rdPez.m5HnxM0QHLMPQ3Qw'
+- _id: 1z22E9fEJvbUjzMW
+  _key: '!actors.items!NVdkbwAM0bJNRPVs.1z22E9fEJvbUjzMW'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -162,8 +162,8 @@ items:
     prePowerRollEffect:
       text: If Mara is frightened, slowed, or weakened, she can use a maneuver to
         end the condition.
-- _id: IxmfYIUGKDjxDAf2
-  _key: '!actors.items!GOgsRwnwmZ2rdPez.IxmfYIUGKDjxDAf2'
+- _id: 4g40SfNezJ9SUgfQ
+  _key: '!actors.items!NVdkbwAM0bJNRPVs.4g40SfNezJ9SUgfQ'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

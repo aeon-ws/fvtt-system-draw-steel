@@ -1,5 +1,5 @@
-_id: y8rrNmLner3OYBtz
-_key: '!actors!y8rrNmLner3OYBtz'
+_id: B8vmTvodiTDWrbXq
+_key: '!actors!B8vmTvodiTDWrbXq'
 name: Human Guard
 type: minion
 img: systems/aeon-draw-steel/images/monsters/human-guard-01.webp
@@ -60,8 +60,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: Ycz1VBcgiiwYieB6
-  _key: '!actors.items!y8rrNmLner3OYBtz.Ycz1VBcgiiwYieB6'
+- _id: qMRSN9aOsTuxGpp5
+  _key: '!actors.items!B8vmTvodiTDWrbXq.qMRSN9aOsTuxGpp5'
   name: Halberd
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
     prePowerRollEffect:
       text: If the guard is flanked, they can make a free strike against an additional
         target adjacent to them.
-- _id: 0uSDCx6Z1sKZb4jz
-  _key: '!actors.items!y8rrNmLner3OYBtz.0uSDCx6Z1sKZb4jz'
+- _id: bjBNhilNwyo2E7PM
+  _key: '!actors.items!B8vmTvodiTDWrbXq.bjBNhilNwyo2E7PM'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

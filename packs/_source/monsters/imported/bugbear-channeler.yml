@@ -1,5 +1,5 @@
-_id: KKTBQAeY9TGaI1az
-_key: '!actors!KKTBQAeY9TGaI1az'
+_id: DfhLFhP7qAkWwrDI
+_key: '!actors!DfhLFhP7qAkWwrDI'
 name: Bugbear Channeler
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/bugbear-channeler-01.webp
@@ -56,8 +56,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: Vw4N7CFN7WgmrUs0
-  _key: '!actors.items!KKTBQAeY9TGaI1az.Vw4N7CFN7WgmrUs0'
+- _id: P2djtcMdZVIYhmHn
+  _key: '!actors.items!DfhLFhP7qAkWwrDI.P2djtcMdZVIYhmHn'
   name: Shadow Drag
   type: monsterAbility
   img: icons/svg/book.svg
@@ -95,8 +95,8 @@ items:
     prePowerRollEffect:
       text: Each square that a target is pulled through becomes difficult terrain
         for enemies.
-- _id: ImMAhdGUH7M6pyPc
-  _key: '!actors.items!KKTBQAeY9TGaI1az.ImMAhdGUH7M6pyPc'
+- _id: yVOK48M2P0nDHJpk
+  _key: '!actors.items!DfhLFhP7qAkWwrDI.yVOK48M2P0nDHJpk'
   name: Blistering Element
   type: monsterAbility
   img: icons/svg/book.svg
@@ -138,8 +138,8 @@ items:
     prePowerRollEffect:
       text: The channeler chooses one of the following damage types for the damage
         acid, cold, corruption, fire, or poison.
-- _id: G5XDgFO81NVpBZws
-  _key: '!actors.items!KKTBQAeY9TGaI1az.G5XDgFO81NVpBZws'
+- _id: sfjk4SLKEimblK24
+  _key: '!actors.items!DfhLFhP7qAkWwrDI.sfjk4SLKEimblK24'
   name: Twist Shape
   type: monsterAbility
   img: icons/svg/book.svg
@@ -189,8 +189,8 @@ items:
       text: A shapechanged creature has their limbs violently stretched and their
         skin becomes paper thin. They are slowed and have fire weakness 10 while they
         have this effect.
-- _id: 6hqJv3VFDqbMgfzN
-  _key: '!actors.items!KKTBQAeY9TGaI1az.6hqJv3VFDqbMgfzN'
+- _id: wSUKvQ2lj2oYoG6a
+  _key: '!actors.items!DfhLFhP7qAkWwrDI.wSUKvQ2lj2oYoG6a'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -212,8 +212,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: Vertical push 3. An ally target doesn't take damage from being force moved.
-- _id: 4cVsg7D4UoTeiwWw
-  _key: '!actors.items!KKTBQAeY9TGaI1az.4cVsg7D4UoTeiwWw'
+- _id: N7mXacdLCPhikf5T
+  _key: '!actors.items!DfhLFhP7qAkWwrDI.N7mXacdLCPhikf5T'
   name: Catcher
   type: monsterAbility
   img: icons/svg/book.svg
@@ -234,8 +234,8 @@ items:
     trigger: The target is force moved into a square adjacent to the channeler.
     prePowerRollEffect:
       text: The target is grabbed by the channeler.
-- _id: dt6U8Wges3NcUhjh
-  _key: '!actors.items!KKTBQAeY9TGaI1az.dt6U8Wges3NcUhjh'
+- _id: 1QzaboAxY7R1pgZb
+  _key: '!actors.items!DfhLFhP7qAkWwrDI.1QzaboAxY7R1pgZb'
   name: Shadow Veil
   type: monsterAbility
   img: icons/svg/book.svg

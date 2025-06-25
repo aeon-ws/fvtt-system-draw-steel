@@ -1,5 +1,5 @@
-_id: 4lGjqVaQ4Ks7f6it
-_key: '!actors!4lGjqVaQ4Ks7f6it'
+_id: E6MaKqulBtRiqN7d
+_key: '!actors!E6MaKqulBtRiqN7d'
 name: Human Raider
 type: minion
 img: systems/aeon-draw-steel/images/monsters/human-raider-01.webp
@@ -60,8 +60,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 1
 items:
-- _id: 8BmGYRSSJcxfzmrw
-  _key: '!actors.items!4lGjqVaQ4Ks7f6it.8BmGYRSSJcxfzmrw'
+- _id: mZJK8QUFyL8cee5R
+  _key: '!actors.items!E6MaKqulBtRiqN7d.mZJK8QUFyL8cee5R'
   name: Handaxes
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
     prePowerRollEffect:
       text: lf this ability is used while charging, the raider can make a ranged free
         strike before using the ability.
-- _id: phzGOlEn8ZzAcava
-  _key: '!actors.items!4lGjqVaQ4Ks7f6it.phzGOlEn8ZzAcava'
+- _id: RqvHhNkAZ1GAv4Sp
+  _key: '!actors.items!E6MaKqulBtRiqN7d.RqvHhNkAZ1GAv4Sp'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg

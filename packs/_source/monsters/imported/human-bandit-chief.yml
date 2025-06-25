@@ -1,5 +1,5 @@
-_id: qw0Sjd4ANFSi9tuM
-_key: '!actors!qw0Sjd4ANFSi9tuM'
+_id: SthQTpVB0kK3eK6g
+_key: '!actors!SthQTpVB0kK3eK6g'
 name: Human Bandit Chief
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/human-bandit-chief-01.webp
@@ -57,8 +57,8 @@ system:
     corruption: 4
     psychic: 4
 items:
-- _id: cOuX17IIjo6joRXZ
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.cOuX17IIjo6joRXZ'
+- _id: Da01KcK51FveG9jU
+  _key: '!actors.items!SthQTpVB0kK3eK6g.Da01KcK51FveG9jU'
   name: Whip Magic Longsword
   type: monsterAbility
   img: icons/svg/book.svg
@@ -97,8 +97,8 @@ items:
         takes 5 corruption damage.
     maliceEffect:
       text: 2 Malice The bandit chief targets an additional enemy or object.
-- _id: zG27qXM1FPJ0Kjzg
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.zG27qXM1FPJ0Kjzg'
+- _id: ntQb8dOQB91QjZ3p
+  _key: '!actors.items!SthQTpVB0kK3eK6g.ntQb8dOQB91QjZ3p'
   name: Kneel, Peasant!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
             text: prone
     maliceEffect:
       text: 2 Malice This ability targets each enemy adjacent to the bandit chief.
-- _id: n2DV5OaMVFYU5r8A
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.n2DV5OaMVFYU5r8A'
+- _id: 04SyOXWZG3oWfzp1
+  _key: '!actors.items!SthQTpVB0kK3eK6g.04SyOXWZG3oWfzp1'
   name: Bloodstones
   type: monsterAbility
   img: icons/svg/book.svg
@@ -164,8 +164,8 @@ items:
     prePowerRollEffect:
       text: The bandit chief takes 9 corruption damage and increases the result of
         the power roll by one tier.
-- _id: 3tULyR9Y3ZQD4u0I
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.3tULyR9Y3ZQD4u0I'
+- _id: lTD9Db94FpVQYfUx
+  _key: '!actors.items!SthQTpVB0kK3eK6g.lTD9Db94FpVQYfUx'
   name: End Effect
   type: monsterAbility
   img: icons/svg/book.svg
@@ -177,8 +177,8 @@ items:
     prePowerRollEffect:
       text: At the end of their turn, the bandit chief can take 5 damage to end one
         save ends effect affecting them. This damage can't be reduced in any way.
-- _id: f4ricHVwBn7FjM8M
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.f4ricHVwBn7FjM8M'
+- _id: aretqesS8mBoyjxX
+  _key: '!actors.items!SthQTpVB0kK3eK6g.aretqesS8mBoyjxX'
   name: Supernatural Insight
   type: monsterAbility
   img: icons/svg/book.svg
@@ -190,8 +190,8 @@ items:
     prePowerRollEffect:
       text: The bandit chief ignores concealment if it's granted by a supernatural
         effect, or the target is supernatural.
-- _id: 6s9wOL6XBNuKYhbx
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.6s9wOL6XBNuKYhbx'
+- _id: 7zIm8QXUbmHH8ib6
+  _key: '!actors.items!SthQTpVB0kK3eK6g.7zIm8QXUbmHH8ib6'
   name: Shoot!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -209,8 +209,8 @@ items:
       ally: true
     prePowerRollEffect:
       text: Each target makes a ranged free strike.
-- _id: 2gH1esuXF0PVpf3B
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.2gH1esuXF0PVpf3B'
+- _id: 14UJIdXATuRBbxaU
+  _key: '!actors.items!SthQTpVB0kK3eK6g.14UJIdXATuRBbxaU'
   name: Form Up!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -230,8 +230,8 @@ items:
       text: Each target shifts up to their speed. Until the end of the encounter,
         the bandit chief and all allies have damage immunity 2 while adjacent to a
         target.
-- _id: qnSdvos64UPdgn1I
-  _key: '!actors.items!qw0Sjd4ANFSi9tuM.qnSdvos64UPdgn1I'
+- _id: jBbUqP5NvWaLGtIA
+  _key: '!actors.items!SthQTpVB0kK3eK6g.jBbUqP5NvWaLGtIA'
   name: Lead From the Front
   type: monsterAbility
   img: icons/svg/book.svg

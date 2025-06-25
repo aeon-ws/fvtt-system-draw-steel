@@ -1,5 +1,5 @@
-_id: kxe5uZTQ8pJnusQr
-_key: '!actors!kxe5uZTQ8pJnusQr'
+_id: 6D74msKznrYWxE7u
+_key: '!actors!6D74msKznrYWxE7u'
 name: Goblin Toxinaut
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-toxinaut-01.webp
@@ -57,8 +57,8 @@ system:
   immunity:
     poison: 3
 items:
-- _id: 7o6rmAPr4Me3oBGD
-  _key: '!actors.items!kxe5uZTQ8pJnusQr.7o6rmAPr4Me3oBGD'
+- _id: GZdEQHeOz8Ozpl2y
+  _key: '!actors.items!6D74msKznrYWxE7u.GZdEQHeOz8Ozpl2y'
   name: Toxic Winds
   type: monsterAbility
   img: icons/svg/book.svg
@@ -94,8 +94,8 @@ items:
         damageType: poison
         effect:
           text: slide 3 1
-- _id: iH5q5i47APHRDrfy
-  _key: '!actors.items!kxe5uZTQ8pJnusQr.iH5q5i47APHRDrfy'
+- _id: Bk8j0fA5QmHT1aog
+  _key: '!actors.items!6D74msKznrYWxE7u.Bk8j0fA5QmHT1aog'
   name: Swamp Fumes
   type: monsterAbility
   img: icons/svg/book.svg
@@ -120,8 +120,8 @@ items:
         terrain for non-goblin creatures, and each such creature who moves within
         the area takes 2 poison damage for each square moved. The poison damage ignores
         immunity. The haze can't be dispersed by wind.
-- _id: EiF1F2dkYptGxOoO
-  _key: '!actors.items!kxe5uZTQ8pJnusQr.EiF1F2dkYptGxOoO'
+- _id: VfyiKG9BnunCE8Vl
+  _key: '!actors.items!6D74msKznrYWxE7u.VfyiKG9BnunCE8Vl'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

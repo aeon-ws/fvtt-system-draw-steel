@@ -1,5 +1,5 @@
-_id: ugu4PwwxlLagO8m2
-_key: '!actors!ugu4PwwxlLagO8m2'
+_id: 6PEvNIsEEyLmD1B4
+_key: '!actors!6PEvNIsEEyLmD1B4'
 name: Goblin Underboss
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-underboss-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 0
     freeStrikeDamage: 1
 items:
-- _id: Yg2ckDjEAQFAWLYm
-  _key: '!actors.items!ugu4PwwxlLagO8m2.Yg2ckDjEAQFAWLYm'
+- _id: FOIX73H2WTTamkaw
+  _key: '!actors.items!6PEvNIsEEyLmD1B4.FOIX73H2WTTamkaw'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -86,8 +86,8 @@ items:
         damage: 5
     prePowerRollEffect:
       text: One ally adjacent to the target can make a free strike against them.
-- _id: o7fHxxHOwnYCfsmV
-  _key: '!actors.items!ugu4PwwxlLagO8m2.o7fHxxHOwnYCfsmV'
+- _id: UYSqE8KOjLLcU87E
+  _key: '!actors.items!6PEvNIsEEyLmD1B4.UYSqE8KOjLLcU87E'
   name: Get Reckless!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -107,8 +107,8 @@ items:
         on strikes, and strikes made against them have an edge.
     maliceEffect:
       text: 2 Malice Strikes made against each target no longer have an edge.
-- _id: 8h5iW6UdjIVKM35Z
-  _key: '!actors.items!ugu4PwwxlLagO8m2.8h5iW6UdjIVKM35Z'
+- _id: pxRjRstKtLBBUfJm
+  _key: '!actors.items!6PEvNIsEEyLmD1B4.pxRjRstKtLBBUfJm'
   name: Crafty
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: LDZeermROsAWx2Gi
-_key: '!actors!LDZeermROsAWx2Gi'
+_id: ja3SuiMV3hLSNuZo
+_key: '!actors!ja3SuiMV3hLSNuZo'
 name: Tomb Horror
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/tomb-horror-01.webp
@@ -59,8 +59,8 @@ system:
   weakness:
     fire: 3
 items:
-- _id: 4IM68ZRXg0yzlh5E
-  _key: '!actors.items!LDZeermROsAWx2Gi.4IM68ZRXg0yzlh5E'
+- _id: zOybiRjcZPD1xJIb
+  _key: '!actors.items!ja3SuiMV3hLSNuZo.zOybiRjcZPD1xJIb'
   name: Ruinous Grasp
   type: monsterAbility
   img: icons/svg/book.svg
@@ -99,8 +99,8 @@ items:
     prePowerRollEffect:
       text: A target pulled adjacent to the tomb horror is A<2 grabbed. The tomb horror
         can have up to three targets grabbed this way.
-- _id: uAHsPxTvk3a5sBsW
-  _key: '!actors.items!LDZeermROsAWx2Gi.uAHsPxTvk3a5sBsW'
+- _id: jB9FMWhcBzOSS9Tf
+  _key: '!actors.items!ja3SuiMV3hLSNuZo.jB9FMWhcBzOSS9Tf'
   name: Hundred Horrors
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
     prePowerRollEffect:
       text: Vines and fetid, elongated arms reach out and pull each target to the
         ground. A target has damage weakness 2 while restrained by this ability.
-- _id: 9Al2SOEVlHiElZog
-  _key: '!actors.items!LDZeermROsAWx2Gi.9Al2SOEVlHiElZog'
+- _id: OEQHkC0XvUxz8ewR
+  _key: '!actors.items!ja3SuiMV3hLSNuZo.OEQHkC0XvUxz8ewR'
   name: Latch Hook
   type: monsterAbility
   img: icons/svg/book.svg
@@ -162,8 +162,8 @@ items:
     prePowerRollEffect:
       text: The tomb horror shifts up to their speed, including vertically. They must
         end this movement on a solid surface.
-- _id: pOoqkJufaRfu1crS
-  _key: '!actors.items!LDZeermROsAWx2Gi.pOoqkJufaRfu1crS'
+- _id: XF3Zj2feU4QxU7QM
+  _key: '!actors.items!ja3SuiMV3hLSNuZo.XF3Zj2feU4QxU7QM'
   name: Curse For the Defilers
   type: monsterAbility
   img: icons/svg/book.svg
@@ -186,8 +186,8 @@ items:
     prePowerRollEffect:
       text: The target is P<2 slowed (save ends). The tomb horror then moves up to
         their speed towards the target.
-- _id: sSJEyB4FAo7zNHYa
-  _key: '!actors.items!LDZeermROsAWx2Gi.sSJEyB4FAo7zNHYa'
+- _id: 08mQ0FQDBIDc1gVt
+  _key: '!actors.items!ja3SuiMV3hLSNuZo.08mQ0FQDBIDc1gVt'
   name: Enervating Horror
   type: monsterAbility
   img: icons/svg/book.svg

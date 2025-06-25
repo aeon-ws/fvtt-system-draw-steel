@@ -1,5 +1,5 @@
-_id: YsoUNUsK4ec5tcvA
-_key: '!actors!YsoUNUsK4ec5tcvA'
+_id: EHgcBU6m2jQGiGKt
+_key: '!actors!EHgcBU6m2jQGiGKt'
 name: Decrepit Skeleton
 type: minion
 img: systems/aeon-draw-steel/images/monsters/decrepit-skeleton-01.webp
@@ -59,8 +59,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 2
 items:
-- _id: xllFJeznK3WrIyDz
-  _key: '!actors.items!YsoUNUsK4ec5tcvA.xllFJeznK3WrIyDz'
+- _id: bB5Jy2oLTHm7aGe9
+  _key: '!actors.items!EHgcBU6m2jQGiGKt.bB5Jy2oLTHm7aGe9'
   name: Bone Bow
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
     prePowerRollEffect:
       text: The decrepit skeleton chooses one other target within distance to take
         1 damage.
-- _id: rbdeF88gVu1ozS6Z
-  _key: '!actors.items!YsoUNUsK4ec5tcvA.rbdeF88gVu1ozS6Z'
+- _id: PRz0L1zjcKlUdG49
+  _key: '!actors.items!EHgcBU6m2jQGiGKt.PRz0L1zjcKlUdG49'
   name: Bonetrops
   type: monsterAbility
   img: icons/svg/book.svg

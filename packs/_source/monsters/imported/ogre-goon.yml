@@ -1,5 +1,5 @@
-_id: 1ty4R4OVkmPnsVbX
-_key: '!actors!1ty4R4OVkmPnsVbX'
+_id: We0M5kArM35t3k7j
+_key: '!actors!We0M5kArM35t3k7j'
 name: Ogre Goon
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/ogre-goon-01.webp
@@ -54,8 +54,8 @@ system:
     stability: 4
     freeStrikeDamage: 5
 items:
-- _id: OCzyUvrGd37eHQ5x
-  _key: '!actors.items!1ty4R4OVkmPnsVbX.OCzyUvrGd37eHQ5x'
+- _id: bwqAjmOrMMxStRvp
+  _key: '!actors.items!We0M5kArM35t3k7j.bwqAjmOrMMxStRvp'
   name: Club Swing
   type: monsterAbility
   img: icons/svg/book.svg
@@ -93,8 +93,8 @@ items:
     prePowerRollEffect:
       text: This strike deals an additional 4 damage to each creature and object that
         takes damage from any force movement it causes.
-- _id: kqtx459yT2WR5PSp
-  _key: '!actors.items!1ty4R4OVkmPnsVbX.kqtx459yT2WR5PSp'
+- _id: sceHnJTPKdvhu6D5
+  _key: '!actors.items!We0M5kArM35t3k7j.sceHnJTPKdvhu6D5'
   name: Grabby Hand
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,8 +132,8 @@ items:
     maliceEffect:
       text: 1 Malice The target has a bane on escaping the grab while the goon crushes
         the target in their hand.
-- _id: 9qSl6sY2DDU3zVl6
-  _key: '!actors.items!1ty4R4OVkmPnsVbX.9qSl6sY2DDU3zVl6'
+- _id: YyUb8UlIeC6ramFW
+  _key: '!actors.items!We0M5kArM35t3k7j.YyUb8UlIeC6ramFW'
   name: People Bowling
   type: monsterAbility
   img: icons/svg/book.svg
@@ -174,8 +174,8 @@ items:
       text: The goon hurls what's in their hand down the line and rolls power. The
         hurled creature or object counts as a target and lands in the last square
         of the line (or nearest unoccupied square of the goon's choice).
-- _id: BAjEANMGm4klxuUF
-  _key: '!actors.items!1ty4R4OVkmPnsVbX.BAjEANMGm4klxuUF'
+- _id: rwoQjFlY50cgf8Kl
+  _key: '!actors.items!We0M5kArM35t3k7j.rwoQjFlY50cgf8Kl'
   name: Swat The Fly
   type: monsterAbility
   img: icons/svg/book.svg
@@ -196,8 +196,8 @@ items:
     trigger: The target moves or shifts away from the goon.
     prePowerRollEffect:
       text: Slide 5.
-- _id: RVBA8ZeNkFCHGWxh
-  _key: '!actors.items!1ty4R4OVkmPnsVbX.RVBA8ZeNkFCHGWxh'
+- _id: 0SlGGeBApuuS5WX9
+  _key: '!actors.items!We0M5kArM35t3k7j.0SlGGeBApuuS5WX9'
   name: Defiant Anger
   type: monsterAbility
   img: icons/svg/book.svg

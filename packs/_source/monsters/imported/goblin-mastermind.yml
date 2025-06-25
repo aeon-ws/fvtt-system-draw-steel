@@ -1,5 +1,5 @@
-_id: XV5OOzZBRsM1rRC1
-_key: '!actors!XV5OOzZBRsM1rRC1'
+_id: f7gnz4q1SzUgyrpu
+_key: '!actors!f7gnz4q1SzUgyrpu'
 name: Goblin Mastermind
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/goblin-mastermind-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 1
     freeStrikeDamage: 4
 items:
-- _id: yMkcEwT4b3rrFkVO
-  _key: '!actors.items!XV5OOzZBRsM1rRC1.yMkcEwT4b3rrFkVO'
+- _id: fIrFrvHDdNZ8Kasx
+  _key: '!actors.items!f7gnz4q1SzUgyrpu.fIrFrvHDdNZ8Kasx'
   name: Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -87,8 +87,8 @@ items:
         damage: 7
     prePowerRollEffect:
       text: One ally adjacent to the target can make a free strike against them.
-- _id: ECwi1SZLN6BMtZQL
-  _key: '!actors.items!XV5OOzZBRsM1rRC1.ECwi1SZLN6BMtZQL'
+- _id: UuQ3V9D8iCCuj9rC
+  _key: '!actors.items!f7gnz4q1SzUgyrpu.UuQ3V9D8iCCuj9rC'
   name: Goad
   type: monsterAbility
   img: icons/svg/book.svg
@@ -111,8 +111,8 @@ items:
     prePowerRollEffect:
       text: The mastermind retargets the strike to target themself or another ally.
         The new target must be a valid option for the strike.
-- _id: oRTLRZoE485ZrAjb
-  _key: '!actors.items!XV5OOzZBRsM1rRC1.oRTLRZoE485ZrAjb'
+- _id: lhLw2SZXTGQkuf88
+  _key: '!actors.items!f7gnz4q1SzUgyrpu.lhLw2SZXTGQkuf88'
   name: Saw You Coming
   type: monsterAbility
   img: icons/svg/book.svg
@@ -123,8 +123,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The mastermind can't be surprised.
-- _id: QdQYQk5n07CfdvU3
-  _key: '!actors.items!XV5OOzZBRsM1rRC1.QdQYQk5n07CfdvU3'
+- _id: 7S3SvmortUdZQHfT
+  _key: '!actors.items!f7gnz4q1SzUgyrpu.7S3SvmortUdZQHfT'
   name: Cunning
   type: monsterAbility
   img: icons/svg/book.svg

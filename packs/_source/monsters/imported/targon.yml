@@ -1,5 +1,5 @@
-_id: 7g1GlFvsJLqiz0yE
-_key: '!actors!7g1GlFvsJLqiz0yE'
+_id: HU406ItVweUIOAA0
+_key: '!actors!HU406ItVweUIOAA0'
 name: Targon
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/targon-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 2
     freeStrikeDamage: 5
 items:
-- _id: rMNTdEVQs5c0sGb5
-  _key: '!actors.items!7g1GlFvsJLqiz0yE.rMNTdEVQs5c0sGb5'
+- _id: KtFZbrDZaxcBKpfp
+  _key: '!actors.items!HU406ItVweUIOAA0.KtFZbrDZaxcBKpfp'
   name: Dual Targeting Shot
   type: monsterAbility
   img: icons/svg/book.svg
@@ -88,8 +88,8 @@ items:
     maliceEffect:
       text: 2 Malice Two allies within distance can make a free strike against one
         of the targets.
-- _id: cFTAJhKSFeuDXKVa
-  _key: '!actors.items!7g1GlFvsJLqiz0yE.cFTAJhKSFeuDXKVa'
+- _id: GoK9NpJsrv6nlg30
+  _key: '!actors.items!HU406ItVweUIOAA0.GoK9NpJsrv6nlg30'
   name: I'll Cover You!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -136,8 +136,8 @@ items:
             text: weakened (save ends)
     prePowerRollEffect:
       text: An ally adjacent to the target regains 5 Stamina.
-- _id: XpeDERePDrhmtNZY
-  _key: '!actors.items!7g1GlFvsJLqiz0yE.XpeDERePDrhmtNZY'
+- _id: fJhVAKluRg4cyOEs
+  _key: '!actors.items!HU406ItVweUIOAA0.fJhVAKluRg4cyOEs'
   name: Overwatch
   type: monsterAbility
   img: icons/svg/book.svg
@@ -157,8 +157,8 @@ items:
     prePowerRollEffect:
       text: At any point during the movement, Targon makes a free strike against the
         target.
-- _id: ZW0qOyRPq1LJ4D1u
-  _key: '!actors.items!7g1GlFvsJLqiz0yE.ZW0qOyRPq1LJ4D1u'
+- _id: dSxkYZPu0YR2RlcL
+  _key: '!actors.items!HU406ItVweUIOAA0.dSxkYZPu0YR2RlcL'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -170,8 +170,8 @@ items:
     prePowerRollEffect:
       text: f Targon is frightened, slowed, or weakened, he can use a maneuver to
         end the condition.
-- _id: CpoUPNpsTIAJ3usc
-  _key: '!actors.items!7g1GlFvsJLqiz0yE.CpoUPNpsTIAJ3usc'
+- _id: D7mcBJ2Cjm1QeUyD
+  _key: '!actors.items!HU406ItVweUIOAA0.D7mcBJ2Cjm1QeUyD'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

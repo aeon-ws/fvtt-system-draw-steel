@@ -1,5 +1,5 @@
-_id: W6DyPjMvxIOZaCDQ
-_key: '!actors!W6DyPjMvxIOZaCDQ'
+_id: eWUjM6cX02hBNQ8D
+_key: '!actors!eWUjM6cX02hBNQ8D'
 name: Crawling Claw
 type: minion
 img: systems/aeon-draw-steel/images/monsters/crawling-claw-01.webp
@@ -59,8 +59,8 @@ system:
   derivedCaptainBonuses:
     speed: 2
 items:
-- _id: T3nAcdQg5vYjwYzx
-  _key: '!actors.items!W6DyPjMvxIOZaCDQ.T3nAcdQg5vYjwYzx'
+- _id: 7dBMZ8avTJ5u64Gk
+  _key: '!actors.items!eWUjM6cX02hBNQ8D.7dBMZ8avTJ5u64Gk'
   name: Fingernails
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
         damage: 37
     prePowerRollEffect:
       text: The crawling claw shifts a number of squares equal to the damage dealt.
-- _id: ZrUapimvvxjETDAI
-  _key: '!actors.items!W6DyPjMvxIOZaCDQ.ZrUapimvvxjETDAI'
+- _id: U9nok5TKABAooBU1
+  _key: '!actors.items!eWUjM6cX02hBNQ8D.U9nok5TKABAooBU1'
   name: Disorganized
   type: monsterAbility
   img: icons/svg/book.svg

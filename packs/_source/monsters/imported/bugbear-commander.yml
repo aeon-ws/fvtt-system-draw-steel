@@ -1,5 +1,5 @@
-_id: OURwE7jwEJCnOXgu
-_key: '!actors!OURwE7jwEJCnOXgu'
+_id: 7B6IrSpkmRswWk5b
+_key: '!actors!7B6IrSpkmRswWk5b'
 name: Bugbear Commander
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/bugbear-commander-01.webp
@@ -56,8 +56,8 @@ system:
     stability: 0
     freeStrikeDamage: 5
 items:
-- _id: 5u9nk6HTgSFf40WJ
-  _key: '!actors.items!OURwE7jwEJCnOXgu.5u9nk6HTgSFf40WJ'
+- _id: UtTqI764HMg1giGH
+  _key: '!actors.items!7B6IrSpkmRswWk5b.UtTqI764HMg1giGH'
   name: Inspiring Swordplay
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
     prePowerRollEffect:
       text: 1 ally within 5 of the commander has an edge on their next strike until
         the start of the commander's next turn.
-- _id: AQsfrHBVbfRBBcxE
-  _key: '!actors.items!OURwE7jwEJCnOXgu.AQsfrHBVbfRBBcxE'
+- _id: RuOeVMLM74R7FvF2
+  _key: '!actors.items!7B6IrSpkmRswWk5b.RuOeVMLM74R7FvF2'
   name: You Next!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -109,8 +109,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: The target moves up to their speed and uses a signature action.
-- _id: K5ucNlWFOnkmRAsB
-  _key: '!actors.items!OURwE7jwEJCnOXgu.K5ucNlWFOnkmRAsB'
+- _id: tCfSfKguyFDppYjp
+  _key: '!actors.items!7B6IrSpkmRswWk5b.tCfSfKguyFDppYjp'
   name: Fall Back!
   type: monsterAbility
   img: icons/svg/book.svg
@@ -129,8 +129,8 @@ items:
     prePowerRollEffect:
       text: Each target shifts up to their speed. Each target can use the Throw maneuver
         if they are grabbing a creature or object.
-- _id: iHB4hBuGRTErSpDT
-  _key: '!actors.items!OURwE7jwEJCnOXgu.iHB4hBuGRTErSpDT'
+- _id: dlXPwKGB2fsouVF7
+  _key: '!actors.items!7B6IrSpkmRswWk5b.dlXPwKGB2fsouVF7'
   name: Throw
   type: monsterAbility
   img: icons/svg/book.svg
@@ -152,8 +152,8 @@ items:
       count: 1
     prePowerRollEffect:
       text: Vertical push 4. An ally target doesn't take damage from being force moved.
-- _id: JEPqyMKd7BN7a7mo
-  _key: '!actors.items!OURwE7jwEJCnOXgu.JEPqyMKd7BN7a7mo'
+- _id: 1NBuQeVmuqD3TISe
+  _key: '!actors.items!7B6IrSpkmRswWk5b.1NBuQeVmuqD3TISe'
   name: Catcher
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: kjyElvJ44fjcNowf
-_key: '!actors!kjyElvJ44fjcNowf'
+_id: tohVKH7vggHXxUOM
+_key: '!actors!tohVKH7vggHXxUOM'
 name: Glass Spider
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/glass-spider-01.webp
@@ -55,8 +55,8 @@ system:
   weakness:
     sonic: 5
 items:
-- _id: hYSdGDRNLqCRYjsO
-  _key: '!actors.items!kjyElvJ44fjcNowf.hYSdGDRNLqCRYjsO'
+- _id: LyTyCBrfmMB3O26Y
+  _key: '!actors.items!tohVKH7vggHXxUOM.LyTyCBrfmMB3O26Y'
   name: Bite
   type: monsterAbility
   img: icons/svg/book.svg
@@ -92,8 +92,8 @@ items:
             text: bleeding (save ends)
     maliceEffect:
       text: 2 Malice A<3 bleeding (save ends).
-- _id: ADFpNqVrJU5PRJ7q
-  _key: '!actors.items!kjyElvJ44fjcNowf.ADFpNqVrJU5PRJ7q'
+- _id: Ypaz1gi7E39TFbbY
+  _key: '!actors.items!tohVKH7vggHXxUOM.Ypaz1gi7E39TFbbY'
   name: Slashing Leg
   type: monsterAbility
   img: icons/svg/book.svg
@@ -122,8 +122,8 @@ items:
         damage: 9
       tier3:
         damage: 12
-- _id: 5ORVTJp4bFo6I6Ae
-  _key: '!actors.items!kjyElvJ44fjcNowf.5ORVTJp4bFo6I6Ae'
+- _id: tW9KtFRFAsrvTxbQ
+  _key: '!actors.items!tohVKH7vggHXxUOM.tW9KtFRFAsrvTxbQ'
   name: Trample
   type: monsterAbility
   img: icons/svg/book.svg
@@ -142,8 +142,8 @@ items:
       text: The spider shifts up to their speed and makes a Slashing Leg strike against
         each creature who comes within 1 of the spider during the move. The spider
         makes one power roll against all targets.
-- _id: 4R9YG9eVVH0bTN0I
-  _key: '!actors.items!kjyElvJ44fjcNowf.4R9YG9eVVH0bTN0I'
+- _id: Q9wieXklLKlRLgJV
+  _key: '!actors.items!tohVKH7vggHXxUOM.Q9wieXklLKlRLgJV'
   name: Web
   type: monsterAbility
   img: icons/svg/book.svg
@@ -180,8 +180,8 @@ items:
     postPowerRollEffect:
       text: The affected area is considered difficult terrain for the rest of the
         encounter.
-- _id: xlSyP5WrYBfddI9e
-  _key: '!actors.items!kjyElvJ44fjcNowf.xlSyP5WrYBfddI9e'
+- _id: Ru6pMt6Fhr1dGWyo
+  _key: '!actors.items!tohVKH7vggHXxUOM.Ru6pMt6Fhr1dGWyo'
   name: Skitter
   type: monsterAbility
   img: icons/svg/book.svg

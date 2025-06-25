@@ -1,5 +1,5 @@
-_id: nQZd0rrubBbzV9aj
-_key: '!actors!nQZd0rrubBbzV9aj'
+_id: yfjJ8GuY4UJIXzzV
+_key: '!actors!yfjJ8GuY4UJIXzzV'
 name: Laesi
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/laesi-01.webp
@@ -55,8 +55,8 @@ system:
     stability: 3
     freeStrikeDamage: 5
 items:
-- _id: 8VmDXCnH5l98oeo0
-  _key: '!actors.items!nQZd0rrubBbzV9aj.8VmDXCnH5l98oeo0'
+- _id: E9xd398vHGlO5xeE
+  _key: '!actors.items!yfjJ8GuY4UJIXzzV.E9xd398vHGlO5xeE'
   name: Nimble Step
   type: monsterAbility
   img: icons/svg/book.svg
@@ -91,8 +91,8 @@ items:
         damage: 13
         effect:
           text: shift 4
-- _id: xQ2qnlFHHNEuVW4I
-  _key: '!actors.items!nQZd0rrubBbzV9aj.xQ2qnlFHHNEuVW4I'
+- _id: toTUwTCwdz9Q5P3s
+  _key: '!actors.items!yfjJ8GuY4UJIXzzV.toTUwTCwdz9Q5P3s'
   name: Numb
   type: monsterAbility
   img: icons/svg/book.svg
@@ -138,8 +138,8 @@ items:
           value: 2
           effect:
             text: slowed and dazed (EoT)
-- _id: ZZ9q7p2zWAteLAxv
-  _key: '!actors.items!nQZd0rrubBbzV9aj.ZZ9q7p2zWAteLAxv'
+- _id: ClIl62TXaATH0X1H
+  _key: '!actors.items!yfjJ8GuY4UJIXzzV.ClIl62TXaATH0X1H'
   name: Inertial Shield
   type: monsterAbility
   img: icons/svg/book.svg
@@ -150,8 +150,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: Laesi halves the damage of the first strike she is targeted by each round.
-- _id: OCxWEBGjCCiZ2b1M
-  _key: '!actors.items!nQZd0rrubBbzV9aj.OCxWEBGjCCiZ2b1M'
+- _id: B55EXZG3H1899q06
+  _key: '!actors.items!yfjJ8GuY4UJIXzzV.B55EXZG3H1899q06'
   name: Determination
   type: monsterAbility
   img: icons/svg/book.svg
@@ -163,8 +163,8 @@ items:
     prePowerRollEffect:
       text: If Laesi is frightened, slowed, or weakened, she can use a maneuver to
         end the condition.
-- _id: o1vczn47rldx4yDe
-  _key: '!actors.items!nQZd0rrubBbzV9aj.o1vczn47rldx4yDe'
+- _id: Cx2ckKHSzt2ctyHM
+  _key: '!actors.items!yfjJ8GuY4UJIXzzV.Cx2ckKHSzt2ctyHM'
   name: Rivalry
   type: monsterAbility
   img: icons/svg/book.svg

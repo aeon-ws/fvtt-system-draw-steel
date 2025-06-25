@@ -1,5 +1,5 @@
-_id: EjBksYDYmSdUK01q
-_key: '!actors!EjBksYDYmSdUK01q'
+_id: 6ILAxZqhKPbyWsj5
+_key: '!actors!6ILAxZqhKPbyWsj5'
 name: Memorial Ivy
 type: minion
 img: systems/aeon-draw-steel/images/monsters/memorial-ivy-01.webp
@@ -62,8 +62,8 @@ system:
   derivedCaptainBonuses:
     edgeOnStrikes: 3
 items:
-- _id: vxMENVfs2aZSelgu
-  _key: '!actors.items!EjBksYDYmSdUK01q.vxMENVfs2aZSelgu'
+- _id: ztQA8TxFIaQBf9kQ
+  _key: '!actors.items!6ILAxZqhKPbyWsj5.ztQA8TxFIaQBf9kQ'
   name: Grasping Ivy
   type: monsterAbility
   img: icons/svg/book.svg
@@ -98,8 +98,8 @@ items:
         damage: 5
         effect:
           text: pull 5
-- _id: Xzqz3o4QVPIORQfa
-  _key: '!actors.items!EjBksYDYmSdUK01q.Xzqz3o4QVPIORQfa'
+- _id: RkAYSC2BZooonuzt
+  _key: '!actors.items!6ILAxZqhKPbyWsj5.RkAYSC2BZooonuzt'
   name: Creeper
   type: monsterAbility
   img: icons/svg/book.svg

@@ -1,5 +1,5 @@
-_id: mSfRLs1yh9IutV9M
-_key: '!actors!mSfRLs1yh9IutV9M'
+_id: mDpjeOFki5EHZju1
+_key: '!actors!mDpjeOFki5EHZju1'
 name: Sudden Downpour
 type: enemy
 img: systems/aeon-draw-steel/images/monsters/sudden-downpour-01.webp
@@ -56,8 +56,8 @@ system:
   immunity:
     fire: 2
 items:
-- _id: togZqFsmHe59VmpT
-  _key: '!actors.items!mSfRLs1yh9IutV9M.togZqFsmHe59VmpT'
+- _id: Q3BeBFjyZTz0XOwq
+  _key: '!actors.items!mDpjeOFki5EHZju1.Q3BeBFjyZTz0XOwq'
   name: Leap Upon
   type: monsterAbility
   img: icons/svg/book.svg
@@ -105,8 +105,8 @@ items:
             text: bleeding (save ends)
     prePowerRollEffect:
       text: The downpour jumps 3 squares before making the strike.
-- _id: 9uTRmBWAzkpeM6DZ
-  _key: '!actors.items!mSfRLs1yh9IutV9M.9uTRmBWAzkpeM6DZ'
+- _id: PLAh0LGcQkhqW4qq
+  _key: '!actors.items!mDpjeOFki5EHZju1.PLAh0LGcQkhqW4qq'
   name: See Through
   type: monsterAbility
   img: icons/svg/book.svg
@@ -119,8 +119,8 @@ items:
     prePowerRollEffect:
       text: The downpour turns invisible. The effect ends when the downpour uses an
         ability, takes damage, or at the end of their turn.
-- _id: W3jzg37iTV0oJDwZ
-  _key: '!actors.items!mSfRLs1yh9IutV9M.W3jzg37iTV0oJDwZ'
+- _id: 9kST1rOmFpT2ghTr
+  _key: '!actors.items!mDpjeOFki5EHZju1.9kST1rOmFpT2ghTr'
   name: Aquavuken
   type: monsterAbility
   img: icons/svg/book.svg
@@ -132,8 +132,8 @@ items:
     prePowerRollEffect:
       text: The downpour ignores difficult terrain and can move on top of water as
         if it was solid ground.
-- _id: ygAh3TSBJpPO2xxf
-  _key: '!actors.items!mSfRLs1yh9IutV9M.ygAh3TSBJpPO2xxf'
+- _id: WUFAZBTjRfwBAzwf
+  _key: '!actors.items!mDpjeOFki5EHZju1.WUFAZBTjRfwBAzwf'
   name: Pack Strong
   type: monsterAbility
   img: icons/svg/book.svg
@@ -144,8 +144,8 @@ items:
     type: monsterTrait
     prePowerRollEffect:
       text: The downpour can't be flanked or frightened while adjacent to an ally.
-- _id: lAh6EiyYnYutRQXH
-  _key: '!actors.items!mSfRLs1yh9IutV9M.lAh6EiyYnYutRQXH'
+- _id: 3cNnpsozoL9wlRdh
+  _key: '!actors.items!mDpjeOFki5EHZju1.3cNnpsozoL9wlRdh'
   name: Water Weird
   type: monsterAbility
   img: icons/svg/book.svg
