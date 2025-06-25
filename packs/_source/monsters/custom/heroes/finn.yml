@@ -27,6 +27,7 @@ system:
     - Riverfolk
     - Humanoid
   level: 1
+  class: Shadow
   characteristics:
     might: -1
     agility: 2

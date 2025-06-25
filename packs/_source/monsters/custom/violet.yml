@@ -1,10 +1,10 @@
-_id: Yj94TwAyKLXkuir1
-_key: '!actors!Yj94TwAyKLXkuir1'
-name: Human Civilian
+_id: Yj94TwAyKLX32ir1
+_key: '!actors!Yj94TwAyKLX32ir1'
+name: Violet
 type: enemy
-img: systems/aeon-draw-steel/images/monsters/human-civilian-01.webp
+img: systems/aeon-draw-steel/images/monsters/violet-01.webp
 prototypeToken:
-  name: Human Civilian
+  name: Violet
   displayName: 50
   displayBars: 50
   bar1:
@@ -17,12 +17,12 @@ prototypeToken:
   height: 1
   lockRotation: true
   texture:
-    img: systems/aeon-draw-steel/images/monsters/human-civilian-01.webp
+    img: systems/aeon-draw-steel/images/monsters/violet-01.webp
   appendNumber: false
   ring:
     enabled: false
 system:
-  name: Human Civilian
+  name: Violet
   keywords:
   - Human
   - Humanoid

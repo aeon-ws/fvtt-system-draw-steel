@@ -27,6 +27,7 @@ system:
   - Elf
   - Humanoid
   level: 1
+  class: Conduit
   characteristics:
     might: 1
     agility: 2
