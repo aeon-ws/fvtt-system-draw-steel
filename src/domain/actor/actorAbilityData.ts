@@ -5,11 +5,11 @@ import { IHeroData } from "@hero/heroData";
 import { IEnemyData } from "@enemy/enemyData";
 import { IMinionData } from "@minion/minionData";
 import { IObjectData } from "@object/objectData";
-import { CreatureData, IWeaknessData } from "@creature/creatureData";
+import { CharacteristicKeys, CharacteristicType, CreatureData, ICreatureData, IWeaknessData } from "@creature/creatureData";
+import { PotencyValueModfierKeys, PotencyValueModfierType } from "./creature/hero/heroAbilityData";
 
 export type AbilityKeyword = "Area" | "Charge" | "Magic" | "Melee" | "Psionic" | "Ranged" | "Strike" | "Weapon";
 export type AbilityType = "mainAction" | "freeAction" | "freeManeuver" | "freeTriggeredAction" | "maneuver" | "triggeredAction";
-export type CharacteristicType = "might" | "agility" | "reason" | "intuition" | "presence";
 export type DamageType = "acid" | "cold" | "corruption" | "fire" | "holy" | "lightning" | "poison" | "psychic" | "sonic";
 
 export interface IActorAbilityData extends IItemData {
@@ -49,56 +49,27 @@ export interface IActorAbilityData extends IItemData {
     trigger: string;
     // The contents of the game text "effect" section when it appears *before/above* the power roll in the
     // layout.
-    prePowerRollEffect: IEffectData | null;
+    prePowerRollEffect: IEffectData | undefined;
     powerRoll: IPowerRollData | null;
     // The contents of the game text "effect" section when it appears *after/below* the power roll in the
     // layout.
-    postPowerRollEffect: IEffectData | null;
-}
+    postPowerRollEffect: IEffectData | undefined;
 
-export interface IPowerRollData {
-    // The power roll bonus, which is always derived from the hero's characteristics.  For enemy and
-    // minion abilities, this is the power roll bonus that is stated in the game text.
-    //     Examples:
-    //         "Clobber and Clutch (Action) ◆ 2d10 + 2 ◆ Signature" => bonus = 2 (this is an enemy ability where "2d10 + 2" is the power roll including the bonus),
-    //         "Power Roll + Might" => bonus = system.characteristics.might (this is a hero ability where the bonus will be calculated dynamically).
-    //         "2d10 + Agility" => bonus = system.characteristics.agility (this is a hero ability where the bonus will be calculated dynamically).
-    bonus: number;
-
-    tier1: IPowerRollTierData;
-    tier2: IPowerRollTierData;
-    tier3: IPowerRollTierData;
+    getPowerRollBonus(creature?: ICreatureData | null): number;
+    getPotencyValue(creature?: ICreatureData | null, potencyEffect?: IPotencyEffectData | null): number;
 }
 
 export interface IAbilityTargetData {
-    ally: boolean;
-    creature: boolean;
-    enemy: boolean;
-    object: boolean;
-    self: boolean;
+    ally?: boolean;
+    creature?: boolean;
+    enemy?: boolean;
+    object?: boolean;
+    self?: boolean;
 
-    special: boolean;
-    filter: ((system: IEnemyData | IHeroData | IMinionData | IObjectData) => boolean) | null;
+    special?: boolean;
+    filter?: (system: IEnemyData | IHeroData | IMinionData | IObjectData) => boolean;
     text: string;
-    count: number | "all";
-}
-
-export interface IPowerRollTierData {
-    // The damage before characteristic bonus is applied.  This is the value that is stated in the game text
-    // for hero abilities.  It doesn't appear in the game text for enemy and minion abilities and isn't
-    // relevant since it has already been factored into the damage value.
-    baseDamage: number | null;
-    // The list of characteristics from one of which the damage is derived.  The actual characteristic used
-    // will always be the highest of the hero in question.  Must always be set for hero abilities.  Not
-    // relevant for enemy and minion abilities, since the characteristic damage bonus already been added into
-    // the damage value.
-    damageBonusCharacteristic: CharacteristicType[] | null;
-    // The damage value that is stated in the game text for enemy and minion abilities.  For hero abilities,
-    // this is the damage value that is calculated dynamically and should never be imported.
-    damage: number | null;
-    damageType?: DamageType | null;
-    effect: IEffectData | null;
-    potencyEffect: IPotencyEffectData | null;
+    count?: number | "all";
 }
 
 export interface IEffectData {
@@ -108,30 +79,80 @@ export interface IEffectData {
     //         "frightened (save ends)",
     //         "bleeding and weakened (save ends)",
     text: string;
-
-    targets: string;
     duration: "startOfTargetTurn" | "endOfTargetTurn" | "saveEnds" | "endOfEncounter";
 
-    bleeding: boolean;
-    frightened: boolean;
-    grabbed: boolean;
-    noEffect: boolean;
-    prone: boolean;
-    restrained: boolean;
-    slowed: boolean;
-    taunted: boolean;
-    weakened: boolean;
-    weakness: IWeaknessData | null;
+    bleeding?: boolean;
+    frightened?: boolean;
+    grabbed?: boolean;
+    noEffect?: boolean;
+    prone?: boolean;
+    restrained?: boolean;
+    slowed?: boolean;
+    taunted?: boolean;
+    weakened?: boolean;
+    weakness?: IWeaknessData;
 }
 
+export interface IPowerRollData {
+    // The power roll bonus, which is dynamically derived from a hero's characteristics; for enemy and
+    // minion abilities, this is the power roll bonus that is stated in the game text.
+    //     Examples:
+    //         "Clobber and Clutch (Action) ◆ 2d10 + 2 ◆ Signature" => bonus = 2 (this is an enemy ability where "2d10 + 2" is the power roll including the bonus),
+    //         "Power Roll + Might" => bonus = system.characteristics.might (this is a hero ability where the bonus will be calculated dynamically).
+    //         "2d10 + Agility" => bonus = system.characteristics.agility (this is a hero ability where the bonus will be calculated dynamically).
+    bonus?: number | null;
+    characteristic?: CharacteristicType[] | null;
+
+    tier1: IPowerRollTierData;
+    tier2: IPowerRollTierData;
+    tier3: IPowerRollTierData;
+}
+
+export interface IPowerRollTierData {
+    // Heroes
+    //   The damage before characteristic bonus is applied.  This is the value that is stated in the game text
+    //   for hero abilities.  It doesn't appear in the game text for enemy and minion abilities and isn't
+    //   relevant since it has already been factored into the damage value.
+    baseDamage?: number | null;
+    //   The list of characteristics from one of which the damage is derived.  The actual characteristic used
+    //   will always be the highest of the hero in question.  Must always be set for hero abilities.  Not
+    //   relevant for enemy and minion abilities, since the characteristic damage bonus already been added into
+    //   the damage value, which is why it is only present in the IHeroPowerRollTierData interface.
+    damageBonusCharacteristic?: CharacteristicType[] | null;
+
+    // Enemies and minions
+    //   The damage value that is stated in the game text for enemy and minion abilities.  For hero abilities,
+    //   this value is calculated dynamically and should never be stored.
+    damage?: number;
+
+    damageType?: DamageType;
+    effect?: IEffectData | null;
+    potencyEffect?: IPotencyEffectData | null;
+}
+
+// In the game text, this interface represents the general 
+// "<targetCharacteristicFirstLetter> < [weak] | [average] | [strong] <effect>" pattern.
+//     Examples:
+//         M < [weak] slowed (EoT),
+//         A < [average] frightened (save ends),
+//         if the target has P < weak, each enemy within 2 squares of them is frightened of you (save ends),
+//         M < average, bleeding and weakened (save ends)
 export interface IPotencyEffectData {
-    targetCharacteristic: CharacteristicType;
-    // A calculated value for most hero abilities.  For enemy and minion abilities, this is the potency value
-    // that is stated in the game text.
+    // Heroes
+    //   The characteristic (i.e., "might", "agility", "reason", "intuition", or "presence") that the potency
+    //   value calculation is based on.
+    valueCharacteristic?: CharacteristicType | null;
+    //   The potency value modifier, which is one of "weak", "average", or "strong".
+    valueModifier?: PotencyValueModfierType | null;
+
+    // Enemies and minions
+    //   The potency value that is stated in the game text.
     //     Example:
     //       "M < 4 slowed (EoT)" => potency.value = 4,
     //       "A < 3 frightened (save ends)" => potency.value = 3.
-    value: number;
+    value?: number | null;
+
+    targetCharacteristic: CharacteristicType;
     effect: IEffectData;
 }
 
@@ -148,15 +169,25 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
                 ...this.createEffectFields()
             }, { required: false, nullable: true }),
             powerRoll: new foundry.data.fields.SchemaField({
-                bonus: new foundry.data.fields.NumberField({ initial: 0 }),
+                bonus: new foundry.data.fields.NumberField(),
+                characteristic: new foundry.data.fields.ArrayField(new foundry.data.fields.StringField(), { initial: null, required: false }),
                 tier1: new foundry.data.fields.SchemaField({
-                    ...this.createPowerRollTierFields()
+                    ...this.createPowerRollTierFields(),
+                    potencyEffect: new foundry.data.fields.SchemaField({
+                        ...this.createPotencyEffectFields()
+                    }, { required: false, nullable: true })
                 }),
                 tier2: new foundry.data.fields.SchemaField({
-                    ...this.createPowerRollTierFields()
-                }),
+                    ...this.createPowerRollTierFields(),
+                    potencyEffect: new foundry.data.fields.SchemaField({
+                        ...this.createPotencyEffectFields()
+                    }, { required: false, nullable: true })
+               }),
                 tier3: new foundry.data.fields.SchemaField({
-                    ...this.createPowerRollTierFields()
+                    ...this.createPowerRollTierFields(),
+                    potencyEffect: new foundry.data.fields.SchemaField({
+                        ...this.createPotencyEffectFields()
+                    }, { required: false, nullable: true })
                 })
             }, { required: false, nullable: true }),
             postPowerRollEffect: new foundry.data.fields.SchemaField({
@@ -171,31 +202,34 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
         return {
             ...this.createBaseFields(),
 
-            type: new foundry.data.fields.StringField({ required: true, initial: "mainAction" }),
+            type: new foundry.data.fields.StringField({
+                required: true,
+                choices: ["mainAction", "freeAction", "freeManeuver", "freeTriggeredAction", "maneuver", "triggeredAction"]
+            }),
 
             isSignature: new foundry.data.fields.BooleanField({ initial: false }),
 
-            trigger: new foundry.data.fields.StringField({ initial: "" }),
+            trigger: new foundry.data.fields.StringField(),
         }
     }
 
     static createDistanceField() {
         return {
             distance: new foundry.data.fields.SchemaField({
-                self: new foundry.data.fields.BooleanField({ initial: false }),
-                special: new foundry.data.fields.BooleanField({ initial: false }),
-                melee: new foundry.data.fields.NumberField({ initial: 0 }),
-                ranged: new foundry.data.fields.NumberField({ initial: 0 }),
-                burst: new foundry.data.fields.NumberField({ initial: 0 }),
+                self: new foundry.data.fields.BooleanField(),
+                special: new foundry.data.fields.BooleanField(),
+                melee: new foundry.data.fields.NumberField(),
+                ranged: new foundry.data.fields.NumberField(),
+                burst: new foundry.data.fields.NumberField(),
                 cube: new foundry.data.fields.SchemaField({
-                    size: new foundry.data.fields.NumberField({ initial: 0 }),
-                    within: new foundry.data.fields.NumberField({ initial: 0 })
-                }),
+                    size: new foundry.data.fields.NumberField(),
+                    within: new foundry.data.fields.NumberField()
+                }, { initial: undefined, nullable: true }),
                 line: new foundry.data.fields.SchemaField({
-                    width: new foundry.data.fields.NumberField({ initial: 0 }),
-                    length: new foundry.data.fields.NumberField({ initial: 0 }),
-                    within: new foundry.data.fields.NumberField({ initial: 0 })
-                })
+                    width: new foundry.data.fields.NumberField(),
+                    length: new foundry.data.fields.NumberField(),
+                    within: new foundry.data.fields.NumberField()
+                }, { initial: undefined, nullable: true })
             }),
         }
     }
@@ -203,35 +237,49 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
     static createTargetField() {
         return {
             target: new foundry.data.fields.SchemaField({
-                ally: new foundry.data.fields.BooleanField({ initial: false }),
-                creature: new foundry.data.fields.BooleanField({ initial: false }),
-                enemy: new foundry.data.fields.BooleanField({ initial: false }),
-                object: new foundry.data.fields.BooleanField({ initial: false }),
-                self: new foundry.data.fields.BooleanField({ initial: false }),
+                ally: new foundry.data.fields.BooleanField(),
+                creature: new foundry.data.fields.BooleanField(),
+                enemy: new foundry.data.fields.BooleanField(),
+                object: new foundry.data.fields.BooleanField(),
+                self: new foundry.data.fields.BooleanField(),
 
-                special: new foundry.data.fields.BooleanField({ initial: false }),
-                filter: new foundry.data.fields.JavaScriptField({ initial: null }),
-                text: new foundry.data.fields.StringField({ initial: "" }),
-                count: new foundry.data.fields.NumberField({ initial: 1 })
+                special: new foundry.data.fields.BooleanField(),
+                filter: new foundry.data.fields.JavaScriptField(),
+                text: new foundry.data.fields.StringField({ required: true, nullable: false }),
+                count: new foundry.data.fields.NumberField()
             })
         }
     }
 
     static createPowerRollTierFields() {
         return {
-            damage: new foundry.data.fields.NumberField({ initial: null }),
-            damageType: new foundry.data.fields.StringField({ initial: null, required: false, nullable: true }),
+            // Heroes
+            baseDamage: new foundry.data.fields.NumberField(),
+            damageBonusCharacteristic: new foundry.data.fields.ArrayField(new foundry.data.fields.StringField(), { initial: null, nullable: true }),
+
+            // Enemies and minions
+            damage: new foundry.data.fields.NumberField(),
+
+            damageType: new foundry.data.fields.StringField(),
             effect: new foundry.data.fields.SchemaField({
                 ...this.createEffectFields()
-            }, { required: false, nullable: true }),
+            }, { initial: null, required: false, nullable: true }),
+            potencyEffect: new foundry.data.fields.SchemaField({
+                ...this.createPotencyEffectFields(),
+            }, { initial: null, required: false, nullable: true }),
         }
     }
 
-
     static createPotencyEffectFields() {
         return {
-            targetCharacteristic: new foundry.data.fields.StringField({ choices: ["might", "agility", "reason", "intuition", "presence"], required: false, nullable: true, initial: null }),
-            value: new foundry.data.fields.NumberField({ required: true, initial: 0 }),
+            // Heroes.
+            valueCharacteristic: new foundry.data.fields.StringField({ choices: CharacteristicKeys }),
+            valueModifier: new foundry.data.fields.StringField({ choices: PotencyValueModfierKeys }),
+
+            // Enemies and minions.
+            value: new foundry.data.fields.NumberField(),
+
+            targetCharacteristic: new foundry.data.fields.StringField({ choices: CharacteristicKeys, required: true, nullable: false }),
             effects: new foundry.data.fields.SchemaField({
                 ...this.createEffectFields()
             })

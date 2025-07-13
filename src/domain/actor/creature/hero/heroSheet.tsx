@@ -1,31 +1,35 @@
-// src/ui/sheets/heroSheet.ts
+// src/domain/actor/creature/hero/heroSheet.ts
 
 import ReactDOM from "react-dom/client";
 
 import { HeroSheetComponent } from "@hero/heroSheetComponent";
 import { isHeroActor } from "@utils/actor";
 import { IHeroData } from "@hero/heroData";
+import { IHeroAbilityData } from "@hero/heroAbilityData";
+import React from "react";
 
 
 export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
     private _actor: Actor;
     private _reactRoot?: ReactDOM.Root;
     private _reactContainer?: HTMLElement;
+    private _formRef: React.RefObject<HTMLFormElement | null>;
 
     constructor(options: Record<string, any> = {}) {
         super(options);
 
         if (!isHeroActor(options.document)) throw new Error("Cannot create HeroSheet for non-hero token.");
 
-        console.log("ActorSheetV2 Default Options:", foundry.applications.sheets.ActorSheetV2.DEFAULT_OPTIONS);
-
         this._actor = options.document as Actor;
+        this._formRef = React.createRef();
     }
 
-    get system() { return this._actor.system as unknown as IHeroData; }
+    get system() { 
+        console.log("Hero system data:", this._actor.system);
+        return this._actor.system as unknown as IHeroData; }
 
     override get title() {
-        return `Hero: ${this.system.name}`;
+        return `Hero ${this.system.type}: ${this.system.name}`;
     }
 
     static defaultOptions = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, {
@@ -51,7 +55,11 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
             this._reactRoot = ReactDOM.createRoot(this._reactContainer);
         }
         this._reactRoot.render(
-            <HeroSheetComponent {...this.system} />
+            <HeroSheetComponent
+                ref={this._formRef}
+                hero={this.system}
+                abilities={this.actor.items.map(item => item.system as unknown as IHeroAbilityData)}
+            />
         );
 
         return this._reactContainer;
@@ -65,11 +73,31 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
         window?.classList.add("sheet-window");
 
         if (windowContent) {
+            // Clear existing content
             windowContent.innerHTML = "";
             windowContent.appendChild(element);
         }
         else {
+            // Fallback: just append (shouldn't really happen)
             this.element.appendChild(element);
+        }
+
+        setTimeout(() => this.autosizeToContent(), 0);
+    }
+
+    autosizeToContent() {
+        const form = this._formRef.current;
+        if (!form) return;
+        // Add some buffer to avoid scrollbar
+        const padding = 74;
+        const height = form.offsetHeight + padding;
+        const maxHeight = Math.min(height, 1200);
+        //this.setPosition({ height: maxHeight });
+
+        const windowContent = this.element.querySelector('.window-content') as HTMLElement;
+        if (windowContent && windowContent.parentElement && windowContent.parentElement.style) {
+            console.log("Setting max height for window content:", maxHeight);
+            windowContent.parentElement.style.maxHeight = `${maxHeight}px`;
         }
     }
 }

@@ -1,5 +1,5 @@
-_id: i04G2DxC7Clbi003
-_key: "!actors!i04G2DxC7Clbi003"
+_id: Nuada_003
+_key: "!actors!Nuada_003"
 name: Nuada
 type: hero
 img: systems/aeon-draw-steel/images/nuada.jpg
@@ -51,7 +51,7 @@ system:
     corruption: 3
 items:
   - _id: Nuada0Qg5vYjwYzx
-    _key: "!actors.items!Nuada0Qg5vYjwYzx.Nuada0Qg5vYjwYzx"
+    _key: "!actors.items!Nuada_003.Nuada0Qg5vYjwYzx"
     name: Your Allies Cannot Save You!
     type: heroAbility
     img: icons/svg/book.svg
@@ -86,7 +86,7 @@ items:
       postPowerRollEffect:
         text: Each enemy adjacent to the target is pushed 2 away from the target.
   - _id: Nuada0Qg5vYjwqua
-    _key: "!actors.items!Nuada0Qg5vYjwYzx.Nuada0Qg5vYjwqua"
+    _key: "!actors.items!Nuada_003.Nuada0Qg5vYjwqua"
     name: Repent!
     type: heroAbility
     img: icons/svg/book.svg
@@ -135,7 +135,7 @@ items:
             effect:
               text: dazed (save ends)
   - _id: Nuada0Qg5vYjwjhg
-    _key: "!actors.items!Nuada0Qg5vYjwYzx.Nuada0Qg5vYjwjhg"
+    _key: "!actors.items!Nuada_003.Nuada0Qg5vYjwjhg"
     name: Behold the Face of Justice!
     type: heroAbility
     img: icons/svg/book.svg

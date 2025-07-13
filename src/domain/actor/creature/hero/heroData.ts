@@ -1,6 +1,6 @@
 // src/actors/heroActor.ts
 
-import { CreatureData, ICreatureCombatData, ICreatureData } from "@creature/creatureData";
+import { CharacteristicType, CreatureData, ICreatureCombatData, ICreatureData } from "@creature/creatureData";
 
 const { NumberField, SchemaField, StringField } = foundry.data.fields;
 
@@ -11,6 +11,8 @@ export interface IHeroData extends ICreatureData {
     recovery: IRecoveryData;
 
     heroicResource: number;
+
+    getHighestCharacteristicValue(characteristics: CharacteristicType[]): number
 }
 
 export interface IRecoveryData {
@@ -55,5 +57,14 @@ export class HeroData<TData extends IHeroData = IHeroData> extends CreatureData<
 
     override get deadThreshold(): number {
         return -this.windedThreshold;
+    }
+
+    // @ts-ignore
+    getHighestCharacteristicValue(characteristics: CharacteristicType[]): number {
+        const values = characteristics.map(
+            key => this.data.characteristics[key]
+        );
+
+        return Math.max(...values);
     }
 }

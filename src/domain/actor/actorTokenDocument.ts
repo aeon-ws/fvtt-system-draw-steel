@@ -61,20 +61,20 @@ export class ActorTokenDocument<TActorData extends IActorData> {
 
     async update(updates: any): Promise<void> {
         // @ts-ignore
-        const isLinked = this._tokenDocument.actorLink.valueOf() ?? this._actor.actorLink ?? false;
+        //const isLinked = this._tokenDocument.actorLink.valueOf() ?? this._actor.actorLink ?? false;
 
         await this._actor.update(updates);
 
-        if (isLinked) {
-            // Since the actor is linked, the prototype actor will be updated: the update will persist and
-            // propagate to all linked tokens.
+        // if (isLinked) {
+        //     // Since the actor is linked, the prototype actor will be updated: the update will persist and
+        //     // propagate to all linked tokens.
             
-        }
-        else {
-            // Since actor isn't linked, the token document must be updated; otherwise, the update
-            // will be lost when the token is reloaded (e.g., when Foundry is shut down or the scene is
-            // reloaded). -- Morden 2025-06-06: Is that really true? Evidence is mounting against the statement).
-            await this._tokenDocument.update(updates);
-        }
+        // }
+        // else {
+        //     // Since actor isn't linked, the token document must be updated; otherwise, the update
+        //     // will be lost when the token is reloaded (e.g., when Foundry is shut down or the scene is
+        //     // reloaded). -- Morden 2025-06-06: Is that really true? Evidence is mounting against the statement).
+        //     await this._tokenDocument.update(updates);
+        // }
     }
 }

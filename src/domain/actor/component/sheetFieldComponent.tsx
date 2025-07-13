@@ -2,9 +2,9 @@
 import clsx from "classnames";
 import React from "react";
 
-import { IImmunityData, IWeaknessData } from "@creature/creatureData";
+import { ICreatureData, IImmunityData, IWeaknessData } from "@creature/creatureData";
 import { JSX } from "react/jsx-runtime";
-import { IEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
+import { IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollTierData } from "@actor/actorAbilityData";
 
 
 interface IArrayFieldProps {
@@ -42,24 +42,31 @@ export function ArrayField({
 }
 
 interface IDistanceFieldProps {
-    distanceLabel: string;
     distanceTypeLabel1: string;
     value1: number | string;
     distanceTypeLabel2?: string | undefined;
     value2?: number | string | undefined;
 }
 
-export function DistanceField({
-    distanceLabel,
-    distanceTypeLabel1,
-    value1,
-    distanceTypeLabel2,
-    value2
-}: IDistanceFieldProps): JSX.Element | null {
+export function DistanceField(props: IDistanceFieldProps): JSX.Element | null {
     return (
         <div className="field-row">
-            <span className="label">{distanceLabel}</span>
-            <span className="value">{distanceTypeLabel1} {value1} {distanceTypeLabel2 && value2 !== undefined && value2 !== null && value2 !== 0 && (`or ${distanceTypeLabel2} ${value2}`)}</span>
+            <i className="fa-sharp fa-solid fa-ruler-triangle"></i>
+            <span className="value">{props.distanceTypeLabel1} {props.value1} {props.distanceTypeLabel2 && props.value2 !== undefined && props.value2 !== null && props.value2 !== 0 && (`or ${props.distanceTypeLabel2} ${props.value2}`)}</span>
+        </div>
+    );
+}
+
+
+interface ITargetFieldProps {
+    value: string;
+}
+
+export function TargetField(props: ITargetFieldProps): JSX.Element | null {
+    return (
+        <div className="field-row">
+            <i className="fa-sharp fa-solid fa-bullseye-arrow"></i>
+            <span className="value">{props.value}</span>
         </div>
     );
 }
@@ -225,20 +232,23 @@ export function getPowerRollDamageText(tier: IPowerRollTierData): string {
 
 interface IPowerRollPotencyEffectProps {
     tier: IPowerRollTierData;
+    getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
 }
 
-export function PowerRollPotencyEffect({ tier }: IPowerRollPotencyEffectProps): JSX.Element | null {
-    if (!tier.potencyEffect) return null;
+export function PowerRollPotencyEffect(props: IPowerRollPotencyEffectProps): JSX.Element | null {
+    const tier = props?.tier;
+    if (!tier?.potencyEffect || !props?.getPotencyValue) return null;
 
-    const potencyValueText = tier.potencyEffect.value >= 0 ? `${tier.potencyEffect.value} ` : null;
     const potencyTargetCharacteristicInitial = tier.potencyEffect.targetCharacteristic[0].toUpperCase();
 
-    return potencyValueText ? (
+    return (
         <>
-            <span className="potency-effect">{`${potencyTargetCharacteristicInitial}<${potencyValueText}`}</span>
+            <span className="ads-inline-box">
+                {`${potencyTargetCharacteristicInitial} < ${props.getPotencyValue(tier.potencyEffect)}`}
+            </span>
             <span>{tier.potencyEffect.effect.text}</span>
         </>
-    ) : null;
+    );
 }
 
 export function getPowerRollEffectText(tier: IPowerRollTierData): string {
@@ -248,41 +258,59 @@ export function getPowerRollEffectText(tier: IPowerRollTierData): string {
 }
 
 interface IPowerRollTierProps {
-    symbol: string;
     label: string;
     tier: IPowerRollTierData;
+    getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
 }
 
-export function PowerRollTier({ symbol, label, tier }: IPowerRollTierProps): JSX.Element | null {
+export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
     return (
         <div className="power-roll-tier">
-            <span className="symbol">{symbol}</span>
-            <span className="label">{label}</span>
             <span className="value">
-                {getPowerRollDamageText(tier)}
-                {getPowerRollEffectText(tier)}
-                <PowerRollPotencyEffect tier={tier} />
+                <span className="label">{props.label}</span>
+                {getPowerRollDamageText(props.tier)}
+                {getPowerRollEffectText(props.tier)}
+                <PowerRollPotencyEffect tier={props.tier} getPotencyValue={props.getPotencyValue} />
             </span>
         </div>
     );
 }
 
 interface IPowerRollFieldProps {
-    powerRoll?: IPowerRollData | null;
+    creature?: ICreatureData;
+    ability?: IActorAbilityData | null;
 }
 
-export function PowerRollField({ powerRoll }: IPowerRollFieldProps): JSX.Element | null {
-    if (!powerRoll) return null;
+export function PowerRollField(props: IPowerRollFieldProps): JSX.Element | null {
+    if (!props?.creature || !props.ability || !props.ability.powerRoll) return null;
+
+    const creature = props.creature;
+    const ability = props.ability;
+    const powerRoll = props.ability.powerRoll;
+    const powerRollBonus = ability.getPowerRollBonus(creature);
+    const getPotencyValue = (potencyEffect: IPotencyEffectData) => ability.getPotencyValue(creature, potencyEffect);
 
     return (
         <div className="power-roll-section">
-            {powerRoll.bonus && (
-                <StatField label="Power Roll" value={`2d10 + ${powerRoll.bonus}`} />
+            {powerRollBonus && (
+                <StatField label="Power Roll" value={`2d10 + ${powerRollBonus}`} />
             )}
             <div className="power-roll-table">
-                <PowerRollTier symbol="✦" label="≤11" tier={powerRoll.tier1} />
-                <PowerRollTier symbol="★" label="12-16" tier={powerRoll.tier2} />
-                <PowerRollTier symbol="✸" label="17+" tier={powerRoll.tier3} />
+                <PowerRollTier
+                    label="≤11"
+                    tier={powerRoll.tier1}
+                    getPotencyValue={getPotencyValue}
+                />
+                <PowerRollTier
+                    label="12-16"
+                    tier={powerRoll.tier2}
+                    getPotencyValue={getPotencyValue}
+                />
+                <PowerRollTier
+                    label="17+"
+                    tier={powerRoll.tier3}
+                    getPotencyValue={getPotencyValue}
+                />
             </div>
         </div>
     );

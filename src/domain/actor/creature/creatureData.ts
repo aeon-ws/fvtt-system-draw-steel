@@ -3,7 +3,14 @@
 import { ActorData, IActorData, ICombatData, IStaminaData } from "@actor/actorData";
 
 const { ArrayField, NumberField, SchemaField, StringField } = foundry.data.fields;
-
+export const CharacteristicKeys = [
+    "might",
+    "agility",
+    "reason",
+    "intuition",
+    "presence"
+] as const;
+export type CharacteristicType = typeof CharacteristicKeys[number];
 
 export interface ICreatureData extends IActorData {
     keywords: string[];

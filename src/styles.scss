@@ -2,7 +2,23 @@ $enemy-sheet-left-right-padding: 0.4rem;
 $font-weight-bold: 700;
 $font-weight-half-bold: 500;
 $font-weight-normal: 400;
-$label-value-gap: 0.4em;
+$label-value-gap: 0.3em;
+
+.ads-inline-box {
+  display: inline-block;
+  background: #000000;
+  color: #ffffff;
+  font-weight: $font-weight-half-bold;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0.02em;
+  padding-bottom: 0.02em;
+  margin-right: $label-value-gap;
+  border-radius: 0.2em;
+  font-size: 0.8em;
+  font-family: inherit;
+  vertical-align: 0.075em;
+}
 
 .sheet-window {
   min-width: 588px;
@@ -23,7 +39,7 @@ $label-value-gap: 0.4em;
   padding: 0;
   margin: 0;
   overflow: hidden;
-  width: 100%;//550px;
+  width: 100%; //550px;
   min-width: 550px;
   max-height: 100%;
   overflow-y: auto;
@@ -55,27 +71,36 @@ $label-value-gap: 0.4em;
     &.ambusher {
       background: #F7D957;
     }
+
     &.artillery {
       background: #CCC0D9;
     }
+
     &.brute {
       background: #8DB3E2;
     }
+
     &.controller {
       background: #FF7D7D;
     }
+
     &.defender {
       background: #C4BC96;
     }
-    &.harrier, &.skirmisher {
+
+    &.harrier,
+    &.skirmisher {
       background: #E5B8B7;
     }
+
     &.hexer {
       background: #D6E3BC;
     }
+
     &.mount {
       background: #B6DDE8;
     }
+
     &.support {
       background: #FBD4B4;
     }
@@ -170,8 +195,20 @@ $label-value-gap: 0.4em;
           }
 
           .label {
-            text-align: right;
+            text-align: center;
             font-weight: $font-weight-half-bold;
+
+            vertical-align: 0.075em;
+            padding-left: 0.3em;
+            padding-right: 0.3em;
+            padding-top: 0.02em;
+            padding-bottom: 0.02em;
+            border: 1px solid #000000;
+            border-radius: 0.4em;
+            font-size: 0.8em;
+            //line-height: 1.1;
+            font-family: inherit;
+            position: relative;
           }
 
           .value {
@@ -179,11 +216,6 @@ $label-value-gap: 0.4em;
             padding-left: 1em;
             font-weight: $font-weight-half-bold;
             color: #004477;
-
-            .potency-effect {
-              font-weight: $font-weight-half-bold;
-              color: #ee0000;
-            }
           }
         }
       }
@@ -252,6 +284,10 @@ $label-value-gap: 0.4em;
   .field-row {
     display: flex;
     align-items: baseline;
+
+    .fa-solid {
+      padding-left: 0.05rem;
+    }
 
     .label {
       font-weight: $font-weight-bold;

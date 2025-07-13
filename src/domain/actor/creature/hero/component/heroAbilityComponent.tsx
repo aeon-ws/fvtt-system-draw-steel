@@ -1,39 +1,38 @@
 // src/components/enemySheetComponent.tsx
 
-import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
-import { IEnemyData } from "@enemy/enemyData";
+import { IHeroAbilityData } from "@hero/heroAbilityData";
+import { IHeroData } from "@hero/heroData";
 import { ArrayField, DistanceField, EffectField, PowerRollField, StatField, TargetField } from "@actor/sheetFieldComponent";
 import { JSX } from "react";
+import { IPotencyEffectData } from "@domain/actor/actorAbilityData";
 
-export interface IEnemyAbilityComponentProps {
-    enemy: IEnemyData;
-    ability: IEnemyAbilityData;
+export interface IHeroAbilityComponentProps {
+    hero: IHeroData;
+    ability: IHeroAbilityData;
 }
 
-export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponentProps): JSX.Element | null {
+export function HeroAbilityComponent({ hero, ability }: IHeroAbilityComponentProps): JSX.Element | null {
     const getAbilityDisplayName = (name: string) => {
         switch (name) {
-            case "enemyTrait":
+            case "heroTrait":
                 return "";
             case "freeMainAction":
-                return "Free Main Action";
+                return "(Free Main Action)";
             case "freeManeuver":
-                return "Free Maneuver";
+                return "(Free Maneuver)";
             case "freeTriggeredAction":
-                return "Free Triggered Action";
+                return "(Free Triggered Action)";
             case "mainAction":
-                return "Main Action";
+                return "(Main Action)";
             case "maneuver":
-                return "Maneuver";
+                return "(Maneuver)";
             case "triggeredAction":
-                return "Triggered Action";
-            case "villainAction":
-                return `Villain Action ${ability.villainActionOrdinal}`;
+                return "(Triggered Action)";
         }
     };
 
     const abilityNameCssClassNames =
-        ability.maliceCost > 0
+        ability.heroicResourceCost > 0
             ? "label malice"
             : ability.isSignature
                 ? "label signature"
@@ -44,21 +43,23 @@ export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponent
             <div className="subheader-row">
                 <span className="left">
                     <span className={abilityNameCssClassNames}>{ability.name}</span>
+                    {ability.type.search(/trait/gi) == -1
+                        ? (<span className="value">{getAbilityDisplayName(ability.type)}</span>) : null}
                 </span>
                 <span className="right">
-                    {ability.maliceCost > 0
+                    {ability.heroicResourceCost > 0
                         ? (<>
-                            <span className="label malice">Malice</span>
-                            <span className="value malice">{ability.maliceCost}</span></>)
+                            <span className="label malice">Heroic Resource</span>
+                            <span className="value malice">{ability.heroicResourceCost}</span></>)
                         : (ability.isSignature ? <span className="label signature">Signature</span> : null)
                     }
                 </span>
             </div>
+            <div className="subheader-row">
+                <ArrayField label="Keywords" labelClassNames={["label"]} values={ability.keywords} valueClassNames={["value"]} />
+            </div>
             <div className="columns">
                 <div className="column left-column">
-                    <div className="field-row">
-                        <ArrayField values={ability.keywords} valueClassNames={["label"]} />
-                    </div>
                     {ability.distance?.melee && ability.distance?.melee !== 0
                         ? (
                             <DistanceField
@@ -88,20 +89,17 @@ export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponent
                     )}
                 </div>
                 <div className="column right-column">
-                    <div className="field-row">
-                        <span className="label">{getAbilityDisplayName(ability.type)}</span>
-                    </div>
                     {ability.target?.text && (
                         <TargetField value={ability.target.text} />
                     )}
                 </div>
             </div>
 
-            <EffectField label={ability.type !== "monsterTrait" ? "Effect" : null} effect={ability.prePowerRollEffect} />
+            <EffectField label={ability.type !== "heroTrait" ? "Effect" : null} effect={ability.prePowerRollEffect} />
 
-            <PowerRollField creature={enemy} ability={ability} />
+            <PowerRollField creature={hero} ability={ability} />
 
-            <EffectField label={ability.type !== "monsterTrait" ? "Effect" : null} effect={ability.postPowerRollEffect} />
+            <EffectField label={ability.type !== "heroTrait" ? "Effect" : null} effect={ability.postPowerRollEffect} />
 
             < div className="divider"></div >
         </div>
