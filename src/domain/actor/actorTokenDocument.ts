@@ -10,7 +10,7 @@ export class ActorTokenDocument<TActorData extends IActorData> {
 
     id: string;
     scene: Scene | null;
-    
+
 
     constructor(tokenDocument: TokenDocument, scene: Scene | null = null) {
         if (!tokenDocument) {
@@ -64,12 +64,16 @@ export class ActorTokenDocument<TActorData extends IActorData> {
         await this._actor.update(updates);
     }
 
-    getPowerRollBonus(powerRoll?: IPowerRollData): number {
-        if (powerRoll?.bonus === undefined || powerRoll.bonus === null) {
-            throw new Error("Power roll bonus must be specified for all power rolls of non-hero abilities.");
-        }
-
-        return powerRoll.bonus;
+    getPowerRollBonus(powerRoll?: IPowerRollData): number | null {
+        // We allow enemy power roll bonuses to be optional because some abilities may incorporate tests
+        // appearing as power rolls (e.g., the Steam Powered Snare ability of the Dwarf Trapper), and tests
+        // don't have power roll bonuses attached (i.e., they use the value of one of the characteristics of
+        // the target instead).
+        return (
+            powerRoll?.bonus === undefined || powerRoll.bonus === null
+                ? null
+                : powerRoll.bonus
+        );
     }
 
     getPotencyValue(potencyEffect?: IPotencyEffectData | null): number {

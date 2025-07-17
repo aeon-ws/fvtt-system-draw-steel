@@ -268,6 +268,8 @@ export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
         <div className="power-roll-tier">
             <span className="value">
                 <span className="label">{props.label}</span>
+            </span>
+            <span className="value">
                 {getPowerRollDamageText(props.tier)}
                 {getPowerRollEffectText(props.tier)}
                 <PowerRollPotencyEffect tier={props.tier} getPotencyValue={props.getPotencyValue} />
@@ -278,7 +280,7 @@ export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
 
 interface IPowerRollFieldProps {
     powerRoll?: IPowerRollData | null;
-    getPowerRollBonus?: (powerRoll: IPowerRollData) => number;
+    getPowerRollBonus?: (powerRoll: IPowerRollData) => number | null;
     getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
 }
 

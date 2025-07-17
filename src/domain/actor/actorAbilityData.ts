@@ -59,9 +59,6 @@ export interface IActorAbilityData extends IItemData {
     // The contents of the game text "effect" section when it appears *after/below* the power roll in the
     // layout.
     postPowerRollEffect: IEffectData | undefined;
-
-    //getPowerRollBonus(creature?: ICreatureData | null): number;
-    //getPotencyValue(creature?: ICreatureData | null, potencyEffect?: IPotencyEffectData | null): number;
 }
 
 export interface IAbilityTargetData {
