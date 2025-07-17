@@ -4,7 +4,7 @@ import React from "react";
 
 import { ICreatureData, IImmunityData, IWeaknessData } from "@creature/creatureData";
 import { JSX } from "react/jsx-runtime";
-import { IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollTierData } from "@actor/actorAbilityData";
+import { IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
 
 
 interface IArrayFieldProps {
@@ -232,7 +232,7 @@ export function getPowerRollDamageText(tier: IPowerRollTierData): string {
 
 interface IPowerRollPotencyEffectProps {
     tier: IPowerRollTierData;
-    getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
+    getPotencyValue: (potencyEffect: IPotencyEffectData) => number;
 }
 
 export function PowerRollPotencyEffect(props: IPowerRollPotencyEffectProps): JSX.Element | null {
@@ -260,7 +260,7 @@ export function getPowerRollEffectText(tier: IPowerRollTierData): string {
 interface IPowerRollTierProps {
     label: string;
     tier: IPowerRollTierData;
-    getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
+    getPotencyValue: (potencyEffect: IPotencyEffectData) => number;
 }
 
 export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
@@ -277,18 +277,17 @@ export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
 }
 
 interface IPowerRollFieldProps {
-    creature?: ICreatureData;
-    ability?: IActorAbilityData | null;
+    powerRoll?: IPowerRollData | null;
+    getPowerRollBonus?: (powerRoll: IPowerRollData) => number;
+    getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
 }
 
 export function PowerRollField(props: IPowerRollFieldProps): JSX.Element | null {
-    if (!props?.creature || !props.ability || !props.ability.powerRoll) return null;
+    if (!props.powerRoll || !props?.getPowerRollBonus || !props.getPotencyValue) return null;
 
-    const creature = props.creature;
-    const ability = props.ability;
-    const powerRoll = props.ability.powerRoll;
-    const powerRollBonus = ability.getPowerRollBonus(creature);
-    const getPotencyValue = (potencyEffect: IPotencyEffectData) => ability.getPotencyValue(creature, potencyEffect);
+    const powerRoll = props.powerRoll;
+    const powerRollBonus = props.getPowerRollBonus(powerRoll);
+    const getPotencyValue = props.getPotencyValue;
 
     return (
         <div className="power-roll-section">

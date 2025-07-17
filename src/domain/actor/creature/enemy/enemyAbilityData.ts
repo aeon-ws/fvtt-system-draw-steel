@@ -1,5 +1,4 @@
-import { AbilityType, ActorAbilityData, IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "@domain/actor/actorAbilityData";
-import { CharacteristicKeys, ICreatureData } from "../creatureData";
+import { AbilityType, ActorAbilityData, IActorAbilityData } from "@actor/actorAbilityData";
 
 export type EnemyAbilityType = AbilityType | "monsterTrait" | "villainAction";
 
@@ -19,24 +18,5 @@ export class EnemyAbilityData<TData extends IEnemyAbilityData = IEnemyAbilityDat
         };
 
         return schema;
-    }
-
-
-    // @ts-ignore
-    getPowerRollBonus(_?: ICreatureData | null): number {
-        if (!this.data.powerRoll?.bonus) {
-            throw new Error("Power roll bonus must be specified for all power rolls of enemy abilities.");
-        }
-
-        return this.data.powerRoll.bonus;
-    }
-
-    // @ts-ignore
-    getPotencyValue(_?: ICreatureData | null, potencyEffect?: IPotencyEffectData | null): number {
-        if (!potencyEffect?.value) {
-            throw new Error("Potency value must be specified for all potency effects of enemy abilities.");
-        }
-
-        return potencyEffect.value;
     }
 }

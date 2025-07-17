@@ -15,8 +15,11 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
     private _reactContainer?: HTMLElement;
     private _formRef: React.RefObject<HTMLFormElement | null>;
 
-    constructor(options: Record<string, any> = {}) {
+    constructor(options: Record<string, any> = {}, args: any[] = []) {
         super(options);
+
+        console.log("Creating HeroSheet with options:", options);
+        console.log("Creating HeroSheet with args:", args);
 
         if (!isHeroActor(options.document)) throw new Error("Cannot create HeroSheet for non-hero token.");
 

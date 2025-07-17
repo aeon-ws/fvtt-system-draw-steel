@@ -7,6 +7,8 @@ import { isEnemyActor } from "@utils/actor";
 import { IEnemyData } from "@enemy/enemyData";
 import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 import React from "react";
+import { asEnemyToken } from "@utils/tokenDocument";
+import { EnemyTokenDocument } from "@enemy/enemyTokenDocument";
 
 
 export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
@@ -14,13 +16,27 @@ export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
     private _reactRoot?: ReactDOM.Root;
     private _reactContainer?: HTMLElement;
     private _formRef: React.RefObject<HTMLFormElement | null>;
+    private _enemy: EnemyTokenDocument<IEnemyData>;
 
-    constructor(options: Record<string, any> = {}) {
+    constructor(options: Record<string, any> = {}, args: any[] = []) {
         super(options);
+
+        console.log("Creating EnemySheet with options:", options);
+        console.log("Creating EnemySheet with args:", args);
 
         if (!isEnemyActor(options.document)) throw new Error("Cannot create EnemySheet for non-enemy token.");
 
         this._actor = options.document as Actor;
+        if (!this._actor.token) {
+            throw new Error("EnemySheet requires a token document.");
+        }
+
+        const enemy = asEnemyToken(this._actor.token);
+        if (!enemy) {
+            throw new Error("EnemySheet requires a valid enemy token.");
+        }
+
+        this._enemy = enemy;
         this._formRef = React.createRef();
     }
 
@@ -55,7 +71,7 @@ export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
         this._reactRoot.render(
             <EnemySheetComponent
                 ref={this._formRef}
-                enemy={this.system}
+                enemy={this._enemy}
                 abilities={this.actor.items.map(item => item.system as unknown as IEnemyAbilityData)}
             />
         );

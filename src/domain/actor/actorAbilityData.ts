@@ -1,13 +1,18 @@
 // src/data/models/abilityData.ts
 
 import { ItemData, IItemData } from "@domain/itemData";
-import { IHeroData } from "@hero/heroData";
-import { IEnemyData } from "@enemy/enemyData";
-import { IMinionData } from "@minion/minionData";
-import { IObjectData } from "@object/objectData";
+// import { IHeroData } from "@hero/heroData";
+// import { IEnemyData } from "@enemy/enemyData";
+// import { IMinionData } from "@minion/minionData";
+// import { IObjectData } from "@object/objectData";
 import { CharacteristicKeys, CharacteristicType, CreatureData, ICreatureData, IWeaknessData } from "@creature/creatureData";
-import { PotencyValueModfierKeys, PotencyValueModfierType } from "./creature/hero/heroAbilityData";
 
+export const PotencyValueModfierKeys = [
+    "weak",
+    "average",
+    "strong"
+] as const;
+export type PotencyValueModfierType = typeof PotencyValueModfierKeys[number];
 export type AbilityKeyword = "Area" | "Charge" | "Magic" | "Melee" | "Psionic" | "Ranged" | "Strike" | "Weapon";
 export type AbilityType = "mainAction" | "freeAction" | "freeManeuver" | "freeTriggeredAction" | "maneuver" | "triggeredAction";
 export type DamageType = "acid" | "cold" | "corruption" | "fire" | "holy" | "lightning" | "poison" | "psychic" | "sonic";
@@ -55,8 +60,8 @@ export interface IActorAbilityData extends IItemData {
     // layout.
     postPowerRollEffect: IEffectData | undefined;
 
-    getPowerRollBonus(creature?: ICreatureData | null): number;
-    getPotencyValue(creature?: ICreatureData | null, potencyEffect?: IPotencyEffectData | null): number;
+    //getPowerRollBonus(creature?: ICreatureData | null): number;
+    //getPotencyValue(creature?: ICreatureData | null, potencyEffect?: IPotencyEffectData | null): number;
 }
 
 export interface IAbilityTargetData {
@@ -67,7 +72,7 @@ export interface IAbilityTargetData {
     self?: boolean;
 
     special?: boolean;
-    filter?: (system: IEnemyData | IHeroData | IMinionData | IObjectData) => boolean;
+    //filter?: (system: IEnemyData | IHeroData | IMinionData | IObjectData) => boolean;
     text: string;
     count?: number | "all";
 }

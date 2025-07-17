@@ -1,16 +1,21 @@
 // src/components/enemySheetComponent.tsx
 
+import { ArrayField, DistanceField, EffectField, PowerRollField, TargetField } from "@actor/sheetFieldComponent";
 import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 import { IEnemyData } from "@enemy/enemyData";
-import { ArrayField, DistanceField, EffectField, PowerRollField, StatField, TargetField } from "@actor/sheetFieldComponent";
+import { EnemyTokenDocument } from "@enemy/enemyTokenDocument";
 import { JSX } from "react";
+import { MinionTokenDocument } from "@minion/minionTokenDocument";
+import { IMinionData } from "@minion/minionData";
+
 
 export interface IEnemyAbilityComponentProps {
-    enemy: IEnemyData;
+    key: string;
+    enemy: EnemyTokenDocument<IEnemyData> | MinionTokenDocument<IMinionData>;
     ability: IEnemyAbilityData;
 }
 
-export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponentProps): JSX.Element | null {
+export function EnemyAbilityComponent({ key, enemy, ability }: IEnemyAbilityComponentProps): JSX.Element | null {
     const getAbilityDisplayName = (name: string) => {
         switch (name) {
             case "enemyTrait":
@@ -40,7 +45,7 @@ export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponent
                 : "label";
 
     return (
-        <div className="ability">
+        <div key={key} className="ability">
             <div className="subheader-row">
                 <span className="left">
                     <span className={abilityNameCssClassNames}>{ability.name}</span>
@@ -99,7 +104,11 @@ export function EnemyAbilityComponent({ enemy, ability }: IEnemyAbilityComponent
 
             <EffectField label={ability.type !== "monsterTrait" ? "Effect" : null} effect={ability.prePowerRollEffect} />
 
-            <PowerRollField creature={enemy} ability={ability} />
+            <PowerRollField
+                powerRoll={ability.powerRoll}
+                getPowerRollBonus={enemy.getPowerRollBonus}
+                getPotencyValue={enemy.getPotencyValue}
+            />
 
             <EffectField label={ability.type !== "monsterTrait" ? "Effect" : null} effect={ability.postPowerRollEffect} />
 

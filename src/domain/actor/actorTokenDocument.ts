@@ -1,6 +1,7 @@
 
 import { IStaminaBarConfig } from "@actor/actorToken";
 import { IActorData } from "@actor/actorData";
+import { IPotencyEffectData, IPowerRollData } from "./actorAbilityData";
 
 
 export class ActorTokenDocument<TActorData extends IActorData> {
@@ -60,21 +61,22 @@ export class ActorTokenDocument<TActorData extends IActorData> {
     }
 
     async update(updates: any): Promise<void> {
-        // @ts-ignore
-        //const isLinked = this._tokenDocument.actorLink.valueOf() ?? this._actor.actorLink ?? false;
-
         await this._actor.update(updates);
+    }
 
-        // if (isLinked) {
-        //     // Since the actor is linked, the prototype actor will be updated: the update will persist and
-        //     // propagate to all linked tokens.
-            
-        // }
-        // else {
-        //     // Since actor isn't linked, the token document must be updated; otherwise, the update
-        //     // will be lost when the token is reloaded (e.g., when Foundry is shut down or the scene is
-        //     // reloaded). -- Morden 2025-06-06: Is that really true? Evidence is mounting against the statement).
-        //     await this._tokenDocument.update(updates);
-        // }
+    getPowerRollBonus(powerRoll?: IPowerRollData): number {
+        if (powerRoll?.bonus === undefined || powerRoll.bonus === null) {
+            throw new Error("Power roll bonus must be specified for all power rolls of non-hero abilities.");
+        }
+
+        return powerRoll.bonus;
+    }
+
+    getPotencyValue(potencyEffect?: IPotencyEffectData | null): number {
+        if (potencyEffect?.value === undefined || potencyEffect.value === null) {
+            throw new Error("Potency value must be specified for all potency effects of non-hero abilities.");
+        }
+
+        return potencyEffect.value;
     }
 }

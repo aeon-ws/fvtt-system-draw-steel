@@ -1,13 +1,13 @@
 // src/components/enemySheetComponent.tsx
 
+import { HeroTokenDocument } from "@hero/heroTokenDocument";
 import { IHeroAbilityData } from "@hero/heroAbilityData";
 import { IHeroData } from "@hero/heroData";
-import { ArrayField, DistanceField, EffectField, PowerRollField, StatField, TargetField } from "@actor/sheetFieldComponent";
+import { ArrayField, DistanceField, EffectField, PowerRollField, TargetField } from "@actor/sheetFieldComponent";
 import { JSX } from "react";
-import { IPotencyEffectData } from "@domain/actor/actorAbilityData";
 
 export interface IHeroAbilityComponentProps {
-    hero: IHeroData;
+    hero: HeroTokenDocument<IHeroData>;
     ability: IHeroAbilityData;
 }
 
@@ -97,7 +97,11 @@ export function HeroAbilityComponent({ hero, ability }: IHeroAbilityComponentPro
 
             <EffectField label={ability.type !== "heroTrait" ? "Effect" : null} effect={ability.prePowerRollEffect} />
 
-            <PowerRollField creature={hero} ability={ability} />
+            <PowerRollField
+                powerRoll={ability.powerRoll}
+                getPowerRollBonus={hero.getPowerRollBonus}
+                getPotencyValue={hero.getPotencyValue}
+            />
 
             <EffectField label={ability.type !== "heroTrait" ? "Effect" : null} effect={ability.postPowerRollEffect} />
 
