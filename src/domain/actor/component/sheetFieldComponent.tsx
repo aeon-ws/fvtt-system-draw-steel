@@ -4,7 +4,7 @@ import React from "react";
 
 import { ICreatureData, IImmunityData, IWeaknessData } from "@creature/creatureData";
 import { JSX } from "react/jsx-runtime";
-import { IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
+import { DamageType, IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
 
 
 interface IArrayFieldProps {
@@ -163,18 +163,19 @@ interface ImmunityAndWeaknessFieldsProps {
 }
 
 interface ImmunityOrWeaknessFieldProps {
-    fieldLabel: string;
+    fieldLabelClassName?: string;
+    fieldLabel?: string;
     immunityOrWeakness: IImmunityData | IWeaknessData;
     damageTypeLabels?: Map<string, string>;
 }
 
-const ImmunityOrWeaknessField: React.FC<ImmunityOrWeaknessFieldProps> = ({ fieldLabel, immunityOrWeakness, damageTypeLabels }) => {
+export function ImmunityOrWeaknessField(props: ImmunityOrWeaknessFieldProps): JSX.Element | null {
     const damageTypesAndValuesAsString =
-        Object.entries(immunityOrWeakness)
+        Object.entries(props.immunityOrWeakness)
             .filter(([_, value]) => value > 0)
             .map(
                 ([damageTypeName, value]) => {
-                    const damageTypeLabel = damageTypeLabels?.get(damageTypeName) || damageTypeName;
+                    const damageTypeLabel = props.damageTypeLabels?.get(damageTypeName) || damageTypeName;
 
                     return `${damageTypeLabel.toLowerCase()} ${value}`;
                 }
@@ -185,30 +186,40 @@ const ImmunityOrWeaknessField: React.FC<ImmunityOrWeaknessFieldProps> = ({ field
 
     return (
         <span>
-            <span className="label">{fieldLabel}</span>
+            <span className={props.fieldLabelClassName}>{props.fieldLabel}</span>
             <span className="value">{damageTypesAndValuesAsString}</span>
         </span>
     )
 }
 
-export const ImmunityAndWeaknessFields: React.FC<ImmunityAndWeaknessFieldsProps> = ({
-    immunityLabel,
-    immunity,
-    weaknessLabel,
-    weakness,
-    damageTypeLabels,
-}) => {
+export function ImmunityAndWeaknessFields(props: ImmunityAndWeaknessFieldsProps): JSX.Element | null {
+    const immunity = props.immunity;
+    const weakness = props.weakness;
     if (!immunity && !weakness) return null;
 
     const fields: JSX.Element[] = [];
     if (immunity) {
-        fields.push(<ImmunityOrWeaknessField fieldLabel={immunityLabel} immunityOrWeakness={immunity} damageTypeLabels={damageTypeLabels} />);
+        fields.push(
+            <ImmunityOrWeaknessField
+                key="immunity"
+                fieldLabelClassName="fa-sharp fa-regular fa-shield-plus"
+                //fieldLabel={props.immunityLabel}
+                immunityOrWeakness={immunity}
+                damageTypeLabels={props.damageTypeLabels}
+            />);
         if (weakness) {
             fields.push(<span>  |  </span>);
         }
     }
     if (weakness) {
-        fields.push(<ImmunityOrWeaknessField fieldLabel={weaknessLabel} immunityOrWeakness={weakness} damageTypeLabels={damageTypeLabels} />);
+        fields.push(
+            <ImmunityOrWeaknessField
+                key="weakness"
+                fieldLabelClassName="fa-sharp fa-regular fa-shield-minus"
+                //fieldLabel={props.weaknessLabel}
+                immunityOrWeakness={weakness}
+                damageTypeLabels={props.damageTypeLabels}
+            />);
     }
 
     if (fields.length === 0) return null;
@@ -221,34 +232,13 @@ export const ImmunityAndWeaknessFields: React.FC<ImmunityAndWeaknessFieldsProps>
 };
 
 
-export function getPowerRollDamageText(tier: IPowerRollTierData): string {
-    if (!tier.damage) return "";
+export function getPowerRollDamageText(damageType: DamageType | undefined | null, damageValue: number | undefined | null): string {
+    if (!damageValue) return "";
 
-    const damageValueText = tier.damage > 0 ? `${tier.damage} ` : null;
-    const damageTypeText = tier.damageType ? `${tier.damageType} ` : "";
+    const damageValueText = damageValue && damageValue > 0 ? `${damageValue} ` : null;
+    const damageTypeText = damageType ? `${damageType} ` : "";
 
     return damageValueText ? `${damageValueText}${damageTypeText} damage; ` : "";
-}
-
-interface IPowerRollPotencyEffectProps {
-    tier: IPowerRollTierData;
-    getPotencyValue: (potencyEffect: IPotencyEffectData) => number;
-}
-
-export function PowerRollPotencyEffect(props: IPowerRollPotencyEffectProps): JSX.Element | null {
-    const tier = props?.tier;
-    if (!tier?.potencyEffect || !props?.getPotencyValue) return null;
-
-    const potencyTargetCharacteristicInitial = tier.potencyEffect.targetCharacteristic[0].toUpperCase();
-
-    return (
-        <>
-            <span className="ads-inline-box">
-                {`${potencyTargetCharacteristicInitial} < ${props.getPotencyValue(tier.potencyEffect)}`}
-            </span>
-            <span>{tier.potencyEffect.effect.text}</span>
-        </>
-    );
 }
 
 export function getPowerRollEffectText(tier: IPowerRollTierData): string {
@@ -260,56 +250,74 @@ export function getPowerRollEffectText(tier: IPowerRollTierData): string {
 interface IPowerRollTierProps {
     label: string;
     tier: IPowerRollTierData;
+    damageValue: number | null;
     getPotencyValue: (potencyEffect: IPotencyEffectData) => number;
 }
 
 export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
+    const tier = props.tier;
+    if (!tier) return null;
+
+    const potencyEffect = tier.potencyEffect;
+
     return (
         <div className="power-roll-tier">
             <span className="value">
                 <span className="label">{props.label}</span>
             </span>
             <span className="value">
-                {getPowerRollDamageText(props.tier)}
-                {getPowerRollEffectText(props.tier)}
-                <PowerRollPotencyEffect tier={props.tier} getPotencyValue={props.getPotencyValue} />
+                {getPowerRollDamageText(tier.damageType, props.damageValue)}
+                {getPowerRollEffectText(tier)}
+                {potencyEffect && (
+                    <>
+                        <span className="ads-inline-box">
+                            {`${potencyEffect.targetCharacteristic[0].toUpperCase()} < ${props.getPotencyValue(potencyEffect)}`}
+                        </span>
+                        <span>{potencyEffect.effect?.text}</span>
+                    </>
+                )}
             </span>
         </div>
     );
 }
 
 interface IPowerRollFieldProps {
-    powerRoll?: IPowerRollData | null;
-    getPowerRollBonus?: (powerRoll: IPowerRollData) => number | null;
-    getPotencyValue?: (potencyEffect: IPotencyEffectData) => number;
+    powerRoll: IPowerRollData | undefined | null;
+    powerRollBonus: number | null;
+    getDamageValue: (powerRollTier: IPowerRollTierData) => number | null;
+    getPotencyValue: (potencyEffect: IPotencyEffectData) => number;
 }
 
 export function PowerRollField(props: IPowerRollFieldProps): JSX.Element | null {
-    if (!props.powerRoll || !props?.getPowerRollBonus || !props.getPotencyValue) return null;
+    if (!props.powerRoll || !props.powerRollBonus) return null;
 
     const powerRoll = props.powerRoll;
-    const powerRollBonus = props.getPowerRollBonus(powerRoll);
+    const powerRollBonus = props.powerRollBonus;
     const getPotencyValue = props.getPotencyValue;
+    const getDamageValue = props.getDamageValue;
 
     return (
         <div className="power-roll-section">
             {powerRollBonus && (
-                <StatField label="Power Roll" value={`2d10 + ${powerRollBonus}`} />
+                <StatField label="Power Roll" value={` + ${powerRollBonus}`} />
             )}
             <div className="power-roll-table">
                 <PowerRollTier
                     label="≤11"
                     tier={powerRoll.tier1}
+                    damageValue={getDamageValue(powerRoll.tier1)}
                     getPotencyValue={getPotencyValue}
                 />
                 <PowerRollTier
                     label="12-16"
                     tier={powerRoll.tier2}
+                    damageValue={getDamageValue(powerRoll.tier2)}
                     getPotencyValue={getPotencyValue}
                 />
                 <PowerRollTier
                     label="17+"
                     tier={powerRoll.tier3}
+                    damageValue={getDamageValue(powerRoll.tier2)}
                     getPotencyValue={getPotencyValue}
                 />
             </div>

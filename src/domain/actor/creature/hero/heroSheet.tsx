@@ -7,6 +7,8 @@ import { isHeroActor } from "@utils/actor";
 import { IHeroData } from "@hero/heroData";
 import { IHeroAbilityData } from "@hero/heroAbilityData";
 import React from "react";
+import { HeroTokenDocument } from "@hero/heroTokenDocument";
+import { asHeroToken } from "@utils/tokenDocument";
 
 
 export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
@@ -14,22 +16,31 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
     private _reactRoot?: ReactDOM.Root;
     private _reactContainer?: HTMLElement;
     private _formRef: React.RefObject<HTMLFormElement | null>;
+    private _hero: HeroTokenDocument<IHeroData>;
 
     constructor(options: Record<string, any> = {}, args: any[] = []) {
         super(options);
 
-        console.log("Creating HeroSheet with options:", options);
-        console.log("Creating HeroSheet with args:", args);
-
         if (!isHeroActor(options.document)) throw new Error("Cannot create HeroSheet for non-hero token.");
 
         this._actor = options.document as Actor;
+        const token = this._actor.token ?? canvas.scene?.tokens.filter(token => token.actorId === this._actor.id)?.[0];
+        if (!token) {
+            throw new Error("HeroSheet requires a token document.");
+        }
+
+        const hero = asHeroToken(token);
+        if (!hero) {
+            throw new Error("HeroSheet requires a valid hero token.");
+        }
+
+        this._hero = hero;
         this._formRef = React.createRef();
     }
 
-    get system() { 
-        console.log("Hero system data:", this._actor.system);
-        return this._actor.system as unknown as IHeroData; }
+    get system() {
+        return this._actor.system as unknown as IHeroData;
+    }
 
     override get title() {
         return `Hero ${this.system.type}: ${this.system.name}`;
@@ -60,7 +71,7 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
         this._reactRoot.render(
             <HeroSheetComponent
                 ref={this._formRef}
-                hero={this.system}
+                hero={this._hero}
                 abilities={this.actor.items.map(item => item.system as unknown as IHeroAbilityData)}
             />
         );
@@ -99,7 +110,6 @@ export class HeroSheet extends foundry.applications.sheets.ActorSheetV2 {
 
         const windowContent = this.element.querySelector('.window-content') as HTMLElement;
         if (windowContent && windowContent.parentElement && windowContent.parentElement.style) {
-            console.log("Setting max height for window content:", maxHeight);
             windowContent.parentElement.style.maxHeight = `${maxHeight}px`;
         }
     }

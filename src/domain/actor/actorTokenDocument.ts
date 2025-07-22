@@ -1,7 +1,7 @@
 
 import { IStaminaBarConfig } from "@actor/actorToken";
 import { IActorData } from "@actor/actorData";
-import { IPotencyEffectData, IPowerRollData } from "./actorAbilityData";
+import { IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "./actorAbilityData";
 
 
 export class ActorTokenDocument<TActorData extends IActorData> {
@@ -73,6 +73,14 @@ export class ActorTokenDocument<TActorData extends IActorData> {
             powerRoll?.bonus === undefined || powerRoll.bonus === null
                 ? null
                 : powerRoll.bonus
+        );
+    }
+
+    getDamageValue(powerRollTier?: IPowerRollTierData): number | null {
+        return (
+            powerRollTier?.damage === undefined || powerRollTier.damage === null
+                ? null
+                : powerRollTier.damage
         );
     }
 

@@ -21,9 +21,6 @@ export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
     constructor(options: Record<string, any> = {}, args: any[] = []) {
         super(options);
 
-        console.log("Creating EnemySheet with options:", options);
-        console.log("Creating EnemySheet with args:", args);
-
         if (!isEnemyActor(options.document)) throw new Error("Cannot create EnemySheet for non-enemy token.");
 
         this._actor = options.document as Actor;
@@ -110,7 +107,6 @@ export class EnemySheet extends foundry.applications.sheets.ActorSheetV2 {
 
         const windowContent = this.element.querySelector('.window-content') as HTMLElement;
         if (windowContent && windowContent.parentElement && windowContent.parentElement.style) {
-            console.log("Setting max height for window content:", maxHeight);
             windowContent.parentElement.style.maxHeight = `${maxHeight}px`;
         }
     }

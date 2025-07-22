@@ -2,32 +2,60 @@
 
 import { HeroTokenDocument } from "@hero/heroTokenDocument";
 import { IHeroAbilityData } from "@hero/heroAbilityData";
-import { IHeroData } from "@hero/heroData";
+import { HeroClass, IHeroData } from "@hero/heroData";
 import { ArrayField, DistanceField, EffectField, PowerRollField, TargetField } from "@actor/sheetFieldComponent";
 import { JSX } from "react";
 
 export interface IHeroAbilityComponentProps {
+    key: string;
     hero: HeroTokenDocument<IHeroData>;
     ability: IHeroAbilityData;
 }
 
-export function HeroAbilityComponent({ hero, ability }: IHeroAbilityComponentProps): JSX.Element | null {
+export function HeroAbilityComponent({ key, hero, ability }: IHeroAbilityComponentProps): JSX.Element | null {
+    const getHeroicResourceDisplayName = (heroClass: HeroClass) => {
+        switch (heroClass) {
+            case "Beastheart":
+                return "Ferocity";
+            case "Censor":
+                return "Wrath";
+            case "Conduit":
+                return "Piety";
+            case "Elementalist":
+                return "Essence";
+            case "Fury":
+                return "Ferocity";
+            case "Null":
+                return "Discipline";
+            case "Summoner":
+                return "Essence";
+            case "Shadow":
+                return "Insight";
+            case "Tactician":
+                return "Focus";
+            case "Talent":
+                return "Discipline";
+            default:
+                throw new Error(`Unknown hero class: ${heroClass}`);
+        }
+    };
+
     const getAbilityDisplayName = (name: string) => {
         switch (name) {
             case "heroTrait":
                 return "";
             case "freeMainAction":
-                return "(Free Main Action)";
+                return "Free Main Action";
             case "freeManeuver":
-                return "(Free Maneuver)";
+                return "Free Maneuver";
             case "freeTriggeredAction":
-                return "(Free Triggered Action)";
+                return "Free Triggered Action";
             case "mainAction":
-                return "(Main Action)";
+                return "Main Action";
             case "maneuver":
-                return "(Maneuver)";
+                return "Maneuver";
             case "triggeredAction":
-                return "(Triggered Action)";
+                return "Triggered Action";
         }
     };
 
@@ -38,28 +66,24 @@ export function HeroAbilityComponent({ hero, ability }: IHeroAbilityComponentPro
                 ? "label signature"
                 : "label";
 
+    const powerRoll = ability.powerRoll;
+
     return (
-        <div className="ability">
+        <div key={key} className="ability">
             <div className="subheader-row">
                 <span className="left">
-                    <span className={abilityNameCssClassNames}>{ability.name}</span>
-                    {ability.type.search(/trait/gi) == -1
-                        ? (<span className="value">{getAbilityDisplayName(ability.type)}</span>) : null}
+                    <span className={abilityNameCssClassNames}>{ability.name}{ability.heroicResourceCost > 0
+                        && (
+                            <span className="label malice"> ({ability.heroicResourceCost} {getHeroicResourceDisplayName(hero.data.class)})</span>
+                        )
+                    }</span>
                 </span>
-                <span className="right">
-                    {ability.heroicResourceCost > 0
-                        ? (<>
-                            <span className="label malice">Heroic Resource</span>
-                            <span className="value malice">{ability.heroicResourceCost}</span></>)
-                        : (ability.isSignature ? <span className="label signature">Signature</span> : null)
-                    }
-                </span>
-            </div>
-            <div className="subheader-row">
-                <ArrayField label="Keywords" labelClassNames={["label"]} values={ability.keywords} valueClassNames={["value"]} />
             </div>
             <div className="columns">
                 <div className="column left-column">
+                    <div className="field-row">
+                        <ArrayField values={ability.keywords} valueClassNames={["label", "overflow"]} />
+                    </div>
                     {ability.distance?.melee && ability.distance?.melee !== 0
                         ? (
                             <DistanceField
@@ -69,39 +93,58 @@ export function HeroAbilityComponent({ hero, ability }: IHeroAbilityComponentPro
                                 value2={ability.distance.ranged}
                             />
                         )
-                        : ability.distance?.ranged && ability.distance?.ranged !== 0 && (
-                            <DistanceField distanceTypeLabel1="Ranged" value1={ability.distance.ranged} />
-                        )}
-                    {ability.distance?.burst && ability.distance?.burst !== 0 && (
-                        <DistanceField distanceTypeLabel1="Burst" value1={ability.distance.burst} />
-                    )}
-                    {ability.distance?.cube && ability.distance.cube.size !== 0 && ability.distance.cube.within !== 0 && (
-                        <DistanceField
-                            distanceTypeLabel1="Cube"
-                            value1={`${ability.distance.cube.size} within ${ability.distance.cube.within}`}
-                        />
-                    )}
-                    {ability.distance?.line && ability.distance.line.length !== 0 && ability.distance.line.width !== 0 && ability.distance.line.within != 0 && (
-                        <DistanceField
-                            distanceTypeLabel1="Line"
-                            value1={`${ability.distance.line.length} x ${ability.distance.line.width} within ${ability.distance.line.within}`}
-                        />
-                    )}
+                        : (
+                            ability.distance?.ranged && ability.distance?.ranged !== 0
+                            && (
+                                <DistanceField distanceTypeLabel1="Ranged" value1={ability.distance.ranged} />
+                            )
+                        )
+                    }
+                    {ability.distance?.burst && ability.distance?.burst !== 0
+                        && (
+                            <DistanceField distanceTypeLabel1="Burst" value1={ability.distance.burst} />
+                        )
+                    }
+                    {ability.distance?.cube && ability.distance.cube.size !== 0 && ability.distance.cube.within !== 0
+                        && (
+                            <DistanceField
+                                distanceTypeLabel1="Cube"
+                                value1={`${ability.distance.cube.size} within ${ability.distance.cube.within}`}
+                            />
+                        )
+                    }
+                    {ability.distance?.line && ability.distance.line.length !== 0 && ability.distance.line.width !== 0 && ability.distance.line.within != 0
+                        && (
+                            <DistanceField
+                                distanceTypeLabel1="Line"
+                                value1={`${ability.distance.line.length} x ${ability.distance.line.width} within ${ability.distance.line.within}`}
+                            />
+                        )
+                    }
                 </div>
                 <div className="column right-column">
-                    {ability.target?.text && (
-                        <TargetField value={ability.target.text} />
-                    )}
+                    <div className="field-row">
+                        <span className="label">{getAbilityDisplayName(ability.type)}</span>
+                    </div>
+                    {ability.target?.text
+                        && (
+                            <TargetField value={ability.target.text} />
+                        )
+                    }
                 </div>
             </div>
 
             <EffectField label={ability.type !== "heroTrait" ? "Effect" : null} effect={ability.prePowerRollEffect} />
 
-            <PowerRollField
-                powerRoll={ability.powerRoll}
-                getPowerRollBonus={hero.getPowerRollBonus}
-                getPotencyValue={hero.getPotencyValue}
-            />
+            {powerRoll
+                && (
+                    <PowerRollField
+                        powerRoll={powerRoll}
+                        powerRollBonus={hero.getPowerRollBonus(powerRoll)}
+                        getDamageValue={(powerRollTier) => hero.getDamageValue(powerRollTier)}
+                        getPotencyValue={(potencyEffect) => hero.getPotencyValue(potencyEffect)}
+                    />
+                )}
 
             <EffectField label={ability.type !== "heroTrait" ? "Effect" : null} effect={ability.postPowerRollEffect} />
 

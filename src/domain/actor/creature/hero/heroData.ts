@@ -4,9 +4,21 @@ import { CreatureData, ICreatureCombatData, ICreatureData } from "@creature/crea
 
 const { NumberField, SchemaField, StringField } = foundry.data.fields;
 
+export type HeroClass =
+    "Beastheart" |
+    "Censor" |
+    "Conduit" |
+    "Elementalist" |
+    "Fury" |
+    "Null" |
+    "Summoner" |
+    "Shadow" |
+    "Tactician" |
+    "Talent";
+
 export interface IHeroData extends ICreatureData {
     ancestry: string;
-    class: string;
+    class: HeroClass;
 
     recovery: IRecoveryData;
 
@@ -32,8 +44,8 @@ export class HeroData<TData extends IHeroData = IHeroData> extends CreatureData<
             ...this.createCharacteristicsField(),
             ...this.createStaminaField(),
 
-            ancestry: new StringField({ initial: "Elf" }),
-            class: new StringField({ initial: "Tactician" }),
+            ancestry: new StringField(),
+            class: new StringField(),
 
             combat: new SchemaField({
                 ...this.createCreatureCombatFields(),
@@ -50,6 +62,7 @@ export class HeroData<TData extends IHeroData = IHeroData> extends CreatureData<
             heroicResource: new NumberField({ initial: 0 }),
         };
 
+        console.log("HeroData.defineSchema", schema);
         return schema;
     }
 

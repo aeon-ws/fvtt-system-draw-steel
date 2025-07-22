@@ -94,7 +94,6 @@ export class MinionSheet extends foundry.applications.sheets.ActorSheetV2 {
 
         const windowContent = this.element.querySelector('.window-content') as HTMLElement;
         if (windowContent && windowContent.parentElement && windowContent.parentElement.style) {
-            console.log("Setting max height for window content:", maxHeight);
             windowContent.parentElement.style.maxHeight = `${maxHeight}px`;
         }
     }

@@ -1,5 +1,5 @@
-_id: Nuada_003
-_key: "!actors!Nuada_003"
+_id: Nuada_004
+_key: "!actors!Nuada_004"
 name: Nuada
 type: hero
 img: systems/aeon-draw-steel/images/nuada.jpg
@@ -51,7 +51,7 @@ system:
     corruption: 3
 items:
   - _id: Nuada0Qg5vYjwYzx
-    _key: "!actors.items!Nuada_003.Nuada0Qg5vYjwYzx"
+    _key: "!actors.items!Nuada_004.Nuada0Qg5vYjwYzx"
     name: Your Allies Cannot Save You!
     type: heroAbility
     img: icons/svg/book.svg
@@ -73,20 +73,27 @@ items:
         object: true
         count: 1
       powerRoll:
-        bonus: 2
+        bonusCharacteristics:
+          - might
         tier1:
-          damage: 5
+          baseDamage: 3
+          damageBonusCharacteristics:
+            - might
           damageType: holy
         tier2:
-          damage: 7
+          baseDamage: 5
+          damageBonusCharacteristics:
+            - might
           damageType: holy
         tier3:
-          damage: 14
+          baseDamage: 8
+          damageBonusCharacteristics:
+            - might
           damageType: holy
       postPowerRollEffect:
         text: Each enemy adjacent to the target is pushed 2 away from the target.
   - _id: Nuada0Qg5vYjwqua
-    _key: "!actors.items!Nuada_003.Nuada0Qg5vYjwqua"
+    _key: "!actors.items!Nuada_004.Nuada0Qg5vYjwqua"
     name: Repent!
     type: heroAbility
     img: icons/svg/book.svg
@@ -109,33 +116,46 @@ items:
         object: false
         count: 1
       powerRoll:
-        bonus: 2
+        bonusCharacteristics:
+          - presence
         tier1:
-          damage: 7
+          baseDamage: 5
+          damageBonusCharacteristics:
+            - presence
           damageType: holy
           potencyEffect:
+            valueCharacteristics:
+              - presence
+            valueModifier: weak
             targetCharacteristic: intuition
-            value: 0
             effect:
               text: dazed (save ends)
         tier2:
-          damage: 10
+          baseDamage: 8
+          damageBonusCharacteristics:
+            - presence
           damageType: holy
           potencyEffect:
+            valueCharacteristics:
+              - presence
+            valueModifier: average
             targetCharacteristic: intuition
-            value: 1
             effect:
               text: dazed (save ends)
         tier3:
-          damage: 13
+          baseDamage: 11
+          damageBonusCharacteristics:
+            - presence
           damageType: holy
           potencyEffect:
+            valueCharacteristics:
+              - presence
+            valueModifier: strong
             targetCharacteristic: intuition
-            value: 2
             effect:
               text: dazed (save ends)
   - _id: Nuada0Qg5vYjwjhg
-    _key: "!actors.items!Nuada_003.Nuada0Qg5vYjwjhg"
+    _key: "!actors.items!Nuada_004.Nuada0Qg5vYjwjhg"
     name: Behold the Face of Justice!
     type: heroAbility
     img: icons/svg/book.svg
@@ -161,29 +181,42 @@ items:
         object: false
         count: 1
       powerRoll:
-        bonus: 2
+        bonusCharacteristics:
+          - might
         tier1:
-          damage: 5
+          baseDamage: 3
+          damageBonusCharacteristics:
+            - might
           damageType: holy
           potencyEffect:
+            valueCharacteristics:
+              - presence
+            valueModifier: weak
             targetCharacteristic: presence
-            value: 0
             effect:
               text: each enemy within 2 squares of the target is frightened of you (save ends)
         tier2:
-          damage: 7
+          baseDamage: 5
+          damageBonusCharacteristics:
+            - might
           damageType: holy
           potencyEffect:
+            valueCharacteristics:
+              - presence
+            valueModifier: average
             targetCharacteristic: presence
-            value: 1
             effect:
               text: each enemy within 2 squares of the target is frightened of you (save ends)
         tier3:
-          damage: 14
+          baseDamage: 8
+          damageBonusCharacteristics:
+            - might
           damageType: holy
           potencyEffect:
+            valueCharacteristics:
+              - presence
+            valueModifier: strong
             targetCharacteristic: presence
-            value: 2
             effect:
               text: each enemy within 2 squares of the target is frightened of you (save ends)
       postPowerRollEffect:

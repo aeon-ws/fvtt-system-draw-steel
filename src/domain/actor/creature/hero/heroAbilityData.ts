@@ -20,6 +20,7 @@ export class HeroAbilityData<TData extends IHeroAbilityData = IHeroAbilityData> 
             heroicResourceCost: new foundry.data.fields.NumberField({ required: false, initial: 0, nullable: true }),
         };
 
+        console.log("HeroAbilityData.defineSchema", schema);
         return schema;
     }
 }

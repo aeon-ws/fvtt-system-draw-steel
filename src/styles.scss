@@ -179,27 +179,22 @@ $label-value-gap: 0.3em;
       .power-roll-table {
         display: flex;
         flex-direction: column;
-        // gap: 0.25rem; // vertical gap between rows, adjust as needed
         padding-left: 0.15em;
-        width: max-content;
 
         .power-roll-tier {
           display: grid;
-          grid-template-columns: 2.9em 26.6em;
+          grid-template-columns: 2.7em 0.98fr;
           align-items: normal;
           padding-left: 0.33em;
           // Optionally: min-width for responsive design
           // min-width: 10em;
 
-          .symbol {
-            text-align: center;
-          }
-
           .label {
             display: inline-block;
-            //background: #000000;
-            //color: #ffffff;
+            font-family: inherit;
+            font-size: 0.8em;
             font-weight: $font-weight-half-bold;
+            text-align: center;
             padding-left: 0.3em;
             padding-right: 0.3em;
             padding-top: 0;
@@ -207,9 +202,8 @@ $label-value-gap: 0.3em;
             margin-right: $label-value-gap;
             border: 1px solid #000000;
             border-radius: 0.2em;
-            font-size: 0.8em;
-            font-family: inherit;
             vertical-align: 0.075em;
+            width: -webkit-fill-available;
           }
 
           .value {
@@ -301,7 +295,7 @@ $label-value-gap: 0.3em;
     }
   }
 
-  .field-row.overflow {
+  .overflow {
     overflow-x: visible;
     white-space: pre;
     word-break: keep-all;
