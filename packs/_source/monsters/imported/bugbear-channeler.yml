@@ -145,7 +145,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Twist Shape
-    maliceCost: 5
+    resourceCost: 5
     isSignature: false
     keywords:
     - Magic
@@ -241,7 +241,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Shadow Veil
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords:
     - Magic

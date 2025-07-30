@@ -148,7 +148,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Horrible Bellow
-    maliceCost: 2
+    resourceCost: 2
     isSignature: false
     keywords:
     - Area
@@ -188,7 +188,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Hrraaaaaagh!
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords: []
     type: freeTriggeredAction

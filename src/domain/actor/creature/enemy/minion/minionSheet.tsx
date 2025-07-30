@@ -7,6 +7,8 @@ import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 import React from "react";
 import { MinionSheetComponent } from "@minion/component/minionSheetComponent";
 import { IMinionData } from "@minion/minionData";
+import { asMinionToken } from "@utils/tokenDocument";
+import { MinionTokenDocument } from "./minionTokenDocument";
 
 
 export class MinionSheet extends foundry.applications.sheets.ActorSheetV2 {
@@ -14,6 +16,7 @@ export class MinionSheet extends foundry.applications.sheets.ActorSheetV2 {
     private _reactRoot?: ReactDOM.Root;
     private _reactContainer?: HTMLElement;
     private _formRef: React.RefObject<HTMLFormElement | null>;
+    private _minion: MinionTokenDocument<IMinionData>;
 
     constructor(options: Record<string, any> = {}) {
         super(options);
@@ -21,6 +24,16 @@ export class MinionSheet extends foundry.applications.sheets.ActorSheetV2 {
         if (!isMinionActor(options.document)) throw new Error("Cannot create EnemySheet for non-enemy token.");
 
         this._actor = options.document as Actor;
+        if (!this._actor.token) {
+            throw new Error("MinionSheet requires a token document.");
+        }
+
+        const minion = asMinionToken(this._actor.token);
+        if (!minion) {
+            throw new Error("MinionSheet requires a valid minion token.");
+        }
+
+        this._minion = minion;
         this._formRef = React.createRef();
     }
 
@@ -55,7 +68,7 @@ export class MinionSheet extends foundry.applications.sheets.ActorSheetV2 {
         this._reactRoot.render(
             <MinionSheetComponent
                 ref={this._formRef}
-                enemy={this.system}
+                enemy={this._minion}
                 abilities={this.actor.items.map(item => item.system as unknown as IEnemyAbilityData)}
             />
         );

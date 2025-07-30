@@ -108,7 +108,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Dizzying Hex
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords:
     - Magic

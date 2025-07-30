@@ -165,7 +165,7 @@ ABILITY_NAME_PATTERN = r"(?P<abilityName>[A-Za-z][A-Za-z!?',: ]+[A-Za-z!?])"
 ABILITY_TYPE_PATTERN = r"[(](?P<type>(?:Free )?(?:Triggered Action|Maneuver|Villain Action\s?(?P<villainActionOrdinal>[123])?|(?:Main )?Action))[)]"
 OPTIONAL_POWER_ROLL_PATTERN = r"(?:2[Dd]1[0oO]\s*[+]\s*(?P<bonus>[+]?[1-5])\s*)?"
 OPTIONAL_COST_PATTERN = (
-    r"(?:(?P<maliceCost>[0-9]{0,2})\s?Malice|(?P<signature>Signature))?"
+    r"(?:(?P<resourceCost>[0-9]{0,2})\s?Malice|(?P<signature>Signature))?"
 )
 
 ABILITY_HEADER_REGEX = re.compile(
@@ -213,7 +213,7 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
         name=header["name"],
         type=header["type"],
         villainActionOrdinal=header.get("villainActionOrdinal", None),
-        maliceCost=header["maliceCost"],
+        resourceCost=header["resourceCost"],
         isSignature=header["isSignature"],
         powerRoll=parse_power_roll_block(
             header,
@@ -228,7 +228,7 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
         target=None,
         trigger=None,
         prePowerRollEffect=None,
-        maliceEffect=None,
+        spendResourceEffect=None,
         postPowerRollEffect=None,
         header_raw=header_line,
     )
@@ -264,11 +264,13 @@ def parse_ability_block(ability_lines: List[str], monster_name: str) -> Ability:
             model["target"] = parse_target(field_line)
         elif field_name == "trigger":
             model["trigger"] = field_line.replace("Trigger", "").strip()
-        elif field_name == "maliceEffect":
+        elif field_name == "spendResourceEffect":
             # This is a malice effect line, which is like a post-power-roll effect line but the effect costs
             # malice and the presence of the malice effect line doesn't preclude the existence of both types
             # of effect line.
-            model["maliceEffect"] = Effect(text=field_line.replace("  ", " ").strip())
+            model["spendResourceEffect"] = Effect(
+                text=field_line.replace("  ", " ").strip()
+            )
         elif field_name == "prePowerRollEffect":
             model["prePowerRollEffect"] = Effect(
                 text=field_line.replace("Effect", "")
@@ -323,7 +325,7 @@ def get_lines_by_field_name(ability_lines: List[str]) -> list[FieldLine]:
                 current_field_name = "prePowerRollEffect"
                 pre_power_roll_effect_encountered = True
         elif re.match(r"^[^1-9]{0,3}[1-9]\s*Malice.", ability_line):
-            current_field_name = "maliceEffect"
+            current_field_name = "spendResourceEffect"
 
         if not current_field_name:
             print(
@@ -352,7 +354,7 @@ def append_to_lines_by_field_name(
 def parse_ability_header(
     header_line: str, monster_name: str
 ) -> Optional[Dict[str, Any]]:
-    """Parse ability header, returning name, type, maliceCost, powerRoll bonus. Warn on partial match."""
+    """Parse ability header, returning name, type, resourceCost, powerRoll bonus. Warn on partial match."""
     normalized = re.sub(r"[^A-Za-z0-9!()' +-]", "", header_line)
     normalized = (
         re.sub(r"([+]\s*[1-5])\s*.\s+(1?[0-9]\s?Malice)", r"\1 \2", header_line)
@@ -385,8 +387,8 @@ def parse_ability_header(
     isSignature = groups.get("signature", None) is not None
 
     # Malice cost: "Signature" is 0, otherwise integer.
-    if groups.get("maliceCost") is not None:
-        malice_cost = int(groups["maliceCost"])
+    if groups.get("resourceCost") is not None:
+        malice_cost = int(groups["resourceCost"])
     elif "signature" in normalized.lower():
         malice_cost = None
         isSignature = True
@@ -414,7 +416,7 @@ def parse_ability_header(
         "name": name,
         "type": ability_type,
         "villainActionOrdinal": villain_action_ordinal,
-        "maliceCost": malice_cost,
+        "resourceCost": malice_cost,
         "isSignature": isSignature,
         "powerRollBonus": power_roll_bonus,
         "header_raw": header_line.strip(),
@@ -488,7 +490,7 @@ def get_foundry_item_model(actor_id: str, ability: Ability) -> dict[str, Any]:
         "img": "icons/svg/book.svg",
         "system": {
             "name": ability["name"],
-            "maliceCost": ability.get("maliceCost", None),
+            "resourceCost": ability.get("resourceCost", None),
             "isSignature": ability.get("isSignature", False),
             "keywords": ability["keywords"],
             "type": ability["type"],
@@ -498,7 +500,7 @@ def get_foundry_item_model(actor_id: str, ability: Ability) -> dict[str, Any]:
             "powerRoll": ability.get("powerRoll", None),
             "trigger": ability.get("trigger", None),
             "prePowerRollEffect": ability.get("prePowerRollEffect", None),
-            "maliceEffect": ability.get("maliceEffect", None),
+            "spendResourceEffect": ability.get("spendResourceEffect", None),
             "postPowerRollEffect": ability.get("postPowerRollEffect", None),
         },
     }

@@ -3,7 +3,7 @@
 import { HeroTokenDocument } from "@hero/heroTokenDocument";
 import { IHeroAbilityData } from "@hero/heroAbilityData";
 import { HeroClass, IHeroData } from "@hero/heroData";
-import { ArrayField, DistanceField, EffectField, PowerRollField, TargetField } from "@actor/sheetFieldComponent";
+import { ArrayField, DistanceField, EffectField, PowerRollField, Roll, TargetField } from "@actor/sheetFieldComponent";
 import { JSX } from "react";
 
 export interface IHeroAbilityComponentProps {
@@ -60,7 +60,7 @@ export function HeroAbilityComponent({ key, hero, ability }: IHeroAbilityCompone
     };
 
     const abilityNameCssClassNames =
-        ability.heroicResourceCost > 0
+        ability.resourceCost > 0
             ? "label malice"
             : ability.isSignature
                 ? "label signature"
@@ -72,17 +72,25 @@ export function HeroAbilityComponent({ key, hero, ability }: IHeroAbilityCompone
         <div key={key} className="ability">
             <div className="subheader-row">
                 <span className="left">
-                    <span className={abilityNameCssClassNames}>{ability.name}{ability.heroicResourceCost > 0
+                    <span className={abilityNameCssClassNames}>{ability.name}</span>
+                    {powerRoll
                         && (
-                            <span className="label malice"> ({ability.heroicResourceCost} {getHeroicResourceDisplayName(hero.data.class)})</span>
+                            <Roll dieCount={2} dieType="d10" rollBonus={hero.getPowerRollBonus(powerRoll)} />
                         )
-                    }</span>
+                    }
+                </span>
+                <span className="right">
+                    <span className={abilityNameCssClassNames}>
+                        {ability.resourceCost > 0
+                            && `${ability.resourceCost} ${getHeroicResourceDisplayName(hero.data.class)}`
+                        }
+                    </span>
                 </span>
             </div>
             <div className="columns">
                 <div className="column left-column">
                     <div className="field-row">
-                        <ArrayField values={ability.keywords} valueClassNames={["label", "overflow"]} />
+                        <ArrayField values={ability.keywords} valueClassNames={["overflow"]} />
                     </div>
                     {ability.distance?.melee && ability.distance?.melee !== 0
                         ? (
@@ -124,7 +132,7 @@ export function HeroAbilityComponent({ key, hero, ability }: IHeroAbilityCompone
                 </div>
                 <div className="column right-column">
                     <div className="field-row">
-                        <span className="label">{getAbilityDisplayName(ability.type)}</span>
+                        <span>{getAbilityDisplayName(ability.type)}</span>
                     </div>
                     {ability.target?.text
                         && (
@@ -140,7 +148,6 @@ export function HeroAbilityComponent({ key, hero, ability }: IHeroAbilityCompone
                 && (
                     <PowerRollField
                         powerRoll={powerRoll}
-                        powerRollBonus={hero.getPowerRollBonus(powerRoll)}
                         getDamageValue={(powerRollTier) => hero.getDamageValue(powerRollTier)}
                         getPotencyValue={(potencyEffect) => hero.getPotencyValue(potencyEffect)}
                     />

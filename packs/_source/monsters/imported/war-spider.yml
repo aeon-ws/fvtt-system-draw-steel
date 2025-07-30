@@ -131,7 +131,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Trample
-    maliceCost: 5
+    resourceCost: 5
     isSignature: false
     keywords: []
     type: mainAction

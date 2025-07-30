@@ -1,6 +1,6 @@
 // src/components/enemySheetComponent.tsx
 
-import { ArrayField, DistanceField, EffectField, PowerRollField, TargetField } from "@actor/sheetFieldComponent";
+import { ArrayField, DistanceField, EffectField, PowerRollField, Roll, TargetField } from "@actor/sheetFieldComponent";
 import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 import { IEnemyData } from "@enemy/enemyData";
 import { EnemyTokenDocument } from "@enemy/enemyTokenDocument";
@@ -16,7 +16,7 @@ export interface IEnemyAbilityComponentProps {
 }
 
 export function EnemyAbilityComponent({ key, enemy, ability }: IEnemyAbilityComponentProps): JSX.Element | null {
-    const getAbilityDisplayName = (name: string) => {
+    const getAbilityTypeDisplayName = (name: string) => {
         switch (name) {
             case "enemyTrait":
                 return "";
@@ -38,7 +38,7 @@ export function EnemyAbilityComponent({ key, enemy, ability }: IEnemyAbilityComp
     };
 
     const abilityNameCssClassNames =
-        ability.maliceCost > 0
+        ability.resourceCost > 0
             ? "label malice"
             : ability.isSignature
                 ? "label signature"
@@ -51,17 +51,23 @@ export function EnemyAbilityComponent({ key, enemy, ability }: IEnemyAbilityComp
         <div key={key} className="ability">
             <div className="subheader-row">
                 <span className="left">
-                    <span className={abilityNameCssClassNames}>{ability.name}{ability.maliceCost > 0
+                    <span className={abilityNameCssClassNames}>{ability.name}</span>
+                    {powerRoll
                         && (
-                            <span className="label malice"> ({ability.maliceCost} Malice)</span>
+                            <Roll dieCount={2} dieType="d10" rollBonus={enemy.getPowerRollBonus(powerRoll)} />
                         )
-                    }</span>
+                    }
+                </span>
+                <span className="right">
+                    <span className={abilityNameCssClassNames}>
+                        {ability.resourceCost > 0 && `${ability.resourceCost} Malice`}
+                    </span>
                 </span>
             </div>
             <div className="columns">
                 <div className="column left-column">
                     <div className="field-row">
-                        <ArrayField values={ability.keywords} valueClassNames={["label", "overflow"]} />
+                        <ArrayField values={ability.keywords} valueClassNames={["overflow"]} />
                     </div>
                     {ability.distance?.melee && ability.distance?.melee !== 0
                         ? (
@@ -103,7 +109,7 @@ export function EnemyAbilityComponent({ key, enemy, ability }: IEnemyAbilityComp
                 </div>
                 <div className="column right-column">
                     <div className="field-row">
-                        <span className="label">{getAbilityDisplayName(ability.type)}</span>
+                        <span>{getAbilityTypeDisplayName(ability.type)}</span>
                     </div>
                     {ability.target?.text
                         && (
@@ -119,7 +125,6 @@ export function EnemyAbilityComponent({ key, enemy, ability }: IEnemyAbilityComp
                 && (
                     <PowerRollField
                         powerRoll={powerRoll}
-                        powerRollBonus={enemy.getPowerRollBonus(powerRoll)}
                         getDamageValue={(powerRollTier) => enemy.getDamageValue(powerRollTier)}
                         getPotencyValue={(potencyEffect) => enemy.getPotencyValue(potencyEffect)}
                     />

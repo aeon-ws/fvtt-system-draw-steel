@@ -102,7 +102,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Steam Powered Snare
-    maliceCost: 3
+    resourceCost: 3
     isSignature: false
     keywords:
     - Area

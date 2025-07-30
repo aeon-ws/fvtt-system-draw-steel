@@ -95,7 +95,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Battle Flurry
-    maliceCost: 3
+    resourceCost: 3
     isSignature: false
     keywords:
     - Area

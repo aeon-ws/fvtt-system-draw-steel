@@ -100,7 +100,7 @@ items:
     system:
       name: Repent!
       isSignature: false
-      heroicResourceCost: 3
+      resourceCost: 3
       keywords:
         - Magic
         - Ranged
@@ -162,7 +162,7 @@ items:
     system:
       name: Behold the Face of Justice!
       isSignature: false
-      heroicResourceCost: 5
+      resourceCost: 5
       keywords:
         - Magic
         - Melee

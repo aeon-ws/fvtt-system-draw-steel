@@ -110,7 +110,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Stolen Vitality
-    maliceCost: 3
+    resourceCost: 3
     isSignature: false
     keywords:
     - Magic

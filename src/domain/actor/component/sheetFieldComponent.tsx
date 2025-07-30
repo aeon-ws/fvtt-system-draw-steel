@@ -1,11 +1,35 @@
 
 import clsx from "classnames";
-import React from "react";
+import React, { Fragment } from "react";
 
-import { ICreatureData, IImmunityData, IWeaknessData } from "@creature/creatureData";
+import { IImmunityData, IWeaknessData } from "@creature/creatureData";
 import { JSX } from "react/jsx-runtime";
-import { DamageType, IActorAbilityData, IEffectData, IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
+import { DamageType, IEffectData, IPotencyEffectData, IPowerRollData, IPowerRollTierData } from "@actor/actorAbilityData";
 
+export type Die = "d4" | "d6" | "d8" | "d10" | "d12" | "d20";
+
+interface IRollProps {
+    dieType: Die;
+    dieCount: number;
+    rollBonus: number | undefined | null;
+}
+
+export function Roll(props: IRollProps): JSX.Element | null {
+    if (props.dieCount <= 0) return null;
+
+    const dieSymbols: JSX.Element[] = [];
+    for (let i = 0; i < props.dieCount; i++) {
+        dieSymbols.push(
+            <i key={`${props.dieType}-${i + 1}`} className={`fa-sharp fa-light fa-dice-${props.dieType}`}></i>
+        );
+    }
+
+    return (
+        <span className="ads-roll-box">
+            {dieSymbols}+{props.rollBonus}
+        </span>
+    );
+}
 
 interface IArrayFieldProps {
     label?: string | undefined;
@@ -44,8 +68,8 @@ export function ArrayField({
 interface IDistanceFieldProps {
     distanceTypeLabel1: string;
     value1: number | string;
-    distanceTypeLabel2?: string | undefined;
-    value2?: number | string | undefined;
+    distanceTypeLabel2?: undefined | null | string;
+    value2?: undefined | null | number | string;
 }
 
 export function DistanceField(props: IDistanceFieldProps): JSX.Element | null {
@@ -88,7 +112,7 @@ export const StatField: React.FC<StatFieldProps> = ({
     overflow,
     defaultValue
 }) => {
-    if ((value === null || value === undefined || value === "" || value === 0) && !defaultValue) return null;
+    if ((value === null || value === undefined || value === "") && !defaultValue) return null;
 
     const valueOrDefault = value ?? defaultValue;
 
@@ -124,19 +148,21 @@ export const SizeAndStabilityFields: React.FC<SizeAndStabilityFieldsProps> = ({ 
     );
 }
 
-interface CharacteristicFieldProps {
+interface ICharacteristicFieldProps {
     label: string;
-    value?: number | string | null;
+    value: number;
 }
 
-export const CharacteristicField: React.FC<CharacteristicFieldProps> = ({ label, value }) => {
-    if (value === null || value === undefined || value === "" || value === 0) {
-        value = 0;
+export function CharacteristicField({ label, value }: ICharacteristicFieldProps): JSX.Element | null {
+    if (value === null || value === undefined) {
+        value = -5;
     }
 
     return (
         <div className="characteristic">
-            <span className="label">{label}</span>
+            <span className="label">
+                <span className="ads-inline-box">{label[0].toUpperCase()}</span>
+                {label.slice(1).toLowerCase()}</span>
             <span className="value">{value}</span>
         </div>
     );
@@ -149,40 +175,32 @@ interface EncounterValueFieldProps {
 }
 
 export const EncounterValueField: React.FC<EncounterValueFieldProps> = ({ label = "EV", encounterValue, enemyType }) => {
-    return enemyType === "minion"
-        ? <span className="right">{label} {encounterValue} for four minions</span>
+    return enemyType.toLowerCase() === "minion"
+        ? <span className="right">{label} {encounterValue} for 4 minions</span>
         : <span className="right">{label} {encounterValue}</span>
-}
-
-interface ImmunityAndWeaknessFieldsProps {
-    immunityLabel: string;
-    immunity: IImmunityData
-    weaknessLabel: string;
-    weakness: IWeaknessData;
-    damageTypeLabels?: Map<string, string>;
 }
 
 interface ImmunityOrWeaknessFieldProps {
     fieldLabelClassName?: string;
     fieldLabel?: string;
-    immunityOrWeakness: IImmunityData | IWeaknessData;
+    immunityOrWeakness?: IImmunityData | IWeaknessData;
     damageTypeLabels?: Map<string, string>;
 }
 
 export function ImmunityOrWeaknessField(props: ImmunityOrWeaknessFieldProps): JSX.Element | null {
     const damageTypesAndValuesAsString =
-        Object.entries(props.immunityOrWeakness)
-            .filter(([_, value]) => value > 0)
-            .map(
-                ([damageTypeName, value]) => {
-                    const damageTypeLabel = props.damageTypeLabels?.get(damageTypeName) || damageTypeName;
+        props.immunityOrWeakness
+            ? Object.entries(props.immunityOrWeakness)
+                .filter(([_, value]) => value > 0)
+                .map(
+                    ([damageTypeName, value]) => {
+                        const damageTypeLabel = props.damageTypeLabels?.get(damageTypeName) || damageTypeName;
 
-                    return `${damageTypeLabel.toLowerCase()} ${value}`;
-                }
-            )
-            .join(", ");
-
-    if (!damageTypesAndValuesAsString) return null;
+                        return `${damageTypeLabel} ${value}`;
+                    }
+                )
+                .join(", ")
+            : "\u2013";  // Em dash for empty values.
 
     return (
         <span>
@@ -192,45 +210,49 @@ export function ImmunityOrWeaknessField(props: ImmunityOrWeaknessFieldProps): JS
     )
 }
 
-export function ImmunityAndWeaknessFields(props: ImmunityAndWeaknessFieldsProps): JSX.Element | null {
-    const immunity = props.immunity;
+interface IWeaknessFieldProps {
+    weaknessLabel?: string;
+    weakness?: IWeaknessData;
+    damageTypeLabels?: Map<string, string>;
+}
+
+export function WeaknessField(props: IWeaknessFieldProps): JSX.Element | null {
     const weakness = props.weakness;
-    if (!immunity && !weakness) return null;
-
-    const fields: JSX.Element[] = [];
-    if (immunity) {
-        fields.push(
-            <ImmunityOrWeaknessField
-                key="immunity"
-                fieldLabelClassName="fa-sharp fa-regular fa-shield-plus"
-                //fieldLabel={props.immunityLabel}
-                immunityOrWeakness={immunity}
-                damageTypeLabels={props.damageTypeLabels}
-            />);
-        if (weakness) {
-            fields.push(<span>  |  </span>);
-        }
-    }
-    if (weakness) {
-        fields.push(
-            <ImmunityOrWeaknessField
-                key="weakness"
-                fieldLabelClassName="fa-sharp fa-regular fa-shield-minus"
-                //fieldLabel={props.weaknessLabel}
-                immunityOrWeakness={weakness}
-                damageTypeLabels={props.damageTypeLabels}
-            />);
-    }
-
-    if (fields.length === 0) return null;
 
     return (
         <div className="field-row">
-            {fields}
+            <ImmunityOrWeaknessField
+                // fieldLabelClassName="fa-sharp fa-solid fa-shield-minus"
+                fieldLabelClassName="label"
+                fieldLabel={props.weaknessLabel}
+                immunityOrWeakness={weakness}
+                damageTypeLabels={props.damageTypeLabels}
+            />
         </div>
     );
 };
 
+interface IImmunityFieldProps {
+    immunityLabel?: string;
+    immunity?: IImmunityData
+    damageTypeLabels?: Map<string, string>;
+}
+
+export function ImmunityField(props: IImmunityFieldProps): JSX.Element | null {
+    const immunity = props.immunity;
+
+    return (
+        <div className="field-row">
+            <ImmunityOrWeaknessField
+                // fieldLabelClassName="fa-sharp fa-solid fa-shield-plus"
+                fieldLabelClassName="label"
+                fieldLabel={props.immunityLabel}
+                immunityOrWeakness={immunity}
+                damageTypeLabels={props.damageTypeLabels}
+            />
+        </div>
+    );
+};
 
 export function getPowerRollDamageText(damageType: DamageType | undefined | null, damageValue: number | undefined | null): string {
     if (!damageValue) return "";
@@ -269,12 +291,12 @@ export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
                 {getPowerRollDamageText(tier.damageType, props.damageValue)}
                 {getPowerRollEffectText(tier)}
                 {potencyEffect && (
-                    <>
+                    <Fragment>
                         <span className="ads-inline-box">
                             {`${potencyEffect.targetCharacteristic[0].toUpperCase()} < ${props.getPotencyValue(potencyEffect)}`}
                         </span>
                         <span>{potencyEffect.effect?.text}</span>
-                    </>
+                    </Fragment>
                 )}
             </span>
         </div>
@@ -283,24 +305,29 @@ export function PowerRollTier(props: IPowerRollTierProps): JSX.Element | null {
 
 interface IPowerRollFieldProps {
     powerRoll: IPowerRollData | undefined | null;
-    powerRollBonus: number | null;
+    // powerRollBonus: number | null;
     getDamageValue: (powerRollTier: IPowerRollTierData) => number | null;
     getPotencyValue: (potencyEffect: IPotencyEffectData) => number;
 }
 
 export function PowerRollField(props: IPowerRollFieldProps): JSX.Element | null {
-    if (!props.powerRoll || !props.powerRollBonus) return null;
+    // if (!props.powerRoll || !props.powerRollBonus) return null;
+    if (!props.powerRoll) return null;
 
     const powerRoll = props.powerRoll;
-    const powerRollBonus = props.powerRollBonus;
+    // const powerRollBonus = props.powerRollBonus;
     const getPotencyValue = props.getPotencyValue;
     const getDamageValue = props.getDamageValue;
 
     return (
         <div className="power-roll-section">
-            {powerRollBonus && (
-                <StatField label="Power Roll" value={` + ${powerRollBonus}`} />
-            )}
+            {/* {powerRollBonus && (
+                <div className="field-row">
+                    <span className="label">Power Roll </span>
+                    <Roll dieCount={2} dieType="d10" rollBonus={powerRollBonus} />
+                    <span className="value">:</span>
+                </div>
+            )} */}
             <div className="power-roll-table">
                 <PowerRollTier
                     label="≤11"

@@ -135,7 +135,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Shriek
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords:
     - Magic

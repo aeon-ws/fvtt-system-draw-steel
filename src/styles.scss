@@ -1,3 +1,4 @@
+$sheet-background-color: #f7f4ed;
 $enemy-sheet-left-right-padding: 0.4rem;
 $font-weight-bold: 700;
 $font-weight-half-bold: 500;
@@ -13,10 +14,27 @@ $label-value-gap: 0.3em;
   padding-right: 0.3em;
   padding-top: 0.02em;
   padding-bottom: 0.02em;
-  margin-right: $label-value-gap;
+  margin-right: 0.1em;
   border-radius: 0.2em;
   font-size: 0.8em;
   font-family: inherit;
+  vertical-align: 0.075em;
+}
+
+.ads-roll-box {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: $font-weight-half-bold;
+  text-align: center;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0;
+  padding-bottom: 0em;
+  margin-left: $label-value-gap;
+  margin-right: $label-value-gap;
+  border: 1px solid #000000;
+  border-radius: 0.2em;
   vertical-align: 0.075em;
 }
 
@@ -30,7 +48,7 @@ $label-value-gap: 0.3em;
 }
 
 .enemy-sheet {
-  background: #f7f4ed;
+  background: $sheet-background-color;
   color: #222;
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1rem;
@@ -46,105 +64,148 @@ $label-value-gap: 0.3em;
   scrollbar-width: thin;
 
   .header {
-    background: #D9D9D9;
-    // color: #222;
-    font-weight: $font-weight-bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: $enemy-sheet-left-right-padding;
-    padding-right: $enemy-sheet-left-right-padding;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    letter-spacing: 0.5px;
-    border-radius: 6px 6px 0 0;
-    margin-bottom: 0.15em;
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    letter-spacing: 1px;
-
-    .right {
-      text-align: right;
-      text-transform: unset;
-    }
+    padding-bottom: 0.8rem;
 
     &.ambusher {
-      background: #F7D957;
+      background: linear-gradient(to bottom, #F7D957 0%, $sheet-background-color 100%);
     }
 
     &.artillery {
-      background: #CCC0D9;
+      background: linear-gradient(to bottom, #CCC0D9 0%, $sheet-background-color 100%);
     }
 
     &.brute {
-      background: #8DB3E2;
+      background: linear-gradient(to bottom, #8DB3E2 0%, $sheet-background-color 100%);
     }
 
     &.controller {
-      background: #FF7D7D;
+      background: linear-gradient(to bottom, #FF7D7D 0%, $sheet-background-color 100%);
     }
 
     &.defender {
-      background: #C4BC96;
+      background: linear-gradient(to bottom, #C4BC96 0%, $sheet-background-color 100%);
     }
 
     &.harrier,
     &.skirmisher {
-      background: #E5B8B7;
+      background: linear-gradient(to bottom, #E5B8B7 0%, $sheet-background-color 100%);
     }
 
     &.hexer {
-      background: #D6E3BC;
+      background: linear-gradient(to bottom, #D6E3BC 0%, $sheet-background-color 100%);
     }
 
     &.mount {
-      background: #B6DDE8;
+      background: linear-gradient(to bottom, #B6DDE8 0%, $sheet-background-color 100%);
     }
 
     &.support {
-      background: #FBD4B4;
+      background: linear-gradient(to bottom, #FBD4B4 0%, $sheet-background-color 100%);
+    }
+
+    .header-row {
+      font-weight: $font-weight-bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-left: $enemy-sheet-left-right-padding;
+      padding-right: $enemy-sheet-left-right-padding;
+      padding-top: 0.2rem;
+      //letter-spacing: 0.5px;
+      border-radius: 6px 6px 0 0;
+      text-transform: capitalize;
+      //letter-spacing: 1px;
+
+      .left {
+        flex: 1;
+        font-size: 1.3rem;
+      }
+
+      .right {
+        text-align: right;
+      }
+    }
+
+    .subheader-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-left: $enemy-sheet-left-right-padding;
+      padding-right: $enemy-sheet-left-right-padding;
+      padding-top: 0;
+      font-weight: $font-weight-normal;
+
+      overflow-x: visible;
+      white-space: pre;
+      word-break: keep-all;
+
+      .left {
+        flex: 1;
+      }
+
+      .right {
+        flex: 1;
+        text-align: right;
+      }
     }
   }
 
-  .subheader-row {
+  .combat-stats-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding-left: $enemy-sheet-left-right-padding;
-    padding-right: $enemy-sheet-left-right-padding;
-    padding-top: 0rem;
-    // color: #444;
-    font-weight: $font-weight-normal;
+    padding-top: 0.4rem;
+    padding-bottom: 0.6rem;
+    padding-left: 6 * $enemy-sheet-left-right-padding;
+    padding-right: 6 * $enemy-sheet-left-right-padding;
 
-    overflow-x: visible;
-    white-space: pre;
-    word-break: keep-all;
+    .field-row {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
 
-    .left {
-      flex: 1;
-    }
+      .label {
+        font-weight: $font-weight-half-bold;
+        display: flex;
+        white-space: nowrap;
+      }
 
-    .right {
-      flex: 1;
-      text-align: right;
-    }
-
-    .label {
-      font-weight: $font-weight-bold;
-      // align-items: baseline;
-    }
-
-    .value {
-      font-weight: $font-weight-normal;
-      margin-left: $label-value-gap;
+      .value {
+        font-size: 1.2rem;
+        font-weight: $font-weight-normal;
+        margin-bottom: -0.2rem;
+        margin-left: 0;
+      }
     }
   }
 
   .ability {
     .subheader-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      vertical-align: baseline;
+      padding-left: $enemy-sheet-left-right-padding;
+      padding-right: $enemy-sheet-left-right-padding;
+      padding-top: 0rem;
+      font-weight: $font-weight-normal;
+      overflow-x: visible;
+      white-space: pre;
+      word-break: keep-all;
+
       .left {
+        flex: 1;
+
         .label {
-          font-style: italic;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      .right {
+        flex: 1;
+        text-align: right;
+
+        .label {
+          font-weight: $font-weight-bold;
         }
       }
 
@@ -167,7 +228,7 @@ $label-value-gap: 0.3em;
         overflow-x: visible;
 
         .label {
-          font-weight: $font-weight-bold;
+          font-weight: $font-weight-half-bold;
         }
 
         .value {
@@ -221,7 +282,7 @@ $label-value-gap: 0.3em;
       word-break: break-word;
 
       .label {
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-half-bold;
         margin-right: $label-value-gap;
       }
 
@@ -284,7 +345,7 @@ $label-value-gap: 0.3em;
     }
 
     .label {
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-half-bold;
       //white-space: pre;
     }
 
@@ -306,9 +367,14 @@ $label-value-gap: 0.3em;
     justify-content: space-between;
     padding-left: $enemy-sheet-left-right-padding;
     padding-right: $enemy-sheet-left-right-padding;
+    padding-top: 0.2rem;
+    padding-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    background: #D9D9D9;
 
     .characteristic {
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-half-bold;
       display: flex;
       align-items: baseline;
       white-space: nowrap;
@@ -318,12 +384,45 @@ $label-value-gap: 0.3em;
         margin-left: $label-value-gap;
       }
     }
+
+    &.ambusher {
+      background: #F7D957;
+    }
+
+    &.artillery {
+      background: #CCC0D9;
+    }
+
+    &.brute {
+      background: #8DB3E2;
+    }
+
+    &.controller {
+      background: #FF7D7D;
+    }
+
+    &.defender {
+      background: #C4BC96;
+    }
+
+    &.harrier,
+    &.skirmisher {
+      background: #E5B8B7;
+    }
+
+    &.hexer {
+      background: #D6E3BC;
+    }
+
+    &.mount {
+      background: #B6DDE8;
+    }
+
+    &.support {
+      background: #FBD4B4;
+    }
   }
 }
-
-
-
-
 
 .ads-add-captain-to-squad,
 .ads-add-minion-to-squad {
@@ -387,7 +486,7 @@ $label-value-gap: 0.3em;
       .actor-name {
         margin: 0;
         font-size: 16px;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-half-bold;
         color: var(--color-text-primary);
       }
 
@@ -407,7 +506,7 @@ $label-value-gap: 0.3em;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-half-bold;
       font-size: 20px;
       color: white;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -461,7 +560,7 @@ $label-value-gap: 0.3em;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-half-bold;
         background: white;
         font-size: 16px;
         transition: all 0.2s ease;
@@ -497,7 +596,7 @@ $label-value-gap: 0.3em;
       }
 
       .total {
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-half-bold;
         font-size: 24px;
         color: var(--color-primary);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);

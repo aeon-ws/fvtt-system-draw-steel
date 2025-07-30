@@ -1,10 +1,11 @@
 // src/components/heroSheetComponent.tsx
 
-import { ArrayField, CharacteristicField, ImmunityAndWeaknessFields, SizeAndStabilityFields, StatField } from "@actor/sheetFieldComponent";
+import { ArrayField, CharacteristicField, ImmunityField, WeaknessField, SizeAndStabilityFields, StatField } from "@actor/sheetFieldComponent";
 import { HeroAbilityComponent } from "@hero/heroAbilityComponent";
 import { HeroTokenDocument } from "@hero/heroTokenDocument";
 import { IHeroData } from "@hero/heroData";
 import { IHeroAbilityData } from "@hero/heroAbilityData";
+import { Fragment } from "react/jsx-runtime";
 
 
 export interface IHeroComponentContext {
@@ -29,20 +30,26 @@ export function HeroSheetComponent(context: IHeroComponentContext) {
                     <ArrayField valueClassNames={["left"]} values={heroData.keywords} />
                 </div>
                 <div className="divider"></div>
+
+                <div className="combat-stats-row">
+                    <StatField label="Size" value={heroData.combat.size} />
+                    <StatField label="Speed" value={heroData.combat.speed} />
+                    <StatField label="Stamina" value={
+                        heroData.stamina.value !== heroData.stamina.max
+                            ? `${heroData.stamina.value} / ${heroData.stamina.max}`
+                            : heroData.stamina.max} />
+                    <StatField label="Stability" value={heroData.combat.stability} />
+                </div>
                 <div className="columns">
                     <div className="column left-column">
-                        <StatField label="Stamina" value={
-                            heroData.stamina.value !== heroData.stamina.max
-                                ? `${heroData.stamina.value} / ${heroData.stamina.max}`
-                                : heroData.stamina.max} />
-                        <StatField label="Speed" value={heroData.combat.speed} />
+                        <ImmunityField immunityLabel="Immunity" immunity={heroData.immunity} />
+                        <StatField label="Movement" value={heroData.combat.movementTypes.toString()} />
                     </div>
                     <div className="column right-column">
-                        <ImmunityAndWeaknessFields immunityLabel="Immunity" immunity={heroData.immunity} weaknessLabel="Weakness" weakness={heroData.weakness} />
-                        <SizeAndStabilityFields sizeLabel="Size" sizeValue={heroData.combat.size} stabilityLabel="Stability" stabilityValue={heroData.combat.stability} />
+                        <WeaknessField weaknessLabel="Weakness" weakness={heroData.weakness} />
                     </div>
                 </div>
-                <div className="divider"></div>
+
                 <div className="characteristics-row">
                     <CharacteristicField label="Might" value={heroData.characteristics.might} />
                     <CharacteristicField label="Agility" value={heroData.characteristics.agility} />
@@ -50,8 +57,8 @@ export function HeroSheetComponent(context: IHeroComponentContext) {
                     <CharacteristicField label="Intuition" value={heroData.characteristics.intuition} />
                     <CharacteristicField label="Presence" value={heroData.characteristics.presence} />
                 </div>
-                <div className="divider"></div>
-                <>
+
+                <Fragment>
                     {abilities
                         .slice()
                         .sort((a, b) =>
@@ -63,7 +70,7 @@ export function HeroSheetComponent(context: IHeroComponentContext) {
                         .map(ability => (
                             <HeroAbilityComponent key={ability.name} hero={hero} ability={ability} />
                         ))}
-                </>
+                </Fragment>
             </div>
         </form >
     );

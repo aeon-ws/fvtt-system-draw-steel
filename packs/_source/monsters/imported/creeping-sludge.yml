@@ -103,7 +103,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Oozen Grasp
-    maliceCost: 2
+    resourceCost: 2
     isSignature: false
     keywords:
     - Area

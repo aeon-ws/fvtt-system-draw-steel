@@ -1,7 +1,7 @@
 // src/components/minionSheetComponent.tsx
 
 import { IMinionData } from "@minion/minionData";
-import { ArrayField, CharacteristicField, EncounterValueField, ImmunityAndWeaknessFields, SizeAndStabilityFields, StatField } from "@actor/sheetFieldComponent";
+import { ArrayField, CharacteristicField, EncounterValueField, ImmunityField, WeaknessField, SizeAndStabilityFields, StatField } from "@actor/sheetFieldComponent";
 import { EnemyAbilityComponent } from "@enemy/component/enemyAbilityComponent";
 import { IEnemyAbilityData } from "@enemy/enemyAbilityData";
 import { MinionTokenDocument } from "@minion/minionTokenDocument";
@@ -22,33 +22,42 @@ export function MinionSheetComponent(context: IMinionComponentContext) {
         <form ref={context.ref} autoComplete="off" className="aeon-draw-steel sheet actor minion">
             <div className="enemy-sheet">
                 <div className={`header ${enemyData.role.toLowerCase()}`}>
-                    <span className="left">{enemyData.name}&nbsp;</span>
-                    <span className="right">Level&nbsp;{enemyData.level}&nbsp;{enemyData.type}&nbsp;{enemyData.role}</span>
-                </div>
-                <div className="subheader-row">
-                    <ArrayField valueClassNames={["left"]} values={enemyData.keywords} />
-                    <EncounterValueField label="EV" encounterValue={enemyData.encounterValue} enemyType={enemyData.type} />
+                    <div className="header-row">
+                        <span className="left">{enemyData.name}&nbsp;</span>
+                        <span className="right">Level&nbsp;{enemyData.level}&nbsp;{enemyData.type}&nbsp;{enemyData.role}</span>
+                    </div>
+                    <div className="subheader-row">
+                        <ArrayField valueClassNames={["left"]} values={enemyData.keywords} />
+                        <EncounterValueField label="EV" encounterValue={enemyData.encounterValue} enemyType={enemyData.type} />
+                    </div>
                 </div>
                 <div className="divider"></div>
+
+                <div className="combat-stats-row">
+                    <StatField label="Size" value={enemyData.combat.size} />
+                    <StatField label="Speed" value={enemyData.combat.speed} />
+                    <StatField label="Stamina" value={
+                        enemyData.squadId
+                            ? `${enemyData.stamina.value} / ${enemyData.stamina.max} (${enemyData.stamina.perMinion} / minion)`
+                            : `${enemyData.stamina.perMinion} / minion`} />
+                    <StatField label="Stability" value={enemyData.combat.stability} />
+                    <StatField label="Free Strike" value={enemyData.combat.freeStrikeDamage} defaultValue="1" />
+                </div>
                 <div className="columns">
                     <div className="column left-column">
-                        <StatField label="Stamina" value={
-                            enemyData.squadId
-                                ? `${enemyData.stamina.value} / ${enemyData.stamina.max} (${enemyData.stamina.perMinion} per minion)`
-                                : enemyData.stamina.perMinion} overflow />
-                        <StatField label="Speed" value={enemyData.combat.speed} defaultValue="5" />
+                        <ImmunityField immunity={enemyData.immunity} />
+                        <StatField label="Movement" value={enemyData.combat.movementTypes.toString()} />
+                    </div>
+                    <div className="column right-column">
+                        <WeaknessField weakness={enemyData.weakness} />
                         <StatField label="With Captain" value={enemyData.combat.strikeDamage} template="Strike damage +{value}" overflow />
                         <StatField label="With Captain" value={enemyData.derivedCaptainBonuses.speed} template="Speed +{value}" overflow />
                         <StatField label="With Captain" value={enemyData.derivedCaptainBonuses.rangedDistanceBonus} template="Ranged distance +{value}" overflow />
                         <StatField label="With Captain" value={enemyData.derivedCaptainBonuses.meleeDistanceBonus} template="Melee distance +{value}" overflow />
                         <StatField label="With Captain" value={enemyData.appliedCaptainEffects.temporaryStamina} template="{value} temporary stamina" overflow />
                     </div>
-                    <div className="column right-column">
-                        <ImmunityAndWeaknessFields immunityLabel="Immunity" immunity={enemyData.immunity} weaknessLabel="Weakness" weakness={enemyData.weakness} />
-                        <SizeAndStabilityFields sizeLabel="Size" sizeValue={enemyData.combat.size} stabilityLabel="Stability" stabilityValue={enemyData.combat.stability} />
-                        <StatField label="Free Strike" value={enemyData.combat.freeStrikeDamage} defaultValue="1" />
-                    </div>
                 </div>
+
                 <div className="divider"></div>
                 <div className="characteristics-row">
                     <CharacteristicField label="Might" value={enemyData.characteristics.might} />

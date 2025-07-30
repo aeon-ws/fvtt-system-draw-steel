@@ -104,7 +104,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Thread Whip
-    maliceCost: 3
+    resourceCost: 3
     isSignature: false
     keywords:
     - Area
@@ -133,7 +133,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Tightwire
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords: []
     type: maneuver

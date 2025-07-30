@@ -94,7 +94,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Goad
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords:
     - Area

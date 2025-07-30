@@ -18,14 +18,14 @@ class Ability(TypedDict):
         "villainAction",
     ]
     villainActionOrdinal: NotRequired[Optional[int]]
-    maliceCost: NotRequired[Optional[int]]
+    resourceCost: NotRequired[Optional[int]]
     powerRoll: NotRequired[Optional[PowerRoll]]
     keywords: List[str]
     distance: NotRequired[Optional[Distance]]
     target: NotRequired[Optional[Target]]
     trigger: NotRequired[Optional[str]]
     prePowerRollEffect: NotRequired[Optional[Effect]]
-    maliceEffect: NotRequired[Optional[Effect]]
+    spendResourceEffect: NotRequired[Optional[Effect]]
     isSignature: NotRequired[Optional[bool]]
     postPowerRollEffect: NotRequired[Optional[Effect]]
     header_raw: str

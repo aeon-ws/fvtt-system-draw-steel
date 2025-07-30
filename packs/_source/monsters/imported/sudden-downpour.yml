@@ -112,7 +112,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: See Through
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords: []
     type: maneuver

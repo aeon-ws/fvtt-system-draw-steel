@@ -27,7 +27,7 @@
     {
       "name": "Choking Thread",
       "type": "mainAction",
-      "maliceCost": null,
+      "resourceCost": null,
       "powerRoll": {
         "bonus": 2,
         "tier1": { "damage": 4, "effect": null, "potencyEffect": null },
@@ -61,7 +61,7 @@
     {
       "name": "Thread Whip",
       "type": "maneuver",
-      "maliceCost": 3,
+      "resourceCost": 3,
       "powerRoll": {
         "bonus": 2,
         "tier1": {
@@ -91,7 +91,7 @@
     {
       "name": "Tightwire",
       "type": "maneuver",
-      "maliceCost": 1,
+      "resourceCost": 1,
       "powerRoll": null,
       "keywords": ["—"],
       "distance": { "self": true },

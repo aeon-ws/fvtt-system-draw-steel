@@ -20,23 +20,23 @@ export type DamageType = "acid" | "cold" | "corruption" | "fire" | "holy" | "lig
 export interface IActorAbilityData extends IItemData {
     // Value of the game term "keywords" in the ability game text.
     keywords: AbilityKeyword[];
-    // The malice cost of the ability or 0 (if it does not cost malice).
-    //     If rules terms include "action" && "signature", then property maliceCost = 0,
-    //     If property type == "mainAction" && property maliceCost == 0, then the ability is a signature
+    // The malice cost of the ability or 0 (if it does not cost any malice or heroic resource).
+    //     If rules terms include "action" && "signature", then property resourceCost = 0,
+    //     If property type == "mainAction" && property resourceCost == 0, then the ability is a signature
     //         ability (not used here, but will be used in display logic).
-    maliceCost: number;
+    resourceCost: number;
     isSignature: boolean;
     // The distance of the ability, 
     distance: {
         self: boolean,
-        melee: number,
-        ranged: number,
-        burst: number,
-        cube: {
+        melee: undefined | null | number,
+        ranged: undefined | null | number,
+        burst: undefined | null | number,
+        cube: undefined | null | {
             size: number,
             within: number
         },
-        line: {
+        line: undefined | null | {
             width: number,
             length: number,
             within: number
@@ -76,10 +76,10 @@ export interface IAbilityTargetData {
 
 export interface IEffectData {
     // The effect as shown in the game text.
-    //     Examples:
-    //         "slowed (EoT)",
-    //         "frightened (save ends)",
-    //         "bleeding and weakened (save ends)",
+    //   Examples:
+    //     "slowed (EoT)",
+    //     "frightened (save ends)",
+    //     "bleeding and weakened (save ends)",
     text: string;
     duration: "startOfTargetTurn" | "endOfTargetTurn" | "saveEnds" | "endOfEncounter";
 
@@ -96,15 +96,13 @@ export interface IEffectData {
 }
 
 export interface IPowerRollData {
-    // The power roll bonus, which is dynamically derived from a hero's characteristics; for enemy and
-    // minion abilities, this is the power roll bonus that is stated in the game text.
-    //     Examples:
-    //         "Clobber and Clutch (Action) ◆ 2d10 + 2 ◆ Signature" => bonus = 2 (this is an enemy ability where "2d10 + 2" is the power roll including the bonus),
-    //         "Power Roll + Might" => bonus = system.characteristics.might (this is a hero ability where the bonus will be calculated dynamically).
-    //         "2d10 + Agility" => bonus = system.characteristics.agility (this is a hero ability where the bonus will be calculated dynamically).
+    // Enemies | Minions
     bonus?: number | null;
+
+    // Heroes
     bonusCharacteristics?: CharacteristicType[] | null;
 
+    // Common
     tier1: IPowerRollTierData;
     tier2: IPowerRollTierData;
     tier3: IPowerRollTierData;
@@ -122,11 +120,12 @@ export interface IPowerRollTierData {
     //   the damage value, which is why it is only present in the IHeroPowerRollTierData interface.
     damageBonusCharacteristics?: CharacteristicType[] | null;
 
-    // Enemies and minions
+    // Enemies | Minions
     //   The damage value that is stated in the game text for enemy and minion abilities.  For hero abilities,
     //   this value is calculated dynamically and should never be stored.
     damage?: number;
 
+    // Common
     damageType?: DamageType;
     effect?: IEffectData | null;
     potencyEffect?: IPotencyEffectData | null;
@@ -171,11 +170,14 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
                 ...this.createEffectFields()
             }, { required: false, nullable: true }),
             powerRoll: new foundry.data.fields.SchemaField({
+                // Enemies | Minions
                 bonus: new foundry.data.fields.NumberField(),
+                // Heroes
                 bonusCharacteristics: new foundry.data.fields.ArrayField(
                     new foundry.data.fields.StringField({ choices: CharacteristicKeys }),
                     { required: false, nullable: true }
                 ),
+                // Common
                 tier1: new foundry.data.fields.SchemaField({
                     ...this.createPowerRollTierFields(),
                     potencyEffect: new foundry.data.fields.SchemaField({
@@ -211,7 +213,7 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
                 required: true,
                 choices: ["mainAction", "freeAction", "freeManeuver", "freeTriggeredAction", "maneuver", "triggeredAction"]
             }),
-
+            resourceCost: new foundry.data.fields.NumberField(),
             isSignature: new foundry.data.fields.BooleanField({ initial: false }),
 
             trigger: new foundry.data.fields.StringField(),
@@ -265,9 +267,10 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
                 { required: false, nullable: true }
             ),
 
-            // Enemies and minions
+            // Enemies | Minions
             damage: new foundry.data.fields.NumberField(),
 
+            // Common
             damageType: new foundry.data.fields.StringField(),
             effect: new foundry.data.fields.SchemaField(
                 { ...this.createEffectFields() },
@@ -286,9 +289,10 @@ export class ActorAbilityData<TData extends IActorAbilityData = IActorAbilityDat
             valueCharacteristics: new foundry.data.fields.ArrayField(new foundry.data.fields.StringField({ choices: CharacteristicKeys }), { initial: null, nullable: true }),
             valueModifier: new foundry.data.fields.StringField({ choices: PotencyValueModfierKeys }),
 
-            // Enemies and minions.
+            // Enemies | Minions
             value: new foundry.data.fields.NumberField(),
 
+            // Common
             targetCharacteristic: new foundry.data.fields.StringField({ choices: CharacteristicKeys, required: true, nullable: false }),
             effect: new foundry.data.fields.SchemaField({
                 ...this.createEffectFields()

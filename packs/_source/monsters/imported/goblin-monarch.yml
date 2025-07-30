@@ -95,7 +95,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Get in Here!
-    maliceCost: 1
+    resourceCost: 1
     isSignature: false
     keywords: []
     type: maneuver

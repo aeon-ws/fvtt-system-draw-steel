@@ -98,7 +98,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Numb
-    maliceCost: 2
+    resourceCost: 2
     isSignature: false
     keywords:
     - Melee

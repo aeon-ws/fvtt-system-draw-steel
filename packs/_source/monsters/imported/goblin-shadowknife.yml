@@ -103,7 +103,7 @@ items:
   img: icons/svg/book.svg
   system:
     name: Shadow Chains
-    maliceCost: 3
+    resourceCost: 3
     isSignature: false
     keywords:
     - Magic
