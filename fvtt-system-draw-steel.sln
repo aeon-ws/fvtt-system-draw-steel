@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{C4AD9936-F0DF-1090-6077-3D4A6324E662}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pdf-parser", "pdf-parser", "{152408E6-510D-B12B-8CC2-438E7DD6D1CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PdfExtractor", "PdfExtractor", "{ADF8898D-354E-E774-CFCF-456B53282F4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfExtractor", "scripts\pdf-parser\PdfExtractor\PdfExtractor.csproj", "{6B4CC903-2A75-8251-25B3-773CA618EBC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B4CC903-2A75-8251-25B3-773CA618EBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4CC903-2A75-8251-25B3-773CA618EBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4CC903-2A75-8251-25B3-773CA618EBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4CC903-2A75-8251-25B3-773CA618EBC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{152408E6-510D-B12B-8CC2-438E7DD6D1CD} = {C4AD9936-F0DF-1090-6077-3D4A6324E662}
+		{ADF8898D-354E-E774-CFCF-456B53282F4E} = {152408E6-510D-B12B-8CC2-438E7DD6D1CD}
+		{6B4CC903-2A75-8251-25B3-773CA618EBC6} = {ADF8898D-354E-E774-CFCF-456B53282F4E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D25EE9AC-36FF-4388-AF8D-EF7CE81CB882}
+	EndGlobalSection
+EndGlobal

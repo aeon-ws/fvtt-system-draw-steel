@@ -8,7 +8,7 @@ from PIL import Image
 
 # ---- CONFIG ----
 # INPUT_PDF = "C:/_/aeon/fvtt-system-draw-steel/Draw Steel - Delian Tomb - Monsters - 2025-04.pdf"  # path to input rasterized PDF
-INPUT_PDF = "C:/_/aeon/fvtt-system-draw-steel/scripts/pdf-parser/delian-tomb-rasterized.pdf"  # path to input rasterized PDF
+INPUT_PDF = "C:/_/aeon/fvtt-system-draw-steel/pdf/monsters-v1-rasterized.pdf"  # path to input rasterized PDF
 
 OUTPUT_DIR = "ocr-output"
 SAVE_IMAGES = False  # set to True to save binarized images
@@ -64,7 +64,7 @@ for i, page in enumerate(pages):
 
 # Save full combined text
 with open(
-    os.path.join(OUTPUT_DIR, "full_combined_ocr.txt"), "w", encoding="utf-8"
+    os.path.join(OUTPUT_DIR, "full_combined_ocr_monsters_v1.txt"), "w", encoding="utf-8"
 ) as f:
     f.write("\n\n".join(all_text))
 
