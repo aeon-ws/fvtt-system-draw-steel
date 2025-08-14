@@ -155,55 +155,53 @@
       </Story>
     </Sect>
     <Sect>
-      <Sect>
-        <Story>
-          <Monster_Role> Angulotl Dart<Span></Span><Span> Level 1 Minion Artillery</Span></Monster_Role>
-          <Stat_Block_Data> Angulotl, Humanoid EV 3 for 4 minions</Stat_Block_Data>
-          <Stat_Block_Arrow_Line></Stat_Block_Arrow_Line>
-        </Story>
-        <Story>
-          <NormalParagraphStyle>
-            <Table bBox="[48.3347 425.87 290.099 449.9 ]" o="/Layout">
-              <TBody>
-                <TR>
-                  <TD>
-                    <Big_numbers> 1S</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 5</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 3</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 0</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 2</Big_numbers>
-                  </TD>
-                </TR>
-                <TR>
-                  <TD>
-                    <Body_text_bold> Size</Body_text_bold>
-                  </TD>
-                  <TD>
-                    <Body_text_bold> Speed</Body_text_bold>
-                  </TD>
-                  <TD>
-                    <Body_text_bold> Stamina</Body_text_bold>
-                  </TD>
-                  <TD>
-                    <Body_text_bold> Stability</Body_text_bold>
-                  </TD>
-                  <TD>
-                    <Body_text_bold> Free Strike</Body_text_bold>
-                  </TD>
-                </TR>
-              </TBody>
-            </Table>
-          </NormalParagraphStyle>
-        </Story>
-      </Sect>
+      <Story>
+        <Monster_Role> Angulotl Dart<Span></Span><Span> Level 1 Minion Artillery</Span></Monster_Role>
+        <Stat_Block_Data> Angulotl, Humanoid EV 3 for 4 minions</Stat_Block_Data>
+        <Stat_Block_Arrow_Line></Stat_Block_Arrow_Line>
+      </Story>
+      <Story>
+        <NormalParagraphStyle>
+          <Table bBox="[48.3347 425.87 290.099 449.9 ]" o="/Layout">
+            <TBody>
+              <TR>
+                <TD>
+                  <Big_numbers> 1S</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 5</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 3</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 0</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 2</Big_numbers>
+                </TD>
+              </TR>
+              <TR>
+                <TD>
+                  <Body_text_bold> Size</Body_text_bold>
+                </TD>
+                <TD>
+                  <Body_text_bold> Speed</Body_text_bold>
+                </TD>
+                <TD>
+                  <Body_text_bold> Stamina</Body_text_bold>
+                </TD>
+                <TD>
+                  <Body_text_bold> Stability</Body_text_bold>
+                </TD>
+                <TD>
+                  <Body_text_bold> Free Strike</Body_text_bold>
+                </TD>
+              </TR>
+            </TBody>
+          </Table>
+        </NormalParagraphStyle>
+      </Story>
       <Story>
         <Stat_Block_Data> Immunity: Poison 2 Weakness: —</Stat_Block_Data>
         <Stat_Block_Data> Movement: Climb, swim    With Captain: +4 bonus to ranged distance</Stat_Block_Data>
@@ -234,38 +232,36 @@
       </Story>
     </Sect>
     <Sect>
-      <Sect>
-        <Story>
-          <Monster_Role>Clawfish<Span></Span><Span> Level 1 Minion Brute</Span></Monster_Role>
-          <Stat_Block_Data> Angulotl, Animal EV 3 for 4 minions</Stat_Block_Data>
-          <Stat_Block_Arrow_Line></Stat_Block_Arrow_Line>
-        </Story>
-        <Story>
-          <NormalParagraphStyle>
-            <Table bBox="[48.3347 425.87 290.099 449.9 ]" o="/Layout">
-              <TBody>
-                <TR>
-                  <TD>
-                    <Big_numbers> 1S</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 5</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 5</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 0</Big_numbers>
-                  </TD>
-                  <TD>
-                    <Big_numbers> 2</Big_numbers>
-                  </TD>
-                </TR>
-              </TBody>
-            </Table>
-          </NormalParagraphStyle>
-        </Story>
-      </Sect>
+      <Story>
+        <Monster_Role>Clawfish<Span></Span><Span> Level 1 Minion Brute</Span></Monster_Role>
+        <Stat_Block_Data> Angulotl, Animal EV 3 for 4 minions</Stat_Block_Data>
+        <Stat_Block_Arrow_Line></Stat_Block_Arrow_Line>
+      </Story>
+      <Story>
+        <NormalParagraphStyle>
+          <Table bBox="[48.3347 425.87 290.099 449.9 ]" o="/Layout">
+            <TBody>
+              <TR>
+                <TD>
+                  <Big_numbers> 1S</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 5</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 5</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 0</Big_numbers>
+                </TD>
+                <TD>
+                  <Big_numbers> 2</Big_numbers>
+                </TD>
+              </TR>
+            </TBody>
+          </Table>
+        </NormalParagraphStyle>
+      </Story>
       <Story>
         <Stat_Block_Data> Immunity: Lightning 3, poison 2 Weakness: —</Stat_Block_Data>
         <Stat_Block_Data endIndent="212.0" lineHeight="7.5" o="/Layout" spaceAfter="2.0" spaceBefore="2.0" textAlign="/End"> Movement: Climb, swim With Captain: Gain an edge on strikes</Stat_Block_Data>
