@@ -50,6 +50,8 @@ export function HeroSheetComponent(context: IHeroComponentContext) {
                     </div>
                 </div>
 
+                <div className="divider"></div>
+                
                 <div className="characteristics-row">
                     <CharacteristicField label="Might" value={heroData.characteristics.might} />
                     <CharacteristicField label="Agility" value={heroData.characteristics.agility} />
@@ -57,7 +59,9 @@ export function HeroSheetComponent(context: IHeroComponentContext) {
                     <CharacteristicField label="Intuition" value={heroData.characteristics.intuition} />
                     <CharacteristicField label="Presence" value={heroData.characteristics.presence} />
                 </div>
-
+                
+                <div className="divider"></div>
+                
                 <Fragment>
                     {abilities
                         .slice()
